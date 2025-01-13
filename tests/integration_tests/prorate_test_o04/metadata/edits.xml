@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<banffProcessor>
+<edits>
+<editid>edit1</editid>
+<leftside>VA + VB + VC + VD</leftside>
+<operator>=</operator>
+<rightside>TOT1</rightside>
+</edits>
+<edits>
+<editid>edit2</editid>
+<leftside>TOT1+TOT2</leftside>
+<operator>=</operator>
+<rightside>GT</rightside>
+</edits>
+</banffProcessor>

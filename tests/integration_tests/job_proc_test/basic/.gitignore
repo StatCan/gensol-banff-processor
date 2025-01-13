@@ -1,0 +1,2 @@
+# Currently this test performs an excel conversion rather than using the XMLs directly
+metadata/*.xml

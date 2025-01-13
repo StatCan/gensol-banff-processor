@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<banffProcessor>
+<verifyeditsspecs>
+<specid>verifyedits_spec1</specid>
+<imply>20</imply>
+</verifyeditsspecs>
+</banffProcessor>

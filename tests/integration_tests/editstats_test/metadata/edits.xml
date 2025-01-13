@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<banffProcessor>
+<edits>
+<editid>eggprod1</editid>
+<leftside>A + B + C + D</leftside>
+<operator>=</operator>
+<rightside>TOT1</rightside>
+</edits>
+<edits>
+<editid>eggprod2</editid>
+<leftside>A + E</leftside>
+<operator>&lt;=</operator>
+<rightside>20</rightside>
+</edits>
+<edits>
+<editid>eggprod3</editid>
+<leftside>B + C + F + H</leftside>
+<operator>&lt;=</operator>
+<rightside>50</rightside>
+</edits>
+<edits>
+<editid>eggprod4</editid>
+<leftside>E + F + G + H</leftside>
+<operator>=</operator>
+<rightside>TOT2</rightside>
+</edits>
+<edits>
+<editid>eggprod5</editid>
+<leftside>TOT1 + TOT2</leftside>
+<operator>=</operator>
+<rightside>TOT</rightside>
+</edits>
+<edits>
+<editid>eggprod6</editid>
+<leftside>D</leftside>
+<operator>&gt;=</operator>
+<rightside>1</rightside>
+</edits>
+<edits>
+<editid>eggprod7</editid>
+<leftside>G</leftside>
+<operator>&lt;=</operator>
+<rightside>30</rightside>
+</edits>
+</banffProcessor>

@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<banffProcessor>
+<uservars>
+<process>excludedata</process>
+<specid>udp_spec1</specid>
+<var>reference_id</var>
+<value>01</value>
+</uservars>
+<uservars>
+<process>excludedata</process>
+<specid>udp_spec1</specid>
+<var>exclude_where_stmt</var>
+<value>STRAT&lt;= 1</value>
+</uservars>
+<uservars>
+<process>addexcludeddata</process>
+<specid>udp_spec2</specid>
+<var>reference_id</var>
+<value>01</value>
+</uservars>
+<uservars>
+<process>rounddata</process>
+<specid>udp_spec3</specid>
+<var>round_specs</var>
+<value>HEN_TOT 0, QR_REV 0</value>
+</uservars>
+<uservars>
+<process>rounddata</process>
+<specid>udp_spec4</specid>
+<var>round_specs</var>
+<value>HEN_LT20 0, HEN_GE20 0, HEN_OTH 0, EGG_LAID 0, EGG_SOLD 0, EGG_VALU 0, QR_EXP 0, QR_PROF 0</value>
+</uservars>
+<uservars>
+<process>modifyvariable</process>
+<specid>udp_spec5</specid>
+<var>variable</var>
+<value>QR_PROF</value>
+</uservars>
+<uservars>
+<process>modifyvariable</process>
+<specid>udp_spec5</specid>
+<var>formula</var>
+<value>CASE WHEN QR_PROF &gt; 1600000 THEN 1600000 ELSE QR_PROF END</value>
+</uservars>
+</banffProcessor>

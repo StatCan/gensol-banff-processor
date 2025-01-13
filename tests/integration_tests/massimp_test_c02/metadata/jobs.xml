@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<banffProcessor>
+<jobs>
+<jobid>j1</jobid>
+<seqno>1</seqno>
+<process>massimp</process>
+<specid>massimputation_spec1</specid>
+<acceptnegative>y</acceptnegative>
+</jobs>
+</banffProcessor>

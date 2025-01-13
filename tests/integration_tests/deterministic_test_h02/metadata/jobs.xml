@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<banffProcessor>
+<jobs>
+<jobid>j1</jobid>
+<seqno>11</seqno>
+<process>DeTeRmInisTIc</process>
+<editgroupid>eg1</editgroupid>
+<acceptnegative>y</acceptnegative>
+</jobs>
+</banffProcessor>

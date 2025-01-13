@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<banffProcessor>
+<estimatorspecs>
+<specid>estimator_spec1</specid>
+<estimatorid>est1</estimatorid>
+</estimatorspecs>
+<estimatorspecs>
+<specid>estimator_spec2</specid>
+<estimatorid>est2</estimatorid>
+</estimatorspecs>
+</banffProcessor>

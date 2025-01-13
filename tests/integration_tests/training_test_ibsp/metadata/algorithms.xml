@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<banffProcessor>
+<algorithms>
+<algorithmname>CURTAX</algorithmname>
+<type>EF</type>
+<status>TAX</status>
+<formula>AUX1(h,v)</formula>
+<description>The current value of a variable from a tax submission.</description>
+</algorithms>
+</banffProcessor>

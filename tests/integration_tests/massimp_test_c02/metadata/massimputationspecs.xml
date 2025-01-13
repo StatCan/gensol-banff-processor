@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<banffProcessor>
+<massimputationspecs>
+<specid>massimputation_spec1</specid>
+<mustimputeid>v1</mustimputeid>
+<mustmatchid>v2</mustmatchid>
+<mindonors>2</mindonors>
+<pcentdonors>10</pcentdonors>
+<random>y</random>
+</massimputationspecs>
+</banffProcessor>

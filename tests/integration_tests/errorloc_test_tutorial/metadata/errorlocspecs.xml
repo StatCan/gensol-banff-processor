@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<banffProcessor>
+<errorlocspecs>
+<specid>errorloc_spec1</specid>
+<cardinality>13</cardinality>
+<timeperobs>20</timeperobs>
+<weightid>w1</weightid>
+</errorlocspecs>
+</banffProcessor>

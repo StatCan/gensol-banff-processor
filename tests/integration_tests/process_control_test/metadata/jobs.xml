@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<banffProcessor>
+<jobs>
+<jobid>filter_row_and_column</jobid>
+<seqno>1</seqno>
+<process>save_parquet</process>
+<controlid>TEST_1</controlid>
+</jobs>
+<jobs>
+<jobid>filter_row_and_column</jobid>
+<seqno>2</seqno>
+<process>save_parquet</process>
+<controlid>TEST_2</controlid>
+<editgroupid>eg1</editgroupid>
+</jobs>
+<jobs>
+<jobid>filter_editgroup</jobid>
+<seqno>1</seqno>
+<process>save_parquet</process>
+<controlid>TEST_3</controlid>
+<editgroupid>eg1</editgroupid>
+</jobs>
+</banffProcessor>

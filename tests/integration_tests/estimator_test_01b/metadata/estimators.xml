@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<banffProcessor>
+<estimators>
+<estimatorid>est1</estimatorid>
+<seqno>20</seqno>
+<fieldid>Z</fieldid>
+<excludeimputed>n</excludeimputed>
+<excludeoutliers>n</excludeoutliers>
+<countcriteria>1</countcriteria>
+<percentcriteria>30</percentcriteria>
+<randomerror>n</randomerror>
+<algorithmname>CURMEAN</algorithmname>
+</estimators>
+</banffProcessor>

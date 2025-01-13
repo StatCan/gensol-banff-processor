@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<banffProcessor>
+<jobs>
+<jobid>j1</jobid>
+<seqno>1</seqno>
+<process>editstats</process>
+<editgroupid>eg1</editgroupid>
+</jobs>
+</banffProcessor>

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<banffProcessor>
+<uservars>
+<process>create_new_file</process>
+<specid>new_file1</specid>
+<var>filename</var>
+<value>filtered_data</value>
+</uservars>
+</banffProcessor>

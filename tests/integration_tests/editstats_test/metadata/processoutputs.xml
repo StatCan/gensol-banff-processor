@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<banffProcessor>
+<processoutputs>
+<process>editstats</process>
+<output_name>outedit_applic</output_name>
+</processoutputs>
+<processoutputs>
+<process>editstats</process>
+<output_name>outedit_status</output_name>
+</processoutputs>
+<processoutputs>
+<process>editstats</process>
+<output_name>outk_edits_status</output_name>
+</processoutputs>
+<processoutputs>
+<process>editstats</process>
+<output_name>outvars_role</output_name>
+</processoutputs>
+</banffProcessor>

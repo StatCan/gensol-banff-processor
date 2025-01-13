@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<banffProcessor>
+<proratespecs>
+<specid>prorate_spec1</specid>
+<decimal>0</decimal>
+<lowerbound>0</lowerbound>
+<upperbound>2</upperbound>
+<modifier>always</modifier>
+<method>BASIC</method>
+</proratespecs>
+<proratespecs>
+<specid>prorate_spec2</specid>
+<decimal>0</decimal>
+<lowerbound>0</lowerbound>
+<upperbound>2</upperbound>
+<modifier>always</modifier>
+<method>SCALING</method>
+</proratespecs>
+</banffProcessor>

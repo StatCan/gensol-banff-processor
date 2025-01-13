@@ -1,0 +1,10 @@
+{
+	"job_id": "example1",
+	"unit_id": "IDENT",
+	"indata_filename": "./inputdata/current.parq",
+	"histdata_filename": "./inputdata/historical.parq",
+	"seed": 1,
+	"process_output_type": "All",
+	"save_format": [".csv",".parq"],
+	"log_level": 2
+}

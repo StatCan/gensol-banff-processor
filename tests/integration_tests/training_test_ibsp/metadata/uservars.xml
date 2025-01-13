@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<banffProcessor>
+<uservars>
+<process>EXCLUDEDATA</process>
+<specid>spec63038</specid>
+<var>KEEPCONDITION</var>
+<value>F69101 eq . or  F62506 eq . or F62509 eq .</value>
+</uservars>
+<uservars>
+<process>EXCLUDEDATA</process>
+<specid>spec63038</specid>
+<var>referenceid</var>
+<value>EQF61001</value>
+</uservars>
+<uservars>
+<process>ADDEXCLUDEDDATA</process>
+<specid>spec63039</specid>
+<var>referenceid</var>
+<value>EQF61001</value>
+</uservars>
+<uservars>
+<process>EXCLUDEDATA</process>
+<specid>spec63040</specid>
+<var>KEEPCONDITION</var>
+<value>F51101 eq . or  F51201 eq .</value>
+</uservars>
+<uservars>
+<process>EXCLUDEDATA</process>
+<specid>spec63040</specid>
+<var>referenceid</var>
+<value>EQF47001</value>
+</uservars>
+<uservars>
+<process>ADDEXCLUDEDDATA</process>
+<specid>spec63041</specid>
+<var>referenceid</var>
+<value>EQF47001</value>
+</uservars>
+<uservars>
+<process>EXCLUDEDATA</process>
+<specid>spec63050</specid>
+<var>KEEPCONDITION</var>
+<value>F43012 &gt; F43011</value>
+</uservars>
+<uservars>
+<process>EXCLUDEDATA</process>
+<specid>spec63050</specid>
+<var>referenceid</var>
+<value>E2F43012</value>
+</uservars>
+<uservars>
+<process>ADDEXCLUDEDDATA</process>
+<specid>spec63051</specid>
+<var>referenceid</var>
+<value>E2F43012</value>
+</uservars>
+</banffProcessor>

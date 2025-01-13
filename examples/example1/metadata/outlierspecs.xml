@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<banffProcessor>
+<outlierspecs>
+<specid>outlier_spec1</specid>
+<method>HISTORIC - two data sets</method>
+<varid>v2</varid>
+<mii>7</mii>
+<mei>4</mei>
+<mdm>0.05</mdm>
+<exponent>0</exponent>
+<minobs>3</minobs>
+</outlierspecs>
+<outlierspecs>
+<specid>outlier_spec2</specid>
+<method>CURRENT</method>
+<varid>v6</varid>
+<mii>8</mii>
+<mei>7</mei>
+<minobs>10</minobs>
+</outlierspecs>
+<outlierspecs>
+<specid>outlier_spec3</specid>
+<method>SIGMAGAP - one data set</method>
+<varid>v6</varid>
+<betai>3.5</betai>
+<betae>2</betae>
+<startcentile>90</startcentile>
+<minobs>10</minobs>
+</outlierspecs>
+</banffProcessor>

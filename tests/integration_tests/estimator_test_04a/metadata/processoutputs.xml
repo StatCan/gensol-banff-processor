@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<banffProcessor>
+<processoutputs>
+<process>estimator</process>
+<output_name>outacceptable</output_name>
+</processoutputs>
+<processoutputs>
+<process>estimator</process>
+<output_name>outest_ef</output_name>
+</processoutputs>
+<processoutputs>
+<process>estimator</process>
+<output_name>outest_parm</output_name>
+</processoutputs>
+</banffProcessor>

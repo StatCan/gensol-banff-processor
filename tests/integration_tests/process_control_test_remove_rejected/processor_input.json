@@ -1,0 +1,11 @@
+{
+	"job_id": "j1",
+	"unit_id": "rec",
+	"indata_filename": "indata.parq",
+	"instatus_filename": "instatus.parq",
+	"no_by_stats": false,
+	"save_format": [".parq", ".csv"],
+	"user_plugins_folder": "../../../examples/plugins",
+	"process_output_type": "custom",
+	"log_level": 2
+}

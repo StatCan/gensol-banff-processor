@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<banffProcessor>
+<edits>
+<editid>edit1</editid>
+<leftside>VA</leftside>
+<operator>&gt;=</operator>
+<rightside>0.001</rightside>
+</edits>
+<edits>
+<editid>edit2</editid>
+<leftside>VC</leftside>
+<operator>&gt;=</operator>
+<rightside>0.0001</rightside>
+</edits>
+<edits>
+<editid>edit3</editid>
+<leftside>VE</leftside>
+<operator>&gt;=</operator>
+<rightside>0.0001</rightside>
+</edits>
+<edits>
+<editid>edit4</editid>
+<leftside>VA + VB + VC + VD</leftside>
+<operator>=</operator>
+<rightside>TOT1</rightside>
+</edits>
+<edits>
+<editid>edit5</editid>
+<leftside>VE + VF + VG</leftside>
+<operator>=</operator>
+<rightside>TOT2</rightside>
+</edits>
+<edits>
+<editid>edit6</editid>
+<leftside>TOT1 + TOT2</leftside>
+<operator>=</operator>
+<rightside>GT</rightside>
+</edits>
+</banffProcessor>

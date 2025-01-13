@@ -1,0 +1,47 @@
+name: GitHub Test
+on:
+  workflow_call:
+    secrets:
+      GH_PAT:
+        required: true
+jobs: 
+  test:        
+    name: "test"
+    runs-on: ubuntu-latest    
+    container:
+      image: python:3.12        
+    timeout-minutes: 10
+    steps:     
+      - name: checkout the git project
+        uses: actions/checkout@v4          
+      - name: download banff processor artifacts        
+        uses: actions/download-artifact@v4
+        with:          
+          name: artifacts
+          path: dist
+      - name: Banff Artifact Release Run ID        
+        run: |
+          echo "Banff Package will be downloaded using the Release RUN_ID: ${{ vars.RUN_ID }}"
+      - name: download banff artifacts from another repository        
+      # https://github.com/actions/download-artifact?tab=readme-ov-file#download-artifacts-from-other-workflow-runs-or-repositories   
+        uses: actions/download-artifact@v4
+        with:          
+          name: linux_artifacts
+          path: dist
+          github-token: ${{ secrets.GH_PAT }}
+          repository: StatCan/gensol-banff
+          run-id: ${{ vars.RUN_ID }}              
+      - name: checks
+        run: |
+          python -V
+          ls -R dist          
+      - name: test
+        run: |        
+          # install package (from `build` artifacts)
+          python -m pip install banff[test] -v --no-cache-dir --no-index --no-deps --find-links ./dist        
+          python -m pip install banffprocessor[test] -v --no-cache-dir --no-index --no-deps --find-links ./dist 
+          python -m pip install banffprocessor[test] -v --find-links ./dist 
+          # run tests    
+          pip install pytest pytest-cov     
+          pytest -v --cache-clear --cov=banffprocessor --cov-report=term --maxfail=10 . 
+          

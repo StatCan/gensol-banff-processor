@@ -1,0 +1,8 @@
+{
+	"job_id": "j1",
+	"unit_id": "rec",
+	"indata_filename": "indata.parq",
+	"instatus_filename": "instatus.parq",
+	"save_format": [".parq", ".csv"],
+	"log_level": 2
+}

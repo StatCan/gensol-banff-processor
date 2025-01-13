@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<banffProcessor>
+<edits>
+<editid>edit1</editid>
+<leftside>Q1 + Q2 + Q3 + Q4</leftside>
+<operator>=</operator>
+<rightside>total</rightside>
+</edits>
+<edits>
+<editid>edit2</editid>
+<leftside>Q1 + Q2 + Q3 + Q4 - total</leftside>
+<operator>&lt;=</operator>
+<rightside>0</rightside>
+</edits>
+</banffProcessor>
