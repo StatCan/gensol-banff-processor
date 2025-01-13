@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<banffProcessor>
+<donorspecs>
+<specid>donorimputation_spec1</specid>
+<mindonors>10</mindonors>
+<pcentdonors>30</pcentdonors>
+<n>15</n>
+<eligdon>original</eligdon>
+<dataexclvar>expr1</dataexclvar>
+<mustmatchid>v3</mustmatchid>
+<posteditgroupid>eg5</posteditgroupid>
+</donorspecs>
+<donorspecs>
+<specid>donorimputation_spec2</specid>
+<mindonors>10</mindonors>
+<n>15</n>
+<dataexclvar>expr1</dataexclvar>
+<mustmatchid>v3</mustmatchid>
+<posteditgroupid>eg5</posteditgroupid>
+</donorspecs>
+</banffProcessor>

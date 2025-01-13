@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<banffProcessor>
+<weights>
+<weightid>w1</weightid>
+<fieldid>HEN_LT20</fieldid>
+<weight>2</weight>
+</weights>
+<weights>
+<weightid>w1</weightid>
+<fieldid>HEN_GE20</fieldid>
+<weight>2</weight>
+</weights>
+<weights>
+<weightid>w1</weightid>
+<fieldid>HEN_OTH</fieldid>
+<weight>2</weight>
+</weights>
+<weights>
+<weightid>w1</weightid>
+<fieldid>HEN_TOT</fieldid>
+<weight>5</weight>
+</weights>
+</banffProcessor>

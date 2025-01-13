@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<banffProcessor>
+<editgroups>
+<editgroupid>eg1</editgroupid>
+<editid>edit1</editid>
+</editgroups>
+<editgroups>
+<editgroupid>eg1</editgroupid>
+<editid>edit2</editid>
+</editgroups>
+</banffProcessor>

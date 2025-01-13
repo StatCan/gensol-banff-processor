@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<banffProcessor>
+<outlierspecs>
+<specid>outlier_spec1</specid>
+<method>HISTORIC - two data sets</method>
+<mei>2</mei>
+<mii>3</mii>
+<varid>v1</varid>
+<withid>v1</withid>
+<dataexclvar>expr1</dataexclvar>
+</outlierspecs>
+</banffProcessor>

@@ -1,0 +1,5 @@
+ident,FIELDID,status,area,staff,editgroupid,outlierstatus,jobid
+REC01,Q3,IPR,A1,50,eg1,,j1
+REC04,Q2,FTE,A1,100,eg1,,j1
+REC04,Q3,FTI,A1,100,eg1,,j1
+REC04,Q4,FTI,A1,100,eg1,,j1

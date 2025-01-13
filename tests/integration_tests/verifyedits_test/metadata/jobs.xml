@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<banffProcessor>
+<jobs>
+<jobid>job_succeed</jobid>
+<seqno>1</seqno>
+<process>verifyedits</process>
+<specid>verifyedits_succeed_spec</specid>
+<editgroupid>succeed_edits</editgroupid>
+</jobs>
+<jobs>
+<jobid>job_comma_format</jobid>
+<seqno>1</seqno>
+<process>verifyedits</process>
+<editgroupid>comma_edits</editgroupid>
+</jobs>
+<jobs>
+<jobid>job_non_linear</jobid>
+<seqno>1</seqno>
+<process>verifyedits</process>
+<editgroupid>non_linear_edits</editgroupid>
+</jobs>
+<jobs>
+<jobid>job_no_edits</jobid>
+<seqno>1</seqno>
+<process>verifyedits</process>
+</jobs>
+</banffProcessor>

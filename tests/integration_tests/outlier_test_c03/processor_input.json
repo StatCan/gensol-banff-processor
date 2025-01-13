@@ -1,0 +1,9 @@
+{
+	"job_id": "j1",
+	"unit_id": "ident",
+	"indata_filename": "indata.parq",
+	"histdata_filename": "indata_hist.parq",
+	"save_format": [".parq", ".csv"],
+	"log_level": 2,
+	"process_output_type": 3
+}

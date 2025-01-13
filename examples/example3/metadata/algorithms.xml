@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<Root xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+<algorithms>
+<algorithmname>CURTAX</algorithmname>
+<type>EF</type>
+<status>TAX</status>
+<formula>AUX1(h,v)</formula>
+<description>The current value of a variable from a tax submission.</description>
+</algorithms>
+</Root>

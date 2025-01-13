@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<banffProcessor>
+<processoutputs>
+<process>outlier</process>
+<output_name>outlier_status</output_name>
+</processoutputs>
+</banffProcessor>

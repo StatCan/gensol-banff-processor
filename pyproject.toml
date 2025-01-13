@@ -1,0 +1,95 @@
+[build-system]
+requires = [
+  "setuptools>=70.00", 
+  "wheel", 
+  "pip>=23.3"
+]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "banffprocessor"
+version = "2.0.0"
+maintainers = [
+    {name = "Banff Support, Statistics Canada", email = "statcan.banff-banff.statcan@statcan.gc.ca"}
+]
+description = "The Banff Processor, a tool for creating metadata driven imputation strategies."
+readme = "README.md"
+requires-python = ">=3.10"
+classifiers = [
+    "Development Status :: 5 - Production/Stable",
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: GNU General Public License v3 or later (GPLv3+)",
+    "Operating System :: OS Independent"
+]
+
+dependencies = [
+  "banff >= 3.1.1",
+  "defusedxml >= 0.7.1",
+  "duckdb >= 0.7.0",
+  "openpyxl >= 3.1.2",
+  "pandas >= 2.1.1, < 3",
+  "pyarrow >= 14.0.0",
+  "xmlschema >= 3.3.1"
+]
+
+[project.optional-dependencies]
+test = [
+    "pytest", 
+    "pytest-cov",
+    "requests",
+    "ruff"
+]
+doc = [
+    "sphinx", 
+    "sphinx_rtd_theme",
+    "pydata-sphinx-theme",
+    "myst_parser",
+]
+
+[tool.pytest.ini_options]
+addopts = "-v --cache-clear -rf --cov=banffprocessor --cov-report=term --cov-report=html --maxfail=10"
+console_output_style = "count"
+python_classes = "Test"
+python_files = "test_*.py"
+python_functions = "test_*"
+testpaths = ["tests/integration_tests", "tests/unit_tests"]
+pythonpath = "src"
+markers = [
+  "integration: marks tests as integration-type tests",
+  "unit: marks tests as unit-type tests",
+  "processor_data: marks tests that test the processor_data module",
+  "excel_convert: marks tests that test the metadata_excel_to_xml module"
+]
+
+[project.scripts]
+banffprocessor = "banffprocessor.processor:main"
+banffconvert = "banffprocessor.util.metadata_excel_to_xml:main"
+
+[tool.ruff]
+include = ["pyproject.toml", "src/**/*.py", "scripts/**/*.py"]
+line-length = 170
+lint.pylint.max-args = 10
+lint.select = [
+  "E",
+  "F",
+  "UP",
+  "S", 
+  "BLE",
+  "B",
+  "T10", 
+  "EM",
+  "LOG", 
+  "G", 
+  "PYI",
+  "PTH", 
+  "SLF", 
+  "PTH",
+  "ERA",
+  "PGH",
+]
+
+lint.ignore = [
+  "E402",    # To be reviewed - Module level import not at top of file
+  "F401",     # To be reviewed - Library imported but not used
+  "F403",     # To be reviewed - from . import *` used; unable to detect undefined names
+]

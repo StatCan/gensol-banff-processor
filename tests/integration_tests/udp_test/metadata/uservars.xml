@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<banffProcessor>
+<uservars>
+<process>incrementfield</process>
+<specid>myproc1</specid>
+<var>var1</var>
+<value>15000</value>
+</uservars>
+</banffProcessor>

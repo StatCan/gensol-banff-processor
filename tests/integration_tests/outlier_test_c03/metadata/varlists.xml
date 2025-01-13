@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<banffProcessor>
+<varlists>
+<varlistid>v1</varlistid>
+<seqno>1</seqno>
+<fieldid>V1</fieldid>
+</varlists>
+<varlists>
+<varlistid>v1</varlistid>
+<seqno>2</seqno>
+<fieldid>V2</fieldid>
+</varlists>
+</banffProcessor>

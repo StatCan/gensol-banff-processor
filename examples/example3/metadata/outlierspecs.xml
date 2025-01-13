@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<Root xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+<outlierspecs>
+<specid>spec63053</specid>
+<method>CURRENT</method>
+<mei>10</mei>
+<mdm>0.05</mdm>
+<exponent>0.5</exponent>
+<minobs>10</minobs>
+<varid>VARvlist443500</varid>
+<withid>WITHvlist443500</withid>
+<side>BOTH</side>
+<acceptzero>N</acceptzero>
+</outlierspecs>
+<outlierspecs>
+<specid>spec63052</specid>
+<method>HISTORIC - TWO DATASETS</method>
+<mei>10</mei>
+<mdm>0.05</mdm>
+<exponent>0.5</exponent>
+<minobs>10</minobs>
+<varid>VARvlist443481</varid>
+<withid>WITHvlist443481</withid>
+<side>BOTH</side>
+<acceptzero>N</acceptzero>
+</outlierspecs>
+<outlierspecs>
+<specid>spec63054</specid>
+<method>RATIO - ONE DATASET</method>
+<mei>10</mei>
+<mdm>0.05</mdm>
+<exponent>0.5</exponent>
+<minobs>10</minobs>
+<varid>VARvlist443519</varid>
+<withid>WITHvlist443519</withid>
+<side>BOTH</side>
+<acceptzero>N</acceptzero>
+</outlierspecs>
+<outlierspecs>
+<specid>spec63055</specid>
+<method>RATIO - ONE DATASET</method>
+<mei>10</mei>
+<mdm>0.05</mdm>
+<exponent>0.5</exponent>
+<minobs>10</minobs>
+<varid>VARvlist443538</varid>
+<withid>WITHvlist443538</withid>
+<side>BOTH</side>
+<acceptzero>N</acceptzero>
+</outlierspecs>
+<outlierspecs>
+<specid>spec63056</specid>
+<method>RATIO - ONE DATASET</method>
+<mei>10</mei>
+<mdm>0.05</mdm>
+<exponent>0.5</exponent>
+<minobs>10</minobs>
+<varid>VARvlist443557</varid>
+<withid>WITHvlist443557</withid>
+<side>BOTH</side>
+<acceptzero>N</acceptzero>
+</outlierspecs>
+</Root>

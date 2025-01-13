@@ -1,0 +1,5 @@
+{
+	"job_id": "j1",
+	"process_output_type": "custom",
+	"save_format": [".csv", ".parq"]
+}

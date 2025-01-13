@@ -1,0 +1,8 @@
+ident,FIELDID,status,jobid,seqno
+REC01,V1,IPR,,
+REC02,V2,FTE,,
+REC03,V1,FTI,,
+REC04,V1,FTI,,
+REC05,V2,FTI,,
+REC06,V2,FTI,filter_row_and_column,2.0
+REC07,V1,FTI,,

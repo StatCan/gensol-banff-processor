@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<banffProcessor>
+<expressions>
+<expressionid>expr1</expressionid>
+<expressions>strat in (6,7,8,9)</expressions>
+</expressions>
+</banffProcessor>

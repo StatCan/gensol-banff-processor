@@ -1,0 +1,31 @@
+name: GitHub Main
+
+on:  
+  push:
+    branches:
+      - main
+      - github
+    paths-ignore:
+      - '**.md'
+      - 'docs/**'
+  pull_request:
+    branches:
+      - main
+      - github
+    paths-ignore:
+      - '**.md'
+      - 'docs/**'
+
+jobs:
+  scan:   
+    uses: ./.github/workflows/scan.yml    
+
+  build:
+    needs: scan
+    uses: ./.github/workflows/build.yml  
+ 
+  test:
+    needs: build
+    uses: ./.github/workflows/test.yml
+    secrets:
+      GH_PAT: ${{ secrets.GH_PAT }}   

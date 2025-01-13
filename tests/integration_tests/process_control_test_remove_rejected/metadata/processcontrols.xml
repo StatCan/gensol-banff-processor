@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<banffProcessor>
+<processcontrols>
+<controlid>TEST_1</controlid>
+<targetfile>indata</targetfile>
+<parameter>exclude_rejected</parameter>
+<value>True</value>
+</processcontrols>
+</banffProcessor>

@@ -1,0 +1,9 @@
+{
+	"job_id": "filter_row_and_column",
+	"unit_id": "ident",
+	"indata_filename": "indata.parq",
+	"output_folder": "out_filter_row_and_column",
+	"user_plugins_folder": "../../../examples/plugins",
+	"save_format": [".parq", ".csv"],
+	"log_level": 2
+}

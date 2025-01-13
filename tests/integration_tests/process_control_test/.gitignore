@@ -1,0 +1,2 @@
+# Override root because this test's plugin isn't in the plugin repository
+!plugins/*

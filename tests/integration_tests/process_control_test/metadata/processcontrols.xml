@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<banffProcessor>
+<processcontrols>
+<controlid>TEST_1</controlid>
+<targetfile>indata</targetfile>
+<parameter>row_filter</parameter>
+<value>V1 &gt; 10</value>
+</processcontrols>
+<processcontrols>
+<controlid>TEST_2</controlid>
+<targetfile>indata</targetfile>
+<parameter>column_filter</parameter>
+<value>IDENT, AREA, V1</value>
+</processcontrols>
+<processcontrols>
+<controlid>TEST_3</controlid>
+<parameter>edit_group_filter</parameter>
+</processcontrols>
+</banffProcessor>

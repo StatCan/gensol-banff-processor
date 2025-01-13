@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<banffProcessor>
+<expressions>
+<expressionid>expr1</expressionid>
+<expressions>V2=18</expressions>
+</expressions>
+<expressions>
+<expressionid>expr2</expressionid>
+<expressions>V1=18</expressions>
+</expressions>
+</banffProcessor>

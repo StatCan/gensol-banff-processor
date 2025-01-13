@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<banffProcessor>
+<jobs>
+<jobid>j1</jobid>
+<seqno>20</seqno>
+<process>estimator</process>
+<specid>estimator_spec1</specid>
+</jobs>
+</banffProcessor>

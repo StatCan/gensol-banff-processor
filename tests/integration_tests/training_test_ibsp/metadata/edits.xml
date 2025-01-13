@@ -1,0 +1,999 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<banffProcessor>
+<edits>
+<editid>EDT1</editid>
+<leftside>F43008</leftside>
+<operator>&gt;=</operator>
+<rightside>0</rightside>
+</edits>
+<edits>
+<editid>EDT2</editid>
+<leftside>F45801</leftside>
+<operator>&gt;=</operator>
+<rightside>0</rightside>
+</edits>
+<edits>
+<editid>EDT3</editid>
+<leftside>F45701</leftside>
+<operator>&gt;=</operator>
+<rightside>0</rightside>
+</edits>
+<edits>
+<editid>EDT4</editid>
+<leftside>F47101</leftside>
+<operator>&gt;=</operator>
+<rightside>0</rightside>
+</edits>
+<edits>
+<editid>EDT5</editid>
+<leftside>F47201</leftside>
+<operator>&gt;=</operator>
+<rightside>0</rightside>
+</edits>
+<edits>
+<editid>EDT6</editid>
+<leftside>F51101</leftside>
+<operator>&gt;=</operator>
+<rightside>0</rightside>
+</edits>
+<edits>
+<editid>EDT7</editid>
+<leftside>F51201</leftside>
+<operator>&gt;=</operator>
+<rightside>0</rightside>
+</edits>
+<edits>
+<editid>EDT8</editid>
+<leftside>F51301</leftside>
+<operator>&gt;=</operator>
+<rightside>0</rightside>
+</edits>
+<edits>
+<editid>EDT9</editid>
+<leftside>F40000</leftside>
+<operator>&gt;=</operator>
+<rightside>0</rightside>
+</edits>
+<edits>
+<editid>EDT10</editid>
+<leftside>F47001</leftside>
+<operator>&gt;=</operator>
+<rightside>0</rightside>
+</edits>
+<edits>
+<editid>EDT12</editid>
+<leftside>F61501</leftside>
+<operator>&gt;=</operator>
+<rightside>0</rightside>
+</edits>
+<edits>
+<editid>EDT13</editid>
+<leftside>F61502</leftside>
+<operator>&gt;=</operator>
+<rightside>0</rightside>
+</edits>
+<edits>
+<editid>EDT14</editid>
+<leftside>F61601</leftside>
+<operator>&gt;=</operator>
+<rightside>0</rightside>
+</edits>
+<edits>
+<editid>EDT15</editid>
+<leftside>F61801</leftside>
+<operator>&gt;=</operator>
+<rightside>0</rightside>
+</edits>
+<edits>
+<editid>EDT16</editid>
+<leftside>F61802</leftside>
+<operator>&gt;=</operator>
+<rightside>0</rightside>
+</edits>
+<edits>
+<editid>EDT17</editid>
+<leftside>F61901</leftside>
+<operator>&gt;=</operator>
+<rightside>0</rightside>
+</edits>
+<edits>
+<editid>EDT18</editid>
+<leftside>F62001</leftside>
+<operator>&gt;=</operator>
+<rightside>0</rightside>
+</edits>
+<edits>
+<editid>EDT19</editid>
+<leftside>F62101</leftside>
+<operator>&gt;=</operator>
+<rightside>0</rightside>
+</edits>
+<edits>
+<editid>EDT20</editid>
+<leftside>F62201</leftside>
+<operator>&gt;=</operator>
+<rightside>0</rightside>
+</edits>
+<edits>
+<editid>EDT21</editid>
+<leftside>F62301</leftside>
+<operator>&gt;=</operator>
+<rightside>0</rightside>
+</edits>
+<edits>
+<editid>EDT22</editid>
+<leftside>F62401</leftside>
+<operator>&gt;=</operator>
+<rightside>0</rightside>
+</edits>
+<edits>
+<editid>EDT23</editid>
+<leftside>F62503</leftside>
+<operator>&gt;=</operator>
+<rightside>0</rightside>
+</edits>
+<edits>
+<editid>EDT24</editid>
+<leftside>F62504</leftside>
+<operator>&gt;=</operator>
+<rightside>0</rightside>
+</edits>
+<edits>
+<editid>EDT25</editid>
+<leftside>F62505</leftside>
+<operator>&gt;=</operator>
+<rightside>0</rightside>
+</edits>
+<edits>
+<editid>EDT26</editid>
+<leftside>F62511</leftside>
+<operator>&gt;=</operator>
+<rightside>0</rightside>
+</edits>
+<edits>
+<editid>EDT27</editid>
+<leftside>F62601</leftside>
+<operator>&gt;=</operator>
+<rightside>0</rightside>
+</edits>
+<edits>
+<editid>EDT28</editid>
+<leftside>F69101</leftside>
+<operator>&gt;=</operator>
+<rightside>0</rightside>
+</edits>
+<edits>
+<editid>EDT29</editid>
+<leftside>F61514</leftside>
+<operator>&gt;=</operator>
+<rightside>0</rightside>
+</edits>
+<edits>
+<editid>EDT30</editid>
+<leftside>F62506</leftside>
+<operator>&gt;=</operator>
+<rightside>0</rightside>
+</edits>
+<edits>
+<editid>EDT31</editid>
+<leftside>F62507</leftside>
+<operator>&gt;=</operator>
+<rightside>0</rightside>
+</edits>
+<edits>
+<editid>EDT32</editid>
+<leftside>F62508</leftside>
+<operator>&gt;=</operator>
+<rightside>0</rightside>
+</edits>
+<edits>
+<editid>EDT33</editid>
+<leftside>F62509</leftside>
+<operator>&gt;=</operator>
+<rightside>0</rightside>
+</edits>
+<edits>
+<editid>EDT34</editid>
+<leftside>F60000</leftside>
+<operator>&gt;=</operator>
+<rightside>0</rightside>
+</edits>
+<edits>
+<editid>EDT37</editid>
+<leftside>F61101</leftside>
+<operator>&gt;=</operator>
+<rightside>0</rightside>
+</edits>
+<edits>
+<editid>EDT38</editid>
+<leftside>F61001</leftside>
+<operator>&gt;=</operator>
+<rightside>0</rightside>
+</edits>
+<edits>
+<editid>EDT57</editid>
+<leftside>F47001 + F51201 + F51101</leftside>
+<operator>&gt;=</operator>
+<rightside>0.9 * F40000</rightside>
+</edits>
+<edits>
+<editid>EDT60</editid>
+<leftside>F47001 + F51201 + F51101</leftside>
+<operator>&lt;=</operator>
+<rightside>1.1 * F40000</rightside>
+</edits>
+<edits>
+<editid>EDT63</editid>
+<leftside>F43008 + F45801 + F45701 + F47101 + F47201 + F51301</leftside>
+<operator>&gt;=</operator>
+<rightside>0.9 * F47001</rightside>
+</edits>
+<edits>
+<editid>EDT66</editid>
+<leftside>F43008 + F45801 + F45701 + F47101 + F47201 + F51301</leftside>
+<operator>&lt;=</operator>
+<rightside>1.1 * F47001</rightside>
+</edits>
+<edits>
+<editid>EDT93</editid>
+<leftside>F62503 + F62601 + F61801 + F62505 + F61802 + F61901 + F62001 + F62101 + F62201 + F61601 + F62301 + F62507 + F62508 + F62511 + F61514 + F62401 + F62504</leftside>
+<operator>&gt;=</operator>
+<rightside>0.9 * F61001</rightside>
+</edits>
+<edits>
+<editid>EDT94</editid>
+<leftside>F62503 + F62601 + F61801 + F62505 + F61802 + F61901 + F62001 + F62101 + F62201 + F61601 + F62301 + F62507 + F62508 + F62511 + F61514 + F62401 + F62504</leftside>
+<operator>&lt;=</operator>
+<rightside>1.1 * F61001</rightside>
+</edits>
+<edits>
+<editid>EDT97</editid>
+<leftside>F61101 + F61001 + F69101 + F62509 + F62506</leftside>
+<operator>&gt;=</operator>
+<rightside>0.9 * F60000</rightside>
+</edits>
+<edits>
+<editid>EDT98</editid>
+<leftside>F61101 + F61001 + F69101 + F62509 + F62506</leftside>
+<operator>&lt;=</operator>
+<rightside>1.1 * F60000</rightside>
+</edits>
+<edits>
+<editid>EDT49</editid>
+<leftside>F61101 + F61001 + F69101 + F62509 + F62506</leftside>
+<operator>=</operator>
+<rightside>F60000</rightside>
+</edits>
+<edits>
+<editid>EDT42</editid>
+<leftside>F47001 + F51201 + F51101</leftside>
+<operator>=</operator>
+<rightside>F40000</rightside>
+</edits>
+<edits>
+<editid>EDT11</editid>
+<leftside>F61306</leftside>
+<operator>&gt;=</operator>
+<rightside>0</rightside>
+</edits>
+<edits>
+<editid>EDT35</editid>
+<leftside>F61206</leftside>
+<operator>&gt;=</operator>
+<rightside>0</rightside>
+</edits>
+<edits>
+<editid>EDT36</editid>
+<leftside>F61406</leftside>
+<operator>&gt;=</operator>
+<rightside>0</rightside>
+</edits>
+<edits>
+<editid>EDT41</editid>
+<leftside>F43008 + F45801 + F45701 + F47101 + F47201 + F51301</leftside>
+<operator>=</operator>
+<rightside>F47001</rightside>
+</edits>
+<edits>
+<editid>EDT44</editid>
+<leftside>F61501 + F61502</leftside>
+<operator>=</operator>
+<rightside>F61514</rightside>
+</edits>
+<edits>
+<editid>EDT48</editid>
+<leftside>F61514 + F62503 + F62601 + F61801 + F62505 + F61802 + F61901 + F62001 + F62101 + F62201 + F61601 + F62301 + F62507 + F62508 + F62511 + F62401 + F62504</leftside>
+<operator>=</operator>
+<rightside>F61001</rightside>
+</edits>
+<edits>
+<editid>EDT182</editid>
+<leftside>F43008_c1</leftside>
+<operator>&gt;=</operator>
+<rightside>0</rightside>
+</edits>
+<edits>
+<editid>EDT183</editid>
+<leftside>F43008_c2</leftside>
+<operator>&gt;=</operator>
+<rightside>0</rightside>
+</edits>
+<edits>
+<editid>EDT184</editid>
+<leftside>F43008_c3</leftside>
+<operator>&gt;=</operator>
+<rightside>0</rightside>
+</edits>
+<edits>
+<editid>EDT185</editid>
+<leftside>F43008_c4</leftside>
+<operator>&gt;=</operator>
+<rightside>0</rightside>
+</edits>
+<edits>
+<editid>EDT186</editid>
+<leftside>F43406</leftside>
+<operator>&gt;=</operator>
+<rightside>0</rightside>
+</edits>
+<edits>
+<editid>EDT166</editid>
+<leftside>F43406 + F43008_c4</leftside>
+<operator>&gt;=</operator>
+<rightside>0.9 * F43580</rightside>
+</edits>
+<edits>
+<editid>EDT169</editid>
+<leftside>F43406 + F43008_c4</leftside>
+<operator>&lt;=</operator>
+<rightside>1.1 * F43580</rightside>
+</edits>
+<edits>
+<editid>EDT172</editid>
+<leftside>F43008_c1 + F43008_c2 + F43008_c3</leftside>
+<operator>&gt;=</operator>
+<rightside>0.9 * F43406</rightside>
+</edits>
+<edits>
+<editid>EDT175</editid>
+<leftside>F43008_c1 + F43008_c2 + F43008_c3</leftside>
+<operator>&lt;=</operator>
+<rightside>1.1 * F43406</rightside>
+</edits>
+<edits>
+<editid>EDT189</editid>
+<leftside>F43406 + F43008_c4</leftside>
+<operator>=</operator>
+<rightside>F43580</rightside>
+</edits>
+<edits>
+<editid>EDT190</editid>
+<leftside>F43008_c1 + F43008_c2 + F43008_c3</leftside>
+<operator>=</operator>
+<rightside>F43406</rightside>
+</edits>
+<edits>
+<editid>EDT191</editid>
+<leftside>F43008_g1</leftside>
+<operator>&gt;=</operator>
+<rightside>0</rightside>
+</edits>
+<edits>
+<editid>EDT192</editid>
+<leftside>F43008_g2</leftside>
+<operator>&gt;=</operator>
+<rightside>0</rightside>
+</edits>
+<edits>
+<editid>EDT193</editid>
+<leftside>F43008_g3</leftside>
+<operator>&gt;=</operator>
+<rightside>0</rightside>
+</edits>
+<edits>
+<editid>EDT194</editid>
+<leftside>F43008_g4</leftside>
+<operator>&gt;=</operator>
+<rightside>0</rightside>
+</edits>
+<edits>
+<editid>EDT195</editid>
+<leftside>F43008_g5</leftside>
+<operator>&gt;=</operator>
+<rightside>0</rightside>
+</edits>
+<edits>
+<editid>EDT196</editid>
+<leftside>F43008_g6</leftside>
+<operator>&gt;=</operator>
+<rightside>0</rightside>
+</edits>
+<edits>
+<editid>EDT197</editid>
+<leftside>F43008_g7</leftside>
+<operator>&gt;=</operator>
+<rightside>0</rightside>
+</edits>
+<edits>
+<editid>EDT198</editid>
+<leftside>F43008_g8</leftside>
+<operator>&gt;=</operator>
+<rightside>0</rightside>
+</edits>
+<edits>
+<editid>EDT199</editid>
+<leftside>F43008_g9</leftside>
+<operator>&gt;=</operator>
+<rightside>0</rightside>
+</edits>
+<edits>
+<editid>EDT200</editid>
+<leftside>F43008_g10</leftside>
+<operator>&gt;=</operator>
+<rightside>0</rightside>
+</edits>
+<edits>
+<editid>EDT201</editid>
+<leftside>F43008_g11</leftside>
+<operator>&gt;=</operator>
+<rightside>0</rightside>
+</edits>
+<edits>
+<editid>EDT202</editid>
+<leftside>F43008_g12</leftside>
+<operator>&gt;=</operator>
+<rightside>0</rightside>
+</edits>
+<edits>
+<editid>EDT203</editid>
+<leftside>F43008_g13</leftside>
+<operator>&gt;=</operator>
+<rightside>0</rightside>
+</edits>
+<edits>
+<editid>EDT204</editid>
+<leftside>F43008_g14</leftside>
+<operator>&gt;=</operator>
+<rightside>0</rightside>
+</edits>
+<edits>
+<editid>EDT205</editid>
+<leftside>F43008_g15</leftside>
+<operator>&gt;=</operator>
+<rightside>0</rightside>
+</edits>
+<edits>
+<editid>EDT206</editid>
+<leftside>F43407</leftside>
+<operator>&gt;=</operator>
+<rightside>0</rightside>
+</edits>
+<edits>
+<editid>EDT207</editid>
+<leftside>F43408</leftside>
+<operator>&gt;=</operator>
+<rightside>0</rightside>
+</edits>
+<edits>
+<editid>EDT220</editid>
+<leftside>F43407 + F43408</leftside>
+<operator>&lt;=</operator>
+<rightside>1.1 * F43600</rightside>
+</edits>
+<edits>
+<editid>EDT221</editid>
+<leftside>F43008_g1 + F43008_g2 + F43008_g3 + F43008_g4 + F43008_g5 + F43008_g6 + F43008_g7 + F43008_g8 + F43008_g9 + F43008_g10 + F43008_g11 + F43008_g12 + F43008_g13</leftside>
+<operator>&gt;=</operator>
+<rightside>0.9 * F43407</rightside>
+</edits>
+<edits>
+<editid>EDT222</editid>
+<leftside>F43008_g1 + F43008_g2 + F43008_g3 + F43008_g4 + F43008_g5 + F43008_g6 + F43008_g7 + F43008_g8 + F43008_g9 + F43008_g10 + F43008_g11 + F43008_g12 + F43008_g13</leftside>
+<operator>&lt;=</operator>
+<rightside>1.1 * F43407</rightside>
+</edits>
+<edits>
+<editid>EDT223</editid>
+<leftside>F43008_g14 + F43008_g15</leftside>
+<operator>&gt;=</operator>
+<rightside>0.9 * F43408</rightside>
+</edits>
+<edits>
+<editid>EDT224</editid>
+<leftside>F43008_g14 + F43008_g15</leftside>
+<operator>&lt;=</operator>
+<rightside>1.1 * F43408</rightside>
+</edits>
+<edits>
+<editid>EDT225</editid>
+<leftside>F43407 + F43408</leftside>
+<operator>&gt;=</operator>
+<rightside>0.9 * F43600</rightside>
+</edits>
+<edits>
+<editid>EDT429</editid>
+<leftside>F43407</leftside>
+<operator>=</operator>
+<rightside>F43406</rightside>
+</edits>
+<edits>
+<editid>EDT430</editid>
+<leftside>F43408</leftside>
+<operator>=</operator>
+<rightside>F43008_c4</rightside>
+</edits>
+<edits>
+<editid>EDT227</editid>
+<leftside>F43407 + F43408</leftside>
+<operator>=</operator>
+<rightside>F43600</rightside>
+</edits>
+<edits>
+<editid>EDT228</editid>
+<leftside>F43008_g1 + F43008_g2 + F43008_g3 + F43008_g4 + F43008_g5 + F43008_g6 + F43008_g7 + F43008_g8 + F43008_g9 + F43008_g10 + F43008_g11 + F43008_g12 + F43008_g13</leftside>
+<operator>=</operator>
+<rightside>F43407</rightside>
+</edits>
+<edits>
+<editid>EDT230</editid>
+<leftside>F43008_g14 + F43008_g15</leftside>
+<operator>=</operator>
+<rightside>F43408</rightside>
+</edits>
+<edits>
+<editid>EDT1468</editid>
+<leftside>F43166</leftside>
+<operator>&gt;=</operator>
+<rightside>0</rightside>
+</edits>
+<edits>
+<editid>EDT1469</editid>
+<leftside>F43167</leftside>
+<operator>&gt;=</operator>
+<rightside>0</rightside>
+</edits>
+<edits>
+<editid>EDT1470</editid>
+<leftside>F43168</leftside>
+<operator>&gt;=</operator>
+<rightside>0</rightside>
+</edits>
+<edits>
+<editid>EDT1471</editid>
+<leftside>F43171</leftside>
+<operator>&gt;=</operator>
+<rightside>0</rightside>
+</edits>
+<edits>
+<editid>EDT1462</editid>
+<leftside>F43166 + F43167 + F43168 + F43171</leftside>
+<operator>&gt;=</operator>
+<rightside>0.9 * F43130</rightside>
+</edits>
+<edits>
+<editid>EDT1463</editid>
+<leftside>F43166 + F43167 + F43168 + F43171</leftside>
+<operator>&lt;=</operator>
+<rightside>1.1 * F43130</rightside>
+</edits>
+<edits>
+<editid>EDT1472</editid>
+<leftside>F43166 + F43167 + F43168 + F43171</leftside>
+<operator>=</operator>
+<rightside>F43130</rightside>
+</edits>
+<edits>
+<editid>EDT1477</editid>
+<leftside>F43011</leftside>
+<operator>&gt;=</operator>
+<rightside>0</rightside>
+</edits>
+<edits>
+<editid>EDT1502</editid>
+<leftside>F43012</leftside>
+<operator>&gt;=</operator>
+<rightside>0</rightside>
+</edits>
+<edits>
+<editid>EDT1503</editid>
+<leftside>F43610</leftside>
+<operator>&gt;=</operator>
+<rightside>0</rightside>
+</edits>
+<edits>
+<editid>EDT1504</editid>
+<leftside>F43012</leftside>
+<operator>&lt;=</operator>
+<rightside>F43011</rightside>
+</edits>
+<edits>
+<editid>EDT1505</editid>
+<leftside>F43011 + F43610</leftside>
+<operator>&gt;=</operator>
+<rightside>0.9 * F43008</rightside>
+</edits>
+<edits>
+<editid>EDT1506</editid>
+<leftside>F43011 + F43610</leftside>
+<operator>&lt;=</operator>
+<rightside>1.1 * F43008</rightside>
+</edits>
+<edits>
+<editid>EDT1510</editid>
+<leftside>F43006_pc1_pd15</leftside>
+<operator>&gt;=</operator>
+<rightside>0</rightside>
+</edits>
+<edits>
+<editid>EDT1511</editid>
+<leftside>F43006_pc5_pd21</leftside>
+<operator>&gt;=</operator>
+<rightside>0</rightside>
+</edits>
+<edits>
+<editid>EDT1512</editid>
+<leftside>F43006_pc1_pd16</leftside>
+<operator>&gt;=</operator>
+<rightside>0</rightside>
+</edits>
+<edits>
+<editid>EDT1513</editid>
+<leftside>F43006_pc10_pd1</leftside>
+<operator>&gt;=</operator>
+<rightside>0</rightside>
+</edits>
+<edits>
+<editid>EDT1514</editid>
+<leftside>F43006_pc11_pd1</leftside>
+<operator>&gt;=</operator>
+<rightside>0</rightside>
+</edits>
+<edits>
+<editid>EDT1515</editid>
+<leftside>F43006_pc11_pd2</leftside>
+<operator>&gt;=</operator>
+<rightside>0</rightside>
+</edits>
+<edits>
+<editid>EDT1516</editid>
+<leftside>F43006_pc11_pd3</leftside>
+<operator>&gt;=</operator>
+<rightside>0</rightside>
+</edits>
+<edits>
+<editid>EDT1517</editid>
+<leftside>F43006_pc3_pd19</leftside>
+<operator>&gt;=</operator>
+<rightside>0</rightside>
+</edits>
+<edits>
+<editid>EDT1518</editid>
+<leftside>F43006_pc3_pd20</leftside>
+<operator>&gt;=</operator>
+<rightside>0</rightside>
+</edits>
+<edits>
+<editid>EDT1519</editid>
+<leftside>F43006_pc5_pd18</leftside>
+<operator>&gt;=</operator>
+<rightside>0</rightside>
+</edits>
+<edits>
+<editid>EDT1520</editid>
+<leftside>F43006_pc5_pd19</leftside>
+<operator>&gt;=</operator>
+<rightside>0</rightside>
+</edits>
+<edits>
+<editid>EDT1521</editid>
+<leftside>F43006_pc5_pd20</leftside>
+<operator>&gt;=</operator>
+<rightside>0</rightside>
+</edits>
+<edits>
+<editid>EDT1522</editid>
+<leftside>F43006_pc8_pd12</leftside>
+<operator>&gt;=</operator>
+<rightside>0</rightside>
+</edits>
+<edits>
+<editid>EDT1525</editid>
+<leftside>F43006_pc1_pd15 + F43006_pc1_pd16 + F43006_pc3_pd19 + F43006_pc3_pd20 + F43006_pc5_pd18 + F43006_pc5_pd19 + F43006_pc5_pd20 + F43006_pc5_pd21 + F43006_pc8_pd12 + F43006_pc10_pd1 + F43006_pc11_pd1 + F43006_pc11_pd2 + F43006_pc11_pd3</leftside>
+<operator>&gt;=</operator>
+<rightside>0.9 * F43610</rightside>
+</edits>
+<edits>
+<editid>EDT1526</editid>
+<leftside>F43006_pc1_pd15 + F43006_pc1_pd16 + F43006_pc3_pd19 + F43006_pc3_pd20 + F43006_pc5_pd18 + F43006_pc5_pd19 + F43006_pc5_pd20 + F43006_pc5_pd21 + F43006_pc8_pd12 + F43006_pc10_pd1 + F43006_pc11_pd1 + F43006_pc11_pd2 + F43006_pc11_pd3</leftside>
+<operator>&lt;=</operator>
+<rightside>1.1 * F43610</rightside>
+</edits>
+<edits>
+<editid>EDT1509</editid>
+<leftside>F43006_pc1_pd15 + F43006_pc1_pd16 + F43006_pc3_pd19 + F43006_pc3_pd20 + F43006_pc5_pd18 + F43006_pc5_pd19 + F43006_pc5_pd20 + F43006_pc5_pd21 + F43006_pc8_pd12 + F43006_pc10_pd1 + F43006_pc11_pd1 + F43006_pc11_pd2 + F43006_pc11_pd3</leftside>
+<operator>=</operator>
+<rightside>F43610</rightside>
+</edits>
+<edits>
+<editid>EDT1523</editid>
+<leftside>F43011 + F43610</leftside>
+<operator>=</operator>
+<rightside>F43008</rightside>
+</edits>
+<edits>
+<editid>EDT58</editid>
+<leftside>F47001 + F51201 + F51101</leftside>
+<operator>&gt;=</operator>
+<rightside>0.7 * F40000</rightside>
+</edits>
+<edits>
+<editid>EDT61</editid>
+<leftside>F47001 + F51201 + F51101</leftside>
+<operator>&lt;=</operator>
+<rightside>1.3 * F40000</rightside>
+</edits>
+<edits>
+<editid>EDT64</editid>
+<leftside>F43008 + F45801 + F45701 + F47101 + F47201 + F51301</leftside>
+<operator>&gt;=</operator>
+<rightside>0.7 * F47001</rightside>
+</edits>
+<edits>
+<editid>EDT67</editid>
+<leftside>F43008 + F45801 + F45701 + F47101 + F47201 + F51301</leftside>
+<operator>&lt;=</operator>
+<rightside>1.3 * F47001</rightside>
+</edits>
+<edits>
+<editid>EDT95</editid>
+<leftside>F62503 + F62601 + F61801 + F62505 + F61802 + F61901 + F62001 + F62101 + F62201 + F61601 + F62301 + F62507 + F62508 + F62511 + F61514 + F62401 + F62504</leftside>
+<operator>&gt;=</operator>
+<rightside>0.7 * F61001</rightside>
+</edits>
+<edits>
+<editid>EDT96</editid>
+<leftside>F62503 + F62601 + F61801 + F62505 + F61802 + F61901 + F62001 + F62101 + F62201 + F61601 + F62301 + F62507 + F62508 + F62511 + F61514 + F62401 + F62504</leftside>
+<operator>&lt;=</operator>
+<rightside>1.3 * F61001</rightside>
+</edits>
+<edits>
+<editid>EDT99</editid>
+<leftside>F61101 + F61001 + F69101 + F62509 + F62506</leftside>
+<operator>&gt;=</operator>
+<rightside>0.7 * F60000</rightside>
+</edits>
+<edits>
+<editid>EDT100</editid>
+<leftside>F61101 + F61001 + F69101 + F62509 + F62506</leftside>
+<operator>&lt;=</operator>
+<rightside>1.3 * F60000</rightside>
+</edits>
+<edits>
+<editid>EDT59</editid>
+<leftside>F47001 + F51201 + F51101</leftside>
+<operator>&gt;=</operator>
+<rightside>0.5 * F40000</rightside>
+</edits>
+<edits>
+<editid>EDT62</editid>
+<leftside>F47001 + F51201 + F51101</leftside>
+<operator>&lt;=</operator>
+<rightside>1.5 * F40000</rightside>
+</edits>
+<edits>
+<editid>EDT65</editid>
+<leftside>F43008 + F45801 + F45701 + F47101 + F47201 + F51301</leftside>
+<operator>&gt;=</operator>
+<rightside>0.5 * F47001</rightside>
+</edits>
+<edits>
+<editid>EDT68</editid>
+<leftside>F43008 + F45801 + F45701 + F47101 + F47201 + F51301</leftside>
+<operator>&lt;=</operator>
+<rightside>1.5 * F47001</rightside>
+</edits>
+<edits>
+<editid>EDT101</editid>
+<leftside>F61101 + F61001 + F69101 + F62509 + F62506</leftside>
+<operator>&gt;=</operator>
+<rightside>0.5 * F60000</rightside>
+</edits>
+<edits>
+<editid>EDT102</editid>
+<leftside>F61101 + F61001 + F69101 + F62509 + F62506</leftside>
+<operator>&lt;=</operator>
+<rightside>1.5 * F60000</rightside>
+</edits>
+<edits>
+<editid>EDT103</editid>
+<leftside>F62503 + F62601 + F61801 + F62505 + F61802 + F61901 + F62001 + F62101 + F62201 + F61601 + F62301 + F62507 + F62508 + F62511 + F61514 + F62401 + F62504</leftside>
+<operator>&gt;=</operator>
+<rightside>0.5 * F61001</rightside>
+</edits>
+<edits>
+<editid>EDT104</editid>
+<leftside>F62503 + F62601 + F61801 + F62505 + F61802 + F61901 + F62001 + F62101 + F62201 + F61601 + F62301 + F62507 + F62508 + F62511 + F61514 + F62401 + F62504</leftside>
+<operator>&lt;=</operator>
+<rightside>1.5 * F61001</rightside>
+</edits>
+<edits>
+<editid>EDT167</editid>
+<leftside>F43406 + F43008_c4</leftside>
+<operator>&gt;=</operator>
+<rightside>0.7 * F43580</rightside>
+</edits>
+<edits>
+<editid>EDT170</editid>
+<leftside>F43406 + F43008_c4</leftside>
+<operator>&lt;=</operator>
+<rightside>1.3 * F43580</rightside>
+</edits>
+<edits>
+<editid>EDT173</editid>
+<leftside>F43008_c1 + F43008_c2 + F43008_c3</leftside>
+<operator>&gt;=</operator>
+<rightside>0.7 * F43406</rightside>
+</edits>
+<edits>
+<editid>EDT176</editid>
+<leftside>F43008_c1 + F43008_c2 + F43008_c3</leftside>
+<operator>&lt;=</operator>
+<rightside>1.3 * F43406</rightside>
+</edits>
+<edits>
+<editid>EDT168</editid>
+<leftside>F43406 + F43008_c4</leftside>
+<operator>&gt;=</operator>
+<rightside>0.5 * F43580</rightside>
+</edits>
+<edits>
+<editid>EDT171</editid>
+<leftside>F43406 + F43008_c4</leftside>
+<operator>&lt;=</operator>
+<rightside>1.5 * F43580</rightside>
+</edits>
+<edits>
+<editid>EDT174</editid>
+<leftside>F43008_c1 + F43008_c2 + F43008_c3</leftside>
+<operator>&gt;=</operator>
+<rightside>0.5 * F43406</rightside>
+</edits>
+<edits>
+<editid>EDT177</editid>
+<leftside>F43008_c1 + F43008_c2 + F43008_c3</leftside>
+<operator>&lt;=</operator>
+<rightside>1.5 * F43406</rightside>
+</edits>
+<edits>
+<editid>EDT214</editid>
+<leftside>F43407 + F43408</leftside>
+<operator>&lt;=</operator>
+<rightside>1.3 * F43600</rightside>
+</edits>
+<edits>
+<editid>EDT215</editid>
+<leftside>F43008_g1 + F43008_g2 + F43008_g3 + F43008_g4 + F43008_g5 + F43008_g6 + F43008_g7 + F43008_g8 + F43008_g9 + F43008_g10 + F43008_g11 + F43008_g12 + F43008_g13</leftside>
+<operator>&gt;=</operator>
+<rightside>0.7 * F43407</rightside>
+</edits>
+<edits>
+<editid>EDT216</editid>
+<leftside>F43008_g1 + F43008_g2 + F43008_g3 + F43008_g4 + F43008_g5 + F43008_g6 + F43008_g7 + F43008_g8 + F43008_g9 + F43008_g10 + F43008_g11 + F43008_g12 + F43008_g13</leftside>
+<operator>&lt;=</operator>
+<rightside>1.3 * F43407</rightside>
+</edits>
+<edits>
+<editid>EDT217</editid>
+<leftside>F43008_g14 + F43008_g15</leftside>
+<operator>&gt;=</operator>
+<rightside>0.7 * F43408</rightside>
+</edits>
+<edits>
+<editid>EDT218</editid>
+<leftside>F43008_g14 + F43008_g15</leftside>
+<operator>&lt;=</operator>
+<rightside>1.3 * F43408</rightside>
+</edits>
+<edits>
+<editid>EDT219</editid>
+<leftside>F43407 + F43408</leftside>
+<operator>&gt;=</operator>
+<rightside>0.7 * F43600</rightside>
+</edits>
+<edits>
+<editid>EDT208</editid>
+<leftside>F43407 + F43408</leftside>
+<operator>&lt;=</operator>
+<rightside>1.5 * F43600</rightside>
+</edits>
+<edits>
+<editid>EDT209</editid>
+<leftside>F43008_g1 + F43008_g2 + F43008_g3 + F43008_g4 + F43008_g5 + F43008_g6 + F43008_g7 + F43008_g8 + F43008_g9 + F43008_g10 + F43008_g11 + F43008_g12 + F43008_g13</leftside>
+<operator>&gt;=</operator>
+<rightside>0.5 * F43407</rightside>
+</edits>
+<edits>
+<editid>EDT210</editid>
+<leftside>F43008_g1 + F43008_g2 + F43008_g3 + F43008_g4 + F43008_g5 + F43008_g6 + F43008_g7 + F43008_g8 + F43008_g9 + F43008_g10 + F43008_g11 + F43008_g12 + F43008_g13</leftside>
+<operator>&lt;=</operator>
+<rightside>1.5 * F43407</rightside>
+</edits>
+<edits>
+<editid>EDT211</editid>
+<leftside>F43008_g14 + F43008_g15</leftside>
+<operator>&gt;=</operator>
+<rightside>0.5 * F43408</rightside>
+</edits>
+<edits>
+<editid>EDT212</editid>
+<leftside>F43008_g14 + F43008_g15</leftside>
+<operator>&lt;=</operator>
+<rightside>1.5 * F43408</rightside>
+</edits>
+<edits>
+<editid>EDT213</editid>
+<leftside>F43407 + F43408</leftside>
+<operator>&gt;=</operator>
+<rightside>0.5 * F43600</rightside>
+</edits>
+<edits>
+<editid>EDT1464</editid>
+<leftside>F43166 + F43167 + F43168 + F43171</leftside>
+<operator>&gt;=</operator>
+<rightside>0.7 * F43130</rightside>
+</edits>
+<edits>
+<editid>EDT1465</editid>
+<leftside>F43166 + F43167 + F43168 + F43171</leftside>
+<operator>&lt;=</operator>
+<rightside>1.3 * F43130</rightside>
+</edits>
+<edits>
+<editid>EDT1466</editid>
+<leftside>F43166 + F43167 + F43168 + F43171</leftside>
+<operator>&gt;=</operator>
+<rightside>0.5 * F43130</rightside>
+</edits>
+<edits>
+<editid>EDT1467</editid>
+<leftside>F43166 + F43167 + F43168 + F43171</leftside>
+<operator>&lt;=</operator>
+<rightside>1.5 * F43130</rightside>
+</edits>
+<edits>
+<editid>EDT1507</editid>
+<leftside>F43011 + F43610</leftside>
+<operator>&gt;=</operator>
+<rightside>0.7 * F43008</rightside>
+</edits>
+<edits>
+<editid>EDT1508</editid>
+<leftside>F43011 + F43610</leftside>
+<operator>&lt;=</operator>
+<rightside>1.3 * F43008</rightside>
+</edits>
+<edits>
+<editid>EDT1527</editid>
+<leftside>F43006_pc1_pd15 + F43006_pc1_pd16 + F43006_pc3_pd19 + F43006_pc3_pd20 + F43006_pc5_pd18 + F43006_pc5_pd19 + F43006_pc5_pd20 + F43006_pc5_pd21 + F43006_pc8_pd12 + F43006_pc10_pd1 + F43006_pc11_pd1 + F43006_pc11_pd2 + F43006_pc11_pd3</leftside>
+<operator>&gt;=</operator>
+<rightside>0.7 * F43610</rightside>
+</edits>
+<edits>
+<editid>EDT1528</editid>
+<leftside>F43006_pc1_pd15 + F43006_pc1_pd16 + F43006_pc3_pd19 + F43006_pc3_pd20 + F43006_pc5_pd18 + F43006_pc5_pd19 + F43006_pc5_pd20 + F43006_pc5_pd21 + F43006_pc8_pd12 + F43006_pc10_pd1 + F43006_pc11_pd1 + F43006_pc11_pd2 + F43006_pc11_pd3</leftside>
+<operator>&lt;=</operator>
+<rightside>1.3 * F43610</rightside>
+</edits>
+<edits>
+<editid>EDT40</editid>
+<leftside>F47001:n + F51201 + F51101</leftside>
+<operator>=</operator>
+<rightside>F40000</rightside>
+</edits>
+<edits>
+<editid>EDT50</editid>
+<leftside>F61101:n + F61001:n + F69101 + F62509 + F62506</leftside>
+<operator>=</operator>
+<rightside>F60000</rightside>
+</edits>
+</banffProcessor>

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<banffProcessor>
+<donorspecs>
+<specid>donorimputation_spec1</specid>
+<mindonors>1</mindonors>
+<pcentdonors>1</pcentdonors>
+<n>3</n>
+<eligdon>any</eligdon>
+<dataexclvar>toexcl</dataexclvar>
+<posteditgroupid>eg2</posteditgroupid>
+</donorspecs>
+</banffProcessor>

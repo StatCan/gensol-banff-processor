@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<banffProcessor>
+<jobs>
+<jobid>j1</jobid>
+<seqno>1</seqno>
+<process>donorimp</process>
+<specid>donorimputation_spec1</specid>
+<editgroupid>eg1</editgroupid>
+<byid>v1</byid>
+</jobs>
+</banffProcessor>

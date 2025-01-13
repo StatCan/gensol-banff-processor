@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<banffProcessor>
+<jobs>
+<jobid>Ex_errorloc</jobid>
+<seqno>10</seqno>
+<process>errorloc</process>
+<specid>errorloc_spec1</specid>
+<editgroupid>eg2</editgroupid>
+<byid>v1</byid>
+<acceptnegative>y</acceptnegative>
+</jobs>
+</banffProcessor>

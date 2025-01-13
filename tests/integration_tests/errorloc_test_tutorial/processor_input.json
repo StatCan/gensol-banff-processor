@@ -1,0 +1,10 @@
+{
+	"job_id": "Ex_errorloc",
+	"unit_id": "ident",
+	"indata_filename": "current.parq",
+	"histdata_filename": "historical.parq",
+	"seed": 1,
+	"save_format": [".parq", ".csv"],
+	"log_level": 2,
+	"process_output_type": 3
+}
