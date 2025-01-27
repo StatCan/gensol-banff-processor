@@ -5,14 +5,17 @@ Les contrôles de processus et les blocs de processus sont de nouvelles fonction
 Voir [Contrôles de processus](./processor-user-guide.md#controles-de-processus) et [Blocs de processus](./processor-user-guide.md#blocs-de-processus) dans le guide général.
 
 Un processus dans une tâche du processeur Banff a généralement deux entrées principales:
+
 - InData (fichier imputé): la cible principale du processus d'édition de données statistiques, composée de microdonnées avec un identifiant d'enregistrement unique (unit_id).
 - InStatus (fichier d'état): indicateurs d'état, identifiés par les identifiants d'enregistrement et de champ.
 
 Une fois un processus terminé, il existe généralement deux sorties principales:
+
 - OutData: un ensemble de données contenant des données imputées. Il s'agit d'un sous-ensemble d'InData. Pour des raisons d'efficacité, cet ensemble de données n'a besoin que des lignes et des colonnes qui ont été modifiées au cours du processus.
 - OutStatus: un ensemble de données contenant le champ dont le statut a été modifié par le processus. Il ne doit inclure que les modifications.
 
 Tout au long du processus, trois ensembles de données clés sont constamment mis à jour:
+
 - Le fichier imputé (InData) est initialement une copie des microdonnées d'origine, mais est mis à jour avec OutData après chaque processus.
 - Le fichier d'état (InStatus) est initialement une copie de l'ensemble de données d'origine (si fourni) mais est mis à jour avec OutStatus après chaque processus.
 - Le journal d'état est ajouté à OutStatus pour fournir un journal de processus permettant de suivre l'évolution du statut d'un champ tout au long du processus.
@@ -22,7 +25,6 @@ Le diagramme suivant illustre le flux typique de données entrant et sortant d'u
 ![ProcessFilters](images/Banff_DataFlow_ProcessFilter.jpg)
 
 Notez que InData et InStatus sont les principaux ensembles de données d'entrée, mais d'autres ensembles de données d'entrée peuvent exister et des contrôles de processus peuvent leur être appliqués. De même, les étapes de processus peuvent générer des ensembles de données supplémentaires.
-
 
 ## L'approche traditionnelle
 
@@ -39,16 +41,17 @@ S'ils veulent appliquer un deuxième filtre au sein d'un filtre existant, ceux-c
 ![NestedFilter](images/FilterNested.jpg)
 
 Cette approche comporte des risques et des inconvénients:
+
 - Erreur humaine: une erreur dans les programmes personnalisés, si elle n'est pas gérée correctement, affectera le fichier de données pour TOUTES les étapes restantes, et pas seulement les étapes entre les programmes personnalisés.
 - Suivi: les utilisateurs doivent suivre manuellement le démarrage et l'arrêt d'un programme personnalisé, afin de garantir que les données sont rajoutées au bon moment.
 - Organisation: lorsqu'on examine une étape individuelle, le filtre n'est pas évident, sans d'abord parcourir les étapes du processus de haut en bas.
-
 
 ### Blocs de processus
 
 La fonctionnalité Bloc de processus est essentiellement la capacité d'appeler une tâche à partir d'une tâche. Cela permet d'appliquer efficacement un contrôle de processus à plusieurs étapes.
 
 L'exemple de tâche `Principal` apparaît comme une tâche linéaire avec 26 étapes. Cependant, le flux de processus contient de nombreux blocs individuels qui exécutent différentes fonctions d'édition de données. Cela pose des problèmes lorsque:
+
 - Différents utilisateurs doivent travailler sur différents blocs séparément, en ajoutant, en supprimant ou en réorganisant des étapes.
 
 - Les utilisateurs peuvent vouloir tester des blocs d'étapes séparément des autres.
@@ -64,6 +67,7 @@ Voici le même flux de processus utilisant ces nouvelles fonctionnalités:
 ![AfterProcessBlocks](images/AfterProcessBlocks.jpg)
   
 Dans ce cas, l'utilisateur a divisé le même ensemble d'étapes en cinq blocs:
+
 - Main: le processus principal, avec des étapes de haut niveau
 - EGG_IMPUTATION: un sous-travail axé sur l'imputation des fermes d'œufs
 - DAIRY_IMP: un sous-travail axé sur l'imputation des fermes laitières
@@ -99,11 +103,13 @@ Exécutez le bloc de processus (c'est-à-dire le sous-travail `EGG_IMPUTATION`) 
 1. Imputed_File est mis à jour avec OutData (référence de code)
 2. Status_File est mis à jour avec OutStatus (référence de code)
 3. Status_Log est ajouté à OutStatus
-- Mettez maintenant à jour les fichiers du travail d'origine (`MAIN`):
+
+Mettez maintenant à jour les fichiers du travail d'origine (`MAIN`):
+
 1. Main.Imputed_File est mis à jour avec EGG_IMPUTATION.Imputed_File
 2. Main.Status_File est mis à jour avec EGG_IMPUTATION.Status_File
 3. Main.Status_Log est ajouté à EGG_IMPUTATION.Status_Log
 
-# Conclusion
+## Conclusion
 
 Les contrôles de processus globaux et les blocs de processus peuvent aider à créer des stratégies d'imputation mieux conçues dans le processeur Banff, ce qui rend le travail plus facile à gérer, plus lisible et plus efficace. Bien que l'approche traditionnelle puisse toujours être utilisée, nous encourageons l'utilisation de ces nouvelles fonctionnalités. L'utilisation de ces nouvelles fonctionnalités pourrait avoir encore plus d'avantages à l'avenir, comme la prise en charge du traitement parallèle et une meilleure variance des résultats d'imputation.

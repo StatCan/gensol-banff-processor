@@ -21,7 +21,7 @@ The user guide often uses terminology from the [Generic Statistical Data Editing
 - [Metadata Generation Tool](#metadata-generation-tool)
 - [Input Parameters](#banff-processor-input-parameters)
 - [Executing the processor as a command line utility](#executing-the-processor-as-a-command-line-utility)
-- [Executing the processor from within a python process ](#executing-the-processor-from-within-a-python-process)
+- [Executing the processor from within a python process](#executing-the-processor-from-within-a-python-script)
 - [User Defined Procedures](#user-defined-procedures)
 - [Process Controls](#process-controls)
 - [Process Blocks](#process-blocks)
@@ -64,11 +64,11 @@ The following table defines a single job, "Main", which includes four process st
 | Main  | 10    |           | DONORIMP      | donor_specs  | edits_1    | by_list | Y              |
 | Main  | 99    |           | PRORATE       | pro_specs    | edits_2    |         | Y              |
 
-* Only the ordering of the sequence numbers (`seqno`) are important; they do not need to be sequential integers.
-* This job includes four process steps, run sequentially, consisting of four built-in Banff procedures: `errorloc`, `deterministic`, `donorimp`, and `prorate`.
-* The parameters `editgroupid`, `byid` and `acceptnegative`, which are common to many of the built-in Banff procedures, are included in the JOBS table.
-* Most procedures include mandatory and/or optional parameters that define exactly how the procedure should be executed. These are contained in additional metadata tables, and linked to specific process steps via the `specid` column. Procedures that do not have any additional parameters (beyond those included in the JOBS table) do not require a `specid`.
-* The `controlid` column is optional, and can be used to specify [Process Controls](#process-controls).
+- Only the ordering of the sequence numbers (`seqno`) are important; they do not need to be sequential integers.
+- This job includes four process steps, run sequentially, consisting of four built-in Banff procedures: `errorloc`, `deterministic`, `donorimp`, and `prorate`.
+- The parameters `editgroupid`, `byid` and `acceptnegative`, which are common to many of the built-in Banff procedures, are included in the JOBS table.
+- Most procedures include mandatory and/or optional parameters that define exactly how the procedure should be executed. These are contained in additional metadata tables, and linked to specific process steps via the `specid` column. Procedures that do not have any additional parameters (beyond those included in the JOBS table) do not require a `specid`.
+- The `controlid` column is optional, and can be used to specify [Process Controls](#process-controls).
 
 Additional examples can be found [here](../../examples).
 
@@ -81,17 +81,21 @@ Metadata stored in the [Banff Processor Template](../../banffprocessor_template.
 ```shell
 banffconvert "\path\to\your\excel_metadata.xlsx" -o "\my\output\directory" -l fr
 ```
+
 or:
+
 ```shell
 banffconvert "\path\to\your\excel_metadata.xlsx" --outdir="\my\output\directory" --lang en
 ```
 
 Alternatively to run as a module:
+
 ```shell
 python -m banffprocessor.util.metadata_excel_to_xml "\path\to\your\excel_metadata.xlsx" -o "\my\output\directory"
 ```
-* __NOTE__: The '-o'/'--outdir' parameter is optional. If it is not provided the conversion tool will save XML files to the same directory as the input file.
-* __NOTE__: The '-l'/'--lang' parameter is optional. Valid values include en and fr, if not specified, the default is set to en.
+
+- __NOTE__: The '-o'/'--outdir' parameter is optional. If it is not provided the conversion tool will save XML files to the same directory as the input file.
+- __NOTE__: The '-l'/'--lang' parameter is optional. Valid values include en and fr, if not specified, the default is set to en.
 
 Finally, the tool can be included and ran directly in a python script:
 
@@ -139,7 +143,7 @@ Example JSON input file:
     "instatus_filename": "instatus.parq",
     "user_plugins_folder": "C:\\path\\to\\my\\plugins",
     "metadata_folder": "C:\\path\\to\\xml\\metadata",
-	"output_folder": "my_output_subfolder",
+    "output_folder": "my_output_subfolder",
     "process_output_type": "All",
     "seed": 1234,
     "no_by_stats": "N",
@@ -173,27 +177,32 @@ input_params = ProcessorInput(job_id="j1",
 my_bp = Processor(input_params)
 ```
 
-Notes: 
-* All folder locations may be given as absolute filepaths or relative to the input folder (either the location of the input .json file or the supplied input_folder parameter if creating inputs inline as demonstrated above).
-  * This input_folder location is also used as the default location for other files required by the processor should no value be provided for them, such as metadata, input data files and user-defined procedures
-* File paths must have any backslashes `\` escaped by replacing them with a double-backslash `\\`. For example, `C:\this\is\a\filepath` would become `C:\\this\\is\\a\\filepath`
-* Fields that are not required to run the procedures outlined in your jobs file can be omitted or left empty
-* The `CSV` format has been included for testing purposes and is not intended for production, parquet is currently the recommended format for production for reasons related to accuracy, performance and efficiency
-  
+Notes:
 
+- All folder locations may be given as absolute filepaths or relative to the input folder (either the location of the input .json file or the supplied input_folder parameter if creating inputs inline as demonstrated above).
+  - This input_folder location is also used as the default location for other files required by the processor should no value be provided for them, such as metadata, input data files and user-defined procedures
+- File paths must have any backslashes `\` escaped by replacing them with a double-backslash `\\`. For example, `C:\this\is\a\filepath` would become `C:\\this\\is\\a\\filepath`
+- Fields that are not required to run the procedures outlined in your jobs file can be omitted or left empty
+- The `CSV` format has been included for testing purposes and is not intended for production, parquet is currently the recommended format for production for reasons related to accuracy, performance and efficiency
+  
 ## Executing the processor as a command line utility
+
 With the banffprocessor package installed in your python environment, the processor can be run with the following command:
+
 ```shell
 banffprocessor "\path\to\your\processor_input.json" -l fr
 ```
+
 Alternatively to run as a module:
+
 ```shell
 python -m banffprocessor.processor "\path\to\your\processor_input.json" --lang fr
 ```
 
-* __NOTE__: The '-l'/'--lang' parameter is optional. Valid values include en and fr, if not specified, the default is set to en.
+- __NOTE__: The '-l'/'--lang' parameter is optional. Valid values include en and fr, if not specified, the default is set to en.
 
 ### Executing the processor from within a python script
+
 ```python
 import banffprocessor
 
@@ -206,6 +215,7 @@ bp.save_outputs()
 ```
 
 Alternatively, you may load your input data files programmatically as Pandas DataFrames:
+
 ```python
 from banffprocessor.processor import Processor
 import pandas as pd
@@ -222,10 +232,12 @@ bp.save_outputs()
 ```
 
 ## User-Defined Procedures
+
 In addition to the standard Banff Procedures automatically integrated into the processor, you may also include your own `.py` files implementing custom procedures. By default the Processor will look for python files placed in a `\plugins` subfolder in the same location as your input JSON file. Alternatively you may provide a specific location to load plugins from in the `user_plugins_folder` parameter of your input JSON file. You may provide as many plugin files as needed for your job, and each plugin file may contain as many procedure classes as you wish so long as each class is registered in a `register()` method.
 
 Your plugin must define a class that implements the `ProcedureInterface` protocol which is found in the package's source files at 
 `\src\banffprocessor\procedures\procedure_interface.py`. Your implementing class must have the exact same attribute names and function signatures as the interface does. Here is an example of a plugin that implements the protocol:
+
 ```python
 class MyProcClass:
     
@@ -268,16 +280,16 @@ def register(factory) -> None:
     #factory.register(["myproc", "also_myproc"], MyProcClass)
 ```
 
-* When your `execute()` is complete, the processor automatically updates the *status_file* and/or *imputed_file* with the contents of the corresponding *outstatus*/*outdata* datasets, if you have set one.
-    * This operation is unable to add or remove data from your *imputed_file*, it can only update existing records. If you have a need to add or remove data from *imputed_file* you must do so in your plugin and set `processor_data.indata` to point to your updated data. This will log a warning in your log file, but it can be ignored if this was intended.
+- When your `execute()` is complete, the processor automatically updates the *status_file* and/or *imputed_file* with the contents of the corresponding *outstatus*/*outdata* datasets, if you have set one.
+  - This operation is unable to add or remove data from your *imputed_file*, it can only update existing records. If you have a need to add or remove data from *imputed_file* you must do so in your plugin and set `processor_data.indata` to point to your updated data. This will log a warning in your log file, but it can be ignored if this was intended.
 
-* Additionally, the processor automatically appends any other datasets you output from a custom plugin to a single "cumulative" version if the process_output_type is set to "All" or "Custom" and the dataset name is specified in a ProcessOutput metadata entry for that custom plugin
+- Additionally, the processor automatically appends any other datasets you output from a custom plugin to a single "cumulative" version if the process_output_type is set to "All" or "Custom" and the dataset name is specified in a ProcessOutput metadata entry for that custom plugin
 
-* The `execute()` method is marked as a classmethod, which means it is first argument `cls` is a reference to `MyProcClass`. It also has a second argument `processor_data` which is an object of type `ProcessorData` (the definition of which can be found in `src\banffprocessor\processor_data.py`). This object includes input files, output files (from previously ran procedures and the current procedure), metadata and parameters from your input JSON file.
-    * Your `execute()` method should also return an `int` representing the return code of the plugin. Any non-0 number indicates that the plugin did not complete successfully and that the processor should stop processing subsequent steps in the imputation stategy, alternately an exception can be raised.
+- The `execute()` method is marked as a classmethod, which means it is first argument `cls` is a reference to `MyProcClass`. It also has a second argument `processor_data` which is an object of type `ProcessorData` (the definition of which can be found in `src\banffprocessor\processor_data.py`). This object includes input files, output files (from previously ran procedures and the current procedure), metadata and parameters from your input JSON file.
+  - Your `execute()` method should also return an `int` representing the return code of the plugin. Any non-0 number indicates that the plugin did not complete successfully and that the processor should stop processing subsequent steps in the imputation stategy, alternately an exception can be raised.
 
-* Finally your plugin's module must implement a `register()` function, outside of any class definitions in your plugin file. This function has one parameter `factory`. The function must call the `register()` function of the factory object, providing the name of your procedure as it will appear in your metadata and the name of the class that implements it. Though one plugin per file is recommended, if you have multiple classes in the same file that implement the Banff Procedure Interface, you can register all of them using the same register function. Just include a `factory.register(...)` call for each plugin procedure you would like to register.
-    * __NOTE__: The name registered to the factory is the same name that you will provide in your Jobs entries as the name of the `process`. Process names are not case sensitive.
+- Finally your plugin's module must implement a `register()` function, outside of any class definitions in your plugin file. This function has one parameter `factory`. The function must call the `register()` function of the factory object, providing the name of your procedure as it will appear in your metadata and the name of the class that implements it. Though one plugin per file is recommended, if you have multiple classes in the same file that implement the Banff Procedure Interface, you can register all of them using the same register function. Just include a `factory.register(...)` call for each plugin procedure you would like to register.
+  - __NOTE__: The name registered to the factory is the same name that you will provide in your Jobs entries as the name of the `process`. Process names are not case sensitive.
 
 For an example of a job that includes a user-defined procedure see `banffprocessor\banff-processor\tests\integration_tests\udp_test` with the plugin located in `\plugins\my_plugin.py`.
 
@@ -301,30 +313,31 @@ All process controls with the specified `controlid` are applied to their respect
 
 One controlid may be used as many times as needed per-`targetfile`. If a controlid is repeated for the same `targetfile` AND `parameter` then the `value` for those controls is combined into one. This is intended to allow more modularity in control sets as individual parts of multi-part conditions can be interchanged as desired without affecting the other parts.
 
-### Control Types:
-- ROW_FILTER 
-    - Filters `targetfile` using an SQL WHERE clause
-    - `value` - The SQL condition which can include column names and/or table names (exactly as shown in [available table names](#available-table-names))
-    - If `controlid`, `targetfile` and `parameter` are repeated for more than one entry, the conditions in their `value` fields are joined by `AND`
+### Control Types
+
+- ROW_FILTER
+  - Filters `targetfile` using an SQL WHERE clause
+  - `value` - The SQL condition which can include column names and/or table names (exactly as shown in [available table names](#available-table-names))
+  - If `controlid`, `targetfile` and `parameter` are repeated for more than one entry, the conditions in their `value` fields are joined by `AND`
 - COLUMN_FILTER (can apply multiple for one ID, column name lists are combined into one)
-    - Filters `targetfile`'s to remove columns that don't appear in the list in the `value` field
-    - `value` - A comma-separated list of column names to KEEP in `targetfile`
-    - If `controlid`, `targetfile` and `parameter` are repeated for more than one entry, the column lists in their `value` fields are combined
+  - Filters `targetfile`'s to remove columns that don't appear in the list in the `value` field
+  - `value` - A comma-separated list of column names to KEEP in `targetfile`
+  - If `controlid`, `targetfile` and `parameter` are repeated for more than one entry, the column lists in their `value` fields are combined
 - EXCLUDE_REJECTED
-    - Filters `targetfile` by removing any entries with a `unit_id` that appears in the `outreject` table
-    - `value` - The text 'True' or 'False', indicating if the control should be applied or not
-    - For one `controlid`, only one EXCLUDE_REJECTED control may be used per-`targetfile`
-    - __NOTE__ Errorloc and Prorate each produce slightly `outreject` files.
-        - Errorloc: `outreject`, produced by the current errorloc call, overwrites any existing `outreject` file. The contents of `outreject` are also appended to `outreject_all`.
-        - Prorate: The contents of the `outreject` dataset produced by the current prorate call are appended to `outreject_all` and also appended to the existing `outreject` dataset (or just set as the `outreject` table if one does not yet exist).
+  - Filters `targetfile` by removing any entries with a `unit_id` that appears in the `outreject` table
+  - `value` - The text 'True' or 'False', indicating if the control should be applied or not
+  - For one `controlid`, only one EXCLUDE_REJECTED control may be used per-`targetfile`
+  - __NOTE__ Errorloc and Prorate each produce slightly `outreject` files.
+    - Errorloc: `outreject`, produced by the current errorloc call, overwrites any existing `outreject` file. The contents of `outreject` are also appended to `outreject_all`.
+    - Prorate: The contents of the `outreject` dataset produced by the current prorate call are appended to `outreject_all` and also appended to the existing `outreject` dataset (or just set as the `outreject` table if one does not yet exist).
 - EDIT_GROUP_FILTER
-    - Filters `instatus` by removing any entries with an `editgroupid` matching the current job step OR any entries that were produced by an Outlier step with a status value of `FTI` or `FTE`
-    - `value` and `targetfile` fields should not be given for this control type
-    - Replaces existing SAS functionality where this filter was automatically applied prior to executing a `DonorImputation` or `Deterministic` proc
+  - Filters `instatus` by removing any entries with an `editgroupid` matching the current job step OR any entries that were produced by an Outlier step with a status value of `FTI` or `FTE`
+  - `value` and `targetfile` fields should not be given for this control type
+  - Replaces existing SAS functionality where this filter was automatically applied prior to executing a `DonorImputation` or `Deterministic` proc
 
-* __NOTE__: Column names from your original input files should be referenced in their original case, those that are created or added by the Processor should be in ALL-CAPS.
+- __NOTE__: Column names from your original input files should be referenced in their original case, those that are created or added by the Processor should be in ALL-CAPS.
 
-### Available Table Names:
+### Available Table Names
 
 |Table Name|Notes|
 |--|--|
@@ -351,7 +364,7 @@ One controlid may be used as many times as needed per-`targetfile`. If a control
 - Optional datasets are only available during execution and saved to disk if the input parameter process_output_type is set to "All" (2) or the dataset's name is specified in a ProcessOutput metadata table entry for the process producing it and process_output_type is set to "Custom" (3)
 - Either the table name or its alias may be used, both refer to the same table and data
 - The indata and instatus files are always available
-    - If instatus is the first step in a job that doesn't provide an instatus file to start with, it is not available to be used in a filter for the first step, though it is available in subsequent steps
+  - If instatus is the first step in a job that doesn't provide an instatus file to start with, it is not available to be used in a filter for the first step, though it is available in subsequent steps
 - Any procedure-specific file is not available to reference until a job step for that procedure has run in a preceding step, and only if the file referenced is produced according to the `process_output_type`
 - All files will have the columns SEQNO and JOBID added. These can be filtered to obtain data from a specific job step.
 
@@ -359,11 +372,11 @@ One controlid may be used as many times as needed per-`targetfile`. If a control
 
 __Note__: Process Blocks are a new feature introduced in version 2.0.0 of the Python processor. 
 
-A job in the Banff Processor is a collection of Jobs metadata table entries, all joined by a common job identifier (jobid) and processed sequentially according to the sequence number (seqno). Only a single job is specified when executing the processor, which is done by specifying the `job_id` input parameter. A Process Block is essentially a job called from within a job. Process Blocks organize jobs into sub-jobs with the following goals: 
+A job in the Banff Processor is a collection of Jobs metadata table entries, all joined by a common job identifier (jobid) and processed sequentially according to the sequence number (seqno). Only a single job is specified when executing the processor, which is done by specifying the `job_id` input parameter. A Process Block is essentially a job called from within a job. Process Blocks organize jobs into sub-jobs with the following goals:
 
 - to allow a process control to be associated with multiple job steps.
 - to allow the reuse of a sequence of steps that are repeated with different inputs.
-- to allow users to design and implement imputation strategies using a modular approach. This means that smaller jobs can be developed and tested in isolation rather than has one large job. 
+- to allow users to design and implement imputation strategies using a modular approach. This means that smaller jobs can be developed and tested in isolation rather than has one large job.
 
 Process blocks are used by setting the *process* field of a Jobs metadata table entry to `job` (rather than a traditional Banff procedure such as `prorate` or `donorimputation`) and setting the *specid* field to be the `jobid` of the process block that is to be run.
 
@@ -378,6 +391,7 @@ Process blocks can call other process blocks, providing further flexiblity. When
 |sub_job|2|*n/a*|donorimp|donorimp_spec1|*n/a*|*n/a*|*n/a*|
 
 For example, the Jobs table above would result in the execution of:
+
 1. prorate (sub_job, 1)
 2. donorimp (sub_job, 2)
 3. outlier (main_job, 2)
@@ -385,7 +399,6 @@ For example, the Jobs table above would result in the execution of:
 5. donorimp (sub_job, 2)
 
 A working example of a job with a Process Block can be found [here](../../examples/example4?ref_type=heads).
-
 
 ## Output
 
@@ -403,7 +416,8 @@ During operation, if no `output_folder` parameter is provided, the processor wil
 
 The output files from each procedure can be retained and saved. The Processor will automatically add the columns `JOBID` and `SEQNO` to the outputs. When an output with the same name is generated and retained, the processor will append these output datasets together and the datasets will need to be filtered by `JOBID` and `SEQNO` to limit the data to a specified processing step.
 
-**Minimal Outputs**
+#### Minimal Outputs
+
 |Data File|Description|
 |--|--|
 |imputed_file|This data file contains the final imputed current data.|
@@ -412,7 +426,8 @@ The output files from each procedure can be retained and saved. The Processor wi
 |outreject|This data file is generated by the ErrorLoc and Prorate procedures. It contains the identification of respondents that could not be processed and the reason why.|
 |time_store|This data file stores the start time, end time and duration of each processing step along with the cumulative execution time.|
 
-**Optional Outputs**
+#### Optional Outputs
+
 |Data File|Related Procedure|Description|
 |--|--|--|
 |outlier_status|Outlier|It contains the final status file including the additional variables from the `outlier_stats` option (which is always in effect in the Banff Processor).|
@@ -421,16 +436,17 @@ The output files from each procedure can be retained and saved. The Processor wi
 |outedits_reduced|EditStats|This data file contains the minimal set of edits.|
 |outedit_status|EditStats|This data file contains the counts of records that passed, missed and failed for each edit.|
 |outk_edits_status|EditStats|This data file contains the distribution of records that passed, missed and failed K edits.|
-outglobal_status|EditStats|This data file contains the overall counts of records that passed, missed and failed.|
-outedit_applic|EditStats|This data file contains the counts of edit applications of status pass, miss or fail that involve each field.|
-outvars_role|EditStats|This data file contains the counts of records of status pass, miss or fail for which field j contributed to the overall record status.|
+|outglobal_status|EditStats|This data file contains the overall counts of records that passed, missed and failed.|
+|outedit_applic|EditStats|This data file contains the counts of edit applications of status pass, miss or fail that involve each field.|
+|outvars_role|EditStats|This data file contains the counts of records of status pass, miss or fail for which field j contributed to the overall record status.|
 |outrand_err|Estimator|This dataset contains the random error report if at least one of the estimator specifications has the `RANDOMERROR` variable in the ESTIMATOR metadata table set to `Y`.|
 |outest_ef|Estimator|This dataset contains the report on the calculation of averages for estimator functions if at least one of the estimator specifications uses an estimator function (type EF).|
 |outest_parm|Estimator|This dataset contains the report on imputation statistics by estimator.|
 |outest_lr|Estimator|This dataset contains the report on the calculation of « beta » coefficients for linear regression estimators if at least one of the estimator specifications uses a linear regression (type LR).|
 |outacceptable|Estimator|This data file contains the report on acceptable observations retained to calculate the parameters for each estimator given in the specifications. This file can be large and can slow down execution.|
 
-**Notes**
+Notes:
+
 - Refer to the Banff Procedure User Guide for a full description of a file generated by a Banff Procedure.
 - Optional output files will be retained if process_output_type = `all` or if process_output_type = `custom` and the dataset name is specified in the ProcessOutputs metadata for the given process.
 - Plugins may output additional optional output files.

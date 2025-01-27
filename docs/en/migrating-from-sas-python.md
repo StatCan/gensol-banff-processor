@@ -83,22 +83,22 @@ In the SAS Processor, input data files were SAS datasets. There were essentially
 |--|--|
 |JOBS|Jobs has a new, optional element called controlid. This new column is used to link specifications in the process controls metadata. Also note that SEQNO can now have decimals, previously SEQNO could only be an integer.|
 |USERVARS|The structure has not changed.|
-EDITS|The structure has not changed. The syntax for edits has not changed.|
-EDITGROUPS|No changes.|
-VERIFYEDITSPECS|No changes.|
-OUTLIERSPECS|No changes.|
-ERRORLOCSPECS|No changes.|
-DONORSPECS|No changes.|
-ESTIMATORSPECS|No changes.|
-PRORATESPECS|No changes.|
-MASSIMPUTATIONSPECS|No changes.|
-ALGORITHMS|User-defined algorithms can no longer override the algorithms of built-in estimators, a new name needs to be chosen.|
-ESTIMATORS|No changes.|
-EXPRESSIONS|The structure has not changed. However, expressions are now based on SQLite as implemented in [duckdb](https://duckdb.org/docs/sql/expressions/overview). An example difference would be that string constants must be enclosed in single quotes as opposed to double quotes; `P53_05_1="1"` would need to be changed to  `P53_05_1='1'`.|
-VARLISTS|No changes.|
-WEIGHTS|No changes.|
-PROCESSCONTROLS|This is a new metadata file that is used to create process control specfications.|
-PROCESSOUTPUTS|This is a new metadata file that is used to control what outputs are kept. It is used when process_output_type='Custom'|
+|EDITS|The structure has not changed. The syntax for edits has not changed.|
+|EDITGROUPS|No changes.|
+|VERIFYEDITSPECS|No changes.|
+|OUTLIERSPECS|No changes.|
+|ERRORLOCSPECS|No changes.|
+|DONORSPECS|No changes.|
+|ESTIMATORSPECS|No changes.|
+|PRORATESPECS|No changes.|
+|MASSIMPUTATIONSPECS|No changes.|
+|ALGORITHMS|User-defined algorithms can no longer override the algorithms of built-in estimators, a new name needs to be chosen.|
+|ESTIMATORS|No changes.|
+|EXPRESSIONS|The structure has not changed. However, expressions are now based on SQLite as implemented in [duckdb](https://duckdb.org/docs/sql/expressions/overview). An example difference would be that string constants must be enclosed in single quotes as opposed to double quotes; `P53_05_1="1"` would need to be changed to  `P53_05_1='1'`.|
+|VARLISTS|No changes.|
+|WEIGHTS|No changes.|
+|PROCESSCONTROLS|This is a new metadata file that is used to create process control specfications.|
+|PROCESSOUTPUTS|This is a new metadata file that is used to control what outputs are kept. It is used when process_output_type='Custom'|
 
 ### User-defined Processes (UDPs)
 
@@ -110,7 +110,6 @@ In the Python Processor user-defined processes are commonly referred to as plugi
 |work.jobs| processor_data.dbconn.sql("select * from Banff.JOBS").to_arrow_table()|Instead of accessing metadata tables as SAS datasets in the SAS work library, metadata tables are accessible in a duckdb database through processor_data.dbconn.|
 |work.statusall|status_table = processor_data.get_dataset("status_file", table_format="arrow")|Instead of accessing data tables as SAS datasets in the SAS work library, datasets are accessible through the get_dataset function of processor_data. The dataset can be returned in arrow or pandas format. The set_dataset function can be used to save an output dataset.|
 
-
 ## Output files
 
 The SAS Processor was outputting an accumulative file with the suffix all. This suffix has been dropped.
@@ -118,7 +117,7 @@ The SAS Processor was outputting an accumulative file with the suffix all. This 
 |SAS|Python|Notes|
 |--|--|--|
 |imputedfile|imputed_file|This output remains the same.|
-|statusall|status_file|The columns on the status file have been reduced. The standard columns are the unit ID variable along with FIELDID,	STATUS,	VALUE,	JOBID and SEQNO. VALUE is a new column, editgroupid, outlierstatus and by-variables have been removed.|
+|statusall|status_file|The columns on the status file have been reduced. The standard columns are the unit ID variable along with FIELDID, STATUS, VALUE, JOBID and SEQNO. VALUE is a new column, editgroupid, outlierstatus and by-variables have been removed.|
 |cumulatifstatusall|status_log|Like the status file, the columns on this output have been standardized.|
 ||time_store|This is a new dataset which stores the start time, end time and duration of each processing step along with the accumulative execution time.|
 |acceptableall|outacceptable||
@@ -140,4 +139,4 @@ The SAS Processor was outputting an accumulative file with the suffix all. This 
 
 ## Conclusion
 
-For more information on how to use Banff and the Banff Processor, please consult the main user guides. Hopefully this information helps with the transition from version 1 to version 2. 
+For more information on how to use Banff and the Banff Processor, please consult the main user guides. Hopefully this information helps with the transition from version 1 to version 2.
