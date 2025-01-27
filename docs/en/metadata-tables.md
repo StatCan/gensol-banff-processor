@@ -3,43 +3,50 @@
 Overall, the Banff Processor uses 18 metadata tables, which can be classified as follows:
 
 Tables describing the overall process flow:
+
 * JOBS (required): Defines the overall process flow, including the process steps to execute and sequencing
 * PROCESSCONTROLS: Optional [Process Controls](./processor-user-guide.md#process-controls) give more control over individual process steps
 
 Tables defining process step parameters for built-in Banff procedures:
+
 * VERIFYEDITSPECS: Specifications for the `verifyedits` procedure
 * OUTLIERSPECS: Specifications for the `outlier` procedure
 * ERRORLOCSPECS: Specifications for the `errorloc` procedure
 * DONORSPECS: Specifications for the `donorimp` procedure
 * ESTIMATORSPECS: Specifications for the `estimator` procedure
-    - ESTIMATORS: Additional parameters for `inestimator` table
-    - ALGORITHMS: Additional parameters for `inalgorithm` table
+  * ESTIMATORS: Additional parameters for `inestimator` table
+  * ALGORITHMS: Additional parameters for `inalgorithm` table
 * PRORATESPECS: Specifications for the `prorate` procedure
 * MASSIMPUTATIONSPECS: Specifications for the `massimp` procedure
 
 Tables used to define edits, used by the `verifyedits`,`editstats`,`errorloc`,`deterministic`,`donorimp`, and `prorate` procedures:
+
 * EDITS: List of individual edits
 * EDITGROUPS: Combinations of edits referenced by individual process steps
 
 Parameters used by multiple procedures:
+
 * VARLISTS: Lists of variables and ordering
 * WEIGHTS: Weights, used by some procedures
 * EXPRESSIONS: Exclusion expressions used by some procedures
 
 Process step parameters for [User Defined Procedures](./processor-user-guide.md#user-defined-procedures):
+
 * USERVARS: Specifications for user-defined procedures (plugins)
 
 Data management:
+
 * PROCESSOUTPUTS: Specify which outputs should be saved from each procedure
 
 ## General notes
 
-- ID metadata fields such as jobid or controlid can be a maximum of 100 characters
-- Variable names on your input datasets can be to up 64 characters long.
-- Case sensitivity: Consistency must be maintained across metadata with respect to casing. This includes matching fields such as specID and controlID as well as variable names. 
-- Variable names need to respect the casing of the column names on the applicable input. In certain contexts 'income' and 'INCOME' may be considered different variables on a table but in others they are not. For example, the expressions metadata is case insensitive. For this reason it is recommended to not re-use column names simply with different casing and to respect casing across data and metadata files.
+* ID metadata fields such as jobid or controlid can be a maximum of 100 characters
+* Variable names on your input datasets can be to up 64 characters long.
+* Case sensitivity: Consistency must be maintained across metadata with respect to casing. This includes matching fields such as specID and controlID as well as variable names.
+* Variable names need to respect the casing of the column names on the applicable input. In certain contexts 'income' and 'INCOME' may be considered different variables on a table but in others they are not. For example, the expressions metadata is case insensitive. For this reason it is recommended to not re-use column names simply with different casing and to respect casing across data and metadata files.
 
 ## Jobs
+
 Define your statistical data editing process flows.
 
 |Column|Type|Primary Key|Foreign Key|Required|Description|
@@ -54,6 +61,7 @@ Define your statistical data editing process flows.
 |acceptnegative|string| | ||The acceptnegative column is used to indicate whether negative values are considered valid values or not by the process.  If not specified (left blank) or if the value is N, the accept negative option will not be specified, otherwise (if the value of the column is Y), the accept negative option will be set to True.|
 
 ## Process Controls
+
 Define specifications for Process Controls.
 
 |Column|Type|Primary Key|Foreign Key|Required|Description|
@@ -64,6 +72,7 @@ Define specifications for Process Controls.
 |value|string|||&#x2714;|The query (in SQL-lite syntax) to apply for this control. This field is not required and must be empty if parameter=EDIT_GROUP_FILTER.|
 
 ## Edits
+
 Define linear consistency edits to be used by the Banff procedures.
 
 |Column|Type|Primary Key|Foreign Key|Required|Description|
@@ -75,6 +84,7 @@ Define linear consistency edits to be used by the Banff procedures.
 |modifier|string||||The modifier value. The default value of PASS indicates that the equation must be True, FAIL can be specified to indicate that the equation must be false.<BR><BR>ACCEPTE and REJET are also valid values and can be used instead of PASS and FAIL respectively.|
 
 ## Edit groups
+
 Define sets of edits to be referenced by individual process steps.
 
 |Column|Type|Primary Key|Foreign Key|Required|Description|
@@ -83,6 +93,7 @@ Define sets of edits to be referenced by individual process steps.
 |editid|string|&#x2714;|&#x2714;|&#x2714;|ID used to identify the edit belonging to the group.|
 
 ## Expressions
+
 SQL expressions that are used to exclude donors from being processed in the `DonorImp` procedure or records to be used in calculations in the `Estimator` procedure.
 
 |Column|Type|Primary Key|Foreign Key|Required|Description|
@@ -91,6 +102,7 @@ SQL expressions that are used to exclude donors from being processed in the `Don
 |expressions|string|||&#x2714;|The SQL expression.|
 
 ## Uservars
+
 Define names and values of substitution variables in user-defined processes (plugins).
 
 |Column|Type|Primary Key|Foreign Key|Required|Description|
@@ -101,6 +113,7 @@ Define names and values of substitution variables in user-defined processes (plu
 |value|string|||&#x2714;|The value of the variable. For numeric values, convert the given string value to the desired format within the UDP using this variable.|
 
 ## Varlists
+
 Lists names of variables that are used in procedure statements that require a list of variable names.  All variable names in the `fieldid` column that have the same value of `varlistid` will be collected and used with the statement for which the list is created.  The variable `seqno` defines the order in which the variables will appear in the list. `seqno` is mandatory and is important especially for the BY statement.
 
 |Column|Type|Primary Key|Foreign Key|Required|Description|
@@ -110,6 +123,7 @@ Lists names of variables that are used in procedure statements that require a li
 |fieldid|string|||&#x2714;|ID used to identify this specific field within the varlist.|
 
 ## Weights
+
 Contains names of fields grouped by `weightid` and the value of the weight for each field.
 
 |Column|Type|Primary Key|Foreign Key|Required|Description|
@@ -119,6 +133,7 @@ Contains names of fields grouped by `weightid` and the value of the weight for e
 |weight|float|||&#x2714;|The weight value for the field.|
 
 ## Process Outputs
+
 Define which outputs are to be kept from each process type. The metadata is used when process_output_type is set to `custom`.
 
 |Column|Type|Primary Key|Foreign Key|Required|Description|
@@ -135,8 +150,8 @@ The following metadata tables are used to store input parameters for built-in Ba
 * ERRORLOCSPECS: Specifications for the `errorloc` procedure
 * DONORSPECS: Specifications for the `donorimp` procedure
 * ESTIMATORSPECS: Specifications for the `estimator` procedure
-    - ESTIMATORS: Additional parameters for `inestimator` table
-    - ALGORITHMS: Additional parameters for `inalgorithm` table
+  * ESTIMATORS: Additional parameters for `inestimator` table
+  * ALGORITHMS: Additional parameters for `inalgorithm` table
 * PRORATESPECS: Specifications for the `prorate` procedure
 * MASSIMPUTATIONSPECS: Specifications for the `massimp` procedure
 
@@ -153,6 +168,7 @@ print(Algorithms.get_schema())
 ```
 
 A *duckdb* database is used to store the metadata during processing and can be exported at the end of the process for debugging or informational purposes. The database connection can be accessed through the `dbconn` attribute of your Processor object as illustrated in the code snippet below:
+
 ```python
 my_bp = Processor.from_file(input_file)
 my_bp.dbconn.execute("EXPORT DATABASE '<path to folder to save exported files>'")
@@ -333,8 +349,3 @@ erDiagram
     PROCESSCONTROLS ||--}o JOBS : "Defines Process Controls"
     PROCESSOUTPUTS ||--}o JOBS : "Defines datasets to retain"
 ```
-
-Notes:
-* Casing is important when specifying metadata and writing custom plugins, variable names are case sensitive in various areas.
-* Expressions and Process Control `row_filter`s must use SQL syntax. SQL expression support is implemented using DuckDB. See their [documentation on expressions](https://duckdb.org/docs/sql/expressions/overview) for a complete guide of supported syntax.
-

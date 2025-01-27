@@ -26,7 +26,7 @@ En général, les fichiers de métadonnées XML de la version 1 sont compatibles
 
 2. Dans le processeur SAS, la bibliothèque de travail SAS était utilisée pour stocker et accéder aux ensembles de données temporaires. Dans Python, il existe quelques alternatives. En général, les données sont accessibles dans des processus définis par l'utilisateur (plugiciels) via l'objet ProcessorData, cependant, les développeurs de plugiciels peuvent choisir de stocker les fichiers de diagnostic dans un autre emplacement tel qu'une base de données duckdb ou un dossier approprié. L'utilisation de la bibliothèque tempfile est une option, mais elle enregistre les données dans le profil de l'utilisateur par défaut, ce qui peut ne pas être approprié dans certaines situations.
 
-3. Le processeur ne supprime plus automatiquement les enregistrements trouvés dans le fichier de rejet des données d'entrée d'une étape d'imputation. Si ce comportement est souhaité, le [contrôle de processus](./processor-user-guide.md#controle-de-processus) `exclude_rejected` peut être utilisé. Notez que les données rejetées sont accessibles dans un processus défini par l'utilisateur avec `processor_data.get_output_dataset("outreject")`.
+3. Le processeur ne supprime plus automatiquement les enregistrements trouvés dans le fichier de rejet des données d'entrée d'une étape d'imputation. Si ce comportement est souhaité, le [contrôle de processus](./processor-user-guide.md#contrôles-de-processus) `exclude_rejected` peut être utilisé. Notez que les données rejetées sont accessibles dans un processus défini par l'utilisateur avec `processor_data.get_output_dataset("outreject")`.
 
 4. Lors de l'appel de la procédure ErrorLoc, le statut des valeurs aberrantes n'est plus pris en compte, seules les valeurs marquées comme FTI dans le fichier de statut d'entrée. Si ce comportement est souhaité, un processus défini par l'utilisateur (plugiciels) peut être créé. Le plan à moyen terme serait de remplacer cette fonctionnalité par un contrôle/filtre de processus.
 
@@ -52,14 +52,14 @@ Les noms de paramètres ont été modifiés pour respecter les conventions de d�
 |custProgFref|user_plugins_folder||
 |flatfileFref||Supprimé du processeur Python car cette option était rarement utilisée.|
 |seed|seed||
-|logType|log_level|Le paramètre log_level fournit des fonctionnalités similaires à logType.|	
+|logType|log_level|Le paramètre log_level fournit des fonctionnalités similaires à logType.|
 |editstatsOutputType||Remplacé par process_output_type.|
 |estimatorOutputType||Remplacé par process_output_type.|
 |massImputOutputType||Remplacé par process_output_type.|
 |randnumvar|randnumvar||
 |genCode/fgenprog||N'est plus applicable, un code de programme n'est plus généré et exécuté.|
 |editGroupFilter||Remplacé par le contrôle de processus EDIT_GROUP_FILTER.|
-|tempLib||N'est plus applicable.|	
+|tempLib||N'est plus applicable.|
 |bpOptions||Ne sont plus applicables, ces options étaient TIME, KEEPTEMP et NOBYGRPSTATS.|
 ||save_format|Il s'agit d'une nouvelle option du processeur Python, le processeur SAS a produit des ensembles de données SAS. Parquet est actuellement le format d'enregistrement recommandé (.parq), CSV est fourni à des fins de test et de débogage.|
 
@@ -83,22 +83,22 @@ Dans le processeur SAS, les fichiers de données d'entrée étaient des ensemble
 |--|--|
 |JOBS|Jobs dispose d'un nouvel élément facultatif appelé controlid. Cette nouvelle colonne est utilisée pour lier les spécifications dans les métadonnées des contrôles de processus. Notez également que SEQNO peut désormais contenir des décimales, alors qu'auparavant SEQNO ne pouvait contenir qu'un entier.|
 |USERVARS|La structure n'a pas changé.|
-EDITS|La structure n'a pas changé. La syntaxe des modifications n'a pas changé.|
-EDITGROUPS|Aucun changement.|
-VERIFYEDITSPECS|Aucun changement.|
-OUTLIERSPECS|Aucun changement.|
-ERRORLOCSPECS|Aucun changement.|
-DONORSPECS|Aucun changement.|
-ESTIMATORSPECS|Aucun changement.|
-PRORATESPECS|Aucun changement.|
-MASSIMPUTATIONSPECS|Aucun changement.|
-ALGORITHMS|Les algorithmes définis par l'utilisateur ne peuvent plus remplacer les algorithmes des estimateurs intégrés, un nouveau nom doit être choisi.|
-ESTIMATORS|Aucun changement.|
-EXPRESSIONS|La structure n'a pas changé. Cependant, les expressions sont désormais basées sur SQLite tel qu'implémenté dans [duckdb](https://duckdb.org/docs/sql/expressions/overview). Une différence par exemple serait que les constantes de chaîne doivent être placées entre guillemets simples plutôt qu'entre guillemets doubles ; `P53_05_1="1"` devrait être remplacé par `P53_05_1='1'`.|
-VARLISTS|Aucun changement.|
-WEIGHTS|Aucun changement.|
-PROCESSCONTROLS|Il s'agit d'un nouveau fichier de métadonnées utilisé pour créer des spécifications de contrôle de processus.|
-PROCESSOUTPUTS|Il s'agit d'un nouveau fichier de métadonnées utilisé pour contrôler les sorties conservées. Il est utilisé lorsque process_output_type='Custom'|
+|EDITS|La structure n'a pas changé. La syntaxe des modifications n'a pas changé.|
+|EDITGROUPS|Aucun changement.|
+|VERIFYEDITSPECS|Aucun changement.|
+|OUTLIERSPECS|Aucun changement.|
+|ERRORLOCSPECS|Aucun changement.|
+|DONORSPECS|Aucun changement.|
+|ESTIMATORSPECS|Aucun changement.|
+|PRORATESPECS|Aucun changement.|
+|MASSIMPUTATIONSPECS|Aucun changement.|
+|ALGORITHMS|Les algorithmes définis par l'utilisateur ne peuvent plus remplacer les algorithmes des estimateurs intégrés, un nouveau nom doit être choisi.|
+|ESTIMATORS|Aucun changement.|
+|EXPRESSIONS|La structure n'a pas changé. Cependant, les expressions sont désormais basées sur SQLite tel qu'implémenté dans [duckdb](https://duckdb.org/docs/sql/expressions/overview). Une différence par exemple serait que les constantes de chaîne doivent être placées entre guillemets simples plutôt qu'entre guillemets doubles ; `P53_05_1="1"` devrait être remplacé par `P53_05_1='1'`.|
+|VARLISTS|Aucun changement.|
+|WEIGHTS|Aucun changement.|
+|PROCESSCONTROLS|Il s'agit d'un nouveau fichier de métadonnées utilisé pour créer des spécifications de contrôle de processus.|
+|PROCESSOUTPUTS|Il s'agit d'un nouveau fichier de métadonnées utilisé pour contrôler les sorties conservées. Il est utilisé lorsque process_output_type='Custom'|
 
 ### Processus définis par l'utilisateur (PDU)
 
