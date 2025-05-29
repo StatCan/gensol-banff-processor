@@ -2,7 +2,7 @@
 	"job_id": "j1",
 	"unit_id": "IDENT",
 	"indata_filename": "current.parq",
-	"histdata_filename": "historical.parq",
+	"indata_hist_filename": "historical.parq",
 	"user_plugins_folder": "../../../../examples/plugins",
 	"no_by_stats": "True",
 	"seed": 1,

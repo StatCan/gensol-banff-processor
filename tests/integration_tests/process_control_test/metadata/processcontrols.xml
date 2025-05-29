@@ -16,4 +16,10 @@
 <controlid>TEST_3</controlid>
 <parameter>edit_group_filter</parameter>
 </processcontrols>
+<processcontrols>
+<controlid>TEST_4</controlid>
+<targetfile>indata</targetfile>
+<parameter>row_filter</parameter>
+<value>ident in (SELECT ident FROM 'idents.csv')</value>
+</processcontrols>
 </banffProcessor>

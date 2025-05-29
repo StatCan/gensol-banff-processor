@@ -1,0 +1,25 @@
+==================================
+Banff Processor / Processeur Banff
+==================================
+
+User Documentation / Documentation utilisateur
+==============================================
+
+.. toctree::
+   :hidden:
+
+   English </en/index>
+   Français </fr/index>
+
+.. container:: button
+
+    :doc:`English </en/index>` :doc:`Français </fr/index>`
+
+Source Code Documentation / Documentation du code source
+========================================================
+
+* :ref:`genindex`
+* :ref:`modindex`
+
+
+* :ref:`search`

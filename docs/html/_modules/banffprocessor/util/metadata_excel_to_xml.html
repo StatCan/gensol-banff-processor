@@ -1,0 +1,612 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>banffprocessor.util.metadata_excel_to_xml &#8212; Banff Processor 2.0.2 documentation</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../../_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+<link href="../../../_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=8f2a1f02" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/custom.css?v=2a807888" />
+  
+  <!-- So that users can add custom icons -->
+  <script src="../../../_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
+<link rel="preload" as="script" href="../../../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
+
+    <script src="../../../_static/documentation_options.js?v=29701289"></script>
+    <script src="../../../_static/doctools.js?v=9bcbadda"></script>
+    <script src="../../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = '_modules/banffprocessor/util/metadata_excel_to_xml';</script>
+    <link rel="index" title="Index" href="../../../genindex" />
+    <link rel="search" title="Search" href="../../../search" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="../../../search"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class="col-lg-3 navbar-header-items__start">
+    
+      <div class="navbar-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../../../index">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../../_static/banff_white.png" class="logo__image only-light" alt="Banff Processor 2.0.2 documentation - Home"/>
+    <img src="../../../_static/banff_white.png" class="logo__image only-dark pst-js-only" alt="Banff Processor 2.0.2 documentation - Home"/>
+  
+  
+</a></div>
+    
+  </div>
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../en/index">
+    English
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../fr/index">
+    Français
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+        </div>
+      
+      
+        <div class="navbar-item">
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button></div>
+      
+        <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/StatCan/gensol-banff-processor" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fab fa-github fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+</ul></div>
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+    </div>
+  
+
+  
+</div>
+
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+        
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar hide-on-wide">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          
+          
+            <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../en/index">
+    English
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../fr/index">
+    Français
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+          
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button></div>
+        
+          <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/StatCan/gensol-banff-processor" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fab fa-github fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+</ul></div>
+        
+      </div>
+    
+  </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+<nav aria-label="Breadcrumb" class="d-print-none">
+  <ul class="bd-breadcrumbs">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="../../../index" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    
+    <li class="breadcrumb-item"><a href="../../index" class="nav-link">Module code</a></li>
+    
+    
+    <li class="breadcrumb-item"><a href="../../banffprocessor" class="nav-link">banffprocessor</a></li>
+    
+    <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis">banffprocessor.util.metadata_excel_to_xml</span></li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <h1>Source code for banffprocessor.util.metadata_excel_to_xml</h1><div class="highlight"><pre>
+<span></span><span class="sd">&quot;&quot;&quot;A program to convert Banff excel spreadsheet to XML files.</span>
+
+<span class="sd">Statistics Canada 2024</span>
+<span class="sd">K Williamson</span>
+<span class="sd">&quot;&quot;&quot;</span>
+
+<span class="kn">import</span><span class="w"> </span><span class="nn">argparse</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">html</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">sys</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">warnings</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">argparse</span><span class="w"> </span><span class="kn">import</span> <span class="n">RawTextHelpFormatter</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">pathlib</span><span class="w"> </span><span class="kn">import</span> <span class="n">Path</span>
+
+<span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>
+
+<span class="kn">import</span><span class="w"> </span><span class="nn">banffprocessor</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">banffprocessor.processor_logger</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plg</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">banffprocessor.nls</span><span class="w"> </span><span class="kn">import</span> <span class="n">_</span>
+
+<span class="n">warnings</span><span class="o">.</span><span class="n">filterwarnings</span><span class="p">(</span><span class="s2">&quot;ignore&quot;</span><span class="p">,</span> <span class="n">category</span><span class="o">=</span><span class="ne">UserWarning</span><span class="p">,</span> <span class="n">module</span><span class="o">=</span><span class="s2">&quot;openpyxl&quot;</span><span class="p">)</span>
+
+<span class="c1"># Setup local log for this module</span>
+
+<span class="c1"># NOTE: If using the normal get_processor_child_logger() function here, the logger</span>
+<span class="c1"># will use the regular output handlers. This causes issues when a file location is</span>
+<span class="c1"># set prior to running this module, as all outputs here will go to the same location.</span>
+<span class="c1"># For pytest in particular, this causes logs from tests for this module to pile up</span>
+<span class="c1"># at the end of the last log file created. Instead the get_child_stream_logger()</span>
+<span class="c1"># function returns a logger that does not propagate to the parent and only logs</span>
+<span class="c1"># to the console.</span>
+<span class="n">log_lcl</span> <span class="o">=</span> <span class="n">plg</span><span class="o">.</span><span class="n">get_child_stream_logger</span><span class="p">(</span><span class="s2">&quot;metadata_excel_to_xml&quot;</span><span class="p">)</span>
+
+<div class="viewcode-block" id="convert_excel_to_xml">
+<a class="viewcode-back" href="../../../banffprocessor.util#banffprocessor.util.metadata_excel_to_xml.convert_excel_to_xml">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">convert_excel_to_xml</span><span class="p">(</span><span class="n">in_file</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">out_dir</span><span class="p">:</span> <span class="nb">str</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Create XML files from an Excel file that was created using the Banff Processor Metadata Template.</span>
+
+<span class="sd">    In order to facilitate the creation of Banff Processor metadata, users can create the metadata in</span>
+<span class="sd">    Excel using the Banff Processor metadata template. This function reads in the Excel file indicated by</span>
+<span class="sd">    the infile parameter and writes XML files to the directory indicated in out_dir.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="c1"># Verify in_file is indeed a file</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">Path</span><span class="p">(</span><span class="n">in_file</span><span class="p">)</span><span class="o">.</span><span class="n">is_file</span><span class="p">():</span>
+        <span class="n">msg</span> <span class="o">=</span> <span class="n">_</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">{}</span><span class="s2"> does not exist or is not a file.&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">in_file</span><span class="p">)</span>
+        <span class="n">log_lcl</span><span class="o">.</span><span class="n">exception</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span>
+        <span class="k">raise</span> <span class="ne">FileNotFoundError</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span>
+
+    <span class="c1"># If no output directory was provided, the default is the same location as the Excel file</span>
+    <span class="k">if</span> <span class="n">out_dir</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+         <span class="n">out_dir</span> <span class="o">=</span> <span class="n">Path</span><span class="p">(</span><span class="n">in_file</span><span class="p">)</span><span class="o">.</span><span class="n">parent</span>
+    <span class="k">elif</span> <span class="ow">not</span> <span class="n">Path</span><span class="p">(</span><span class="n">out_dir</span><span class="p">)</span><span class="o">.</span><span class="n">is_dir</span><span class="p">():</span>
+        <span class="n">msg</span> <span class="o">=</span> <span class="n">_</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">{}</span><span class="s2"> does not exist or is not a directory.&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">out_dir</span><span class="p">)</span>
+        <span class="n">log_lcl</span><span class="o">.</span><span class="n">exception</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span>
+        <span class="k">raise</span> <span class="ne">NotADirectoryError</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span>
+
+    <span class="c1"># Create dictionaries from the Excel sheets and the expected columns</span>
+    <span class="n">excel_sheets</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_excel</span><span class="p">(</span><span class="n">in_file</span><span class="p">,</span> <span class="n">sheet_name</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
+    <span class="n">sheet_cols</span> <span class="o">=</span> <span class="n">_create_column_dict</span><span class="p">()</span>
+
+    <span class="n">msg</span> <span class="o">=</span> <span class="n">_</span><span class="p">(</span><span class="s2">&quot;Creating XML files for: </span><span class="si">{}</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">in_file</span><span class="p">)</span>
+    <span class="n">log_lcl</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span>
+
+    <span class="c1"># foreach sheet in the spreadsheet</span>
+    <span class="k">for</span> <span class="n">sheet</span> <span class="ow">in</span> <span class="n">sheet_cols</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">sheet</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">excel_sheets</span><span class="p">:</span>
+            <span class="k">continue</span>
+
+        <span class="n">sheet_df</span> <span class="o">=</span> <span class="n">excel_sheets</span><span class="p">[</span><span class="n">sheet</span><span class="p">]</span>
+
+        <span class="c1"># skip sheets with no data</span>
+        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">sheet_df</span><span class="o">.</span><span class="n">index</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="k">continue</span>
+
+        <span class="n">fpath</span> <span class="o">=</span> <span class="n">Path</span><span class="p">(</span><span class="n">out_dir</span><span class="p">)</span><span class="o">.</span><span class="n">joinpath</span><span class="p">(</span><span class="n">sheet</span><span class="o">.</span><span class="n">casefold</span><span class="p">()</span> <span class="o">+</span> <span class="s2">&quot;.xml&quot;</span><span class="p">)</span>
+        <span class="n">msg</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;  </span><span class="si">{</span><span class="n">sheet</span><span class="si">:</span><span class="s2">&lt;25</span><span class="si">}</span><span class="s2"> </span><span class="si">{</span><span class="n">fpath</span><span class="si">}</span><span class="s2">&quot;</span>
+        <span class="n">log_lcl</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span>
+
+        <span class="n">_write_xml_data_file</span><span class="p">(</span><span class="n">sheet</span><span class="p">,</span> <span class="n">sheet_df</span><span class="p">,</span> <span class="n">sheet_cols</span><span class="p">[</span><span class="n">sheet</span><span class="p">],</span> <span class="n">fpath</span><span class="p">)</span>
+
+    <span class="n">log_lcl</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="n">_</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">XML files have been created sucessfully.</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">))</span></div>
+
+
+<span class="k">def</span><span class="w"> </span><span class="nf">_write_xml_data_file</span><span class="p">(</span><span class="n">sheet_name</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">sheet_df</span><span class="p">:</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">,</span> <span class="n">columns</span><span class="p">:</span> <span class="nb">tuple</span><span class="p">,</span> <span class="n">file_name</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+    <span class="n">xml_data</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;&lt;?xml version=&quot;1.0&quot; encoding=&quot;ISO-8859-1&quot;?&gt;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">]</span>
+    <span class="n">xml_data</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s2">&quot;&lt;banffProcessor&gt;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">row</span> <span class="ow">in</span> <span class="n">sheet_df</span><span class="o">.</span><span class="n">index</span><span class="p">:</span>
+        <span class="n">xml_data</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;&lt;</span><span class="si">{</span><span class="n">sheet_name</span><span class="o">.</span><span class="n">casefold</span><span class="p">()</span><span class="si">}</span><span class="s2">&gt;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span> <span class="c1">#opening element tag</span>
+        <span class="k">for</span> <span class="n">column</span> <span class="ow">in</span> <span class="n">sheet_df</span><span class="o">.</span><span class="n">columns</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">column</span> <span class="ow">in</span> <span class="n">columns</span><span class="p">:</span>
+                <span class="n">cell_value</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="n">sheet_df</span><span class="p">[</span><span class="n">column</span><span class="p">][</span><span class="n">row</span><span class="p">])</span>
+                <span class="k">if</span> <span class="n">cell_value</span> <span class="ow">not</span> <span class="ow">in</span> <span class="p">(</span><span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="s2">&quot;nan&quot;</span><span class="p">):</span>
+                    <span class="c1">#escape special chars</span>
+                    <span class="n">cell_value</span> <span class="o">=</span> <span class="n">html</span><span class="o">.</span><span class="n">escape</span><span class="p">(</span><span class="n">cell_value</span><span class="p">)</span>
+
+                    <span class="c1"># drop trailing zeros</span>
+                    <span class="k">if</span> <span class="n">cell_value</span><span class="o">.</span><span class="n">endswith</span><span class="p">(</span><span class="s2">&quot;.0&quot;</span><span class="p">):</span>
+                        <span class="n">cell_value</span> <span class="o">=</span> <span class="n">cell_value</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span> <span class="nb">len</span><span class="p">(</span><span class="n">cell_value</span><span class="p">)</span><span class="o">-</span><span class="mi">2</span><span class="p">]</span>
+
+                    <span class="n">xml_data</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;&lt;</span><span class="si">{</span><span class="n">column</span><span class="si">}</span><span class="s2">&gt;</span><span class="si">{</span><span class="n">cell_value</span><span class="si">}</span><span class="s2">&lt;/</span><span class="si">{</span><span class="n">column</span><span class="si">}</span><span class="s2">&gt;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="n">xml_data</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;&lt;/</span><span class="si">{</span><span class="n">sheet_name</span><span class="o">.</span><span class="n">casefold</span><span class="p">()</span><span class="si">}</span><span class="s2">&gt;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="n">xml_data</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s2">&quot;&lt;/banffProcessor&gt;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+
+    <span class="c1"># write to the xml file</span>
+    <span class="k">with</span> <span class="n">Path</span><span class="p">(</span><span class="n">file_name</span><span class="p">)</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="s2">&quot;w&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+        <span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">xml_data</span><span class="p">:</span>
+            <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">line</span><span class="p">)</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">_create_column_dict</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="nb">dict</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Create a directory for the columns of the banff processor metadata.</span>
+
+<span class="sd">    A dictionary is created with an entry for each banff processor metadata file. The entry was all the possible columns for each</span>
+<span class="sd">    metadata file.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">sheet_cols</span> <span class="o">=</span> <span class="p">{}</span>
+    <span class="n">sheet_cols</span><span class="p">[</span><span class="s2">&quot;JOBS&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="s2">&quot;jobid&quot;</span><span class="p">,</span> <span class="s2">&quot;seqno&quot;</span><span class="p">,</span> <span class="s2">&quot;controlid&quot;</span><span class="p">,</span> <span class="s2">&quot;process&quot;</span><span class="p">,</span> <span class="s2">&quot;specid&quot;</span><span class="p">,</span> <span class="s2">&quot;editgroupid&quot;</span><span class="p">,</span> <span class="s2">&quot;byid&quot;</span><span class="p">,</span><span class="s2">&quot;acceptnegative&quot;</span><span class="p">)</span>
+    <span class="n">sheet_cols</span><span class="p">[</span><span class="s2">&quot;EDITS&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="s2">&quot;editid&quot;</span><span class="p">,</span> <span class="s2">&quot;leftside&quot;</span><span class="p">,</span> <span class="s2">&quot;operator&quot;</span><span class="p">,</span> <span class="s2">&quot;rightside&quot;</span><span class="p">,</span> <span class="s2">&quot;modifier&quot;</span><span class="p">)</span>
+    <span class="n">sheet_cols</span><span class="p">[</span><span class="s2">&quot;EDITGROUPS&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="s2">&quot;editgroupid&quot;</span><span class="p">,</span> <span class="s2">&quot;editid&quot;</span><span class="p">)</span>
+    <span class="n">sheet_cols</span><span class="p">[</span><span class="s2">&quot;VERIFYEDITSSPECS&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="s2">&quot;specid&quot;</span><span class="p">,</span> <span class="s2">&quot;imply&quot;</span><span class="p">,</span> <span class="s2">&quot;extremal&quot;</span><span class="p">)</span>
+    <span class="n">sheet_cols</span><span class="p">[</span><span class="s2">&quot;OUTLIERSPECS&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="s2">&quot;specid&quot;</span><span class="p">,</span> <span class="s2">&quot;method&quot;</span><span class="p">,</span> <span class="s2">&quot;side&quot;</span><span class="p">,</span> <span class="s2">&quot;varid&quot;</span><span class="p">,</span>
+                                  <span class="s2">&quot;withid&quot;</span><span class="p">,</span> <span class="s2">&quot;mii&quot;</span><span class="p">,</span> <span class="s2">&quot;mei&quot;</span><span class="p">,</span> <span class="s2">&quot;mdm&quot;</span><span class="p">,</span><span class="s2">&quot;exponent&quot;</span><span class="p">,</span>
+                                  <span class="s2">&quot;sigma&quot;</span><span class="p">,</span> <span class="s2">&quot;betai&quot;</span><span class="p">,</span> <span class="s2">&quot;betae&quot;</span><span class="p">,</span> <span class="s2">&quot;startcentile&quot;</span><span class="p">,</span>
+                                  <span class="s2">&quot;minobs&quot;</span><span class="p">,</span><span class="s2">&quot;acceptzero&quot;</span><span class="p">,</span> <span class="s2">&quot;weight&quot;</span><span class="p">,</span> <span class="s2">&quot;dataexclvar&quot;</span><span class="p">)</span>
+    <span class="n">sheet_cols</span><span class="p">[</span><span class="s2">&quot;ERRORLOCSPECS&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="s2">&quot;specid&quot;</span><span class="p">,</span> <span class="s2">&quot;cardinality&quot;</span><span class="p">,</span> <span class="s2">&quot;timeperobs&quot;</span><span class="p">,</span> <span class="s2">&quot;weightid&quot;</span><span class="p">)</span>
+    <span class="n">sheet_cols</span><span class="p">[</span><span class="s2">&quot;DONORSPECS&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="s2">&quot;specid&quot;</span><span class="p">,</span> <span class="s2">&quot;mindonors&quot;</span><span class="p">,</span> <span class="s2">&quot;pcentdonors&quot;</span><span class="p">,</span> <span class="s2">&quot;n&quot;</span><span class="p">,</span> <span class="s2">&quot;eligdon&quot;</span><span class="p">,</span>
+                                <span class="s2">&quot;random&quot;</span><span class="p">,</span> <span class="s2">&quot;nlimit&quot;</span><span class="p">,</span> <span class="s2">&quot;mrl&quot;</span><span class="p">,</span> <span class="s2">&quot;dataexclvar&quot;</span><span class="p">,</span> <span class="s2">&quot;mustmatchid&quot;</span><span class="p">,</span>
+                                <span class="s2">&quot;posteditgroupid&quot;</span><span class="p">)</span>
+    <span class="n">sheet_cols</span><span class="p">[</span><span class="s2">&quot;ESTIMATORS&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="s2">&quot;estimatorid&quot;</span><span class="p">,</span> <span class="s2">&quot;seqno&quot;</span><span class="p">,</span> <span class="s2">&quot;fieldid&quot;</span><span class="p">,</span> <span class="s2">&quot;auxvariables&quot;</span><span class="p">,</span>
+                                <span class="s2">&quot;weightvariable&quot;</span><span class="p">,</span> <span class="s2">&quot;variancevaraible&quot;</span><span class="p">,</span> <span class="s2">&quot;varianceexponent&quot;</span><span class="p">,</span>
+                                <span class="s2">&quot;varianceperiod&quot;</span><span class="p">,</span> <span class="s2">&quot;excludeimputed&quot;</span><span class="p">,</span> <span class="s2">&quot;excludeoutliers&quot;</span><span class="p">,</span>
+                                <span class="s2">&quot;countcriteria&quot;</span><span class="p">,</span> <span class="s2">&quot;percentcriteria&quot;</span><span class="p">,</span> <span class="s2">&quot;randomerror&quot;</span><span class="p">,</span> <span class="s2">&quot;algorithmname&quot;</span><span class="p">)</span>
+    <span class="n">sheet_cols</span><span class="p">[</span><span class="s2">&quot;ESTIMATORSPECS&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="s2">&quot;specid&quot;</span><span class="p">,</span> <span class="s2">&quot;dataexclvar&quot;</span><span class="p">,</span> <span class="s2">&quot;histexclvar&quot;</span><span class="p">,</span> <span class="s2">&quot;estimatorid&quot;</span><span class="p">)</span>
+    <span class="n">sheet_cols</span><span class="p">[</span><span class="s2">&quot;PRORATESPECS&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="s2">&quot;specid&quot;</span><span class="p">,</span> <span class="s2">&quot;decimal&quot;</span><span class="p">,</span> <span class="s2">&quot;lowerbound&quot;</span><span class="p">,</span> <span class="s2">&quot;upperbound&quot;</span><span class="p">,</span> <span class="s2">&quot;modifier&quot;</span><span class="p">,</span> <span class="s2">&quot;method&quot;</span><span class="p">)</span>
+    <span class="n">sheet_cols</span><span class="p">[</span><span class="s2">&quot;MASSIMPUTATIONSPECS&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="s2">&quot;specid&quot;</span><span class="p">,</span> <span class="s2">&quot;mindonors&quot;</span><span class="p">,</span> <span class="s2">&quot;pcentdonors&quot;</span><span class="p">,</span> <span class="s2">&quot;random&quot;</span><span class="p">,</span> <span class="s2">&quot;nlimit&quot;</span><span class="p">,</span>
+                                         <span class="s2">&quot;mrl&quot;</span><span class="p">,</span> <span class="s2">&quot;mustimputeid&quot;</span><span class="p">,</span> <span class="s2">&quot;mustmatchid&quot;</span><span class="p">)</span>
+    <span class="n">sheet_cols</span><span class="p">[</span><span class="s2">&quot;ALGORITHMS&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="s2">&quot;algorithmname&quot;</span><span class="p">,</span> <span class="s2">&quot;type&quot;</span><span class="p">,</span> <span class="s2">&quot;status&quot;</span><span class="p">,</span> <span class="s2">&quot;formula&quot;</span><span class="p">,</span> <span class="s2">&quot;description&quot;</span><span class="p">)</span>
+    <span class="n">sheet_cols</span><span class="p">[</span><span class="s2">&quot;EXPRESSIONS&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="s2">&quot;expressionid&quot;</span><span class="p">,</span> <span class="s2">&quot;expressions&quot;</span><span class="p">)</span>
+    <span class="n">sheet_cols</span><span class="p">[</span><span class="s2">&quot;USERVARS&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="s2">&quot;process&quot;</span><span class="p">,</span> <span class="s2">&quot;specid&quot;</span><span class="p">,</span> <span class="s2">&quot;var&quot;</span><span class="p">,</span> <span class="s2">&quot;value&quot;</span><span class="p">)</span>
+    <span class="n">sheet_cols</span><span class="p">[</span><span class="s2">&quot;VARLISTS&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="s2">&quot;varlistid&quot;</span><span class="p">,</span> <span class="s2">&quot;seqno&quot;</span><span class="p">,</span> <span class="s2">&quot;fieldid&quot;</span><span class="p">)</span>
+    <span class="n">sheet_cols</span><span class="p">[</span><span class="s2">&quot;WEIGHTS&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="s2">&quot;weightid&quot;</span><span class="p">,</span> <span class="s2">&quot;fieldid&quot;</span><span class="p">,</span> <span class="s2">&quot;weight&quot;</span><span class="p">)</span>
+    <span class="n">sheet_cols</span><span class="p">[</span><span class="s2">&quot;PROCESSCONTROLS&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="s2">&quot;controlid&quot;</span><span class="p">,</span> <span class="s2">&quot;targetfile&quot;</span><span class="p">,</span> <span class="s2">&quot;parameter&quot;</span><span class="p">,</span> <span class="s2">&quot;value&quot;</span><span class="p">)</span>
+    <span class="n">sheet_cols</span><span class="p">[</span><span class="s2">&quot;PROCESSOUTPUTS&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="s2">&quot;process&quot;</span><span class="p">,</span> <span class="s2">&quot;output_name&quot;</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">sheet_cols</span>
+
+<div class="viewcode-block" id="get_args">
+<a class="viewcode-back" href="../../../banffprocessor.util#banffprocessor.util.metadata_excel_to_xml.get_args">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">get_args</span><span class="p">(</span><span class="n">args</span><span class="p">:</span><span class="nb">list</span> <span class="o">|</span> <span class="nb">str</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">argparse</span><span class="o">.</span><span class="n">ArgumentParser</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Create an argument parser.</span>
+
+<span class="sd">    Example args -&gt; [&quot;my_filename.xlsx&quot;, &quot;-o&quot;, &quot;/my/out/folder&quot;, &quot;-l&quot;, &quot;fr&quot;]</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">parser</span> <span class="o">=</span> <span class="n">argparse</span><span class="o">.</span><span class="n">ArgumentParser</span><span class="p">(</span><span class="n">description</span><span class="o">=</span><span class="s2">&quot;Create XML files from an Excel spreadsheet that was created based on the Banff Processor metadata templete.</span><span class="se">\n\n</span><span class="s2">&quot;</span>
+                                     <span class="s2">&quot;Créer des fichiers XML à partir d&#39;une feuille de calcul Excel créée sur la base du modèle de métadonnées du processeur Banff.&quot;</span><span class="p">,</span>
+                                     <span class="n">formatter_class</span><span class="o">=</span><span class="n">RawTextHelpFormatter</span><span class="p">)</span>
+
+    <span class="c1"># First argument is positional, required by default</span>
+    <span class="n">parser</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s2">&quot;filename&quot;</span><span class="p">,</span> <span class="n">help</span><span class="o">=</span><span class="s2">&quot;Filename of Excel file to convert.</span><span class="se">\n</span><span class="s2">&quot;</span>
+                        <span class="s2">&quot;Le nom du fichier Excel à convertir.&quot;</span><span class="p">)</span>
+
+    <span class="c1"># Second argument is set by flag</span>
+    <span class="n">parser</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s2">&quot;-o&quot;</span><span class="p">,</span> <span class="s2">&quot;--outdir&quot;</span><span class="p">,</span> <span class="n">help</span><span class="o">=</span><span class="s2">&quot;The directory where output files will be written. </span><span class="se">\n</span><span class="s2">&quot;</span>
+                        <span class="s2">&quot;Le répertoire dans lequel les fichiers de sortie seront écrits.&quot;</span><span class="p">)</span>
+
+     <span class="c1"># Second argument is set by flag</span>
+    <span class="n">parser</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s2">&quot;-l&quot;</span><span class="p">,</span> <span class="s2">&quot;--lang&quot;</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="s2">&quot;en&quot;</span><span class="p">,</span>
+                        <span class="n">help</span><span class="o">=</span><span class="s2">&quot;Set the language, supported langauges are en for English and fr for French. </span><span class="se">\n</span><span class="s2">&quot;</span>
+                        <span class="s2">&quot;Définissez la langue, les langues prises en charge sont en pour l&#39;anglais et fr pour le français.&quot;</span><span class="p">)</span>
+
+    <span class="k">return</span> <span class="n">parser</span><span class="o">.</span><span class="n">parse_args</span><span class="p">(</span><span class="n">args</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="main">
+<a class="viewcode-back" href="../../../banffprocessor.util#banffprocessor.util.metadata_excel_to_xml.main">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="n">iargs</span><span class="p">:</span> <span class="nb">list</span> <span class="o">|</span> <span class="nb">str</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Call the convert_excel_to_xml function.</span>
+
+<span class="sd">    Used when running this module from the command line. Created to faciliate testing.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">if</span> <span class="n">iargs</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">iargs</span> <span class="o">=</span> <span class="n">sys</span><span class="o">.</span><span class="n">argv</span><span class="p">[</span><span class="mi">1</span><span class="p">:]</span>
+
+    <span class="n">args</span> <span class="o">=</span> <span class="n">get_args</span><span class="p">(</span><span class="n">iargs</span><span class="p">)</span>
+
+    <span class="n">banffprocessor</span><span class="o">.</span><span class="n">set_language</span><span class="p">(</span><span class="n">banffprocessor</span><span class="o">.</span><span class="n">SupportedLanguage</span><span class="p">[</span><span class="n">args</span><span class="o">.</span><span class="n">lang</span><span class="p">])</span>
+    <span class="n">convert_excel_to_xml</span><span class="p">(</span><span class="n">args</span><span class="o">.</span><span class="n">filename</span><span class="p">,</span> <span class="n">args</span><span class="o">.</span><span class="n">outdir</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="init">
+<a class="viewcode-back" href="../../../banffprocessor.util#banffprocessor.util.metadata_excel_to_xml.init">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">init</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Call the main function.</span>
+
+<span class="sd">    Used when running this module from the command line. Created to faciliate testing.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">if</span> <span class="vm">__name__</span>  <span class="o">==</span> <span class="s2">&quot;__main__&quot;</span><span class="p">:</span>
+        <span class="n">sys</span><span class="o">.</span><span class="n">exit</span><span class="p">(</span><span class="n">main</span><span class="p">())</span></div>
+
+
+<span class="n">init</span><span class="p">()</span>
+</pre></div>
+
+                </article>
+              
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../../../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
+<script defer src="../../../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+
+  <p class="copyright">
+    
+      © Copyright 2025, Statistics Canada / Statistique Canada.
+      <br/>
+    
+  </p>
+</div>
+      
+        <div class="footer-item">
+
+  <p class="sphinx-version">
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 8.2.3.
+    <br/>
+  </p>
+</div>
+      
+    </div>
+  
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item">
+<p class="theme-version">
+  <!-- # L10n: Setting the PST URL as an argument as this does not need to be localized -->
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.16.1.
+</p></div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
+</html>

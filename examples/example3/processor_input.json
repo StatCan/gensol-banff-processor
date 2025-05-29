@@ -2,7 +2,7 @@
 	"job_id": "J1",
 	"unit_id": "I43600",
 	"indata_filename": "./inputdata/curfile.parq",
-	"histdata_filename": "./inputdata/histfile.parq",
+	"indata_hist_filename": "./inputdata/histfile.parq",
 	"user_plugins_folder": "../plugins",
 	"no_by_stats": true,
     "seed": 1,

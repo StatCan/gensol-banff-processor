@@ -1,0 +1,1553 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="./" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Index &#8212; Banff Processor 2.0.2 documentation</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=8f2a1f02" />
+    <link rel="stylesheet" type="text/css" href="_static/custom.css?v=2a807888" />
+  
+  <!-- So that users can add custom icons -->
+  <script src="_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
+
+    <script src="_static/documentation_options.js?v=29701289"></script>
+    <script src="_static/doctools.js?v=9bcbadda"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'genindex';</script>
+    <link rel="index" title="Index" href="#" />
+    <link rel="search" title="Search" href="search" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="search"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class="col-lg-3 navbar-header-items__start">
+    
+      <div class="navbar-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="index">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="_static/banff_white.png" class="logo__image only-light" alt="Banff Processor 2.0.2 documentation - Home"/>
+    <img src="_static/banff_white.png" class="logo__image only-dark pst-js-only" alt="Banff Processor 2.0.2 documentation - Home"/>
+  
+  
+</a></div>
+    
+  </div>
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="en/index">
+    English
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="fr/index">
+    Français
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+        </div>
+      
+      
+        <div class="navbar-item">
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button></div>
+      
+        <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/StatCan/gensol-banff-processor" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fab fa-github fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+</ul></div>
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+    </div>
+  
+
+  
+</div>
+
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+        
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar hide-on-wide">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          
+          
+            <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="en/index">
+    English
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="fr/index">
+    Français
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+          
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button></div>
+        
+          <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/StatCan/gensol-banff-processor" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fab fa-github fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+</ul></div>
+        
+      </div>
+    
+  </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none"></div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+
+<h1 id="index">Index</h1>
+
+<div class="genindex-jumpbox">
+ <a href="#A"><strong>A</strong></a>
+ | <a href="#B"><strong>B</strong></a>
+ | <a href="#C"><strong>C</strong></a>
+ | <a href="#D"><strong>D</strong></a>
+ | <a href="#E"><strong>E</strong></a>
+ | <a href="#F"><strong>F</strong></a>
+ | <a href="#G"><strong>G</strong></a>
+ | <a href="#H"><strong>H</strong></a>
+ | <a href="#I"><strong>I</strong></a>
+ | <a href="#J"><strong>J</strong></a>
+ | <a href="#L"><strong>L</strong></a>
+ | <a href="#M"><strong>M</strong></a>
+ | <a href="#N"><strong>N</strong></a>
+ | <a href="#O"><strong>O</strong></a>
+ | <a href="#P"><strong>P</strong></a>
+ | <a href="#R"><strong>R</strong></a>
+ | <a href="#S"><strong>S</strong></a>
+ | <a href="#T"><strong>T</strong></a>
+ | <a href="#U"><strong>U</strong></a>
+ | <a href="#V"><strong>V</strong></a>
+ | <a href="#W"><strong>W</strong></a>
+ 
+</div>
+<h2 id="A">A</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="banffprocessor.processor_logger#banffprocessor.processor_logger.processor_logger.add_file_handlers">add_file_handlers() (in module banffprocessor.processor_logger.processor_logger)</a>
+</li>
+      <li><a href="banffprocessor.metadata#banffprocessor.metadata.metaobjects.MetaObjects.add_objects_of_single_type">add_objects_of_single_type() (banffprocessor.metadata.metaobjects.MetaObjects method)</a>
+</li>
+      <li><a href="banffprocessor.util#banffprocessor.util.dataset.add_single_value_column">add_single_value_column() (in module banffprocessor.util.dataset)</a>
+</li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="banffprocessor.metadata.models#banffprocessor.metadata.models.algorithms.Algorithms">Algorithms (class in banffprocessor.metadata.models.algorithms)</a>
+</li>
+      <li><a href="banffprocessor#banffprocessor.processor_input.ProcessOutputType.ALL">ALL (banffprocessor.processor_input.ProcessOutputType attribute)</a>
+</li>
+      <li><a href="banffprocessor#banffprocessor.processor_data.ProcessorData.apply_process_controls">apply_process_controls() (banffprocessor.processor_data.ProcessorData method)</a>
+</li>
+  </ul></td>
+</tr></table>
+
+<h2 id="B">B</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="banffprocessor.exceptions#banffprocessor.exceptions.BanffPackageExecutionError">BanffPackageExecutionError</a>
+</li>
+      <li>
+    banffprocessor
+
+      <ul>
+        <li><a href="banffprocessor#module-banffprocessor">module</a>
+</li>
+      </ul></li>
+      <li>
+    banffprocessor.exceptions
+
+      <ul>
+        <li><a href="banffprocessor.exceptions#module-banffprocessor.exceptions">module</a>
+</li>
+      </ul></li>
+      <li>
+    banffprocessor.metadata
+
+      <ul>
+        <li><a href="banffprocessor.metadata#module-banffprocessor.metadata">module</a>
+</li>
+      </ul></li>
+      <li>
+    banffprocessor.metadata.metaobjects
+
+      <ul>
+        <li><a href="banffprocessor.metadata#module-banffprocessor.metadata.metaobjects">module</a>
+</li>
+      </ul></li>
+      <li>
+    banffprocessor.metadata.models
+
+      <ul>
+        <li><a href="banffprocessor.metadata.models#module-banffprocessor.metadata.models">module</a>
+</li>
+      </ul></li>
+      <li>
+    banffprocessor.metadata.models.algorithms
+
+      <ul>
+        <li><a href="banffprocessor.metadata.models#module-banffprocessor.metadata.models.algorithms">module</a>
+</li>
+      </ul></li>
+      <li>
+    banffprocessor.metadata.models.donorspecs
+
+      <ul>
+        <li><a href="banffprocessor.metadata.models#module-banffprocessor.metadata.models.donorspecs">module</a>
+</li>
+      </ul></li>
+      <li>
+    banffprocessor.metadata.models.editgroups
+
+      <ul>
+        <li><a href="banffprocessor.metadata.models#module-banffprocessor.metadata.models.editgroups">module</a>
+</li>
+      </ul></li>
+      <li>
+    banffprocessor.metadata.models.edits
+
+      <ul>
+        <li><a href="banffprocessor.metadata.models#module-banffprocessor.metadata.models.edits">module</a>
+</li>
+      </ul></li>
+      <li>
+    banffprocessor.metadata.models.errorlocspecs
+
+      <ul>
+        <li><a href="banffprocessor.metadata.models#module-banffprocessor.metadata.models.errorlocspecs">module</a>
+</li>
+      </ul></li>
+      <li>
+    banffprocessor.metadata.models.estimators
+
+      <ul>
+        <li><a href="banffprocessor.metadata.models#module-banffprocessor.metadata.models.estimators">module</a>
+</li>
+      </ul></li>
+      <li>
+    banffprocessor.metadata.models.estimatorspecs
+
+      <ul>
+        <li><a href="banffprocessor.metadata.models#module-banffprocessor.metadata.models.estimatorspecs">module</a>
+</li>
+      </ul></li>
+      <li>
+    banffprocessor.metadata.models.expressions
+
+      <ul>
+        <li><a href="banffprocessor.metadata.models#module-banffprocessor.metadata.models.expressions">module</a>
+</li>
+      </ul></li>
+      <li>
+    banffprocessor.metadata.models.jobs
+
+      <ul>
+        <li><a href="banffprocessor.metadata.models#module-banffprocessor.metadata.models.jobs">module</a>
+</li>
+      </ul></li>
+      <li>
+    banffprocessor.metadata.models.massimputationspecs
+
+      <ul>
+        <li><a href="banffprocessor.metadata.models#module-banffprocessor.metadata.models.massimputationspecs">module</a>
+</li>
+      </ul></li>
+      <li>
+    banffprocessor.metadata.models.metadataclass
+
+      <ul>
+        <li><a href="banffprocessor.metadata.models#module-banffprocessor.metadata.models.metadataclass">module</a>
+</li>
+      </ul></li>
+      <li>
+    banffprocessor.metadata.models.outlierspecs
+
+      <ul>
+        <li><a href="banffprocessor.metadata.models#module-banffprocessor.metadata.models.outlierspecs">module</a>
+</li>
+      </ul></li>
+      <li>
+    banffprocessor.metadata.models.processcontrols
+
+      <ul>
+        <li><a href="banffprocessor.metadata.models#module-banffprocessor.metadata.models.processcontrols">module</a>
+</li>
+      </ul></li>
+      <li>
+    banffprocessor.metadata.models.processoutputs
+
+      <ul>
+        <li><a href="banffprocessor.metadata.models#module-banffprocessor.metadata.models.processoutputs">module</a>
+</li>
+      </ul></li>
+      <li>
+    banffprocessor.metadata.models.proratespecs
+
+      <ul>
+        <li><a href="banffprocessor.metadata.models#module-banffprocessor.metadata.models.proratespecs">module</a>
+</li>
+      </ul></li>
+      <li>
+    banffprocessor.metadata.models.uservars
+
+      <ul>
+        <li><a href="banffprocessor.metadata.models#module-banffprocessor.metadata.models.uservars">module</a>
+</li>
+      </ul></li>
+      <li>
+    banffprocessor.metadata.models.varlists
+
+      <ul>
+        <li><a href="banffprocessor.metadata.models#module-banffprocessor.metadata.models.varlists">module</a>
+</li>
+      </ul></li>
+      <li>
+    banffprocessor.metadata.models.verifyeditsspecs
+
+      <ul>
+        <li><a href="banffprocessor.metadata.models#module-banffprocessor.metadata.models.verifyeditsspecs">module</a>
+</li>
+      </ul></li>
+      <li>
+    banffprocessor.metadata.models.weights
+
+      <ul>
+        <li><a href="banffprocessor.metadata.models#module-banffprocessor.metadata.models.weights">module</a>
+</li>
+      </ul></li>
+      <li>
+    banffprocessor.nls
+
+      <ul>
+        <li><a href="banffprocessor.nls#module-banffprocessor.nls">module</a>
+</li>
+      </ul></li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li>
+    banffprocessor.nls.nls
+
+      <ul>
+        <li><a href="banffprocessor.nls#module-banffprocessor.nls.nls">module</a>
+</li>
+      </ul></li>
+      <li>
+    banffprocessor.procedures
+
+      <ul>
+        <li><a href="banffprocessor.procedures#module-banffprocessor.procedures">module</a>
+</li>
+      </ul></li>
+      <li>
+    banffprocessor.procedures.banff_procedures
+
+      <ul>
+        <li><a href="banffprocessor.procedures.banff_procedures#module-banffprocessor.procedures.banff_procedures">module</a>
+</li>
+      </ul></li>
+      <li>
+    banffprocessor.procedures.banff_procedures.deterministic
+
+      <ul>
+        <li><a href="banffprocessor.procedures.banff_procedures#module-banffprocessor.procedures.banff_procedures.deterministic">module</a>
+</li>
+      </ul></li>
+      <li>
+    banffprocessor.procedures.banff_procedures.donorimputation
+
+      <ul>
+        <li><a href="banffprocessor.procedures.banff_procedures#module-banffprocessor.procedures.banff_procedures.donorimputation">module</a>
+</li>
+      </ul></li>
+      <li>
+    banffprocessor.procedures.banff_procedures.editstats
+
+      <ul>
+        <li><a href="banffprocessor.procedures.banff_procedures#module-banffprocessor.procedures.banff_procedures.editstats">module</a>
+</li>
+      </ul></li>
+      <li>
+    banffprocessor.procedures.banff_procedures.errorloc
+
+      <ul>
+        <li><a href="banffprocessor.procedures.banff_procedures#module-banffprocessor.procedures.banff_procedures.errorloc">module</a>
+</li>
+      </ul></li>
+      <li>
+    banffprocessor.procedures.banff_procedures.estimator
+
+      <ul>
+        <li><a href="banffprocessor.procedures.banff_procedures#module-banffprocessor.procedures.banff_procedures.estimator">module</a>
+</li>
+      </ul></li>
+      <li>
+    banffprocessor.procedures.banff_procedures.job_proc
+
+      <ul>
+        <li><a href="banffprocessor.procedures.banff_procedures#module-banffprocessor.procedures.banff_procedures.job_proc">module</a>
+</li>
+      </ul></li>
+      <li>
+    banffprocessor.procedures.banff_procedures.massimputation
+
+      <ul>
+        <li><a href="banffprocessor.procedures.banff_procedures#module-banffprocessor.procedures.banff_procedures.massimputation">module</a>
+</li>
+      </ul></li>
+      <li>
+    banffprocessor.procedures.banff_procedures.outlier
+
+      <ul>
+        <li><a href="banffprocessor.procedures.banff_procedures#module-banffprocessor.procedures.banff_procedures.outlier">module</a>
+</li>
+      </ul></li>
+      <li>
+    banffprocessor.procedures.banff_procedures.prorate
+
+      <ul>
+        <li><a href="banffprocessor.procedures.banff_procedures#module-banffprocessor.procedures.banff_procedures.prorate">module</a>
+</li>
+      </ul></li>
+      <li>
+    banffprocessor.procedures.banff_procedures.verifyedits
+
+      <ul>
+        <li><a href="banffprocessor.procedures.banff_procedures#module-banffprocessor.procedures.banff_procedures.verifyedits">module</a>
+</li>
+      </ul></li>
+      <li>
+    banffprocessor.procedures.factory
+
+      <ul>
+        <li><a href="banffprocessor.procedures#module-banffprocessor.procedures.factory">module</a>
+</li>
+      </ul></li>
+      <li>
+    banffprocessor.procedures.loader
+
+      <ul>
+        <li><a href="banffprocessor.procedures#module-banffprocessor.procedures.loader">module</a>
+</li>
+      </ul></li>
+      <li>
+    banffprocessor.procedures.procedure_interface
+
+      <ul>
+        <li><a href="banffprocessor.procedures#module-banffprocessor.procedures.procedure_interface">module</a>
+</li>
+      </ul></li>
+      <li>
+    banffprocessor.processor
+
+      <ul>
+        <li><a href="banffprocessor#module-banffprocessor.processor">module</a>
+</li>
+      </ul></li>
+      <li>
+    banffprocessor.processor_data
+
+      <ul>
+        <li><a href="banffprocessor#module-banffprocessor.processor_data">module</a>
+</li>
+      </ul></li>
+      <li>
+    banffprocessor.processor_input
+
+      <ul>
+        <li><a href="banffprocessor#module-banffprocessor.processor_input">module</a>
+</li>
+      </ul></li>
+      <li>
+    banffprocessor.processor_logger
+
+      <ul>
+        <li><a href="banffprocessor.processor_logger#module-banffprocessor.processor_logger">module</a>
+</li>
+      </ul></li>
+      <li>
+    banffprocessor.processor_logger.processor_logger
+
+      <ul>
+        <li><a href="banffprocessor.processor_logger#module-banffprocessor.processor_logger.processor_logger">module</a>
+</li>
+      </ul></li>
+      <li>
+    banffprocessor.util
+
+      <ul>
+        <li><a href="banffprocessor.util#module-banffprocessor.util">module</a>
+</li>
+      </ul></li>
+      <li>
+    banffprocessor.util.case_insensitive_enum_meta
+
+      <ul>
+        <li><a href="banffprocessor.util#module-banffprocessor.util.case_insensitive_enum_meta">module</a>
+</li>
+      </ul></li>
+      <li>
+    banffprocessor.util.dataset
+
+      <ul>
+        <li><a href="banffprocessor.util#module-banffprocessor.util.dataset">module</a>
+</li>
+      </ul></li>
+      <li>
+    banffprocessor.util.metadata_excel_to_xml
+
+      <ul>
+        <li><a href="banffprocessor.util#module-banffprocessor.util.metadata_excel_to_xml">module</a>
+</li>
+      </ul></li>
+      <li><a href="banffprocessor.metadata.models#banffprocessor.metadata.models.estimators.builtin_estimators">builtin_estimators() (in module banffprocessor.metadata.models.estimators)</a>
+</li>
+      <li><a href="banffprocessor#banffprocessor.processor_data.ProcessorData.by_varlist">by_varlist (banffprocessor.processor_data.ProcessorData attribute)</a>
+</li>
+  </ul></td>
+</tr></table>
+
+<h2 id="C">C</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="banffprocessor.util#banffprocessor.util.case_insensitive_enum_meta.CaseInsensitiveEnumMeta">CaseInsensitiveEnumMeta (class in banffprocessor.util.case_insensitive_enum_meta)</a>
+</li>
+      <li><a href="banffprocessor.metadata#banffprocessor.metadata.metaobjects.MetaObjects.check_constraints">check_constraints() (banffprocessor.metadata.metaobjects.MetaObjects method)</a>
+
+      <ul>
+        <li><a href="banffprocessor.metadata.models#banffprocessor.metadata.models.donorspecs.Donorspecs.check_constraints">(banffprocessor.metadata.models.donorspecs.Donorspecs class method)</a>
+</li>
+        <li><a href="banffprocessor.metadata.models#banffprocessor.metadata.models.editgroups.Editgroups.check_constraints">(banffprocessor.metadata.models.editgroups.Editgroups class method)</a>
+</li>
+        <li><a href="banffprocessor.metadata.models#banffprocessor.metadata.models.errorlocspecs.Errorlocspecs.check_constraints">(banffprocessor.metadata.models.errorlocspecs.Errorlocspecs class method)</a>
+</li>
+        <li><a href="banffprocessor.metadata.models#banffprocessor.metadata.models.estimatorspecs.Estimatorspecs.check_constraints">(banffprocessor.metadata.models.estimatorspecs.Estimatorspecs class method)</a>
+</li>
+        <li><a href="banffprocessor.metadata.models#banffprocessor.metadata.models.jobs.Jobs.check_constraints">(banffprocessor.metadata.models.jobs.Jobs class method)</a>
+</li>
+        <li><a href="banffprocessor.metadata.models#banffprocessor.metadata.models.massimputationspecs.Massimputationspecs.check_constraints">(banffprocessor.metadata.models.massimputationspecs.Massimputationspecs class method)</a>
+</li>
+        <li><a href="banffprocessor.metadata.models#banffprocessor.metadata.models.metadataclass.MetadataClass.check_constraints">(banffprocessor.metadata.models.metadataclass.MetadataClass class method)</a>
+</li>
+        <li><a href="banffprocessor.metadata.models#banffprocessor.metadata.models.outlierspecs.Outlierspecs.check_constraints">(banffprocessor.metadata.models.outlierspecs.Outlierspecs class method)</a>
+</li>
+      </ul></li>
+      <li><a href="banffprocessor#banffprocessor.processor_data.ProcessorData.clean_status_file">clean_status_file() (banffprocessor.processor_data.ProcessorData method)</a>
+</li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="banffprocessor.metadata.models#banffprocessor.metadata.models.metadataclass.MetadataClass.cleanup">cleanup() (banffprocessor.metadata.models.metadataclass.MetadataClass class method)</a>
+</li>
+      <li><a href="banffprocessor.metadata#banffprocessor.metadata.metaobjects.MetaObjects.cleanup_metadata">cleanup_metadata() (banffprocessor.metadata.metaobjects.MetaObjects method)</a>
+</li>
+      <li><a href="banffprocessor#banffprocessor.processor_data.ProcessorData.clear_filtered_data">clear_filtered_data() (banffprocessor.processor_data.ProcessorData method)</a>
+</li>
+      <li><a href="banffprocessor.metadata.models#banffprocessor.metadata.models.processcontrols.ProcessControlType.COLUMN_FILTER">COLUMN_FILTER (banffprocessor.metadata.models.processcontrols.ProcessControlType attribute)</a>
+</li>
+      <li><a href="banffprocessor.util#banffprocessor.util.metadata_excel_to_xml.convert_excel_to_xml">convert_excel_to_xml() (in module banffprocessor.util.metadata_excel_to_xml)</a>
+</li>
+      <li><a href="banffprocessor.util#banffprocessor.util.dataset.copy_table">copy_table() (in module banffprocessor.util.dataset)</a>
+</li>
+      <li><a href="banffprocessor#banffprocessor.processor_data.ProcessorData.curr_step_count">curr_step_count (banffprocessor.processor_data.ProcessorData attribute)</a>
+</li>
+      <li><a href="banffprocessor#banffprocessor.processor_data.ProcessorData.current_job_step">current_job_step (banffprocessor.processor_data.ProcessorData attribute)</a>
+</li>
+      <li><a href="banffprocessor#banffprocessor.processor_data.ProcessorData.current_uservars">current_uservars (banffprocessor.processor_data.ProcessorData attribute)</a>
+</li>
+      <li><a href="banffprocessor#banffprocessor.processor_input.ProcessOutputType.CUSTOM">CUSTOM (banffprocessor.processor_input.ProcessOutputType attribute)</a>
+</li>
+      <li><a href="banffprocessor.nls#banffprocessor.nls.nls.custom_gettext">custom_gettext() (in module banffprocessor.nls.nls)</a>
+</li>
+      <li><a href="banffprocessor#banffprocessor.processor_data.ProcessorData.custom_outputs">custom_outputs (banffprocessor.processor_data.ProcessorData attribute)</a>
+</li>
+  </ul></td>
+</tr></table>
+
+<h2 id="D">D</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="banffprocessor.metadata.models#banffprocessor.metadata.models.metadataclass.MetadataClass.DATA_FIELD_SCHEMA_MAX_LENGTH">DATA_FIELD_SCHEMA_MAX_LENGTH (banffprocessor.metadata.models.metadataclass.MetadataClass attribute)</a>
+</li>
+      <li><a href="banffprocessor.util#banffprocessor.util.dataset.Dataset">Dataset (class in banffprocessor.util.dataset)</a>
+</li>
+      <li><a href="banffprocessor#banffprocessor.processor_data.ProcessorData.datasets">datasets (banffprocessor.processor_data.ProcessorData property)</a>
+</li>
+      <li><a href="banffprocessor.metadata#banffprocessor.metadata.metaobjects.MetaObjects.dbconn">dbconn (banffprocessor.metadata.metaobjects.MetaObjects property)</a>
+
+      <ul>
+        <li><a href="banffprocessor#banffprocessor.processor.Processor.dbconn">(banffprocessor.processor.Processor property)</a>
+</li>
+        <li><a href="banffprocessor#banffprocessor.processor_data.ProcessorData.dbconn">(banffprocessor.processor_data.ProcessorData property)</a>
+</li>
+        <li><a href="banffprocessor.util#banffprocessor.util.dataset.Dataset.dbconn">(banffprocessor.util.dataset.Dataset property)</a>
+</li>
+      </ul></li>
+      <li><a href="banffprocessor.nls#banffprocessor.nls.nls.determine_language">determine_language() (in module banffprocessor.nls.nls)</a>
+</li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="banffprocessor.procedures.banff_procedures#banffprocessor.procedures.banff_procedures.deterministic.Deterministic">Deterministic (class in banffprocessor.procedures.banff_procedures.deterministic)</a>
+</li>
+      <li><a href="banffprocessor.metadata#banffprocessor.metadata.metaobjects.MetaObjects.display_load_summary">display_load_summary() (banffprocessor.metadata.metaobjects.MetaObjects method)</a>
+</li>
+      <li><a href="banffprocessor.procedures.banff_procedures#banffprocessor.procedures.banff_procedures.donorimputation.DonorImputation">DonorImputation (class in banffprocessor.procedures.banff_procedures.donorimputation)</a>
+</li>
+      <li><a href="banffprocessor.metadata.models#banffprocessor.metadata.models.donorspecs.Donorspecs">Donorspecs (class in banffprocessor.metadata.models.donorspecs)</a>
+</li>
+      <li><a href="banffprocessor.util#banffprocessor.util.dataset.Dataset.ds">ds (banffprocessor.util.dataset.Dataset property)</a>
+</li>
+      <li><a href="banffprocessor.util#banffprocessor.util.dataset.Dataset.ds_curr_output">ds_curr_output (banffprocessor.util.dataset.Dataset property)</a>
+</li>
+      <li><a href="banffprocessor.util#banffprocessor.util.dataset.Dataset.ds_filtered">ds_filtered (banffprocessor.util.dataset.Dataset property)</a>
+</li>
+      <li><a href="banffprocessor#banffprocessor.processor_data.ds_to_format">ds_to_format() (in module banffprocessor.processor_data)</a>
+</li>
+  </ul></td>
+</tr></table>
+
+<h2 id="E">E</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="banffprocessor.metadata.models#banffprocessor.metadata.models.processcontrols.ProcessControlType.EDIT_GROUP_FILTER">EDIT_GROUP_FILTER (banffprocessor.metadata.models.processcontrols.ProcessControlType attribute)</a>
+</li>
+      <li><a href="banffprocessor.metadata.models#banffprocessor.metadata.models.editgroups.Editgroups">Editgroups (class in banffprocessor.metadata.models.editgroups)</a>
+</li>
+      <li><a href="banffprocessor.metadata.models#banffprocessor.metadata.models.edits.Edits">Edits (class in banffprocessor.metadata.models.edits)</a>
+</li>
+      <li><a href="banffprocessor.procedures.banff_procedures#banffprocessor.procedures.banff_procedures.editstats.EditStats">EditStats (class in banffprocessor.procedures.banff_procedures.editstats)</a>
+</li>
+      <li><a href="banffprocessor.exceptions#banffprocessor.exceptions.EmptyMetadataFileError">EmptyMetadataFileError</a>
+</li>
+      <li><a href="banffprocessor.nls#banffprocessor.nls.SupportedLanguage.en">en (banffprocessor.nls.SupportedLanguage attribute)</a>
+</li>
+      <li><a href="banffprocessor.procedures.banff_procedures#banffprocessor.procedures.banff_procedures.errorloc.Errorloc">Errorloc (class in banffprocessor.procedures.banff_procedures.errorloc)</a>
+</li>
+      <li><a href="banffprocessor.metadata.models#banffprocessor.metadata.models.errorlocspecs.Errorlocspecs">Errorlocspecs (class in banffprocessor.metadata.models.errorlocspecs)</a>
+</li>
+      <li><a href="banffprocessor.procedures.banff_procedures#banffprocessor.procedures.banff_procedures.estimator.Estimator">Estimator (class in banffprocessor.procedures.banff_procedures.estimator)</a>
+</li>
+      <li><a href="banffprocessor.metadata.models#banffprocessor.metadata.models.estimators.Estimators">Estimators (class in banffprocessor.metadata.models.estimators)</a>
+</li>
+      <li><a href="banffprocessor.metadata.models#banffprocessor.metadata.models.estimatorspecs.Estimatorspecs">Estimatorspecs (class in banffprocessor.metadata.models.estimatorspecs)</a>
+</li>
+      <li><a href="banffprocessor.metadata.models#banffprocessor.metadata.models.processcontrols.ProcessControlType.EXCLUDE_REJECTED">EXCLUDE_REJECTED (banffprocessor.metadata.models.processcontrols.ProcessControlType attribute)</a>
+</li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="banffprocessor.procedures.banff_procedures#banffprocessor.procedures.banff_procedures.deterministic.Deterministic.execute">execute() (banffprocessor.procedures.banff_procedures.deterministic.Deterministic class method)</a>
+
+      <ul>
+        <li><a href="banffprocessor.procedures.banff_procedures#banffprocessor.procedures.banff_procedures.donorimputation.DonorImputation.execute">(banffprocessor.procedures.banff_procedures.donorimputation.DonorImputation class method)</a>
+</li>
+        <li><a href="banffprocessor.procedures.banff_procedures#banffprocessor.procedures.banff_procedures.editstats.EditStats.execute">(banffprocessor.procedures.banff_procedures.editstats.EditStats class method)</a>
+</li>
+        <li><a href="banffprocessor.procedures.banff_procedures#banffprocessor.procedures.banff_procedures.errorloc.Errorloc.execute">(banffprocessor.procedures.banff_procedures.errorloc.Errorloc class method)</a>
+</li>
+        <li><a href="banffprocessor.procedures.banff_procedures#banffprocessor.procedures.banff_procedures.estimator.Estimator.execute">(banffprocessor.procedures.banff_procedures.estimator.Estimator class method)</a>
+</li>
+        <li><a href="banffprocessor.procedures.banff_procedures#banffprocessor.procedures.banff_procedures.job_proc.JobProc.execute">(banffprocessor.procedures.banff_procedures.job_proc.JobProc class method)</a>
+</li>
+        <li><a href="banffprocessor.procedures.banff_procedures#banffprocessor.procedures.banff_procedures.massimputation.MassImputation.execute">(banffprocessor.procedures.banff_procedures.massimputation.MassImputation class method)</a>
+</li>
+        <li><a href="banffprocessor.procedures.banff_procedures#banffprocessor.procedures.banff_procedures.outlier.Outlier.execute">(banffprocessor.procedures.banff_procedures.outlier.Outlier class method)</a>
+</li>
+        <li><a href="banffprocessor.procedures.banff_procedures#banffprocessor.procedures.banff_procedures.prorate.Prorate.execute">(banffprocessor.procedures.banff_procedures.prorate.Prorate class method)</a>
+</li>
+        <li><a href="banffprocessor.procedures.banff_procedures#banffprocessor.procedures.banff_procedures.verifyedits.VerifyEdits.execute">(banffprocessor.procedures.banff_procedures.verifyedits.VerifyEdits class method)</a>
+</li>
+        <li><a href="banffprocessor.procedures#banffprocessor.procedures.procedure_interface.ProcedureInterface.execute">(banffprocessor.procedures.procedure_interface.ProcedureInterface class method)</a>
+</li>
+        <li><a href="banffprocessor#banffprocessor.processor.Processor.execute">(banffprocessor.processor.Processor method)</a>
+</li>
+      </ul></li>
+      <li><a href="banffprocessor.metadata.models#banffprocessor.metadata.models.expressions.Expressions">Expressions (class in banffprocessor.metadata.models.expressions)</a>
+</li>
+  </ul></td>
+</tr></table>
+
+<h2 id="F">F</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="banffprocessor.nls#banffprocessor.nls.SupportedLanguage.fr">fr (banffprocessor.nls.SupportedLanguage attribute)</a>
+</li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="banffprocessor#banffprocessor.processor.Processor.from_file">from_file() (banffprocessor.processor.Processor class method)</a>
+
+      <ul>
+        <li><a href="banffprocessor#banffprocessor.processor_input.ProcessorInput.from_file">(banffprocessor.processor_input.ProcessorInput class method)</a>
+</li>
+      </ul></li>
+  </ul></td>
+</tr></table>
+
+<h2 id="G">G</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="banffprocessor.metadata#banffprocessor.metadata.metaobjects.MetaObjects.get_algorithm">get_algorithm() (banffprocessor.metadata.metaobjects.MetaObjects method)</a>
+</li>
+      <li><a href="banffprocessor#banffprocessor.processor.get_args">get_args() (in module banffprocessor.processor)</a>
+
+      <ul>
+        <li><a href="banffprocessor.util#banffprocessor.util.metadata_excel_to_xml.get_args">(in module banffprocessor.util.metadata_excel_to_xml)</a>
+</li>
+      </ul></li>
+      <li><a href="banffprocessor.processor_logger#banffprocessor.processor_logger.processor_logger.get_c_handlers">get_c_handlers() (in module banffprocessor.processor_logger.processor_logger)</a>
+</li>
+      <li><a href="banffprocessor.processor_logger#banffprocessor.processor_logger.processor_logger.get_child_stream_logger">get_child_stream_logger() (in module banffprocessor.processor_logger.processor_logger)</a>
+</li>
+      <li><a href="banffprocessor#banffprocessor.processor_data.ProcessorData.get_dataset">get_dataset() (banffprocessor.processor_data.ProcessorData method)</a>
+</li>
+      <li><a href="banffprocessor.util#banffprocessor.util.dataset.get_dataset_name_alias">get_dataset_name_alias() (in module banffprocessor.util.dataset)</a>
+</li>
+      <li><a href="banffprocessor.util#banffprocessor.util.dataset.get_dataset_real_name">get_dataset_real_name() (in module banffprocessor.util.dataset)</a>
+</li>
+      <li><a href="banffprocessor.metadata#banffprocessor.metadata.metaobjects.MetaObjects.get_edits_string">get_edits_string() (banffprocessor.metadata.metaobjects.MetaObjects method)</a>
+</li>
+      <li><a href="banffprocessor.metadata#banffprocessor.metadata.metaobjects.MetaObjects.get_estimators">get_estimators() (banffprocessor.metadata.metaobjects.MetaObjects method)</a>
+</li>
+      <li><a href="banffprocessor.metadata#banffprocessor.metadata.metaobjects.MetaObjects.get_expression">get_expression() (banffprocessor.metadata.metaobjects.MetaObjects method)</a>
+
+      <ul>
+        <li><a href="banffprocessor.metadata.models#banffprocessor.metadata.models.expressions.Expressions.get_expression">(banffprocessor.metadata.models.expressions.Expressions static method)</a>
+</li>
+      </ul></li>
+      <li><a href="banffprocessor.processor_logger#banffprocessor.processor_logger.processor_logger.get_file_handler">get_file_handler() (in module banffprocessor.processor_logger.processor_logger)</a>
+</li>
+      <li><a href="banffprocessor.metadata#banffprocessor.metadata.metaobjects.MetaObjects.get_job_steps">get_job_steps() (banffprocessor.metadata.metaobjects.MetaObjects method)</a>
+</li>
+      <li><a href="banffprocessor.nls#banffprocessor.nls.get_language">get_language() (in module banffprocessor.nls)</a>
+
+      <ul>
+        <li><a href="banffprocessor.nls#banffprocessor.nls.nls.get_language">(in module banffprocessor.nls.nls)</a>
+</li>
+      </ul></li>
+      <li><a href="banffprocessor#banffprocessor.processor_data.ProcessorData.get_new_block_copy">get_new_block_copy() (banffprocessor.processor_data.ProcessorData method)</a>
+</li>
+      <li><a href="banffprocessor.metadata#banffprocessor.metadata.metaobjects.MetaObjects.get_objects_of_type">get_objects_of_type() (banffprocessor.metadata.metaobjects.MetaObjects method)</a>
+</li>
+      <li><a href="banffprocessor#banffprocessor.processor_input.get_path_val">get_path_val() (in module banffprocessor.processor_input)</a>
+</li>
+      <li><a href="banffprocessor.procedures#banffprocessor.procedures.factory.get_procedure">get_procedure() (in module banffprocessor.procedures.factory)</a>
+</li>
+      <li><a href="banffprocessor.metadata#banffprocessor.metadata.metaobjects.MetaObjects.get_process_controls">get_process_controls() (banffprocessor.metadata.metaobjects.MetaObjects method)</a>
+</li>
+      <li><a href="banffprocessor.metadata#banffprocessor.metadata.metaobjects.MetaObjects.get_process_outputs">get_process_outputs() (banffprocessor.metadata.metaobjects.MetaObjects method)</a>
+</li>
+      <li><a href="banffprocessor.processor_logger#banffprocessor.processor_logger.processor_logger.get_processor_child_logger">get_processor_child_logger() (in module banffprocessor.processor_logger.processor_logger)</a>
+</li>
+      <li><a href="banffprocessor.metadata.models#banffprocessor.metadata.models.metadataclass.MetadataClass.get_record_count">get_record_count() (banffprocessor.metadata.models.metadataclass.MetadataClass class method)</a>
+</li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="banffprocessor.metadata.models#banffprocessor.metadata.models.algorithms.Algorithms.get_schema">get_schema() (banffprocessor.metadata.models.algorithms.Algorithms static method)</a>
+
+      <ul>
+        <li><a href="banffprocessor.metadata.models#banffprocessor.metadata.models.donorspecs.Donorspecs.get_schema">(banffprocessor.metadata.models.donorspecs.Donorspecs static method)</a>
+</li>
+        <li><a href="banffprocessor.metadata.models#banffprocessor.metadata.models.editgroups.Editgroups.get_schema">(banffprocessor.metadata.models.editgroups.Editgroups static method)</a>
+</li>
+        <li><a href="banffprocessor.metadata.models#banffprocessor.metadata.models.edits.Edits.get_schema">(banffprocessor.metadata.models.edits.Edits static method)</a>
+</li>
+        <li><a href="banffprocessor.metadata.models#banffprocessor.metadata.models.errorlocspecs.Errorlocspecs.get_schema">(banffprocessor.metadata.models.errorlocspecs.Errorlocspecs static method)</a>
+</li>
+        <li><a href="banffprocessor.metadata.models#banffprocessor.metadata.models.estimators.Estimators.get_schema">(banffprocessor.metadata.models.estimators.Estimators static method)</a>
+</li>
+        <li><a href="banffprocessor.metadata.models#banffprocessor.metadata.models.estimatorspecs.Estimatorspecs.get_schema">(banffprocessor.metadata.models.estimatorspecs.Estimatorspecs static method)</a>
+</li>
+        <li><a href="banffprocessor.metadata.models#banffprocessor.metadata.models.expressions.Expressions.get_schema">(banffprocessor.metadata.models.expressions.Expressions static method)</a>
+</li>
+        <li><a href="banffprocessor.metadata.models#banffprocessor.metadata.models.jobs.Jobs.get_schema">(banffprocessor.metadata.models.jobs.Jobs static method)</a>
+</li>
+        <li><a href="banffprocessor.metadata.models#banffprocessor.metadata.models.massimputationspecs.Massimputationspecs.get_schema">(banffprocessor.metadata.models.massimputationspecs.Massimputationspecs static method)</a>
+</li>
+        <li><a href="banffprocessor.metadata.models#banffprocessor.metadata.models.metadataclass.MetadataClass.get_schema">(banffprocessor.metadata.models.metadataclass.MetadataClass static method)</a>
+</li>
+        <li><a href="banffprocessor.metadata.models#banffprocessor.metadata.models.outlierspecs.Outlierspecs.get_schema">(banffprocessor.metadata.models.outlierspecs.Outlierspecs static method)</a>
+</li>
+        <li><a href="banffprocessor.metadata.models#banffprocessor.metadata.models.processcontrols.ProcessControls.get_schema">(banffprocessor.metadata.models.processcontrols.ProcessControls static method)</a>
+</li>
+        <li><a href="banffprocessor.metadata.models#banffprocessor.metadata.models.processoutputs.ProcessOutputs.get_schema">(banffprocessor.metadata.models.processoutputs.ProcessOutputs static method)</a>
+</li>
+        <li><a href="banffprocessor.metadata.models#banffprocessor.metadata.models.proratespecs.Proratespecs.get_schema">(banffprocessor.metadata.models.proratespecs.Proratespecs static method)</a>
+</li>
+        <li><a href="banffprocessor.metadata.models#banffprocessor.metadata.models.uservars.Uservars.get_schema">(banffprocessor.metadata.models.uservars.Uservars static method)</a>
+</li>
+        <li><a href="banffprocessor.metadata.models#banffprocessor.metadata.models.varlists.Varlists.get_schema">(banffprocessor.metadata.models.varlists.Varlists static method)</a>
+</li>
+        <li><a href="banffprocessor.metadata.models#banffprocessor.metadata.models.verifyeditsspecs.Verifyeditsspecs.get_schema">(banffprocessor.metadata.models.verifyeditsspecs.Verifyeditsspecs static method)</a>
+</li>
+        <li><a href="banffprocessor.metadata.models#banffprocessor.metadata.models.weights.Weights.get_schema">(banffprocessor.metadata.models.weights.Weights static method)</a>
+</li>
+      </ul></li>
+      <li><a href="banffprocessor.metadata#banffprocessor.metadata.metaobjects.MetaObjects.get_specs_obj">get_specs_obj() (banffprocessor.metadata.metaobjects.MetaObjects method)</a>
+</li>
+      <li><a href="banffprocessor#banffprocessor.processor_input.get_string_param_value">get_string_param_value() (in module banffprocessor.processor_input)</a>
+</li>
+      <li><a href="banffprocessor.metadata#banffprocessor.metadata.metaobjects.MetaObjects.get_user_vars_dict">get_user_vars_dict() (banffprocessor.metadata.metaobjects.MetaObjects method)</a>
+</li>
+      <li><a href="banffprocessor.metadata#banffprocessor.metadata.metaobjects.MetaObjects.get_varlist_fieldids">get_varlist_fieldids() (banffprocessor.metadata.metaobjects.MetaObjects method)</a>
+</li>
+      <li><a href="banffprocessor.metadata#banffprocessor.metadata.metaobjects.MetaObjects.get_weights_string">get_weights_string() (banffprocessor.metadata.metaobjects.MetaObjects method)</a>
+</li>
+  </ul></td>
+</tr></table>
+
+<h2 id="H">H</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="banffprocessor.metadata.models#banffprocessor.metadata.models.metadataclass.MetadataClass.handle_foreign_key_violation">handle_foreign_key_violation() (banffprocessor.metadata.models.metadataclass.MetadataClass static method)</a>
+</li>
+  </ul></td>
+</tr></table>
+
+<h2 id="I">I</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="banffprocessor#banffprocessor.processor_data.ProcessorData.indata">indata (banffprocessor.processor_data.ProcessorData property)</a>
+</li>
+      <li><a href="banffprocessor#banffprocessor.processor.init">init() (in module banffprocessor.processor)</a>
+
+      <ul>
+        <li><a href="banffprocessor.util#banffprocessor.util.metadata_excel_to_xml.init">(in module banffprocessor.util.metadata_excel_to_xml)</a>
+</li>
+      </ul></li>
+      <li><a href="banffprocessor.metadata.models#banffprocessor.metadata.models.algorithms.Algorithms.initialize">initialize() (banffprocessor.metadata.models.algorithms.Algorithms class method)</a>
+
+      <ul>
+        <li><a href="banffprocessor.metadata.models#banffprocessor.metadata.models.donorspecs.Donorspecs.initialize">(banffprocessor.metadata.models.donorspecs.Donorspecs class method)</a>
+</li>
+        <li><a href="banffprocessor.metadata.models#banffprocessor.metadata.models.editgroups.Editgroups.initialize">(banffprocessor.metadata.models.editgroups.Editgroups class method)</a>
+</li>
+        <li><a href="banffprocessor.metadata.models#banffprocessor.metadata.models.edits.Edits.initialize">(banffprocessor.metadata.models.edits.Edits class method)</a>
+</li>
+        <li><a href="banffprocessor.metadata.models#banffprocessor.metadata.models.errorlocspecs.Errorlocspecs.initialize">(banffprocessor.metadata.models.errorlocspecs.Errorlocspecs class method)</a>
+</li>
+        <li><a href="banffprocessor.metadata.models#banffprocessor.metadata.models.estimators.Estimators.initialize">(banffprocessor.metadata.models.estimators.Estimators class method)</a>
+</li>
+        <li><a href="banffprocessor.metadata.models#banffprocessor.metadata.models.estimatorspecs.Estimatorspecs.initialize">(banffprocessor.metadata.models.estimatorspecs.Estimatorspecs class method)</a>
+</li>
+        <li><a href="banffprocessor.metadata.models#banffprocessor.metadata.models.expressions.Expressions.initialize">(banffprocessor.metadata.models.expressions.Expressions class method)</a>
+</li>
+        <li><a href="banffprocessor.metadata.models#banffprocessor.metadata.models.jobs.Jobs.initialize">(banffprocessor.metadata.models.jobs.Jobs class method)</a>
+</li>
+        <li><a href="banffprocessor.metadata.models#banffprocessor.metadata.models.massimputationspecs.Massimputationspecs.initialize">(banffprocessor.metadata.models.massimputationspecs.Massimputationspecs class method)</a>
+</li>
+        <li><a href="banffprocessor.metadata.models#banffprocessor.metadata.models.metadataclass.MetadataClass.initialize">(banffprocessor.metadata.models.metadataclass.MetadataClass class method)</a>
+</li>
+        <li><a href="banffprocessor.metadata.models#banffprocessor.metadata.models.outlierspecs.Outlierspecs.initialize">(banffprocessor.metadata.models.outlierspecs.Outlierspecs class method)</a>
+</li>
+        <li><a href="banffprocessor.metadata.models#banffprocessor.metadata.models.processcontrols.ProcessControls.initialize">(banffprocessor.metadata.models.processcontrols.ProcessControls class method)</a>
+</li>
+        <li><a href="banffprocessor.metadata.models#banffprocessor.metadata.models.processoutputs.ProcessOutputs.initialize">(banffprocessor.metadata.models.processoutputs.ProcessOutputs class method)</a>
+</li>
+        <li><a href="banffprocessor.metadata.models#banffprocessor.metadata.models.proratespecs.Proratespecs.initialize">(banffprocessor.metadata.models.proratespecs.Proratespecs class method)</a>
+</li>
+        <li><a href="banffprocessor.metadata.models#banffprocessor.metadata.models.uservars.Uservars.initialize">(banffprocessor.metadata.models.uservars.Uservars class method)</a>
+</li>
+        <li><a href="banffprocessor.metadata.models#banffprocessor.metadata.models.varlists.Varlists.initialize">(banffprocessor.metadata.models.varlists.Varlists class method)</a>
+</li>
+        <li><a href="banffprocessor.metadata.models#banffprocessor.metadata.models.verifyeditsspecs.Verifyeditsspecs.initialize">(banffprocessor.metadata.models.verifyeditsspecs.Verifyeditsspecs class method)</a>
+</li>
+        <li><a href="banffprocessor.metadata.models#banffprocessor.metadata.models.weights.Weights.initialize">(banffprocessor.metadata.models.weights.Weights class method)</a>
+</li>
+      </ul></li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="banffprocessor.metadata#banffprocessor.metadata.metaobjects.MetaObjects.initialize_metadata">initialize_metadata() (banffprocessor.metadata.metaobjects.MetaObjects method)</a>
+</li>
+      <li><a href="banffprocessor#banffprocessor.processor_data.ProcessorData.input_params">input_params (banffprocessor.processor_data.ProcessorData attribute)</a>
+</li>
+      <li><a href="banffprocessor#banffprocessor.processor_data.ProcessorData.instatus">instatus (banffprocessor.processor_data.ProcessorData property)</a>
+</li>
+      <li><a href="banffprocessor.metadata.models#banffprocessor.metadata.models.outlierspecs.Outlierspecs.invalid_min_obs">invalid_min_obs (banffprocessor.metadata.models.outlierspecs.Outlierspecs attribute)</a>
+</li>
+      <li><a href="banffprocessor#banffprocessor.processor.Processor.is_child_block">is_child_block (banffprocessor.processor.Processor attribute)</a>
+</li>
+  </ul></td>
+</tr></table>
+
+<h2 id="J">J</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="banffprocessor.metadata#banffprocessor.metadata.metaobjects.MetaObjects.job_proc_names">job_proc_names (banffprocessor.metadata.metaobjects.MetaObjects attribute)</a>
+</li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="banffprocessor.procedures.banff_procedures#banffprocessor.procedures.banff_procedures.job_proc.JobProc">JobProc (class in banffprocessor.procedures.banff_procedures.job_proc)</a>
+</li>
+      <li><a href="banffprocessor.metadata.models#banffprocessor.metadata.models.jobs.Jobs">Jobs (class in banffprocessor.metadata.models.jobs)</a>
+</li>
+  </ul></td>
+</tr></table>
+
+<h2 id="L">L</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="banffprocessor#banffprocessor.processor_data.ProcessorData.load_dataset_from_file">load_dataset_from_file() (banffprocessor.processor_data.ProcessorData method)</a>
+</li>
+      <li><a href="banffprocessor.procedures#banffprocessor.procedures.loader.load_plugins">load_plugins() (in module banffprocessor.procedures.loader)</a>
+</li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="banffprocessor.metadata.models#banffprocessor.metadata.models.metadataclass.MetadataClass.load_xml">load_xml() (banffprocessor.metadata.models.metadataclass.MetadataClass class method)</a>
+</li>
+      <li><a href="banffprocessor.metadata#banffprocessor.metadata.metaobjects.MetaObjects.load_xml_file">load_xml_file() (banffprocessor.metadata.metaobjects.MetaObjects method)</a>
+</li>
+  </ul></td>
+</tr></table>
+
+<h2 id="M">M</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="banffprocessor#banffprocessor.processor.main">main() (in module banffprocessor.processor)</a>
+
+      <ul>
+        <li><a href="banffprocessor.util#banffprocessor.util.metadata_excel_to_xml.main">(in module banffprocessor.util.metadata_excel_to_xml)</a>
+</li>
+      </ul></li>
+      <li><a href="banffprocessor.procedures.banff_procedures#banffprocessor.procedures.banff_procedures.massimputation.MassImputation">MassImputation (class in banffprocessor.procedures.banff_procedures.massimputation)</a>
+</li>
+      <li><a href="banffprocessor.metadata.models#banffprocessor.metadata.models.massimputationspecs.Massimputationspecs">Massimputationspecs (class in banffprocessor.metadata.models.massimputationspecs)</a>
+</li>
+      <li><a href="banffprocessor.metadata.models#banffprocessor.metadata.models.metadataclass.MetadataClass">MetadataClass (class in banffprocessor.metadata.models.metadataclass)</a>
+</li>
+      <li><a href="banffprocessor.exceptions#banffprocessor.exceptions.MetadataConstraintError">MetadataConstraintError</a>
+</li>
+      <li><a href="banffprocessor#banffprocessor.processor_data.ProcessorData.metaobjects">metaobjects (banffprocessor.processor_data.ProcessorData attribute)</a>
+</li>
+      <li><a href="banffprocessor.metadata#banffprocessor.metadata.metaobjects.MetaObjects">MetaObjects (class in banffprocessor.metadata.metaobjects)</a>
+</li>
+      <li><a href="banffprocessor.metadata.models#banffprocessor.metadata.models.outlierspecs.Outlierspecs.methods">methods (banffprocessor.metadata.models.outlierspecs.Outlierspecs attribute)</a>
+</li>
+      <li><a href="banffprocessor#banffprocessor.processor_input.ProcessOutputType.MINIMAL">MINIMAL (banffprocessor.processor_input.ProcessOutputType attribute)</a>
+</li>
+      <li><a href="banffprocessor#banffprocessor.processor_data.ProcessorData.minimal_outputs">minimal_outputs (banffprocessor.processor_data.ProcessorData property)</a>
+</li>
+      <li>
+    module
+
+      <ul>
+        <li><a href="banffprocessor#module-banffprocessor">banffprocessor</a>
+</li>
+        <li><a href="banffprocessor.exceptions#module-banffprocessor.exceptions">banffprocessor.exceptions</a>
+</li>
+        <li><a href="banffprocessor.metadata#module-banffprocessor.metadata">banffprocessor.metadata</a>
+</li>
+        <li><a href="banffprocessor.metadata#module-banffprocessor.metadata.metaobjects">banffprocessor.metadata.metaobjects</a>
+</li>
+        <li><a href="banffprocessor.metadata.models#module-banffprocessor.metadata.models">banffprocessor.metadata.models</a>
+</li>
+        <li><a href="banffprocessor.metadata.models#module-banffprocessor.metadata.models.algorithms">banffprocessor.metadata.models.algorithms</a>
+</li>
+        <li><a href="banffprocessor.metadata.models#module-banffprocessor.metadata.models.donorspecs">banffprocessor.metadata.models.donorspecs</a>
+</li>
+        <li><a href="banffprocessor.metadata.models#module-banffprocessor.metadata.models.editgroups">banffprocessor.metadata.models.editgroups</a>
+</li>
+        <li><a href="banffprocessor.metadata.models#module-banffprocessor.metadata.models.edits">banffprocessor.metadata.models.edits</a>
+</li>
+        <li><a href="banffprocessor.metadata.models#module-banffprocessor.metadata.models.errorlocspecs">banffprocessor.metadata.models.errorlocspecs</a>
+</li>
+        <li><a href="banffprocessor.metadata.models#module-banffprocessor.metadata.models.estimators">banffprocessor.metadata.models.estimators</a>
+</li>
+        <li><a href="banffprocessor.metadata.models#module-banffprocessor.metadata.models.estimatorspecs">banffprocessor.metadata.models.estimatorspecs</a>
+</li>
+        <li><a href="banffprocessor.metadata.models#module-banffprocessor.metadata.models.expressions">banffprocessor.metadata.models.expressions</a>
+</li>
+        <li><a href="banffprocessor.metadata.models#module-banffprocessor.metadata.models.jobs">banffprocessor.metadata.models.jobs</a>
+</li>
+        <li><a href="banffprocessor.metadata.models#module-banffprocessor.metadata.models.massimputationspecs">banffprocessor.metadata.models.massimputationspecs</a>
+</li>
+        <li><a href="banffprocessor.metadata.models#module-banffprocessor.metadata.models.metadataclass">banffprocessor.metadata.models.metadataclass</a>
+</li>
+        <li><a href="banffprocessor.metadata.models#module-banffprocessor.metadata.models.outlierspecs">banffprocessor.metadata.models.outlierspecs</a>
+</li>
+        <li><a href="banffprocessor.metadata.models#module-banffprocessor.metadata.models.processcontrols">banffprocessor.metadata.models.processcontrols</a>
+</li>
+        <li><a href="banffprocessor.metadata.models#module-banffprocessor.metadata.models.processoutputs">banffprocessor.metadata.models.processoutputs</a>
+</li>
+        <li><a href="banffprocessor.metadata.models#module-banffprocessor.metadata.models.proratespecs">banffprocessor.metadata.models.proratespecs</a>
+</li>
+        <li><a href="banffprocessor.metadata.models#module-banffprocessor.metadata.models.uservars">banffprocessor.metadata.models.uservars</a>
+</li>
+        <li><a href="banffprocessor.metadata.models#module-banffprocessor.metadata.models.varlists">banffprocessor.metadata.models.varlists</a>
+</li>
+        <li><a href="banffprocessor.metadata.models#module-banffprocessor.metadata.models.verifyeditsspecs">banffprocessor.metadata.models.verifyeditsspecs</a>
+</li>
+        <li><a href="banffprocessor.metadata.models#module-banffprocessor.metadata.models.weights">banffprocessor.metadata.models.weights</a>
+</li>
+        <li><a href="banffprocessor.nls#module-banffprocessor.nls">banffprocessor.nls</a>
+</li>
+        <li><a href="banffprocessor.nls#module-banffprocessor.nls.nls">banffprocessor.nls.nls</a>
+</li>
+        <li><a href="banffprocessor.procedures#module-banffprocessor.procedures">banffprocessor.procedures</a>
+</li>
+        <li><a href="banffprocessor.procedures.banff_procedures#module-banffprocessor.procedures.banff_procedures">banffprocessor.procedures.banff_procedures</a>
+</li>
+        <li><a href="banffprocessor.procedures.banff_procedures#module-banffprocessor.procedures.banff_procedures.deterministic">banffprocessor.procedures.banff_procedures.deterministic</a>
+</li>
+        <li><a href="banffprocessor.procedures.banff_procedures#module-banffprocessor.procedures.banff_procedures.donorimputation">banffprocessor.procedures.banff_procedures.donorimputation</a>
+</li>
+        <li><a href="banffprocessor.procedures.banff_procedures#module-banffprocessor.procedures.banff_procedures.editstats">banffprocessor.procedures.banff_procedures.editstats</a>
+</li>
+        <li><a href="banffprocessor.procedures.banff_procedures#module-banffprocessor.procedures.banff_procedures.errorloc">banffprocessor.procedures.banff_procedures.errorloc</a>
+</li>
+        <li><a href="banffprocessor.procedures.banff_procedures#module-banffprocessor.procedures.banff_procedures.estimator">banffprocessor.procedures.banff_procedures.estimator</a>
+</li>
+        <li><a href="banffprocessor.procedures.banff_procedures#module-banffprocessor.procedures.banff_procedures.job_proc">banffprocessor.procedures.banff_procedures.job_proc</a>
+</li>
+        <li><a href="banffprocessor.procedures.banff_procedures#module-banffprocessor.procedures.banff_procedures.massimputation">banffprocessor.procedures.banff_procedures.massimputation</a>
+</li>
+        <li><a href="banffprocessor.procedures.banff_procedures#module-banffprocessor.procedures.banff_procedures.outlier">banffprocessor.procedures.banff_procedures.outlier</a>
+</li>
+        <li><a href="banffprocessor.procedures.banff_procedures#module-banffprocessor.procedures.banff_procedures.prorate">banffprocessor.procedures.banff_procedures.prorate</a>
+</li>
+        <li><a href="banffprocessor.procedures.banff_procedures#module-banffprocessor.procedures.banff_procedures.verifyedits">banffprocessor.procedures.banff_procedures.verifyedits</a>
+</li>
+        <li><a href="banffprocessor.procedures#module-banffprocessor.procedures.factory">banffprocessor.procedures.factory</a>
+</li>
+        <li><a href="banffprocessor.procedures#module-banffprocessor.procedures.loader">banffprocessor.procedures.loader</a>
+</li>
+        <li><a href="banffprocessor.procedures#module-banffprocessor.procedures.procedure_interface">banffprocessor.procedures.procedure_interface</a>
+</li>
+        <li><a href="banffprocessor#module-banffprocessor.processor">banffprocessor.processor</a>
+</li>
+        <li><a href="banffprocessor#module-banffprocessor.processor_data">banffprocessor.processor_data</a>
+</li>
+        <li><a href="banffprocessor#module-banffprocessor.processor_input">banffprocessor.processor_input</a>
+</li>
+        <li><a href="banffprocessor.processor_logger#module-banffprocessor.processor_logger">banffprocessor.processor_logger</a>
+</li>
+        <li><a href="banffprocessor.processor_logger#module-banffprocessor.processor_logger.processor_logger">banffprocessor.processor_logger.processor_logger</a>
+</li>
+        <li><a href="banffprocessor.util#module-banffprocessor.util">banffprocessor.util</a>
+</li>
+        <li><a href="banffprocessor.util#module-banffprocessor.util.case_insensitive_enum_meta">banffprocessor.util.case_insensitive_enum_meta</a>
+</li>
+        <li><a href="banffprocessor.util#module-banffprocessor.util.dataset">banffprocessor.util.dataset</a>
+</li>
+        <li><a href="banffprocessor.util#module-banffprocessor.util.metadata_excel_to_xml">banffprocessor.util.metadata_excel_to_xml</a>
+</li>
+      </ul></li>
+  </ul></td>
+</tr></table>
+
+<h2 id="N">N</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="banffprocessor.util#banffprocessor.util.dataset.Dataset.name">name (banffprocessor.util.dataset.Dataset attribute)</a>
+</li>
+  </ul></td>
+</tr></table>
+
+<h2 id="O">O</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="banffprocessor#banffprocessor.processor_data.ProcessorData.outdata">outdata (banffprocessor.processor_data.ProcessorData property)</a>
+</li>
+      <li><a href="banffprocessor.procedures.banff_procedures#banffprocessor.procedures.banff_procedures.outlier.Outlier">Outlier (class in banffprocessor.procedures.banff_procedures.outlier)</a>
+</li>
+      <li><a href="banffprocessor.metadata.models#banffprocessor.metadata.models.outlierspecs.Outlierspecs">Outlierspecs (class in banffprocessor.metadata.models.outlierspecs)</a>
+</li>
+      <li><a href="banffprocessor#banffprocessor.processor_data.ProcessorData.output_required">output_required() (banffprocessor.processor_data.ProcessorData method)</a>
+</li>
+      <li><a href="banffprocessor.procedures.banff_procedures#banffprocessor.procedures.banff_procedures.donorimputation.DonorImputation.output_tables">output_tables (banffprocessor.procedures.banff_procedures.donorimputation.DonorImputation attribute)</a>
+
+      <ul>
+        <li><a href="banffprocessor.procedures.banff_procedures#banffprocessor.procedures.banff_procedures.editstats.EditStats.output_tables">(banffprocessor.procedures.banff_procedures.editstats.EditStats attribute)</a>
+</li>
+        <li><a href="banffprocessor.procedures.banff_procedures#banffprocessor.procedures.banff_procedures.errorloc.Errorloc.output_tables">(banffprocessor.procedures.banff_procedures.errorloc.Errorloc attribute)</a>
+</li>
+        <li><a href="banffprocessor.procedures.banff_procedures#banffprocessor.procedures.banff_procedures.estimator.Estimator.output_tables">(banffprocessor.procedures.banff_procedures.estimator.Estimator attribute)</a>
+</li>
+        <li><a href="banffprocessor.procedures.banff_procedures#banffprocessor.procedures.banff_procedures.massimputation.MassImputation.output_tables">(banffprocessor.procedures.banff_procedures.massimputation.MassImputation attribute)</a>
+</li>
+        <li><a href="banffprocessor.procedures.banff_procedures#banffprocessor.procedures.banff_procedures.outlier.Outlier.output_tables">(banffprocessor.procedures.banff_procedures.outlier.Outlier attribute)</a>
+</li>
+        <li><a href="banffprocessor.procedures.banff_procedures#banffprocessor.procedures.banff_procedures.prorate.Prorate.output_tables">(banffprocessor.procedures.banff_procedures.prorate.Prorate attribute)</a>
+</li>
+      </ul></li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="banffprocessor#banffprocessor.processor_data.ProcessorData.outstatus">outstatus (banffprocessor.processor_data.ProcessorData property)</a>
+</li>
+  </ul></td>
+</tr></table>
+
+<h2 id="P">P</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="banffprocessor#banffprocessor.processor_data.ProcessorData.pop_dataset">pop_dataset() (banffprocessor.processor_data.ProcessorData method)</a>
+</li>
+      <li><a href="banffprocessor.procedures#banffprocessor.procedures.procedure_interface.ProcedureInterface">ProcedureInterface (class in banffprocessor.procedures.procedure_interface)</a>
+</li>
+      <li><a href="banffprocessor.exceptions#banffprocessor.exceptions.ProcedureReturnCodeError">ProcedureReturnCodeError</a>
+</li>
+      <li><a href="banffprocessor.exceptions#banffprocessor.exceptions.ProcessControlError">ProcessControlError</a>
+</li>
+      <li><a href="banffprocessor.metadata.models#banffprocessor.metadata.models.processcontrols.ProcessControls">ProcessControls (class in banffprocessor.metadata.models.processcontrols)</a>
+</li>
+      <li><a href="banffprocessor.metadata.models#banffprocessor.metadata.models.processcontrols.ProcessControlType">ProcessControlType (class in banffprocessor.metadata.models.processcontrols)</a>
+</li>
+      <li><a href="banffprocessor#banffprocessor.processor.Processor">Processor (class in banffprocessor.processor)</a>
+</li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="banffprocessor#banffprocessor.processor.Processor.processor_data">processor_data (banffprocessor.processor.Processor attribute)</a>
+</li>
+      <li><a href="banffprocessor#banffprocessor.processor_data.ProcessorData">ProcessorData (class in banffprocessor.processor_data)</a>
+</li>
+      <li><a href="banffprocessor#banffprocessor.processor_input.ProcessorInput">ProcessorInput (class in banffprocessor.processor_input)</a>
+</li>
+      <li><a href="banffprocessor.exceptions#banffprocessor.exceptions.ProcessorInputParameterError">ProcessorInputParameterError</a>
+</li>
+      <li><a href="banffprocessor.metadata.models#banffprocessor.metadata.models.processoutputs.ProcessOutputs">ProcessOutputs (class in banffprocessor.metadata.models.processoutputs)</a>
+</li>
+      <li><a href="banffprocessor#banffprocessor.processor_input.ProcessOutputType">ProcessOutputType (class in banffprocessor.processor_input)</a>
+</li>
+      <li><a href="banffprocessor.procedures.banff_procedures#banffprocessor.procedures.banff_procedures.prorate.Prorate">Prorate (class in banffprocessor.procedures.banff_procedures.prorate)</a>
+</li>
+      <li><a href="banffprocessor.metadata.models#banffprocessor.metadata.models.proratespecs.Proratespecs">Proratespecs (class in banffprocessor.metadata.models.proratespecs)</a>
+</li>
+  </ul></td>
+</tr></table>
+
+<h2 id="R">R</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="banffprocessor.procedures.banff_procedures#banffprocessor.procedures.banff_procedures.deterministic.register">register() (in module banffprocessor.procedures.banff_procedures.deterministic)</a>
+
+      <ul>
+        <li><a href="banffprocessor.procedures.banff_procedures#banffprocessor.procedures.banff_procedures.donorimputation.register">(in module banffprocessor.procedures.banff_procedures.donorimputation)</a>
+</li>
+        <li><a href="banffprocessor.procedures.banff_procedures#banffprocessor.procedures.banff_procedures.editstats.register">(in module banffprocessor.procedures.banff_procedures.editstats)</a>
+</li>
+        <li><a href="banffprocessor.procedures.banff_procedures#banffprocessor.procedures.banff_procedures.errorloc.register">(in module banffprocessor.procedures.banff_procedures.errorloc)</a>
+</li>
+        <li><a href="banffprocessor.procedures.banff_procedures#banffprocessor.procedures.banff_procedures.estimator.register">(in module banffprocessor.procedures.banff_procedures.estimator)</a>
+</li>
+        <li><a href="banffprocessor.procedures.banff_procedures#banffprocessor.procedures.banff_procedures.job_proc.register">(in module banffprocessor.procedures.banff_procedures.job_proc)</a>
+</li>
+        <li><a href="banffprocessor.procedures.banff_procedures#banffprocessor.procedures.banff_procedures.massimputation.register">(in module banffprocessor.procedures.banff_procedures.massimputation)</a>
+</li>
+        <li><a href="banffprocessor.procedures.banff_procedures#banffprocessor.procedures.banff_procedures.outlier.register">(in module banffprocessor.procedures.banff_procedures.outlier)</a>
+</li>
+        <li><a href="banffprocessor.procedures.banff_procedures#banffprocessor.procedures.banff_procedures.prorate.register">(in module banffprocessor.procedures.banff_procedures.prorate)</a>
+</li>
+        <li><a href="banffprocessor.procedures.banff_procedures#banffprocessor.procedures.banff_procedures.verifyedits.register">(in module banffprocessor.procedures.banff_procedures.verifyedits)</a>
+</li>
+        <li><a href="banffprocessor.procedures#banffprocessor.procedures.factory.register">(in module banffprocessor.procedures.factory)</a>
+</li>
+      </ul></li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="banffprocessor.util#banffprocessor.util.dataset.Dataset.register_table">register_table() (banffprocessor.util.dataset.Dataset method)</a>
+</li>
+      <li><a href="banffprocessor.metadata.models#banffprocessor.metadata.models.processcontrols.ProcessControlType.ROW_FILTER">ROW_FILTER (banffprocessor.metadata.models.processcontrols.ProcessControlType attribute)</a>
+</li>
+  </ul></td>
+</tr></table>
+
+<h2 id="S">S</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="banffprocessor#banffprocessor.processor.Processor.save_outputs">save_outputs() (banffprocessor.processor.Processor method)</a>
+
+      <ul>
+        <li><a href="banffprocessor#banffprocessor.processor_data.ProcessorData.save_outputs">(banffprocessor.processor_data.ProcessorData method)</a>
+</li>
+      </ul></li>
+      <li><a href="banffprocessor#banffprocessor.processor_data.ProcessorData.save_proc_output">save_proc_output() (banffprocessor.processor_data.ProcessorData method)</a>
+</li>
+      <li><a href="banffprocessor#banffprocessor.processor_data.ProcessorData.set_dataset">set_dataset() (banffprocessor.processor_data.ProcessorData method)</a>
+</li>
+      <li><a href="banffprocessor#banffprocessor.processor_data.ProcessorData.set_dataset_from_file">set_dataset_from_file() (banffprocessor.processor_data.ProcessorData method)</a>
+</li>
+      <li><a href="banffprocessor#banffprocessor.set_language">set_language() (in module banffprocessor)</a>
+
+      <ul>
+        <li><a href="banffprocessor.nls#banffprocessor.nls.set_language">(in module banffprocessor.nls)</a>
+</li>
+        <li><a href="banffprocessor.nls#banffprocessor.nls.nls.set_language">(in module banffprocessor.nls.nls)</a>
+</li>
+      </ul></li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="banffprocessor.metadata.models#banffprocessor.metadata.models.metadataclass.MetadataClass.setup">setup() (banffprocessor.metadata.models.metadataclass.MetadataClass class method)</a>
+</li>
+      <li><a href="banffprocessor.processor_logger#banffprocessor.processor_logger.processor_logger.setup_processor_logger">setup_processor_logger() (in module banffprocessor.processor_logger.processor_logger)</a>
+</li>
+      <li><a href="banffprocessor#banffprocessor.processor_data.ProcessorData.status_file">status_file (banffprocessor.processor_data.ProcessorData property)</a>
+</li>
+      <li><a href="banffprocessor.nls#banffprocessor.nls.SupportedLanguage">SupportedLanguage (class in banffprocessor.nls)</a>
+</li>
+  </ul></td>
+</tr></table>
+
+<h2 id="T">T</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="banffprocessor.util#banffprocessor.util.dataset.table_empty">table_empty() (in module banffprocessor.util.dataset)</a>
+</li>
+      <li><a href="banffprocessor.metadata.models#banffprocessor.metadata.models.algorithms.Algorithms.to_dict">to_dict() (banffprocessor.metadata.models.algorithms.Algorithms method)</a>
+
+      <ul>
+        <li><a href="banffprocessor.metadata.models#banffprocessor.metadata.models.estimators.Estimators.to_dict">(banffprocessor.metadata.models.estimators.Estimators method)</a>
+</li>
+      </ul></li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="banffprocessor#banffprocessor.processor_data.ProcessorData.total_job_duration">total_job_duration (banffprocessor.processor_data.ProcessorData attribute)</a>
+</li>
+      <li><a href="banffprocessor.metadata#banffprocessor.metadata.metaobjects.MetaObjects.total_job_steps">total_job_steps (banffprocessor.metadata.metaobjects.MetaObjects attribute)</a>
+
+      <ul>
+        <li><a href="banffprocessor#banffprocessor.processor_data.ProcessorData.total_job_steps">(banffprocessor.processor_data.ProcessorData property)</a>
+</li>
+      </ul></li>
+  </ul></td>
+</tr></table>
+
+<h2 id="U">U</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="banffprocessor.nls#banffprocessor.nls.SupportedLanguage.UNKNOWN">UNKNOWN (banffprocessor.nls.SupportedLanguage attribute)</a>
+</li>
+      <li><a href="banffprocessor.procedures#banffprocessor.procedures.factory.unregister">unregister() (in module banffprocessor.procedures.factory)</a>
+</li>
+      <li><a href="banffprocessor.util#banffprocessor.util.dataset.Dataset.unregister_table">unregister_table() (banffprocessor.util.dataset.Dataset method)</a>
+</li>
+      <li><a href="banffprocessor#banffprocessor.processor_data.ProcessorData.update_cumulatives">update_cumulatives() (banffprocessor.processor_data.ProcessorData method)</a>
+</li>
+      <li><a href="banffprocessor#banffprocessor.processor_data.ProcessorData.update_file_all">update_file_all() (banffprocessor.processor_data.ProcessorData method)</a>
+</li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="banffprocessor#banffprocessor.processor_data.ProcessorData.update_imputed_file">update_imputed_file() (banffprocessor.processor_data.ProcessorData method)</a>
+</li>
+      <li><a href="banffprocessor#banffprocessor.processor_data.ProcessorData.update_status">update_status() (banffprocessor.processor_data.ProcessorData method)</a>
+</li>
+      <li><a href="banffprocessor#banffprocessor.processor_data.ProcessorData.update_with_block_result">update_with_block_result() (banffprocessor.processor_data.ProcessorData method)</a>
+</li>
+      <li><a href="banffprocessor.exceptions#banffprocessor.exceptions.UserDefinedPluginError">UserDefinedPluginError</a>
+</li>
+      <li><a href="banffprocessor.metadata.models#banffprocessor.metadata.models.uservars.Uservars">Uservars (class in banffprocessor.metadata.models.uservars)</a>
+</li>
+      <li><a href="banffprocessor.metadata.models#banffprocessor.metadata.models.uservars.Uservars.uservars_to_dict">uservars_to_dict() (banffprocessor.metadata.models.uservars.Uservars static method)</a>
+</li>
+  </ul></td>
+</tr></table>
+
+<h2 id="V">V</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="banffprocessor.metadata#banffprocessor.metadata.metaobjects.MetaObjects.validate_job_sequence">validate_job_sequence() (banffprocessor.metadata.metaobjects.MetaObjects static method)</a>
+</li>
+      <li><a href="banffprocessor.metadata.models#banffprocessor.metadata.models.varlists.Varlists">Varlists (class in banffprocessor.metadata.models.varlists)</a>
+</li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="banffprocessor.procedures.banff_procedures#banffprocessor.procedures.banff_procedures.verifyedits.VerifyEdits">VerifyEdits (class in banffprocessor.procedures.banff_procedures.verifyedits)</a>
+</li>
+      <li><a href="banffprocessor.metadata.models#banffprocessor.metadata.models.verifyeditsspecs.Verifyeditsspecs">Verifyeditsspecs (class in banffprocessor.metadata.models.verifyeditsspecs)</a>
+</li>
+  </ul></td>
+</tr></table>
+
+<h2 id="W">W</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="banffprocessor.metadata.models#banffprocessor.metadata.models.weights.Weights">Weights (class in banffprocessor.metadata.models.weights)</a>
+</li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="banffprocessor#banffprocessor.processor.write_to_console">write_to_console() (in module banffprocessor.processor)</a>
+</li>
+  </ul></td>
+</tr></table>
+
+
+
+                </article>
+              
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
+<script defer src="_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+
+  <p class="copyright">
+    
+      © Copyright 2025, Statistics Canada / Statistique Canada.
+      <br/>
+    
+  </p>
+</div>
+      
+        <div class="footer-item">
+
+  <p class="sphinx-version">
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 8.2.3.
+    <br/>
+  </p>
+</div>
+      
+    </div>
+  
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item">
+<p class="theme-version">
+  <!-- # L10n: Setting the PST URL as an argument as this does not need to be localized -->
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.16.1.
+</p></div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
+</html>

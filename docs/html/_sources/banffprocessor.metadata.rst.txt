@@ -1,0 +1,29 @@
+banffprocessor.metadata package
+===============================
+
+Subpackages
+-----------
+
+.. toctree::
+   :maxdepth: 4
+
+   banffprocessor.metadata.models
+
+Submodules
+----------
+
+banffprocessor.metadata.metaobjects module
+------------------------------------------
+
+.. automodule:: banffprocessor.metadata.metaobjects
+   :members:
+   :show-inheritance:
+   :undoc-members:
+
+Module contents
+---------------
+
+.. automodule:: banffprocessor.metadata
+   :members:
+   :show-inheritance:
+   :undoc-members:

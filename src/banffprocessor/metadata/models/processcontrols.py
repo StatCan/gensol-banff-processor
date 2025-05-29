@@ -27,8 +27,8 @@ class ProcessControls(MetadataClass):
             raise MetadataConstraintError(msg) from e
 
         if(self.parameter is ProcessControlType.EDIT_GROUP_FILTER):
-            if(value):
-                msg += _(" is an EDIT_GROUP_FILTER control and therefore requires an empty value field.")
+            if(value or targetfile):
+                msg += _(" is an EDIT_GROUP_FILTER control and therefore requires empty value and targetfile fields.")
                 raise MetadataConstraintError(msg)
             self.value = ["FTI", "FTE"]
             self.targetfile = "instatus"
@@ -57,19 +57,21 @@ class ProcessControls(MetadataClass):
 
         # Note that the order of attributes must match the order in the create statement
         statement = f"INSERT INTO  banff.{self.__class__.__name__} VALUES (?, ?, ?, ?)" # noqa: S608
-        dbconn.execute(statement,[self.controlid, self.targetfile, parameter, self.value])
+        dbconn.execute(statement,[self.controlid, self.parameter.name, self.targetfile, self.value])
 
     @classmethod
     def initialize(cls, dbconn: duckdb.DuckDBPyConnection = duckdb) -> None:
         """Create duckdb table to store the metadata."""
         cls.setup(dbconn=dbconn)
 
+        # Only value must be unique between the same controlid, parameter and targetfile
+        # thus our key is made up of all 4 fields.
         create_statement =  f"""CREATE TABLE banff.{cls.__name__} (
             controlid VARCHAR,
-            targetfile VARCHAR,
             parameter VARCHAR,
+            targetfile VARCHAR,
             value VARCHAR,
-            PRIMARY KEY(controlid, targetfile, parameter)
+            PRIMARY KEY(controlid, parameter, targetfile, value)
             )
         """
         dbconn.execute(create_statement)

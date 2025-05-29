@@ -1,0 +1,1257 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="./" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>banffprocessor.metadata.models package &#8212; Banff Processor 2.0.2 documentation</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=8f2a1f02" />
+    <link rel="stylesheet" type="text/css" href="_static/custom.css?v=2a807888" />
+  
+  <!-- So that users can add custom icons -->
+  <script src="_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
+
+    <script src="_static/documentation_options.js?v=29701289"></script>
+    <script src="_static/doctools.js?v=9bcbadda"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'banffprocessor.metadata.models';</script>
+    <link rel="index" title="Index" href="genindex" />
+    <link rel="search" title="Search" href="search" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="search"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class="col-lg-3 navbar-header-items__start">
+    
+      <div class="navbar-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="index">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="_static/banff_white.png" class="logo__image only-light" alt="Banff Processor 2.0.2 documentation - Home"/>
+    <img src="_static/banff_white.png" class="logo__image only-dark pst-js-only" alt="Banff Processor 2.0.2 documentation - Home"/>
+  
+  
+</a></div>
+    
+  </div>
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="en/index">
+    English
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="fr/index">
+    Français
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+        </div>
+      
+      
+        <div class="navbar-item">
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button></div>
+      
+        <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/StatCan/gensol-banff-processor" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fab fa-github fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+</ul></div>
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+    </div>
+  
+
+  
+    <button class="pst-navbar-icon sidebar-toggle secondary-toggle" aria-label="On this page">
+      <span class="fa-solid fa-outdent"></span>
+    </button>
+  
+</div>
+
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          
+          
+            <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="en/index">
+    English
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="fr/index">
+    Français
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+          
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button></div>
+        
+          <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/StatCan/gensol-banff-processor" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fab fa-github fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+</ul></div>
+        
+      </div>
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+<nav class="bd-docs-nav bd-links"
+     aria-label="Section Navigation">
+  <p class="bd-links__title" role="heading" aria-level="1">Section Navigation</p>
+  <div class="bd-toc-item navbar-nav"><ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="banffprocessor.exceptions">banffprocessor.exceptions package</a></li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="banffprocessor.metadata">banffprocessor.metadata package</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">banffprocessor.metadata.models package</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="banffprocessor.nls">banffprocessor.nls package</a></li>
+<li class="toctree-l1"><a class="reference internal" href="banffprocessor.procedures">banffprocessor.procedures package</a></li>
+<li class="toctree-l1"><a class="reference internal" href="banffprocessor.processor_logger">banffprocessor.processor_logger package</a></li>
+<li class="toctree-l1"><a class="reference internal" href="banffprocessor.util">banffprocessor.util package</a></li>
+</ul>
+</div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+<nav aria-label="Breadcrumb" class="d-print-none">
+  <ul class="bd-breadcrumbs">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="index" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis">banffprocessor.metadata.models package</span></li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section id="banffprocessor-metadata-models-package">
+<h1>banffprocessor.metadata.models package<a class="headerlink" href="#banffprocessor-metadata-models-package" title="Link to this heading">#</a></h1>
+<section id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Link to this heading">#</a></h2>
+</section>
+<section id="module-banffprocessor.metadata.models.algorithms">
+<span id="banffprocessor-metadata-models-algorithms-module"></span><h2>banffprocessor.metadata.models.algorithms module<a class="headerlink" href="#module-banffprocessor.metadata.models.algorithms" title="Link to this heading">#</a></h2>
+<p>Metadata model for user-defined estimator algorithms.</p>
+<dl class="py class">
+<dt class="sig sig-object py" id="banffprocessor.metadata.models.algorithms.Algorithms">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">banffprocessor.metadata.models.algorithms.</span></span><span class="sig-name descname"><span class="pre">Algorithms</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">algorithmname:</span> <span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">status:</span> <span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">formula:</span> <span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">type:</span> <span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">description:</span> <span class="pre">str</span> <span class="pre">|</span> <span class="pre">None</span> <span class="pre">=</span> <span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dbconn:</span> <span class="pre">~duckdb.duckdb.DuckDBPyConnection</span> <span class="pre">=</span> <span class="pre">&lt;module</span> <span class="pre">'duckdb'</span> <span class="pre">from</span> <span class="pre">'/builds/gensys/banff/banff-processor/venv/lib/python3.12/site-packages/duckdb/__init__.py'&gt;</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/banffprocessor/metadata/models/algorithms#Algorithms"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#banffprocessor.metadata.models.algorithms.Algorithms" title="Link to this definition">#</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#banffprocessor.metadata.models.metadataclass.MetadataClass" title="banffprocessor.metadata.models.metadataclass.MetadataClass"><code class="xref py py-class docutils literal notranslate"><span class="pre">MetadataClass</span></code></a></p>
+<p>Metadata class for user-defined algorithms which define estimators.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="banffprocessor.metadata.models.algorithms.Algorithms.get_schema">
+<em class="property"><span class="k"><span class="pre">static</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">get_schema</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">root_element_name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'banffProcessor'</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span></span></span><a class="reference internal" href="_modules/banffprocessor/metadata/models/algorithms#Algorithms.get_schema"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#banffprocessor.metadata.models.algorithms.Algorithms.get_schema" title="Link to this definition">#</a></dt>
+<dd><p>Return schema (XSD) contents as a string.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="banffprocessor.metadata.models.algorithms.Algorithms.initialize">
+<em class="property"><span class="k"><span class="pre">classmethod</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">initialize</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dbconn:</span> <span class="pre">~duckdb.duckdb.DuckDBPyConnection</span> <span class="pre">=</span> <span class="pre">&lt;module</span> <span class="pre">'duckdb'</span> <span class="pre">from</span> <span class="pre">'/builds/gensys/banff/banff-processor/venv/lib/python3.12/site-packages/duckdb/__init__.py'&gt;</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="reference internal" href="_modules/banffprocessor/metadata/models/algorithms#Algorithms.initialize"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#banffprocessor.metadata.models.algorithms.Algorithms.initialize" title="Link to this definition">#</a></dt>
+<dd><p>Create duckdb table to store the metadata.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="banffprocessor.metadata.models.algorithms.Algorithms.to_dict">
+<span class="sig-name descname"><span class="pre">to_dict</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span></span><a class="reference internal" href="_modules/banffprocessor/metadata/models/algorithms#Algorithms.to_dict"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#banffprocessor.metadata.models.algorithms.Algorithms.to_dict" title="Link to this definition">#</a></dt>
+<dd><p>Return the algormithm metadata as a dictionary.</p>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-banffprocessor.metadata.models.donorspecs">
+<span id="banffprocessor-metadata-models-donorspecs-module"></span><h2>banffprocessor.metadata.models.donorspecs module<a class="headerlink" href="#module-banffprocessor.metadata.models.donorspecs" title="Link to this heading">#</a></h2>
+<p>Metadata model for Donor Imputation specifications.</p>
+<dl class="py class">
+<dt class="sig sig-object py" id="banffprocessor.metadata.models.donorspecs.Donorspecs">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">banffprocessor.metadata.models.donorspecs.</span></span><span class="sig-name descname"><span class="pre">Donorspecs</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">specid:</span> <span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">n:</span> <span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dataexclvar:</span> <span class="pre">str</span> <span class="pre">|</span> <span class="pre">None</span> <span class="pre">=</span> <span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">posteditgroupid:</span> <span class="pre">str</span> <span class="pre">|</span> <span class="pre">None</span> <span class="pre">=</span> <span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mustmatchid:</span> <span class="pre">str</span> <span class="pre">|</span> <span class="pre">None</span> <span class="pre">=</span> <span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mindonors:</span> <span class="pre">int</span> <span class="pre">|</span> <span class="pre">None</span> <span class="pre">=</span> <span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pcentdonors:</span> <span class="pre">float</span> <span class="pre">|</span> <span class="pre">None</span> <span class="pre">=</span> <span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">eligdon:</span> <span class="pre">str</span> <span class="pre">|</span> <span class="pre">None</span> <span class="pre">=</span> <span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">random:</span> <span class="pre">bool</span> <span class="pre">|</span> <span class="pre">None</span> <span class="pre">=</span> <span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">nlimit:</span> <span class="pre">int</span> <span class="pre">|</span> <span class="pre">None</span> <span class="pre">=</span> <span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mrl:</span> <span class="pre">float</span> <span class="pre">|</span> <span class="pre">None</span> <span class="pre">=</span> <span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dbconn:</span> <span class="pre">~duckdb.duckdb.DuckDBPyConnection</span> <span class="pre">=</span> <span class="pre">&lt;module</span> <span class="pre">'duckdb'</span> <span class="pre">from</span> <span class="pre">'/builds/gensys/banff/banff-processor/venv/lib/python3.12/site-packages/duckdb/__init__.py'&gt;</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/banffprocessor/metadata/models/donorspecs#Donorspecs"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#banffprocessor.metadata.models.donorspecs.Donorspecs" title="Link to this definition">#</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#banffprocessor.metadata.models.metadataclass.MetadataClass" title="banffprocessor.metadata.models.metadataclass.MetadataClass"><code class="xref py py-class docutils literal notranslate"><span class="pre">MetadataClass</span></code></a></p>
+<p>Metadata class for donor imputation specifications.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="banffprocessor.metadata.models.donorspecs.Donorspecs.check_constraints">
+<em class="property"><span class="k"><span class="pre">classmethod</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">check_constraints</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dbconn:</span> <span class="pre">~duckdb.duckdb.DuckDBPyConnection</span> <span class="pre">=</span> <span class="pre">&lt;module</span> <span class="pre">'duckdb'</span> <span class="pre">from</span> <span class="pre">'/builds/gensys/banff/banff-processor/venv/lib/python3.12/site-packages/duckdb/__init__.py'&gt;</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="reference internal" href="_modules/banffprocessor/metadata/models/donorspecs#Donorspecs.check_constraints"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#banffprocessor.metadata.models.donorspecs.Donorspecs.check_constraints" title="Link to this definition">#</a></dt>
+<dd><p>Check constaints after all metadata has been loaded (typically foreign key constraints).</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="banffprocessor.metadata.models.donorspecs.Donorspecs.get_schema">
+<em class="property"><span class="k"><span class="pre">static</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">get_schema</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">root_element_name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'banffProcessor'</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span></span></span><a class="reference internal" href="_modules/banffprocessor/metadata/models/donorspecs#Donorspecs.get_schema"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#banffprocessor.metadata.models.donorspecs.Donorspecs.get_schema" title="Link to this definition">#</a></dt>
+<dd><p>Return schema (XSD) contents as a string.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="banffprocessor.metadata.models.donorspecs.Donorspecs.initialize">
+<em class="property"><span class="k"><span class="pre">classmethod</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">initialize</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dbconn:</span> <span class="pre">~duckdb.duckdb.DuckDBPyConnection</span> <span class="pre">=</span> <span class="pre">&lt;module</span> <span class="pre">'duckdb'</span> <span class="pre">from</span> <span class="pre">'/builds/gensys/banff/banff-processor/venv/lib/python3.12/site-packages/duckdb/__init__.py'&gt;</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="reference internal" href="_modules/banffprocessor/metadata/models/donorspecs#Donorspecs.initialize"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#banffprocessor.metadata.models.donorspecs.Donorspecs.initialize" title="Link to this definition">#</a></dt>
+<dd><p>Create duckdb table to store the metadata.</p>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-banffprocessor.metadata.models.editgroups">
+<span id="banffprocessor-metadata-models-editgroups-module"></span><h2>banffprocessor.metadata.models.editgroups module<a class="headerlink" href="#module-banffprocessor.metadata.models.editgroups" title="Link to this heading">#</a></h2>
+<p>Metadata model for defining edit groups.</p>
+<dl class="py class">
+<dt class="sig sig-object py" id="banffprocessor.metadata.models.editgroups.Editgroups">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">banffprocessor.metadata.models.editgroups.</span></span><span class="sig-name descname"><span class="pre">Editgroups</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">editgroupid:</span> <span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">editid:</span> <span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dbconn:</span> <span class="pre">~duckdb.duckdb.DuckDBPyConnection</span> <span class="pre">=</span> <span class="pre">&lt;module</span> <span class="pre">'duckdb'</span> <span class="pre">from</span> <span class="pre">'/builds/gensys/banff/banff-processor/venv/lib/python3.12/site-packages/duckdb/__init__.py'&gt;</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/banffprocessor/metadata/models/editgroups#Editgroups"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#banffprocessor.metadata.models.editgroups.Editgroups" title="Link to this definition">#</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#banffprocessor.metadata.models.metadataclass.MetadataClass" title="banffprocessor.metadata.models.metadataclass.MetadataClass"><code class="xref py py-class docutils literal notranslate"><span class="pre">MetadataClass</span></code></a></p>
+<p>Metadata class for defining edit groups.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="banffprocessor.metadata.models.editgroups.Editgroups.check_constraints">
+<em class="property"><span class="k"><span class="pre">classmethod</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">check_constraints</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dbconn:</span> <span class="pre">~duckdb.duckdb.DuckDBPyConnection</span> <span class="pre">=</span> <span class="pre">&lt;module</span> <span class="pre">'duckdb'</span> <span class="pre">from</span> <span class="pre">'/builds/gensys/banff/banff-processor/venv/lib/python3.12/site-packages/duckdb/__init__.py'&gt;</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="reference internal" href="_modules/banffprocessor/metadata/models/editgroups#Editgroups.check_constraints"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#banffprocessor.metadata.models.editgroups.Editgroups.check_constraints" title="Link to this definition">#</a></dt>
+<dd><p>All edits defined in an edit group must exist.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="banffprocessor.metadata.models.editgroups.Editgroups.get_schema">
+<em class="property"><span class="k"><span class="pre">static</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">get_schema</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">root_element_name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'banffProcessor'</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span></span></span><a class="reference internal" href="_modules/banffprocessor/metadata/models/editgroups#Editgroups.get_schema"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#banffprocessor.metadata.models.editgroups.Editgroups.get_schema" title="Link to this definition">#</a></dt>
+<dd><p>Return schema (XSD) contents as a string.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="banffprocessor.metadata.models.editgroups.Editgroups.initialize">
+<em class="property"><span class="k"><span class="pre">classmethod</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">initialize</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dbconn:</span> <span class="pre">~duckdb.duckdb.DuckDBPyConnection</span> <span class="pre">=</span> <span class="pre">&lt;module</span> <span class="pre">'duckdb'</span> <span class="pre">from</span> <span class="pre">'/builds/gensys/banff/banff-processor/venv/lib/python3.12/site-packages/duckdb/__init__.py'&gt;</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="reference internal" href="_modules/banffprocessor/metadata/models/editgroups#Editgroups.initialize"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#banffprocessor.metadata.models.editgroups.Editgroups.initialize" title="Link to this definition">#</a></dt>
+<dd><p>Create duckdb table to store the metadata.</p>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-banffprocessor.metadata.models.edits">
+<span id="banffprocessor-metadata-models-edits-module"></span><h2>banffprocessor.metadata.models.edits module<a class="headerlink" href="#module-banffprocessor.metadata.models.edits" title="Link to this heading">#</a></h2>
+<p>Metadata model for edits.</p>
+<dl class="py class">
+<dt class="sig sig-object py" id="banffprocessor.metadata.models.edits.Edits">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">banffprocessor.metadata.models.edits.</span></span><span class="sig-name descname"><span class="pre">Edits</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">editid:</span> <span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">leftside:</span> <span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">rightside:</span> <span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">operator:</span> <span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">modifier:</span> <span class="pre">str</span> <span class="pre">|</span> <span class="pre">None</span> <span class="pre">=</span> <span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dbconn:</span> <span class="pre">~duckdb.duckdb.DuckDBPyConnection</span> <span class="pre">=</span> <span class="pre">&lt;module</span> <span class="pre">'duckdb'</span> <span class="pre">from</span> <span class="pre">'/builds/gensys/banff/banff-processor/venv/lib/python3.12/site-packages/duckdb/__init__.py'&gt;</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/banffprocessor/metadata/models/edits#Edits"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#banffprocessor.metadata.models.edits.Edits" title="Link to this definition">#</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#banffprocessor.metadata.models.metadataclass.MetadataClass" title="banffprocessor.metadata.models.metadataclass.MetadataClass"><code class="xref py py-class docutils literal notranslate"><span class="pre">MetadataClass</span></code></a></p>
+<p>Metadata class for defining edits.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="banffprocessor.metadata.models.edits.Edits.get_schema">
+<em class="property"><span class="k"><span class="pre">static</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">get_schema</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">root_element_name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'banffProcessor'</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span></span></span><a class="reference internal" href="_modules/banffprocessor/metadata/models/edits#Edits.get_schema"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#banffprocessor.metadata.models.edits.Edits.get_schema" title="Link to this definition">#</a></dt>
+<dd><p>Return schema (XSD) contents as a string.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="banffprocessor.metadata.models.edits.Edits.initialize">
+<em class="property"><span class="k"><span class="pre">classmethod</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">initialize</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dbconn:</span> <span class="pre">~duckdb.duckdb.DuckDBPyConnection</span> <span class="pre">=</span> <span class="pre">&lt;module</span> <span class="pre">'duckdb'</span> <span class="pre">from</span> <span class="pre">'/builds/gensys/banff/banff-processor/venv/lib/python3.12/site-packages/duckdb/__init__.py'&gt;</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="reference internal" href="_modules/banffprocessor/metadata/models/edits#Edits.initialize"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#banffprocessor.metadata.models.edits.Edits.initialize" title="Link to this definition">#</a></dt>
+<dd><p>Create duckdb table to store the metadata.</p>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-banffprocessor.metadata.models.errorlocspecs">
+<span id="banffprocessor-metadata-models-errorlocspecs-module"></span><h2>banffprocessor.metadata.models.errorlocspecs module<a class="headerlink" href="#module-banffprocessor.metadata.models.errorlocspecs" title="Link to this heading">#</a></h2>
+<p>Metadata model for Errorloc Specifiations.</p>
+<dl class="py class">
+<dt class="sig sig-object py" id="banffprocessor.metadata.models.errorlocspecs.Errorlocspecs">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">banffprocessor.metadata.models.errorlocspecs.</span></span><span class="sig-name descname"><span class="pre">Errorlocspecs</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">specid:</span> <span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cardinality:</span> <span class="pre">float</span> <span class="pre">|</span> <span class="pre">None</span> <span class="pre">=</span> <span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">timeperobs:</span> <span class="pre">float</span> <span class="pre">|</span> <span class="pre">None</span> <span class="pre">=</span> <span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">weightid:</span> <span class="pre">str</span> <span class="pre">|</span> <span class="pre">None</span> <span class="pre">=</span> <span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dbconn:</span> <span class="pre">~duckdb.duckdb.DuckDBPyConnection</span> <span class="pre">=</span> <span class="pre">&lt;module</span> <span class="pre">'duckdb'</span> <span class="pre">from</span> <span class="pre">'/builds/gensys/banff/banff-processor/venv/lib/python3.12/site-packages/duckdb/__init__.py'&gt;</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/banffprocessor/metadata/models/errorlocspecs#Errorlocspecs"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#banffprocessor.metadata.models.errorlocspecs.Errorlocspecs" title="Link to this definition">#</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#banffprocessor.metadata.models.metadataclass.MetadataClass" title="banffprocessor.metadata.models.metadataclass.MetadataClass"><code class="xref py py-class docutils literal notranslate"><span class="pre">MetadataClass</span></code></a></p>
+<p>Metadata class for ErrorLoc specifications.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="banffprocessor.metadata.models.errorlocspecs.Errorlocspecs.check_constraints">
+<em class="property"><span class="k"><span class="pre">classmethod</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">check_constraints</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dbconn:</span> <span class="pre">~duckdb.duckdb.DuckDBPyConnection</span> <span class="pre">=</span> <span class="pre">&lt;module</span> <span class="pre">'duckdb'</span> <span class="pre">from</span> <span class="pre">'/builds/gensys/banff/banff-processor/venv/lib/python3.12/site-packages/duckdb/__init__.py'&gt;</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="reference internal" href="_modules/banffprocessor/metadata/models/errorlocspecs#Errorlocspecs.check_constraints"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#banffprocessor.metadata.models.errorlocspecs.Errorlocspecs.check_constraints" title="Link to this definition">#</a></dt>
+<dd><p>Check constaints after all metadata has been loaded (typically foreign key constraints).</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="banffprocessor.metadata.models.errorlocspecs.Errorlocspecs.get_schema">
+<em class="property"><span class="k"><span class="pre">static</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">get_schema</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">root_element_name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'banffProcessor'</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span></span></span><a class="reference internal" href="_modules/banffprocessor/metadata/models/errorlocspecs#Errorlocspecs.get_schema"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#banffprocessor.metadata.models.errorlocspecs.Errorlocspecs.get_schema" title="Link to this definition">#</a></dt>
+<dd><p>Return schema (XSD) contents as a string.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="banffprocessor.metadata.models.errorlocspecs.Errorlocspecs.initialize">
+<em class="property"><span class="k"><span class="pre">classmethod</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">initialize</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dbconn:</span> <span class="pre">~duckdb.duckdb.DuckDBPyConnection</span> <span class="pre">=</span> <span class="pre">&lt;module</span> <span class="pre">'duckdb'</span> <span class="pre">from</span> <span class="pre">'/builds/gensys/banff/banff-processor/venv/lib/python3.12/site-packages/duckdb/__init__.py'&gt;</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="reference internal" href="_modules/banffprocessor/metadata/models/errorlocspecs#Errorlocspecs.initialize"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#banffprocessor.metadata.models.errorlocspecs.Errorlocspecs.initialize" title="Link to this definition">#</a></dt>
+<dd><p>Create duckdb table to store the metadata.</p>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-banffprocessor.metadata.models.estimators">
+<span id="banffprocessor-metadata-models-estimators-module"></span><h2>banffprocessor.metadata.models.estimators module<a class="headerlink" href="#module-banffprocessor.metadata.models.estimators" title="Link to this heading">#</a></h2>
+<p>Metadata model for Estimators.</p>
+<dl class="py class">
+<dt class="sig sig-object py" id="banffprocessor.metadata.models.estimators.Estimators">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">banffprocessor.metadata.models.estimators.</span></span><span class="sig-name descname"><span class="pre">Estimators</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">estimatorid:</span> <span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">seqno:</span> <span class="pre">float</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fieldid:</span> <span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">algorithmname:</span> <span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">randomerror:</span> <span class="pre">bool</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">auxvariables:</span> <span class="pre">str</span> <span class="pre">|</span> <span class="pre">None</span> <span class="pre">=</span> <span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">weightvariable:</span> <span class="pre">str</span> <span class="pre">|</span> <span class="pre">None</span> <span class="pre">=</span> <span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">variancevariable:</span> <span class="pre">str</span> <span class="pre">|</span> <span class="pre">None</span> <span class="pre">=</span> <span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">varianceexponent:</span> <span class="pre">float</span> <span class="pre">|</span> <span class="pre">None</span> <span class="pre">=</span> <span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">varianceperiod:</span> <span class="pre">str</span> <span class="pre">|</span> <span class="pre">None</span> <span class="pre">=</span> <span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">excludeimputed:</span> <span class="pre">bool</span> <span class="pre">|</span> <span class="pre">None</span> <span class="pre">=</span> <span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">excludeoutliers:</span> <span class="pre">bool</span> <span class="pre">|</span> <span class="pre">None</span> <span class="pre">=</span> <span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">countcriteria:</span> <span class="pre">int</span> <span class="pre">|</span> <span class="pre">None</span> <span class="pre">=</span> <span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">percentcriteria:</span> <span class="pre">float</span> <span class="pre">|</span> <span class="pre">None</span> <span class="pre">=</span> <span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dbconn:</span> <span class="pre">~duckdb.duckdb.DuckDBPyConnection</span> <span class="pre">=</span> <span class="pre">&lt;module</span> <span class="pre">'duckdb'</span> <span class="pre">from</span> <span class="pre">'/builds/gensys/banff/banff-processor/venv/lib/python3.12/site-packages/duckdb/__init__.py'&gt;</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/banffprocessor/metadata/models/estimators#Estimators"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#banffprocessor.metadata.models.estimators.Estimators" title="Link to this definition">#</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#banffprocessor.metadata.models.metadataclass.MetadataClass" title="banffprocessor.metadata.models.metadataclass.MetadataClass"><code class="xref py py-class docutils literal notranslate"><span class="pre">MetadataClass</span></code></a></p>
+<p>Estimators metadata class.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="banffprocessor.metadata.models.estimators.Estimators.get_schema">
+<em class="property"><span class="k"><span class="pre">static</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">get_schema</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">root_element_name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'banffProcessor'</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span></span></span><a class="reference internal" href="_modules/banffprocessor/metadata/models/estimators#Estimators.get_schema"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#banffprocessor.metadata.models.estimators.Estimators.get_schema" title="Link to this definition">#</a></dt>
+<dd><p>Return schema (XSD) contents as a string.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="banffprocessor.metadata.models.estimators.Estimators.initialize">
+<em class="property"><span class="k"><span class="pre">classmethod</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">initialize</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dbconn:</span> <span class="pre">~duckdb.duckdb.DuckDBPyConnection</span> <span class="pre">=</span> <span class="pre">&lt;module</span> <span class="pre">'duckdb'</span> <span class="pre">from</span> <span class="pre">'/builds/gensys/banff/banff-processor/venv/lib/python3.12/site-packages/duckdb/__init__.py'&gt;</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="reference internal" href="_modules/banffprocessor/metadata/models/estimators#Estimators.initialize"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#banffprocessor.metadata.models.estimators.Estimators.initialize" title="Link to this definition">#</a></dt>
+<dd><p>Create duckdb table to store the metadata.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="banffprocessor.metadata.models.estimators.Estimators.to_dict">
+<span class="sig-name descname"><span class="pre">to_dict</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">int</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">float</span><span class="p"><span class="pre">]</span></span></span></span><a class="reference internal" href="_modules/banffprocessor/metadata/models/estimators#Estimators.to_dict"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#banffprocessor.metadata.models.estimators.Estimators.to_dict" title="Link to this definition">#</a></dt>
+<dd><p>Return the object as a dictionary.</p>
+<p>Used for creating a Dataframe from the object. Explicitly makes all fields values reflect their type, if no value was provided.
+This way there is no possiblity of an incorrect datatype (character seen as numeric or vice versa) for any empty fields when the
+constructed dataframe is passed to the Banff package c-code.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="banffprocessor.metadata.models.estimators.builtin_estimators">
+<span class="sig-prename descclassname"><span class="pre">banffprocessor.metadata.models.estimators.</span></span><span class="sig-name descname"><span class="pre">builtin_estimators</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">dict</span></span></span><a class="reference internal" href="_modules/banffprocessor/metadata/models/estimators#builtin_estimators"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#banffprocessor.metadata.models.estimators.builtin_estimators" title="Link to this definition">#</a></dt>
+<dd><p>Return built-in estimators as a dictionary, where the key is the name and the value is the type.</p>
+</dd></dl>
+
+</section>
+<section id="module-banffprocessor.metadata.models.estimatorspecs">
+<span id="banffprocessor-metadata-models-estimatorspecs-module"></span><h2>banffprocessor.metadata.models.estimatorspecs module<a class="headerlink" href="#module-banffprocessor.metadata.models.estimatorspecs" title="Link to this heading">#</a></h2>
+<p>Metadata model for Estimator specifications.</p>
+<dl class="py class">
+<dt class="sig sig-object py" id="banffprocessor.metadata.models.estimatorspecs.Estimatorspecs">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">banffprocessor.metadata.models.estimatorspecs.</span></span><span class="sig-name descname"><span class="pre">Estimatorspecs</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">specid:</span> <span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">estimatorid:</span> <span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dataexclvar:</span> <span class="pre">str</span> <span class="pre">|</span> <span class="pre">None</span> <span class="pre">=</span> <span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">histexclvar:</span> <span class="pre">str</span> <span class="pre">|</span> <span class="pre">None</span> <span class="pre">=</span> <span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dbconn:</span> <span class="pre">~duckdb.duckdb.DuckDBPyConnection</span> <span class="pre">=</span> <span class="pre">&lt;module</span> <span class="pre">'duckdb'</span> <span class="pre">from</span> <span class="pre">'/builds/gensys/banff/banff-processor/venv/lib/python3.12/site-packages/duckdb/__init__.py'&gt;</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/banffprocessor/metadata/models/estimatorspecs#Estimatorspecs"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#banffprocessor.metadata.models.estimatorspecs.Estimatorspecs" title="Link to this definition">#</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#banffprocessor.metadata.models.metadataclass.MetadataClass" title="banffprocessor.metadata.models.metadataclass.MetadataClass"><code class="xref py py-class docutils literal notranslate"><span class="pre">MetadataClass</span></code></a></p>
+<p>Metadata class for Estimator specifications.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="banffprocessor.metadata.models.estimatorspecs.Estimatorspecs.check_constraints">
+<em class="property"><span class="k"><span class="pre">classmethod</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">check_constraints</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dbconn:</span> <span class="pre">~duckdb.duckdb.DuckDBPyConnection</span> <span class="pre">=</span> <span class="pre">&lt;module</span> <span class="pre">'duckdb'</span> <span class="pre">from</span> <span class="pre">'/builds/gensys/banff/banff-processor/venv/lib/python3.12/site-packages/duckdb/__init__.py'&gt;</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="reference internal" href="_modules/banffprocessor/metadata/models/estimatorspecs#Estimatorspecs.check_constraints"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#banffprocessor.metadata.models.estimatorspecs.Estimatorspecs.check_constraints" title="Link to this definition">#</a></dt>
+<dd><p>Check constaints after all metadata has been loaded (typically foreign key constraints).</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="banffprocessor.metadata.models.estimatorspecs.Estimatorspecs.get_schema">
+<em class="property"><span class="k"><span class="pre">static</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">get_schema</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">root_element_name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'banffProcessor'</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span></span></span><a class="reference internal" href="_modules/banffprocessor/metadata/models/estimatorspecs#Estimatorspecs.get_schema"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#banffprocessor.metadata.models.estimatorspecs.Estimatorspecs.get_schema" title="Link to this definition">#</a></dt>
+<dd><p>Return schema (XSD) contents as a string.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="banffprocessor.metadata.models.estimatorspecs.Estimatorspecs.initialize">
+<em class="property"><span class="k"><span class="pre">classmethod</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">initialize</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dbconn:</span> <span class="pre">~duckdb.duckdb.DuckDBPyConnection</span> <span class="pre">=</span> <span class="pre">&lt;module</span> <span class="pre">'duckdb'</span> <span class="pre">from</span> <span class="pre">'/builds/gensys/banff/banff-processor/venv/lib/python3.12/site-packages/duckdb/__init__.py'&gt;</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="reference internal" href="_modules/banffprocessor/metadata/models/estimatorspecs#Estimatorspecs.initialize"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#banffprocessor.metadata.models.estimatorspecs.Estimatorspecs.initialize" title="Link to this definition">#</a></dt>
+<dd><p>Create duckdb table to store the metadata.</p>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-banffprocessor.metadata.models.expressions">
+<span id="banffprocessor-metadata-models-expressions-module"></span><h2>banffprocessor.metadata.models.expressions module<a class="headerlink" href="#module-banffprocessor.metadata.models.expressions" title="Link to this heading">#</a></h2>
+<p>Metadata model for Expressions.</p>
+<dl class="py class">
+<dt class="sig sig-object py" id="banffprocessor.metadata.models.expressions.Expressions">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">banffprocessor.metadata.models.expressions.</span></span><span class="sig-name descname"><span class="pre">Expressions</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">expressionid:</span> <span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">expressions:</span> <span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dbconn:</span> <span class="pre">~duckdb.duckdb.DuckDBPyConnection</span> <span class="pre">=</span> <span class="pre">&lt;module</span> <span class="pre">'duckdb'</span> <span class="pre">from</span> <span class="pre">'/builds/gensys/banff/banff-processor/venv/lib/python3.12/site-packages/duckdb/__init__.py'&gt;</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/banffprocessor/metadata/models/expressions#Expressions"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#banffprocessor.metadata.models.expressions.Expressions" title="Link to this definition">#</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#banffprocessor.metadata.models.metadataclass.MetadataClass" title="banffprocessor.metadata.models.metadataclass.MetadataClass"><code class="xref py py-class docutils literal notranslate"><span class="pre">MetadataClass</span></code></a></p>
+<p>Metadata class for expressions.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="banffprocessor.metadata.models.expressions.Expressions.get_expression">
+<em class="property"><span class="k"><span class="pre">static</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">get_expression</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">expression_id:</span> <span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dbconn:</span> <span class="pre">~duckdb.duckdb.DuckDBPyConnection</span> <span class="pre">=</span> <span class="pre">&lt;module</span> <span class="pre">'duckdb'</span> <span class="pre">from</span> <span class="pre">'/builds/gensys/banff/banff-processor/venv/lib/python3.12/site-packages/duckdb/__init__.py'&gt;</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span></span></span><a class="reference internal" href="_modules/banffprocessor/metadata/models/expressions#Expressions.get_expression"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#banffprocessor.metadata.models.expressions.Expressions.get_expression" title="Link to this definition">#</a></dt>
+<dd><p>Return the expression as a string for the given id.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="banffprocessor.metadata.models.expressions.Expressions.get_schema">
+<em class="property"><span class="k"><span class="pre">static</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">get_schema</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">root_element_name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'banffProcessor'</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span></span></span><a class="reference internal" href="_modules/banffprocessor/metadata/models/expressions#Expressions.get_schema"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#banffprocessor.metadata.models.expressions.Expressions.get_schema" title="Link to this definition">#</a></dt>
+<dd><p>Return schema (XSD) contents as a string.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="banffprocessor.metadata.models.expressions.Expressions.initialize">
+<em class="property"><span class="k"><span class="pre">classmethod</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">initialize</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dbconn:</span> <span class="pre">~duckdb.duckdb.DuckDBPyConnection</span> <span class="pre">=</span> <span class="pre">&lt;module</span> <span class="pre">'duckdb'</span> <span class="pre">from</span> <span class="pre">'/builds/gensys/banff/banff-processor/venv/lib/python3.12/site-packages/duckdb/__init__.py'&gt;</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="reference internal" href="_modules/banffprocessor/metadata/models/expressions#Expressions.initialize"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#banffprocessor.metadata.models.expressions.Expressions.initialize" title="Link to this definition">#</a></dt>
+<dd><p>Create duckdb table to store the metadata.</p>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-banffprocessor.metadata.models.jobs">
+<span id="banffprocessor-metadata-models-jobs-module"></span><h2>banffprocessor.metadata.models.jobs module<a class="headerlink" href="#module-banffprocessor.metadata.models.jobs" title="Link to this heading">#</a></h2>
+<p>Metadata model for Jobs.</p>
+<dl class="py class">
+<dt class="sig sig-object py" id="banffprocessor.metadata.models.jobs.Jobs">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">banffprocessor.metadata.models.jobs.</span></span><span class="sig-name descname"><span class="pre">Jobs</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">jobid:</span> <span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">seqno:</span> <span class="pre">float</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">process:</span> <span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">specid:</span> <span class="pre">str</span> <span class="pre">|</span> <span class="pre">None</span> <span class="pre">=</span> <span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">editgroupid:</span> <span class="pre">str</span> <span class="pre">|</span> <span class="pre">None</span> <span class="pre">=</span> <span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">byid:</span> <span class="pre">str</span> <span class="pre">|</span> <span class="pre">None</span> <span class="pre">=</span> <span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">acceptnegative:</span> <span class="pre">str</span> <span class="pre">|</span> <span class="pre">None</span> <span class="pre">=</span> <span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">controlid:</span> <span class="pre">str</span> <span class="pre">|</span> <span class="pre">None</span> <span class="pre">=</span> <span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dbconn:</span> <span class="pre">~duckdb.duckdb.DuckDBPyConnection</span> <span class="pre">=</span> <span class="pre">&lt;module</span> <span class="pre">'duckdb'</span> <span class="pre">from</span> <span class="pre">'/builds/gensys/banff/banff-processor/venv/lib/python3.12/site-packages/duckdb/__init__.py'&gt;</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/banffprocessor/metadata/models/jobs#Jobs"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#banffprocessor.metadata.models.jobs.Jobs" title="Link to this definition">#</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#banffprocessor.metadata.models.metadataclass.MetadataClass" title="banffprocessor.metadata.models.metadataclass.MetadataClass"><code class="xref py py-class docutils literal notranslate"><span class="pre">MetadataClass</span></code></a></p>
+<p>Metadata class for defining Jobs.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="banffprocessor.metadata.models.jobs.Jobs.check_constraints">
+<em class="property"><span class="k"><span class="pre">classmethod</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">check_constraints</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dbconn:</span> <span class="pre">~duckdb.duckdb.DuckDBPyConnection</span> <span class="pre">=</span> <span class="pre">&lt;module</span> <span class="pre">'duckdb'</span> <span class="pre">from</span> <span class="pre">'/builds/gensys/banff/banff-processor/venv/lib/python3.12/site-packages/duckdb/__init__.py'&gt;</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="reference internal" href="_modules/banffprocessor/metadata/models/jobs#Jobs.check_constraints"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#banffprocessor.metadata.models.jobs.Jobs.check_constraints" title="Link to this definition">#</a></dt>
+<dd><p>Check constaints after all metadata has been loaded (typically foreign key constraints).</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="banffprocessor.metadata.models.jobs.Jobs.get_schema">
+<em class="property"><span class="k"><span class="pre">static</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">get_schema</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">root_element_name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'banffProcessor'</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span></span></span><a class="reference internal" href="_modules/banffprocessor/metadata/models/jobs#Jobs.get_schema"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#banffprocessor.metadata.models.jobs.Jobs.get_schema" title="Link to this definition">#</a></dt>
+<dd><p>Return schema (XSD) contents as a string.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="banffprocessor.metadata.models.jobs.Jobs.initialize">
+<em class="property"><span class="k"><span class="pre">classmethod</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">initialize</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dbconn:</span> <span class="pre">~duckdb.duckdb.DuckDBPyConnection</span> <span class="pre">=</span> <span class="pre">&lt;module</span> <span class="pre">'duckdb'</span> <span class="pre">from</span> <span class="pre">'/builds/gensys/banff/banff-processor/venv/lib/python3.12/site-packages/duckdb/__init__.py'&gt;</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="reference internal" href="_modules/banffprocessor/metadata/models/jobs#Jobs.initialize"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#banffprocessor.metadata.models.jobs.Jobs.initialize" title="Link to this definition">#</a></dt>
+<dd><p>Create duckdb table to store the metadata.</p>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-banffprocessor.metadata.models.massimputationspecs">
+<span id="banffprocessor-metadata-models-massimputationspecs-module"></span><h2>banffprocessor.metadata.models.massimputationspecs module<a class="headerlink" href="#module-banffprocessor.metadata.models.massimputationspecs" title="Link to this heading">#</a></h2>
+<p>Metadata model for Mass Imputation specifications.</p>
+<dl class="py class">
+<dt class="sig sig-object py" id="banffprocessor.metadata.models.massimputationspecs.Massimputationspecs">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">banffprocessor.metadata.models.massimputationspecs.</span></span><span class="sig-name descname"><span class="pre">Massimputationspecs</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">specid:</span> <span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mustimputeid:</span> <span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mindonors:</span> <span class="pre">int</span> <span class="pre">|</span> <span class="pre">None</span> <span class="pre">=</span> <span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pcentdonors:</span> <span class="pre">float</span> <span class="pre">|</span> <span class="pre">None</span> <span class="pre">=</span> <span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mustmatchid:</span> <span class="pre">str</span> <span class="pre">|</span> <span class="pre">None</span> <span class="pre">=</span> <span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">random:</span> <span class="pre">bool</span> <span class="pre">|</span> <span class="pre">None</span> <span class="pre">=</span> <span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">nlimit:</span> <span class="pre">int</span> <span class="pre">|</span> <span class="pre">None</span> <span class="pre">=</span> <span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mrl:</span> <span class="pre">float</span> <span class="pre">|</span> <span class="pre">None</span> <span class="pre">=</span> <span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dbconn:</span> <span class="pre">~duckdb.duckdb.DuckDBPyConnection</span> <span class="pre">=</span> <span class="pre">&lt;module</span> <span class="pre">'duckdb'</span> <span class="pre">from</span> <span class="pre">'/builds/gensys/banff/banff-processor/venv/lib/python3.12/site-packages/duckdb/__init__.py'&gt;</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/banffprocessor/metadata/models/massimputationspecs#Massimputationspecs"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#banffprocessor.metadata.models.massimputationspecs.Massimputationspecs" title="Link to this definition">#</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#banffprocessor.metadata.models.metadataclass.MetadataClass" title="banffprocessor.metadata.models.metadataclass.MetadataClass"><code class="xref py py-class docutils literal notranslate"><span class="pre">MetadataClass</span></code></a></p>
+<p>Metadata class for mass imputation specifications.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="banffprocessor.metadata.models.massimputationspecs.Massimputationspecs.check_constraints">
+<em class="property"><span class="k"><span class="pre">classmethod</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">check_constraints</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dbconn:</span> <span class="pre">~duckdb.duckdb.DuckDBPyConnection</span> <span class="pre">=</span> <span class="pre">&lt;module</span> <span class="pre">'duckdb'</span> <span class="pre">from</span> <span class="pre">'/builds/gensys/banff/banff-processor/venv/lib/python3.12/site-packages/duckdb/__init__.py'&gt;</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="reference internal" href="_modules/banffprocessor/metadata/models/massimputationspecs#Massimputationspecs.check_constraints"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#banffprocessor.metadata.models.massimputationspecs.Massimputationspecs.check_constraints" title="Link to this definition">#</a></dt>
+<dd><p>Check constaints after all metadata has been loaded (typically foreign key constraints).</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="banffprocessor.metadata.models.massimputationspecs.Massimputationspecs.get_schema">
+<em class="property"><span class="k"><span class="pre">static</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">get_schema</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">root_element_name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'banffProcessor'</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span></span></span><a class="reference internal" href="_modules/banffprocessor/metadata/models/massimputationspecs#Massimputationspecs.get_schema"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#banffprocessor.metadata.models.massimputationspecs.Massimputationspecs.get_schema" title="Link to this definition">#</a></dt>
+<dd><p>Return schema (XSD) contents as a string.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="banffprocessor.metadata.models.massimputationspecs.Massimputationspecs.initialize">
+<em class="property"><span class="k"><span class="pre">classmethod</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">initialize</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dbconn:</span> <span class="pre">~duckdb.duckdb.DuckDBPyConnection</span> <span class="pre">=</span> <span class="pre">&lt;module</span> <span class="pre">'duckdb'</span> <span class="pre">from</span> <span class="pre">'/builds/gensys/banff/banff-processor/venv/lib/python3.12/site-packages/duckdb/__init__.py'&gt;</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="reference internal" href="_modules/banffprocessor/metadata/models/massimputationspecs#Massimputationspecs.initialize"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#banffprocessor.metadata.models.massimputationspecs.Massimputationspecs.initialize" title="Link to this definition">#</a></dt>
+<dd><p>Create duckdb table to store the metadata.</p>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-banffprocessor.metadata.models.metadataclass">
+<span id="banffprocessor-metadata-models-metadataclass-module"></span><h2>banffprocessor.metadata.models.metadataclass module<a class="headerlink" href="#module-banffprocessor.metadata.models.metadataclass" title="Link to this heading">#</a></h2>
+<p>Abstract Class for Banff Processor Metadata models.</p>
+<dl class="py class">
+<dt class="sig sig-object py" id="banffprocessor.metadata.models.metadataclass.MetadataClass">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">banffprocessor.metadata.models.metadataclass.</span></span><span class="sig-name descname"><span class="pre">MetadataClass</span></span><a class="reference internal" href="_modules/banffprocessor/metadata/models/metadataclass#MetadataClass"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#banffprocessor.metadata.models.metadataclass.MetadataClass" title="Link to this definition">#</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Banff Processor Metadata Class.</p>
+<p>Abstract class definition for all metadata classes to extend,
+to allow for easier type hinting without needing to explicitly
+write out all class names and it reduces replicated code</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="banffprocessor.metadata.models.metadataclass.MetadataClass.DATA_FIELD_SCHEMA_MAX_LENGTH">
+<span class="sig-name descname"><span class="pre">DATA_FIELD_SCHEMA_MAX_LENGTH</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'64'</span></em><a class="headerlink" href="#banffprocessor.metadata.models.metadataclass.MetadataClass.DATA_FIELD_SCHEMA_MAX_LENGTH" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="banffprocessor.metadata.models.metadataclass.MetadataClass.check_constraints">
+<em class="property"><span class="k"><span class="pre">classmethod</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">check_constraints</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dbconn:</span> <span class="pre">~duckdb.duckdb.DuckDBPyConnection</span> <span class="pre">=</span> <span class="pre">&lt;module</span> <span class="pre">'duckdb'</span> <span class="pre">from</span> <span class="pre">'/builds/gensys/banff/banff-processor/venv/lib/python3.12/site-packages/duckdb/__init__.py'&gt;</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="reference internal" href="_modules/banffprocessor/metadata/models/metadataclass#MetadataClass.check_constraints"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#banffprocessor.metadata.models.metadataclass.MetadataClass.check_constraints" title="Link to this definition">#</a></dt>
+<dd><p>Constraints to check after all metadata has been loaded.</p>
+<p>Subclasses may implement a set of checks, if necessary. If a constraint fails,
+an exception is raised.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="banffprocessor.metadata.models.metadataclass.MetadataClass.cleanup">
+<em class="property"><span class="k"><span class="pre">classmethod</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">cleanup</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dbconn:</span> <span class="pre">~duckdb.duckdb.DuckDBPyConnection</span> <span class="pre">=</span> <span class="pre">&lt;module</span> <span class="pre">'duckdb'</span> <span class="pre">from</span> <span class="pre">'/builds/gensys/banff/banff-processor/venv/lib/python3.12/site-packages/duckdb/__init__.py'&gt;</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="reference internal" href="_modules/banffprocessor/metadata/models/metadataclass#MetadataClass.cleanup"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#banffprocessor.metadata.models.metadataclass.MetadataClass.cleanup" title="Link to this definition">#</a></dt>
+<dd><p>Cleanup metadata in the given database.</p>
+<p>The metadata table will be deleted if the connection is still open
+and the table exists. If the database is not open, the connection
+object will have no default_connection attribute.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="banffprocessor.metadata.models.metadataclass.MetadataClass.get_record_count">
+<em class="property"><span class="k"><span class="pre">classmethod</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">get_record_count</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dbconn:</span> <span class="pre">~duckdb.duckdb.DuckDBPyConnection</span> <span class="pre">=</span> <span class="pre">&lt;module</span> <span class="pre">'duckdb'</span> <span class="pre">from</span> <span class="pre">'/builds/gensys/banff/banff-processor/venv/lib/python3.12/site-packages/duckdb/__init__.py'&gt;</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">int</span></span></span><a class="reference internal" href="_modules/banffprocessor/metadata/models/metadataclass#MetadataClass.get_record_count"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#banffprocessor.metadata.models.metadataclass.MetadataClass.get_record_count" title="Link to this definition">#</a></dt>
+<dd><p>Return the number of records in the metadata table.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="banffprocessor.metadata.models.metadataclass.MetadataClass.get_schema">
+<em class="property"><span class="k"><span class="pre">static</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">get_schema</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">root_element_name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'banffProcessor'</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span></span></span><a class="reference internal" href="_modules/banffprocessor/metadata/models/metadataclass#MetadataClass.get_schema"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#banffprocessor.metadata.models.metadataclass.MetadataClass.get_schema" title="Link to this definition">#</a></dt>
+<dd><p>Return a string that contains the XML Schema Definition for the classes metadata.</p>
+<p>By default the root element will be banffProcessor, but this may be changed as some
+XML generators use a standard root, like ‘root’ or ‘data’.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="banffprocessor.metadata.models.metadataclass.MetadataClass.handle_foreign_key_violation">
+<em class="property"><span class="k"><span class="pre">static</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">handle_foreign_key_violation</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">table1_name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">table1_column</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">table2_name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">table2_column</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">values_not_found</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="reference internal" href="_modules/banffprocessor/metadata/models/metadataclass#MetadataClass.handle_foreign_key_violation"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#banffprocessor.metadata.models.metadataclass.MetadataClass.handle_foreign_key_violation" title="Link to this definition">#</a></dt>
+<dd><p>Handle foreign key violations.</p>
+<p>When a relationship error is detected, a MetadataConstraintError exception is raised.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="banffprocessor.metadata.models.metadataclass.MetadataClass.initialize">
+<em class="property"><span class="k"><span class="pre">classmethod</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">initialize</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dbconn:</span> <span class="pre">~duckdb.duckdb.DuckDBPyConnection</span> <span class="pre">=</span> <span class="pre">&lt;module</span> <span class="pre">'duckdb'</span> <span class="pre">from</span> <span class="pre">'/builds/gensys/banff/banff-processor/venv/lib/python3.12/site-packages/duckdb/__init__.py'&gt;</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="reference internal" href="_modules/banffprocessor/metadata/models/metadataclass#MetadataClass.initialize"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#banffprocessor.metadata.models.metadataclass.MetadataClass.initialize" title="Link to this definition">#</a></dt>
+<dd><p>Perform any initialization before loading metadata.</p>
+<p>This is typically creating the database table to store the metadata in.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="banffprocessor.metadata.models.metadataclass.MetadataClass.load_xml">
+<em class="property"><span class="k"><span class="pre">classmethod</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">load_xml</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">xml_file_name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="reference internal" href="_modules/banffprocessor/metadata/models/metadataclass#MetadataClass.load_xml"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#banffprocessor.metadata.models.metadataclass.MetadataClass.load_xml" title="Link to this definition">#</a></dt>
+<dd><p>Attempt to load the given XML file.</p>
+<p>The xml file is attempted to be loaded in the banff processor metadata
+based on the XMLschema.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="banffprocessor.metadata.models.metadataclass.MetadataClass.setup">
+<em class="property"><span class="k"><span class="pre">classmethod</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">setup</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dbconn:</span> <span class="pre">~duckdb.duckdb.DuckDBPyConnection</span> <span class="pre">=</span> <span class="pre">&lt;module</span> <span class="pre">'duckdb'</span> <span class="pre">from</span> <span class="pre">'/builds/gensys/banff/banff-processor/venv/lib/python3.12/site-packages/duckdb/__init__.py'&gt;</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="reference internal" href="_modules/banffprocessor/metadata/models/metadataclass#MetadataClass.setup"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#banffprocessor.metadata.models.metadataclass.MetadataClass.setup" title="Link to this definition">#</a></dt>
+<dd><p>Perform setup.</p>
+<p>This is called by sub-classes to ensure the the standard setup is performed during
+the initialization process.</p>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-banffprocessor.metadata.models.outlierspecs">
+<span id="banffprocessor-metadata-models-outlierspecs-module"></span><h2>banffprocessor.metadata.models.outlierspecs module<a class="headerlink" href="#module-banffprocessor.metadata.models.outlierspecs" title="Link to this heading">#</a></h2>
+<p>Metadata model for Outlier specifications.</p>
+<dl class="py class">
+<dt class="sig sig-object py" id="banffprocessor.metadata.models.outlierspecs.Outlierspecs">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">banffprocessor.metadata.models.outlierspecs.</span></span><span class="sig-name descname"><span class="pre">Outlierspecs</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">specid:</span> <span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">method:</span> <span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">varid:</span> <span class="pre">str</span> <span class="pre">|</span> <span class="pre">None</span> <span class="pre">=</span> <span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">minobs:</span> <span class="pre">int</span> <span class="pre">|</span> <span class="pre">None</span> <span class="pre">=</span> <span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">side:</span> <span class="pre">str</span> <span class="pre">|</span> <span class="pre">None</span> <span class="pre">=</span> <span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">withid:</span> <span class="pre">str</span> <span class="pre">|</span> <span class="pre">None</span> <span class="pre">=</span> <span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mii:</span> <span class="pre">float</span> <span class="pre">|</span> <span class="pre">None</span> <span class="pre">=</span> <span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mei:</span> <span class="pre">float</span> <span class="pre">|</span> <span class="pre">None</span> <span class="pre">=</span> <span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mdm:</span> <span class="pre">float</span> <span class="pre">|</span> <span class="pre">None</span> <span class="pre">=</span> <span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">exponent:</span> <span class="pre">float</span> <span class="pre">|</span> <span class="pre">None</span> <span class="pre">=</span> <span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sigma:</span> <span class="pre">str</span> <span class="pre">|</span> <span class="pre">None</span> <span class="pre">=</span> <span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">betai:</span> <span class="pre">float</span> <span class="pre">|</span> <span class="pre">None</span> <span class="pre">=</span> <span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">betae:</span> <span class="pre">float</span> <span class="pre">|</span> <span class="pre">None</span> <span class="pre">=</span> <span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">startcentile:</span> <span class="pre">float</span> <span class="pre">|</span> <span class="pre">None</span> <span class="pre">=</span> <span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">acceptzero:</span> <span class="pre">bool</span> <span class="pre">|</span> <span class="pre">None</span> <span class="pre">=</span> <span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">weight:</span> <span class="pre">str</span> <span class="pre">|</span> <span class="pre">None</span> <span class="pre">=</span> <span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dataexclvar:</span> <span class="pre">str</span> <span class="pre">|</span> <span class="pre">None</span> <span class="pre">=</span> <span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dbconn:</span> <span class="pre">~duckdb.duckdb.DuckDBPyConnection</span> <span class="pre">=</span> <span class="pre">&lt;module</span> <span class="pre">'duckdb'</span> <span class="pre">from</span> <span class="pre">'/builds/gensys/banff/banff-processor/venv/lib/python3.12/site-packages/duckdb/__init__.py'&gt;</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/banffprocessor/metadata/models/outlierspecs#Outlierspecs"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#banffprocessor.metadata.models.outlierspecs.Outlierspecs" title="Link to this definition">#</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#banffprocessor.metadata.models.metadataclass.MetadataClass" title="banffprocessor.metadata.models.metadataclass.MetadataClass"><code class="xref py py-class docutils literal notranslate"><span class="pre">MetadataClass</span></code></a></p>
+<p>Metadata class for donor imputation specifications.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="banffprocessor.metadata.models.outlierspecs.Outlierspecs.check_constraints">
+<em class="property"><span class="k"><span class="pre">classmethod</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">check_constraints</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dbconn:</span> <span class="pre">~duckdb.duckdb.DuckDBPyConnection</span> <span class="pre">=</span> <span class="pre">&lt;module</span> <span class="pre">'duckdb'</span> <span class="pre">from</span> <span class="pre">'/builds/gensys/banff/banff-processor/venv/lib/python3.12/site-packages/duckdb/__init__.py'&gt;</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="reference internal" href="_modules/banffprocessor/metadata/models/outlierspecs#Outlierspecs.check_constraints"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#banffprocessor.metadata.models.outlierspecs.Outlierspecs.check_constraints" title="Link to this definition">#</a></dt>
+<dd><p>Check constaints after all metadata has been loaded (typically foreign key constraints).</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="banffprocessor.metadata.models.outlierspecs.Outlierspecs.get_schema">
+<em class="property"><span class="k"><span class="pre">static</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">get_schema</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">root_element_name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'banffProcessor'</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span></span></span><a class="reference internal" href="_modules/banffprocessor/metadata/models/outlierspecs#Outlierspecs.get_schema"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#banffprocessor.metadata.models.outlierspecs.Outlierspecs.get_schema" title="Link to this definition">#</a></dt>
+<dd><p>Return schema (XSD) contents as a string.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="banffprocessor.metadata.models.outlierspecs.Outlierspecs.initialize">
+<em class="property"><span class="k"><span class="pre">classmethod</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">initialize</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dbconn:</span> <span class="pre">~duckdb.duckdb.DuckDBPyConnection</span> <span class="pre">=</span> <span class="pre">&lt;module</span> <span class="pre">'duckdb'</span> <span class="pre">from</span> <span class="pre">'/builds/gensys/banff/banff-processor/venv/lib/python3.12/site-packages/duckdb/__init__.py'&gt;</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="reference internal" href="_modules/banffprocessor/metadata/models/outlierspecs#Outlierspecs.initialize"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#banffprocessor.metadata.models.outlierspecs.Outlierspecs.initialize" title="Link to this definition">#</a></dt>
+<dd><p>Create duckdb table to store the metadata.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="banffprocessor.metadata.models.outlierspecs.Outlierspecs.invalid_min_obs">
+<span class="sig-name descname"><span class="pre">invalid_min_obs</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">int</span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">3</span></em><a class="headerlink" href="#banffprocessor.metadata.models.outlierspecs.Outlierspecs.invalid_min_obs" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="banffprocessor.metadata.models.outlierspecs.Outlierspecs.methods">
+<span class="sig-name descname"><span class="pre">methods</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">ClassVar</span><span class="p"><span class="pre">[</span></span><span class="pre">dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">str</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">{'C':</span> <span class="pre">'CURRENT',</span> <span class="pre">'H':</span> <span class="pre">'HISTORIC',</span> <span class="pre">'R':</span> <span class="pre">'RATIO',</span> <span class="pre">'S':</span> <span class="pre">'SIGMAGAP'}</span></em><a class="headerlink" href="#banffprocessor.metadata.models.outlierspecs.Outlierspecs.methods" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-banffprocessor.metadata.models.processcontrols">
+<span id="banffprocessor-metadata-models-processcontrols-module"></span><h2>banffprocessor.metadata.models.processcontrols module<a class="headerlink" href="#module-banffprocessor.metadata.models.processcontrols" title="Link to this heading">#</a></h2>
+<p>Metadata model for Process Controls.</p>
+<dl class="py class">
+<dt class="sig sig-object py" id="banffprocessor.metadata.models.processcontrols.ProcessControlType">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">banffprocessor.metadata.models.processcontrols.</span></span><span class="sig-name descname"><span class="pre">ProcessControlType</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">values</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/banffprocessor/metadata/models/processcontrols#ProcessControlType"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#banffprocessor.metadata.models.processcontrols.ProcessControlType" title="Link to this definition">#</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">Enum</span></code></p>
+<p>Define process control type.</p>
+<p>Ordering of these enum values could be used to dictate order of operations
+but is not currently used as all current control types are applied simultaneously.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="banffprocessor.metadata.models.processcontrols.ProcessControlType.COLUMN_FILTER">
+<span class="sig-name descname"><span class="pre">COLUMN_FILTER</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">2</span></em><a class="headerlink" href="#banffprocessor.metadata.models.processcontrols.ProcessControlType.COLUMN_FILTER" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="banffprocessor.metadata.models.processcontrols.ProcessControlType.EDIT_GROUP_FILTER">
+<span class="sig-name descname"><span class="pre">EDIT_GROUP_FILTER</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">4</span></em><a class="headerlink" href="#banffprocessor.metadata.models.processcontrols.ProcessControlType.EDIT_GROUP_FILTER" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="banffprocessor.metadata.models.processcontrols.ProcessControlType.EXCLUDE_REJECTED">
+<span class="sig-name descname"><span class="pre">EXCLUDE_REJECTED</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">3</span></em><a class="headerlink" href="#banffprocessor.metadata.models.processcontrols.ProcessControlType.EXCLUDE_REJECTED" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="banffprocessor.metadata.models.processcontrols.ProcessControlType.ROW_FILTER">
+<span class="sig-name descname"><span class="pre">ROW_FILTER</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">1</span></em><a class="headerlink" href="#banffprocessor.metadata.models.processcontrols.ProcessControlType.ROW_FILTER" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="banffprocessor.metadata.models.processcontrols.ProcessControls">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">banffprocessor.metadata.models.processcontrols.</span></span><span class="sig-name descname"><span class="pre">ProcessControls</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">controlid:</span> <span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">parameter:</span> <span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">value:</span> <span class="pre">str</span> <span class="pre">|</span> <span class="pre">None</span> <span class="pre">=</span> <span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">targetfile:</span> <span class="pre">str</span> <span class="pre">|</span> <span class="pre">None</span> <span class="pre">=</span> <span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dbconn:</span> <span class="pre">~duckdb.duckdb.DuckDBPyConnection</span> <span class="pre">=</span> <span class="pre">&lt;module</span> <span class="pre">'duckdb'</span> <span class="pre">from</span> <span class="pre">'/builds/gensys/banff/banff-processor/venv/lib/python3.12/site-packages/duckdb/__init__.py'&gt;</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/banffprocessor/metadata/models/processcontrols#ProcessControls"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#banffprocessor.metadata.models.processcontrols.ProcessControls" title="Link to this definition">#</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#banffprocessor.metadata.models.metadataclass.MetadataClass" title="banffprocessor.metadata.models.metadataclass.MetadataClass"><code class="xref py py-class docutils literal notranslate"><span class="pre">MetadataClass</span></code></a></p>
+<p>Metadata class for defining process control specifications.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="banffprocessor.metadata.models.processcontrols.ProcessControls.get_schema">
+<em class="property"><span class="k"><span class="pre">static</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">get_schema</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">root_element_name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'banffProcessor'</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span></span></span><a class="reference internal" href="_modules/banffprocessor/metadata/models/processcontrols#ProcessControls.get_schema"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#banffprocessor.metadata.models.processcontrols.ProcessControls.get_schema" title="Link to this definition">#</a></dt>
+<dd><p>Return schema (XSD) contents as a string.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="banffprocessor.metadata.models.processcontrols.ProcessControls.initialize">
+<em class="property"><span class="k"><span class="pre">classmethod</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">initialize</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dbconn:</span> <span class="pre">~duckdb.duckdb.DuckDBPyConnection</span> <span class="pre">=</span> <span class="pre">&lt;module</span> <span class="pre">'duckdb'</span> <span class="pre">from</span> <span class="pre">'/builds/gensys/banff/banff-processor/venv/lib/python3.12/site-packages/duckdb/__init__.py'&gt;</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="reference internal" href="_modules/banffprocessor/metadata/models/processcontrols#ProcessControls.initialize"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#banffprocessor.metadata.models.processcontrols.ProcessControls.initialize" title="Link to this definition">#</a></dt>
+<dd><p>Create duckdb table to store the metadata.</p>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-banffprocessor.metadata.models.processoutputs">
+<span id="banffprocessor-metadata-models-processoutputs-module"></span><h2>banffprocessor.metadata.models.processoutputs module<a class="headerlink" href="#module-banffprocessor.metadata.models.processoutputs" title="Link to this heading">#</a></h2>
+<p>Metadata model for ProcessOutputs.</p>
+<dl class="py class">
+<dt class="sig sig-object py" id="banffprocessor.metadata.models.processoutputs.ProcessOutputs">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">banffprocessor.metadata.models.processoutputs.</span></span><span class="sig-name descname"><span class="pre">ProcessOutputs</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">process:</span> <span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">output_name:</span> <span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dbconn:</span> <span class="pre">~duckdb.duckdb.DuckDBPyConnection</span> <span class="pre">=</span> <span class="pre">&lt;module</span> <span class="pre">'duckdb'</span> <span class="pre">from</span> <span class="pre">'/builds/gensys/banff/banff-processor/venv/lib/python3.12/site-packages/duckdb/__init__.py'&gt;</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/banffprocessor/metadata/models/processoutputs#ProcessOutputs"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#banffprocessor.metadata.models.processoutputs.ProcessOutputs" title="Link to this definition">#</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#banffprocessor.metadata.models.metadataclass.MetadataClass" title="banffprocessor.metadata.models.metadataclass.MetadataClass"><code class="xref py py-class docutils literal notranslate"><span class="pre">MetadataClass</span></code></a></p>
+<p>Allow the user to define which additional outputs they would like for each process type.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="banffprocessor.metadata.models.processoutputs.ProcessOutputs.get_schema">
+<em class="property"><span class="k"><span class="pre">static</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">get_schema</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">root_element_name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'banffProcessor'</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span></span></span><a class="reference internal" href="_modules/banffprocessor/metadata/models/processoutputs#ProcessOutputs.get_schema"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#banffprocessor.metadata.models.processoutputs.ProcessOutputs.get_schema" title="Link to this definition">#</a></dt>
+<dd><p>Return the XSD for the metadata model as a string.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="banffprocessor.metadata.models.processoutputs.ProcessOutputs.initialize">
+<em class="property"><span class="k"><span class="pre">classmethod</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">initialize</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dbconn:</span> <span class="pre">~duckdb.duckdb.DuckDBPyConnection</span> <span class="pre">=</span> <span class="pre">&lt;module</span> <span class="pre">'duckdb'</span> <span class="pre">from</span> <span class="pre">'/builds/gensys/banff/banff-processor/venv/lib/python3.12/site-packages/duckdb/__init__.py'&gt;</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="reference internal" href="_modules/banffprocessor/metadata/models/processoutputs#ProcessOutputs.initialize"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#banffprocessor.metadata.models.processoutputs.ProcessOutputs.initialize" title="Link to this definition">#</a></dt>
+<dd><p>Initialize metadata model.</p>
+<p>An empty metadata table is created to load the metadata into.</p>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-banffprocessor.metadata.models.proratespecs">
+<span id="banffprocessor-metadata-models-proratespecs-module"></span><h2>banffprocessor.metadata.models.proratespecs module<a class="headerlink" href="#module-banffprocessor.metadata.models.proratespecs" title="Link to this heading">#</a></h2>
+<p>Metadata model for Prorate specifications.</p>
+<dl class="py class">
+<dt class="sig sig-object py" id="banffprocessor.metadata.models.proratespecs.Proratespecs">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">banffprocessor.metadata.models.proratespecs.</span></span><span class="sig-name descname"><span class="pre">Proratespecs</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">specid:</span> <span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">decimal:</span> <span class="pre">int</span> <span class="pre">|</span> <span class="pre">None</span> <span class="pre">=</span> <span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">lowerbound:</span> <span class="pre">float</span> <span class="pre">|</span> <span class="pre">None</span> <span class="pre">=</span> <span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">upperbound:</span> <span class="pre">float</span> <span class="pre">|</span> <span class="pre">None</span> <span class="pre">=</span> <span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">modifier:</span> <span class="pre">str</span> <span class="pre">|</span> <span class="pre">None</span> <span class="pre">=</span> <span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">method:</span> <span class="pre">str</span> <span class="pre">|</span> <span class="pre">None</span> <span class="pre">=</span> <span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dbconn:</span> <span class="pre">~duckdb.duckdb.DuckDBPyConnection</span> <span class="pre">=</span> <span class="pre">&lt;module</span> <span class="pre">'duckdb'</span> <span class="pre">from</span> <span class="pre">'/builds/gensys/banff/banff-processor/venv/lib/python3.12/site-packages/duckdb/__init__.py'&gt;</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/banffprocessor/metadata/models/proratespecs#Proratespecs"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#banffprocessor.metadata.models.proratespecs.Proratespecs" title="Link to this definition">#</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#banffprocessor.metadata.models.metadataclass.MetadataClass" title="banffprocessor.metadata.models.metadataclass.MetadataClass"><code class="xref py py-class docutils literal notranslate"><span class="pre">MetadataClass</span></code></a></p>
+<p>Metadata class for prorate imputation specifications.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="banffprocessor.metadata.models.proratespecs.Proratespecs.get_schema">
+<em class="property"><span class="k"><span class="pre">static</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">get_schema</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">root_element_name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'banffProcessor'</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span></span></span><a class="reference internal" href="_modules/banffprocessor/metadata/models/proratespecs#Proratespecs.get_schema"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#banffprocessor.metadata.models.proratespecs.Proratespecs.get_schema" title="Link to this definition">#</a></dt>
+<dd><p>Return schema (XSD) contents as a string.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="banffprocessor.metadata.models.proratespecs.Proratespecs.initialize">
+<em class="property"><span class="k"><span class="pre">classmethod</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">initialize</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dbconn:</span> <span class="pre">~duckdb.duckdb.DuckDBPyConnection</span> <span class="pre">=</span> <span class="pre">&lt;module</span> <span class="pre">'duckdb'</span> <span class="pre">from</span> <span class="pre">'/builds/gensys/banff/banff-processor/venv/lib/python3.12/site-packages/duckdb/__init__.py'&gt;</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="reference internal" href="_modules/banffprocessor/metadata/models/proratespecs#Proratespecs.initialize"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#banffprocessor.metadata.models.proratespecs.Proratespecs.initialize" title="Link to this definition">#</a></dt>
+<dd><p>Create duckdb table to store the metadata.</p>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-banffprocessor.metadata.models.uservars">
+<span id="banffprocessor-metadata-models-uservars-module"></span><h2>banffprocessor.metadata.models.uservars module<a class="headerlink" href="#module-banffprocessor.metadata.models.uservars" title="Link to this heading">#</a></h2>
+<p>Metadata model for user-defined variables.</p>
+<dl class="py class">
+<dt class="sig sig-object py" id="banffprocessor.metadata.models.uservars.Uservars">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">banffprocessor.metadata.models.uservars.</span></span><span class="sig-name descname"><span class="pre">Uservars</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">process:</span> <span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">specid:</span> <span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">var:</span> <span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">value:</span> <span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dbconn:</span> <span class="pre">~duckdb.duckdb.DuckDBPyConnection</span> <span class="pre">=</span> <span class="pre">&lt;module</span> <span class="pre">'duckdb'</span> <span class="pre">from</span> <span class="pre">'/builds/gensys/banff/banff-processor/venv/lib/python3.12/site-packages/duckdb/__init__.py'&gt;</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/banffprocessor/metadata/models/uservars#Uservars"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#banffprocessor.metadata.models.uservars.Uservars" title="Link to this definition">#</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#banffprocessor.metadata.models.metadataclass.MetadataClass" title="banffprocessor.metadata.models.metadataclass.MetadataClass"><code class="xref py py-class docutils literal notranslate"><span class="pre">MetadataClass</span></code></a></p>
+<p>User-defined variables metadata class.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="banffprocessor.metadata.models.uservars.Uservars.get_schema">
+<em class="property"><span class="k"><span class="pre">static</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">get_schema</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">root_element_name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'banffProcessor'</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span></span></span><a class="reference internal" href="_modules/banffprocessor/metadata/models/uservars#Uservars.get_schema"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#banffprocessor.metadata.models.uservars.Uservars.get_schema" title="Link to this definition">#</a></dt>
+<dd><p>Return schema (XSD) contents as a string.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="banffprocessor.metadata.models.uservars.Uservars.initialize">
+<em class="property"><span class="k"><span class="pre">classmethod</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">initialize</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dbconn:</span> <span class="pre">~duckdb.duckdb.DuckDBPyConnection</span> <span class="pre">=</span> <span class="pre">&lt;module</span> <span class="pre">'duckdb'</span> <span class="pre">from</span> <span class="pre">'/builds/gensys/banff/banff-processor/venv/lib/python3.12/site-packages/duckdb/__init__.py'&gt;</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="reference internal" href="_modules/banffprocessor/metadata/models/uservars#Uservars.initialize"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#banffprocessor.metadata.models.uservars.Uservars.initialize" title="Link to this definition">#</a></dt>
+<dd><p>Create duckdb table to store the metadata.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="banffprocessor.metadata.models.uservars.Uservars.uservars_to_dict">
+<em class="property"><span class="k"><span class="pre">static</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">uservars_to_dict</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">specid</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">process</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dbconn</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">DuckDBPyConnection</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span></span><a class="reference internal" href="_modules/banffprocessor/metadata/models/uservars#Uservars.uservars_to_dict"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#banffprocessor.metadata.models.uservars.Uservars.uservars_to_dict" title="Link to this definition">#</a></dt>
+<dd><p>Return the user variables for the given specid as a dictionary.</p>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-banffprocessor.metadata.models.varlists">
+<span id="banffprocessor-metadata-models-varlists-module"></span><h2>banffprocessor.metadata.models.varlists module<a class="headerlink" href="#module-banffprocessor.metadata.models.varlists" title="Link to this heading">#</a></h2>
+<p>Metadata model for Varlists.</p>
+<dl class="py class">
+<dt class="sig sig-object py" id="banffprocessor.metadata.models.varlists.Varlists">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">banffprocessor.metadata.models.varlists.</span></span><span class="sig-name descname"><span class="pre">Varlists</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">varlistid:</span> <span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">seqno:</span> <span class="pre">float</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fieldid:</span> <span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dbconn:</span> <span class="pre">~duckdb.duckdb.DuckDBPyConnection</span> <span class="pre">=</span> <span class="pre">&lt;module</span> <span class="pre">'duckdb'</span> <span class="pre">from</span> <span class="pre">'/builds/gensys/banff/banff-processor/venv/lib/python3.12/site-packages/duckdb/__init__.py'&gt;</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/banffprocessor/metadata/models/varlists#Varlists"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#banffprocessor.metadata.models.varlists.Varlists" title="Link to this definition">#</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#banffprocessor.metadata.models.metadataclass.MetadataClass" title="banffprocessor.metadata.models.metadataclass.MetadataClass"><code class="xref py py-class docutils literal notranslate"><span class="pre">MetadataClass</span></code></a></p>
+<p>Metadata class for defining variable lists.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="banffprocessor.metadata.models.varlists.Varlists.get_schema">
+<em class="property"><span class="k"><span class="pre">static</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">get_schema</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">root_element_name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'banffProcessor'</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span></span></span><a class="reference internal" href="_modules/banffprocessor/metadata/models/varlists#Varlists.get_schema"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#banffprocessor.metadata.models.varlists.Varlists.get_schema" title="Link to this definition">#</a></dt>
+<dd><p>Return schema (XSD) contents as a string.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="banffprocessor.metadata.models.varlists.Varlists.initialize">
+<em class="property"><span class="k"><span class="pre">classmethod</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">initialize</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dbconn:</span> <span class="pre">~duckdb.duckdb.DuckDBPyConnection</span> <span class="pre">=</span> <span class="pre">&lt;module</span> <span class="pre">'duckdb'</span> <span class="pre">from</span> <span class="pre">'/builds/gensys/banff/banff-processor/venv/lib/python3.12/site-packages/duckdb/__init__.py'&gt;</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="reference internal" href="_modules/banffprocessor/metadata/models/varlists#Varlists.initialize"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#banffprocessor.metadata.models.varlists.Varlists.initialize" title="Link to this definition">#</a></dt>
+<dd><p>Create duckdb table to store the metadata.</p>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-banffprocessor.metadata.models.verifyeditsspecs">
+<span id="banffprocessor-metadata-models-verifyeditsspecs-module"></span><h2>banffprocessor.metadata.models.verifyeditsspecs module<a class="headerlink" href="#module-banffprocessor.metadata.models.verifyeditsspecs" title="Link to this heading">#</a></h2>
+<p>Metadata model for VerifyEdits specifications.</p>
+<dl class="py class">
+<dt class="sig sig-object py" id="banffprocessor.metadata.models.verifyeditsspecs.Verifyeditsspecs">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">banffprocessor.metadata.models.verifyeditsspecs.</span></span><span class="sig-name descname"><span class="pre">Verifyeditsspecs</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">specid:</span> <span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">imply:</span> <span class="pre">int</span> <span class="pre">|</span> <span class="pre">None</span> <span class="pre">=</span> <span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">extremal:</span> <span class="pre">int</span> <span class="pre">|</span> <span class="pre">None</span> <span class="pre">=</span> <span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dbconn:</span> <span class="pre">~duckdb.duckdb.DuckDBPyConnection</span> <span class="pre">=</span> <span class="pre">&lt;module</span> <span class="pre">'duckdb'</span> <span class="pre">from</span> <span class="pre">'/builds/gensys/banff/banff-processor/venv/lib/python3.12/site-packages/duckdb/__init__.py'&gt;</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/banffprocessor/metadata/models/verifyeditsspecs#Verifyeditsspecs"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#banffprocessor.metadata.models.verifyeditsspecs.Verifyeditsspecs" title="Link to this definition">#</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#banffprocessor.metadata.models.metadataclass.MetadataClass" title="banffprocessor.metadata.models.metadataclass.MetadataClass"><code class="xref py py-class docutils literal notranslate"><span class="pre">MetadataClass</span></code></a></p>
+<p>Metadata class for verify edit procedure specifications.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="banffprocessor.metadata.models.verifyeditsspecs.Verifyeditsspecs.get_schema">
+<em class="property"><span class="k"><span class="pre">static</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">get_schema</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">root_element_name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'banffProcessor'</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span></span></span><a class="reference internal" href="_modules/banffprocessor/metadata/models/verifyeditsspecs#Verifyeditsspecs.get_schema"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#banffprocessor.metadata.models.verifyeditsspecs.Verifyeditsspecs.get_schema" title="Link to this definition">#</a></dt>
+<dd><p>Return schema (XSD) contents as a string.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="banffprocessor.metadata.models.verifyeditsspecs.Verifyeditsspecs.initialize">
+<em class="property"><span class="k"><span class="pre">classmethod</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">initialize</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dbconn:</span> <span class="pre">~duckdb.duckdb.DuckDBPyConnection</span> <span class="pre">=</span> <span class="pre">&lt;module</span> <span class="pre">'duckdb'</span> <span class="pre">from</span> <span class="pre">'/builds/gensys/banff/banff-processor/venv/lib/python3.12/site-packages/duckdb/__init__.py'&gt;</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="reference internal" href="_modules/banffprocessor/metadata/models/verifyeditsspecs#Verifyeditsspecs.initialize"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#banffprocessor.metadata.models.verifyeditsspecs.Verifyeditsspecs.initialize" title="Link to this definition">#</a></dt>
+<dd><p>Create duckdb table to store the metadata.</p>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-banffprocessor.metadata.models.weights">
+<span id="banffprocessor-metadata-models-weights-module"></span><h2>banffprocessor.metadata.models.weights module<a class="headerlink" href="#module-banffprocessor.metadata.models.weights" title="Link to this heading">#</a></h2>
+<p>Metadata model for Weights.</p>
+<dl class="py class">
+<dt class="sig sig-object py" id="banffprocessor.metadata.models.weights.Weights">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">banffprocessor.metadata.models.weights.</span></span><span class="sig-name descname"><span class="pre">Weights</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">weightid:</span> <span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fieldid:</span> <span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">weight:</span> <span class="pre">float</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dbconn:</span> <span class="pre">~duckdb.duckdb.DuckDBPyConnection</span> <span class="pre">=</span> <span class="pre">&lt;module</span> <span class="pre">'duckdb'</span> <span class="pre">from</span> <span class="pre">'/builds/gensys/banff/banff-processor/venv/lib/python3.12/site-packages/duckdb/__init__.py'&gt;</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/banffprocessor/metadata/models/weights#Weights"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#banffprocessor.metadata.models.weights.Weights" title="Link to this definition">#</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#banffprocessor.metadata.models.metadataclass.MetadataClass" title="banffprocessor.metadata.models.metadataclass.MetadataClass"><code class="xref py py-class docutils literal notranslate"><span class="pre">MetadataClass</span></code></a></p>
+<p>Metadata class for defining the weights of variables.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="banffprocessor.metadata.models.weights.Weights.get_schema">
+<em class="property"><span class="k"><span class="pre">static</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">get_schema</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">root_element_name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'banffProcessor'</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span></span></span><a class="reference internal" href="_modules/banffprocessor/metadata/models/weights#Weights.get_schema"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#banffprocessor.metadata.models.weights.Weights.get_schema" title="Link to this definition">#</a></dt>
+<dd><p>Return schema (XSD) contents as a string.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="banffprocessor.metadata.models.weights.Weights.initialize">
+<em class="property"><span class="k"><span class="pre">classmethod</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">initialize</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dbconn:</span> <span class="pre">~duckdb.duckdb.DuckDBPyConnection</span> <span class="pre">=</span> <span class="pre">&lt;module</span> <span class="pre">'duckdb'</span> <span class="pre">from</span> <span class="pre">'/builds/gensys/banff/banff-processor/venv/lib/python3.12/site-packages/duckdb/__init__.py'&gt;</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="reference internal" href="_modules/banffprocessor/metadata/models/weights#Weights.initialize"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#banffprocessor.metadata.models.weights.Weights.initialize" title="Link to this definition">#</a></dt>
+<dd><p>Create duckdb table to store the metadata.</p>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-banffprocessor.metadata.models">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-banffprocessor.metadata.models" title="Link to this heading">#</a></h2>
+<p>The group of modules defining models to represent Banff Processor metadata files.</p>
+</section>
+</section>
+
+
+                </article>
+              
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+<div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> On this page
+  </div>
+  <nav class="bd-toc-nav page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#submodules">Submodules</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#module-banffprocessor.metadata.models.algorithms">banffprocessor.metadata.models.algorithms module</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#banffprocessor.metadata.models.algorithms.Algorithms"><code class="docutils literal notranslate"><span class="pre">Algorithms</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#banffprocessor.metadata.models.algorithms.Algorithms.get_schema"><code class="docutils literal notranslate"><span class="pre">Algorithms.get_schema()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#banffprocessor.metadata.models.algorithms.Algorithms.initialize"><code class="docutils literal notranslate"><span class="pre">Algorithms.initialize()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#banffprocessor.metadata.models.algorithms.Algorithms.to_dict"><code class="docutils literal notranslate"><span class="pre">Algorithms.to_dict()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#module-banffprocessor.metadata.models.donorspecs">banffprocessor.metadata.models.donorspecs module</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#banffprocessor.metadata.models.donorspecs.Donorspecs"><code class="docutils literal notranslate"><span class="pre">Donorspecs</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#banffprocessor.metadata.models.donorspecs.Donorspecs.check_constraints"><code class="docutils literal notranslate"><span class="pre">Donorspecs.check_constraints()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#banffprocessor.metadata.models.donorspecs.Donorspecs.get_schema"><code class="docutils literal notranslate"><span class="pre">Donorspecs.get_schema()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#banffprocessor.metadata.models.donorspecs.Donorspecs.initialize"><code class="docutils literal notranslate"><span class="pre">Donorspecs.initialize()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#module-banffprocessor.metadata.models.editgroups">banffprocessor.metadata.models.editgroups module</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#banffprocessor.metadata.models.editgroups.Editgroups"><code class="docutils literal notranslate"><span class="pre">Editgroups</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#banffprocessor.metadata.models.editgroups.Editgroups.check_constraints"><code class="docutils literal notranslate"><span class="pre">Editgroups.check_constraints()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#banffprocessor.metadata.models.editgroups.Editgroups.get_schema"><code class="docutils literal notranslate"><span class="pre">Editgroups.get_schema()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#banffprocessor.metadata.models.editgroups.Editgroups.initialize"><code class="docutils literal notranslate"><span class="pre">Editgroups.initialize()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#module-banffprocessor.metadata.models.edits">banffprocessor.metadata.models.edits module</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#banffprocessor.metadata.models.edits.Edits"><code class="docutils literal notranslate"><span class="pre">Edits</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#banffprocessor.metadata.models.edits.Edits.get_schema"><code class="docutils literal notranslate"><span class="pre">Edits.get_schema()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#banffprocessor.metadata.models.edits.Edits.initialize"><code class="docutils literal notranslate"><span class="pre">Edits.initialize()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#module-banffprocessor.metadata.models.errorlocspecs">banffprocessor.metadata.models.errorlocspecs module</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#banffprocessor.metadata.models.errorlocspecs.Errorlocspecs"><code class="docutils literal notranslate"><span class="pre">Errorlocspecs</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#banffprocessor.metadata.models.errorlocspecs.Errorlocspecs.check_constraints"><code class="docutils literal notranslate"><span class="pre">Errorlocspecs.check_constraints()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#banffprocessor.metadata.models.errorlocspecs.Errorlocspecs.get_schema"><code class="docutils literal notranslate"><span class="pre">Errorlocspecs.get_schema()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#banffprocessor.metadata.models.errorlocspecs.Errorlocspecs.initialize"><code class="docutils literal notranslate"><span class="pre">Errorlocspecs.initialize()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#module-banffprocessor.metadata.models.estimators">banffprocessor.metadata.models.estimators module</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#banffprocessor.metadata.models.estimators.Estimators"><code class="docutils literal notranslate"><span class="pre">Estimators</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#banffprocessor.metadata.models.estimators.Estimators.get_schema"><code class="docutils literal notranslate"><span class="pre">Estimators.get_schema()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#banffprocessor.metadata.models.estimators.Estimators.initialize"><code class="docutils literal notranslate"><span class="pre">Estimators.initialize()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#banffprocessor.metadata.models.estimators.Estimators.to_dict"><code class="docutils literal notranslate"><span class="pre">Estimators.to_dict()</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#banffprocessor.metadata.models.estimators.builtin_estimators"><code class="docutils literal notranslate"><span class="pre">builtin_estimators()</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#module-banffprocessor.metadata.models.estimatorspecs">banffprocessor.metadata.models.estimatorspecs module</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#banffprocessor.metadata.models.estimatorspecs.Estimatorspecs"><code class="docutils literal notranslate"><span class="pre">Estimatorspecs</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#banffprocessor.metadata.models.estimatorspecs.Estimatorspecs.check_constraints"><code class="docutils literal notranslate"><span class="pre">Estimatorspecs.check_constraints()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#banffprocessor.metadata.models.estimatorspecs.Estimatorspecs.get_schema"><code class="docutils literal notranslate"><span class="pre">Estimatorspecs.get_schema()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#banffprocessor.metadata.models.estimatorspecs.Estimatorspecs.initialize"><code class="docutils literal notranslate"><span class="pre">Estimatorspecs.initialize()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#module-banffprocessor.metadata.models.expressions">banffprocessor.metadata.models.expressions module</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#banffprocessor.metadata.models.expressions.Expressions"><code class="docutils literal notranslate"><span class="pre">Expressions</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#banffprocessor.metadata.models.expressions.Expressions.get_expression"><code class="docutils literal notranslate"><span class="pre">Expressions.get_expression()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#banffprocessor.metadata.models.expressions.Expressions.get_schema"><code class="docutils literal notranslate"><span class="pre">Expressions.get_schema()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#banffprocessor.metadata.models.expressions.Expressions.initialize"><code class="docutils literal notranslate"><span class="pre">Expressions.initialize()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#module-banffprocessor.metadata.models.jobs">banffprocessor.metadata.models.jobs module</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#banffprocessor.metadata.models.jobs.Jobs"><code class="docutils literal notranslate"><span class="pre">Jobs</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#banffprocessor.metadata.models.jobs.Jobs.check_constraints"><code class="docutils literal notranslate"><span class="pre">Jobs.check_constraints()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#banffprocessor.metadata.models.jobs.Jobs.get_schema"><code class="docutils literal notranslate"><span class="pre">Jobs.get_schema()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#banffprocessor.metadata.models.jobs.Jobs.initialize"><code class="docutils literal notranslate"><span class="pre">Jobs.initialize()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#module-banffprocessor.metadata.models.massimputationspecs">banffprocessor.metadata.models.massimputationspecs module</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#banffprocessor.metadata.models.massimputationspecs.Massimputationspecs"><code class="docutils literal notranslate"><span class="pre">Massimputationspecs</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#banffprocessor.metadata.models.massimputationspecs.Massimputationspecs.check_constraints"><code class="docutils literal notranslate"><span class="pre">Massimputationspecs.check_constraints()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#banffprocessor.metadata.models.massimputationspecs.Massimputationspecs.get_schema"><code class="docutils literal notranslate"><span class="pre">Massimputationspecs.get_schema()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#banffprocessor.metadata.models.massimputationspecs.Massimputationspecs.initialize"><code class="docutils literal notranslate"><span class="pre">Massimputationspecs.initialize()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#module-banffprocessor.metadata.models.metadataclass">banffprocessor.metadata.models.metadataclass module</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#banffprocessor.metadata.models.metadataclass.MetadataClass"><code class="docutils literal notranslate"><span class="pre">MetadataClass</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#banffprocessor.metadata.models.metadataclass.MetadataClass.DATA_FIELD_SCHEMA_MAX_LENGTH"><code class="docutils literal notranslate"><span class="pre">MetadataClass.DATA_FIELD_SCHEMA_MAX_LENGTH</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#banffprocessor.metadata.models.metadataclass.MetadataClass.check_constraints"><code class="docutils literal notranslate"><span class="pre">MetadataClass.check_constraints()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#banffprocessor.metadata.models.metadataclass.MetadataClass.cleanup"><code class="docutils literal notranslate"><span class="pre">MetadataClass.cleanup()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#banffprocessor.metadata.models.metadataclass.MetadataClass.get_record_count"><code class="docutils literal notranslate"><span class="pre">MetadataClass.get_record_count()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#banffprocessor.metadata.models.metadataclass.MetadataClass.get_schema"><code class="docutils literal notranslate"><span class="pre">MetadataClass.get_schema()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#banffprocessor.metadata.models.metadataclass.MetadataClass.handle_foreign_key_violation"><code class="docutils literal notranslate"><span class="pre">MetadataClass.handle_foreign_key_violation()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#banffprocessor.metadata.models.metadataclass.MetadataClass.initialize"><code class="docutils literal notranslate"><span class="pre">MetadataClass.initialize()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#banffprocessor.metadata.models.metadataclass.MetadataClass.load_xml"><code class="docutils literal notranslate"><span class="pre">MetadataClass.load_xml()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#banffprocessor.metadata.models.metadataclass.MetadataClass.setup"><code class="docutils literal notranslate"><span class="pre">MetadataClass.setup()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#module-banffprocessor.metadata.models.outlierspecs">banffprocessor.metadata.models.outlierspecs module</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#banffprocessor.metadata.models.outlierspecs.Outlierspecs"><code class="docutils literal notranslate"><span class="pre">Outlierspecs</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#banffprocessor.metadata.models.outlierspecs.Outlierspecs.check_constraints"><code class="docutils literal notranslate"><span class="pre">Outlierspecs.check_constraints()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#banffprocessor.metadata.models.outlierspecs.Outlierspecs.get_schema"><code class="docutils literal notranslate"><span class="pre">Outlierspecs.get_schema()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#banffprocessor.metadata.models.outlierspecs.Outlierspecs.initialize"><code class="docutils literal notranslate"><span class="pre">Outlierspecs.initialize()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#banffprocessor.metadata.models.outlierspecs.Outlierspecs.invalid_min_obs"><code class="docutils literal notranslate"><span class="pre">Outlierspecs.invalid_min_obs</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#banffprocessor.metadata.models.outlierspecs.Outlierspecs.methods"><code class="docutils literal notranslate"><span class="pre">Outlierspecs.methods</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#module-banffprocessor.metadata.models.processcontrols">banffprocessor.metadata.models.processcontrols module</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#banffprocessor.metadata.models.processcontrols.ProcessControlType"><code class="docutils literal notranslate"><span class="pre">ProcessControlType</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#banffprocessor.metadata.models.processcontrols.ProcessControlType.COLUMN_FILTER"><code class="docutils literal notranslate"><span class="pre">ProcessControlType.COLUMN_FILTER</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#banffprocessor.metadata.models.processcontrols.ProcessControlType.EDIT_GROUP_FILTER"><code class="docutils literal notranslate"><span class="pre">ProcessControlType.EDIT_GROUP_FILTER</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#banffprocessor.metadata.models.processcontrols.ProcessControlType.EXCLUDE_REJECTED"><code class="docutils literal notranslate"><span class="pre">ProcessControlType.EXCLUDE_REJECTED</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#banffprocessor.metadata.models.processcontrols.ProcessControlType.ROW_FILTER"><code class="docutils literal notranslate"><span class="pre">ProcessControlType.ROW_FILTER</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#banffprocessor.metadata.models.processcontrols.ProcessControls"><code class="docutils literal notranslate"><span class="pre">ProcessControls</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#banffprocessor.metadata.models.processcontrols.ProcessControls.get_schema"><code class="docutils literal notranslate"><span class="pre">ProcessControls.get_schema()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#banffprocessor.metadata.models.processcontrols.ProcessControls.initialize"><code class="docutils literal notranslate"><span class="pre">ProcessControls.initialize()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#module-banffprocessor.metadata.models.processoutputs">banffprocessor.metadata.models.processoutputs module</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#banffprocessor.metadata.models.processoutputs.ProcessOutputs"><code class="docutils literal notranslate"><span class="pre">ProcessOutputs</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#banffprocessor.metadata.models.processoutputs.ProcessOutputs.get_schema"><code class="docutils literal notranslate"><span class="pre">ProcessOutputs.get_schema()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#banffprocessor.metadata.models.processoutputs.ProcessOutputs.initialize"><code class="docutils literal notranslate"><span class="pre">ProcessOutputs.initialize()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#module-banffprocessor.metadata.models.proratespecs">banffprocessor.metadata.models.proratespecs module</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#banffprocessor.metadata.models.proratespecs.Proratespecs"><code class="docutils literal notranslate"><span class="pre">Proratespecs</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#banffprocessor.metadata.models.proratespecs.Proratespecs.get_schema"><code class="docutils literal notranslate"><span class="pre">Proratespecs.get_schema()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#banffprocessor.metadata.models.proratespecs.Proratespecs.initialize"><code class="docutils literal notranslate"><span class="pre">Proratespecs.initialize()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#module-banffprocessor.metadata.models.uservars">banffprocessor.metadata.models.uservars module</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#banffprocessor.metadata.models.uservars.Uservars"><code class="docutils literal notranslate"><span class="pre">Uservars</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#banffprocessor.metadata.models.uservars.Uservars.get_schema"><code class="docutils literal notranslate"><span class="pre">Uservars.get_schema()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#banffprocessor.metadata.models.uservars.Uservars.initialize"><code class="docutils literal notranslate"><span class="pre">Uservars.initialize()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#banffprocessor.metadata.models.uservars.Uservars.uservars_to_dict"><code class="docutils literal notranslate"><span class="pre">Uservars.uservars_to_dict()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#module-banffprocessor.metadata.models.varlists">banffprocessor.metadata.models.varlists module</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#banffprocessor.metadata.models.varlists.Varlists"><code class="docutils literal notranslate"><span class="pre">Varlists</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#banffprocessor.metadata.models.varlists.Varlists.get_schema"><code class="docutils literal notranslate"><span class="pre">Varlists.get_schema()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#banffprocessor.metadata.models.varlists.Varlists.initialize"><code class="docutils literal notranslate"><span class="pre">Varlists.initialize()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#module-banffprocessor.metadata.models.verifyeditsspecs">banffprocessor.metadata.models.verifyeditsspecs module</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#banffprocessor.metadata.models.verifyeditsspecs.Verifyeditsspecs"><code class="docutils literal notranslate"><span class="pre">Verifyeditsspecs</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#banffprocessor.metadata.models.verifyeditsspecs.Verifyeditsspecs.get_schema"><code class="docutils literal notranslate"><span class="pre">Verifyeditsspecs.get_schema()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#banffprocessor.metadata.models.verifyeditsspecs.Verifyeditsspecs.initialize"><code class="docutils literal notranslate"><span class="pre">Verifyeditsspecs.initialize()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#module-banffprocessor.metadata.models.weights">banffprocessor.metadata.models.weights module</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#banffprocessor.metadata.models.weights.Weights"><code class="docutils literal notranslate"><span class="pre">Weights</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#banffprocessor.metadata.models.weights.Weights.get_schema"><code class="docutils literal notranslate"><span class="pre">Weights.get_schema()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#banffprocessor.metadata.models.weights.Weights.initialize"><code class="docutils literal notranslate"><span class="pre">Weights.initialize()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#module-banffprocessor.metadata.models">Module contents</a></li>
+</ul>
+  </nav></div>
+
+  <div class="sidebar-secondary-item">
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/banffprocessor.metadata.models.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
+<script defer src="_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+
+  <p class="copyright">
+    
+      © Copyright 2025, Statistics Canada / Statistique Canada.
+      <br/>
+    
+  </p>
+</div>
+      
+        <div class="footer-item">
+
+  <p class="sphinx-version">
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 8.2.3.
+    <br/>
+  </p>
+</div>
+      
+    </div>
+  
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item">
+<p class="theme-version">
+  <!-- # L10n: Setting the PST URL as an argument as this does not need to be localized -->
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.16.1.
+</p></div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
+</html>

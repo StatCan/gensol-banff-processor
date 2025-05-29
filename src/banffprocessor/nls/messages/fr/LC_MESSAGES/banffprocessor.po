@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-12-17 21:25+0000\n"
+"POT-Creation-Date: 2025-03-25 17:18+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: Greg Ludwinski Gregory.Ludwinski@statcan.gc.ca\n"
 "Language: FrenchMIME-Version: 1.0\n"
@@ -14,7 +14,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: pygettext.py 1.5\n"
 
-#: ../../src/banffprocessor/metadata/metaobjects.py:108
+#: ../../src/banffprocessor/metadata/metaobjects.py:110
 msgid ""
 "The following metadata file did not correspond to any existing metadata "
 "model and was skipped: {}."
@@ -22,38 +22,38 @@ msgstr ""
 "Le fichier de métadonnées suivant ne correspond à aucun modèle de "
 "métadonnées existant et a été ignoré: {}."
 
-#: ../../src/banffprocessor/metadata/metaobjects.py:113
+#: ../../src/banffprocessor/metadata/metaobjects.py:115
 msgid "Provided metadata file {} contains no valid entries."
 msgstr "Le fichier de métadonnées fourni {} ne contient aucune entrée valide."
 
-#: ../../src/banffprocessor/metadata/metaobjects.py:117
+#: ../../src/banffprocessor/metadata/metaobjects.py:119
 msgid "Unable to read XML in {} metadata file."
 msgstr "Impossible de lire le XML dans le fichier de métadonnées {}."
 
-#: ../../src/banffprocessor/metadata/metaobjects.py:122
+#: ../../src/banffprocessor/metadata/metaobjects.py:124
 msgid "Required Jobs metadata not found or unable to be read."
 msgstr ""
 "Les métadonnées « Jobs » requises n'ont pas été trouvées ou n'ont pas pu "
 "être lues."
 
-#: ../../src/banffprocessor/metadata/metaobjects.py:157
+#: ../../src/banffprocessor/metadata/metaobjects.py:159
 msgid "Metadata constraint violated while processing {} on entry {}"
 msgstr ""
 "Contrainte de métadonnées violée lors du traitement de {} à l'entrée {}"
 
-#: ../../src/banffprocessor/metadata/metaobjects.py:175
+#: ../../src/banffprocessor/metadata/metaobjects.py:177
 msgid "'objects' list is empty."
 msgstr "La liste des « objets » est vide."
 
-#: ../../src/banffprocessor/metadata/metaobjects.py:181
+#: ../../src/banffprocessor/metadata/metaobjects.py:183
 msgid "All objects in 'objects' list must be the same type."
 msgstr "Tous les objets de la liste « objets » doivent être du même type."
 
-#: ../../src/banffprocessor/metadata/metaobjects.py:247
+#: ../../src/banffprocessor/metadata/metaobjects.py:245
 msgid "No job steps were found with job_id {}."
 msgstr "Aucune étape de stratégie n'a été trouvée avec job_id {}."
 
-#: ../../src/banffprocessor/metadata/metaobjects.py:274
+#: ../../src/banffprocessor/metadata/metaobjects.py:276
 msgid ""
 "The Jobs sequence rooted at job_id {} contains a cycle caused by job_id {} "
 "at seqno {}. As this will result in an infinite loop the job must be "
@@ -63,7 +63,7 @@ msgstr ""
 "job_id {} à seqno {}. Comme cela entraînerait une boucle infinie, la tâche "
 "doit être réécrite pour supprimer le cycle."
 
-#: ../../src/banffprocessor/metadata/metaobjects.py:390
+#: ../../src/banffprocessor/metadata/metaobjects.py:392
 msgid ""
 "Multiple entries using same specid ({}) in {} table. SpecIDs must be unique "
 "in Spec tables."
@@ -72,12 +72,12 @@ msgstr ""
 "table {}. Les identifiants spécifiques doivent être uniques dans les tables "
 "de spécifications."
 
-#: ../../src/banffprocessor/metadata/metaobjects.py:510
+#: ../../src/banffprocessor/metadata/metaobjects.py:532
 #: ../../src/banffprocessor/metadata/models/expressions.py:42
 msgid "The following value was not found: {} = '{}'."
 msgstr "La valeur suivante n'a pas été trouvée : {} = '{}'."
 
-#: ../../src/banffprocessor/metadata/metaobjects.py:577
+#: ../../src/banffprocessor/metadata/metaobjects.py:605
 msgid ""
 "\n"
 " Metadata Load Summary \n"
@@ -91,55 +91,55 @@ msgstr ""
 #: ../../src/banffprocessor/metadata/models/metadataclass.py:101
 #: ../../src/banffprocessor/metadata/models/errorlocspecs.py:21
 #: ../../src/banffprocessor/metadata/models/errorlocspecs.py:28
-#: ../../src/banffprocessor/metadata/models/verifyeditsspecs.py:20
-#: ../../src/banffprocessor/metadata/models/verifyeditsspecs.py:27
-#: ../../src/banffprocessor/metadata/models/massimputationspecs.py:30
+#: ../../src/banffprocessor/metadata/models/verifyeditsspecs.py:21
+#: ../../src/banffprocessor/metadata/models/verifyeditsspecs.py:28
+#: ../../src/banffprocessor/metadata/models/massimputationspecs.py:31
 #: ../../src/banffprocessor/metadata/models/edits.py:20
 #: ../../src/banffprocessor/metadata/models/edits.py:27
 #: ../../src/banffprocessor/metadata/models/edits.py:38
 #: ../../src/banffprocessor/metadata/models/edits.py:45
-#: ../../src/banffprocessor/metadata/models/outlierspecs.py:32
-#: ../../src/banffprocessor/metadata/models/outlierspecs.py:50
-#: ../../src/banffprocessor/metadata/models/outlierspecs.py:59
-#: ../../src/banffprocessor/metadata/models/outlierspecs.py:66
-#: ../../src/banffprocessor/metadata/models/outlierspecs.py:73
-#: ../../src/banffprocessor/metadata/models/outlierspecs.py:80
-#: ../../src/banffprocessor/metadata/models/outlierspecs.py:87
-#: ../../src/banffprocessor/metadata/models/outlierspecs.py:94
-#: ../../src/banffprocessor/metadata/models/outlierspecs.py:101
-#: ../../src/banffprocessor/metadata/models/outlierspecs.py:109
-#: ../../src/banffprocessor/metadata/models/outlierspecs.py:116
-#: ../../src/banffprocessor/metadata/models/outlierspecs.py:123
-#: ../../src/banffprocessor/metadata/models/estimators.py:62
-#: ../../src/banffprocessor/metadata/models/estimators.py:73
-#: ../../src/banffprocessor/metadata/models/estimators.py:86
-#: ../../src/banffprocessor/metadata/models/estimators.py:100
-#: ../../src/banffprocessor/metadata/models/estimators.py:109
-#: ../../src/banffprocessor/metadata/models/estimators.py:116
-#: ../../src/banffprocessor/metadata/models/donorspecs.py:22
-#: ../../src/banffprocessor/metadata/models/donorspecs.py:29
-#: ../../src/banffprocessor/metadata/models/donorspecs.py:36
-#: ../../src/banffprocessor/metadata/models/donorspecs.py:43
-#: ../../src/banffprocessor/metadata/models/donorspecs.py:55
-#: ../../src/banffprocessor/metadata/models/donorspecs.py:64
-#: ../../src/banffprocessor/metadata/models/donorspecs.py:71
+#: ../../src/banffprocessor/metadata/models/outlierspecs.py:38
+#: ../../src/banffprocessor/metadata/models/outlierspecs.py:56
+#: ../../src/banffprocessor/metadata/models/outlierspecs.py:65
+#: ../../src/banffprocessor/metadata/models/outlierspecs.py:72
+#: ../../src/banffprocessor/metadata/models/outlierspecs.py:79
+#: ../../src/banffprocessor/metadata/models/outlierspecs.py:86
+#: ../../src/banffprocessor/metadata/models/outlierspecs.py:93
+#: ../../src/banffprocessor/metadata/models/outlierspecs.py:100
+#: ../../src/banffprocessor/metadata/models/outlierspecs.py:107
+#: ../../src/banffprocessor/metadata/models/outlierspecs.py:115
+#: ../../src/banffprocessor/metadata/models/outlierspecs.py:122
+#: ../../src/banffprocessor/metadata/models/outlierspecs.py:129
+#: ../../src/banffprocessor/metadata/models/estimators.py:63
+#: ../../src/banffprocessor/metadata/models/estimators.py:74
+#: ../../src/banffprocessor/metadata/models/estimators.py:87
+#: ../../src/banffprocessor/metadata/models/estimators.py:101
+#: ../../src/banffprocessor/metadata/models/estimators.py:110
+#: ../../src/banffprocessor/metadata/models/estimators.py:117
+#: ../../src/banffprocessor/metadata/models/donorspecs.py:24
+#: ../../src/banffprocessor/metadata/models/donorspecs.py:31
+#: ../../src/banffprocessor/metadata/models/donorspecs.py:38
+#: ../../src/banffprocessor/metadata/models/donorspecs.py:45
+#: ../../src/banffprocessor/metadata/models/donorspecs.py:57
+#: ../../src/banffprocessor/metadata/models/donorspecs.py:66
+#: ../../src/banffprocessor/metadata/models/donorspecs.py:73
 msgid "Constraint violated in {} table: "
 msgstr "Contrainte violée dans la table {}:"
 
 #: ../../src/banffprocessor/metadata/models/jobs.py:33
 #: ../../src/banffprocessor/metadata/models/algorithms.py:26
-#: ../../src/banffprocessor/metadata/models/massimputationspecs.py:31
+#: ../../src/banffprocessor/metadata/models/massimputationspecs.py:32
 #: ../../src/banffprocessor/metadata/models/edits.py:39
 #: ../../src/banffprocessor/metadata/models/edits.py:46
-#: ../../src/banffprocessor/metadata/models/outlierspecs.py:33
-#: ../../src/banffprocessor/metadata/models/outlierspecs.py:51
-#: ../../src/banffprocessor/metadata/models/outlierspecs.py:67
-#: ../../src/banffprocessor/metadata/models/outlierspecs.py:102
-#: ../../src/banffprocessor/metadata/models/estimators.py:74
-#: ../../src/banffprocessor/metadata/models/estimators.py:87
-#: ../../src/banffprocessor/metadata/models/estimators.py:101
-#: ../../src/banffprocessor/metadata/models/donorspecs.py:44
-#: ../../src/banffprocessor/metadata/models/donorspecs.py:56
+#: ../../src/banffprocessor/metadata/models/outlierspecs.py:39
+#: ../../src/banffprocessor/metadata/models/outlierspecs.py:57
+#: ../../src/banffprocessor/metadata/models/outlierspecs.py:73
+#: ../../src/banffprocessor/metadata/models/outlierspecs.py:108
+#: ../../src/banffprocessor/metadata/models/estimators.py:75
+#: ../../src/banffprocessor/metadata/models/estimators.py:88
+#: ../../src/banffprocessor/metadata/models/estimators.py:102
+#: ../../src/banffprocessor/metadata/models/donorspecs.py:46
+#: ../../src/banffprocessor/metadata/models/donorspecs.py:58
 msgid "{} value must be one of {}."
 msgstr "La valeur {} doit être l'une des {}."
 
@@ -154,8 +154,7 @@ msgstr ""
 
 #: ../../src/banffprocessor/metadata/models/processcontrols.py:21
 msgid "ProcessControl record with controlid {} "
-msgstr ""
-"L'enregistrement de contrôle de processus avec l'ID de contrôle {} "
+msgstr "L'enregistrement de contrôle de processus avec l'ID de contrôle {} "
 
 #: ../../src/banffprocessor/metadata/models/processcontrols.py:26
 msgid "has unrecognized parameter value {}."
@@ -163,14 +162,17 @@ msgstr "a une valeur de paramètre non reconnue {}."
 
 #: ../../src/banffprocessor/metadata/models/processcontrols.py:31
 msgid ""
-" is an EDIT_GROUP_FILTER control and therefore requires an empty value field."
-msgstr " est un contrôle EDIT_GROUP_FILTER et nécessite donc un champ de valeur vide."
+" is an EDIT_GROUP_FILTER control and therefore requires empty value and "
+"targetfile fields."
+msgstr ""
+" est un contrôle EDIT_GROUP_FILTER et nécessite donc des champs 'value' "
+"et 'targetfile' vides."
 
 #: ../../src/banffprocessor/metadata/models/processcontrols.py:37
 msgid "is missing a value for required fields 'value' and/or 'targetfile'"
 msgstr ""
-"manque une valeur dans l'entrée pour les champs obligatoires 'valeur' et/ou "
-"'fichier cible'"
+"manque une valeur dans l'entrée pour les champs obligatoires 'value' et/ou "
+"'targetfile'"
 
 #: ../../src/banffprocessor/metadata/models/processcontrols.py:42
 msgid "may not contain any ';' characters in the value field."
@@ -194,15 +196,15 @@ msgstr "Les éléments suivants ne sont pas définis : {}."
 
 #: ../../src/banffprocessor/metadata/models/errorlocspecs.py:22
 #: ../../src/banffprocessor/metadata/models/errorlocspecs.py:29
-#: ../../src/banffprocessor/metadata/models/verifyeditsspecs.py:21
-#: ../../src/banffprocessor/metadata/models/verifyeditsspecs.py:28
-#: ../../src/banffprocessor/metadata/models/outlierspecs.py:74
-#: ../../src/banffprocessor/metadata/models/outlierspecs.py:81
-#: ../../src/banffprocessor/metadata/models/outlierspecs.py:88
-#: ../../src/banffprocessor/metadata/models/outlierspecs.py:110
-#: ../../src/banffprocessor/metadata/models/outlierspecs.py:117
-#: ../../src/banffprocessor/metadata/models/estimators.py:110
-#: ../../src/banffprocessor/metadata/models/donorspecs.py:72
+#: ../../src/banffprocessor/metadata/models/verifyeditsspecs.py:22
+#: ../../src/banffprocessor/metadata/models/verifyeditsspecs.py:29
+#: ../../src/banffprocessor/metadata/models/outlierspecs.py:80
+#: ../../src/banffprocessor/metadata/models/outlierspecs.py:87
+#: ../../src/banffprocessor/metadata/models/outlierspecs.py:94
+#: ../../src/banffprocessor/metadata/models/outlierspecs.py:116
+#: ../../src/banffprocessor/metadata/models/outlierspecs.py:123
+#: ../../src/banffprocessor/metadata/models/estimators.py:111
+#: ../../src/banffprocessor/metadata/models/donorspecs.py:74
 msgid "{} value must be greater than {}."
 msgstr "La valeur {} doit être supérieure à {}."
 
@@ -211,37 +213,37 @@ msgstr "La valeur {} doit être supérieure à {}."
 msgid "{} value must not contain any single or double quotes."
 msgstr "La valeur {} ne doit pas contenir de guillemets simples ou doubles."
 
-#: ../../src/banffprocessor/metadata/models/outlierspecs.py:60
-#: ../../src/banffprocessor/metadata/models/donorspecs.py:23
-#: ../../src/banffprocessor/metadata/models/donorspecs.py:37
-#: ../../src/banffprocessor/metadata/models/donorspecs.py:65
+#: ../../src/banffprocessor/metadata/models/outlierspecs.py:66
+#: ../../src/banffprocessor/metadata/models/donorspecs.py:25
+#: ../../src/banffprocessor/metadata/models/donorspecs.py:39
+#: ../../src/banffprocessor/metadata/models/donorspecs.py:67
 msgid "{} value must be greater than or equal to {}."
 msgstr "La valeur {} doit être supérieure ou égale à {}."
 
-#: ../../src/banffprocessor/metadata/models/outlierspecs.py:95
+#: ../../src/banffprocessor/metadata/models/outlierspecs.py:101
 msgid "Exponent value must be between 0 and 1 inclusive."
 msgstr "La valeur exponent doit être comprise entre 0 et 1 inclus."
 
-#: ../../src/banffprocessor/metadata/models/outlierspecs.py:124
+#: ../../src/banffprocessor/metadata/models/outlierspecs.py:130
 msgid "StartCentile value must be between 0 inclusive and 100 exclusive."
 msgstr "La valeur StartCentile doit être comprise entre 0 inclus et 100 exclu."
 
-#: ../../src/banffprocessor/metadata/models/estimators.py:63
+#: ../../src/banffprocessor/metadata/models/estimators.py:64
 msgid "variance fields must either all be empty or all have values."
 msgstr ""
 "Les variables de variance doivent soit toutes être vides, soit toutes avoir "
 "des valeurs."
 
-#: ../../src/banffprocessor/metadata/models/estimators.py:117
+#: ../../src/banffprocessor/metadata/models/estimators.py:118
 msgid "PercentCriteria value must be greater than 0 and less than 100."
 msgstr ""
 "La valeur PercentCriteria doit être supérieure à 0 et inférieure à 100."
 
-#: ../../src/banffprocessor/metadata/models/donorspecs.py:30
+#: ../../src/banffprocessor/metadata/models/donorspecs.py:32
 msgid "PcentDonors value must be between 1 inclusive and 100 exclusive."
 msgstr "La valeur PcentDonors doit être comprise entre 1 inclus et 100 exclu."
 
-#: ../../src/banffprocessor/processor.py:87
+#: ../../src/banffprocessor/processor.py:89
 msgid ""
 "Input parameters must be provided either via the input_params parameter or "
 "as part of the input_params property of the initial_data ProcessorData "
@@ -251,7 +253,13 @@ msgstr ""
 "ou dans le cadre de la propriété input_params de l'objet ProcessorData "
 "initial_data."
 
-#: ../../src/banffprocessor/processor.py:217
+#: ../../src/banffprocessor/processor.py:106
+msgid "Set DuckDB connection file_search_path to input folder: {}"
+msgstr ""
+"Définir le chemin de recherche de fichier de connexion DuckDB "
+"sur le dossier d'entrée : {}"
+
+#: ../../src/banffprocessor/processor.py:223
 msgid ""
 "No explicit user plugins folder was set and no \\plugins subfolder was found "
 "in the input folder. No plugins were loaded."
@@ -260,17 +268,18 @@ msgstr ""
 "dossier \\plugins n'a été trouvé dans le dossier d'entrée. Aucun plugin n'a "
 "été chargé."
 
-#: ../../src/banffprocessor/processor.py:320
+#: ../../src/banffprocessor/processor.py:326
 msgid ""
 "The current job_id value {} may have been found on the instatus file. If it "
 "was, the SEQNO and JOBID values for those records, and any with a missing "
 "JOBID, have been replaced with empty values."
 msgstr ""
-"La valeur job_id actuelle {} a peut-être été trouvée dans le fichier instatus. "
-"Si c'est le cas, les valeurs SEQNO et JOBID de ces enregistrements, ainsi que "
-"toutes celles avec un JOBID manquant, ont été remplacées par des valeurs vides."
+"La valeur job_id actuelle {} a peut-être été trouvée dans le fichier "
+"instatus. Si c'est le cas, les valeurs SEQNO et JOBID de ces "
+"enregistrements, ainsi que toutes celles avec un JOBID manquant, ont été "
+"remplacées par des valeurs vides."
 
-#: ../../src/banffprocessor/processor.py:368
+#: ../../src/banffprocessor/processor.py:374
 msgid ""
 "Error in byid field of job_id {} and seqno {}. Byid was set but does not "
 "refer to any varlists found in the varlist metadata."
@@ -279,13 +288,13 @@ msgstr ""
 "ne fait référence à aucune liste de variables trouvée dans les métadonnées "
 "de la liste de variables."
 
-#: ../../src/banffprocessor/processor.py:417
+#: ../../src/banffprocessor/processor.py:423
 msgid "Non-zero return code: {} returned by {} in job {} at seqno {}"
 msgstr ""
-"Code de retour différent de zéro : {} renvoyé par {} dans la stratégie "
-"{} à seqno {}"
+"Code de retour différent de zéro : {} renvoyé par {} dans la stratégie {} à "
+"seqno {}"
 
-#: ../../src/banffprocessor/processor.py:435
+#: ../../src/banffprocessor/processor.py:441
 msgid ""
 "Indata or instatus were modified. If this was not intended make sure that "
 "any new tables you create are not saved back to the processor_data object. "
@@ -297,14 +306,14 @@ msgstr ""
 "l'objet processor_data. Enregistrez plutôt vos mises à jour des attributs "
 "outdata et outstatus sur processor_data"
 
-#: ../../src/banffprocessor/processor.py:456
+#: ../../src/banffprocessor/processor.py:462
 msgid ""
 "Process {} in job {} at seqno {} set an outstatus dataset but it was empty."
 msgstr ""
 "Le processus {} dans le job {} au seqno {} a défini un ensemble de données "
 "de statut sortant, mais il était vide."
 
-#: ../../src/banffprocessor/processor.py:462
+#: ../../src/banffprocessor/processor.py:468
 msgid ""
 "Process {} in job {} at seqno {}. processor_data.outstatus should not "
 "reference the same dataset as instatus."
@@ -312,101 +321,101 @@ msgstr ""
 "Le processus {} dans le job {} au seqno {}. processor_data.outstatus ne doit "
 "pas référencer le même ensemble de données que instatus."
 
-#: ../../src/banffprocessor/processor.py:475
+#: ../../src/banffprocessor/processor.py:481
 msgid ""
 "Process {} in job {} at seqno {} set an outdata dataset but it was empty."
 msgstr ""
-"Le processus {} dans la stratégie {} au seqno {} a défini un ensemble de données "
-"de sortie, mais il était vide."
+"Le processus {} dans la stratégie {} au seqno {} a défini un ensemble de "
+"données de sortie, mais il était vide."
 
-#: ../../src/banffprocessor/processor.py:481
+#: ../../src/banffprocessor/processor.py:487
 msgid ""
 "Process {} in job {} at seqno {}. processor_data.outdata should not "
 "reference the same dataframe as indata."
 msgstr ""
-"Processus {} dans la stratégie {} au seqno {}. processor_data.outdata ne doit "
-"pas référencer le même dataframe que indata."
+"Processus {} dans la stratégie {} au seqno {}. processor_data.outdata ne "
+"doit pas référencer le même dataframe que indata."
 
-#: ../../src/banffprocessor/processor.py:536
+#: ../../src/banffprocessor/processor.py:542
 msgid "Job ID                       : {}\n"
 msgstr "ID de stratégie             : {}\n"
 
-#: ../../src/banffprocessor/processor.py:537
+#: ../../src/banffprocessor/processor.py:543
 msgid "Banff Processor Version      : {}\n"
 msgstr "Version du processeur Banff : {}\n"
 
-#: ../../src/banffprocessor/processor.py:538
+#: ../../src/banffprocessor/processor.py:544
 msgid "Banff Version                : {}\n"
 msgstr "Version du Banff            : {}\n"
 
-#: ../../src/banffprocessor/processor.py:539
+#: ../../src/banffprocessor/processor.py:545
 msgid "Support Email                : {}\n"
 msgstr "Courriel d'assistance       : {}\n"
 
-#: ../../src/banffprocessor/processor.py:540
+#: ../../src/banffprocessor/processor.py:546
 msgid "Start Time                   : {} ({})\n"
 msgstr "Heure de début              : {} ({})\n"
 
-#: ../../src/banffprocessor/processor.py:552
+#: ../../src/banffprocessor/processor.py:558
 msgid "The Banff Processor executed {} successfully. "
 msgstr "Le processeur Banff a exécuté {} avec succès. "
 
-#: ../../src/banffprocessor/processor.py:553
+#: ../../src/banffprocessor/processor.py:559
 msgid "Duration: {}"
 msgstr "Durée: {}"
 
-#: ../../src/banffprocessor/processor.py:566
-#: ../../src/banffprocessor/processor.py:597
+#: ../../src/banffprocessor/processor.py:572
+#: ../../src/banffprocessor/processor.py:603
 msgid "JOBID: {}\n"
 msgstr "ID de stratégie: {}\n"
 
-#: ../../src/banffprocessor/processor.py:567
+#: ../../src/banffprocessor/processor.py:573
 msgid "PROCESS: {}\n"
 msgstr "PROCESSUS: {}\n"
 
-#: ../../src/banffprocessor/processor.py:568
-#: ../../src/banffprocessor/processor.py:598
+#: ../../src/banffprocessor/processor.py:574
+#: ../../src/banffprocessor/processor.py:604
 msgid "SEQNO: {}\n"
 msgstr "SEQNO: {}\n"
 
-#: ../../src/banffprocessor/processor.py:569
-#: ../../src/banffprocessor/processor.py:599
+#: ../../src/banffprocessor/processor.py:575
+#: ../../src/banffprocessor/processor.py:605
 msgid "SPECID: {}\n"
 msgstr "SPECID: {}\n"
 
-#: ../../src/banffprocessor/processor.py:570
+#: ../../src/banffprocessor/processor.py:576
 msgid "CONTROLID: {}\n"
 msgstr "ID DE CONTRÔLE: {}\n"
 
-#: ../../src/banffprocessor/processor.py:596
+#: ../../src/banffprocessor/processor.py:602
 msgid "END OF PROCESS: {}\n"
 msgstr "FIN DU PROCESSUS: {}\n"
 
-#: ../../src/banffprocessor/processor.py:600
+#: ../../src/banffprocessor/processor.py:606
 msgid "JOB PROGRESS: {}/{} - {}%\n"
 msgstr "PROGRESSION DE LA STRATÉGIE: {}/{} - {}%\n"
 
-#: ../../src/banffprocessor/processor.py:616
+#: ../../src/banffprocessor/processor.py:622
 msgid "START TIME: {}\n"
 msgstr "HEURE DE DÉBUT: {}\n"
 
-#: ../../src/banffprocessor/processor.py:617
+#: ../../src/banffprocessor/processor.py:623
 msgid "END TIME: {}\n"
 msgstr "HEURE DE FIN: {}\n"
 
-#: ../../src/banffprocessor/processor.py:622
+#: ../../src/banffprocessor/processor.py:628
 msgid "start_time or end_time must be datetime objects or floats."
 msgstr "start_time ou end_time doivent être des objets datetime ou des floats."
 
-#: ../../src/banffprocessor/processor.py:629
+#: ../../src/banffprocessor/processor.py:635
 msgid "STEP DURATION: {}\n"
 msgstr "DURÉE DE L'ÉTAPE: {}\n"
 
-#: ../../src/banffprocessor/processor.py:637
+#: ../../src/banffprocessor/processor.py:643
 msgid "TOTAL DURATION: {}\n"
 msgstr "DURÉE TOTALE: {}\n"
 
-#: ../../src/banffprocessor/processor.py:643
+#: ../../src/banffprocessor/processor.py:649
 msgid ""
 "TIMESTORE option was set but start_time and end_time were not passed in as "
 "datetime stamps."
@@ -414,23 +423,23 @@ msgstr ""
 "L'option TIMESTORE a été définie mais les heures de début et de fin n'ont "
 "pas été transmises comme horodatages."
 
-#: ../../src/banffprocessor/processor.py:671
+#: ../../src/banffprocessor/processor.py:677
 msgid ""
-"STEP       JOBID       PROCESS               SEQNO   END TIME         DURATION         "
-"TOTAL DURATION   PROGRESS\n"
+"STEP       JOBID       PROCESS               SEQNO   END TIME         "
+"DURATION         TOTAL DURATION   PROGRESS\n"
 msgstr ""
-"ÉTAPE      JOBID       Processus             SEQNO   HEURE DE FIN     DURÉE            "
-"DURÉE TOTALE     PROGRÈS\n"
+"ÉTAPE      JOBID       Processus             SEQNO   HEURE DE FIN     "
+"DURÉE            DURÉE TOTALE     PROGRÈS\n"
 
-#: ../../src/banffprocessor/processor.py:674
+#: ../../src/banffprocessor/processor.py:680
 msgid "{:<9}  {:<10}  {:<20}  {:<6}  {:<15}  {:<15}  {:<15}  {:>8}"
 msgstr "{:<9}  {:<10}  {:<20}  {:<6}  {:<15}  {:<15}  {:<15}  {:>8}"
 
-#: ../../src/banffprocessor/procedures/loader.py:22
+#: ../../src/banffprocessor/procedures/loader.py:23
 msgid "plugin_dir argument was empty or None."
 msgstr "L'argument plugin_dir était vide ou None."
 
-#: ../../src/banffprocessor/procedures/banff_procedures/prorate.py:35
+#: ../../src/banffprocessor/procedures/banff_procedures/prorate.py:37
 msgid ""
 "Prorate requires an instatus file for using the 'ORIGINAL' or 'IMPUTED' "
 "modifiers. No status_file dataframe was generated by any previous steps  and "
@@ -441,19 +450,19 @@ msgstr ""
 "générée par les étapes précédentes et aucun fichier d'état n'a été fourni "
 "dans le fichier JSON d'entrée. Jobid : {} et seqno : {}"
 
-#: ../../src/banffprocessor/procedures/banff_procedures/prorate.py:80
-#: ../../src/banffprocessor/procedures/banff_procedures/outlier.py:116
+#: ../../src/banffprocessor/procedures/banff_procedures/prorate.py:81
+#: ../../src/banffprocessor/procedures/banff_procedures/outlier.py:115
 #: ../../src/banffprocessor/procedures/banff_procedures/editstats.py:60
-#: ../../src/banffprocessor/procedures/banff_procedures/deterministic.py:60
+#: ../../src/banffprocessor/procedures/banff_procedures/deterministic.py:61
 #: ../../src/banffprocessor/procedures/banff_procedures/massimputation.py:71
-#: ../../src/banffprocessor/procedures/banff_procedures/estimator.py:133
-#: ../../src/banffprocessor/procedures/banff_procedures/errorloc.py:85
-#: ../../src/banffprocessor/procedures/banff_procedures/donorimputation.py:94
-#: ../../src/banffprocessor/procedures/banff_procedures/verifyedits.py:53
+#: ../../src/banffprocessor/procedures/banff_procedures/estimator.py:132
+#: ../../src/banffprocessor/procedures/banff_procedures/errorloc.py:86
+#: ../../src/banffprocessor/procedures/banff_procedures/donorimputation.py:95
+#: ../../src/banffprocessor/procedures/banff_procedures/verifyedits.py:52
 msgid "An error occured during execution of this procedure."
 msgstr "Une erreur s'est produite lors de l'exécution de cette procédure."
 
-#: ../../src/banffprocessor/procedures/banff_procedures/outlier.py:52
+#: ../../src/banffprocessor/procedures/banff_procedures/outlier.py:54
 msgid ""
 "Outlierspecs metadata table indicated two data sets for this step so "
 "HISTORIC outlier method expects one of historic data file or auxillary data "
@@ -464,7 +473,7 @@ msgstr ""
 "données historiques ou un fichier de données auxiliaires, mais aucun des "
 "deux n'a pu être chargé."
 
-#: ../../src/banffprocessor/procedures/banff_procedures/outlier.py:63
+#: ../../src/banffprocessor/procedures/banff_procedures/outlier.py:65
 msgid ""
 "Outlierspecs metadata table indicated two data sets for this step so RATIO "
 "or SIGMAP outlier method expects one of auxillary data file or historic data "
@@ -475,17 +484,17 @@ msgstr ""
 "l'un des fichiers de données auxiliaires ou l'un des fichiers de données "
 "historiques, mais aucun des deux n'a pu être chargé."
 
-#: ../../src/banffprocessor/procedures/banff_procedures/job_proc.py:22
+#: ../../src/banffprocessor/procedures/banff_procedures/job_proc.py:24
 msgid "Beginning execution of job {} from job {} at seqno {}"
 msgstr ""
-"Début de l'exécution de la sous-stratégie {} à partir de la "
-"stratégie d'imputation {} au seqno {}"
+"Début de l'exécution de la sous-stratégie {} à partir de la stratégie "
+"d'imputation {} au seqno {}"
 
-#: ../../src/banffprocessor/procedures/banff_procedures/job_proc.py:42
+#: ../../src/banffprocessor/procedures/banff_procedures/job_proc.py:44
 msgid "Job {} complete."
 msgstr "Job {} terminé."
 
-#: ../../src/banffprocessor/procedures/banff_procedures/massimputation.py:30
+#: ../../src/banffprocessor/procedures/banff_procedures/massimputation.py:32
 msgid "MassImputation requires a mustimputeid but one was not provided."
 msgstr "MassImputation nécessite un mustimputeid mais aucun n'a été fourni."
 
@@ -496,15 +505,15 @@ msgstr ""
 "Aucun estimateur n'a été trouvé sous EstimatorID : {} pour jobID : {} et "
 "seqno: {}"
 
-#: ../../src/banffprocessor/procedures/banff_procedures/errorloc.py:33
+#: ../../src/banffprocessor/procedures/banff_procedures/errorloc.py:35
 msgid ""
 "No editgroupid present for seqno {} under job with jobid {}. An editgroupid "
 "is required for Errorloc."
 msgstr ""
-"Aucun editgroupid présent pour le seqno {} sous la stratégie avec jobid {}. Un "
-"editgroupid est requis pour Errorloc."
+"Aucun editgroupid présent pour le seqno {} sous la stratégie avec jobid {}. "
+"Un editgroupid est requis pour Errorloc."
 
-#: ../../src/banffprocessor/procedures/banff_procedures/errorloc.py:42
+#: ../../src/banffprocessor/procedures/banff_procedures/errorloc.py:44
 msgid ""
 "No edits found in Edits table for editgroupid {} at seqno {} under job with "
 "jobid {}. Edits are required for Errorloc."
@@ -513,7 +522,7 @@ msgstr ""
 "editgroupid {} à seqno {} sous la stratégie avec jobid {}. Des modifications "
 "sont requises pour Errorloc."
 
-#: ../../src/banffprocessor/procedures/banff_procedures/donorimputation.py:33
+#: ../../src/banffprocessor/procedures/banff_procedures/donorimputation.py:35
 msgid ""
 "No editgroupid present for seqno {} under job with jobid {}. editgroupid is "
 "required for DonorImputation."
@@ -521,16 +530,16 @@ msgstr ""
 "Aucun editgroupid présent pour seqno {} sous la stratégie avec jobid {}. "
 "Editgroupid est requis pour DonorImputation."
 
-#: ../../src/banffprocessor/procedures/banff_procedures/donorimputation.py:42
+#: ../../src/banffprocessor/procedures/banff_procedures/donorimputation.py:44
 msgid ""
 "No edits found in Edits table for editgroupid {} at seqno {} under job with "
 "jobid {}. Edits are required for DonorImputation."
 msgstr ""
 "Aucune modification n'a été trouvée dans le tableau des modifications pour "
-"editgroupid {} à seqno {} sous la stratégie avec jobid {}. Des modifications sont "
-"requises pour DonorImputation."
+"editgroupid {} à seqno {} sous la stratégie avec jobid {}. Des modifications "
+"sont requises pour DonorImputation."
 
-#: ../../src/banffprocessor/procedures/banff_procedures/verifyedits.py:31
+#: ../../src/banffprocessor/procedures/banff_procedures/verifyedits.py:33
 msgid ""
 "VerifyEdits requires a set of edits to work but none were found for this job "
 "step."
@@ -538,11 +547,11 @@ msgstr ""
 "VerifyEdits nécessite un ensemble de modifications pour fonctionner, mais "
 "aucune n'a été trouvée pour cette étape de la stratégie"
 
-#: ../../src/banffprocessor/procedures/factory.py:40
+#: ../../src/banffprocessor/procedures/factory.py:41
 msgid "Unknown Procedure name {!r}"
 msgstr "Nom de procédure inconnu {!r}"
 
-#: ../../src/banffprocessor/processor_input.py:80
+#: ../../src/banffprocessor/processor_input.py:90
 msgid ""
 "Input parameter input_folder must be provided unless both metadata_folder "
 "and output_folder are provided."
@@ -550,11 +559,11 @@ msgstr ""
 "Le paramètre de dossier d'entrée doit être fourni, sauf si le dossier de "
 "métadonnées et le dossier de sortie sont tous deux fournis."
 
-#: ../../src/banffprocessor/processor_input.py:115
+#: ../../src/banffprocessor/processor_input.py:127
 msgid "Input folder was not given but {} is a relative path."
 msgstr "Le dossier d'entrée n'a pas été donné mais {} est un chemin relatif."
 
-#: ../../src/banffprocessor/processor_input.py:124
+#: ../../src/banffprocessor/processor_input.py:136
 msgid ""
 "Parent folders in input parameter filepath output_folder: {} could not be "
 "found so output folder could not be created."
@@ -562,26 +571,26 @@ msgstr ""
 "Les dossiers parents dans le paramètre d'entrée filepath output_folder: {} "
 "n'ont pas pu être trouvés, le dossier de sortie n'a donc pas pu être créé."
 
-#: ../../src/banffprocessor/processor_input.py:129
+#: ../../src/banffprocessor/processor_input.py:141
 msgid "Filepath in input parameter {}: {} is not accesible or does not exist."
 msgstr ""
 "Le chemin du fichier dans le paramètre d'entrée {} : {} n'est pas accessible "
 "ou n'existe pas."
 
-#: ../../src/banffprocessor/processor_input.py:165
+#: ../../src/banffprocessor/processor_input.py:177
 msgid "No valid job_id found in processor_input file."
 msgstr ""
 "Aucun identifiant d'unité valide n'a été trouvé dans le fichier d'entrée du "
 "processeur."
 
-#: ../../src/banffprocessor/processor_input.py:194
+#: ../../src/banffprocessor/processor_input.py:219
 msgid ""
 "ProcessorInput process_output_type field contains an unrecognized value."
 msgstr ""
 "Le paramètre process_output_type de ProcessorInput contient une valeur non "
 "reconnue."
 
-#: ../../src/banffprocessor/processor_input.py:221
+#: ../../src/banffprocessor/processor_input.py:246
 msgid ""
 "Invalid value in processor_input file: no_by_stats must be true, false or "
 "not specified."
@@ -589,7 +598,7 @@ msgstr ""
 "Valeur non valide dans le fichier d'entrée du processeur: no_by_stats doit "
 "être vrai, faux ou non spécifié."
 
-#: ../../src/banffprocessor/processor_input.py:234
+#: ../../src/banffprocessor/processor_input.py:259
 msgid ""
 "save_format parameter of the input JSON file must be a list of supported "
 "file extensions or be excluded or empty."
@@ -597,7 +606,7 @@ msgstr ""
 "Le paramètre save_format du fichier JSON d'entrée doit être une liste "
 "d'extensions de fichiers prises en charge ou être exclu ou vide."
 
-#: ../../src/banffprocessor/processor_input.py:267
+#: ../../src/banffprocessor/processor_input.py:292
 msgid ""
 "Filepath is not properly configured. Make sure that you use the full "
 "filepath of the input JSON file."
@@ -605,7 +614,7 @@ msgstr ""
 "Le chemin d'accès au fichier n'est pas correctement configuré. Assurez-vous "
 "d'utiliser le chemin d'accès complet du fichier JSON d'entrée."
 
-#: ../../src/banffprocessor/processor_input.py:272
+#: ../../src/banffprocessor/processor_input.py:297
 msgid ""
 "input_filepath is not a JSON file. The input file parameters must be passed "
 "as the full filepath of the input JSON file."
@@ -614,17 +623,17 @@ msgstr ""
 "doivent être transmis sous forme de chemin d'accès complet au fichier JSON "
 "d'entrée."
 
-#: ../../src/banffprocessor/processor_input.py:284
+#: ../../src/banffprocessor/processor_input.py:309
 msgid "Unable to find JSON input file under input filepath {}"
 msgstr ""
 "Impossible de trouver le fichier d'entrée JSON sous le chemin d'accès au "
 "fichier d'entrée {}"
 
-#: ../../src/banffprocessor/nls/nls.py:100
+#: ../../src/banffprocessor/nls/nls.py:101
 msgid "invalid `lang`, expecting `SupportedLanguage` member"
 msgstr "« lang » non valide, membre `SupportedLanguage` attendu"
 
-#: ../../src/banffprocessor/nls/nls.py:107
+#: ../../src/banffprocessor/nls/nls.py:108
 msgid "Language not supported, using default language: {}"
 msgstr "Langue non prise en charge, langue par défaut utilisée : {}"
 
@@ -648,22 +657,22 @@ msgstr ""
 "\n"
 "Les fichiers XML ont été créés avec succès.\n"
 
-#: ../../src/banffprocessor/util/dataset.py:105
+#: ../../src/banffprocessor/util/dataset.py:107
 msgid "Dataset {} was empty and so was not able to be registered to Duckdb."
 msgstr ""
 "L'ensemble de données {} était vide et n'a donc pas pu être enregistré dans "
 "Duckdb."
 
-#: ../../src/banffprocessor/processor_data.py:275
+#: ../../src/banffprocessor/processor_data.py:279
 msgid ""
 "The Banff Processor does not currently support direct updates made to any "
 "datasets with a process control applied to them."
 msgstr ""
-"Le processeur Banff ne prend actuellement pas en charge les mises à jour directes "
-"effectuées sur des ensembles de données avec un contrôle de processus qui leur est "
-"appliqué."
+"Le processeur Banff ne prend actuellement pas en charge les mises à jour "
+"directes effectuées sur des ensembles de données avec un contrôle de "
+"processus qui leur est appliqué."
 
-#: ../../src/banffprocessor/processor_data.py:353
+#: ../../src/banffprocessor/processor_data.py:361
 msgid ""
 "Output table {} was created but output settings exclude this table from "
 "saving for the current proc and so it was discarded."
@@ -672,7 +681,7 @@ msgstr ""
 "cette table de l'enregistrement pour le processus en cours et elle a donc "
 "été supprimée."
 
-#: ../../src/banffprocessor/processor_data.py:476
+#: ../../src/banffprocessor/processor_data.py:486
 msgid ""
 "dataset was given as a pyarrow table but no name was given for the table to "
 "update."
@@ -680,7 +689,7 @@ msgstr ""
 "L'ensemble de données a été donné sous forme de table pyarrow mais aucun nom "
 "n'a été donné pour la table à mettre à jour."
 
-#: ../../src/banffprocessor/processor_data.py:481
+#: ../../src/banffprocessor/processor_data.py:491
 msgid ""
 "dataset was given as an invalid type. dataset must be of type str, pa.Table "
 "or Dataset."
@@ -688,43 +697,52 @@ msgstr ""
 "L'ensemble de données a été donné comme type non valide. L'ensemble de "
 "données doit être de type str, pa.Table ou Dataset."
 
-#: ../../src/banffprocessor/processor_data.py:535
+#: ../../src/banffprocessor/processor_data.py:545
 msgid "update_imputed_file requires a unit_id value to sort and update on."
 msgstr ""
 "update_imputed_file nécessite une valeur unit_id pour trier et mettre à jour."
 
-#: ../../src/banffprocessor/processor_data.py:614
+#: ../../src/banffprocessor/processor_data.py:624
 msgid "Undefined control ID found: controlid ='{}', jobid='{}', seqno='{}'"
 msgstr ""
 "ID de contrôle non défini trouvé : controlid = '{}', jobid='{}', seqno='{}'"
 
-#: ../../src/banffprocessor/processor_data.py:629
+#: ../../src/banffprocessor/processor_data.py:639
 msgid "Process Control has an unrecognized target file value: targetfile='{}'"
 msgstr ""
 "Le contrôle de processus a une valeur de fichier cible non reconnue: "
 "targetfile='{}'"
 
-#: ../../src/banffprocessor/processor_data.py:638
-msgid "Target file exists but is empty: targetfile='{}'"
-msgstr "Le fichier cible existe mais est vide : targetfile='{}'"
+#: ../../src/banffprocessor/processor_data.py:642
+msgid ". Note: targetfile must be an in-memory table, not one on disk."
+msgstr ""
 
-#: ../../src/banffprocessor/processor_data.py:654
+#: ../../src/banffprocessor/processor_data.py:649
+msgid ""
+"Target file exists but is empty: targetfile='{}'. Skipping process controls "
+"for file..."
+msgstr ""
+"Le fichier cible existe mais est vide : targetfile='{}'. Ignorer les "
+"contrôles de processus pour le fichier ."
+
+#: ../../src/banffprocessor/processor_data.py:667
 msgid "Too many EXCLUDEREJECTED controls for one targetfile."
 msgstr "Trop de contrôles EXCLUDEREJECTED pour un fichier cible."
 
-#: ../../src/banffprocessor/processor_data.py:673
+#: ../../src/banffprocessor/processor_data.py:686
 msgid "Too many EDIT_GROUP_FILTER controls for one targetfile."
 msgstr "Trop de contrôles EDIT_GROUP_FILTER pour un fichier cible."
 
-#: ../../src/banffprocessor/processor_data.py:680
+#: ../../src/banffprocessor/processor_data.py:692
 msgid ""
 "An EDIT_GROUP_FILTER process control was specified but no editgroupid was "
 "given in the metadata for the job step."
 msgstr ""
-"Un contrôle de processus EDIT_GROUP_FILTER a été spécifié mais aucun editgroupid "
-"n'a été donné dans les métadonnées pour l'étape de stratégie d'imputation."
+"Un contrôle de processus EDIT_GROUP_FILTER a été spécifié mais aucun "
+"editgroupid n'a été donné dans les métadonnées pour l'étape de stratégie "
+"d'imputation."
 
-#: ../../src/banffprocessor/processor_data.py:702
+#: ../../src/banffprocessor/processor_data.py:714
 msgid ""
 "An EDIT_GROUP_FILTER process control was used but one or more required "
 "fields were missing (STATUS, JOBID and SEQNO) on the instatus file. The "
@@ -734,13 +752,13 @@ msgstr ""
 "plusieurs champs obligatoires manquaient (STATUS, JOBID et SEQNO) dans le "
 "fichier instatus. Le contrôle a été ignoré."
 
-#: ../../src/banffprocessor/processor_data.py:710
+#: ../../src/banffprocessor/processor_data.py:722
 msgid "No supported controls found in process controls metadata."
 msgstr ""
 "Aucun contrôle pris en charge n'a été trouvé dans les métadonnées des "
 "contrôles de processus."
 
-#: ../../src/banffprocessor/processor_data.py:736
+#: ../../src/banffprocessor/processor_data.py:748
 msgid ""
 "A column filter was specified but none of the columns were found in "
 "targetfile."
@@ -748,7 +766,7 @@ msgstr ""
 "Un filtre de colonne a été spécifié mais aucune des colonnes n'a été trouvée "
 "dans le fichier cible."
 
-#: ../../src/banffprocessor/processor_data.py:748
+#: ../../src/banffprocessor/processor_data.py:760
 msgid ""
 "Computed filter: \n"
 "\t{}"
@@ -756,15 +774,15 @@ msgstr ""
 "Filtre calculé : \n"
 "\t{}"
 
-#: ../../src/banffprocessor/processor_data.py:757
+#: ../../src/banffprocessor/processor_data.py:769
 msgid ""
 "Process filter resulted in a dataset containing {} columns but 0 rows. "
 "Continuing..."
 msgstr ""
-"Le filtre de processus a généré un ensemble de données contenant {} "
-"colonnes mais 0 ligne. Continuant..."
+"Le filtre de processus a généré un ensemble de données contenant {} colonnes "
+"mais 0 ligne. Continuant..."
 
-#: ../../src/banffprocessor/processor_data.py:761
+#: ../../src/banffprocessor/processor_data.py:773
 msgid ""
 "There was an error while applying process controls with controlid {} in job "
 "{} seqno {}.\n"
@@ -774,11 +792,11 @@ msgstr ""
 "avec controlid {} dans la stratégie {} seqno {}.\n"
 "Exception : {}"
 
-#: ../../src/banffprocessor/processor_data.py:771
+#: ../../src/banffprocessor/processor_data.py:783
 msgid "Filter succesfully applied."
 msgstr "Filtre appliqué avec succès."
 
-#: ../../src/banffprocessor/processor_data.py:926
+#: ../../src/banffprocessor/processor_data.py:935
 msgid ""
 "ProcessOutputs metadata entry found under process {} with unrecognized "
 "output_name {}"
@@ -786,16 +804,16 @@ msgstr ""
 "Entrée de métadonnées ProcessOutputs trouvée sous le processus {} avec un "
 "nom de sortie non reconnu {}"
 
-#: ../../src/banffprocessor/processor_data.py:956
+#: ../../src/banffprocessor/processor_data.py:965
 msgid "Output dataset {} was created but is empty."
 msgstr "L'ensemble de données de sortie {} a été créé mais est vide."
 
-#: ../../src/banffprocessor/processor_data.py:959
+#: ../../src/banffprocessor/processor_data.py:968
 msgid "No output folder set. Ouputs will not be saved."
 msgstr ""
 "Aucun dossier de sortie défini. Les sorties ne seront pas enregistrées."
 
-#: ../../src/banffprocessor/processor_data.py:1008
+#: ../../src/banffprocessor/processor_data.py:1017
 msgid ""
 "Input folder was not provided or data_file string was empty when attempting "
 "to load datafile without full filepath."
@@ -804,16 +822,16 @@ msgstr ""
 "lors de la tentative de chargement du fichier de données sans chemin de "
 "fichier complet."
 
-#: ../../src/banffprocessor/processor_data.py:1019
+#: ../../src/banffprocessor/processor_data.py:1027
 msgid "Error while reading input data file {}"
 msgstr "Erreur lors de la lecture du fichier de données d'entrée {}"
 
-#: ../../src/banffprocessor/processor_data.py:1026
+#: ../../src/banffprocessor/processor_data.py:1033
 msgid "Filetype not supported or filename empty."
 msgstr ""
 "Le type de fichier n'est pas pris en charge ou le nom de fichier est vide."
 
-#: ../../src/banffprocessor/processor_data.py:1052
+#: ../../src/banffprocessor/processor_data.py:1059
 msgid ""
 "Dataset provided in parameter 'ds' is of an unsupported type. 'ds' must be a "
 "pandas Dataframe or pyarrow Table."
@@ -821,7 +839,7 @@ msgstr ""
 "L'ensemble de données fourni dans le paramètre « ds » est d'un type non pris "
 "en charge. « ds » doit être un Dataframe pandas ou une table pyarrow."
 
-#: ../../src/banffprocessor/processor_data.py:1068
+#: ../../src/banffprocessor/processor_data.py:1075
 msgid ""
 "Unhandled exception occurred while converting PyArrow Table to Pandas "
 "DataFrame"
@@ -829,7 +847,7 @@ msgstr ""
 "Une exception non gérée s'est produite lors de la conversion de la table de "
 "données PyArrow en trame de données Pandas"
 
-#: ../../src/banffprocessor/processor_data.py:1074
+#: ../../src/banffprocessor/processor_data.py:1081
 msgid ""
 "Unrecognized format parameter '{}'. Must be either of 'pyarrow' or 'pandas'"
 msgstr ""

@@ -1,0 +1,530 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>banffprocessor.procedures.banff_procedures.errorloc &#8212; Banff Processor 2.0.2 documentation</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../../../_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+<link href="../../../../_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="../../../../_static/pygments.css?v=8f2a1f02" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/custom.css?v=2a807888" />
+  
+  <!-- So that users can add custom icons -->
+  <script src="../../../../_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../../../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
+<link rel="preload" as="script" href="../../../../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
+
+    <script src="../../../../_static/documentation_options.js?v=29701289"></script>
+    <script src="../../../../_static/doctools.js?v=9bcbadda"></script>
+    <script src="../../../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = '_modules/banffprocessor/procedures/banff_procedures/errorloc';</script>
+    <link rel="index" title="Index" href="../../../../genindex" />
+    <link rel="search" title="Search" href="../../../../search" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="../../../../search"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class="col-lg-3 navbar-header-items__start">
+    
+      <div class="navbar-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../../../../index">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../../../_static/banff_white.png" class="logo__image only-light" alt="Banff Processor 2.0.2 documentation - Home"/>
+    <img src="../../../../_static/banff_white.png" class="logo__image only-dark pst-js-only" alt="Banff Processor 2.0.2 documentation - Home"/>
+  
+  
+</a></div>
+    
+  </div>
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../../en/index">
+    English
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../../fr/index">
+    Français
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+        </div>
+      
+      
+        <div class="navbar-item">
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button></div>
+      
+        <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/StatCan/gensol-banff-processor" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fab fa-github fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+</ul></div>
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+    </div>
+  
+
+  
+</div>
+
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+        
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar hide-on-wide">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          
+          
+            <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../../en/index">
+    English
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../../fr/index">
+    Français
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+          
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button></div>
+        
+          <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/StatCan/gensol-banff-processor" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fab fa-github fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+</ul></div>
+        
+      </div>
+    
+  </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+<nav aria-label="Breadcrumb" class="d-print-none">
+  <ul class="bd-breadcrumbs">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="../../../../index" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    
+    <li class="breadcrumb-item"><a href="../../../index" class="nav-link">Module code</a></li>
+    
+    
+    <li class="breadcrumb-item"><a href="../../../banffprocessor" class="nav-link">banffprocessor</a></li>
+    
+    <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis">banffprocessor.procedures.banff_procedures.errorloc</span></li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <h1>Source code for banffprocessor.procedures.banff_procedures.errorloc</h1><div class="highlight"><pre>
+<span></span><span class="kn">import</span><span class="w"> </span><span class="nn">banff.exceptions</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">banff</span><span class="w"> </span><span class="kn">import</span> <span class="n">errorloc</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">banff._log</span><span class="w"> </span><span class="kn">import</span> <span class="n">log_levels</span>
+
+<span class="c1"># Import must be absolute in order to ensure all modules reference the same global _c_handlers</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">banffprocessor.processor_logger</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plg</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">banffprocessor.exceptions</span><span class="w"> </span><span class="kn">import</span> <span class="n">ProcessorInputParameterError</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">banffprocessor.metadata.models.errorlocspecs</span><span class="w"> </span><span class="kn">import</span> <span class="n">Errorlocspecs</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">banffprocessor.nls</span><span class="w"> </span><span class="kn">import</span> <span class="n">_</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">banffprocessor.procedures</span><span class="w"> </span><span class="kn">import</span> <span class="n">factory</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">banffprocessor.processor_data</span><span class="w"> </span><span class="kn">import</span> <span class="n">ProcessorData</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">banffprocessor.util.dataset</span><span class="w"> </span><span class="kn">import</span> <span class="n">table_empty</span>
+
+<span class="c1"># Setup local log for processor module specifically</span>
+<span class="n">log_lcl</span> <span class="o">=</span> <span class="n">plg</span><span class="o">.</span><span class="n">get_processor_child_logger</span><span class="p">(</span><span class="s2">&quot;errorloc&quot;</span><span class="p">)</span>
+
+<span class="c1"># Required Metadata Files: &quot;editgroups&quot;, &quot;edits&quot;, &quot;errorlocspecs&quot;</span>
+<span class="c1"># Optional Metadata Files: &quot;varlists&quot;, &quot;weights&quot;</span>
+
+<div class="viewcode-block" id="Errorloc">
+<a class="viewcode-back" href="../../../../banffprocessor.procedures.banff_procedures#banffprocessor.procedures.banff_procedures.errorloc.Errorloc">[docs]</a>
+<span class="k">class</span><span class="w"> </span><span class="nc">Errorloc</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Implements the Errorloc Banff procedure as a `:class:banffprocessor.procedures.procedure_interface`.&quot;&quot;&quot;</span>
+
+    <span class="n">output_tables</span><span class="p">:</span> <span class="nb">tuple</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="s2">&quot;outreject&quot;</span><span class="p">)</span>
+
+<div class="viewcode-block" id="Errorloc.execute">
+<a class="viewcode-back" href="../../../../banffprocessor.procedures.banff_procedures#banffprocessor.procedures.banff_procedures.errorloc.Errorloc.execute">[docs]</a>
+    <span class="nd">@classmethod</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">execute</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">processor_data</span><span class="p">:</span> <span class="n">ProcessorData</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Execute the banff.errorloc call, and returns the results.&quot;&quot;&quot;</span>
+        <span class="c1"># alias the param name to shorten references</span>
+        <span class="n">bp</span> <span class="o">=</span> <span class="n">processor_data</span>
+        <span class="n">job_step</span> <span class="o">=</span> <span class="n">bp</span><span class="o">.</span><span class="n">current_job_step</span>
+        <span class="n">errorloc_spec</span> <span class="o">=</span> <span class="n">bp</span><span class="o">.</span><span class="n">metaobjects</span><span class="o">.</span><span class="n">get_specs_obj</span><span class="p">(</span><span class="n">Errorlocspecs</span><span class="p">,</span> <span class="n">job_step</span><span class="o">.</span><span class="n">specid</span><span class="p">)</span>
+
+        <span class="c1"># errorNumber EL01</span>
+        <span class="k">if</span><span class="p">(</span><span class="ow">not</span> <span class="n">job_step</span><span class="o">.</span><span class="n">editgroupid</span><span class="p">):</span>
+            <span class="n">msg</span> <span class="o">=</span> <span class="n">_</span><span class="p">(</span><span class="s2">&quot;No editgroupid present for seqno </span><span class="si">{}</span><span class="s2"> under job with jobid </span><span class="si">{}</span><span class="s2">. &quot;</span>
+                    <span class="s2">&quot;An editgroupid is required for Errorloc.&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">job_step</span><span class="o">.</span><span class="n">seqno</span><span class="p">,</span> <span class="n">job_step</span><span class="o">.</span><span class="n">jobid</span><span class="p">)</span>
+            <span class="n">log_lcl</span><span class="o">.</span><span class="n">exception</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span>
+            <span class="k">raise</span> <span class="n">ProcessorInputParameterError</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span>
+
+        <span class="c1"># Get the edit/weights strings by concatenating the edits/weights</span>
+        <span class="c1"># we need filtered on the editgroupid/weightid</span>
+        <span class="n">proc_edits</span> <span class="o">=</span> <span class="n">bp</span><span class="o">.</span><span class="n">metaobjects</span><span class="o">.</span><span class="n">get_edits_string</span><span class="p">(</span><span class="n">job_step</span><span class="o">.</span><span class="n">editgroupid</span><span class="p">)</span>
+        <span class="k">if</span><span class="p">(</span><span class="ow">not</span> <span class="n">proc_edits</span><span class="p">):</span>
+            <span class="n">msg</span> <span class="o">=</span> <span class="n">_</span><span class="p">(</span><span class="s2">&quot;No edits found in Edits table for editgroupid </span><span class="si">{}</span><span class="s2"> at seqno </span><span class="si">{}</span><span class="s2"> under job with jobid </span><span class="si">{}</span><span class="s2">. &quot;</span>
+                    <span class="s2">&quot;Edits are required for Errorloc.&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">job_step</span><span class="o">.</span><span class="n">editgroupid</span><span class="p">,</span> <span class="n">job_step</span><span class="o">.</span><span class="n">seqno</span><span class="p">,</span>
+                                                               <span class="n">job_step</span><span class="o">.</span><span class="n">jobid</span><span class="p">)</span>
+            <span class="n">log_lcl</span><span class="o">.</span><span class="n">exception</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span>
+            <span class="k">raise</span> <span class="n">ProcessorInputParameterError</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span>
+
+        <span class="n">proc_weights</span> <span class="o">=</span> <span class="n">bp</span><span class="o">.</span><span class="n">metaobjects</span><span class="o">.</span><span class="n">get_weights_string</span><span class="p">(</span><span class="n">errorloc_spec</span><span class="o">.</span><span class="n">weightid</span><span class="p">)</span> <span class="k">if</span> <span class="n">errorloc_spec</span><span class="o">.</span><span class="n">weightid</span> <span class="k">else</span> <span class="kc">None</span>
+
+        <span class="c1"># Imputed_File should always have data by this point, but we&#39;ll make sure to pass None</span>
+        <span class="c1"># instead of an empty table to the banff call just to make sure we don&#39;t pass an empty table</span>
+        <span class="n">imputed_file</span> <span class="o">=</span> <span class="n">bp</span><span class="o">.</span><span class="n">get_dataset</span><span class="p">(</span><span class="s2">&quot;imputed_file&quot;</span><span class="p">)</span>
+        <span class="n">status_file</span> <span class="o">=</span> <span class="n">bp</span><span class="o">.</span><span class="n">get_dataset</span><span class="p">(</span><span class="s2">&quot;status_file&quot;</span><span class="p">)</span>
+
+        <span class="c1"># Form our Banff call</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="n">banff_call</span> <span class="o">=</span> <span class="n">errorloc</span><span class="p">(</span>
+                <span class="n">unit_id</span><span class="o">=</span><span class="n">bp</span><span class="o">.</span><span class="n">input_params</span><span class="o">.</span><span class="n">unit_id</span><span class="p">,</span>
+                <span class="n">by</span><span class="o">=</span><span class="s2">&quot; &quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">bp</span><span class="o">.</span><span class="n">by_varlist</span><span class="p">)</span> <span class="k">if</span> <span class="n">bp</span><span class="o">.</span><span class="n">by_varlist</span> <span class="k">else</span> <span class="kc">None</span><span class="p">,</span>
+                <span class="n">rand_num_var</span><span class="o">=</span><span class="n">bp</span><span class="o">.</span><span class="n">input_params</span><span class="o">.</span><span class="n">randnumvar</span><span class="p">,</span>
+                <span class="n">edits</span><span class="o">=</span><span class="n">proc_edits</span> <span class="k">if</span> <span class="n">proc_edits</span> <span class="k">else</span> <span class="kc">None</span><span class="p">,</span>
+                <span class="n">weights</span><span class="o">=</span><span class="n">proc_weights</span> <span class="k">if</span> <span class="n">proc_weights</span> <span class="k">else</span> <span class="kc">None</span><span class="p">,</span>
+                <span class="n">cardinality</span><span class="o">=</span><span class="n">errorloc_spec</span><span class="o">.</span><span class="n">cardinality</span><span class="p">,</span>
+                <span class="n">time_per_obs</span><span class="o">=</span><span class="n">errorloc_spec</span><span class="o">.</span><span class="n">timeperobs</span><span class="p">,</span>
+                <span class="n">seed</span><span class="o">=</span><span class="n">bp</span><span class="o">.</span><span class="n">input_params</span><span class="o">.</span><span class="n">seed</span><span class="p">,</span>
+                <span class="n">display_level</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+                <span class="c1"># Not supposed to provide these as False, only True or None</span>
+                <span class="n">accept_negative</span><span class="o">=</span><span class="n">job_step</span><span class="o">.</span><span class="n">acceptnegative</span><span class="p">,</span>
+                <span class="n">no_by_stats</span><span class="o">=</span><span class="n">bp</span><span class="o">.</span><span class="n">input_params</span><span class="o">.</span><span class="n">no_by_stats</span><span class="p">,</span>
+                <span class="n">prefill_by_vars</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+                <span class="n">presort</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+                <span class="n">indata</span><span class="o">=</span><span class="n">imputed_file</span> <span class="k">if</span> <span class="n">imputed_file</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="ow">and</span> <span class="ow">not</span> <span class="n">table_empty</span><span class="p">(</span><span class="n">imputed_file</span><span class="p">)</span> <span class="k">else</span> <span class="kc">None</span><span class="p">,</span>
+                <span class="n">instatus</span><span class="o">=</span><span class="n">status_file</span> <span class="k">if</span> <span class="n">status_file</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="ow">and</span> <span class="ow">not</span> <span class="n">table_empty</span><span class="p">(</span><span class="n">status_file</span><span class="p">)</span> <span class="k">else</span> <span class="kc">None</span><span class="p">,</span>
+                <span class="n">outstatus</span><span class="o">=</span><span class="s2">&quot;pyarrow&quot;</span><span class="p">,</span>
+                <span class="n">outreject</span><span class="o">=</span><span class="s2">&quot;pyarrow&quot;</span><span class="p">,</span>
+                <span class="c1"># We want everything captured while an input param configures the handlers</span>
+                <span class="c1"># which indirectly filter.</span>
+                <span class="n">trace</span><span class="o">=</span><span class="n">log_levels</span><span class="o">.</span><span class="n">NOTSET</span><span class="p">,</span>
+                <span class="c1"># Note that capture=None will supress console output in new version so use False or omit</span>
+                <span class="n">logger</span><span class="o">=</span><span class="n">log_lcl</span><span class="p">,</span>
+                <span class="n">_BP_c_log_handlers</span><span class="o">=</span><span class="n">plg</span><span class="o">.</span><span class="n">get_c_handlers</span><span class="p">(),</span>
+            <span class="p">)</span>
+        <span class="k">except</span> <span class="n">banff</span><span class="o">.</span><span class="n">exceptions</span><span class="o">.</span><span class="n">ProcedureCError</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+            <span class="n">msg</span> <span class="o">=</span> <span class="n">_</span><span class="p">(</span><span class="s2">&quot;An error occured during execution of this procedure.&quot;</span><span class="p">)</span>
+            <span class="n">log_lcl</span><span class="o">.</span><span class="n">exception</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span>
+            <span class="k">return</span> <span class="n">e</span><span class="o">.</span><span class="n">return_code</span> <span class="c1"># Get the return code from the exception</span>
+
+        <span class="c1"># set outstatus as we want to update status_file</span>
+        <span class="n">bp</span><span class="o">.</span><span class="n">outstatus</span> <span class="o">=</span> <span class="n">banff_call</span><span class="o">.</span><span class="n">outstatus</span>
+
+        <span class="c1"># outreject needs to exist as a dataset in processor_data before calling update_file_all</span>
+        <span class="c1"># It is also the only real exception to the saving of non-cumulative tables</span>
+        <span class="n">bp</span><span class="o">.</span><span class="n">set_dataset</span><span class="p">(</span><span class="s2">&quot;outreject&quot;</span><span class="p">,</span> <span class="n">banff_call</span><span class="o">.</span><span class="n">outreject</span><span class="p">)</span>
+        <span class="n">bp</span><span class="o">.</span><span class="n">update_file_all</span><span class="p">(</span><span class="s2">&quot;outreject&quot;</span><span class="p">,</span> <span class="s2">&quot;outreject_all&quot;</span><span class="p">)</span>
+
+        <span class="c1"># Usually &#39;outreject&#39; is updated with the new &#39;outreject&#39; by concatenating the new records.</span>
+        <span class="c1"># But in the specific case of Errorloc, &#39;outreject&#39; should just be the result from this</span>
+        <span class="c1"># Errorloc run, and it should overwrite the existing &#39;outreject&#39; (called &quot;outreject&quot; but</span>
+        <span class="c1"># used as inreject for the next proc, if required)</span>
+
+        <span class="k">return</span> <span class="n">banff_call</span><span class="o">.</span><span class="n">rc</span></div>
+</div>
+
+
+<div class="viewcode-block" id="register">
+<a class="viewcode-back" href="../../../../banffprocessor.procedures.banff_procedures#banffprocessor.procedures.banff_procedures.errorloc.register">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">register</span><span class="p">(</span><span class="n">factory</span><span class="p">:</span> <span class="n">factory</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Register this procedure class in the Banff processor procedure factory.&quot;&quot;&quot;</span>
+    <span class="n">factory</span><span class="o">.</span><span class="n">register</span><span class="p">(</span><span class="s2">&quot;errorloc&quot;</span><span class="p">,</span> <span class="n">Errorloc</span><span class="p">)</span></div>
+
+</pre></div>
+
+                </article>
+              
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../../../../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
+<script defer src="../../../../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+
+  <p class="copyright">
+    
+      © Copyright 2025, Statistics Canada / Statistique Canada.
+      <br/>
+    
+  </p>
+</div>
+      
+        <div class="footer-item">
+
+  <p class="sphinx-version">
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 8.2.3.
+    <br/>
+  </p>
+</div>
+      
+    </div>
+  
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item">
+<p class="theme-version">
+  <!-- # L10n: Setting the PST URL as an argument as this does not need to be localized -->
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.16.1.
+</p></div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
+</html>

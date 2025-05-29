@@ -1,0 +1,773 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>banffprocessor.processor_input &#8212; Banff Processor 2.0.2 documentation</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=8f2a1f02" />
+    <link rel="stylesheet" type="text/css" href="../../_static/custom.css?v=2a807888" />
+  
+  <!-- So that users can add custom icons -->
+  <script src="../../_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
+
+    <script src="../../_static/documentation_options.js?v=29701289"></script>
+    <script src="../../_static/doctools.js?v=9bcbadda"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = '_modules/banffprocessor/processor_input';</script>
+    <link rel="index" title="Index" href="../../genindex" />
+    <link rel="search" title="Search" href="../../search" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="../../search"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class="col-lg-3 navbar-header-items__start">
+    
+      <div class="navbar-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../../index">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../_static/banff_white.png" class="logo__image only-light" alt="Banff Processor 2.0.2 documentation - Home"/>
+    <img src="../../_static/banff_white.png" class="logo__image only-dark pst-js-only" alt="Banff Processor 2.0.2 documentation - Home"/>
+  
+  
+</a></div>
+    
+  </div>
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../en/index">
+    English
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../fr/index">
+    Français
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+        </div>
+      
+      
+        <div class="navbar-item">
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button></div>
+      
+        <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/StatCan/gensol-banff-processor" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fab fa-github fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+</ul></div>
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+    </div>
+  
+
+  
+</div>
+
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+        
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar hide-on-wide">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          
+          
+            <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../en/index">
+    English
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../fr/index">
+    Français
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+          
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button></div>
+        
+          <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/StatCan/gensol-banff-processor" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fab fa-github fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+</ul></div>
+        
+      </div>
+    
+  </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+<nav aria-label="Breadcrumb" class="d-print-none">
+  <ul class="bd-breadcrumbs">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="../../index" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    
+    <li class="breadcrumb-item"><a href="../index" class="nav-link">Module code</a></li>
+    
+    
+    <li class="breadcrumb-item"><a href="../banffprocessor" class="nav-link">banffprocessor</a></li>
+    
+    <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis">banffprocessor.processor_input</span></li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <h1>Source code for banffprocessor.processor_input</h1><div class="highlight"><pre>
+<span></span><span class="kn">import</span><span class="w"> </span><span class="nn">json</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">enum</span><span class="w"> </span><span class="kn">import</span> <span class="n">Enum</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">pathlib</span><span class="w"> </span><span class="kn">import</span> <span class="n">Path</span>
+
+<span class="kn">from</span><span class="w"> </span><span class="nn">banff._log</span><span class="w"> </span><span class="kn">import</span> <span class="n">log_levels</span>
+
+<span class="kn">import</span><span class="w"> </span><span class="nn">banffprocessor.processor_logger</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plg</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">banffprocessor.exceptions</span><span class="w"> </span><span class="kn">import</span> <span class="n">ProcessorInputParameterError</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">banffprocessor.nls</span><span class="w"> </span><span class="kn">import</span> <span class="n">_</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">banffprocessor.util.case_insensitive_enum_meta</span><span class="w"> </span><span class="kn">import</span> <span class="n">CaseInsensitiveEnumMeta</span>
+
+<span class="n">log_lcl</span> <span class="o">=</span> <span class="n">plg</span><span class="o">.</span><span class="n">get_processor_child_logger</span><span class="p">(</span><span class="s2">&quot;processor_input&quot;</span><span class="p">)</span>
+
+<span class="c1">## Specified in and loaded from main program input json file ##</span>
+<div class="viewcode-block" id="ProcessorInput">
+<a class="viewcode-back" href="../../banffprocessor#banffprocessor.processor_input.ProcessorInput">[docs]</a>
+<span class="k">class</span><span class="w"> </span><span class="nc">ProcessorInput</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Holds input parameters from a user&#39;s JSON input file used to configure a Banff Processor job.&quot;&quot;&quot;</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">job_id</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
+                 <span class="n">unit_id</span><span class="p">:</span> <span class="nb">str</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="n">input_folder</span><span class="p">:</span> <span class="nb">str</span> <span class="o">|</span> <span class="n">Path</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+                 <span class="n">indata_filename</span><span class="p">:</span> <span class="nb">str</span> <span class="o">|</span> <span class="n">Path</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+                 <span class="n">auxdata_filename</span><span class="p">:</span> <span class="nb">str</span> <span class="o">|</span> <span class="n">Path</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="n">indata_aux_filename</span><span class="p">:</span> <span class="nb">str</span> <span class="o">|</span> <span class="n">Path</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+                 <span class="n">histdata_filename</span><span class="p">:</span> <span class="nb">str</span> <span class="o">|</span> <span class="n">Path</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="n">indata_hist_filename</span><span class="p">:</span> <span class="nb">str</span> <span class="o">|</span> <span class="n">Path</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+                 <span class="n">histstatus_filename</span><span class="p">:</span> <span class="nb">str</span> <span class="o">|</span> <span class="n">Path</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="n">instatus_hist_filename</span><span class="p">:</span> <span class="nb">str</span> <span class="o">|</span> <span class="n">Path</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+                 <span class="n">instatus_filename</span><span class="p">:</span> <span class="nb">str</span> <span class="o">|</span> <span class="n">Path</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="n">user_plugins_folder</span><span class="p">:</span> <span class="nb">str</span> <span class="o">|</span> <span class="n">Path</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+                 <span class="n">metadata_folder</span><span class="p">:</span> <span class="nb">str</span> <span class="o">|</span> <span class="n">Path</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="n">process_output_type</span><span class="p">:</span> <span class="nb">str</span> <span class="o">|</span> <span class="nb">int</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+                 <span class="n">seed</span><span class="p">:</span> <span class="nb">int</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="n">no_by_stats</span><span class="p">:</span> <span class="nb">str</span> <span class="o">|</span> <span class="nb">bool</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+                 <span class="n">randnumvar</span><span class="p">:</span> <span class="nb">str</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="n">save_format</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+                 <span class="n">output_folder</span><span class="p">:</span> <span class="nb">str</span> <span class="o">|</span> <span class="n">Path</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="n">log_level</span><span class="p">:</span> <span class="nb">int</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+                 <span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Construct a ProcessorInput object.</span>
+
+<span class="sd">        :param job_id: The job_id of the job to run.</span>
+<span class="sd">        :type job_id: str</span>
+<span class="sd">        :param unit_id: The unit_id for the job to run. Not required for UDPs, VerifyEdits,</span>
+<span class="sd">            EditStats, or &#39;Job&#39; procedures but required for all other procs. Defaults to None</span>
+<span class="sd">        :type unit_id: str, optional</span>
+<span class="sd">        :param input_folder: The directory containing the JSON file used to create this object, and/or</span>
+<span class="sd">            the directory containing the input data and status files as well as sub-directories for</span>
+<span class="sd">            /metadata and /plugins. Also used to create the subdirectory /out for output files, if</span>
+<span class="sd">            no `output_folder` is provided as a part of the provided arguments.</span>
+<span class="sd">        :type input_folder: str | Path</span>
+<span class="sd">        :param indata_filename: The filename of the indata file which is required in almost</span>
+<span class="sd">            all cases, defaults to None</span>
+<span class="sd">        :type indata_filename: str | Path | None, optional</span>
+<span class="sd">        :param auxdata_filename: The filename of the auxillary data file, defaults to None. This field</span>
+<span class="sd">            is an alias for `indata_aux_filename`, they represent the same value.</span>
+<span class="sd">        :type auxdata_filename: str | Path | None, optional</span>
+<span class="sd">        :param indata_aux_filename: The filename of the auxillary data file, defaults to None</span>
+<span class="sd">        :type indata_aux_filename: str | Path | None, optional</span>
+<span class="sd">        :param histdata_filename: The filename of the historical data file, defaults to None. This field</span>
+<span class="sd">            is an alias for `indata_hist_filename`, they represent the same value.</span>
+<span class="sd">        :type histdata_filename: str | Path | None, optional</span>
+<span class="sd">        :param indata_hist_filename: The filename of the auxillary data file, defaults to None</span>
+<span class="sd">        :type indata_hist_filename: str | Path | None, optional</span>
+<span class="sd">        :param histstatus_filename: The filename of the historical status file, defaults to None. This field</span>
+<span class="sd">            is an alias for `instatus_hist_filename`, they represent the same value.</span>
+<span class="sd">        :type histstatus_filename: str | Path | None, optional</span>
+<span class="sd">        :param instatus_hist_filename: The filename of the auxillary data file, defaults to None</span>
+<span class="sd">        :type instatus_hist_filename: str | Path | None, optional</span>
+<span class="sd">        :param instatus_filename: The filename of the instatus file, defaults to None</span>
+<span class="sd">        :type instatus_filename: str | Path | None, optional</span>
+<span class="sd">        :param user_plugins_folder: The directory where the user defined plugin modules for this job</span>
+<span class="sd">            are located, defaults to None</span>
+<span class="sd">        :type user_plugins_folder: str | Path | None, optional</span>
+<span class="sd">        :param metadata_folder: The directory where the metadata files for this job are located,</span>
+<span class="sd">            defaults to None</span>
+<span class="sd">        :type metadata_folder: str | Path | None, optional</span>
+<span class="sd">        :param process_output_type: Specifies a level which determines the types of output files</span>
+<span class="sd">            that will be saved/produced, defaults to None</span>
+<span class="sd">        :type process_output_type: str | int | None, optional</span>
+<span class="sd">        :param seed: _description_, defaults to None</span>
+<span class="sd">        :type seed: int | None, optional</span>
+<span class="sd">        :param no_by_stats: _description_, defaults to None</span>
+<span class="sd">        :type no_by_stats: str | bool | None, optional</span>
+<span class="sd">        :param randnumvar: _description_, defaults to None</span>
+<span class="sd">        :type randnumvar: str | None, optional</span>
+<span class="sd">        :param save_format: _description_, defaults to None</span>
+<span class="sd">        :type save_format: list[str] | None, optional</span>
+<span class="sd">        :param output_folder: _description_, defaults to None</span>
+<span class="sd">        :type output_folder: str | Path | None, optional</span>
+<span class="sd">        :param log_level: _description_, defaults to None</span>
+<span class="sd">        :type log_level: str | None, optional</span>
+<span class="sd">        :raises ProcessorInputParameterError: If no valid `job_id` or `unit_id` is provided</span>
+<span class="sd">        :raises ProcessorInputParameterError: If the `save_format` parameter is provided in</span>
+<span class="sd">            an improper format</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="c1"># input_folder is technically not required if the user provides explicit locations</span>
+        <span class="c1"># for their metadata files and their output folder</span>
+        <span class="k">if</span><span class="p">(</span><span class="ow">not</span> <span class="n">input_folder</span> <span class="ow">and</span> <span class="ow">not</span> <span class="p">(</span><span class="n">metadata_folder</span> <span class="ow">and</span> <span class="n">output_folder</span><span class="p">)):</span>
+            <span class="n">msg</span> <span class="o">=</span> <span class="n">_</span><span class="p">(</span><span class="s2">&quot;Input parameter input_folder must be provided unless both &quot;</span>
+                <span class="s2">&quot;metadata_folder and output_folder are provided.&quot;</span><span class="p">)</span>
+            <span class="n">log_lcl</span><span class="o">.</span><span class="n">exception</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span>
+
+        <span class="c1"># NOT FOUND IN ACTUAL INPUT JSON FILE, VALUE SHOULD BE THE FOLDER THE FILE IS FOUND IN</span>
+        <span class="c1"># this folder is used as a default file location if the path to a required file was</span>
+        <span class="c1"># not explicitly defined in any of the other input parameters such as indata_filename</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">input_folder</span> <span class="o">=</span> <span class="n">get_path_val</span><span class="p">(</span><span class="n">input_folder</span><span class="p">)</span>
+
+        <span class="k">def</span><span class="w"> </span><span class="nf">abs_path</span><span class="p">(</span><span class="n">file_or_dir</span><span class="p">:</span> <span class="n">Path</span> <span class="o">|</span> <span class="nb">str</span> <span class="o">|</span> <span class="kc">None</span><span class="p">,</span> <span class="n">param_name</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Path</span> <span class="o">|</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">            </span><span class="sd">&quot;&quot;&quot;Convert file_or_dir to an absolute path.</span>
+
+<span class="sd">            If file_or_dir is a non-absolute path it is treated as relative to the input_folder and</span>
+<span class="sd">            the final path will begin with input_folder.</span>
+
+<span class="sd">            :param file_or_dir: The filepath to convert.</span>
+<span class="sd">            :type file_or_dir: str | Path | None</span>
+<span class="sd">            :param param_name: The name of the parameter being processed (for error reporting)</span>
+<span class="sd">            :type param_name: str</span>
+<span class="sd">            :return: file_or_dir as represented by a Path object.</span>
+<span class="sd">            :rtype: Path | None</span>
+<span class="sd">            &quot;&quot;&quot;</span>
+            <span class="n">file_or_dir</span> <span class="o">=</span> <span class="n">get_path_val</span><span class="p">(</span><span class="n">file_or_dir</span><span class="p">)</span>
+            <span class="k">if</span><span class="p">(</span><span class="ow">not</span> <span class="n">file_or_dir</span><span class="p">):</span>
+                <span class="k">return</span> <span class="kc">None</span>
+
+            <span class="n">output_parents</span> <span class="o">=</span> <span class="kc">False</span>
+            <span class="k">if</span><span class="p">(</span><span class="ow">not</span> <span class="n">file_or_dir</span><span class="o">.</span><span class="n">is_absolute</span><span class="p">()):</span>
+                <span class="k">if</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">input_folder</span><span class="p">):</span>
+                    <span class="n">file_or_dir</span> <span class="o">=</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">input_folder</span> <span class="o">/</span> <span class="n">file_or_dir</span><span class="p">)</span><span class="o">.</span><span class="n">resolve</span><span class="p">()</span>
+                    <span class="c1"># Specifically for output_folder, if given as relative path,</span>
+                    <span class="c1"># we want to create any parent folders of the final output directory</span>
+                    <span class="c1"># if it doesn&#39;t yet exist. If output_folder is given as abolute</span>
+                    <span class="c1"># we DON&#39;T want to create the parent folders, only the final output directory.</span>
+                    <span class="n">output_parents</span> <span class="o">=</span> <span class="kc">True</span>
+                <span class="k">else</span><span class="p">:</span>
+                    <span class="n">msg</span> <span class="o">=</span> <span class="n">_</span><span class="p">(</span><span class="s2">&quot;Input folder was not given but </span><span class="si">{}</span><span class="s2"> is a relative path.&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">param_name</span><span class="p">)</span>
+                    <span class="n">log_lcl</span><span class="o">.</span><span class="n">exception</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span>
+                    <span class="k">raise</span> <span class="n">ProcessorInputParameterError</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span>
+
+            <span class="k">if</span><span class="p">(</span><span class="ow">not</span> <span class="n">file_or_dir</span><span class="o">.</span><span class="n">exists</span><span class="p">()):</span>
+                <span class="k">if</span><span class="p">(</span><span class="n">param_name</span> <span class="o">==</span> <span class="s2">&quot;output_folder&quot;</span><span class="p">):</span>
+                    <span class="k">try</span><span class="p">:</span>
+                        <span class="n">file_or_dir</span><span class="o">.</span><span class="n">mkdir</span><span class="p">(</span><span class="n">parents</span><span class="o">=</span><span class="n">output_parents</span><span class="p">)</span>
+                    <span class="k">except</span> <span class="ne">FileNotFoundError</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+                        <span class="n">msg</span> <span class="o">=</span> <span class="n">_</span><span class="p">(</span><span class="s2">&quot;Parent folders in input parameter filepath output_folder: </span><span class="si">{}</span><span class="s2"> could not be &quot;</span>
+                                <span class="s2">&quot;found so output folder could not be created.&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">file_or_dir</span><span class="p">))</span>
+                        <span class="n">log_lcl</span><span class="o">.</span><span class="n">exception</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span>
+                        <span class="k">raise</span> <span class="n">ProcessorInputParameterError</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span> <span class="kn">from</span><span class="w"> </span><span class="nn">e</span>
+                <span class="k">else</span><span class="p">:</span>
+                    <span class="n">msg</span> <span class="o">=</span> <span class="n">_</span><span class="p">(</span><span class="s2">&quot;Filepath in input parameter </span><span class="si">{}</span><span class="s2">: </span><span class="si">{}</span><span class="s2"> is not accesible or does &quot;</span>
+                            <span class="s2">&quot;not exist.&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">param_name</span><span class="p">,</span> <span class="nb">str</span><span class="p">(</span><span class="n">file_or_dir</span><span class="p">))</span>
+                    <span class="n">log_lcl</span><span class="o">.</span><span class="n">exception</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span>
+                    <span class="k">raise</span> <span class="n">ProcessorInputParameterError</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span>
+
+            <span class="k">return</span> <span class="n">file_or_dir</span>
+
+        <span class="c1"># Optional alternate save location for output files</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">output_folder</span> <span class="o">=</span> <span class="n">abs_path</span><span class="p">(</span><span class="n">output_folder</span><span class="p">,</span> <span class="s2">&quot;output_folder&quot;</span><span class="p">)</span>
+        <span class="k">if</span><span class="p">(</span><span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">output_folder</span><span class="p">):</span>
+            <span class="c1"># Create output folder if one wasn&#39;t provided</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">output_folder</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">input_folder</span> <span class="o">/</span> <span class="s2">&quot;out&quot;</span>
+            <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">output_folder</span><span class="o">.</span><span class="n">exists</span><span class="p">():</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">output_folder</span><span class="o">.</span><span class="n">mkdir</span><span class="p">()</span>
+
+        <span class="c1"># Optional alternate folder location of metadata files</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">metadata_folder</span> <span class="o">=</span> <span class="n">abs_path</span><span class="p">(</span><span class="n">metadata_folder</span><span class="p">,</span> <span class="s2">&quot;metadata_folder&quot;</span><span class="p">)</span>
+        <span class="c1"># Load all of our metadata</span>
+        <span class="k">if</span><span class="p">(</span><span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">metadata_folder</span><span class="p">):</span>
+            <span class="c1"># The user may or may not have opted for a sub-folder</span>
+            <span class="n">meta_path</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">input_folder</span> <span class="o">/</span> <span class="s2">&quot;metadata&quot;</span>
+            <span class="c1"># If no specific metadata folder is given, check for a &quot;metadata&quot; subfolder in the</span>
+            <span class="c1"># input_folder. If this doesn&#39;t exist just use the input_folder</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">metadata_folder</span> <span class="o">=</span> <span class="n">meta_path</span> <span class="k">if</span> <span class="n">meta_path</span><span class="o">.</span><span class="n">exists</span><span class="p">()</span> <span class="k">else</span> <span class="bp">self</span><span class="o">.</span><span class="n">input_folder</span>
+
+        <span class="c1"># Optional alternate folder location of user program files</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">user_plugins_folder</span> <span class="o">=</span> <span class="n">abs_path</span><span class="p">(</span><span class="n">user_plugins_folder</span><span class="p">,</span> <span class="s2">&quot;user_plugins_folder&quot;</span><span class="p">)</span>
+        <span class="c1"># Check if the user provided a custom folder path</span>
+        <span class="k">if</span><span class="p">(</span><span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">user_plugins_folder</span> <span class="ow">and</span> <span class="bp">self</span><span class="o">.</span><span class="n">input_folder</span><span class="p">):</span>
+            <span class="c1"># If not see if their plugins are in a &quot;plugins&quot; subfolder in the input folder</span>
+            <span class="n">plugins_path</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">input_folder</span> <span class="o">/</span> <span class="s2">&quot;plugins&quot;</span>
+            <span class="k">if</span><span class="p">(</span><span class="n">plugins_path</span><span class="o">.</span><span class="n">exists</span><span class="p">()):</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">user_plugins_folder</span> <span class="o">=</span> <span class="n">plugins_path</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">job_id</span> <span class="o">=</span> <span class="n">get_string_param_value</span><span class="p">(</span><span class="n">job_id</span><span class="p">)</span>
+        <span class="k">if</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">job_id</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">):</span>
+            <span class="n">msg</span> <span class="o">=</span> <span class="n">_</span><span class="p">(</span><span class="s2">&quot;No valid job_id found in processor_input file.&quot;</span><span class="p">)</span>
+            <span class="n">log_lcl</span><span class="o">.</span><span class="n">exception</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span>
+            <span class="k">raise</span> <span class="n">ProcessorInputParameterError</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">unit_id</span> <span class="o">=</span> <span class="n">get_string_param_value</span><span class="p">(</span><span class="n">unit_id</span><span class="p">)</span>
+
+        <span class="c1"># Allowed to be none in the case of a job only performing &quot;Verifyedits&quot;</span>
+        <span class="c1"># Also should allow either just filename or a full filepath</span>
+        <span class="c1"># If just a filename is provided, file will be searched for in the input_folder</span>
+        <span class="c1"># otherwise the full filepath is used for loading the file into a dataframe</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">indata_filename</span> <span class="o">=</span> <span class="n">abs_path</span><span class="p">(</span><span class="n">indata_filename</span><span class="p">,</span> <span class="s2">&quot;indata_filename&quot;</span><span class="p">)</span>
+
+        <span class="c1"># statusAll may be provided for input to any procs that require an instatus</span>
+        <span class="c1"># parameter, if there is no statusAll file created by any prior procs in the job</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">instatus_filename</span> <span class="o">=</span> <span class="n">abs_path</span><span class="p">(</span><span class="n">instatus_filename</span><span class="p">,</span> <span class="s2">&quot;instatus_filename&quot;</span><span class="p">)</span>
+
+        <span class="k">if</span><span class="p">(</span><span class="n">indata_aux_filename</span><span class="p">):</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">indata_aux_filename</span> <span class="o">=</span> <span class="n">abs_path</span><span class="p">(</span><span class="n">indata_aux_filename</span><span class="p">,</span> <span class="s2">&quot;indata_aux_filename&quot;</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">indata_aux_filename</span> <span class="o">=</span> <span class="n">abs_path</span><span class="p">(</span><span class="n">auxdata_filename</span><span class="p">,</span> <span class="s2">&quot;auxdata_filename&quot;</span><span class="p">)</span>
+
+        <span class="k">if</span><span class="p">(</span><span class="n">indata_hist_filename</span><span class="p">):</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">indata_hist_filename</span> <span class="o">=</span> <span class="n">abs_path</span><span class="p">(</span><span class="n">indata_hist_filename</span><span class="p">,</span> <span class="s2">&quot;indata_hist_filename&quot;</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">indata_hist_filename</span> <span class="o">=</span> <span class="n">abs_path</span><span class="p">(</span><span class="n">histdata_filename</span><span class="p">,</span> <span class="s2">&quot;histdata_filename&quot;</span><span class="p">)</span>
+
+        <span class="k">if</span><span class="p">(</span><span class="n">instatus_hist_filename</span><span class="p">):</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">instatus_hist_filename</span> <span class="o">=</span> <span class="n">abs_path</span><span class="p">(</span><span class="n">instatus_hist_filename</span><span class="p">,</span> <span class="s2">&quot;instatus_hist_filename&quot;</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">instatus_hist_filename</span> <span class="o">=</span> <span class="n">abs_path</span><span class="p">(</span><span class="n">histstatus_filename</span><span class="p">,</span> <span class="s2">&quot;histstatus_filename&quot;</span><span class="p">)</span>
+
+        <span class="c1"># Output type option to allow users to specify the level of information</span>
+        <span class="c1"># recorded and output from their respective procs</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">process_output_type</span> <span class="o">=</span> <span class="kc">None</span>
+            <span class="k">if</span><span class="p">(</span><span class="nb">isinstance</span><span class="p">(</span><span class="n">process_output_type</span><span class="p">,</span> <span class="nb">str</span><span class="p">)):</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">process_output_type</span> <span class="o">=</span> <span class="n">ProcessOutputType</span><span class="p">[</span><span class="n">process_output_type</span><span class="p">]</span>
+            <span class="k">elif</span><span class="p">(</span><span class="nb">isinstance</span><span class="p">(</span><span class="n">process_output_type</span><span class="p">,</span> <span class="nb">int</span><span class="p">)):</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">process_output_type</span> <span class="o">=</span> <span class="n">ProcessOutputType</span><span class="p">(</span><span class="n">process_output_type</span><span class="p">)</span>
+            <span class="k">elif</span><span class="p">(</span><span class="n">process_output_type</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">):</span>
+                <span class="k">raise</span> <span class="ne">ValueError</span>
+        <span class="k">except</span> <span class="p">(</span><span class="ne">KeyError</span><span class="p">,</span> <span class="ne">ValueError</span><span class="p">)</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+            <span class="n">msg</span> <span class="o">=</span> <span class="n">_</span><span class="p">(</span><span class="s2">&quot;ProcessorInput process_output_type field contains an unrecognized value.&quot;</span><span class="p">)</span>
+            <span class="k">raise</span> <span class="n">ProcessorInputParameterError</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span> <span class="kn">from</span><span class="w"> </span><span class="nn">e</span>
+
+        <span class="c1"># Boolean properties so we don&#39;t have to import ProcessOutputType</span>
+        <span class="c1"># every place we want to check these</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">output_custom</span> <span class="o">=</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">process_output_type</span> <span class="o">==</span> <span class="n">ProcessOutputType</span><span class="o">.</span><span class="n">CUSTOM</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">output_all</span> <span class="o">=</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">process_output_type</span> <span class="o">==</span> <span class="n">ProcessOutputType</span><span class="o">.</span><span class="n">ALL</span><span class="p">)</span>
+
+        <span class="c1"># Seed value to be used in Banff procs that allow the seed option.</span>
+        <span class="c1"># Useful for comparing results between multiple runs.</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">seed</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">seed</span><span class="p">)</span> <span class="k">if</span> <span class="n">seed</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="k">else</span> <span class="kc">None</span>
+
+        <span class="c1"># TIME - display the time for each seqno</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">time</span> <span class="o">=</span> <span class="kc">True</span>
+
+        <span class="c1"># TIMESTORE - Creates the jobInfoRecords dataset which contains the start,</span>
+        <span class="c1"># end, and elapsed amount of time of each sequence run by the Banff Processor.</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">time_store</span> <span class="o">=</span> <span class="kc">True</span>
+
+        <span class="c1"># no_by_stats - Determines if the no_by_stats parameter is set to True for each standard Banff Procedure</span>
+        <span class="c1"># The input may be passed in as a boolean or a string, for example true, &#39;true&#39; or &#39;True&#39;</span>
+        <span class="k">if</span> <span class="n">no_by_stats</span> <span class="ow">is</span> <span class="kc">None</span> <span class="ow">or</span> <span class="nb">str</span><span class="p">(</span><span class="n">no_by_stats</span><span class="p">)</span><span class="o">.</span><span class="n">casefold</span><span class="p">()</span> <span class="o">==</span> <span class="s2">&quot;false&quot;</span><span class="p">:</span>
+            <span class="c1"># The no_by_stats parameter cannot be set to false in the procedures, it is either True or None</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">no_by_stats</span> <span class="o">=</span> <span class="kc">None</span>
+        <span class="k">elif</span> <span class="nb">str</span><span class="p">(</span><span class="n">no_by_stats</span><span class="p">)</span><span class="o">.</span><span class="n">casefold</span><span class="p">()</span> <span class="o">==</span> <span class="s2">&quot;true&quot;</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">no_by_stats</span> <span class="o">=</span> <span class="kc">True</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">msg</span> <span class="o">=</span> <span class="n">_</span><span class="p">(</span><span class="s2">&quot;Invalid value in processor_input file: no_by_stats must be true, false or not specified.&quot;</span><span class="p">)</span>
+            <span class="n">log_lcl</span><span class="o">.</span><span class="n">exception</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span>
+            <span class="k">raise</span> <span class="n">ProcessorInputParameterError</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">randnumvar</span> <span class="o">=</span> <span class="n">get_string_param_value</span><span class="p">(</span><span class="n">randnumvar</span><span class="p">)</span>
+
+        <span class="c1"># Optional param used to override the output file format which by default</span>
+        <span class="c1"># uses the same type as the input file</span>
+        <span class="k">if</span><span class="p">(</span><span class="n">save_format</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">):</span>
+            <span class="k">if</span><span class="p">(</span><span class="nb">isinstance</span><span class="p">(</span><span class="n">save_format</span><span class="p">,</span> <span class="nb">list</span><span class="p">)):</span>
+                <span class="c1"># Only save a value if it&#39;s a list with items in it</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">save_format</span> <span class="o">=</span> <span class="n">save_format</span> <span class="k">if</span> <span class="n">save_format</span> <span class="k">else</span> <span class="kc">None</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">msg</span> <span class="o">=</span> <span class="n">_</span><span class="p">(</span><span class="s2">&quot;save_format parameter of the input JSON file must be a list &quot;</span>
+                        <span class="s2">&quot;of supported file extensions or be excluded or empty.&quot;</span><span class="p">)</span>
+                <span class="n">log_lcl</span><span class="o">.</span><span class="n">exception</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span>
+                <span class="k">raise</span> <span class="n">ProcessorInputParameterError</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">save_format</span> <span class="o">=</span> <span class="kc">None</span>
+
+        <span class="c1"># Determines if we should create the INFO and/or DEBUG log files</span>
+        <span class="k">if</span><span class="p">(</span><span class="n">log_level</span> <span class="ow">is</span> <span class="kc">None</span> <span class="ow">or</span> <span class="n">log_level</span> <span class="o">==</span> <span class="mi">1</span><span class="p">):</span>
+            <span class="c1"># Default option</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">log_level</span> <span class="o">=</span> <span class="n">log_levels</span><span class="o">.</span><span class="n">INFO</span>
+        <span class="k">elif</span><span class="p">(</span><span class="n">log_level</span> <span class="o">&lt;</span> <span class="mi">1</span><span class="p">):</span>
+            <span class="c1"># does not create any file handlers</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">log_level</span> <span class="o">=</span> <span class="kc">None</span>
+        <span class="k">elif</span><span class="p">(</span><span class="n">log_level</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">):</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">log_level</span> <span class="o">=</span> <span class="n">log_levels</span><span class="o">.</span><span class="n">DEBUG</span>
+
+<div class="viewcode-block" id="ProcessorInput.from_file">
+<a class="viewcode-back" href="../../banffprocessor#banffprocessor.processor_input.ProcessorInput.from_file">[docs]</a>
+    <span class="nd">@classmethod</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">from_file</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">filepath</span><span class="p">:</span> <span class="nb">str</span> <span class="o">|</span> <span class="n">Path</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="s2">&quot;ProcessorInput&quot;</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Initialize a :class:`src.banffprocessor.processor_input.ProcessorInput` object from a JSON file.</span>
+
+<span class="sd">        :param filepath: the full path to the JSON file containing the input parameters</span>
+<span class="sd">            required to run the processor.</span>
+<span class="sd">        :type filepath: str | Path</span>
+<span class="sd">        :raises ProcessorInputParameterError: If the `filepath` does not contain a valid</span>
+<span class="sd">            directory or JSON filename</span>
+<span class="sd">        :raises FileNotFoundError: If the file at `filepath` is not able to be found</span>
+<span class="sd">        :return: The object loaded from the parameters in the JSON file</span>
+<span class="sd">        :rtype: :class:`src.banffprocessor.processor_input.ProcessorInput`</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">filepath</span> <span class="o">=</span> <span class="n">Path</span><span class="p">(</span><span class="n">filepath</span><span class="p">)</span>
+
+        <span class="k">if</span><span class="p">(</span><span class="ow">not</span> <span class="n">filepath</span><span class="o">.</span><span class="n">is_absolute</span><span class="p">()</span> <span class="ow">or</span> <span class="ow">not</span> <span class="n">filepath</span><span class="o">.</span><span class="n">is_file</span><span class="p">()):</span>
+            <span class="n">msg</span> <span class="o">=</span> <span class="n">_</span><span class="p">(</span><span class="s2">&quot;Filepath is not properly configured. &quot;</span>
+                    <span class="s2">&quot;Make sure that you use the full filepath of the input JSON file.&quot;</span><span class="p">)</span>
+            <span class="n">log_lcl</span><span class="o">.</span><span class="n">exception</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span>
+            <span class="k">raise</span> <span class="n">ProcessorInputParameterError</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span>
+        <span class="k">if</span><span class="p">(</span><span class="n">filepath</span><span class="o">.</span><span class="n">suffix</span><span class="o">.</span><span class="n">casefold</span><span class="p">()</span> <span class="o">!=</span> <span class="s2">&quot;.json&quot;</span><span class="p">):</span>
+            <span class="n">msg</span> <span class="o">=</span> <span class="n">_</span><span class="p">(</span><span class="s2">&quot;input_filepath is not a JSON file. The input file parameters &quot;</span>
+                    <span class="s2">&quot;must be passed as the full filepath of the input JSON file.&quot;</span><span class="p">)</span>
+            <span class="n">log_lcl</span><span class="o">.</span><span class="n">exception</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span>
+            <span class="k">raise</span> <span class="n">ProcessorInputParameterError</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span>
+
+        <span class="c1"># Load input variables from json file found in processing folder</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="k">with</span> <span class="n">filepath</span><span class="o">.</span><span class="n">open</span><span class="p">()</span> <span class="k">as</span> <span class="n">json_input_params</span><span class="p">:</span>
+                <span class="n">json_input</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">json_input_params</span><span class="p">)</span>
+                <span class="c1"># Build the object and return</span>
+                <span class="k">return</span> <span class="bp">cls</span><span class="p">(</span><span class="n">input_folder</span><span class="o">=</span><span class="n">filepath</span><span class="o">.</span><span class="n">parent</span><span class="p">,</span> <span class="o">**</span><span class="n">json_input</span><span class="p">)</span>
+        <span class="k">except</span> <span class="ne">FileNotFoundError</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+            <span class="n">msg</span> <span class="o">=</span> <span class="n">_</span><span class="p">(</span><span class="s2">&quot;Unable to find JSON input file under input filepath </span><span class="si">{}</span><span class="s2">&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">filepath</span><span class="p">)</span>
+            <span class="n">log_lcl</span><span class="o">.</span><span class="n">exception</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span>
+            <span class="k">raise</span> <span class="ne">FileNotFoundError</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span> <span class="kn">from</span><span class="w"> </span><span class="nn">e</span></div>
+</div>
+
+
+<div class="viewcode-block" id="get_string_param_value">
+<a class="viewcode-back" href="../../banffprocessor#banffprocessor.processor_input.get_string_param_value">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">get_string_param_value</span><span class="p">(</span><span class="n">parameter_to_check</span><span class="p">:</span> <span class="nb">str</span> <span class="o">|</span> <span class="kc">None</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span> <span class="o">|</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Process string values from the parameter file.</span>
+
+<span class="sd">    :param parameter_to_check: The string value to process</span>
+<span class="sd">    :type parameter_to_check: str | None</span>
+<span class="sd">    :return: `None` if `parameter_to_check` is `None`, empty or only whitespace</span>
+<span class="sd">        and the original string with whitespace trimmed from beginning and end if not</span>
+<span class="sd">    :rtype: str | None</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">if</span> <span class="n">parameter_to_check</span> <span class="ow">is</span> <span class="kc">None</span> <span class="ow">or</span> <span class="n">parameter_to_check</span> <span class="o">==</span> <span class="s2">&quot;&quot;</span> <span class="ow">or</span> <span class="nb">str</span><span class="p">(</span><span class="n">parameter_to_check</span><span class="p">)</span><span class="o">.</span><span class="n">isspace</span><span class="p">():</span>
+        <span class="k">return</span> <span class="kc">None</span>
+    <span class="c1"># Otherwise apply the strip function just in case</span>
+    <span class="k">return</span> <span class="nb">str</span><span class="p">(</span><span class="n">parameter_to_check</span><span class="p">)</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span></div>
+
+
+<div class="viewcode-block" id="get_path_val">
+<a class="viewcode-back" href="../../banffprocessor#banffprocessor.processor_input.get_path_val">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">get_path_val</span><span class="p">(</span><span class="n">fpath</span><span class="p">:</span> <span class="nb">str</span> <span class="o">|</span> <span class="n">Path</span> <span class="o">|</span> <span class="kc">None</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Path</span> <span class="o">|</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Return the Path representation of `fpath` or None if `fpath` is None or empty.</span>
+
+<span class="sd">    :param fpath: The filepath to convert</span>
+<span class="sd">    :type fpath: str | Path | None</span>
+<span class="sd">    :return: The Path representation of `fpath`</span>
+<span class="sd">    :rtype: Path | None</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">if</span><span class="p">(</span><span class="nb">isinstance</span><span class="p">(</span><span class="n">fpath</span><span class="p">,</span> <span class="nb">str</span><span class="p">)):</span>
+        <span class="n">fpath</span> <span class="o">=</span> <span class="n">get_string_param_value</span><span class="p">(</span><span class="n">fpath</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">Path</span><span class="p">(</span><span class="n">fpath</span><span class="p">)</span> <span class="k">if</span> <span class="n">fpath</span> <span class="k">else</span> <span class="kc">None</span></div>
+
+
+<div class="viewcode-block" id="ProcessOutputType">
+<a class="viewcode-back" href="../../banffprocessor#banffprocessor.processor_input.ProcessOutputType">[docs]</a>
+<span class="k">class</span><span class="w"> </span><span class="nc">ProcessOutputType</span><span class="p">(</span><span class="n">Enum</span><span class="p">,</span> <span class="n">metaclass</span><span class="o">=</span><span class="n">CaseInsensitiveEnumMeta</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Represents the different sets of outputs the processor should be creating for a job.&quot;&quot;&quot;</span>
+
+    <span class="n">MINIMAL</span> <span class="o">=</span> <span class="mi">1</span>
+    <span class="n">ALL</span> <span class="o">=</span> <span class="mi">2</span>
+    <span class="n">CUSTOM</span> <span class="o">=</span> <span class="mi">3</span></div>
+
+</pre></div>
+
+                </article>
+              
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
+<script defer src="../../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+
+  <p class="copyright">
+    
+      © Copyright 2025, Statistics Canada / Statistique Canada.
+      <br/>
+    
+  </p>
+</div>
+      
+        <div class="footer-item">
+
+  <p class="sphinx-version">
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 8.2.3.
+    <br/>
+  </p>
+</div>
+      
+    </div>
+  
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item">
+<p class="theme-version">
+  <!-- # L10n: Setting the PST URL as an argument as this does not need to be localized -->
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.16.1.
+</p></div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
+</html>

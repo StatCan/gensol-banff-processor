@@ -1,0 +1,50 @@
+banffprocessor package
+======================
+
+Subpackages
+-----------
+
+.. toctree::
+   :maxdepth: 4
+
+   banffprocessor.exceptions
+   banffprocessor.metadata
+   banffprocessor.nls
+   banffprocessor.procedures
+   banffprocessor.processor_logger
+   banffprocessor.util
+
+Submodules
+----------
+
+banffprocessor.processor module
+-------------------------------
+
+.. automodule:: banffprocessor.processor
+   :members:
+   :show-inheritance:
+   :undoc-members:
+
+banffprocessor.processor\_data module
+-------------------------------------
+
+.. automodule:: banffprocessor.processor_data
+   :members:
+   :show-inheritance:
+   :undoc-members:
+
+banffprocessor.processor\_input module
+--------------------------------------
+
+.. automodule:: banffprocessor.processor_input
+   :members:
+   :show-inheritance:
+   :undoc-members:
+
+Module contents
+---------------
+
+.. automodule:: banffprocessor
+   :members:
+   :show-inheritance:
+   :undoc-members:

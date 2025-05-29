@@ -220,6 +220,8 @@ def test_massimp_c02():
 
 @pytest.mark.integration()
 def test_udp(udp_imputed_file):
+    # Jobs file contains a dummy job step and jobid to test that UDPs that are not referenced
+    # in the active job are not expected to exist when performing validation.
     out_folder, input_filepath = folder_setup("udp_test")
     execute_processor(input_filepath)
 
@@ -325,6 +327,32 @@ def test_process_control_editgroupfilter():
     outstatus = pd.read_parquet(out_folder / "instatus_TEST_3.parq")
     outstatus_validate = pd.read_parquet(validate_folder / "instatus_TEST_3_validate.parq")
     testing.assert_dataset_equal(outstatus, outstatus_validate, "INSTATUS_TEST_3")
+
+@pytest.mark.integration()
+def test_process_control_on_disk_table():
+    out_folder, input_filepath = folder_setup("process_control_test", 
+                                              output_folder_name="out_table_on_disk")
+    validate_folder = input_filepath.parent.joinpath("expected")
+    
+    input_params = ProcessorInput(job_id="test_table_from_disk",
+                                  unit_id="ident",
+                                  input_folder=input_filepath.parent,
+                                  indata_filename="indata.parq",
+                                  output_folder=out_folder,
+                                  user_plugins_folder= "../../../examples/plugins",
+                                  save_format=[".parq", ".csv"],
+                                  log_level=2)
+    execute_processor(input_params)
+    
+    # Assert the 2 separate process controls were applied correctly
+    outdata = pd.read_parquet(out_folder / "indata_TEST_4.parq")
+    outdata_validate = pd.read_parquet(validate_folder / "indata_TEST_4_validate.parq")
+    testing.assert_dataset_equal(outdata, outdata_validate, "IMPUTED")
+    
+    # Assert indata ends the same way it started, as process controls apply only during execution
+    outdata = pd.read_parquet(out_folder / "imputed_file.parq")
+    outdata_validate = pd.read_parquet(input_filepath.parent / "indata.parq")
+    testing.assert_dataset_equal(outdata, outdata_validate, "IMPUTED")
 
 @pytest.mark.integration()
 def test_process_control_remove_rejected():
@@ -461,7 +489,7 @@ def test_job_proc_basic():
         unit_id="IDENT",
         input_folder=input_filepath.parent,
         indata_filename="current.parq",
-        histdata_filename="historical.parq",
+        indata_hist_filename="historical.parq",
         no_by_stats=True,
         seed=1,
         save_format=[".csv"],

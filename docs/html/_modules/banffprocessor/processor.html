@@ -1,0 +1,1213 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>banffprocessor.processor &#8212; Banff Processor 2.0.2 documentation</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=8f2a1f02" />
+    <link rel="stylesheet" type="text/css" href="../../_static/custom.css?v=2a807888" />
+  
+  <!-- So that users can add custom icons -->
+  <script src="../../_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
+
+    <script src="../../_static/documentation_options.js?v=29701289"></script>
+    <script src="../../_static/doctools.js?v=9bcbadda"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = '_modules/banffprocessor/processor';</script>
+    <link rel="index" title="Index" href="../../genindex" />
+    <link rel="search" title="Search" href="../../search" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="../../search"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class="col-lg-3 navbar-header-items__start">
+    
+      <div class="navbar-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../../index">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../_static/banff_white.png" class="logo__image only-light" alt="Banff Processor 2.0.2 documentation - Home"/>
+    <img src="../../_static/banff_white.png" class="logo__image only-dark pst-js-only" alt="Banff Processor 2.0.2 documentation - Home"/>
+  
+  
+</a></div>
+    
+  </div>
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../en/index">
+    English
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../fr/index">
+    Français
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+        </div>
+      
+      
+        <div class="navbar-item">
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button></div>
+      
+        <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/StatCan/gensol-banff-processor" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fab fa-github fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+</ul></div>
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+    </div>
+  
+
+  
+</div>
+
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+        
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar hide-on-wide">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          
+          
+            <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../en/index">
+    English
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../fr/index">
+    Français
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+          
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button></div>
+        
+          <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/StatCan/gensol-banff-processor" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fab fa-github fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+</ul></div>
+        
+      </div>
+    
+  </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+<nav aria-label="Breadcrumb" class="d-print-none">
+  <ul class="bd-breadcrumbs">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="../../index" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    
+    <li class="breadcrumb-item"><a href="../index" class="nav-link">Module code</a></li>
+    
+    
+    <li class="breadcrumb-item"><a href="../banffprocessor" class="nav-link">banffprocessor</a></li>
+    
+    <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis">banffprocessor.processor</span></li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <h1>Source code for banffprocessor.processor</h1><div class="highlight"><pre>
+<span></span><span class="kn">import</span><span class="w"> </span><span class="nn">argparse</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">sys</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">argparse</span><span class="w"> </span><span class="kn">import</span> <span class="n">RawTextHelpFormatter</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">datetime</span><span class="w"> </span><span class="kn">import</span> <span class="n">datetime</span><span class="p">,</span> <span class="n">timedelta</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">pathlib</span><span class="w"> </span><span class="kn">import</span> <span class="n">Path</span>
+
+<span class="kn">import</span><span class="w"> </span><span class="nn">banff</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">duckdb</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">pyarrow</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pa</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">pyarrow.compute</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pc</span>
+
+<span class="kn">import</span><span class="w"> </span><span class="nn">banffprocessor</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">bpp</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">banffprocessor.procedures.banff_procedures.job_proc</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">jp</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">banffprocessor.processor_logger</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plg</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">banffprocessor.exceptions</span><span class="w"> </span><span class="kn">import</span> <span class="n">MetadataConstraintError</span><span class="p">,</span> <span class="n">ProcedureReturnCodeError</span><span class="p">,</span> <span class="n">ProcessorInputParameterError</span><span class="p">,</span> <span class="n">UserDefinedPluginError</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">banffprocessor.metadata.metaobjects</span><span class="w"> </span><span class="kn">import</span> <span class="n">MetaObjects</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">banffprocessor.nls</span><span class="w"> </span><span class="kn">import</span> <span class="n">_</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">banffprocessor.procedures</span><span class="w"> </span><span class="kn">import</span> <span class="n">banff_procedures</span><span class="p">,</span> <span class="n">factory</span><span class="p">,</span> <span class="n">loader</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">banffprocessor.procedures.banff_procedures.editstats</span><span class="w"> </span><span class="kn">import</span> <span class="n">EditStats</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">banffprocessor.procedures.banff_procedures.verifyedits</span><span class="w"> </span><span class="kn">import</span> <span class="n">VerifyEdits</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">banffprocessor.processor_data</span><span class="w"> </span><span class="kn">import</span> <span class="n">ProcessorData</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">banffprocessor.processor_input</span><span class="w"> </span><span class="kn">import</span> <span class="n">ProcessorInput</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">banffprocessor.util.dataset</span><span class="w"> </span><span class="kn">import</span> <span class="n">add_single_value_column</span><span class="p">,</span> <span class="n">copy_table</span><span class="p">,</span> <span class="n">table_empty</span>
+
+<span class="c1"># Setup local log for processor module specifically</span>
+<span class="n">log_lcl</span> <span class="o">=</span> <span class="n">plg</span><span class="o">.</span><span class="n">setup_processor_logger</span><span class="p">()</span>
+
+<div class="viewcode-block" id="Processor">
+<a class="viewcode-back" href="../../banffprocessor#banffprocessor.processor.Processor">[docs]</a>
+<span class="k">class</span><span class="w"> </span><span class="nc">Processor</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Main class for the Banff processor.</span>
+
+<span class="sd">    :attribute processor_data: Contains all the datasets and parameters required to run</span>
+<span class="sd">        a Banff Processor job</span>
+<span class="sd">    :type processor_data: :class:`src.banffprocessor.processor_data.ProcessorData`</span>
+<span class="sd">    :attribute is_child_block: Is the job running in this processor instance a child of another</span>
+<span class="sd">        currently running processor instance executing the parent block?</span>
+<span class="sd">    :type is_child_block: bool</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="n">processor_data</span> <span class="p">:</span> <span class="n">ProcessorData</span>
+    <span class="n">is_child_block</span><span class="p">:</span> <span class="nb">bool</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">dbconn</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">duckdb</span><span class="o">.</span><span class="n">DuckDBPyConnection</span> <span class="o">|</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;The currently connected database used to store some processor data.</span>
+
+<span class="sd">        :return: The duckdbpyconnection currently being used to store data.</span>
+<span class="sd">        :rtype: duckdb.DuckDBPyConnection | None</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_dbconn</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">input_params</span><span class="p">:</span> <span class="n">ProcessorInput</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="n">initial_data</span><span class="p">:</span> <span class="n">ProcessorData</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+                 <span class="n">dbconn</span><span class="p">:</span> <span class="n">duckdb</span><span class="o">.</span><span class="n">DuckDBPyConnection</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="n">indata</span><span class="p">:</span> <span class="n">pa</span><span class="o">.</span><span class="n">Table</span> <span class="o">|</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+                 <span class="n">indata_aux</span><span class="p">:</span> <span class="n">pa</span><span class="o">.</span><span class="n">Table</span> <span class="o">|</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="n">indata_hist</span><span class="p">:</span> <span class="n">pa</span><span class="o">.</span><span class="n">Table</span> <span class="o">|</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+                 <span class="n">instatus</span><span class="p">:</span> <span class="n">pa</span><span class="o">.</span><span class="n">Table</span> <span class="o">|</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="n">instatus_hist</span><span class="p">:</span> <span class="n">pa</span><span class="o">.</span><span class="n">Table</span> <span class="o">|</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Construct an instance of the Processor.</span>
+
+<span class="sd">        :param input_params: The job&#39;s input parameters. This may instead be provided as a member</span>
+<span class="sd">            of `initial_data`, but one must be provided. Defaults to None</span>
+<span class="sd">        :type input_params: :class:`src.banffprocessor.processor_input.ProcessorInput` | None, optional</span>
+<span class="sd">        :param initial_data: Initializes a new Processor object with data from an existing Processor, defaults to None</span>
+<span class="sd">        :type initial_data: :class:`src.banffprocessor.processor_data.ProcessorData` | None, optional</span>
+<span class="sd">        :param indata: The indata dataset, defaults to None</span>
+<span class="sd">        :type indata: :class:`pyarrow.Table` | :class:`pandas.DataFrame` | None, optional</span>
+<span class="sd">        :param indata_aux: The indata_aux dataset, defaults to None</span>
+<span class="sd">        :type indata_aux: :class:`pyarrow.Table` | :class:`pandas.DataFrame` | None, optional</span>
+<span class="sd">        :param indata_hist: The indata_hist dataset, defaults to None</span>
+<span class="sd">        :type indata_hist: :class:`pyarrow.Table` | :class:`pandas.DataFrame` | None, optional</span>
+<span class="sd">        :param instatus: The instatus dataset, defaults to None</span>
+<span class="sd">        :type instatus: :class:`pyarrow.Table` | :class:`pandas.DataFrame` | None, optional</span>
+<span class="sd">        :param instatus_hist: The instatus_hist dataset, defaults to None</span>
+<span class="sd">        :type instatus_hist: :class:`pyarrow.Table` | :class:`pandas.DataFrame` | None, optional</span>
+<span class="sd">        :param dbconn: A DuckDBPyConnection to use for storing required data and metadata.</span>
+<span class="sd">            If not provided an in-memory DB will be instantiated, defaults to None</span>
+<span class="sd">        :type dbconn: :class:`duckdb.DuckDBPyConnection` | None, optional</span>
+<span class="sd">        :raises ProcessorInputParameterError: If the `input_params` contains an</span>
+<span class="sd">            `output_folder` or `metadata_folder` parameter but the directory</span>
+<span class="sd">            cannot be found</span>
+<span class="sd">        :raises ValueError: If one of `input_params` or `initial_data` are not provided.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">is_child_block</span> <span class="o">=</span> <span class="kc">False</span>
+
+        <span class="k">if</span><span class="p">(</span><span class="n">initial_data</span><span class="p">):</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">processor_data</span> <span class="o">=</span> <span class="n">initial_data</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_dbconn</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">processor_data</span><span class="o">.</span><span class="n">dbconn</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_is_private_connection</span> <span class="o">=</span> <span class="kc">False</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">is_child_block</span> <span class="o">=</span> <span class="kc">True</span>
+        <span class="k">elif</span><span class="p">(</span><span class="ow">not</span> <span class="n">input_params</span><span class="p">):</span>
+            <span class="n">msg</span> <span class="o">=</span> <span class="n">_</span><span class="p">(</span><span class="s2">&quot;Input parameters must be provided either via the input_params parameter &quot;</span>
+                    <span class="s2">&quot;or as part of the input_params property of the initial_data ProcessorData object.&quot;</span><span class="p">)</span>
+            <span class="n">log_lcl</span><span class="o">.</span><span class="n">exception</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_dbconn</span> <span class="o">=</span> <span class="n">dbconn</span>
+            <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_dbconn</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">_dbconn</span> <span class="o">=</span> <span class="n">duckdb</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="n">database</span><span class="o">=</span><span class="s2">&quot;:memory:&quot;</span><span class="p">)</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">_is_private_connection</span> <span class="o">=</span> <span class="kc">True</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">_is_private_connection</span> <span class="o">=</span> <span class="kc">False</span>
+
+            <span class="bp">self</span><span class="o">.</span><span class="n">processor_data</span> <span class="o">=</span> <span class="n">ProcessorData</span><span class="p">(</span><span class="n">input_params</span><span class="o">=</span><span class="n">input_params</span><span class="p">,</span> <span class="n">dbconn</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_dbconn</span><span class="p">)</span>
+
+            <span class="c1"># Make sure DuckDB includes user input folder so DuckDB can see any tables the</span>
+            <span class="c1"># user might reference relative to the correct location</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">dbconn</span><span class="o">.</span><span class="n">sql</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;SET file_search_path = &#39;</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">processor_data</span><span class="o">.</span><span class="n">input_params</span><span class="o">.</span><span class="n">input_folder</span><span class="si">}</span><span class="s2">&#39;;&quot;</span><span class="p">)</span>
+            <span class="n">log_lcl</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="n">_</span><span class="p">(</span><span class="s2">&quot;Set DuckDB connection file_search_path to input folder: </span><span class="si">{}</span><span class="s2">&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">processor_data</span><span class="o">.</span><span class="n">input_params</span><span class="o">.</span><span class="n">input_folder</span><span class="p">))</span>
+
+        <span class="n">plg</span><span class="o">.</span><span class="n">add_file_handlers</span><span class="p">(</span><span class="n">log_directory</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">processor_data</span><span class="o">.</span><span class="n">input_params</span><span class="o">.</span><span class="n">output_folder</span><span class="p">,</span>
+                              <span class="n">trace_level</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">processor_data</span><span class="o">.</span><span class="n">input_params</span><span class="o">.</span><span class="n">log_level</span><span class="p">)</span>
+
+        <span class="c1"># The remaining setup below is only necessary if an initial ProcessorData object is not provided</span>
+        <span class="k">if</span><span class="p">(</span><span class="n">initial_data</span><span class="p">):</span>
+            <span class="k">return</span>
+
+        <span class="c1"># Load the metadata files from the selected location</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">processor_data</span><span class="o">.</span><span class="n">metaobjects</span> <span class="o">=</span> <span class="n">MetaObjects</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">processor_data</span><span class="o">.</span><span class="n">input_params</span><span class="o">.</span><span class="n">metadata_folder</span><span class="p">,</span>
+                                                      <span class="n">job_id</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">processor_data</span><span class="o">.</span><span class="n">input_params</span><span class="o">.</span><span class="n">job_id</span><span class="p">,</span>
+                                                      <span class="n">dbconn</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_dbconn</span><span class="p">)</span>
+
+        <span class="c1"># Load Banff and User-defined plugins</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_load_plugins</span><span class="p">()</span>
+
+        <span class="k">for</span> <span class="n">proc_name</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">processor_data</span><span class="o">.</span><span class="n">metaobjects</span><span class="o">.</span><span class="n">job_proc_names</span><span class="p">:</span>
+            <span class="n">proc_cls</span> <span class="o">=</span> <span class="n">factory</span><span class="o">.</span><span class="n">get_procedure</span><span class="p">(</span><span class="n">proc_name</span><span class="p">)</span>
+            <span class="k">if</span><span class="p">(</span><span class="n">proc_cls</span> <span class="ow">not</span> <span class="ow">in</span> <span class="p">[</span><span class="n">VerifyEdits</span><span class="p">,</span> <span class="n">EditStats</span><span class="p">,</span> <span class="n">jp</span><span class="o">.</span><span class="n">JobProc</span><span class="p">]</span> <span class="ow">and</span> <span class="n">proc_name</span> <span class="ow">in</span> <span class="n">banff_procedures</span><span class="o">.</span><span class="n">__all__</span><span class="p">):</span>
+                <span class="n">msg</span> <span class="o">=</span> <span class="s2">&quot;At least one of the procedures referenced in your job require </span><span class="si">{}</span><span class="s2"> &quot;</span>
+                <span class="n">msg</span> <span class="o">+=</span> <span class="s2">&quot;but one was not provided in your input parameters.&quot;</span>
+                <span class="c1"># If we are here, we need unit_id and imputed_file</span>
+                <span class="k">if</span><span class="p">(</span><span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">processor_data</span><span class="o">.</span><span class="n">input_params</span><span class="o">.</span><span class="n">unit_id</span><span class="p">):</span>
+                    <span class="n">msg</span> <span class="o">=</span> <span class="n">_</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="s2">&quot;a unit_id&quot;</span><span class="p">)</span>
+                    <span class="n">log_lcl</span><span class="o">.</span><span class="n">exception</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span>
+                    <span class="k">raise</span> <span class="n">ProcessorInputParameterError</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span>
+                <span class="k">if</span><span class="p">(</span><span class="ow">not</span> <span class="n">indata</span> <span class="ow">and</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">processor_data</span><span class="o">.</span><span class="n">input_params</span><span class="o">.</span><span class="n">indata_filename</span><span class="p">):</span>
+                    <span class="n">msg</span> <span class="o">=</span> <span class="n">_</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="s2">&quot;an indata file&quot;</span><span class="p">)</span>
+                    <span class="n">log_lcl</span><span class="o">.</span><span class="n">exception</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span>
+                    <span class="k">raise</span> <span class="n">ProcessorInputParameterError</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span>
+
+        <span class="c1"># Input datasets</span>
+        <span class="n">dataset_name</span> <span class="o">=</span> <span class="s2">&quot;imputed_file&quot;</span>
+        <span class="k">if</span><span class="p">(</span><span class="n">indata</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">):</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">processor_data</span><span class="o">.</span><span class="n">set_dataset</span><span class="p">(</span><span class="n">dataset_name</span><span class="p">,</span> <span class="n">indata</span><span class="p">)</span>
+        <span class="k">elif</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">processor_data</span><span class="o">.</span><span class="n">input_params</span><span class="o">.</span><span class="n">indata_filename</span><span class="p">):</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">processor_data</span><span class="o">.</span><span class="n">set_dataset_from_file</span><span class="p">(</span><span class="n">dataset_name</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">processor_data</span><span class="o">.</span><span class="n">input_params</span><span class="o">.</span><span class="n">indata_filename</span><span class="p">)</span>
+
+        <span class="n">dataset_name</span> <span class="o">=</span> <span class="s2">&quot;indata_aux&quot;</span>
+        <span class="k">if</span><span class="p">(</span><span class="n">indata_aux</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">):</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">processor_data</span><span class="o">.</span><span class="n">set_dataset</span><span class="p">(</span><span class="n">dataset_name</span><span class="p">,</span> <span class="n">indata_aux</span><span class="p">)</span>
+
+        <span class="n">dataset_name</span> <span class="o">=</span> <span class="s2">&quot;indata_hist&quot;</span>
+        <span class="k">if</span><span class="p">(</span><span class="n">indata_hist</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">):</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">processor_data</span><span class="o">.</span><span class="n">set_dataset</span><span class="p">(</span><span class="n">dataset_name</span><span class="p">,</span> <span class="n">indata_hist</span><span class="p">)</span>
+
+        <span class="n">dataset_name</span> <span class="o">=</span> <span class="s2">&quot;instatus_hist&quot;</span>
+        <span class="k">if</span><span class="p">(</span><span class="n">instatus_hist</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">):</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">processor_data</span><span class="o">.</span><span class="n">set_dataset</span><span class="p">(</span><span class="n">dataset_name</span><span class="p">,</span> <span class="n">instatus_hist</span><span class="p">)</span>
+
+        <span class="n">dataset_name</span> <span class="o">=</span> <span class="s2">&quot;status_file&quot;</span>
+        <span class="k">if</span><span class="p">(</span><span class="n">instatus</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">):</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">processor_data</span><span class="o">.</span><span class="n">set_dataset</span><span class="p">(</span><span class="n">dataset_name</span><span class="p">,</span> <span class="n">instatus</span><span class="p">)</span>
+        <span class="k">elif</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">processor_data</span><span class="o">.</span><span class="n">input_params</span><span class="o">.</span><span class="n">instatus_filename</span><span class="p">):</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">processor_data</span><span class="o">.</span><span class="n">set_dataset_from_file</span><span class="p">(</span><span class="n">dataset_name</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">processor_data</span><span class="o">.</span><span class="n">input_params</span><span class="o">.</span><span class="n">instatus_filename</span><span class="p">)</span>
+        <span class="c1"># Special setup required for regular instatus file</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_prepare_status_file</span><span class="p">()</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="fm">__del__</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Ensure memory is released and the database connection is closed.&quot;&quot;&quot;</span>
+        <span class="k">del</span> <span class="bp">self</span><span class="o">.</span><span class="n">processor_data</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_is_private_connection</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_dbconn</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+
+<div class="viewcode-block" id="Processor.from_file">
+<a class="viewcode-back" href="../../banffprocessor#banffprocessor.processor.Processor.from_file">[docs]</a>
+    <span class="nd">@classmethod</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">from_file</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">input_filepath</span><span class="p">:</span> <span class="nb">str</span> <span class="o">|</span> <span class="n">Path</span><span class="p">,</span> <span class="n">indata</span><span class="p">:</span> <span class="n">pa</span><span class="o">.</span><span class="n">Table</span> <span class="o">|</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+                 <span class="n">indata_aux</span><span class="p">:</span> <span class="n">pa</span><span class="o">.</span><span class="n">Table</span> <span class="o">|</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="n">indata_hist</span><span class="p">:</span> <span class="n">pa</span><span class="o">.</span><span class="n">Table</span> <span class="o">|</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+                 <span class="n">instatus</span><span class="p">:</span> <span class="n">pa</span><span class="o">.</span><span class="n">Table</span> <span class="o">|</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="n">instatus_hist</span><span class="p">:</span> <span class="n">pa</span><span class="o">.</span><span class="n">Table</span> <span class="o">|</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+                 <span class="n">dbconn</span><span class="p">:</span> <span class="n">duckdb</span><span class="o">.</span><span class="n">DuckDBPyConnection</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="s2">&quot;Processor&quot;</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Initialize a :class:`src.banffprocessor.processor.Processor` object from a JSON file.</span>
+
+<span class="sd">        :param input_filepath: The full path to the JSON file containing the input parameters</span>
+<span class="sd">            required to run the processor. The containing folder will be used as the</span>
+<span class="sd">            default location for required and optional files for the operation of the</span>
+<span class="sd">            processor. If a value is provided for an alternate filepath/folder parameter in</span>
+<span class="sd">            this file, that will be used instead of the containing folder.</span>
+<span class="sd">        :type input_filepath: str | pathlib.Path</span>
+<span class="sd">        :param indata: The indata dataset, defaults to None</span>
+<span class="sd">        :type indata: :class:`pyarrow.Table` | :class:`pandas.DataFrame` | None, optional</span>
+<span class="sd">        :param indata_aux: The indata_aux dataset, defaults to None</span>
+<span class="sd">        :type indata_aux: :class:`pyarrow.Table` | :class:`pandas.DataFrame` | None, optional</span>
+<span class="sd">        :param indata_hist: The indata_hist dataset, defaults to None</span>
+<span class="sd">        :type indata_hist: :class:`pyarrow.Table` | :class:`pandas.DataFrame` | None, optional</span>
+<span class="sd">        :param instatus: The instatus dataset, defaults to None</span>
+<span class="sd">        :type instatus: :class:`pyarrow.Table` | :class:`pandas.DataFrame` | None, optional</span>
+<span class="sd">        :param instatus_hist: The instatus_hist dataset, defaults to None</span>
+<span class="sd">        :type instatus_hist: :class:`pyarrow.Table` | :class:`pandas.DataFrame` | None, optional</span>
+<span class="sd">        :param dbconn: A DuckDBPyConnection to use for storing required data and metadata.</span>
+<span class="sd">            If not provided an in-memory DB will be instantiated, defaults to None</span>
+<span class="sd">        :type dbconn: :class:`duckdb.DuckDBPyConnection` | None, optional</span>
+<span class="sd">        :return: The :class:`src.banffprocessor.processor.Processor` object created using</span>
+<span class="sd">            the specified parameters</span>
+<span class="sd">        :rtype: :class:`src.banffprocessor.processor.Processor`</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">cls</span><span class="p">(</span><span class="n">input_params</span><span class="o">=</span><span class="n">ProcessorInput</span><span class="o">.</span><span class="n">from_file</span><span class="p">(</span><span class="n">input_filepath</span><span class="p">),</span> <span class="n">indata</span><span class="o">=</span><span class="n">indata</span><span class="p">,</span>
+                   <span class="n">indata_aux</span><span class="o">=</span><span class="n">indata_aux</span><span class="p">,</span> <span class="n">indata_hist</span><span class="o">=</span><span class="n">indata_hist</span><span class="p">,</span> <span class="n">instatus</span><span class="o">=</span><span class="n">instatus</span><span class="p">,</span>
+                   <span class="n">instatus_hist</span><span class="o">=</span><span class="n">instatus_hist</span><span class="p">,</span> <span class="n">dbconn</span><span class="o">=</span><span class="n">dbconn</span><span class="p">)</span></div>
+
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">_load_plugins</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Load all built-in banff procedures from their procedure classes in the project.</span>
+
+<span class="sd">        Also loads all available user plugins from the user&#39;s input or plugin folder.</span>
+
+<span class="sd">        :raises ProcessorInputParameterError: If the `processor_data` attribute&#39;s</span>
+<span class="sd">            `input_params` contains a `plugin_folder` parameter but the directory</span>
+<span class="sd">            cannot be found</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="c1"># Go through all the banff_procedures modules available</span>
+        <span class="k">for</span> <span class="n">mod_name</span> <span class="ow">in</span> <span class="n">banff_procedures</span><span class="o">.</span><span class="n">__all__</span><span class="p">:</span>
+            <span class="c1"># Get the module, check if has a register method, indicating it</span>
+            <span class="c1"># has plugins within, and if so, call the registration method</span>
+            <span class="n">module</span> <span class="o">=</span> <span class="n">sys</span><span class="o">.</span><span class="n">modules</span><span class="p">[</span><span class="s2">&quot;banffprocessor.procedures.banff_procedures.&quot;</span> <span class="o">+</span> <span class="n">mod_name</span><span class="p">]</span>
+            <span class="k">if</span><span class="p">(</span><span class="nb">hasattr</span><span class="p">(</span><span class="n">module</span><span class="p">,</span> <span class="s2">&quot;register&quot;</span><span class="p">)):</span>
+                <span class="n">module</span><span class="o">.</span><span class="n">register</span><span class="p">(</span><span class="n">factory</span><span class="p">)</span>
+
+        <span class="k">if</span><span class="p">(</span><span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">processor_data</span><span class="o">.</span><span class="n">input_params</span><span class="o">.</span><span class="n">user_plugins_folder</span><span class="p">):</span>
+            <span class="n">msg</span> <span class="o">=</span> <span class="n">_</span><span class="p">(</span><span class="s2">&quot;No explicit user plugins folder was set and no </span><span class="se">\\</span><span class="s2">plugins &quot;</span>
+                    <span class="s2">&quot;subfolder was found in the input folder. No plugins were loaded.&quot;</span><span class="p">)</span>
+            <span class="n">log_lcl</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span>
+            <span class="c1"># If there is no plugins folder we can just return as the user likely didn&#39;t</span>
+            <span class="c1"># intend to include any plugins</span>
+            <span class="k">return</span>
+
+        <span class="c1"># Load all user plugins from the plugin_folder</span>
+        <span class="n">loader</span><span class="o">.</span><span class="n">load_plugins</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">processor_data</span><span class="o">.</span><span class="n">input_params</span><span class="o">.</span><span class="n">user_plugins_folder</span><span class="p">)</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">_prepare_status_file</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Process the initial status_file file as loaded from an instatus file.</span>
+
+<span class="sd">        Ensures the correct configuration of JOBID and SEQNO columns and copies</span>
+<span class="sd">        final results to status_log.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="c1"># Only necessary for instatus/status_file, others don&#39;t need preparation</span>
+        <span class="n">status_file_obj</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">processor_data</span><span class="o">.</span><span class="n">get_dataset</span><span class="p">(</span><span class="s2">&quot;status_file&quot;</span><span class="p">,</span> <span class="n">create_if_not_exist</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">ds_format</span><span class="o">=</span><span class="s2">&quot;object&quot;</span><span class="p">)</span>
+        <span class="n">status_file_ds</span> <span class="o">=</span> <span class="n">status_file_obj</span><span class="o">.</span><span class="n">ds</span>
+
+        <span class="k">if</span><span class="p">(</span><span class="n">status_file_ds</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="ow">and</span> <span class="ow">not</span> <span class="n">table_empty</span><span class="p">(</span><span class="n">status_file_ds</span><span class="p">)):</span>
+            <span class="n">job_id_label</span> <span class="o">=</span> <span class="kc">None</span>
+            <span class="n">seqno_label</span> <span class="o">=</span> <span class="kc">None</span>
+
+            <span class="c1"># Create a table schema to ensure the jobid and seqno columns are correctly formatted</span>
+            <span class="n">new_schema</span> <span class="o">=</span> <span class="n">status_file_ds</span><span class="o">.</span><span class="n">schema</span>
+            <span class="k">for</span> <span class="n">col</span> <span class="ow">in</span> <span class="n">status_file_ds</span><span class="o">.</span><span class="n">column_names</span><span class="p">:</span>
+                <span class="k">if</span><span class="p">(</span><span class="n">col</span><span class="o">.</span><span class="n">upper</span><span class="p">()</span> <span class="ow">in</span> <span class="p">[</span><span class="s2">&quot;JOBID&quot;</span><span class="p">,</span> <span class="s2">&quot;JOB_ID&quot;</span><span class="p">]):</span>
+                    <span class="n">job_id_label</span> <span class="o">=</span> <span class="n">col</span>
+
+                    <span class="c1"># Make sure that the jobid column is the correct dtype</span>
+                    <span class="n">col_index</span> <span class="o">=</span> <span class="n">status_file_ds</span><span class="o">.</span><span class="n">column_names</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="n">col</span><span class="p">)</span>
+                    <span class="n">field</span> <span class="o">=</span> <span class="n">status_file_ds</span><span class="o">.</span><span class="n">field</span><span class="p">(</span><span class="n">col_index</span><span class="p">)</span>
+                    <span class="k">if</span><span class="p">(</span><span class="n">field</span><span class="o">.</span><span class="n">type</span> <span class="o">!=</span> <span class="n">pa</span><span class="o">.</span><span class="n">string</span><span class="p">()):</span>
+                        <span class="n">new_schema</span> <span class="o">=</span> <span class="n">new_schema</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="n">col_index</span><span class="p">,</span> <span class="n">pa</span><span class="o">.</span><span class="n">field</span><span class="p">(</span><span class="n">col</span><span class="p">,</span> <span class="n">pa</span><span class="o">.</span><span class="n">string</span><span class="p">()))</span>
+                <span class="k">elif</span><span class="p">(</span><span class="n">col</span><span class="o">.</span><span class="n">upper</span><span class="p">()</span> <span class="o">==</span> <span class="s2">&quot;SEQNO&quot;</span><span class="p">):</span>
+                    <span class="n">seqno_label</span> <span class="o">=</span> <span class="n">col</span>
+
+                    <span class="c1"># Make sure that the seqno column is the correct dtype</span>
+                    <span class="n">col_index</span> <span class="o">=</span> <span class="n">status_file_ds</span><span class="o">.</span><span class="n">column_names</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="n">col</span><span class="p">)</span>
+                    <span class="n">field</span> <span class="o">=</span> <span class="n">status_file_ds</span><span class="o">.</span><span class="n">field</span><span class="p">(</span><span class="n">col_index</span><span class="p">)</span>
+                    <span class="k">if</span><span class="p">(</span><span class="n">field</span><span class="o">.</span><span class="n">type</span> <span class="o">!=</span> <span class="n">pa</span><span class="o">.</span><span class="n">float32</span><span class="p">()):</span>
+                        <span class="n">new_schema</span> <span class="o">=</span> <span class="n">new_schema</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="n">col_index</span><span class="p">,</span> <span class="n">pa</span><span class="o">.</span><span class="n">field</span><span class="p">(</span><span class="n">col</span><span class="p">,</span> <span class="n">pa</span><span class="o">.</span><span class="n">float32</span><span class="p">()))</span>
+
+            <span class="c1"># Set the new schema with the updated seqno dtype if necessary</span>
+            <span class="k">if</span><span class="p">(</span><span class="n">new_schema</span> <span class="ow">is</span> <span class="ow">not</span> <span class="n">status_file_ds</span><span class="o">.</span><span class="n">schema</span><span class="p">):</span>
+                <span class="n">status_file_ds</span> <span class="o">=</span> <span class="n">status_file_ds</span><span class="o">.</span><span class="n">cast</span><span class="p">(</span><span class="n">new_schema</span><span class="p">)</span>
+
+            <span class="c1"># If the user hasn&#39;t included jobid and seqno, add them now with empty values</span>
+            <span class="c1"># Only jobid is expected but they are usually added as a pair</span>
+            <span class="k">if</span><span class="p">(</span><span class="n">job_id_label</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">):</span>
+                <span class="n">job_id_label</span> <span class="o">=</span> <span class="s2">&quot;JOBID&quot;</span>
+                <span class="k">if</span><span class="p">(</span><span class="n">seqno_label</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">):</span>
+                    <span class="n">seqno_label</span> <span class="o">=</span> <span class="s2">&quot;SEQNO&quot;</span>
+                <span class="n">status_file_ds</span> <span class="o">=</span> <span class="n">add_single_value_column</span><span class="p">(</span><span class="n">status_file_ds</span><span class="p">,</span>
+                                                        <span class="n">job_id_label</span><span class="p">,</span>
+                                                        <span class="bp">self</span><span class="o">.</span><span class="n">processor_data</span><span class="o">.</span><span class="n">input_params</span><span class="o">.</span><span class="n">job_id</span><span class="p">,</span>
+                                                        <span class="n">pa</span><span class="o">.</span><span class="n">string</span><span class="p">())</span>
+                <span class="c1"># Hypothetically possible for SEQNO to exist with no JOBID col</span>
+                <span class="n">status_file_ds</span> <span class="o">=</span> <span class="n">add_single_value_column</span><span class="p">(</span><span class="n">status_file_ds</span><span class="p">,</span> <span class="n">seqno_label</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">pa</span><span class="o">.</span><span class="n">float32</span><span class="p">())</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="k">if</span><span class="p">(</span><span class="n">seqno_label</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">):</span>
+                    <span class="n">seqno_label</span> <span class="o">=</span> <span class="s2">&quot;SEQNO&quot;</span>
+                    <span class="n">status_file_ds</span> <span class="o">=</span> <span class="n">add_single_value_column</span><span class="p">(</span><span class="n">status_file_ds</span><span class="p">,</span> <span class="n">seqno_label</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">pa</span><span class="o">.</span><span class="n">float32</span><span class="p">())</span>
+
+                <span class="n">new_job_id_col</span> <span class="o">=</span> <span class="p">[]</span>
+                <span class="n">new_seqno_col</span> <span class="o">=</span> <span class="p">[]</span>
+                <span class="n">change_flag</span> <span class="o">=</span> <span class="kc">False</span>
+
+                <span class="c1"># Build new columns with unwanted values replaced with None</span>
+                <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">status_file_ds</span><span class="p">)):</span>
+                    <span class="n">job_id_val</span> <span class="o">=</span> <span class="n">status_file_ds</span><span class="p">[</span><span class="n">job_id_label</span><span class="p">][</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">as_py</span><span class="p">()</span>
+                    <span class="n">seqno_val</span> <span class="o">=</span> <span class="n">status_file_ds</span><span class="p">[</span><span class="n">seqno_label</span><span class="p">][</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">as_py</span><span class="p">()</span>
+
+                    <span class="c1"># If EITHER of JOBID or SEQNO are blank, treat both as blank regardless of the JOBID value</span>
+                    <span class="c1"># Also, for any JOBID/SEQNO pairs in which the JOBID is the same as the current</span>
+                    <span class="c1"># job_id input parameter, replace the values with null/empty to reduce</span>
+                    <span class="c1"># confusion of status records from previous job runs being included as if</span>
+                    <span class="c1"># they were results from the current job run</span>
+                    <span class="k">if</span><span class="p">(</span><span class="n">job_id_val</span> <span class="o">==</span> <span class="bp">self</span><span class="o">.</span><span class="n">processor_data</span><span class="o">.</span><span class="n">input_params</span><span class="o">.</span><span class="n">job_id</span> <span class="ow">or</span>
+                       <span class="n">job_id_val</span> <span class="ow">is</span> <span class="kc">None</span> <span class="ow">or</span> <span class="n">job_id_val</span><span class="o">.</span><span class="n">isspace</span><span class="p">()</span> <span class="ow">or</span> <span class="n">seqno_val</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">):</span>
+                        <span class="n">new_job_id_col</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="kc">None</span><span class="p">)</span>
+                        <span class="n">new_seqno_col</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="kc">None</span><span class="p">)</span>
+                        <span class="n">change_flag</span> <span class="o">=</span> <span class="kc">True</span>
+                    <span class="k">else</span><span class="p">:</span>
+                        <span class="n">new_job_id_col</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">job_id_val</span><span class="p">)</span>
+                        <span class="n">new_seqno_col</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">seqno_val</span><span class="p">)</span>
+
+                <span class="k">if</span><span class="p">(</span><span class="n">change_flag</span><span class="p">):</span>
+                    <span class="n">col_index</span> <span class="o">=</span> <span class="n">status_file_ds</span><span class="o">.</span><span class="n">column_names</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="n">job_id_label</span><span class="p">)</span>
+                    <span class="n">field</span> <span class="o">=</span> <span class="n">status_file_ds</span><span class="o">.</span><span class="n">field</span><span class="p">(</span><span class="n">col_index</span><span class="p">)</span>
+                    <span class="n">status_file_ds</span> <span class="o">=</span> <span class="n">status_file_ds</span><span class="o">.</span><span class="n">set_column</span><span class="p">(</span><span class="n">col_index</span><span class="p">,</span> <span class="n">field</span><span class="p">,</span> <span class="n">pa</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">new_job_id_col</span><span class="p">,</span> <span class="n">pa</span><span class="o">.</span><span class="n">string</span><span class="p">()))</span>
+                    <span class="n">col_index</span> <span class="o">=</span> <span class="n">status_file_ds</span><span class="o">.</span><span class="n">column_names</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="n">seqno_label</span><span class="p">)</span>
+                    <span class="n">field</span> <span class="o">=</span> <span class="n">status_file_ds</span><span class="o">.</span><span class="n">field</span><span class="p">(</span><span class="n">col_index</span><span class="p">)</span>
+                    <span class="n">status_file_ds</span> <span class="o">=</span> <span class="n">status_file_ds</span><span class="o">.</span><span class="n">set_column</span><span class="p">(</span><span class="n">col_index</span><span class="p">,</span> <span class="n">field</span><span class="p">,</span> <span class="n">pa</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">new_seqno_col</span><span class="p">,</span> <span class="n">pa</span><span class="o">.</span><span class="n">float32</span><span class="p">()))</span>
+
+                <span class="c1">#TODO: Implement support for process blocks</span>
+                <span class="c1"># Technically a user could have job_ids in their jobs file</span>
+                <span class="c1"># that differ from the input parameter job_id. However with the</span>
+                <span class="c1"># addition of process blocks it is somewhat difficult to parse</span>
+                <span class="c1"># which exact job_ids are relevant to the current job and which</span>
+                <span class="c1"># are extraneous.</span>
+
+                <span class="n">msg</span> <span class="o">=</span> <span class="n">_</span><span class="p">(</span><span class="s2">&quot;The current job_id value </span><span class="si">{}</span><span class="s2"> may have been found on the instatus file. &quot;</span>
+                        <span class="s2">&quot;If it was, the SEQNO and JOBID values for those records, and any with &quot;</span>
+                        <span class="s2">&quot;a missing JOBID, have been replaced with empty values.&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">processor_data</span><span class="o">.</span><span class="n">input_params</span><span class="o">.</span><span class="n">job_id</span><span class="p">)</span>
+                <span class="n">log_lcl</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span>
+
+            <span class="c1"># We also want a copy of instatus in status_log</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">processor_data</span><span class="o">.</span><span class="n">set_dataset</span><span class="p">(</span><span class="s2">&quot;status_log&quot;</span><span class="p">,</span> <span class="n">copy_table</span><span class="p">(</span><span class="n">status_file_ds</span><span class="p">))</span>
+            <span class="n">status_file_obj</span><span class="o">.</span><span class="n">ds</span> <span class="o">=</span> <span class="n">status_file_ds</span>
+
+<div class="viewcode-block" id="Processor.execute">
+<a class="viewcode-back" href="../../banffprocessor#banffprocessor.processor.Processor.execute">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">execute</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Execute the Banff Processor.</span>
+
+<span class="sd">        Iterates over the :class:`banffprocessor.metadata.Jobs` entries in</span>
+<span class="sd">        the `processor_data` `metaobjects` collection and performs the respective</span>
+<span class="sd">        Banff or user defined procedures.</span>
+
+<span class="sd">        :raises ProcedureReturnCodeError: If the return code returned by a Banff</span>
+<span class="sd">            or user defined procedure is non-zero</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="c1"># alias for easier use</span>
+        <span class="n">bd</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">processor_data</span>
+
+        <span class="c1"># Get the job steps we are running</span>
+        <span class="n">steps_to_run</span> <span class="o">=</span> <span class="n">bd</span><span class="o">.</span><span class="n">metaobjects</span><span class="o">.</span><span class="n">get_job_steps</span><span class="p">(</span><span class="n">bd</span><span class="o">.</span><span class="n">input_params</span><span class="o">.</span><span class="n">job_id</span><span class="p">)</span>
+
+        <span class="k">if</span><span class="p">(</span><span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">is_child_block</span><span class="p">):</span>
+            <span class="n">msg</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get_execution_header</span><span class="p">()</span>
+            <span class="n">write_to_console</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span>
+            <span class="n">log_lcl</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span>
+
+        <span class="k">for</span> <span class="n">job_step</span> <span class="ow">in</span> <span class="n">steps_to_run</span><span class="p">:</span>
+            <span class="c1"># Increment our overall step count</span>
+            <span class="n">bd</span><span class="o">.</span><span class="n">curr_step_count</span> <span class="o">+=</span> <span class="mi">1</span>
+
+            <span class="c1"># Get the time before execution</span>
+            <span class="c1"># Note that perf_counter is the preferred option but we are want to print the full datetime stamp</span>
+            <span class="c1"># to match the previous version of the processor. This is why we use time or datetime instead.</span>
+            <span class="n">start_time</span> <span class="o">=</span> <span class="n">datetime</span><span class="o">.</span><span class="n">now</span><span class="p">()</span> <span class="c1"># noqa: DTZ005</span>
+
+            <span class="c1"># Run protocols</span>
+            <span class="n">curr_proc</span> <span class="o">=</span> <span class="n">factory</span><span class="o">.</span><span class="n">get_procedure</span><span class="p">(</span><span class="n">job_step</span><span class="o">.</span><span class="n">process</span><span class="p">)</span>
+            <span class="n">is_built_in</span> <span class="o">=</span> <span class="n">job_step</span><span class="o">.</span><span class="n">process</span> <span class="ow">in</span> <span class="n">banff_procedures</span><span class="o">.</span><span class="n">__all__</span> <span class="ow">or</span> <span class="n">job_step</span><span class="o">.</span><span class="n">process</span> <span class="o">==</span> <span class="s2">&quot;job&quot;</span>
+
+            <span class="c1"># grab our by_varlist if not done yet and we don&#39;t already have it for the same byid</span>
+            <span class="c1"># Compare the byid in the new job_step against the previous</span>
+            <span class="k">if</span><span class="p">(</span><span class="n">bd</span><span class="o">.</span><span class="n">current_job_step</span> <span class="ow">is</span> <span class="kc">None</span> <span class="ow">or</span> <span class="n">job_step</span><span class="o">.</span><span class="n">byid</span> <span class="o">!=</span> <span class="n">bd</span><span class="o">.</span><span class="n">current_job_step</span><span class="o">.</span><span class="n">byid</span><span class="p">):</span>
+                <span class="n">bd</span><span class="o">.</span><span class="n">by_varlist</span> <span class="o">=</span> <span class="n">bd</span><span class="o">.</span><span class="n">metaobjects</span><span class="o">.</span><span class="n">get_varlist_fieldids</span><span class="p">(</span><span class="n">job_step</span><span class="o">.</span><span class="n">byid</span><span class="p">)</span>
+                <span class="k">if</span><span class="p">(</span><span class="n">job_step</span><span class="o">.</span><span class="n">byid</span> <span class="ow">and</span> <span class="ow">not</span> <span class="n">job_step</span><span class="o">.</span><span class="n">byid</span><span class="o">.</span><span class="n">isspace</span><span class="p">()</span> <span class="ow">and</span> <span class="ow">not</span> <span class="n">bd</span><span class="o">.</span><span class="n">by_varlist</span><span class="p">):</span>
+                    <span class="n">msg</span> <span class="o">=</span> <span class="n">_</span><span class="p">(</span><span class="s2">&quot;Error in byid field of job_id </span><span class="si">{}</span><span class="s2"> and seqno </span><span class="si">{}</span><span class="s2">. Byid was set but &quot;</span>
+                            <span class="s2">&quot;does not refer to any varlists found in the varlist metadata.&quot;</span><span class="p">,</span>
+                            <span class="p">)</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">job_step</span><span class="o">.</span><span class="n">jobid</span><span class="p">,</span> <span class="n">job_step</span><span class="o">.</span><span class="n">seqno</span><span class="p">)</span>
+                    <span class="n">log_lcl</span><span class="o">.</span><span class="n">exception</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span>
+                    <span class="k">raise</span> <span class="n">MetadataConstraintError</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span>
+
+            <span class="n">bd</span><span class="o">.</span><span class="n">current_uservars</span> <span class="o">=</span> <span class="kc">None</span>
+            <span class="k">if</span><span class="p">(</span><span class="n">job_step</span><span class="o">.</span><span class="n">specid</span><span class="p">):</span>
+                <span class="n">bd</span><span class="o">.</span><span class="n">current_uservars</span> <span class="o">=</span> <span class="n">bd</span><span class="o">.</span><span class="n">metaobjects</span><span class="o">.</span><span class="n">get_user_vars_dict</span><span class="p">(</span><span class="n">job_step</span><span class="o">.</span><span class="n">specid</span><span class="p">,</span> <span class="n">job_step</span><span class="o">.</span><span class="n">process</span><span class="p">)</span>
+            <span class="c1"># set this after fetching the new by_varlist to ensure we don&#39;t overwrite</span>
+            <span class="c1"># the reference to the previous job step (which is in current_job_step)</span>
+            <span class="n">bd</span><span class="o">.</span><span class="n">current_job_step</span> <span class="o">=</span> <span class="n">job_step</span>
+
+            <span class="c1"># NOTE: If DonorImputation and MassImputation are both run in a single job, but the</span>
+            <span class="c1"># ProcessOutputs metadata only includes (donorimp, outdonormap), the final outdonormap</span>
+            <span class="c1"># file will only contain outputs from DonorImputation, NOT MassImputation</span>
+            <span class="k">if</span><span class="p">(</span><span class="n">bd</span><span class="o">.</span><span class="n">input_params</span><span class="o">.</span><span class="n">output_custom</span><span class="p">):</span>
+                <span class="n">bd</span><span class="o">.</span><span class="n">custom_outputs</span> <span class="o">=</span> <span class="n">bd</span><span class="o">.</span><span class="n">metaobjects</span><span class="o">.</span><span class="n">get_process_outputs</span><span class="p">(</span><span class="n">job_step</span><span class="o">.</span><span class="n">process</span><span class="p">)</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="c1"># If output setting is minimal or all, we don&#39;t need to specify any custom outputs</span>
+                <span class="n">bd</span><span class="o">.</span><span class="n">custom_outputs</span> <span class="o">=</span> <span class="p">[]</span>
+
+            <span class="c1"># Clear unwanted columns from status_file every new step</span>
+            <span class="n">bd</span><span class="o">.</span><span class="n">clean_status_file</span><span class="p">()</span>
+
+            <span class="c1"># Print the header string</span>
+            <span class="n">log_lcl</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_get_step_header</span><span class="p">())</span>
+
+            <span class="c1"># Perform process filters</span>
+            <span class="n">bd</span><span class="o">.</span><span class="n">apply_process_controls</span><span class="p">()</span>
+
+            <span class="c1"># Note: we only check modifications made to indata (imputed_file) and instatus (status_file)</span>
+            <span class="c1"># If other data is changed, it will go undetected.</span>
+            <span class="k">if</span><span class="p">(</span><span class="ow">not</span> <span class="n">is_built_in</span><span class="p">):</span>
+                <span class="c1"># Retain a temporary reference to the current tables</span>
+                <span class="c1">#NOTE: this is intentionally set after the process controls are applied therefore</span>
+                <span class="c1"># these would be references to the filtered version, if one exists.</span>
+                <span class="n">indata_pre_execute</span> <span class="o">=</span> <span class="n">bd</span><span class="o">.</span><span class="n">get_dataset</span><span class="p">(</span><span class="s2">&quot;imputed_file&quot;</span><span class="p">,</span> <span class="n">create_if_not_exist</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+                <span class="n">instatus_pre_execute</span> <span class="o">=</span> <span class="n">bd</span><span class="o">.</span><span class="n">get_dataset</span><span class="p">(</span><span class="s2">&quot;status_file&quot;</span><span class="p">,</span> <span class="n">create_if_not_exist</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+            <span class="n">pre_execute_datasets</span> <span class="o">=</span> <span class="nb">set</span><span class="p">(</span><span class="n">bd</span><span class="o">.</span><span class="n">datasets</span><span class="o">.</span><span class="n">keys</span><span class="p">())</span>
+
+            <span class="c1"># Execute and get the return code</span>
+            <span class="c1">#TODO: wrap in try...except and attach the current job info to the message.</span>
+            <span class="c1"># This way we can avoid having to repeat that info in every error message</span>
+            <span class="c1"># the procs throw and just have it once here.</span>
+            <span class="n">rc</span> <span class="o">=</span> <span class="n">curr_proc</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="n">bd</span><span class="p">)</span>
+            <span class="n">log_lcl</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">%s</span><span class="s2"> return code: </span><span class="si">%s</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">job_step</span><span class="o">.</span><span class="n">process</span><span class="p">,</span> <span class="n">rc</span><span class="p">)</span>
+            <span class="k">if</span><span class="p">(</span><span class="n">rc</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">):</span>
+                <span class="n">msg</span> <span class="o">=</span> <span class="n">_</span><span class="p">(</span><span class="s2">&quot;Non-zero return code: </span><span class="si">{}</span><span class="s2"> returned by </span><span class="si">{}</span><span class="s2"> in job </span><span class="si">{}</span><span class="s2"> at seqno </span><span class="si">{}</span><span class="s2">&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">format</span><span class="p">(</span>
+                    <span class="n">rc</span><span class="p">,</span> <span class="n">job_step</span><span class="o">.</span><span class="n">process</span><span class="p">,</span> <span class="n">job_step</span><span class="o">.</span><span class="n">jobid</span><span class="p">,</span> <span class="n">job_step</span><span class="o">.</span><span class="n">seqno</span><span class="p">)</span>
+                <span class="n">log_lcl</span><span class="o">.</span><span class="n">exception</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span>
+                <span class="k">raise</span> <span class="n">ProcedureReturnCodeError</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span>
+
+            <span class="c1"># Get the current datasets, don&#39;t create if they don&#39;t exist as we want</span>
+            <span class="c1"># to know if they&#39;re None.</span>
+            <span class="c1"># NOTE: We want to get the filtered version if it exists since that&#39;s what</span>
+            <span class="c1"># was passed in and we want to compare what should be the same dataset reference</span>
+            <span class="n">curr_imputed</span> <span class="o">=</span> <span class="n">bd</span><span class="o">.</span><span class="n">get_dataset</span><span class="p">(</span><span class="s2">&quot;imputed_file&quot;</span><span class="p">)</span>
+            <span class="n">curr_status_file</span> <span class="o">=</span> <span class="n">bd</span><span class="o">.</span><span class="n">get_dataset</span><span class="p">(</span><span class="s2">&quot;status_file&quot;</span><span class="p">)</span>
+
+            <span class="c1"># If a UDP was run, we want to check if indata or instatus were updated directly</span>
+            <span class="c1"># If these references don&#39;t match the user must have created a new table and</span>
+            <span class="c1"># updated the reference, so warn or kill the program</span>
+            <span class="k">if</span><span class="p">(</span><span class="ow">not</span> <span class="n">is_built_in</span> <span class="ow">and</span> <span class="p">(</span><span class="n">indata_pre_execute</span> <span class="ow">is</span> <span class="ow">not</span> <span class="n">curr_imputed</span> <span class="ow">or</span>
+                                    <span class="n">instatus_pre_execute</span> <span class="ow">is</span> <span class="ow">not</span> <span class="n">curr_status_file</span><span class="p">)):</span>
+                <span class="c1"># If no process filter: accept the updates but warn the user, just in case</span>
+                <span class="n">msg</span> <span class="o">=</span> <span class="n">_</span><span class="p">(</span><span class="s2">&quot;Indata or instatus were modified. If this was not intended make &quot;</span>
+                            <span class="s2">&quot;sure that any new tables you create are not saved back to the &quot;</span>
+                            <span class="s2">&quot;processor_data object. Instead save your updates to the &quot;</span>
+                            <span class="s2">&quot;outdata and outstatus attributes on processor_data&quot;</span><span class="p">)</span>
+                <span class="n">log_lcl</span><span class="o">.</span><span class="n">warning</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span>
+
+            <span class="c1"># Release these references now that we are 100% done with the old tables</span>
+            <span class="n">indata_pre_execute</span> <span class="o">=</span> <span class="kc">None</span>
+            <span class="n">instatus_pre_execute</span> <span class="o">=</span> <span class="kc">None</span>
+
+            <span class="c1"># Remove filtered datasets since the proc has completed so references</span>
+            <span class="c1"># below will use the original when performing updates</span>
+            <span class="n">bd</span><span class="o">.</span><span class="n">clear_filtered_data</span><span class="p">()</span>
+
+            <span class="c1"># Get the out datasets but don&#39;t pop them until after update methods have run</span>
+            <span class="n">curr_outstatus</span> <span class="o">=</span> <span class="n">bd</span><span class="o">.</span><span class="n">get_dataset</span><span class="p">(</span><span class="s2">&quot;outstatus&quot;</span><span class="p">)</span>
+            <span class="n">curr_outdata</span> <span class="o">=</span> <span class="n">bd</span><span class="o">.</span><span class="n">get_dataset</span><span class="p">(</span><span class="s2">&quot;outdata&quot;</span><span class="p">)</span>
+
+            <span class="k">if</span><span class="p">(</span><span class="n">curr_outstatus</span><span class="p">):</span>
+                <span class="k">if</span><span class="p">(</span><span class="n">table_empty</span><span class="p">(</span><span class="n">curr_outstatus</span><span class="p">)):</span>
+                    <span class="c1"># This can be either intentional or a mistake, depending on the plugin</span>
+                    <span class="n">msg</span> <span class="o">=</span> <span class="n">_</span><span class="p">(</span><span class="s2">&quot;Process </span><span class="si">{}</span><span class="s2"> in job </span><span class="si">{}</span><span class="s2"> at seqno </span><span class="si">{}</span><span class="s2"> set an outstatus dataset but &quot;</span>
+                            <span class="s2">&quot;it was empty.&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">job_step</span><span class="o">.</span><span class="n">process</span><span class="p">,</span> <span class="n">job_step</span><span class="o">.</span><span class="n">jobid</span><span class="p">,</span> <span class="n">job_step</span><span class="o">.</span><span class="n">seqno</span><span class="p">)</span>
+                    <span class="n">log_lcl</span><span class="o">.</span><span class="n">warning</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span>
+                <span class="k">elif</span><span class="p">(</span><span class="n">curr_outstatus</span> <span class="ow">is</span> <span class="n">curr_status_file</span><span class="p">):</span>
+                    <span class="c1"># If the user didn&#39;t copy() when forming outstatus from status_file</span>
+                    <span class="c1"># the update will break. So give them a more informative error.</span>
+                    <span class="n">msg</span> <span class="o">=</span> <span class="n">_</span><span class="p">(</span><span class="s2">&quot;Process </span><span class="si">{}</span><span class="s2"> in job </span><span class="si">{}</span><span class="s2"> at seqno </span><span class="si">{}</span><span class="s2">. processor_data.outstatus should not &quot;</span>
+                        <span class="s2">&quot;reference the same dataset as instatus.&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">job_step</span><span class="o">.</span><span class="n">process</span><span class="p">,</span> <span class="n">job_step</span><span class="o">.</span><span class="n">jobid</span><span class="p">,</span>
+                                                                          <span class="n">job_step</span><span class="o">.</span><span class="n">seqno</span><span class="p">)</span>
+                    <span class="n">log_lcl</span><span class="o">.</span><span class="n">exception</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span>
+                    <span class="k">raise</span> <span class="n">UserDefinedPluginError</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span>
+                <span class="k">else</span><span class="p">:</span>
+                    <span class="c1"># Updates status_file and status_log files using the outstatus dataset</span>
+                    <span class="n">bd</span><span class="o">.</span><span class="n">update_status</span><span class="p">()</span>
+                    <span class="c1"># We no longer save non-cumulative files</span>
+
+            <span class="k">if</span><span class="p">(</span><span class="n">curr_outdata</span><span class="p">):</span>
+                <span class="k">if</span><span class="p">(</span><span class="n">table_empty</span><span class="p">(</span><span class="n">curr_outdata</span><span class="p">)):</span>
+                    <span class="c1"># This can be either intentional or a mistake, depending on the plugin</span>
+                    <span class="n">msg</span> <span class="o">=</span> <span class="n">_</span><span class="p">(</span><span class="s2">&quot;Process </span><span class="si">{}</span><span class="s2"> in job </span><span class="si">{}</span><span class="s2"> at seqno </span><span class="si">{}</span><span class="s2"> set an outdata dataset but &quot;</span>
+                            <span class="s2">&quot;it was empty.&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">job_step</span><span class="o">.</span><span class="n">process</span><span class="p">,</span> <span class="n">job_step</span><span class="o">.</span><span class="n">jobid</span><span class="p">,</span> <span class="n">job_step</span><span class="o">.</span><span class="n">seqno</span><span class="p">)</span>
+                    <span class="n">log_lcl</span><span class="o">.</span><span class="n">warning</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span>
+                <span class="k">elif</span><span class="p">(</span><span class="n">curr_outdata</span> <span class="ow">is</span> <span class="n">curr_imputed</span><span class="p">):</span>
+                    <span class="c1"># If the user didn&#39;t copy() when forming outdata from indata (imputed_file)</span>
+                    <span class="c1"># the update will break. So give them a more informative error.</span>
+                    <span class="n">msg</span> <span class="o">=</span> <span class="n">_</span><span class="p">(</span><span class="s2">&quot;Process </span><span class="si">{}</span><span class="s2"> in job </span><span class="si">{}</span><span class="s2"> at seqno </span><span class="si">{}</span><span class="s2">. processor_data.outdata &quot;</span>
+                            <span class="s2">&quot;should not reference the same dataframe as indata.&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">format</span><span class="p">(</span>
+                                <span class="n">job_step</span><span class="o">.</span><span class="n">process</span><span class="p">,</span> <span class="n">job_step</span><span class="o">.</span><span class="n">jobid</span><span class="p">,</span> <span class="n">job_step</span><span class="o">.</span><span class="n">seqno</span><span class="p">)</span>
+                    <span class="n">log_lcl</span><span class="o">.</span><span class="n">exception</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span>
+                    <span class="k">raise</span> <span class="n">UserDefinedPluginError</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span>
+                <span class="k">else</span><span class="p">:</span>
+                    <span class="c1"># Updates imputed_file using outdata</span>
+                    <span class="n">bd</span><span class="o">.</span><span class="n">update_imputed_file</span><span class="p">()</span>
+                    <span class="c1"># Note that we no longer keep the non-cumulative files</span>
+
+            <span class="c1"># Now that these have been used in their respective update methods and saved under</span>
+            <span class="c1"># new names (if desired), we remove these references so that the next proc doesn&#39;t</span>
+            <span class="c1"># accidentally use the same dataset.</span>
+            <span class="n">bd</span><span class="o">.</span><span class="n">pop_dataset</span><span class="p">(</span><span class="s2">&quot;outstatus&quot;</span><span class="p">)</span>
+            <span class="n">bd</span><span class="o">.</span><span class="n">pop_dataset</span><span class="p">(</span><span class="s2">&quot;outdata&quot;</span><span class="p">)</span>
+
+            <span class="c1"># Remove the single-step outputs and update their respective cumulative version</span>
+            <span class="n">bd</span><span class="o">.</span><span class="n">update_cumulatives</span><span class="p">(</span><span class="n">pre_execute_datasets</span><span class="p">)</span>
+
+            <span class="c1"># Print the footer string, which also logs time/duration if specified in options</span>
+            <span class="n">end_time</span> <span class="o">=</span> <span class="n">datetime</span><span class="o">.</span><span class="n">now</span><span class="p">()</span> <span class="c1"># noqa: DTZ005</span>
+            <span class="c1"># list indexed from 0 so add 1 to accurately count steps</span>
+
+            <span class="c1"># The log&#39;s Streamhandler is set to only ERROR, therefore need to print()</span>
+            <span class="c1"># as we want this to be the only other thing seen in console</span>
+            <span class="c1"># Also log to INFO so that it will also show in the log file, if one is set</span>
+            <span class="n">log_lcl</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_get_step_footer</span><span class="p">(</span><span class="n">bd</span><span class="o">.</span><span class="n">curr_step_count</span><span class="p">,</span> <span class="n">start_time</span><span class="p">,</span> <span class="n">end_time</span><span class="p">))</span>
+            <span class="n">write_to_console</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_get_console_step_footer</span><span class="p">(</span><span class="n">bd</span><span class="o">.</span><span class="n">curr_step_count</span><span class="p">))</span>
+
+            <span class="c1"># Reset local variables so the garbage collector can clean them up</span>
+            <span class="n">curr_outdata</span> <span class="o">=</span> <span class="kc">None</span>
+            <span class="n">curr_outstatus</span> <span class="o">=</span> <span class="kc">None</span>
+            <span class="n">curr_imputed</span> <span class="o">=</span> <span class="kc">None</span>
+            <span class="n">curr_status_file</span> <span class="o">=</span> <span class="kc">None</span>
+            <span class="n">curr_proc</span> <span class="o">=</span> <span class="kc">None</span>
+            <span class="n">msg</span> <span class="o">=</span> <span class="kc">None</span>
+            <span class="n">end_time</span> <span class="o">=</span> <span class="kc">None</span>
+            <span class="c1"># Just in case</span>
+            <span class="n">pre_execute_datasets</span> <span class="o">=</span> <span class="kc">None</span>
+
+        <span class="k">if</span><span class="p">(</span><span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">is_child_block</span><span class="p">):</span>
+            <span class="n">msg</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get_execution_footer</span><span class="p">()</span>
+            <span class="n">write_to_console</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span>
+            <span class="n">log_lcl</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span>
+
+        <span class="c1"># clean the status file one last time</span>
+        <span class="n">bd</span><span class="o">.</span><span class="n">clean_status_file</span><span class="p">()</span></div>
+
+
+<div class="viewcode-block" id="Processor.save_outputs">
+<a class="viewcode-back" href="../../banffprocessor#banffprocessor.processor.Processor.save_outputs">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">save_outputs</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Call the save_outputs method for the current job&#39;s processor_data.&quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">processor_data</span><span class="o">.</span><span class="n">save_outputs</span><span class="p">()</span></div>
+
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">_get_execution_header</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+        <span class="n">border_string</span> <span class="o">=</span> <span class="s2">&quot;=&quot;</span><span class="o">*</span><span class="mi">112</span>
+        <span class="n">msg</span> <span class="o">=</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span> <span class="o">+</span> <span class="n">border_string</span> <span class="o">+</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span>
+        <span class="n">msg</span> <span class="o">+=</span> <span class="n">_</span><span class="p">(</span><span class="s2">&quot;Job ID                       : </span><span class="si">{}</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">processor_data</span><span class="o">.</span><span class="n">input_params</span><span class="o">.</span><span class="n">job_id</span><span class="p">)</span>
+        <span class="n">msg</span> <span class="o">+=</span> <span class="n">_</span><span class="p">(</span><span class="s2">&quot;Banff Processor Version      : </span><span class="si">{}</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">bpp</span><span class="o">.</span><span class="n">__version__</span><span class="p">)</span>
+        <span class="n">msg</span> <span class="o">+=</span> <span class="n">_</span><span class="p">(</span><span class="s2">&quot;Banff Version                : </span><span class="si">{}</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">banff</span><span class="o">.</span><span class="n">__version__</span><span class="p">)</span>
+        <span class="n">msg</span> <span class="o">+=</span> <span class="n">_</span><span class="p">(</span><span class="s2">&quot;Support Email                : </span><span class="si">{}</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="s2">&quot;banff@statcan.gc.ca&quot;</span><span class="p">)</span>
+        <span class="n">msg</span> <span class="o">+=</span> <span class="n">_</span><span class="p">(</span><span class="s2">&quot;Start Time                   : </span><span class="si">{}</span><span class="s2"> (</span><span class="si">{}</span><span class="s2">)</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">datetime</span><span class="o">.</span><span class="n">now</span><span class="p">()</span><span class="o">.</span><span class="n">strftime</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">%c</span><span class="s2">&quot;</span><span class="p">),</span> <span class="n">datetime</span><span class="o">.</span><span class="n">now</span><span class="p">()</span><span class="o">.</span><span class="n">astimezone</span><span class="p">()</span><span class="o">.</span><span class="n">tzinfo</span><span class="p">)</span> <span class="c1"># noqa: DTZ005</span>
+        <span class="n">msg</span> <span class="o">+=</span> <span class="n">border_string</span>
+
+        <span class="k">return</span> <span class="n">msg</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">_get_execution_footer</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+
+        <span class="n">time_store_table</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">processor_data</span><span class="o">.</span><span class="n">get_dataset</span><span class="p">(</span><span class="s2">&quot;time_store&quot;</span><span class="p">)</span>
+        <span class="n">total_duration</span> <span class="o">=</span> <span class="n">pc</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="n">time_store_table</span><span class="p">[</span><span class="s2">&quot;total_job_duration&quot;</span><span class="p">])</span><span class="o">.</span><span class="n">as_py</span><span class="p">()</span>
+
+        <span class="n">border_string</span> <span class="o">=</span> <span class="s2">&quot;=&quot;</span><span class="o">*</span><span class="mi">112</span>
+        <span class="n">msg</span> <span class="o">=</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span> <span class="o">+</span> <span class="n">border_string</span> <span class="o">+</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span>
+        <span class="n">msg</span> <span class="o">+=</span> <span class="n">_</span><span class="p">(</span><span class="s2">&quot;The Banff Processor executed </span><span class="si">{}</span><span class="s2"> successfully. &quot;</span><span class="p">)</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">processor_data</span><span class="o">.</span><span class="n">current_job_step</span><span class="o">.</span><span class="n">jobid</span><span class="p">)</span>
+        <span class="n">msg</span> <span class="o">+=</span> <span class="n">_</span><span class="p">(</span><span class="s2">&quot;Duration: </span><span class="si">{}</span><span class="s2">&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">total_duration</span><span class="p">)</span>
+        <span class="n">msg</span> <span class="o">+=</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span> <span class="o">+</span> <span class="n">border_string</span> <span class="o">+</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span>
+
+        <span class="k">return</span> <span class="n">msg</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">_get_step_header</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Return a string containing the header text for the current job step.</span>
+
+<span class="sd">        :return: The header string for the current job step.</span>
+<span class="sd">        :rtype: str</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">border_string</span> <span class="o">=</span> <span class="s2">&quot;=&quot;</span><span class="o">*</span><span class="mi">100</span>
+        <span class="n">msg</span> <span class="o">=</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span> <span class="o">+</span> <span class="n">border_string</span> <span class="o">+</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span>
+        <span class="n">msg</span> <span class="o">+=</span> <span class="n">_</span><span class="p">(</span><span class="s2">&quot;JOBID: </span><span class="si">{}</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">processor_data</span><span class="o">.</span><span class="n">current_job_step</span><span class="o">.</span><span class="n">jobid</span><span class="p">)</span>
+        <span class="n">msg</span> <span class="o">+=</span> <span class="n">_</span><span class="p">(</span><span class="s2">&quot;PROCESS: </span><span class="si">{}</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">processor_data</span><span class="o">.</span><span class="n">current_job_step</span><span class="o">.</span><span class="n">process</span><span class="p">)</span>
+        <span class="n">msg</span> <span class="o">+=</span> <span class="n">_</span><span class="p">(</span><span class="s2">&quot;SEQNO: </span><span class="si">{}</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">processor_data</span><span class="o">.</span><span class="n">current_job_step</span><span class="o">.</span><span class="n">seqno</span><span class="p">)</span>
+        <span class="n">msg</span> <span class="o">+=</span> <span class="n">_</span><span class="p">(</span><span class="s2">&quot;SPECID: </span><span class="si">{}</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">processor_data</span><span class="o">.</span><span class="n">current_job_step</span><span class="o">.</span><span class="n">specid</span><span class="p">)</span>
+        <span class="n">msg</span> <span class="o">+=</span> <span class="n">_</span><span class="p">(</span><span class="s2">&quot;CONTROLID: </span><span class="si">{}</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">processor_data</span><span class="o">.</span><span class="n">current_job_step</span><span class="o">.</span><span class="n">controlid</span><span class="p">)</span>
+        <span class="n">msg</span> <span class="o">+=</span> <span class="n">border_string</span>
+        <span class="k">return</span> <span class="n">msg</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">_get_step_footer</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">cur_step_index</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">start_time</span><span class="p">:</span> <span class="n">datetime</span><span class="o">|</span><span class="nb">float</span><span class="p">,</span> <span class="n">end_time</span><span class="p">:</span> <span class="n">datetime</span><span class="o">|</span><span class="nb">float</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Return a string containing the footer text for the current job step which includes</span>
+<span class="sd">        the computed start/end time and duration. Also saves time values to the timestore dataset.</span>
+
+<span class="sd">        :param start_time: The start time of the job step as a datetime object</span>
+<span class="sd">            or a perf_counter float output, defaults to None</span>
+<span class="sd">        :type start_time: datetime | float | None, optional</span>
+<span class="sd">        :param end_time: The end time of the job step as a datetime object</span>
+<span class="sd">            or a perf_counter float output, defaults to None</span>
+<span class="sd">        :type end_time: datetime | float | None, optional</span>
+<span class="sd">        :raises TypeError: If `start_time` or `end_time` are not provided but the</span>
+<span class="sd">            TIME or TIMESTORE option is set</span>
+<span class="sd">        :raises TypeError: If `start_time` or `end_time` are not datetime or float</span>
+<span class="sd">        :return: The footer string for the current job step.</span>
+<span class="sd">        :rtype: str</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">time_print</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">processor_data</span><span class="o">.</span><span class="n">input_params</span><span class="o">.</span><span class="n">time</span>
+        <span class="n">time_store</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">processor_data</span><span class="o">.</span><span class="n">input_params</span><span class="o">.</span><span class="n">time_store</span>
+        <span class="n">border_string</span> <span class="o">=</span> <span class="s2">&quot;=&quot;</span><span class="o">*</span><span class="mi">100</span>
+
+        <span class="n">job_progress</span> <span class="o">=</span> <span class="nb">round</span><span class="p">((</span><span class="n">cur_step_index</span><span class="o">/</span><span class="bp">self</span><span class="o">.</span><span class="n">processor_data</span><span class="o">.</span><span class="n">total_job_steps</span><span class="p">)</span><span class="o">*</span><span class="mi">100</span><span class="p">)</span>
+        <span class="n">footer</span> <span class="o">=</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span> <span class="o">+</span> <span class="n">border_string</span> <span class="o">+</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span>
+        <span class="n">footer</span> <span class="o">+=</span> <span class="n">_</span><span class="p">(</span><span class="s2">&quot;END OF PROCESS: </span><span class="si">{}</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">processor_data</span><span class="o">.</span><span class="n">current_job_step</span><span class="o">.</span><span class="n">process</span><span class="p">)</span>
+        <span class="n">footer</span> <span class="o">+=</span> <span class="n">_</span><span class="p">(</span><span class="s2">&quot;JOBID: </span><span class="si">{}</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">processor_data</span><span class="o">.</span><span class="n">current_job_step</span><span class="o">.</span><span class="n">jobid</span><span class="p">)</span>
+        <span class="n">footer</span> <span class="o">+=</span> <span class="n">_</span><span class="p">(</span><span class="s2">&quot;SEQNO: </span><span class="si">{}</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">processor_data</span><span class="o">.</span><span class="n">current_job_step</span><span class="o">.</span><span class="n">seqno</span><span class="p">)</span>
+        <span class="n">footer</span> <span class="o">+=</span> <span class="n">_</span><span class="p">(</span><span class="s2">&quot;SPECID: </span><span class="si">{}</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">processor_data</span><span class="o">.</span><span class="n">current_job_step</span><span class="o">.</span><span class="n">specid</span><span class="p">)</span>
+        <span class="n">footer</span> <span class="o">+=</span> <span class="n">_</span><span class="p">(</span><span class="s2">&quot;JOB PROGRESS: </span><span class="si">{}</span><span class="s2">/</span><span class="si">{}</span><span class="s2"> - </span><span class="si">{}</span><span class="s2">%</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">cur_step_index</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">processor_data</span><span class="o">.</span><span class="n">total_job_steps</span><span class="p">,</span> <span class="n">job_progress</span><span class="p">)</span>
+
+        <span class="c1"># If the start and end time were not provided, skip duration</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">start_time</span> <span class="ow">is</span> <span class="kc">None</span> <span class="ow">or</span> <span class="n">end_time</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">):</span>
+            <span class="k">return</span> <span class="p">(</span><span class="n">footer</span> <span class="o">+</span> <span class="n">border_string</span><span class="p">)</span>
+
+        <span class="n">duration</span> <span class="o">=</span> <span class="n">end_time</span> <span class="o">-</span> <span class="n">start_time</span>
+        <span class="n">start_stamp</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span>
+        <span class="n">end_stamp</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span>
+        <span class="k">if</span><span class="p">(</span><span class="nb">isinstance</span><span class="p">(</span><span class="n">start_time</span><span class="p">,</span> <span class="n">datetime</span><span class="p">)</span> <span class="ow">and</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">end_time</span><span class="p">,</span> <span class="n">datetime</span><span class="p">)):</span>
+            <span class="c1"># datetime will give us ms but we need to truncate the string with [:-4]</span>
+            <span class="c1"># to get the same reduced precision as the SAS</span>
+            <span class="n">start_stamp</span> <span class="o">=</span> <span class="n">start_time</span><span class="o">.</span><span class="n">strftime</span><span class="p">(</span><span class="s2">&quot;%Y-%m-</span><span class="si">%d</span><span class="s2"> %H:%M:%S.</span><span class="si">%f</span><span class="s2">&quot;</span><span class="p">)[:</span><span class="o">-</span><span class="mi">4</span><span class="p">]</span>
+            <span class="n">end_stamp</span> <span class="o">=</span> <span class="n">end_time</span><span class="o">.</span><span class="n">strftime</span><span class="p">(</span><span class="s2">&quot;%Y-%m-</span><span class="si">%d</span><span class="s2"> %H:%M:%S.</span><span class="si">%f</span><span class="s2">&quot;</span><span class="p">)[:</span><span class="o">-</span><span class="mi">4</span><span class="p">]</span>
+
+            <span class="k">if</span><span class="p">(</span><span class="n">time_print</span><span class="p">):</span>
+                <span class="n">footer</span> <span class="o">+=</span> <span class="n">_</span><span class="p">(</span><span class="s2">&quot;START TIME: </span><span class="si">{}</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">start_stamp</span><span class="p">)</span>
+                <span class="n">footer</span> <span class="o">+=</span> <span class="n">_</span><span class="p">(</span><span class="s2">&quot;END TIME: </span><span class="si">{}</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">end_stamp</span><span class="p">)</span>
+
+        <span class="k">elif</span><span class="p">(</span><span class="nb">isinstance</span><span class="p">(</span><span class="n">start_time</span><span class="p">,</span> <span class="nb">float</span><span class="p">)</span> <span class="ow">and</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">end_time</span><span class="p">,</span> <span class="nb">float</span><span class="p">)):</span>
+            <span class="n">duration</span> <span class="o">=</span> <span class="n">timedelta</span><span class="p">(</span><span class="n">seconds</span><span class="o">=</span><span class="p">(</span><span class="n">duration</span><span class="p">))</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">msg</span> <span class="o">=</span> <span class="n">_</span><span class="p">(</span><span class="s2">&quot;start_time or end_time must be datetime objects or floats.&quot;</span><span class="p">)</span>
+            <span class="n">log_lcl</span><span class="o">.</span><span class="n">exception</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span>
+            <span class="k">raise</span> <span class="ne">TypeError</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span>
+
+        <span class="c1"># datetime will give us ms but we need to truncate the string with [:-4]</span>
+        <span class="c1"># to get the same reduced precision as the SAS</span>
+        <span class="n">duration_stamp</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="n">duration</span><span class="p">)[:</span><span class="o">-</span><span class="mi">4</span><span class="p">]</span>
+        <span class="n">footer</span> <span class="o">+=</span> <span class="n">_</span><span class="p">(</span><span class="s2">&quot;STEP DURATION: </span><span class="si">{}</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">duration_stamp</span><span class="p">)</span>
+
+        <span class="k">if</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">processor_data</span><span class="o">.</span><span class="n">total_job_duration</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">):</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">processor_data</span><span class="o">.</span><span class="n">total_job_duration</span> <span class="o">=</span> <span class="n">duration</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">processor_data</span><span class="o">.</span><span class="n">total_job_duration</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">processor_data</span><span class="o">.</span><span class="n">total_job_duration</span> <span class="o">+</span> <span class="n">duration</span>
+
+        <span class="n">new_total_duration_stamp</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">processor_data</span><span class="o">.</span><span class="n">total_job_duration</span><span class="p">)[:</span><span class="o">-</span><span class="mi">4</span><span class="p">]</span>
+        <span class="n">footer</span> <span class="o">+=</span> <span class="n">_</span><span class="p">(</span><span class="s2">&quot;TOTAL DURATION: </span><span class="si">{}</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">new_total_duration_stamp</span><span class="p">)</span>
+
+        <span class="k">if</span><span class="p">(</span><span class="n">time_store</span><span class="p">):</span>
+            <span class="k">if</span><span class="p">(</span><span class="n">start_stamp</span> <span class="ow">and</span> <span class="n">end_stamp</span><span class="p">):</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">_store_time</span><span class="p">(</span><span class="n">start_stamp</span><span class="p">,</span> <span class="n">end_stamp</span><span class="p">,</span> <span class="n">duration_stamp</span><span class="p">,</span> <span class="n">new_total_duration_stamp</span><span class="p">)</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">msg</span> <span class="o">=</span> <span class="n">_</span><span class="p">(</span><span class="s2">&quot;TIMESTORE option was set but start_time and end_time were not passed in as datetime stamps.&quot;</span><span class="p">)</span>
+                <span class="n">log_lcl</span><span class="o">.</span><span class="n">warning</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span>
+
+        <span class="k">return</span> <span class="p">(</span><span class="n">footer</span> <span class="o">+</span> <span class="n">border_string</span><span class="p">)</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">_get_console_step_footer</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">cur_step_index</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+
+        <span class="k">def</span><span class="w"> </span><span class="nf">truncate_output</span><span class="p">(</span><span class="n">val</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">max_len</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+            <span class="k">return</span> <span class="p">(</span><span class="n">val</span><span class="p">[:</span><span class="n">max_len</span> <span class="o">-</span> <span class="mi">2</span><span class="p">]</span> <span class="o">+</span> <span class="s2">&quot;..&quot;</span><span class="p">)</span> <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">val</span><span class="p">)</span> <span class="o">&gt;</span> <span class="n">max_len</span> <span class="k">else</span> <span class="n">val</span>
+
+        <span class="n">job_progress</span> <span class="o">=</span> <span class="nb">round</span><span class="p">((</span><span class="n">cur_step_index</span><span class="o">/</span><span class="bp">self</span><span class="o">.</span><span class="n">processor_data</span><span class="o">.</span><span class="n">total_job_steps</span><span class="p">)</span><span class="o">*</span><span class="mi">100</span><span class="p">)</span>
+        <span class="n">job_progress</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="n">job_progress</span><span class="p">)</span> <span class="o">+</span> <span class="s2">&quot;%&quot;</span>
+
+        <span class="n">time_store_table</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">processor_data</span><span class="o">.</span><span class="n">get_dataset</span><span class="p">(</span><span class="s2">&quot;time_store&quot;</span><span class="p">)</span>
+
+        <span class="c1"># Get the last (should be the latest) record in the time_store table</span>
+        <span class="n">time_store_curr_rec</span> <span class="o">=</span> <span class="n">time_store_table</span><span class="o">.</span><span class="n">slice</span><span class="p">(</span><span class="n">offset</span><span class="o">=</span><span class="n">time_store_table</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+        <span class="n">duration</span> <span class="o">=</span> <span class="n">time_store_curr_rec</span><span class="p">[</span><span class="s2">&quot;duration&quot;</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">as_py</span><span class="p">()</span>
+        <span class="n">total_duration</span> <span class="o">=</span> <span class="n">time_store_curr_rec</span><span class="p">[</span><span class="s2">&quot;total_job_duration&quot;</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">as_py</span><span class="p">()</span>
+
+        <span class="n">step</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">cur_step_index</span><span class="si">}</span><span class="s2">/</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">processor_data</span><span class="o">.</span><span class="n">total_job_steps</span><span class="si">}</span><span class="s2">&quot;</span>
+
+        <span class="n">curr_process</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">processor_data</span><span class="o">.</span><span class="n">current_job_step</span><span class="o">.</span><span class="n">process</span>
+        <span class="k">if</span><span class="p">(</span><span class="n">curr_process</span> <span class="o">==</span> <span class="s2">&quot;job&quot;</span><span class="p">):</span>
+            <span class="n">curr_process</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;job:</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">processor_data</span><span class="o">.</span><span class="n">current_job_step</span><span class="o">.</span><span class="n">specid</span><span class="si">}</span><span class="s2">&quot;</span>
+
+        <span class="n">footer</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span>
+        <span class="k">if</span> <span class="n">cur_step_index</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+            <span class="n">footer</span> <span class="o">=</span> <span class="n">_</span><span class="p">(</span><span class="s2">&quot;STEP       JOBID       PROCESS               SEQNO   END TIME         DURATION         TOTAL DURATION   PROGRESS</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+            <span class="n">footer</span> <span class="o">+=</span>  <span class="s2">&quot;=========  ==========  ====================  ======  ===============  ===============  ===============  ========</span><span class="se">\n</span><span class="s2">&quot;</span>
+
+        <span class="n">footer</span> <span class="o">+=</span> <span class="n">_</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">{:&lt;9}</span><span class="s2">  </span><span class="si">{:&lt;10}</span><span class="s2">  </span><span class="si">{:&lt;20}</span><span class="s2">  </span><span class="si">{:&lt;6}</span><span class="s2">  </span><span class="si">{:&lt;15}</span><span class="s2">  </span><span class="si">{:&lt;15}</span><span class="s2">  </span><span class="si">{:&lt;15}</span><span class="s2">  </span><span class="si">{:&gt;8}</span><span class="s2">&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">step</span><span class="p">,</span>
+                                                                                  <span class="n">truncate_output</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">processor_data</span><span class="o">.</span><span class="n">current_job_step</span><span class="o">.</span><span class="n">jobid</span><span class="p">,</span> <span class="mi">10</span><span class="p">),</span>
+                                                                                  <span class="n">truncate_output</span><span class="p">(</span><span class="n">curr_process</span><span class="p">,</span> <span class="mi">20</span><span class="p">),</span>
+                                                                                  <span class="bp">self</span><span class="o">.</span><span class="n">processor_data</span><span class="o">.</span><span class="n">current_job_step</span><span class="o">.</span><span class="n">seqno</span><span class="p">,</span>
+                                                                                  <span class="n">datetime</span><span class="o">.</span><span class="n">now</span><span class="p">()</span><span class="o">.</span><span class="n">strftime</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">%X</span><span class="s2">&quot;</span><span class="p">),</span> <span class="c1"># noqa: DTZ005</span>
+                                                                                  <span class="n">duration</span><span class="p">,</span>
+                                                                                  <span class="n">total_duration</span><span class="p">,</span>
+                                                                                  <span class="n">job_progress</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">footer</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">_store_time</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">start_stamp</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">end_stamp</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
+                    <span class="n">duration</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">total_job_duration</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Store the timestamps of the start and end time and the duration of the current job step to the timestore output dataset.</span>
+
+<span class="sd">        :param start_time: The timestamp of the procedure start time</span>
+<span class="sd">        :type start_time: str</span>
+<span class="sd">        :param end_time: The timestamp of the procedure end time</span>
+<span class="sd">        :type end_time: str</span>
+<span class="sd">        :param duration: The difference between the start and end times in seconds</span>
+<span class="sd">        :type duration: str</span>
+<span class="sd">        :param total_job_duration: The total duration of the job up to this point</span>
+<span class="sd">        :type total_job_duration: str</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">specid</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span> <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">processor_data</span><span class="o">.</span><span class="n">current_job_step</span><span class="o">.</span><span class="n">specid</span> <span class="ow">is</span> <span class="kc">None</span> <span class="k">else</span> <span class="bp">self</span><span class="o">.</span><span class="n">processor_data</span><span class="o">.</span><span class="n">current_job_step</span><span class="o">.</span><span class="n">specid</span>
+        <span class="n">time_store_new</span> <span class="o">=</span> <span class="n">pa</span><span class="o">.</span><span class="n">table</span><span class="p">({</span><span class="s2">&quot;job_id&quot;</span><span class="p">:</span> <span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">processor_data</span><span class="o">.</span><span class="n">current_job_step</span><span class="o">.</span><span class="n">jobid</span><span class="p">],</span>
+                                   <span class="s2">&quot;process&quot;</span><span class="p">:</span> <span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">processor_data</span><span class="o">.</span><span class="n">current_job_step</span><span class="o">.</span><span class="n">process</span><span class="p">],</span>
+                                   <span class="s2">&quot;seqno&quot;</span><span class="p">:</span> <span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">processor_data</span><span class="o">.</span><span class="n">current_job_step</span><span class="o">.</span><span class="n">seqno</span><span class="p">],</span>
+                                   <span class="s2">&quot;specid&quot;</span><span class="p">:</span> <span class="p">[</span><span class="n">specid</span><span class="p">],</span>
+                                   <span class="s2">&quot;start_time&quot;</span><span class="p">:</span> <span class="p">[</span><span class="n">start_stamp</span><span class="p">],</span>
+                                   <span class="s2">&quot;end_time&quot;</span><span class="p">:</span> <span class="p">[</span><span class="n">end_stamp</span><span class="p">],</span>
+                                   <span class="s2">&quot;duration&quot;</span><span class="p">:</span> <span class="p">[</span><span class="n">duration</span><span class="p">],</span>
+                                   <span class="s2">&quot;total_job_duration&quot;</span><span class="p">:</span> <span class="p">[</span><span class="n">total_job_duration</span><span class="p">]})</span>
+
+        <span class="n">time_store_name</span> <span class="o">=</span> <span class="s2">&quot;time_store&quot;</span>
+        <span class="n">time_store_curr_obj</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">processor_data</span><span class="o">.</span><span class="n">get_dataset</span><span class="p">(</span><span class="n">time_store_name</span><span class="p">,</span> <span class="n">ds_format</span><span class="o">=</span><span class="s2">&quot;object&quot;</span><span class="p">)</span>
+        <span class="c1"># append a new record with the info for this job run</span>
+        <span class="k">if</span><span class="p">(</span><span class="n">time_store_curr_obj</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">):</span>
+            <span class="c1"># As these 2 tables are only produced/modified here we shouldn&#39;t</span>
+            <span class="c1"># need to set any promote_options for now as it might obscure an error</span>
+            <span class="n">time_store_curr_obj</span><span class="o">.</span><span class="n">ds</span> <span class="o">=</span> <span class="n">pa</span><span class="o">.</span><span class="n">concat_tables</span><span class="p">([</span><span class="n">time_store_curr_obj</span><span class="o">.</span><span class="n">ds</span><span class="p">,</span> <span class="n">time_store_new</span><span class="p">])</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">processor_data</span><span class="o">.</span><span class="n">set_dataset</span><span class="p">(</span><span class="n">time_store_name</span><span class="p">,</span> <span class="n">time_store_new</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="write_to_console">
+<a class="viewcode-back" href="../../banffprocessor#banffprocessor.processor.write_to_console">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">write_to_console</span><span class="p">(</span><span class="n">text</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Write text to the console.</span>
+
+<span class="sd">    Write the text to the console instead of the log file. This was put in</span>
+<span class="sd">    a function as there may be a better way to do this.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">text</span><span class="p">)</span> <span class="c1"># noqa: T201</span></div>
+
+
+<div class="viewcode-block" id="get_args">
+<a class="viewcode-back" href="../../banffprocessor#banffprocessor.processor.get_args">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">get_args</span><span class="p">(</span><span class="n">args</span><span class="p">:</span><span class="nb">list</span> <span class="o">|</span> <span class="nb">str</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">argparse</span><span class="o">.</span><span class="n">ArgumentParser</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Create an argument parser.</span>
+
+<span class="sd">    Example args -&gt; [&quot;my_filename.xlsx&quot;, &quot;-o&quot;, &quot;/my/out/folder&quot;, &quot;-l&quot;, &quot;fr&quot;]</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">parser</span> <span class="o">=</span> <span class="n">argparse</span><span class="o">.</span><span class="n">ArgumentParser</span><span class="p">(</span><span class="n">description</span><span class="o">=</span><span class="s2">&quot;Execute the Banff Processor using the parameters in the provided JSON file.</span><span class="se">\n\n</span><span class="s2">&quot;</span>
+                                     <span class="s2">&quot;Exécutez le processeur Banff à l&#39;aide des paramètres du fichier JSON fourni.&quot;</span><span class="p">,</span>
+                                     <span class="n">formatter_class</span><span class="o">=</span><span class="n">RawTextHelpFormatter</span><span class="p">)</span>
+
+    <span class="c1"># First argument is positional, required by default</span>
+    <span class="n">parser</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s2">&quot;filename&quot;</span><span class="p">,</span> <span class="n">help</span><span class="o">=</span><span class="s2">&quot;The name of the JSON file that contains the Banff Processor parameters.</span><span class="se">\n</span><span class="s2">&quot;</span>
+                        <span class="s2">&quot;Le nom du fichier JSON qui contient les paramètres du processeur Banff.&quot;</span><span class="p">)</span>
+
+     <span class="c1"># Second argument is set by flag</span>
+    <span class="n">parser</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s2">&quot;-l&quot;</span><span class="p">,</span> <span class="s2">&quot;--lang&quot;</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="s2">&quot;en&quot;</span><span class="p">,</span>
+                        <span class="n">help</span><span class="o">=</span><span class="s2">&quot;Set the language, supported langauges are en for English and fr for French. </span><span class="se">\n</span><span class="s2">&quot;</span>
+                        <span class="s2">&quot;Définissez la langue, les langues prises en charge sont en pour l&#39;anglais et fr pour le français.&quot;</span><span class="p">)</span>
+
+    <span class="k">return</span> <span class="n">parser</span><span class="o">.</span><span class="n">parse_args</span><span class="p">(</span><span class="n">args</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="main">
+<a class="viewcode-back" href="../../banffprocessor#banffprocessor.processor.main">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="n">iargs</span><span class="p">:</span> <span class="nb">list</span> <span class="o">|</span> <span class="nb">str</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Call the Banff Processor function.</span>
+
+<span class="sd">    Used when running this module from the command line. Created to faciliate testing.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">if</span> <span class="n">iargs</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">iargs</span> <span class="o">=</span> <span class="n">sys</span><span class="o">.</span><span class="n">argv</span><span class="p">[</span><span class="mi">1</span><span class="p">:]</span>
+
+    <span class="n">args</span> <span class="o">=</span> <span class="n">get_args</span><span class="p">(</span><span class="n">iargs</span><span class="p">)</span>
+
+    <span class="n">bpp</span><span class="o">.</span><span class="n">set_language</span><span class="p">(</span><span class="n">bpp</span><span class="o">.</span><span class="n">SupportedLanguage</span><span class="p">[</span><span class="n">args</span><span class="o">.</span><span class="n">lang</span><span class="p">])</span>
+
+    <span class="n">my_bp</span> <span class="o">=</span> <span class="n">Processor</span><span class="o">.</span><span class="n">from_file</span><span class="p">(</span><span class="n">args</span><span class="o">.</span><span class="n">filename</span><span class="p">)</span>
+    <span class="n">my_bp</span><span class="o">.</span><span class="n">execute</span><span class="p">()</span>
+    <span class="n">my_bp</span><span class="o">.</span><span class="n">save_outputs</span><span class="p">()</span></div>
+
+
+<div class="viewcode-block" id="init">
+<a class="viewcode-back" href="../../banffprocessor#banffprocessor.processor.init">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">init</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Call the main function.</span>
+
+<span class="sd">    Used when running this module from the command line. Created to faciliate testing.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">if</span> <span class="vm">__name__</span>  <span class="o">==</span> <span class="s2">&quot;__main__&quot;</span><span class="p">:</span>
+        <span class="n">sys</span><span class="o">.</span><span class="n">exit</span><span class="p">(</span><span class="n">main</span><span class="p">())</span></div>
+
+
+<span class="n">init</span><span class="p">()</span>
+</pre></div>
+
+                </article>
+              
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
+<script defer src="../../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+
+  <p class="copyright">
+    
+      © Copyright 2025, Statistics Canada / Statistique Canada.
+      <br/>
+    
+  </p>
+</div>
+      
+        <div class="footer-item">
+
+  <p class="sphinx-version">
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 8.2.3.
+    <br/>
+  </p>
+</div>
+      
+    </div>
+  
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item">
+<p class="theme-version">
+  <!-- # L10n: Setting the PST URL as an argument as this does not need to be localized -->
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.16.1.
+</p></div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
+</html>

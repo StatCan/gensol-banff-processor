@@ -1,0 +1,21 @@
+banffprocessor.processor\_logger package
+========================================
+
+Submodules
+----------
+
+banffprocessor.processor\_logger.processor\_logger module
+---------------------------------------------------------
+
+.. automodule:: banffprocessor.processor_logger.processor_logger
+   :members:
+   :show-inheritance:
+   :undoc-members:
+
+Module contents
+---------------
+
+.. automodule:: banffprocessor.processor_logger
+   :members:
+   :show-inheritance:
+   :undoc-members:

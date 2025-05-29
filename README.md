@@ -22,7 +22,13 @@ The Banff Processor was originally written in SAS 9 using the SAS macro language
 
 The Banff Processor package is installed using the `pip` package installer for Python. For general information about `pip`, please see https://pip.pypa.io/en/stable/cli/pip_install/.
 
-You can find the Banff Processor packages on Statistics Canada’s GitHub release page : https://github.com/StatCan/gensol-banff-processor/releases. A PyPI release will be available soon.
+To install the latest release directly from PyPi:
+
+```shell
+pip install banffprocessor
+```
+
+Alternatively, you can also find the Banff Processor packages on Statistics Canada’s GitHub release page : https://github.com/StatCan/gensol-banff-processor/releases.
 
 Download the binary artifact from the release page. Then, follow the installation instructions below :
 
@@ -78,7 +84,13 @@ Le processeur Banff a été initialement écrit en SAS 9 à l'aide du langage ma
 
 Le paquet Banff Processor est installé à l'aide du programme d'installation du paquet `pip` de Python. Pour de l'information générale sur `pip`, veuillez consulter https://pip.pypa.io/en/stable/cli/pip_install/.
 
-Vous pouvez trouver le package Banff Processor sur la page de publication GitHub de Statistique Canada : https://github.com/StatCan/gensol-banff-processor/releases. Une version PyPI sera bientôt disponible.
+Pour installer la dernière version directement depuis PyPi:
+
+```shell
+pip install banffprocessor
+```
+
+Alternativement, vous pouvez trouver le package Banff Processor sur la page de publication GitHub de Statistique Canada : https://github.com/StatCan/gensol-banff-processor/releases.
 
 Téléchargez le binaire depuis la page de publication. Ensuite, suivez les instructions d’installation ci-dessous :
 

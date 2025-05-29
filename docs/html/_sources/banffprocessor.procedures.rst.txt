@@ -1,0 +1,45 @@
+banffprocessor.procedures package
+=================================
+
+Subpackages
+-----------
+
+.. toctree::
+   :maxdepth: 4
+
+   banffprocessor.procedures.banff_procedures
+
+Submodules
+----------
+
+banffprocessor.procedures.factory module
+----------------------------------------
+
+.. automodule:: banffprocessor.procedures.factory
+   :members:
+   :show-inheritance:
+   :undoc-members:
+
+banffprocessor.procedures.loader module
+---------------------------------------
+
+.. automodule:: banffprocessor.procedures.loader
+   :members:
+   :show-inheritance:
+   :undoc-members:
+
+banffprocessor.procedures.procedure\_interface module
+-----------------------------------------------------
+
+.. automodule:: banffprocessor.procedures.procedure_interface
+   :members:
+   :show-inheritance:
+   :undoc-members:
+
+Module contents
+---------------
+
+.. automodule:: banffprocessor.procedures
+   :members:
+   :show-inheritance:
+   :undoc-members:

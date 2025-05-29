@@ -1,0 +1,802 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Guide de migration du processeur Banff version 1 &#8212; Banff Processor 2.0.2 documentation</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=8f2a1f02" />
+    <link rel="stylesheet" type="text/css" href="../_static/custom.css?v=2a807888" />
+  
+  <!-- So that users can add custom icons -->
+  <script src="../_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
+
+    <script src="../_static/documentation_options.js?v=29701289"></script>
+    <script src="../_static/doctools.js?v=9bcbadda"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'fr/migrating-from-sas-python';</script>
+    <link rel="index" title="Index" href="../genindex" />
+    <link rel="search" title="Search" href="../search" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="../search"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class="col-lg-3 navbar-header-items__start">
+    
+      <div class="navbar-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../index">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../_static/banff_white.png" class="logo__image only-light" alt="Banff Processor 2.0.2 documentation - Home"/>
+    <img src="../_static/banff_white.png" class="logo__image only-dark pst-js-only" alt="Banff Processor 2.0.2 documentation - Home"/>
+  
+  
+</a></div>
+    
+  </div>
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../en/index">
+    English
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="index">
+    Français
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+        </div>
+      
+      
+        <div class="navbar-item">
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button></div>
+      
+        <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/StatCan/gensol-banff-processor" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fab fa-github fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+</ul></div>
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+    </div>
+  
+
+  
+    <button class="pst-navbar-icon sidebar-toggle secondary-toggle" aria-label="On this page">
+      <span class="fa-solid fa-outdent"></span>
+    </button>
+  
+</div>
+
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+        
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar hide-on-wide">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          
+          
+            <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../en/index">
+    English
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="index">
+    Français
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+          
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button></div>
+        
+          <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/StatCan/gensol-banff-processor" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fab fa-github fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+</ul></div>
+        
+      </div>
+    
+  </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+<nav aria-label="Breadcrumb" class="d-print-none">
+  <ul class="bd-breadcrumbs">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="../index" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis">Guide de migration du processeur Banff version 1</span></li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section id="guide-de-migration-du-processeur-banff-version-1">
+<h1>Guide de migration du processeur Banff version 1<a class="headerlink" href="#guide-de-migration-du-processeur-banff-version-1" title="Link to this heading">#</a></h1>
+<section id="avant-propos">
+<h2>Avant-propos<a class="headerlink" href="#avant-propos" title="Link to this heading">#</a></h2>
+<p>Ce document est destiné aux utilisateurs de la version SAS du processeur Banff et sert de complément au guide de l’utilisateur principal pour faciliter la transition de SAS (processeur Banff version 1) vers Python (processeur Banff version 2).</p>
+</section>
+<section id="migration-de-sas-vers-python">
+<h2>Migration de SAS vers Python<a class="headerlink" href="#migration-de-sas-vers-python" title="Link to this heading">#</a></h2>
+<p>La version SAS du Banff Processor remonte à 2008, elle est utilisée à Statistique Canada depuis de nombreuses années. La version Python est semblable à la version SAS à bien des égards et des efforts ont été déployés pour rendre les métadonnées rétrocompatibles lorsque c’est possible. Ce guide met en évidence certaines des principales différences pour aider les utilisateurs à migrer vers la nouvelle version.</p>
+<p>En général, les fichiers de métadonnées XML de la version 1 sont compatibles avec la version 2, avec les exceptions suivantes:</p>
+<ul class="simple">
+<li><p>Les programmes personnalisés basés sur SAS (ou les programmes définis par l’utilisateur) ne fonctionneront pas; ils doivent être remplacés par des plugiciels. Les directives pour développer des plugiciels sont disponibles dans le guide de l’utilisateur.</p></li>
+<li><p>La syntaxe des expressions doit être révisée; Les expressions propres à SAS doivent être converties en syntaxe SQL-Lite.</p></li>
+<li><p>Le processeur basé sur SAS incluait certains comportements par défaut qui ont été supprimés pour augmenter la modularité et la transparence. Le comportement passé peut être reproduit avec des contrôles de processus; voir la section sur les contrôles de processus dans le guide de l’utilisateur pour plus de détails.</p></li>
+</ul>
+<section id="nouvelles-fonctionnalites">
+<h3>Nouvelles fonctionnalités<a class="headerlink" href="#nouvelles-fonctionnalites" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>Blocs de processus: les blocs de processus permettent aux utilisateurs d’appeler une stratégie au sein d’une stratégie. Dans le processeur SAS, la table des tâches pouvait contenir plusieurs tâches, mais elles peuvent désormais être enchaînées pour créer une tâche principale. Cela se fait en utilisant le processus appelé tâche et en spécifiant l’identification d’une stratégie dans la colonne specid.</p></li>
+<li><p>Contrôles de processus: les contrôles de processus permettent d’apporter des modifications aux entrées d’une étape de traitement sans risquer de modifier les principaux ensembles de données de travail. Cela se faisait généralement dans le processeur SAS avec des processus définis par l’utilisateur, ou les modifications d’entrée étaient codées en dur dans le processeur lui-même.</p></li>
+<li><p>Le processeur Banff prend désormais en charge les longueurs variables jusqu’à 64 caractères. Une variable doit toujours commencer par un caractère ou un trait de soulignement et se composer uniquement de caractères alphabétiques, de chiffres et de traits de soulignement (les espaces avec les noms de variables ne sont pas pris en charge).</p></li>
+</ul>
+</section>
+</section>
+<section id="changements-de-comportement">
+<h2>Changements de comportement<a class="headerlink" href="#changements-de-comportement" title="Link to this heading">#</a></h2>
+<ol class="arabic simple">
+<li><p>Une différence clé est que le processeur SAS Banff était un générateur de code. Le processeur créait un programme SAS, puis le programme était exécuté. Il y avait une option pour enregistrer le programme généré, qui pouvait être exécuté et utilisé à des fins de débogage. Ce n’est plus le cas avec le processeur Python, le processus est exécuté de manière dynamique en un seul passage.</p></li>
+<li><p>Dans le processeur SAS, la bibliothèque de travail SAS était utilisée pour stocker et accéder aux ensembles de données temporaires. Dans Python, il existe quelques alternatives. En général, les données sont accessibles dans des processus définis par l’utilisateur (plugiciels) via l’objet ProcessorData, cependant, les développeurs de plugiciels peuvent choisir de stocker les fichiers de diagnostic dans un autre emplacement tel qu’une base de données duckdb ou un dossier approprié. L’utilisation de la bibliothèque tempfile est une option, mais elle enregistre les données dans le profil de l’utilisateur par défaut, ce qui peut ne pas être approprié dans certaines situations.</p></li>
+<li><p>Le processeur ne supprime plus automatiquement les enregistrements trouvés dans le fichier de rejet des données d’entrée d’une étape d’imputation. Si ce comportement est souhaité, le <a class="reference internal" href="processor-user-guide#controles-de-processus"><span class="std std-ref">contrôle de processus</span></a> <code class="docutils literal notranslate"><span class="pre">exclude_rejected</span></code> peut être utilisé. Notez que les données rejetées sont accessibles dans un processus défini par l’utilisateur avec <code class="docutils literal notranslate"><span class="pre">processor_data.get_output_dataset(&quot;outreject&quot;)</span></code>.</p></li>
+<li><p>Lors de l’appel de la procédure ErrorLoc, le statut des valeurs aberrantes n’est plus pris en compte, seules les valeurs marquées comme FTI dans le fichier de statut d’entrée. Si ce comportement est souhaité, un processus défini par l’utilisateur (plugiciels) peut être créé. Le plan à moyen terme serait de remplacer cette fonctionnalité par un contrôle/filtre de processus.</p></li>
+</ol>
+</section>
+<section id="les-entrees">
+<h2>Les entrées<a class="headerlink" href="#les-entrees" title="Link to this heading">#</a></h2>
+<section id="parametres-de-macro-sas">
+<h3>Paramètres de macro SAS<a class="headerlink" href="#parametres-de-macro-sas" title="Link to this heading">#</a></h3>
+<p>Les variables de macro SAS sont désormais des paramètres de fonction Python. Avec le nouveau processeur, ces paramètres peuvent être spécifiés dans un fichier JSON. Alternativement, les entrées peuvent être spécifiées directement lors de la création d’un objet <code class="docutils literal notranslate"><span class="pre">Processor</span></code>.</p>
+<p>Les noms de paramètres ont été modifiés pour respecter les conventions de dénomination Python et améliorés pour être plus cohérents et descriptifs. Certains ont été remplacés par des options plus génériques ou ne sont plus applicables. Notez également que les noms de paramètres sont désormais <strong>sensibles à la casse</strong>.</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>SAS</p></th>
+<th class="head"><p>Python</p></th>
+<th class="head"><p>Remarques</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>jobid</p></td>
+<td><p>job_id</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p>id</p></td>
+<td><p>unit_id</p></td>
+<td><p>Cette modification était nécessaire car id est une fonction Python et il n’est pas recommandé de l’utiliser comme nom de variable.</p></td>
+</tr>
+<tr class="row-even"><td><p>dataLib</p></td>
+<td><p>input_folder</p></td>
+<td><p>Dans SAS, dataLib était un libref, dans Python, un dossier de fichiers est spécifié. Cependant, les ensembles de données peuvent également être spécifiés directement lors de la création d’un objet Processor. Si aucun ensemble de données n’est spécifié, le processeur recherchera dans le dossier d’entrée le nom de fichier spécifié associé au fichier d’entrée.</p></td>
+</tr>
+<tr class="row-odd"><td><p>curFile</p></td>
+<td><p>indata_filename</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p>outdataLib</p></td>
+<td><p>output_folder</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p>auxFile</p></td>
+<td><p>indata_aux_filename</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p></p></td>
+<td><p>instatus_filename</p></td>
+<td><p>Il s’agit d’un nouveau paramètre facultatif dans le processeur Python qui permet de spécifier les valeurs d’état initiales.</p></td>
+</tr>
+<tr class="row-odd"><td><p>histFile</p></td>
+<td><p>indata_hist_filename</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p>histStatus</p></td>
+<td><p>instatus_hist_filename</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p>custProgFref</p></td>
+<td><p>user_plugins_folder</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p>flatfileFref</p></td>
+<td><p></p></td>
+<td><p>Supprimé du processeur Python car cette option était rarement utilisée.</p></td>
+</tr>
+<tr class="row-odd"><td><p>seed</p></td>
+<td><p>seed</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p>logType</p></td>
+<td><p>log_level</p></td>
+<td><p>Le paramètre log_level fournit des fonctionnalités similaires à logType.</p></td>
+</tr>
+<tr class="row-odd"><td><p>editstatsOutputType</p></td>
+<td><p></p></td>
+<td><p>Remplacé par process_output_type.</p></td>
+</tr>
+<tr class="row-even"><td><p>estimatorOutputType</p></td>
+<td><p></p></td>
+<td><p>Remplacé par process_output_type.</p></td>
+</tr>
+<tr class="row-odd"><td><p>massImputOutputType</p></td>
+<td><p></p></td>
+<td><p>Remplacé par process_output_type.</p></td>
+</tr>
+<tr class="row-even"><td><p>randnumvar</p></td>
+<td><p>randnumvar</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p>genCode/fgenprog</p></td>
+<td><p></p></td>
+<td><p>N’est plus applicable, un code de programme n’est plus généré et exécuté.</p></td>
+</tr>
+<tr class="row-even"><td><p>editGroupFilter</p></td>
+<td><p></p></td>
+<td><p>Remplacé par le contrôle de processus EDIT_GROUP_FILTER.</p></td>
+</tr>
+<tr class="row-odd"><td><p>tempLib</p></td>
+<td><p></p></td>
+<td><p>N’est plus applicable.</p></td>
+</tr>
+<tr class="row-even"><td><p>bpOptions</p></td>
+<td><p></p></td>
+<td><p>Ne sont plus applicables, ces options étaient TIME, KEEPTEMP et NOBYGRPSTATS.</p></td>
+</tr>
+<tr class="row-odd"><td><p></p></td>
+<td><p>save_format</p></td>
+<td><p>Il s’agit d’une nouvelle option du processeur Python, le processeur SAS a produit des ensembles de données SAS. Parquet est actuellement le format d’enregistrement recommandé (.parq), CSV est fourni à des fins de test et de débogage.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+</section>
+<section id="fichiers-d-entree">
+<h2>Fichiers d’entrée<a class="headerlink" href="#fichiers-d-entree" title="Link to this heading">#</a></h2>
+<section id="fichiers-de-donnees-d-entree">
+<h3>Fichiers de données d’entrée<a class="headerlink" href="#fichiers-de-donnees-d-entree" title="Link to this heading">#</a></h3>
+<p>Dans le processeur SAS, les fichiers de données d’entrée étaient des ensembles de données SAS. Il y avait essentiellement deux types de données: caractères (chaînes de largeur fixe) et numériques (nombres à virgule flottante 64 bits). Dans le processeur Python, les fichiers parquet sont le format de fichier recommandé. Ces fichiers sont lus et principalement stockés sous forme de tableaux fléchés, bien que, dans certains cas, les données soient converties dans d’autres formats tels que les trames de données pandas ou les tables duckdb. Il existe de nombreux types différents, nous recommandons généralement str (chaînes de longueur variable) et float64 (nombres à virgule flottante 64 bits), bien que différents types puissent être utilisés (float32, float16, int8, int16, …). Les types de variables doivent être vérifiés et ajustés si nécessaire. La principale raison pour laquelle les fichiers CSV ne sont pas recommandés est le manque de métadonnées pour garantir que les types sont définis correctement lors de la lecture et de l’écriture des fichiers.</p>
+</section>
+<section id="fichiers-de-metadonnees">
+<h3>Fichiers de métadonnées<a class="headerlink" href="#fichiers-de-metadonnees" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>La structure des fichiers de métadonnées dans le processeur Python est essentiellement la même que celle de la version basée sur SAS, tous les nouveaux éléments sont facultatifs. Cependant, le contenu des métadonnées peut devoir être ajusté. Les expressions devront probablement être mises à jour pour refléter la nouvelle syntaxe.</p></li>
+<li><p>Les longueurs maximales de la plupart des colonnes de métadonnées ont été augmentées. Par exemple, auparavant, de nombreux champs d’ID avaient une limite de 30 caractères, cette limite a été augmentée à 100 caractères.</p></li>
+<li><p>Bien que les fichiers de métadonnées acceptent toujours les valeurs YES/NO ou Y/N, elles sont stockées dans le processeur sous forme de valeurs booléennes et seront donc converties en valeurs Vrai/Faux.</p></li>
+<li><p>Le processeur Banff dispose toujours d’un modèle Excel pour faciliter la création de fichiers XML comme prévu par le processeur Banff, cependant, la macro Excel a été supprimée du modèle et le package banffprocessor inclut désormais un utilitaire pour convertir le classeur Excel en XML. Cet utilitaire peut être appelé à partir de la ligne de commande ou à partir d’un programme Python. L’utilitaire de ligne de commande s’appelle <code class="docutils literal notranslate"><span class="pre">banffconvert</span></code>. L’utilitaire est défini dans <code class="docutils literal notranslate"><span class="pre">banffprocessor.util.metadata_excel_to_xml</span></code></p></li>
+</ul>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Fichier de métadonnées</p></th>
+<th class="head"><p>Remarques</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>JOBS</p></td>
+<td><p>Jobs dispose d’un nouvel élément facultatif appelé controlid. Cette nouvelle colonne est utilisée pour lier les spécifications dans les métadonnées des contrôles de processus. Notez également que SEQNO peut désormais contenir des décimales, alors qu’auparavant SEQNO ne pouvait contenir qu’un entier.</p></td>
+</tr>
+<tr class="row-odd"><td><p>USERVARS</p></td>
+<td><p>La structure n’a pas changé.</p></td>
+</tr>
+<tr class="row-even"><td><p>EDITS</p></td>
+<td><p>La structure n’a pas changé. La syntaxe des modifications n’a pas changé.</p></td>
+</tr>
+<tr class="row-odd"><td><p>EDITGROUPS</p></td>
+<td><p>Aucun changement.</p></td>
+</tr>
+<tr class="row-even"><td><p>VERIFYEDITSPECS</p></td>
+<td><p>Aucun changement.</p></td>
+</tr>
+<tr class="row-odd"><td><p>OUTLIERSPECS</p></td>
+<td><p>Aucun changement.</p></td>
+</tr>
+<tr class="row-even"><td><p>ERRORLOCSPECS</p></td>
+<td><p>Aucun changement.</p></td>
+</tr>
+<tr class="row-odd"><td><p>DONORSPECS</p></td>
+<td><p>Aucun changement.</p></td>
+</tr>
+<tr class="row-even"><td><p>ESTIMATORSPECS</p></td>
+<td><p>Aucun changement.</p></td>
+</tr>
+<tr class="row-odd"><td><p>PRORATESPECS</p></td>
+<td><p>Aucun changement.</p></td>
+</tr>
+<tr class="row-even"><td><p>MASSIMPUTATIONSPECS</p></td>
+<td><p>Aucun changement.</p></td>
+</tr>
+<tr class="row-odd"><td><p>ALGORITHMS</p></td>
+<td><p>Les algorithmes définis par l’utilisateur ne peuvent plus remplacer les algorithmes des estimateurs intégrés, un nouveau nom doit être choisi.</p></td>
+</tr>
+<tr class="row-even"><td><p>ESTIMATORS</p></td>
+<td><p>Aucun changement.</p></td>
+</tr>
+<tr class="row-odd"><td><p>EXPRESSIONS</p></td>
+<td><p>La structure n’a pas changé. Cependant, les expressions sont désormais basées sur SQLite tel qu’implémenté dans <a class="reference external" href="https://duckdb.org/docs/sql/expressions/overview">duckdb</a>. Une différence par exemple serait que les constantes de chaîne doivent être placées entre guillemets simples plutôt qu’entre guillemets doubles ; <code class="docutils literal notranslate"><span class="pre">P53_05_1=&quot;1&quot;</span></code> devrait être remplacé par <code class="docutils literal notranslate"><span class="pre">P53_05_1='1'</span></code>.</p></td>
+</tr>
+<tr class="row-even"><td><p>VARLISTS</p></td>
+<td><p>Aucun changement.</p></td>
+</tr>
+<tr class="row-odd"><td><p>WEIGHTS</p></td>
+<td><p>Aucun changement.</p></td>
+</tr>
+<tr class="row-even"><td><p>PROCESSCONTROLS</p></td>
+<td><p>Il s’agit d’un nouveau fichier de métadonnées utilisé pour créer des spécifications de contrôle de processus.</p></td>
+</tr>
+<tr class="row-odd"><td><p>PROCESSOUTPUTS</p></td>
+<td><p>Il s’agit d’un nouveau fichier de métadonnées utilisé pour contrôler les sorties conservées. Il est utilisé lorsque process_output_type=’Custom’</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="processus-definis-par-l-utilisateur-pdu">
+<h3>Processus définis par l’utilisateur (PDU)<a class="headerlink" href="#processus-definis-par-l-utilisateur-pdu" title="Link to this heading">#</a></h3>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>SAS</p></th>
+<th class="head"><p>Python</p></th>
+<th class="head"><p>Remarques</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>parmKeyVar, parmByList, parmSeqno, …</p></td>
+<td><p>processor_data.input_params.unit_id,  processor_data.by_varlist, processor_data.current_job_step.seqno, …</p></td>
+<td><p>Dans le processeur SAS, les variables macro globales SAS étaient utilisées pour accéder aux paramètres d’entrée. Désormais, les paramètres d’entrée sont disponibles via les attributs d’objet processor_data tels que input_params et current_job_step</p></td>
+</tr>
+<tr class="row-odd"><td><p>work.jobs</p></td>
+<td><p>processor_data.dbconn.sql(“select * from Banff.JOBS”).to_arrow_table()</p></td>
+<td><p>Au lieu d’accéder aux tables de métadonnées sous forme d’ensembles de données SAS dans la bibliothèque de travail SAS, les tables de métadonnées sont accessibles dans une base de données duckdb via processor_data.dbconn.</p></td>
+</tr>
+<tr class="row-even"><td><p>work.statusall</p></td>
+<td><p>status_table = processor_data.get_dataset(“status_file”, table_format=”arrow”)</p></td>
+<td><p>Au lieu d’accéder aux tables de données sous forme d’ensembles de données SAS dans la bibliothèque de travail SAS, les ensembles de données sont accessibles via la fonction get_dataset de processor_data. L’ensemble de données peut être renvoyé au format arrow ou pandas. La fonction set_dataset peut être utilisée pour enregistrer un ensemble de données de sortie.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+</section>
+<section id="output-files">
+<h2>Output files<a class="headerlink" href="#output-files" title="Link to this heading">#</a></h2>
+<p>Le processeur SAS produisait un fichier cumulatif avec le suffixe all. Ce suffixe a été supprimé.</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>SAS</p></th>
+<th class="head"><p>Python</p></th>
+<th class="head"><p>Remarques</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>imputedfile</p></td>
+<td><p>imputed_file</p></td>
+<td><p>Cette sortie reste la même.</p></td>
+</tr>
+<tr class="row-odd"><td><p>statusall</p></td>
+<td><p>status_file</p></td>
+<td><p>Les colonnes du fichier d’état ont été réduites. Les colonnes standard sont la variable d’ID d’unité ainsi que FIELDID, STATUS, VALUE, JOBID et SEQNO. VALUE est une nouvelle colonne, editgroupid, outliersstatus et les variables by ont été supprimées.</p></td>
+</tr>
+<tr class="row-even"><td><p>cumulatifstatusall</p></td>
+<td><p>status_log</p></td>
+<td><p>Comme le fichier d’état, les colonnes de cette sortie ont été standardisées.</p></td>
+</tr>
+<tr class="row-odd"><td><p></p></td>
+<td><p>time_store</p></td>
+<td><p>Il s’agit d’un nouvel ensemble de données qui stocke l’heure de début, l’heure de fin et la durée de chaque étape de traitement ainsi que le temps d’exécution cumulé.</p></td>
+</tr>
+<tr class="row-even"><td><p>acceptableall</p></td>
+<td><p>outacceptable</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p>donormapall</p></td>
+<td><p>outdonormap</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p>editapplicall</p></td>
+<td><p>outedit_applic</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p>editstatusall</p></td>
+<td><p>outedit_status</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p>estefall</p></td>
+<td><p>outest_ef</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p>estlrall</p></td>
+<td><p>outest_lr</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p>estparmsall</p></td>
+<td><p>outest_parm</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p>globalstatusall</p></td>
+<td><p>outglobal_status</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p>keditsstatusall</p></td>
+<td><p>outk_edits_status</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p>matchfieldstatall</p></td>
+<td><p>outmatching_fields</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p>outlierstatusall</p></td>
+<td><p>outlier_status</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p>randomerrorall</p></td>
+<td><p>outrand_err</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p>reducededitsall</p></td>
+<td><p>outedits_reduced</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p></p></td>
+<td><p>outreject</p></td>
+<td><p>Le fichier outreject est le dernier ensemble de données outreject généré par Prorate ou ErrorLoc. Il s’agissait uniquement d’un ensemble de données de travail dans la version SAS appelé <code class="docutils literal notranslate"><span class="pre">rejected</span></code>, dans la version Python, il est inclus comme ensemble de données de sortie.</p></td>
+</tr>
+<tr class="row-even"><td><p>rejectedall</p></td>
+<td><p>outreject_all</p></td>
+<td><p>Le fichier rejeté est un cas particulier où le suffixe <code class="docutils literal notranslate"><span class="pre">all</span></code> a été conservé. Cela est dû au fait que Prorate et ErrorLoc traitent cet ensemble de données de manière légèrement différente. Consultez le guide de l’utilisateur pour plus d’informations.</p></td>
+</tr>
+<tr class="row-odd"><td><p>varsroleall</p></td>
+<td><p>outvars_role</p></td>
+<td><p></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="conclusion">
+<h2>Conclusion<a class="headerlink" href="#conclusion" title="Link to this heading">#</a></h2>
+<p>Pour plus d’informations sur l’utilisation de Banff et du processeur Banff, veuillez consulter les principaux guides d’utilisation. Nous espérons que ces informations vous aideront à passer de la version 1 à la version 2.</p>
+</section>
+</section>
+
+
+                </article>
+              
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+<div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> On this page
+  </div>
+  <nav class="bd-toc-nav page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#avant-propos">Avant-propos</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#migration-de-sas-vers-python">Migration de SAS vers Python</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#nouvelles-fonctionnalites">Nouvelles fonctionnalités</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#changements-de-comportement">Changements de comportement</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#les-entrees">Les entrées</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#parametres-de-macro-sas">Paramètres de macro SAS</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#fichiers-d-entree">Fichiers d’entrée</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#fichiers-de-donnees-d-entree">Fichiers de données d’entrée</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#fichiers-de-metadonnees">Fichiers de métadonnées</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#processus-definis-par-l-utilisateur-pdu">Processus définis par l’utilisateur (PDU)</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#output-files">Output files</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#conclusion">Conclusion</a></li>
+</ul>
+  </nav></div>
+
+  <div class="sidebar-secondary-item">
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../_sources/fr/migrating-from-sas-python.md.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
+<script defer src="../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+
+  <p class="copyright">
+    
+      © Copyright 2025, Statistics Canada / Statistique Canada.
+      <br/>
+    
+  </p>
+</div>
+      
+        <div class="footer-item">
+
+  <p class="sphinx-version">
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 8.2.3.
+    <br/>
+  </p>
+</div>
+      
+    </div>
+  
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item">
+<p class="theme-version">
+  <!-- # L10n: Setting the PST URL as an argument as this does not need to be localized -->
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.16.1.
+</p></div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
+</html>

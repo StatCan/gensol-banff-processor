@@ -1,0 +1,1103 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Metadata Files &#8212; Banff Processor 2.0.2 documentation</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=8f2a1f02" />
+    <link rel="stylesheet" type="text/css" href="../_static/custom.css?v=2a807888" />
+  
+  <!-- So that users can add custom icons -->
+  <script src="../_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
+
+    <script src="../_static/documentation_options.js?v=29701289"></script>
+    <script src="../_static/doctools.js?v=9bcbadda"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'en/metadata-tables';</script>
+    <link rel="index" title="Index" href="../genindex" />
+    <link rel="search" title="Search" href="../search" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="../search"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class="col-lg-3 navbar-header-items__start">
+    
+      <div class="navbar-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../index">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../_static/banff_white.png" class="logo__image only-light" alt="Banff Processor 2.0.2 documentation - Home"/>
+    <img src="../_static/banff_white.png" class="logo__image only-dark pst-js-only" alt="Banff Processor 2.0.2 documentation - Home"/>
+  
+  
+</a></div>
+    
+  </div>
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="index">
+    English
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../fr/index">
+    Français
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+        </div>
+      
+      
+        <div class="navbar-item">
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button></div>
+      
+        <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/StatCan/gensol-banff-processor" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fab fa-github fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+</ul></div>
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+    </div>
+  
+
+  
+    <button class="pst-navbar-icon sidebar-toggle secondary-toggle" aria-label="On this page">
+      <span class="fa-solid fa-outdent"></span>
+    </button>
+  
+</div>
+
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+        
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar hide-on-wide">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          
+          
+            <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="index">
+    English
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../fr/index">
+    Français
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+          
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button></div>
+        
+          <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/StatCan/gensol-banff-processor" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fab fa-github fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+</ul></div>
+        
+      </div>
+    
+  </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+<nav aria-label="Breadcrumb" class="d-print-none">
+  <ul class="bd-breadcrumbs">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="../index" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis">Metadata Files</span></li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section id="metadata-files">
+<h1>Metadata Files<a class="headerlink" href="#metadata-files" title="Link to this heading">#</a></h1>
+<p>Overall, the Banff Processor uses 18 metadata tables, which can be classified as follows:</p>
+<p>Tables describing the overall process flow:</p>
+<ul class="simple">
+<li><p>JOBS (required): Defines the overall process flow, including the process steps to execute and sequencing</p></li>
+<li><p>PROCESSCONTROLS: Optional <a class="reference internal" href="processor-user-guide#process-controls"><span class="std std-ref">Process Controls</span></a> give more control over individual process steps</p></li>
+</ul>
+<p>Tables defining process step parameters for built-in Banff procedures:</p>
+<ul class="simple">
+<li><p>VERIFYEDITSPECS: Specifications for the <code class="docutils literal notranslate"><span class="pre">verifyedits</span></code> procedure</p></li>
+<li><p>OUTLIERSPECS: Specifications for the <code class="docutils literal notranslate"><span class="pre">outlier</span></code> procedure</p></li>
+<li><p>ERRORLOCSPECS: Specifications for the <code class="docutils literal notranslate"><span class="pre">errorloc</span></code> procedure</p></li>
+<li><p>DONORSPECS: Specifications for the <code class="docutils literal notranslate"><span class="pre">donorimp</span></code> procedure</p></li>
+<li><p>ESTIMATORSPECS: Specifications for the <code class="docutils literal notranslate"><span class="pre">estimator</span></code> procedure</p>
+<ul>
+<li><p>ESTIMATORS: Additional parameters for <code class="docutils literal notranslate"><span class="pre">inestimator</span></code> table</p></li>
+<li><p>ALGORITHMS: Additional parameters for <code class="docutils literal notranslate"><span class="pre">inalgorithm</span></code> table</p></li>
+</ul>
+</li>
+<li><p>PRORATESPECS: Specifications for the <code class="docutils literal notranslate"><span class="pre">prorate</span></code> procedure</p></li>
+<li><p>MASSIMPUTATIONSPECS: Specifications for the <code class="docutils literal notranslate"><span class="pre">massimp</span></code> procedure</p></li>
+</ul>
+<p>Tables used to define edits, used by the <code class="docutils literal notranslate"><span class="pre">verifyedits</span></code>,<code class="docutils literal notranslate"><span class="pre">editstats</span></code>,<code class="docutils literal notranslate"><span class="pre">errorloc</span></code>,<code class="docutils literal notranslate"><span class="pre">deterministic</span></code>,<code class="docutils literal notranslate"><span class="pre">donorimp</span></code>, and <code class="docutils literal notranslate"><span class="pre">prorate</span></code> procedures:</p>
+<ul class="simple">
+<li><p>EDITS: List of individual edits</p></li>
+<li><p>EDITGROUPS: Combinations of edits referenced by individual process steps</p></li>
+</ul>
+<p>Parameters used by multiple procedures:</p>
+<ul class="simple">
+<li><p>VARLISTS: Lists of variables and ordering</p></li>
+<li><p>WEIGHTS: Weights, used by some procedures</p></li>
+<li><p>EXPRESSIONS: Exclusion expressions used by some procedures</p></li>
+</ul>
+<p>Process step parameters for <a class="reference internal" href="processor-user-guide#user-defined-procedures"><span class="std std-ref">User Defined Procedures</span></a>:</p>
+<ul class="simple">
+<li><p>USERVARS: Specifications for user-defined procedures (plugins)</p></li>
+</ul>
+<p>Data management:</p>
+<ul class="simple">
+<li><p>PROCESSOUTPUTS: Specify which outputs should be saved from each procedure</p></li>
+</ul>
+<section id="general-notes">
+<h2>General notes<a class="headerlink" href="#general-notes" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p>ID metadata fields such as jobid or controlid can be a maximum of 100 characters</p></li>
+<li><p>Variable names on your input datasets can be to up 64 characters long.</p></li>
+<li><p>Case sensitivity: Consistency must be maintained across metadata with respect to casing. This includes matching fields such as specID and controlID as well as variable names.</p></li>
+<li><p>Variable names need to respect the casing of the column names on the applicable input. In certain contexts ‘income’ and ‘INCOME’ may be considered different variables on a table but in others they are not. For example, the expressions metadata is case insensitive. For this reason it is recommended to not re-use column names simply with different casing and to respect casing across data and metadata files.</p></li>
+</ul>
+</section>
+<section id="jobs">
+<h2>Jobs<a class="headerlink" href="#jobs" title="Link to this heading">#</a></h2>
+<p>Define your statistical data editing process flows.</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Column</p></th>
+<th class="head"><p>Type</p></th>
+<th class="head"><p>Primary Key</p></th>
+<th class="head"><p>Foreign Key</p></th>
+<th class="head"><p>Required</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>jobid</p></td>
+<td><p>string</p></td>
+<td><p>✔</p></td>
+<td><p></p></td>
+<td><p>✔</p></td>
+<td><p>The value of the jobid column is used to extract from the table all the rows that belong to the same E&amp;I strategy or Process Block.</p></td>
+</tr>
+<tr class="row-odd"><td><p>seqno</p></td>
+<td><p>float</p></td>
+<td><p>✔</p></td>
+<td><p></p></td>
+<td><p>✔</p></td>
+<td><p>The order of execution is defined by the seqno column which is read from the lowest value to the largest.  The Banff processor will run even if there are gaps in the seqno values.  For example, a value of SEQNO=10 can be followed in the next row with a value of 20.</p></td>
+</tr>
+<tr class="row-even"><td><p>controlid</p></td>
+<td><p>string</p></td>
+<td><p></p></td>
+<td><p>✔</p></td>
+<td><p></p></td>
+<td><p>Points to an ID defined in the ProcessControls metadata table.</p></td>
+</tr>
+<tr class="row-odd"><td><p>process</p></td>
+<td><p>string</p></td>
+<td><p></p></td>
+<td><p>✔</p></td>
+<td><p>✔</p></td>
+<td><p>The value of the process column identifies the name of the Banff procedure or plug-in to be executed.</p></td>
+</tr>
+<tr class="row-even"><td><p>specid</p></td>
+<td><p>string</p></td>
+<td><p></p></td>
+<td><p>✔</p></td>
+<td><p>✔</p></td>
+<td><p>The specid column points to an ID in another metadata tables depending on the value of the PROCESS column.</p></td>
+</tr>
+<tr class="row-odd"><td><p>editgroupid</p></td>
+<td><p>string</p></td>
+<td><p></p></td>
+<td><p>✔</p></td>
+<td><p></p></td>
+<td><p>The editgroupid column points to an entry in the EditGroups metadata table</p></td>
+</tr>
+<tr class="row-even"><td><p>byid</p></td>
+<td><p>string</p></td>
+<td><p></p></td>
+<td><p>✔</p></td>
+<td><p></p></td>
+<td><p>The byid column points to the VarLists metadata table.  It can be used by all procedures except VerifyEdits and the Job process. The variable list indicated will be used for by-group processing</p></td>
+</tr>
+<tr class="row-odd"><td><p>acceptnegative</p></td>
+<td><p>string</p></td>
+<td><p></p></td>
+<td><p></p></td>
+<td><p></p></td>
+<td><p>The acceptnegative column is used to indicate whether negative values are considered valid values or not by the process.  If not specified (left blank) or if the value is N, the accept negative option will not be specified, otherwise (if the value of the column is Y), the accept negative option will be set to True.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="process-controls">
+<h2>Process Controls<a class="headerlink" href="#process-controls" title="Link to this heading">#</a></h2>
+<p>Define specifications for Process Controls.</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Column</p></th>
+<th class="head"><p>Type</p></th>
+<th class="head"><p>Primary Key</p></th>
+<th class="head"><p>Foreign Key</p></th>
+<th class="head"><p>Required</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>controlid</p></td>
+<td><p>string</p></td>
+<td><p>✔</p></td>
+<td><p></p></td>
+<td><p>✔</p></td>
+<td><p>ID used to identify the control.</p></td>
+</tr>
+<tr class="row-odd"><td><p>targetfile</p></td>
+<td><p>string</p></td>
+<td><p>✔</p></td>
+<td><p></p></td>
+<td><p>✔</p></td>
+<td><p>The name of the dataset file to apply the control to. This field is NOT required if parameter=EDIT_GROUP_FILTER.</p></td>
+</tr>
+<tr class="row-even"><td><p>parameter</p></td>
+<td><p>string</p></td>
+<td><p>✔</p></td>
+<td><p></p></td>
+<td><p>✔</p></td>
+<td><p>The type of process control to apply.</p></td>
+</tr>
+<tr class="row-odd"><td><p>value</p></td>
+<td><p>string</p></td>
+<td><p></p></td>
+<td><p></p></td>
+<td><p>✔</p></td>
+<td><p>The query (in SQL-lite syntax) to apply for this control. This field is not required and must be empty if parameter=EDIT_GROUP_FILTER.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="edits">
+<h2>Edits<a class="headerlink" href="#edits" title="Link to this heading">#</a></h2>
+<p>Define linear consistency edits to be used by the Banff procedures.</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Column</p></th>
+<th class="head"><p>Type</p></th>
+<th class="head"><p>Primary Key</p></th>
+<th class="head"><p>Foreign Key</p></th>
+<th class="head"><p>Required</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>editid</p></td>
+<td><p>string</p></td>
+<td><p>✔</p></td>
+<td><p></p></td>
+<td><p>✔</p></td>
+<td><p>ID used to identify the edit.</p></td>
+</tr>
+<tr class="row-odd"><td><p>leftside</p></td>
+<td><p>string</p></td>
+<td><p></p></td>
+<td><p></p></td>
+<td><p>✔</p></td>
+<td><p>The left-hand side of the equation.</p></td>
+</tr>
+<tr class="row-even"><td><p>operator</p></td>
+<td><p>string</p></td>
+<td><p></p></td>
+<td><p></p></td>
+<td><p>✔</p></td>
+<td><p>The operator, valid values include &gt;, &gt;=, &lt;, &lt;=, =, and !=.</p></td>
+</tr>
+<tr class="row-odd"><td><p>rightside</p></td>
+<td><p>string</p></td>
+<td><p></p></td>
+<td><p></p></td>
+<td><p>✔</p></td>
+<td><p>The right-hand side of the equation.</p></td>
+</tr>
+<tr class="row-even"><td><p>modifier</p></td>
+<td><p>string</p></td>
+<td><p></p></td>
+<td><p></p></td>
+<td><p></p></td>
+<td><p>The modifier value. The default value of PASS indicates that the equation must be True, FAIL can be specified to indicate that the equation must be false.<BR><BR>ACCEPTE and REJET are also valid values and can be used instead of PASS and FAIL respectively.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="edit-groups">
+<h2>Edit groups<a class="headerlink" href="#edit-groups" title="Link to this heading">#</a></h2>
+<p>Define sets of edits to be referenced by individual process steps.</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Column</p></th>
+<th class="head"><p>Type</p></th>
+<th class="head"><p>Primary Key</p></th>
+<th class="head"><p>Foreign Key</p></th>
+<th class="head"><p>Required</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>editgroupid</p></td>
+<td><p>string</p></td>
+<td><p>✔</p></td>
+<td><p></p></td>
+<td><p>✔</p></td>
+<td><p>ID used to identify the edit group.</p></td>
+</tr>
+<tr class="row-odd"><td><p>editid</p></td>
+<td><p>string</p></td>
+<td><p>✔</p></td>
+<td><p>✔</p></td>
+<td><p>✔</p></td>
+<td><p>ID used to identify the edit belonging to the group.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="expressions">
+<h2>Expressions<a class="headerlink" href="#expressions" title="Link to this heading">#</a></h2>
+<p>SQL expressions that are used to exclude donors from being processed in the <code class="docutils literal notranslate"><span class="pre">DonorImp</span></code> procedure or records to be used in calculations in the <code class="docutils literal notranslate"><span class="pre">Estimator</span></code> procedure.</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Column</p></th>
+<th class="head"><p>Type</p></th>
+<th class="head"><p>Primary Key</p></th>
+<th class="head"><p>Foreign Key</p></th>
+<th class="head"><p>Required</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>expressionid</p></td>
+<td><p>string</p></td>
+<td><p>✔</p></td>
+<td><p></p></td>
+<td><p>✔</p></td>
+<td><p>The ID used to identify the expression.</p></td>
+</tr>
+<tr class="row-odd"><td><p>expressions</p></td>
+<td><p>string</p></td>
+<td><p></p></td>
+<td><p></p></td>
+<td><p>✔</p></td>
+<td><p>The SQL expression.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="uservars">
+<h2>Uservars<a class="headerlink" href="#uservars" title="Link to this heading">#</a></h2>
+<p>Define names and values of substitution variables in user-defined processes (plugins).</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Column</p></th>
+<th class="head"><p>Type</p></th>
+<th class="head"><p>Primary Key</p></th>
+<th class="head"><p>Foreign Key</p></th>
+<th class="head"><p>Required</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>process</p></td>
+<td><p>string</p></td>
+<td><p>✔</p></td>
+<td><p></p></td>
+<td><p>✔</p></td>
+<td><p>The name of the User Defined Process that this uservar applies to. This should be the same name (or one of the names) that is used when calling <code class="docutils literal notranslate"><span class="pre">factory.register()</span></code> in the <code class="docutils literal notranslate"><span class="pre">register()</span></code> function required for a UDP module.</p></td>
+</tr>
+<tr class="row-odd"><td><p>specid</p></td>
+<td><p>string</p></td>
+<td><p>✔</p></td>
+<td><p></p></td>
+<td><p>✔</p></td>
+<td><p>The specid of the specific job step that this uservar applies to.</p></td>
+</tr>
+<tr class="row-even"><td><p>var</p></td>
+<td><p>string</p></td>
+<td><p>✔</p></td>
+<td><p></p></td>
+<td><p>✔</p></td>
+<td><p>The name of this variable.</p></td>
+</tr>
+<tr class="row-odd"><td><p>value</p></td>
+<td><p>string</p></td>
+<td><p></p></td>
+<td><p></p></td>
+<td><p>✔</p></td>
+<td><p>The value of the variable. For numeric values, convert the given string value to the desired format within the UDP using this variable.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="varlists">
+<h2>Varlists<a class="headerlink" href="#varlists" title="Link to this heading">#</a></h2>
+<p>Lists names of variables that are used in procedure statements that require a list of variable names.  All variable names in the <code class="docutils literal notranslate"><span class="pre">fieldid</span></code> column that have the same value of <code class="docutils literal notranslate"><span class="pre">varlistid</span></code> will be collected and used with the statement for which the list is created.  The variable <code class="docutils literal notranslate"><span class="pre">seqno</span></code> defines the order in which the variables will appear in the list. <code class="docutils literal notranslate"><span class="pre">seqno</span></code> is mandatory and is important especially for the BY statement.</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Column</p></th>
+<th class="head"><p>Type</p></th>
+<th class="head"><p>Primary Key</p></th>
+<th class="head"><p>Foreign Key</p></th>
+<th class="head"><p>Required</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>varlistid</p></td>
+<td><p>string</p></td>
+<td><p>✔</p></td>
+<td><p></p></td>
+<td><p>✔</p></td>
+<td><p>ID used to identify the varlist.</p></td>
+</tr>
+<tr class="row-odd"><td><p>seqno</p></td>
+<td><p>float</p></td>
+<td><p>✔</p></td>
+<td><p></p></td>
+<td><p>✔</p></td>
+<td><p>Defines the ordering of this fieldid within the overall varlist from the lowest value to the largest. Gaps in the sequence are allowed, the numbers must simply form some logical ordering.</p></td>
+</tr>
+<tr class="row-even"><td><p>fieldid</p></td>
+<td><p>string</p></td>
+<td><p></p></td>
+<td><p></p></td>
+<td><p>✔</p></td>
+<td><p>ID used to identify this specific field within the varlist.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="weights">
+<h2>Weights<a class="headerlink" href="#weights" title="Link to this heading">#</a></h2>
+<p>Contains names of fields grouped by <code class="docutils literal notranslate"><span class="pre">weightid</span></code> and the value of the weight for each field.</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Column</p></th>
+<th class="head"><p>Type</p></th>
+<th class="head"><p>Primary Key</p></th>
+<th class="head"><p>Foreign Key</p></th>
+<th class="head"><p>Required</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>weightid</p></td>
+<td><p>string</p></td>
+<td><p>✔</p></td>
+<td><p></p></td>
+<td><p>✔</p></td>
+<td><p>ID used to identify this weighting.</p></td>
+</tr>
+<tr class="row-odd"><td><p>fieldid</p></td>
+<td><p>string</p></td>
+<td><p>✔</p></td>
+<td><p></p></td>
+<td><p>✔</p></td>
+<td><p>Identifies the field to which this weighting applies.</p></td>
+</tr>
+<tr class="row-even"><td><p>weight</p></td>
+<td><p>float</p></td>
+<td><p></p></td>
+<td><p></p></td>
+<td><p>✔</p></td>
+<td><p>The weight value for the field.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="process-outputs">
+<h2>Process Outputs<a class="headerlink" href="#process-outputs" title="Link to this heading">#</a></h2>
+<p>Define which outputs are to be kept from each process type. The metadata is used when process_output_type is set to <code class="docutils literal notranslate"><span class="pre">custom</span></code>.</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Column</p></th>
+<th class="head"><p>Type</p></th>
+<th class="head"><p>Primary Key</p></th>
+<th class="head"><p>Foreign Key</p></th>
+<th class="head"><p>Required</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>process</p></td>
+<td><p>string</p></td>
+<td><p>✔</p></td>
+<td><p></p></td>
+<td><p>✔</p></td>
+<td><p>The name of the process for which to save this output file.</p></td>
+</tr>
+<tr class="row-odd"><td><p>output_name</p></td>
+<td><p>string</p></td>
+<td><p>✔</p></td>
+<td><p></p></td>
+<td><p>✔</p></td>
+<td><p>The name of the dataset to create and retain upon completion of the specified process and then to save to disk upon completion of the overall job.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="built-in-banff-procedure-specific-metadata">
+<h2>Built-in Banff Procedure Specific Metadata<a class="headerlink" href="#built-in-banff-procedure-specific-metadata" title="Link to this heading">#</a></h2>
+<p>The following metadata tables are used to store input parameters for built-in Banff Procedures. Each metadata table includes the column <code class="docutils literal notranslate"><span class="pre">specid</span></code>, which links the procedure-specific parameters listed in each row to the associated process step in the <code class="docutils literal notranslate"><span class="pre">jobs</span></code> metadata table.</p>
+<ul class="simple">
+<li><p>VERIFYEDITSPECS: Specifications for the <code class="docutils literal notranslate"><span class="pre">verifyedits</span></code> procedure</p></li>
+<li><p>OUTLIERSPECS: Specifications for the <code class="docutils literal notranslate"><span class="pre">outlier</span></code> procedure</p></li>
+<li><p>ERRORLOCSPECS: Specifications for the <code class="docutils literal notranslate"><span class="pre">errorloc</span></code> procedure</p></li>
+<li><p>DONORSPECS: Specifications for the <code class="docutils literal notranslate"><span class="pre">donorimp</span></code> procedure</p></li>
+<li><p>ESTIMATORSPECS: Specifications for the <code class="docutils literal notranslate"><span class="pre">estimator</span></code> procedure</p>
+<ul>
+<li><p>ESTIMATORS: Additional parameters for <code class="docutils literal notranslate"><span class="pre">inestimator</span></code> table</p></li>
+<li><p>ALGORITHMS: Additional parameters for <code class="docutils literal notranslate"><span class="pre">inalgorithm</span></code> table</p></li>
+</ul>
+</li>
+<li><p>PRORATESPECS: Specifications for the <code class="docutils literal notranslate"><span class="pre">prorate</span></code> procedure</p></li>
+<li><p>MASSIMPUTATIONSPECS: Specifications for the <code class="docutils literal notranslate"><span class="pre">massimp</span></code> procedure</p></li>
+</ul>
+<p>For information on parameters for built-in Banff Procedures, please consult the Banff User guide in the Banff procedures repository.</p>
+</section>
+<section id="tips-for-programmers">
+<h2>Tips for programmers<a class="headerlink" href="#tips-for-programmers" title="Link to this heading">#</a></h2>
+<p><em>XML Schemas</em> are available for each metadata file in the sub-package <code class="docutils literal notranslate"><span class="pre">banffprocessor.metadata.models</span></code>. These schemas can be useful for debugging purposes or for application developers who need to generate these files without using the Excel metadata template. For example, the schema for the Algorithms.xml can be printed with the following 2 lines for code:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">banffprocessor.metadata.models.algorithms</span><span class="w"> </span><span class="kn">import</span> <span class="n">Algorithms</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">Algorithms</span><span class="o">.</span><span class="n">get_schema</span><span class="p">())</span>
+</pre></div>
+</div>
+<p>A <em>duckdb</em> database is used to store the metadata during processing and can be exported at the end of the process for debugging or informational purposes. The database connection can be accessed through the <code class="docutils literal notranslate"><span class="pre">dbconn</span></code> attribute of your Processor object as illustrated in the code snippet below:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">my_bp</span> <span class="o">=</span> <span class="n">Processor</span><span class="o">.</span><span class="n">from_file</span><span class="p">(</span><span class="n">input_file</span><span class="p">)</span>
+<span class="n">my_bp</span><span class="o">.</span><span class="n">dbconn</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="s2">&quot;EXPORT DATABASE &#39;&lt;path to folder to save exported files&gt;&#39;&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-mermaid notranslate"><div class="highlight"><pre><span></span>---
+title: Banff Processor Metadata Entity-Relationship Diagram
+---
+erDiagram
+    ALGORITHMS {
+        string algorithmname PK
+        string type
+        string status
+        string formula
+        string description
+    }
+    DONORSPECS {
+        string specid PK
+        int mindonors
+        real pcentdonors
+        int n
+        string eligdon
+        boolean random
+        int nlimit
+        real mrl
+        string dataexclvar FK
+        string mustmatchid FK
+        string posteditgroupid FK
+    }
+    EDITGROUPS {
+        string editgroupid PK
+        string editid PK
+    }
+    EDITS {
+        string editid PK
+        string leftside
+        string operator
+        string rightside
+        string modifier
+        string edit
+    }
+    ERRORLOCSPECS {
+        string specid PK
+        real cardinality
+        real timeperobs
+        string weightid
+    }
+    ESTIMATORS {
+        string estimatorid PK
+        int seqno PK
+        string fieldid
+        string auxvariables
+        string weightvariable
+        string variancevariable
+        real varianceexponent
+        string varianceperiod
+        boolean excludeimputed
+        boolean excludeoutliers
+        int countcriteria
+        real percentcriteria
+        boolean randomerror
+        string algorithmname FK    
+    }
+    ESTIMATORSPECS {
+        string specid  PK
+        string dataexclvar FK
+        string histexclvar FK
+        string Estimatorid FK
+    }
+    EXPRESSIONS {
+        string expressionid PK
+        string expressions
+    }
+    MASSIMPUTATIONSPECS {
+        string specid
+        int mindonors
+        real pcentdonors
+        boolean random
+        int nlimit
+        real mrl
+        string mustimputeid
+        string mustmatchid   
+    }
+    OUTLIERSPECS {
+        string specid PK
+        string method
+        real mei
+        real mii
+        real mdm
+        real exponent
+        int minobs
+        string varid
+        string withid
+        string dataexclvar FK
+        real betae
+        real betai
+        string weight FK
+        string sigma
+        string side
+        real startcentile
+        boolean acceptzero
+    }
+    PRORATESPECS {
+        string specid PK
+        int decimal
+        real lowerbound
+        real upperbound
+        string modifier
+        string method
+    }
+    USERVARS {
+        string process PK
+        string specid PK
+        string var PK
+        string value
+    }
+    VARLISTS {
+        string varlistid PK
+        real seqno PK
+        string fieldid
+    }
+    VERIFYEDITSPECS {
+        string specid PK
+        int imply
+        int extremal
+    }
+    WEIGHTS {
+        string weightid PK
+        string fieldid  PK
+        real weight        
+    } 
+    PROCESSCONTROLS {
+        string controlid PK
+        string targetfile PK
+        string parameter PK
+        string value
+    }  
+    PROCESSOUTPUTS {
+        string process PK
+        string output_name PK
+    }
+    JOBS {
+        string jobid PK
+        real seqno PK
+        string controlid FK
+        string process FK
+        string specid FK
+        string editgroupid FK
+        string byid FK
+        boolean acceptnegative
+    }
+    
+    DONORSPECS ||--}o JOBS : &quot;Defines process specs&quot;
+    ERRORLOCSPECS ||--}o JOBS : &quot;Defines specs&quot;
+    ESTIMATORSPECS ||--}o JOBS : &quot;Defines specs&quot;
+    OUTLIERSPECS ||--}o JOBS : &quot;Defines specs&quot;
+    PRORATESPECS ||--}o JOBS : &quot;Defines specs&quot;
+    MASSIMPUTATIONSPECS||--}o JOBS : &quot;Defines specs&quot;
+    VERIFYEDITSPECS ||--}o JOBS : &quot;Defines specs&quot;
+    USERVARS ||--}o JOBS : &quot;Defines custom parameters for plugins&quot;
+
+    EDITGROUPS ||--}o JOBS : &quot;Defines edit group&quot;
+    EDITGROUPS ||--}o DONORSPECS : &quot;Defines post edit group&quot;
+    EDITS ||--}o EDITGROUPS : &quot;Defines edit groups&quot;
+    
+    ALGORITHMS ||--}o ESTIMATORS : &quot;Defines custom algorithm&quot;
+    ESTIMATORS ||--}o ESTIMATORSPECS : &quot;Defines estimator&quot;
+    EXPRESSIONS ||--}o ESTIMATORSPECS : &quot;Defines dataexclvar and histexclvar&quot;
+    EXPRESSIONS ||--}o DONORSPECS : &quot;defines dataexclvar&quot;
+
+    VARLISTS ||--}o JOBS : &quot;Defines by variables&quot;
+    VARLISTS ||--}o DONORSPECS : &quot;defines mustmatchid&quot;
+    VARLISTS ||--}o OUTLIERSPECS : &quot;defines varid and withid&quot;
+    VARLISTS ||--}o MASSIMPUTATIONSPECS : &quot;Defines mustimputeid&quot;
+    
+    WEIGHTS ||--}o ERRORLOCSPECS : &quot;Defines variable weight&quot;
+    PROCESSCONTROLS ||--}o JOBS : &quot;Defines Process Controls&quot;
+    PROCESSOUTPUTS ||--}o JOBS : &quot;Defines datasets to retain&quot;
+</pre></div>
+</div>
+</section>
+</section>
+
+
+                </article>
+              
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+<div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> On this page
+  </div>
+  <nav class="bd-toc-nav page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#general-notes">General notes</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#jobs">Jobs</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#process-controls">Process Controls</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#edits">Edits</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#edit-groups">Edit groups</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#expressions">Expressions</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#uservars">Uservars</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#varlists">Varlists</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#weights">Weights</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#process-outputs">Process Outputs</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#built-in-banff-procedure-specific-metadata">Built-in Banff Procedure Specific Metadata</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tips-for-programmers">Tips for programmers</a></li>
+</ul>
+  </nav></div>
+
+  <div class="sidebar-secondary-item">
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../_sources/en/metadata-tables.md.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
+<script defer src="../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+
+  <p class="copyright">
+    
+      © Copyright 2025, Statistics Canada / Statistique Canada.
+      <br/>
+    
+  </p>
+</div>
+      
+        <div class="footer-item">
+
+  <p class="sphinx-version">
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 8.2.3.
+    <br/>
+  </p>
+</div>
+      
+    </div>
+  
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item">
+<p class="theme-version">
+  <!-- # L10n: Setting the PST URL as an argument as this does not need to be localized -->
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.16.1.
+</p></div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
+</html>
