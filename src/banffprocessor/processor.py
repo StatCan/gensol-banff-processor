@@ -100,6 +100,11 @@ class Processor:
 
             self.processor_data = ProcessorData(input_params=input_params, dbconn=self._dbconn)
 
+            # Make sure DuckDB includes user input folder so DuckDB can see any tables the
+            # user might reference relative to the correct location
+            self.dbconn.sql(f"SET file_search_path = '{self.processor_data.input_params.input_folder}';")
+            log_lcl.debug(_("Set DuckDB connection file_search_path to input folder: {}").format(self.processor_data.input_params.input_folder))
+
         plg.add_file_handlers(log_directory=self.processor_data.input_params.output_folder,
                               trace_level=self.processor_data.input_params.log_level)
 
@@ -115,7 +120,7 @@ class Processor:
         # Load Banff and User-defined plugins
         self._load_plugins()
 
-        for proc_name in self.processor_data.metaobjects.proc_list:
+        for proc_name in self.processor_data.metaobjects.job_proc_names:
             proc_cls = factory.get_procedure(proc_name)
             if(proc_cls not in [VerifyEdits, EditStats, jp.JobProc] and proc_name in banff_procedures.__all__):
                 msg = "At least one of the procedures referenced in your job require {} "
@@ -592,7 +597,7 @@ class Processor:
         time_store = self.processor_data.input_params.time_store
         border_string = "="*100
 
-        job_progress = int(round((cur_step_index/self.processor_data.total_job_steps)*100))
+        job_progress = round((cur_step_index/self.processor_data.total_job_steps)*100)
         footer = "\n" + border_string + "\n"
         footer += _("END OF PROCESS: {}\n").format(self.processor_data.current_job_step.process)
         footer += _("JOBID: {}\n").format(self.processor_data.current_job_step.jobid)
@@ -651,7 +656,7 @@ class Processor:
         def truncate_output(val: str, max_len: int) -> str:
             return (val[:max_len - 2] + "..") if len(val) > max_len else val
 
-        job_progress = int(round((cur_step_index/self.processor_data.total_job_steps)*100))
+        job_progress = round((cur_step_index/self.processor_data.total_job_steps)*100)
         job_progress = str(job_progress) + "%"
 
         time_store_table = self.processor_data.get_dataset("time_store")

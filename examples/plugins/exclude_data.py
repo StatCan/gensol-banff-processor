@@ -29,14 +29,6 @@ class ExcludeData:
     In the future this type of user-defined procedure will be converted to a process control.
     """
 
-    # These attributes determine if the Banff Processor should update the status file and/or the imputed file
-    status_update_required = False
-    # imputed_file_update_required updates existing records in imputed_file
-    # Since we are adding records we cannot use the standard update process
-    imputed_file_update_required = False
-    # So we instead set a value for processor_data.indata and therefore use this flag instead
-    dataset_updated_inplace = True
-
     @classmethod
     def execute(cls, processor_data: ProcessorData) -> int:
         """Exclude Data from a Banff Processor working dataset.
@@ -88,7 +80,6 @@ class ExcludeData:
             # Instead, overwrite indata directly. Since we keep a copy of the excluded data
             # we will not lose anything if the data is needed later, it just needs to be added
             # back in a seperate step, like in these test plugins
-            # Make sure if you are doing this that you set dataset_updated_inplace to True
             if isinstance(indata, pa.Table):
                 processor_data.indata = duckdb.sql(f"SELECT * from {temp_table_kept}").arrow()
             else:

@@ -17,8 +17,10 @@ class ProcessorInput:
 
     def __init__(self, job_id: str,
                  unit_id: str | None = None, input_folder: str | Path | None = None,
-                 indata_filename: str | Path | None = None, auxdata_filename: str | Path | None = None,
-                 histdata_filename: str | Path | None = None, histstatus_filename: str | Path | None = None,
+                 indata_filename: str | Path | None = None,
+                 auxdata_filename: str | Path | None = None, indata_aux_filename: str | Path | None = None,
+                 histdata_filename: str | Path | None = None, indata_hist_filename: str | Path | None = None,
+                 histstatus_filename: str | Path | None = None, instatus_hist_filename: str | Path | None = None,
                  instatus_filename: str | Path | None = None, user_plugins_folder: str | Path | None = None,
                  metadata_folder: str | Path | None = None, process_output_type: str | int | None = None,
                  seed: int | None = None, no_by_stats: str | bool | None = None,
@@ -40,12 +42,21 @@ class ProcessorInput:
         :param indata_filename: The filename of the indata file which is required in almost
             all cases, defaults to None
         :type indata_filename: str | Path | None, optional
-        :param auxdata_filename: The filename of the auxillary data file, defaults to None
+        :param auxdata_filename: The filename of the auxillary data file, defaults to None. This field
+            is an alias for `indata_aux_filename`, they represent the same value.
         :type auxdata_filename: str | Path | None, optional
-        :param histdata_filename: The filename of the historical data file, defaults to None
+        :param indata_aux_filename: The filename of the auxillary data file, defaults to None
+        :type indata_aux_filename: str | Path | None, optional
+        :param histdata_filename: The filename of the historical data file, defaults to None. This field
+            is an alias for `indata_hist_filename`, they represent the same value.
         :type histdata_filename: str | Path | None, optional
-        :param histstatus_filename: The filename of the historical status file, defaults to None
+        :param indata_hist_filename: The filename of the auxillary data file, defaults to None
+        :type indata_hist_filename: str | Path | None, optional
+        :param histstatus_filename: The filename of the historical status file, defaults to None. This field
+            is an alias for `instatus_hist_filename`, they represent the same value.
         :type histstatus_filename: str | Path | None, optional
+        :param instatus_hist_filename: The filename of the auxillary data file, defaults to None
+        :type instatus_hist_filename: str | Path | None, optional
         :param instatus_filename: The filename of the instatus file, defaults to None
         :type instatus_filename: str | Path | None, optional
         :param user_plugins_folder: The directory where the user defined plugin modules for this job
@@ -94,6 +105,8 @@ class ProcessorInput:
 
             :param file_or_dir: The filepath to convert.
             :type file_or_dir: str | Path | None
+            :param param_name: The name of the parameter being processed (for error reporting)
+            :type param_name: str
             :return: file_or_dir as represented by a Path object.
             :rtype: Path | None
             """
@@ -172,12 +185,25 @@ class ProcessorInput:
         # If just a filename is provided, file will be searched for in the input_folder
         # otherwise the full filepath is used for loading the file into a dataframe
         self.indata_filename = abs_path(indata_filename, "indata_filename")
-        self.auxdata_filename = abs_path(auxdata_filename, "auxdata_filename")
-        self.histdata_filename = abs_path(histdata_filename, "histdata_filename")
-        self.histstatus_filename = abs_path(histstatus_filename, "histstatus_filename")
-        # used to load statusAll for input to any procs that require an instatus parameter
-        # if there is no statusAll file created by any prior procs in the job
+
+        # statusAll may be provided for input to any procs that require an instatus
+        # parameter, if there is no statusAll file created by any prior procs in the job
         self.instatus_filename = abs_path(instatus_filename, "instatus_filename")
+
+        if(indata_aux_filename):
+            self.indata_aux_filename = abs_path(indata_aux_filename, "indata_aux_filename")
+        else:
+            self.indata_aux_filename = abs_path(auxdata_filename, "auxdata_filename")
+
+        if(indata_hist_filename):
+            self.indata_hist_filename = abs_path(indata_hist_filename, "indata_hist_filename")
+        else:
+            self.indata_hist_filename = abs_path(histdata_filename, "histdata_filename")
+
+        if(instatus_hist_filename):
+            self.instatus_hist_filename = abs_path(instatus_hist_filename, "instatus_hist_filename")
+        else:
+            self.instatus_hist_filename = abs_path(histstatus_filename, "histstatus_filename")
 
         # Output type option to allow users to specify the level of information
         # recorded and output from their respective procs

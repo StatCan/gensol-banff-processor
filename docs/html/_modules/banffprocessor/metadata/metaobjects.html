@@ -1,0 +1,1085 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>banffprocessor.metadata.metaobjects &#8212; Banff Processor 2.0.2 documentation</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../../_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+<link href="../../../_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=8f2a1f02" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/custom.css?v=2a807888" />
+  
+  <!-- So that users can add custom icons -->
+  <script src="../../../_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
+<link rel="preload" as="script" href="../../../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
+
+    <script src="../../../_static/documentation_options.js?v=29701289"></script>
+    <script src="../../../_static/doctools.js?v=9bcbadda"></script>
+    <script src="../../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = '_modules/banffprocessor/metadata/metaobjects';</script>
+    <link rel="index" title="Index" href="../../../genindex" />
+    <link rel="search" title="Search" href="../../../search" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="../../../search"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class="col-lg-3 navbar-header-items__start">
+    
+      <div class="navbar-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../../../index">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../../_static/banff_white.png" class="logo__image only-light" alt="Banff Processor 2.0.2 documentation - Home"/>
+    <img src="../../../_static/banff_white.png" class="logo__image only-dark pst-js-only" alt="Banff Processor 2.0.2 documentation - Home"/>
+  
+  
+</a></div>
+    
+  </div>
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../en/index">
+    English
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../fr/index">
+    Français
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+        </div>
+      
+      
+        <div class="navbar-item">
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button></div>
+      
+        <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/StatCan/gensol-banff-processor" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fab fa-github fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+</ul></div>
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+    </div>
+  
+
+  
+</div>
+
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+        
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar hide-on-wide">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          
+          
+            <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../en/index">
+    English
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../fr/index">
+    Français
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+          
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button></div>
+        
+          <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/StatCan/gensol-banff-processor" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fab fa-github fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+</ul></div>
+        
+      </div>
+    
+  </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+<nav aria-label="Breadcrumb" class="d-print-none">
+  <ul class="bd-breadcrumbs">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="../../../index" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    
+    <li class="breadcrumb-item"><a href="../../index" class="nav-link">Module code</a></li>
+    
+    
+    <li class="breadcrumb-item"><a href="../../banffprocessor" class="nav-link">banffprocessor</a></li>
+    
+    <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis">banffprocessor.metadata.metaobjects</span></li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <h1>Source code for banffprocessor.metadata.metaobjects</h1><div class="highlight"><pre>
+<span></span><span class="kn">import</span><span class="w"> </span><span class="nn">inspect</span> <span class="c1"># noqa: I001</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">operator</span>
+
+<span class="kn">from</span><span class="w"> </span><span class="nn">pathlib</span><span class="w"> </span><span class="kn">import</span> <span class="n">Path</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">typing</span><span class="w"> </span><span class="kn">import</span> <span class="n">Any</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">xml.parsers.expat</span><span class="w"> </span><span class="kn">import</span> <span class="n">ExpatError</span>
+
+<span class="kn">import</span><span class="w"> </span><span class="nn">duckdb</span>
+
+<span class="kn">import</span><span class="w"> </span><span class="nn">banffprocessor.processor_logger</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plg</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">banffprocessor.exceptions</span><span class="w"> </span><span class="kn">import</span> <span class="n">EmptyMetadataFileError</span><span class="p">,</span> <span class="n">MetadataConstraintError</span>
+
+<span class="kn">from</span><span class="w"> </span><span class="nn">banffprocessor.metadata</span><span class="w"> </span><span class="kn">import</span> <span class="n">models</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">banffprocessor.nls</span><span class="w"> </span><span class="kn">import</span> <span class="n">_</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">banffprocessor.metadata.models.metadataclass</span><span class="w"> </span><span class="kn">import</span> <span class="n">MetadataClass</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">banffprocessor.metadata.models.algorithms</span><span class="w"> </span><span class="kn">import</span> <span class="n">Algorithms</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">banffprocessor.metadata.models.editgroups</span><span class="w"> </span><span class="kn">import</span> <span class="n">Editgroups</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">banffprocessor.metadata.models.edits</span><span class="w"> </span><span class="kn">import</span> <span class="n">Edits</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">banffprocessor.metadata.models.estimators</span><span class="w"> </span><span class="kn">import</span> <span class="n">Estimators</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">banffprocessor.metadata.models.expressions</span><span class="w"> </span><span class="kn">import</span> <span class="n">Expressions</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">banffprocessor.metadata.models.jobs</span><span class="w"> </span><span class="kn">import</span> <span class="n">Jobs</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">banffprocessor.metadata.models.processcontrols</span><span class="w"> </span><span class="kn">import</span> <span class="n">ProcessControls</span><span class="p">,</span> <span class="n">ProcessControlType</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">banffprocessor.metadata.models.processoutputs</span><span class="w"> </span><span class="kn">import</span> <span class="n">ProcessOutputs</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">banffprocessor.metadata.models.uservars</span><span class="w"> </span><span class="kn">import</span> <span class="n">Uservars</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">banffprocessor.metadata.models.varlists</span><span class="w"> </span><span class="kn">import</span> <span class="n">Varlists</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">banffprocessor.metadata.models.weights</span><span class="w"> </span><span class="kn">import</span> <span class="n">Weights</span>
+
+<span class="n">log_lcl</span> <span class="o">=</span> <span class="n">plg</span><span class="o">.</span><span class="n">get_processor_child_logger</span><span class="p">(</span><span class="s2">&quot;metadata&quot;</span><span class="p">)</span>
+
+<div class="viewcode-block" id="MetaObjects">
+<a class="viewcode-back" href="../../../banffprocessor.metadata#banffprocessor.metadata.metaobjects.MetaObjects">[docs]</a>
+<span class="k">class</span><span class="w"> </span><span class="nc">MetaObjects</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Container class for collections of metadata objects.&quot;&quot;&quot;</span>
+
+    <span class="c1"># The total number of job steps in the validated job sequence</span>
+    <span class="n">total_job_steps</span><span class="p">:</span> <span class="nb">int</span>
+    <span class="c1"># The set of unique proc names in the validated job sequence</span>
+    <span class="n">job_proc_names</span><span class="p">:</span> <span class="nb">set</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">dbconn</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">duckdb</span><span class="o">.</span><span class="n">DuckDBPyConnection</span> <span class="o">|</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;The currently connected database used to store metadata objects.</span>
+
+<span class="sd">        :return: The duckdbpyconnection currently being used to store metadata objects.</span>
+<span class="sd">        :rtype: duckdb.DuckDBPyConnection | None</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_dbconn</span>
+
+    <span class="c1">#Current implementation is based on a simple dictionary.</span>
+    <span class="c1">#- Keys are the name of the object type (which for metadata objects is the filename</span>
+    <span class="c1">#    with no extension and a capitalized first character, i.e. donorspecs.xml -&gt; Donorspecs)</span>
+    <span class="c1">#- Values are lists of objects with the same type as the key name, where each</span>
+    <span class="c1">#    object should be one line or entry in the corresponding metadata table or file</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">metadata_folder</span><span class="p">:</span> <span class="nb">str</span> <span class="o">|</span> <span class="n">Path</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="n">job_id</span><span class="p">:</span> <span class="nb">str</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+                 <span class="n">dbconn</span><span class="p">:</span> <span class="n">duckdb</span><span class="o">.</span><span class="n">DuckDBPyConnection</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Construct a MetaObjects object.</span>
+
+<span class="sd">        :param metadata_folder: The directory to load metadata files from, defaults to None</span>
+<span class="sd">        :type metadata_folder: str | Path | None, optional</span>
+<span class="sd">        :param job_id: The job_id to be run and whose job steps to validate, defaults to None</span>
+<span class="sd">        :type job_id: str | None, optional</span>
+<span class="sd">        :attribute total_job_steps: Used for tracking progress when performing execute()</span>
+<span class="sd">        :type total_job_steps: int</span>
+<span class="sd">        :raises FileNotFoundError: If the required Jobs metadata file cannot be found</span>
+<span class="sd">        :raises EmptyMetadataFileError: If the required Jobs metadata file is empty</span>
+<span class="sd">        :raises ExpatError: If there is an issue while reading the XML data from file</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">meta_dict</span> <span class="o">=</span> <span class="p">{}</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">module_to_class</span> <span class="o">=</span> <span class="p">{}</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_dbconn</span> <span class="o">=</span> <span class="n">dbconn</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_dbconn</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_dbconn</span> <span class="o">=</span> <span class="n">duckdb</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="n">database</span><span class="o">=</span><span class="s2">&quot;:memory:&quot;</span><span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_is_private_connection</span> <span class="o">=</span> <span class="kc">True</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_is_private_connection</span> <span class="o">=</span> <span class="kc">False</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">total_job_steps</span> <span class="o">=</span> <span class="kc">None</span>
+
+        <span class="c1"># Build a list of classes that inherit from the MetadataClass in the metdata.models sub-module</span>
+        <span class="k">for</span> <span class="n">mod_name</span> <span class="ow">in</span> <span class="n">models</span><span class="o">.</span><span class="n">__all__</span><span class="p">:</span>
+            <span class="c1"># Get the module itself and get its underlying class if it is a sub-class</span>
+            <span class="c1"># of the MetadataClass super-class (also skipping MetadataClass itself)</span>
+            <span class="n">mod_tuple</span> <span class="o">=</span> <span class="n">inspect</span><span class="o">.</span><span class="n">getmembers</span><span class="p">(</span><span class="nb">getattr</span><span class="p">(</span><span class="n">models</span><span class="p">,</span> <span class="n">mod_name</span><span class="p">),</span>
+                                            <span class="n">predicate</span><span class="o">=</span><span class="k">lambda</span> <span class="n">o</span><span class="p">:</span> <span class="n">inspect</span><span class="o">.</span><span class="n">isclass</span><span class="p">(</span><span class="n">o</span><span class="p">)</span> <span class="ow">and</span>
+                                            <span class="nb">issubclass</span><span class="p">(</span><span class="n">o</span><span class="p">,</span> <span class="n">MetadataClass</span><span class="p">)</span> <span class="ow">and</span>
+                                            <span class="n">o</span> <span class="o">!=</span> <span class="n">MetadataClass</span><span class="p">)</span>
+            <span class="k">if</span><span class="p">(</span><span class="n">mod_tuple</span><span class="p">):</span>
+                <span class="c1"># module names should already be lower case but just in case</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">module_to_class</span><span class="p">[</span><span class="n">mod_name</span><span class="o">.</span><span class="n">casefold</span><span class="p">()]</span> <span class="o">=</span> <span class="n">mod_tuple</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">initialize_metadata</span><span class="p">()</span>
+
+        <span class="k">if</span><span class="p">(</span><span class="n">metadata_folder</span><span class="p">):</span>
+            <span class="c1"># Grab the list of metadata files from the metadata folder</span>
+            <span class="n">metadata_files</span> <span class="o">=</span> <span class="n">Path</span><span class="p">(</span><span class="n">metadata_folder</span><span class="p">)</span><span class="o">.</span><span class="n">glob</span><span class="p">(</span><span class="s2">&quot;*.xml&quot;</span><span class="p">)</span>
+
+            <span class="c1"># Currently loads all metadata files including Jobs entries and then</span>
+            <span class="c1"># expects the main processor loop to perform the jobid filter to get the list it needs.</span>
+            <span class="c1"># Alternatively we could perform that filter on load from file if we need the</span>
+            <span class="c1"># extra memory and there&#39;s no need for jobs entries under other jobids</span>
+            <span class="k">for</span> <span class="n">file</span> <span class="ow">in</span> <span class="n">metadata_files</span><span class="p">:</span>
+                <span class="k">try</span><span class="p">:</span>
+                    <span class="n">metadata_module_name</span> <span class="o">=</span> <span class="n">file</span><span class="o">.</span><span class="n">stem</span><span class="o">.</span><span class="n">casefold</span><span class="p">()</span>
+                    <span class="k">if</span><span class="p">(</span><span class="n">metadata_module_name</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">module_to_class</span><span class="p">):</span>
+                        <span class="c1"># If the filename is the name of a metadata class, remove the</span>
+                        <span class="c1"># class reference itself from our map</span>
+                        <span class="bp">cls</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">module_to_class</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">metadata_module_name</span><span class="p">)</span>
+                        <span class="bp">self</span><span class="o">.</span><span class="n">load_xml_file</span><span class="p">(</span><span class="n">file</span><span class="p">,</span> <span class="bp">cls</span><span class="p">)</span>
+                    <span class="k">else</span><span class="p">:</span>
+                        <span class="c1"># If the file has a name that doesn&#39;t correspond with a metadata</span>
+                        <span class="c1"># class, just skip it and log</span>
+                        <span class="n">msg</span> <span class="o">=</span> <span class="n">_</span><span class="p">(</span><span class="s2">&quot;The following metadata file did not correspond to any existing &quot;</span>
+                                <span class="s2">&quot;metadata model and was skipped: </span><span class="si">{}</span><span class="s2">.&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">file</span><span class="o">.</span><span class="n">name</span><span class="p">)</span>
+                        <span class="n">log_lcl</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span>
+                        <span class="k">continue</span>
+                <span class="k">except</span> <span class="n">EmptyMetadataFileError</span><span class="p">:</span>
+                    <span class="n">msg</span> <span class="o">=</span> <span class="n">_</span><span class="p">(</span><span class="s2">&quot;Provided metadata file </span><span class="si">{}</span><span class="s2"> contains no valid entries.&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">file</span><span class="o">.</span><span class="n">name</span><span class="p">)</span>
+                    <span class="n">log_lcl</span><span class="o">.</span><span class="n">exception</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span>
+                    <span class="k">raise</span>
+                <span class="k">except</span> <span class="n">ExpatError</span><span class="p">:</span>
+                    <span class="n">msg</span> <span class="o">=</span> <span class="n">_</span><span class="p">(</span><span class="s2">&quot;Unable to read XML in </span><span class="si">{}</span><span class="s2"> metadata file.&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">file</span><span class="o">.</span><span class="n">name</span><span class="p">)</span>
+                    <span class="n">log_lcl</span><span class="o">.</span><span class="n">exception</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span>
+                    <span class="k">raise</span>
+
+            <span class="k">if</span><span class="p">(</span><span class="n">Jobs</span><span class="o">.</span><span class="n">get_record_count</span><span class="p">(</span><span class="n">dbconn</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_dbconn</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span><span class="p">):</span>
+                <span class="n">msg</span> <span class="o">=</span> <span class="n">_</span><span class="p">(</span><span class="s2">&quot;Required Jobs metadata not found or unable to be read.&quot;</span><span class="p">)</span>
+                <span class="n">log_lcl</span><span class="o">.</span><span class="n">exception</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span>
+                <span class="k">raise</span> <span class="n">MetadataConstraintError</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span>
+
+            <span class="bp">self</span><span class="o">.</span><span class="n">job_proc_names</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">total_job_steps</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">validate_job_sequence</span><span class="p">(</span><span class="n">job_steps</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">meta_dict</span><span class="p">[</span><span class="n">Jobs</span><span class="o">.</span><span class="vm">__name__</span><span class="p">],</span> <span class="n">job_id</span><span class="o">=</span><span class="n">job_id</span><span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">check_constraints</span><span class="p">()</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">display_load_summary</span><span class="p">()</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="fm">__del__</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">cleanup_metadata</span><span class="p">()</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_is_private_connection</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_dbconn</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+
+<div class="viewcode-block" id="MetaObjects.load_xml_file">
+<a class="viewcode-back" href="../../../banffprocessor.metadata#banffprocessor.metadata.metaobjects.MetaObjects.load_xml_file">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">load_xml_file</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">metadata_file</span><span class="p">:</span> <span class="n">Path</span><span class="p">,</span> <span class="bp">cls</span><span class="p">:</span> <span class="nb">type</span><span class="p">[</span><span class="n">MetadataClass</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Load the metadata found in `metadata_file` into this class:`src.banffprocessor.metadata.MetaObjects` object.</span>
+
+<span class="sd">        The new entry added will have a key of the `cls` name and value of a collection of objects</span>
+<span class="sd">        of type `cls`.</span>
+
+<span class="sd">        :param metadata_file: The path of the XML file to load</span>
+<span class="sd">        :type metadata_file: pathlib.Path</span>
+<span class="sd">        :param cls: The metadata object type to load the file into</span>
+<span class="sd">        :type cls: type[:class:`src.banffprocessor.metadata.MetadataClass`]</span>
+<span class="sd">        :raises EmptyMetadataFileError: If the metadata file does not contain any valid entries</span>
+<span class="sd">        :raises MetadataConstraintError: If an entry in the metadata file contains values</span>
+<span class="sd">            that violate the constraints on the object type being loaded</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">metafile_dict</span> <span class="o">=</span> <span class="bp">cls</span><span class="o">.</span><span class="n">load_xml</span><span class="p">(</span><span class="n">metadata_file</span><span class="p">)</span>
+        <span class="n">meta_objs</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="k">for</span> <span class="n">index</span><span class="p">,</span> <span class="n">entry</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">metafile_dict</span><span class="p">[</span><span class="bp">cls</span><span class="o">.</span><span class="vm">__name__</span><span class="o">.</span><span class="n">casefold</span><span class="p">()],</span> <span class="n">start</span><span class="o">=</span><span class="mi">1</span><span class="p">):</span>
+            <span class="k">try</span><span class="p">:</span>
+                <span class="n">new_obj</span> <span class="o">=</span> <span class="bp">cls</span><span class="p">(</span><span class="o">**</span><span class="n">entry</span><span class="p">,</span> <span class="n">dbconn</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_dbconn</span><span class="p">)</span>
+                <span class="n">meta_objs</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">new_obj</span><span class="p">)</span>
+            <span class="k">except</span> <span class="n">MetadataConstraintError</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+                <span class="n">log_lcl</span><span class="o">.</span><span class="n">exception</span><span class="p">()</span>
+                <span class="n">msg</span> <span class="o">=</span> <span class="n">_</span><span class="p">(</span><span class="s2">&quot;Metadata constraint violated while processing </span><span class="si">{}</span><span class="s2"> on entry </span><span class="si">{}</span><span class="s2">&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">metadata_file</span><span class="o">.</span><span class="n">name</span><span class="p">,</span> <span class="n">index</span><span class="p">)</span>
+                <span class="n">log_lcl</span><span class="o">.</span><span class="n">exception</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span>
+                <span class="k">raise</span> <span class="n">MetadataConstraintError</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span> <span class="kn">from</span><span class="w"> </span><span class="nn">e</span>
+
+        <span class="c1"># Add list of metadata objects to our collection</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">add_objects_of_single_type</span><span class="p">(</span><span class="n">meta_objs</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="MetaObjects.add_objects_of_single_type">
+<a class="viewcode-back" href="../../../banffprocessor.metadata#banffprocessor.metadata.metaobjects.MetaObjects.add_objects_of_single_type">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">add_objects_of_single_type</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">objects</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="s2">&quot;MetadataClass&quot;</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Add a list of metadata objects all of the same type to the MetaObjects collection which can be retrieved using their type.</span>
+
+<span class="sd">        Only one list per object type can be added; if a second is added it will overwrite the original list stored under that type.</span>
+
+<span class="sd">        :param objects: The list of metadata objects to load</span>
+<span class="sd">        :type objects: list[:class:`src.banffprocessor.metadata.MetadataClass`]</span>
+<span class="sd">        :raises ValueError: If `objects` is empty or `None`</span>
+<span class="sd">        :raises TypeError: If `objects` contains objects of more than one type</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">if</span><span class="p">(</span><span class="ow">not</span> <span class="n">objects</span><span class="p">):</span>
+            <span class="n">msg</span> <span class="o">=</span> <span class="n">_</span><span class="p">(</span><span class="s2">&quot;&#39;objects&#39; list is empty.&quot;</span><span class="p">)</span>
+            <span class="n">log_lcl</span><span class="o">.</span><span class="n">exception</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span>
+
+        <span class="n">objects_type</span> <span class="o">=</span> <span class="nb">type</span><span class="p">(</span><span class="n">objects</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+        <span class="k">if</span><span class="p">(</span><span class="ow">not</span> <span class="nb">all</span><span class="p">(</span><span class="nb">isinstance</span><span class="p">(</span><span class="n">obj</span><span class="p">,</span> <span class="n">objects_type</span><span class="p">)</span> <span class="k">for</span> <span class="n">obj</span> <span class="ow">in</span> <span class="n">objects</span><span class="p">)):</span>
+            <span class="n">msg</span> <span class="o">=</span> <span class="n">_</span><span class="p">(</span><span class="s2">&quot;All objects in &#39;objects&#39; list must be the same type.&quot;</span><span class="p">)</span>
+            <span class="n">log_lcl</span><span class="o">.</span><span class="n">exception</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span>
+            <span class="k">raise</span> <span class="ne">TypeError</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span>
+
+        <span class="k">if</span><span class="p">(</span><span class="n">objects_type</span> <span class="o">==</span> <span class="n">ProcessControls</span><span class="p">):</span>
+            <span class="n">objects</span> <span class="o">=</span> <span class="n">MetaObjects</span><span class="o">.</span><span class="n">_load_process_control_dict</span><span class="p">(</span><span class="n">objects</span><span class="p">)</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">meta_dict</span><span class="p">[</span><span class="n">objects_type</span><span class="o">.</span><span class="vm">__name__</span><span class="p">]</span> <span class="o">=</span> <span class="n">objects</span></div>
+
+
+<div class="viewcode-block" id="MetaObjects.validate_job_sequence">
+<a class="viewcode-back" href="../../../banffprocessor.metadata#banffprocessor.metadata.metaobjects.MetaObjects.validate_job_sequence">[docs]</a>
+    <span class="nd">@staticmethod</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">validate_job_sequence</span><span class="p">(</span><span class="n">job_steps</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="s2">&quot;Jobs&quot;</span><span class="p">],</span> <span class="n">job_id</span><span class="p">:</span> <span class="nb">str</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">tuple</span><span class="p">[</span><span class="nb">set</span><span class="p">[</span><span class="nb">str</span><span class="p">],</span> <span class="nb">int</span><span class="p">]:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Iterate through `job_steps` and validates the sequence of all steps and process blocks contained/referenced in the job with `job_id`.</span>
+
+<span class="sd">        If `job_id` is not provided, the first job found in `job_steps` will be used as the starting point.</span>
+<span class="sd">        Returns a list of the unique proc names contained in the job sequence.</span>
+
+<span class="sd">        :param job_steps: A collection of Jobs metadata objects</span>
+<span class="sd">        :type job_steps: list[Jobs]</span>
+<span class="sd">        :param job_id: The job_id to be run and whose job steps to validate, defaults to None</span>
+<span class="sd">        :type job_id: str | None, optional</span>
+<span class="sd">        :raises MetadataConstraintError: If a job step of process &quot;JOB&quot; has a specid pointing</span>
+<span class="sd">            to a job_id that does not exist in the current Jobs metadata collection</span>
+<span class="sd">        :raises MetadataConstraintError: If a cycle exists in the graph of job_steps (i.e. a</span>
+<span class="sd">            step points to a process block which points back to the calling block, thus creating</span>
+<span class="sd">            an infinite loop)</span>
+<span class="sd">        :return: A set of the unique proc names contained in the job sequence and the total number</span>
+<span class="sd">            of job steps across the entire job.</span>
+<span class="sd">        :rtype: tuple[set[str], int]</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">jobs_by_block</span> <span class="o">=</span> <span class="p">{}</span>
+        <span class="n">root_id</span> <span class="o">=</span> <span class="n">job_id</span>
+        <span class="c1"># Group our jobs by jobid to separate each job block</span>
+        <span class="k">for</span> <span class="n">job</span> <span class="ow">in</span> <span class="n">job_steps</span><span class="p">:</span>
+            <span class="k">if</span><span class="p">(</span><span class="ow">not</span> <span class="n">root_id</span><span class="p">):</span>
+                <span class="c1"># If no job_id was provided we assume the first set of steps is the root job</span>
+                <span class="n">root_id</span> <span class="o">=</span> <span class="n">job</span><span class="o">.</span><span class="n">jobid</span>
+
+            <span class="k">if</span><span class="p">(</span><span class="n">job</span><span class="o">.</span><span class="n">jobid</span> <span class="ow">in</span> <span class="n">jobs_by_block</span><span class="p">):</span>
+                <span class="n">jobs_by_block</span><span class="p">[</span><span class="n">job</span><span class="o">.</span><span class="n">jobid</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">job</span><span class="p">)</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">jobs_by_block</span><span class="p">[</span><span class="n">job</span><span class="o">.</span><span class="n">jobid</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="n">job</span><span class="p">]</span>
+
+        <span class="c1"># Sort each block on seqno</span>
+        <span class="k">for</span> <span class="n">block</span> <span class="ow">in</span> <span class="n">jobs_by_block</span><span class="o">.</span><span class="n">values</span><span class="p">():</span>
+            <span class="n">block</span><span class="o">.</span><span class="n">sort</span><span class="p">(</span><span class="n">key</span><span class="o">=</span><span class="n">operator</span><span class="o">.</span><span class="n">attrgetter</span><span class="p">(</span><span class="s2">&quot;seqno&quot;</span><span class="p">))</span>
+
+        <span class="n">unique_proc_names</span> <span class="o">=</span> <span class="nb">set</span><span class="p">()</span>
+        <span class="n">current_blocks</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="n">total_step_count</span> <span class="o">=</span> <span class="mi">0</span>
+
+        <span class="k">class</span><span class="w"> </span><span class="nc">BinaryNode</span><span class="p">:</span>
+            <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">job</span><span class="p">:</span> <span class="n">Jobs</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">left</span> <span class="o">=</span> <span class="kc">None</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">right</span> <span class="o">=</span> <span class="kc">None</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">data</span> <span class="o">=</span> <span class="n">job</span>
+
+        <span class="k">def</span><span class="w"> </span><span class="nf">add_block_to_graph</span><span class="p">(</span><span class="n">block_job_id</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">parent_node</span><span class="p">:</span> <span class="n">BinaryNode</span> <span class="o">=</span> <span class="kc">None</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="c1"># Keep track of the blocks that are currently in sequence to avoid cycles</span>
+            <span class="n">current_blocks</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">block_job_id</span><span class="p">)</span>
+
+            <span class="k">if</span><span class="p">(</span><span class="n">block_job_id</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">jobs_by_block</span><span class="p">):</span>
+                <span class="n">msg</span> <span class="o">=</span> <span class="n">_</span><span class="p">(</span><span class="s2">&quot;No job steps were found with job_id </span><span class="si">{}</span><span class="s2">.&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">block_job_id</span><span class="p">)</span>
+                <span class="n">log_lcl</span><span class="o">.</span><span class="n">exception</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span>
+                <span class="k">raise</span> <span class="n">MetadataConstraintError</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span>
+
+            <span class="n">prev_node</span> <span class="o">=</span> <span class="n">parent_node</span>
+            <span class="c1"># Iterate over the job and build our graph out from there</span>
+            <span class="k">for</span> <span class="n">step</span> <span class="ow">in</span> <span class="n">jobs_by_block</span><span class="p">[</span><span class="n">block_job_id</span><span class="p">]:</span>
+                <span class="n">new_node</span> <span class="o">=</span> <span class="n">BinaryNode</span><span class="p">(</span><span class="n">step</span><span class="p">)</span>
+
+                <span class="c1"># Every new node increases the step count</span>
+                <span class="c1">#NOTE: Can just take a total graph node count at the end if using a proper graphing library</span>
+                <span class="k">nonlocal</span> <span class="n">total_step_count</span>
+                <span class="n">total_step_count</span> <span class="o">+=</span> <span class="mi">1</span>
+
+                <span class="c1"># If we aren&#39;t the root we need to add an edge to the last node</span>
+                <span class="k">if</span><span class="p">(</span><span class="n">prev_node</span><span class="p">):</span>
+                    <span class="k">if</span><span class="p">(</span><span class="n">prev_node</span><span class="o">.</span><span class="n">left</span><span class="p">):</span>
+                        <span class="n">prev_node</span><span class="o">.</span><span class="n">right</span> <span class="o">=</span> <span class="n">new_node</span>
+                    <span class="k">else</span><span class="p">:</span>
+                        <span class="n">prev_node</span><span class="o">.</span><span class="n">left</span> <span class="o">=</span> <span class="n">new_node</span>
+
+                <span class="n">prev_node</span> <span class="o">=</span> <span class="n">new_node</span>
+
+                <span class="c1"># Save a list of all unique process names in the list of visited job steps</span>
+                <span class="k">nonlocal</span> <span class="n">unique_proc_names</span>
+                <span class="n">unique_proc_names</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">step</span><span class="o">.</span><span class="n">process</span><span class="p">)</span>
+
+                <span class="k">if</span><span class="p">(</span><span class="n">step</span><span class="o">.</span><span class="n">process</span> <span class="o">==</span> <span class="s2">&quot;job&quot;</span><span class="p">):</span>
+                    <span class="c1"># If we revisit a block that we&#39;ve already added in the current sequence,</span>
+                    <span class="c1"># we have found a cycle</span>
+                    <span class="k">if</span><span class="p">(</span><span class="n">step</span><span class="o">.</span><span class="n">specid</span> <span class="ow">in</span> <span class="n">current_blocks</span><span class="p">):</span>
+                        <span class="n">msg</span> <span class="o">=</span> <span class="n">_</span><span class="p">(</span><span class="s2">&quot;The Jobs sequence rooted at job_id </span><span class="si">{}</span><span class="s2"> contains a &quot;</span>
+                                <span class="s2">&quot;cycle caused by job_id </span><span class="si">{}</span><span class="s2"> at seqno </span><span class="si">{}</span><span class="s2">. As this will result &quot;</span>
+                                <span class="s2">&quot;in an infinite loop the job must be rewritten to remove the &quot;</span>
+                                <span class="s2">&quot;cycle.&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">root_id</span><span class="p">,</span> <span class="n">block_job_id</span><span class="p">,</span> <span class="n">step</span><span class="o">.</span><span class="n">seqno</span><span class="p">)</span>
+                        <span class="n">log_lcl</span><span class="o">.</span><span class="n">exception</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span>
+                        <span class="k">raise</span> <span class="n">MetadataConstraintError</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span>
+                    <span class="c1"># Otherwise recursively add this block (and its sub-blocks) to the graph</span>
+                    <span class="n">add_block_to_graph</span><span class="p">(</span><span class="n">step</span><span class="o">.</span><span class="n">specid</span><span class="p">,</span> <span class="n">parent_node</span><span class="o">=</span><span class="n">prev_node</span><span class="p">)</span>
+
+            <span class="c1"># The block is completely processed, it may now be re-visited without cycling</span>
+            <span class="n">current_blocks</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="n">block_job_id</span><span class="p">)</span>
+
+        <span class="n">add_block_to_graph</span><span class="p">(</span><span class="n">root_id</span><span class="p">)</span>
+
+        <span class="c1">#NOTE: Preferably just return a graph containing all nodes which reference a jobs object</span>
+        <span class="c1"># then the graph f&#39;ns can be used to get this info indirectly</span>
+        <span class="k">return</span> <span class="n">unique_proc_names</span><span class="p">,</span> <span class="n">total_step_count</span></div>
+
+
+    <span class="nd">@staticmethod</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">_load_process_control_dict</span><span class="p">(</span><span class="n">controls</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="n">ProcessControls</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="nb">dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">]:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Load a list of :class:`src.banffprocessor.metadata.ProcessControls` to a</span>
+<span class="sd">        dict mapping controlids to dicts mapping targetfile names to the operations to</span>
+<span class="sd">        perform on them, which are dicts of the operation type to the ProcessControls</span>
+<span class="sd">        object with the control value.</span>
+
+<span class="sd">        {</span>
+<span class="sd">            &quot;controlid1234&quot;: {</span>
+<span class="sd">                &quot;indata&quot;: {</span>
+<span class="sd">                    ProcessControlType.ROW_FILTER: [ProcessControls1, ProcessControls2],</span>
+<span class="sd">                    ProcessControlType.COLUMN_FILTER: [ProcessControls3, ProcessControls4],</span>
+<span class="sd">                },</span>
+<span class="sd">            },</span>
+<span class="sd">        }</span>
+
+<span class="sd">        :param controls: List of :class:`src.banffprocessor.metadata.ProcessControls` objects</span>
+<span class="sd">            to add to a dictionary</span>
+<span class="sd">        :type controls: list[ProcessControls]</span>
+<span class="sd">        :return: The dictionary containing the categorized mappings of `controls`</span>
+<span class="sd">        :rtype: dict[str, Any]</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">control_dict</span> <span class="o">=</span> <span class="p">{}</span>
+        <span class="k">for</span> <span class="n">control</span> <span class="ow">in</span> <span class="n">controls</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">control</span><span class="o">.</span><span class="n">controlid</span> <span class="ow">in</span> <span class="n">control_dict</span><span class="p">:</span>
+                <span class="n">file_to_type</span> <span class="o">=</span> <span class="n">control_dict</span><span class="p">[</span><span class="n">control</span><span class="o">.</span><span class="n">controlid</span><span class="p">]</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">file_to_type</span> <span class="o">=</span> <span class="p">{}</span>
+                <span class="n">control_dict</span><span class="p">[</span><span class="n">control</span><span class="o">.</span><span class="n">controlid</span><span class="p">]</span> <span class="o">=</span> <span class="n">file_to_type</span>
+
+            <span class="k">if</span> <span class="n">control</span><span class="o">.</span><span class="n">targetfile</span> <span class="ow">in</span> <span class="n">file_to_type</span><span class="p">:</span>
+                <span class="n">type_to_control</span> <span class="o">=</span> <span class="n">file_to_type</span><span class="p">[</span><span class="n">control</span><span class="o">.</span><span class="n">targetfile</span><span class="p">]</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">type_to_control</span> <span class="o">=</span> <span class="p">{}</span>
+                <span class="n">file_to_type</span><span class="p">[</span><span class="n">control</span><span class="o">.</span><span class="n">targetfile</span><span class="p">]</span> <span class="o">=</span> <span class="n">type_to_control</span>
+
+            <span class="k">if</span> <span class="n">control</span><span class="o">.</span><span class="n">parameter</span> <span class="ow">in</span> <span class="n">type_to_control</span><span class="p">:</span>
+                <span class="n">type_to_control</span><span class="p">[</span><span class="n">control</span><span class="o">.</span><span class="n">parameter</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">control</span><span class="p">)</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">type_to_control</span><span class="p">[</span><span class="n">control</span><span class="o">.</span><span class="n">parameter</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="n">control</span><span class="p">]</span>
+
+        <span class="k">return</span> <span class="n">control_dict</span>
+
+<div class="viewcode-block" id="MetaObjects.get_objects_of_type">
+<a class="viewcode-back" href="../../../banffprocessor.metadata#banffprocessor.metadata.metaobjects.MetaObjects.get_objects_of_type">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">get_objects_of_type</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="bp">cls</span><span class="p">:</span> <span class="nb">type</span><span class="p">[</span><span class="n">MetadataClass</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="nb">list</span><span class="p">[</span><span class="n">MetadataClass</span><span class="p">]</span> <span class="o">|</span> <span class="nb">dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">]:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Get the list of metadata objects of type `cls`.</span>
+
+<span class="sd">        If no objects are found, an empty list is returned.</span>
+
+<span class="sd">        :param cls: The class reference of the object type to fetch</span>
+<span class="sd">        :type cls: type[:class:`src.banffprocessor.metadata.MetadataClass`]</span>
+<span class="sd">        :return: A list of all type `cls` objects found in this `MetaObjects` object or a special</span>
+<span class="sd">            dictionary if objects are of type :class:`src.banffprocessor.metadata.ProcessControls`</span>
+<span class="sd">        :rtype: list[:class:`src.banffprocessor.metadata.MetadataClass`] | dict[str, Any]</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">if</span><span class="p">(</span><span class="bp">cls</span><span class="o">.</span><span class="vm">__name__</span> <span class="ow">not</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">meta_dict</span><span class="p">):</span>
+            <span class="k">return</span> <span class="p">[]</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">meta_dict</span><span class="p">[</span><span class="bp">cls</span><span class="o">.</span><span class="vm">__name__</span><span class="p">]</span></div>
+
+
+<div class="viewcode-block" id="MetaObjects.get_job_steps">
+<a class="viewcode-back" href="../../../banffprocessor.metadata#banffprocessor.metadata.metaobjects.MetaObjects.get_job_steps">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">get_job_steps</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">jobid</span><span class="p">:</span> <span class="nb">str</span> <span class="o">|</span> <span class="kc">None</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">list</span><span class="p">[</span><span class="n">Jobs</span><span class="p">]:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Get and returns the list of Jobs objects with `jobid` sorted in ascending order of their seqno.</span>
+
+<span class="sd">        If no objects are found under the `jobid` an empty list is returned.</span>
+
+<span class="sd">        :param jobid: The class reference of the object type to fetch</span>
+<span class="sd">        :type jobid: str | None</span>
+<span class="sd">        :return: A list of the :class:`src.banffprocessor.metadata.Jobs` objects</span>
+<span class="sd">            with jobid `jobid`</span>
+<span class="sd">        :rtype: list[:class:`src.banffprocessor.metadata.Jobs`]</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">if</span><span class="p">(</span><span class="ow">not</span> <span class="n">jobid</span> <span class="ow">or</span> <span class="n">Jobs</span><span class="o">.</span><span class="vm">__name__</span> <span class="ow">not</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">meta_dict</span><span class="p">):</span>
+            <span class="k">return</span> <span class="p">[]</span>
+
+        <span class="k">return</span> <span class="nb">sorted</span><span class="p">([</span><span class="n">x</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">meta_dict</span><span class="p">[</span><span class="n">Jobs</span><span class="o">.</span><span class="vm">__name__</span><span class="p">]</span> <span class="k">if</span> <span class="n">x</span><span class="o">.</span><span class="n">jobid</span> <span class="o">==</span> <span class="n">jobid</span><span class="p">],</span>
+                      <span class="n">key</span><span class="o">=</span><span class="n">operator</span><span class="o">.</span><span class="n">attrgetter</span><span class="p">(</span><span class="s2">&quot;seqno&quot;</span><span class="p">))</span></div>
+
+
+<div class="viewcode-block" id="MetaObjects.get_specs_obj">
+<a class="viewcode-back" href="../../../banffprocessor.metadata#banffprocessor.metadata.metaobjects.MetaObjects.get_specs_obj">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">get_specs_obj</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="bp">cls</span><span class="p">:</span> <span class="nb">type</span><span class="p">[</span><span class="n">MetadataClass</span><span class="p">],</span> <span class="n">specid</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">MetadataClass</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Get and return the object of type `cls` with the specid `specid`.</span>
+
+<span class="sd">        Only one result should be found for the specified `specid` as it is effectively</span>
+<span class="sd">        a primary key for its metadata table. If no object is found for the specid</span>
+<span class="sd">        `None` is returned.</span>
+
+<span class="sd">        :param cls: The metadata object type to search for</span>
+<span class="sd">        :type cls: type[:class:`src.banffprocessor.metadata.MetadataClass`]</span>
+<span class="sd">        :param specid: The specid to match on objects of type `cls`</span>
+<span class="sd">        :type specid: str</span>
+<span class="sd">        :raises MetadataConstraintError: If multiple :class:`src.banffprocessor.metadata.MetadataClass`</span>
+<span class="sd">            objects are found under `specid`</span>
+<span class="sd">        :return: The object with type `cls` and specid `specid` or `None` if</span>
+<span class="sd">            not found</span>
+<span class="sd">        :rtype: :class:`src.banffprocessor.metadata.MetadataClass`</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">if</span><span class="p">(</span><span class="ow">not</span> <span class="n">specid</span> <span class="ow">or</span> <span class="bp">cls</span><span class="o">.</span><span class="vm">__name__</span> <span class="ow">not</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">meta_dict</span><span class="p">):</span>
+            <span class="k">return</span> <span class="kc">None</span>
+
+        <span class="n">spec_objs</span> <span class="o">=</span> <span class="p">[</span><span class="n">x</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">meta_dict</span><span class="p">[</span><span class="bp">cls</span><span class="o">.</span><span class="vm">__name__</span><span class="p">]</span> <span class="k">if</span> <span class="n">x</span><span class="o">.</span><span class="n">specid</span> <span class="o">==</span> <span class="n">specid</span><span class="p">]</span>
+
+        <span class="c1"># SpecID should be essentially a primary key in a Spec table (can be repeated in Jobs table)</span>
+        <span class="k">if</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">spec_objs</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">):</span>
+            <span class="n">msg</span> <span class="o">=</span> <span class="n">_</span><span class="p">(</span><span class="s2">&quot;Multiple entries using same specid (</span><span class="si">{}</span><span class="s2">) in </span><span class="si">{}</span><span class="s2"> table. &quot;</span>
+                    <span class="s2">&quot;SpecIDs must be unique in Spec tables.&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">specid</span><span class="p">,</span> <span class="bp">cls</span><span class="o">.</span><span class="vm">__name__</span><span class="p">)</span>
+            <span class="n">log_lcl</span><span class="o">.</span><span class="n">exception</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span>
+            <span class="k">raise</span> <span class="n">MetadataConstraintError</span>
+
+        <span class="k">return</span> <span class="p">(</span><span class="n">spec_objs</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="k">if</span> <span class="n">spec_objs</span> <span class="k">else</span> <span class="kc">None</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="MetaObjects.get_varlist_fieldids">
+<a class="viewcode-back" href="../../../banffprocessor.metadata#banffprocessor.metadata.metaobjects.MetaObjects.get_varlist_fieldids">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">get_varlist_fieldids</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">varid</span><span class="p">:</span> <span class="nb">str</span> <span class="o">|</span> <span class="kc">None</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">list</span><span class="p">[</span><span class="nb">str</span><span class="p">]:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Given a list of varlist objects gets and returns the list of fieldids of the varlist</span>
+<span class="sd">        objects associated with the specified varid and sorts it on seqno.</span>
+
+<span class="sd">        If no variables are found under the varid, an empty list is returned.</span>
+
+<span class="sd">        :param varid: the ID to filter the varlists on</span>
+<span class="sd">        :type varid: str | None</span>
+<span class="sd">        :return: A list of varlist objects with varid `varid` sorted on their `seqno` and</span>
+<span class="sd">            an empty list if no objects are found</span>
+<span class="sd">        :rtype: list[str]</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">if</span><span class="p">(</span><span class="ow">not</span> <span class="n">varid</span><span class="p">):</span>
+            <span class="k">return</span> <span class="p">[]</span>
+
+        <span class="n">varlists</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_objects_of_type</span><span class="p">(</span><span class="n">Varlists</span><span class="p">)</span>
+        <span class="k">return</span> <span class="p">[</span><span class="n">y</span><span class="o">.</span><span class="n">fieldid</span> <span class="k">for</span> <span class="n">y</span> <span class="ow">in</span> <span class="nb">sorted</span><span class="p">([</span><span class="n">x</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">varlists</span> <span class="k">if</span> <span class="n">x</span><span class="o">.</span><span class="n">varlistid</span> <span class="o">==</span> <span class="n">varid</span><span class="p">],</span>
+                                          <span class="n">key</span><span class="o">=</span><span class="n">operator</span><span class="o">.</span><span class="n">attrgetter</span><span class="p">(</span><span class="s2">&quot;seqno&quot;</span><span class="p">))]</span></div>
+
+
+<div class="viewcode-block" id="MetaObjects.get_edits_string">
+<a class="viewcode-back" href="../../../banffprocessor.metadata#banffprocessor.metadata.metaobjects.MetaObjects.get_edits_string">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">get_edits_string</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">editgroupid</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Get and return a string containing the list of edits in the :class:`src.banffprocessor.metadata.Edits`</span>
+<span class="sd">        objects associated with the specified `editgroupid`.</span>
+
+<span class="sd">        The string is formed by concatenating the formed edit strings from the edits objects</span>
+<span class="sd">        with a semi-colon and space as well as prepending each edit with its modifier (if present)</span>
+<span class="sd">        and a colon and space. If no edits are found under the `editgroupid`, an empty string is returned.</span>
+
+<span class="sd">        i.e. &quot;PASS: a &gt; b; FAIL: c + d &lt;= e; f - g = h;&quot;</span>
+
+<span class="sd">        :param editgroupid: the ID to filter the :class:`src.banffprocessor.metadata.Editgroups` on</span>
+<span class="sd">        :type editgroupid: str</span>
+<span class="sd">        :return: The semi-colon separated list of formed edits as a single string, empty</span>
+<span class="sd">            if no edits were found</span>
+<span class="sd">        :rtype: str</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">if</span><span class="p">(</span><span class="ow">not</span> <span class="n">editgroupid</span><span class="p">):</span>
+            <span class="k">return</span> <span class="s2">&quot;&quot;</span>
+
+        <span class="n">editgroups</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_objects_of_type</span><span class="p">(</span><span class="n">Editgroups</span><span class="p">)</span>
+        <span class="n">edits</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_objects_of_type</span><span class="p">(</span><span class="n">Edits</span><span class="p">)</span>
+        <span class="n">edits_list</span> <span class="o">=</span> <span class="p">[</span><span class="n">x</span><span class="o">.</span><span class="n">edit</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">edits</span> <span class="k">if</span> <span class="n">x</span><span class="o">.</span><span class="n">editid</span> <span class="ow">in</span>
+                        <span class="p">[</span><span class="n">y</span><span class="o">.</span><span class="n">editid</span> <span class="k">for</span> <span class="n">y</span> <span class="ow">in</span> <span class="n">editgroups</span> <span class="k">if</span> <span class="n">y</span><span class="o">.</span><span class="n">editgroupid</span> <span class="o">==</span> <span class="n">editgroupid</span><span class="p">]</span>
+                     <span class="p">]</span>
+
+        <span class="k">return</span> <span class="s2">&quot; &quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">edits_list</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="MetaObjects.get_weights_string">
+<a class="viewcode-back" href="../../../banffprocessor.metadata#banffprocessor.metadata.metaobjects.MetaObjects.get_weights_string">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">get_weights_string</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">weightid</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Get and return a string containing the list of weights in the</span>
+<span class="sd">        :class:`src.banffprocessor.metadata.Weights` objects</span>
+<span class="sd">        associated with the specified `weightid` sorted in descending order by weight,</span>
+<span class="sd">        and formed by concatenating the formed weight strings from the objects with a</span>
+<span class="sd">        semi-colon and space.</span>
+
+<span class="sd">        If no :class:`src.banffprocessor.metadata.Weights` are found under the `weightid`,</span>
+<span class="sd">        an empty string is returned.</span>
+
+<span class="sd">        i.e. &quot;field1=9.0; field2=7.0; field3=5.0;&quot;</span>
+
+<span class="sd">        :param weightid: the ID to filter the :class:`src.banffprocessor.metadata.Weights` on</span>
+<span class="sd">        :type weightid: str</span>
+<span class="sd">        :return: The semi-colon separated list of formed weights as a single string, empty</span>
+<span class="sd">            if no :class:`src.banffprocessor.metadata.Weights` were found</span>
+<span class="sd">        :rtype: str</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">if</span><span class="p">(</span><span class="ow">not</span> <span class="n">weightid</span><span class="p">):</span>
+            <span class="k">return</span> <span class="s2">&quot;&quot;</span>
+
+        <span class="n">weights</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_objects_of_type</span><span class="p">(</span><span class="n">Weights</span><span class="p">)</span>
+        <span class="n">weight_string_list</span> <span class="o">=</span> <span class="p">[</span><span class="n">y</span><span class="o">.</span><span class="n">weight_string</span> <span class="k">for</span> <span class="n">y</span> <span class="ow">in</span>
+                              <span class="nb">sorted</span><span class="p">([</span><span class="n">x</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">weights</span> <span class="k">if</span> <span class="n">x</span><span class="o">.</span><span class="n">weightid</span> <span class="o">==</span> <span class="n">weightid</span><span class="p">],</span>
+                                     <span class="n">key</span><span class="o">=</span><span class="n">operator</span><span class="o">.</span><span class="n">attrgetter</span><span class="p">(</span><span class="s2">&quot;weight&quot;</span><span class="p">),</span> <span class="n">reverse</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+                             <span class="p">]</span>
+
+        <span class="k">return</span> <span class="s2">&quot; &quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">weight_string_list</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="MetaObjects.get_expression">
+<a class="viewcode-back" href="../../../banffprocessor.metadata#banffprocessor.metadata.metaobjects.MetaObjects.get_expression">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">get_expression</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">exprid</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Get the expression string associated with the specified `exprid`.</span>
+
+<span class="sd">        :param exprid: The identifier of the Expression to get.</span>
+<span class="sd">        :type exprid: str</span>
+<span class="sd">        :return: The `expressions` field value of the Expression object fetched.</span>
+<span class="sd">        :rtype: str</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="n">Expressions</span><span class="o">.</span><span class="n">get_expression</span><span class="p">(</span><span class="n">exprid</span><span class="p">,</span> <span class="n">dbconn</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_dbconn</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="MetaObjects.get_estimators">
+<a class="viewcode-back" href="../../../banffprocessor.metadata#banffprocessor.metadata.metaobjects.MetaObjects.get_estimators">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">get_estimators</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">estid</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">list</span><span class="p">[</span><span class="n">Estimators</span><span class="p">]:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Get and return the list of :class:`src.banffprocessor.metadata.Estimators` objects</span>
+<span class="sd">        associated with the specified `estid` and sorted by their `seqno`.</span>
+
+<span class="sd">        If no variables are found under the `estid`, an empty list is returned.</span>
+
+<span class="sd">        :param estid: the ID to filter the :class:`src.banffprocessor.metadata.Estimators` on</span>
+<span class="sd">        :type estid: str</span>
+<span class="sd">        :return: A list of :class:`src.banffprocessor.metadata.Estimators` objects or an</span>
+<span class="sd">            empty list if no :class:`src.banffprocessor.metadata.Estimators` are found under</span>
+<span class="sd">            the `estid`</span>
+<span class="sd">        :rtype: list[:class:`src.banffprocessor.metadata.Estimators`]</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">if</span><span class="p">(</span><span class="ow">not</span> <span class="n">estid</span><span class="p">):</span>
+            <span class="k">return</span> <span class="p">[]</span>
+
+        <span class="n">estimators</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_objects_of_type</span><span class="p">(</span><span class="n">Estimators</span><span class="p">)</span>
+        <span class="k">return</span> <span class="nb">sorted</span><span class="p">([</span><span class="n">x</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">estimators</span> <span class="k">if</span> <span class="n">x</span><span class="o">.</span><span class="n">estimatorid</span> <span class="o">==</span> <span class="n">estid</span><span class="p">],</span> <span class="n">key</span><span class="o">=</span><span class="n">operator</span><span class="o">.</span><span class="n">attrgetter</span><span class="p">(</span><span class="s2">&quot;seqno&quot;</span><span class="p">))</span></div>
+
+
+<div class="viewcode-block" id="MetaObjects.get_user_vars_dict">
+<a class="viewcode-back" href="../../../banffprocessor.metadata#banffprocessor.metadata.metaobjects.MetaObjects.get_user_vars_dict">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">get_user_vars_dict</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">specid</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">process</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span><span class="nb">str</span><span class="p">]:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Get Uservars objects identified by the `specid` and `process` and return a dict mapping</span>
+<span class="sd">        the Uservars `var` to its `value`.</span>
+
+<span class="sd">        :param specid: The specid identifying Uservars to fetch.</span>
+<span class="sd">        :type specid: str</span>
+<span class="sd">        :param process: The process value of the Uservars to fetch.</span>
+<span class="sd">        :type process: str</span>
+<span class="sd">        :return: A dictionary mapping the fetched Uservars `var` field to their `value`</span>
+<span class="sd">        :rtype: dict[str,str]</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="n">Uservars</span><span class="o">.</span><span class="n">uservars_to_dict</span><span class="p">(</span><span class="n">specid</span><span class="p">,</span> <span class="n">process</span><span class="p">,</span> <span class="n">dbconn</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_dbconn</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="MetaObjects.get_algorithm">
+<a class="viewcode-back" href="../../../banffprocessor.metadata#banffprocessor.metadata.metaobjects.MetaObjects.get_algorithm">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">get_algorithm</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">algorithmname</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Algorithms</span> <span class="o">|</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Get and return the :class:`src.banffprocessor.metadata.Algorithms` object associated with the specified `algorithmname`.</span>
+
+<span class="sd">        :param algorithmname: The algorithmname of the :class:`src.banffprocessor.metadata.Algorithms`</span>
+<span class="sd">            object to retrieve</span>
+<span class="sd">        :return: The :class:`src.banffprocessor.metadata.Algorithms` object with the specified</span>
+<span class="sd">            `algorithmname`</span>
+<span class="sd">        :rtype: :class:`src.banffprocessor.metadata.Algorithms` | None</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">if</span><span class="p">(</span><span class="ow">not</span> <span class="n">algorithmname</span><span class="p">):</span>
+            <span class="k">return</span> <span class="kc">None</span>
+
+        <span class="n">algorithms</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_objects_of_type</span><span class="p">(</span><span class="n">Algorithms</span><span class="p">)</span>
+        <span class="n">algo</span> <span class="o">=</span> <span class="nb">next</span><span class="p">((</span><span class="n">x</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">algorithms</span> <span class="k">if</span> <span class="n">x</span><span class="o">.</span><span class="n">algorithmname</span><span class="o">.</span><span class="n">upper</span><span class="p">()</span> <span class="o">==</span> <span class="n">algorithmname</span><span class="o">.</span><span class="n">upper</span><span class="p">()),</span> <span class="kc">None</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">algo</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="c1"># If is key is provided and not found, we should return an error.</span>
+            <span class="n">msg</span> <span class="o">=</span> <span class="n">_</span><span class="p">(</span><span class="s2">&quot;The following value was not found: </span><span class="si">{}</span><span class="s2"> = &#39;</span><span class="si">{}</span><span class="s2">&#39;.&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="s2">&quot;algorithms.algorithm_name&quot;</span><span class="p">,</span> <span class="n">algorithmname</span><span class="p">)</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">algo</span></div>
+
+
+<div class="viewcode-block" id="MetaObjects.get_process_controls">
+<a class="viewcode-back" href="../../../banffprocessor.metadata#banffprocessor.metadata.metaobjects.MetaObjects.get_process_controls">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">get_process_controls</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">controlid</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">dict</span><span class="p">[</span><span class="n">ProcessControlType</span><span class="p">,</span> <span class="nb">list</span><span class="p">[</span><span class="n">ProcessControls</span><span class="p">]]]:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Get and return a mapping of targetfile names to a dict of `parameter` values to</span>
+<span class="sd">        their list of :class:`src.banffprocessor.metadata.ProcessControls` objects associated</span>
+<span class="sd">        with the specified `controlid`.</span>
+
+<span class="sd">        The lists are sorted on the enum value of the `parameter`</span>
+<span class="sd">        field to ensure that a regular list traversal will always pass over controls in</span>
+<span class="sd">        the order that they should be applied to the `target_file`.</span>
+<span class="sd">        If no variables are found under the `controlid`, an empty dict is returned.</span>
+
+<span class="sd">        i.e.</span>
+<span class="sd">        {</span>
+<span class="sd">            &quot;indata&quot;: {</span>
+<span class="sd">                ProcessControlType.ROW_FILTER: [ProcessControls1, ProcessControls2],</span>
+<span class="sd">                ProcessControlType.COLUMN_FILTER: [ProcessControls3, ProcessControls4],</span>
+<span class="sd">            },</span>
+<span class="sd">        }</span>
+
+<span class="sd">        :param controlid: the ID to filter the :class:`src.banffprocessor.metadata.ProcessControls` on</span>
+<span class="sd">        :type controlid: str</span>
+<span class="sd">        :return: A dict of target file names mapped to dicts of</span>
+<span class="sd">            :class:`src.banffprocessor.metadata.ProcessControlType` mapped to lists of</span>
+<span class="sd">            :class:`src.banffprocessor.metadata.ProcessControls` of that type for</span>
+<span class="sd">            that targetfile, or an empty list if no records are found under the `controlid`</span>
+<span class="sd">        :rtype: dict[str, :class:`src.banffprocessor.metadata.ProcessControls`]</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">if</span><span class="p">(</span><span class="ow">not</span> <span class="n">controlid</span><span class="p">):</span>
+            <span class="k">return</span> <span class="p">{}</span>
+
+        <span class="n">controls</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_objects_of_type</span><span class="p">(</span><span class="n">ProcessControls</span><span class="p">)</span>
+        <span class="k">if</span><span class="p">(</span><span class="n">controlid</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">controls</span><span class="p">):</span>
+            <span class="k">return</span> <span class="p">{}</span>
+
+        <span class="k">return</span> <span class="n">controls</span><span class="p">[</span><span class="n">controlid</span><span class="p">]</span></div>
+
+
+<div class="viewcode-block" id="MetaObjects.get_process_outputs">
+<a class="viewcode-back" href="../../../banffprocessor.metadata#banffprocessor.metadata.metaobjects.MetaObjects.get_process_outputs">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">get_process_outputs</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">process</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">list</span><span class="p">[</span><span class="nb">str</span><span class="p">]:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Get and return the list of output_name strings for `process`.</span>
+<span class="sd">        If no objects are found under `process` an empty list is returned.</span>
+
+<span class="sd">        :param process: The name of the process value to retrieve records of</span>
+<span class="sd">        :type process: str</span>
+<span class="sd">        :return: A list of the output_name attributes of the</span>
+<span class="sd">            :class:`banffprocessor.metadata.ProcessOutputs` objects with process `process`</span>
+<span class="sd">        :rtype: list[str]</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">if</span><span class="p">(</span><span class="ow">not</span> <span class="n">process</span> <span class="ow">or</span> <span class="n">ProcessOutputs</span><span class="o">.</span><span class="vm">__name__</span> <span class="ow">not</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">meta_dict</span><span class="p">):</span>
+            <span class="k">return</span> <span class="p">[]</span>
+
+        <span class="k">return</span> <span class="p">[</span><span class="n">x</span><span class="o">.</span><span class="n">output_name</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">meta_dict</span><span class="p">[</span><span class="n">ProcessOutputs</span><span class="o">.</span><span class="vm">__name__</span><span class="p">]</span> <span class="k">if</span> <span class="n">x</span><span class="o">.</span><span class="n">process</span> <span class="o">==</span> <span class="n">process</span><span class="o">.</span><span class="n">casefold</span><span class="p">()]</span></div>
+
+
+<div class="viewcode-block" id="MetaObjects.initialize_metadata">
+<a class="viewcode-back" href="../../../banffprocessor.metadata#banffprocessor.metadata.metaobjects.MetaObjects.initialize_metadata">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">initialize_metadata</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Perform the initialize() method on each metadata class type loaded to this object.&quot;&quot;&quot;</span>
+        <span class="k">for</span> <span class="bp">cls</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">module_to_class</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+            <span class="bp">cls</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">initialize</span><span class="p">(</span><span class="n">dbconn</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_dbconn</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="MetaObjects.cleanup_metadata">
+<a class="viewcode-back" href="../../../banffprocessor.metadata#banffprocessor.metadata.metaobjects.MetaObjects.cleanup_metadata">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">cleanup_metadata</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Perform the cleanup() method on each metadata class type loaded to this object.&quot;&quot;&quot;</span>
+        <span class="k">for</span> <span class="bp">cls</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">module_to_class</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+            <span class="bp">cls</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">cleanup</span><span class="p">(</span><span class="n">dbconn</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_dbconn</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="MetaObjects.check_constraints">
+<a class="viewcode-back" href="../../../banffprocessor.metadata#banffprocessor.metadata.metaobjects.MetaObjects.check_constraints">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">check_constraints</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Perform the check_constraints method on each metadata class type loaded to this object.&quot;&quot;&quot;</span>
+        <span class="k">for</span> <span class="bp">cls</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">module_to_class</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+            <span class="bp">cls</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">check_constraints</span><span class="p">(</span><span class="n">dbconn</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_dbconn</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="MetaObjects.display_load_summary">
+<a class="viewcode-back" href="../../../banffprocessor.metadata#banffprocessor.metadata.metaobjects.MetaObjects.display_load_summary">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">display_load_summary</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Display a summary of the Metadata files that were loaded to memory.&quot;&quot;&quot;</span>
+        <span class="n">border_string</span> <span class="o">=</span> <span class="s2">&quot;=&quot;</span><span class="o">*</span><span class="mi">100</span>
+        <span class="n">summary</span> <span class="o">=</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span> <span class="o">+</span> <span class="n">border_string</span>
+        <span class="n">summary</span> <span class="o">+=</span> <span class="n">_</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2"> Metadata Load Summary </span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="n">summary</span> <span class="o">+=</span> <span class="n">border_string</span> <span class="o">+</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span>
+        <span class="k">for</span> <span class="bp">cls</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">module_to_class</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+            <span class="n">summary</span> <span class="o">+=</span> <span class="sa">f</span><span class="s2">&quot;   </span><span class="si">{</span><span class="bp">cls</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">capitalize</span><span class="p">()</span><span class="w"> </span><span class="si">:</span><span class="s2"> &lt;30</span><span class="si">}</span><span class="s2"> </span><span class="si">{</span><span class="bp">cls</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">get_record_count</span><span class="p">(</span><span class="n">dbconn</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_dbconn</span><span class="p">)</span><span class="w">  </span><span class="si">:</span><span class="s2"> &gt;10</span><span class="si">}</span><span class="s2"> </span><span class="se">\n</span><span class="s2">&quot;</span>
+        <span class="n">summary</span> <span class="o">+=</span> <span class="n">border_string</span> <span class="o">+</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span>
+        <span class="n">log_lcl</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="n">summary</span><span class="p">)</span>
+        <span class="n">summary</span><span class="o">.</span><span class="n">format</span><span class="p">()</span></div>
+</div>
+
+</pre></div>
+
+                </article>
+              
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../../../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
+<script defer src="../../../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+
+  <p class="copyright">
+    
+      © Copyright 2025, Statistics Canada / Statistique Canada.
+      <br/>
+    
+  </p>
+</div>
+      
+        <div class="footer-item">
+
+  <p class="sphinx-version">
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 8.2.3.
+    <br/>
+  </p>
+</div>
+      
+    </div>
+  
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item">
+<p class="theme-version">
+  <!-- # L10n: Setting the PST URL as an argument as this does not need to be localized -->
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.16.1.
+</p></div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
+</html>

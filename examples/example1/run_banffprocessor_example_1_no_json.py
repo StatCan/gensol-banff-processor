@@ -12,7 +12,7 @@ input_params = ProcessorInput(job_id="example1",
                               # Gets the path to the folder containing this file, as a string
                               input_folder=Path(__file__).parent.as_posix(),
                               indata_filename="./inputdata/current.parq",
-                              histdata_filename="./inputdata/historical.parq",
+                              indata_hist_filename="./inputdata/historical.parq",
                               seed=1,
                               save_format=[".csv"],
                               log_level=2,

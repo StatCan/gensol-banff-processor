@@ -1,0 +1,1088 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="./" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>banffprocessor.metadata package &#8212; Banff Processor 2.0.2 documentation</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=8f2a1f02" />
+    <link rel="stylesheet" type="text/css" href="_static/custom.css?v=2a807888" />
+  
+  <!-- So that users can add custom icons -->
+  <script src="_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
+
+    <script src="_static/documentation_options.js?v=29701289"></script>
+    <script src="_static/doctools.js?v=9bcbadda"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'banffprocessor.metadata';</script>
+    <link rel="index" title="Index" href="genindex" />
+    <link rel="search" title="Search" href="search" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="search"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class="col-lg-3 navbar-header-items__start">
+    
+      <div class="navbar-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="index">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="_static/banff_white.png" class="logo__image only-light" alt="Banff Processor 2.0.2 documentation - Home"/>
+    <img src="_static/banff_white.png" class="logo__image only-dark pst-js-only" alt="Banff Processor 2.0.2 documentation - Home"/>
+  
+  
+</a></div>
+    
+  </div>
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="en/index">
+    English
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="fr/index">
+    Français
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+        </div>
+      
+      
+        <div class="navbar-item">
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button></div>
+      
+        <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/StatCan/gensol-banff-processor" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fab fa-github fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+</ul></div>
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+    </div>
+  
+
+  
+    <button class="pst-navbar-icon sidebar-toggle secondary-toggle" aria-label="On this page">
+      <span class="fa-solid fa-outdent"></span>
+    </button>
+  
+</div>
+
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          
+          
+            <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="en/index">
+    English
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="fr/index">
+    Français
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+          
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button></div>
+        
+          <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/StatCan/gensol-banff-processor" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fab fa-github fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+</ul></div>
+        
+      </div>
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+<nav class="bd-docs-nav bd-links"
+     aria-label="Section Navigation">
+  <p class="bd-links__title" role="heading" aria-level="1">Section Navigation</p>
+  <div class="bd-toc-item navbar-nav"><ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="banffprocessor.exceptions">banffprocessor.exceptions package</a></li>
+<li class="toctree-l1 current active has-children"><a class="current reference internal" href="#">banffprocessor.metadata package</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="banffprocessor.metadata.models">banffprocessor.metadata.models package</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="banffprocessor.nls">banffprocessor.nls package</a></li>
+<li class="toctree-l1"><a class="reference internal" href="banffprocessor.procedures">banffprocessor.procedures package</a></li>
+<li class="toctree-l1"><a class="reference internal" href="banffprocessor.processor_logger">banffprocessor.processor_logger package</a></li>
+<li class="toctree-l1"><a class="reference internal" href="banffprocessor.util">banffprocessor.util package</a></li>
+</ul>
+</div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+<nav aria-label="Breadcrumb" class="d-print-none">
+  <ul class="bd-breadcrumbs">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="index" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis">banffprocessor.metadata package</span></li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section id="banffprocessor-metadata-package">
+<h1>banffprocessor.metadata package<a class="headerlink" href="#banffprocessor-metadata-package" title="Link to this heading">#</a></h1>
+<section id="subpackages">
+<h2>Subpackages<a class="headerlink" href="#subpackages" title="Link to this heading">#</a></h2>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="banffprocessor.metadata.models">banffprocessor.metadata.models package</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="banffprocessor.metadata.models#submodules">Submodules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="banffprocessor.metadata.models#module-banffprocessor.metadata.models.algorithms">banffprocessor.metadata.models.algorithms module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="banffprocessor.metadata.models#banffprocessor.metadata.models.algorithms.Algorithms"><code class="docutils literal notranslate"><span class="pre">Algorithms</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="banffprocessor.metadata.models#banffprocessor.metadata.models.algorithms.Algorithms.get_schema"><code class="docutils literal notranslate"><span class="pre">Algorithms.get_schema()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="banffprocessor.metadata.models#banffprocessor.metadata.models.algorithms.Algorithms.initialize"><code class="docutils literal notranslate"><span class="pre">Algorithms.initialize()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="banffprocessor.metadata.models#banffprocessor.metadata.models.algorithms.Algorithms.to_dict"><code class="docutils literal notranslate"><span class="pre">Algorithms.to_dict()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="banffprocessor.metadata.models#module-banffprocessor.metadata.models.donorspecs">banffprocessor.metadata.models.donorspecs module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="banffprocessor.metadata.models#banffprocessor.metadata.models.donorspecs.Donorspecs"><code class="docutils literal notranslate"><span class="pre">Donorspecs</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="banffprocessor.metadata.models#banffprocessor.metadata.models.donorspecs.Donorspecs.check_constraints"><code class="docutils literal notranslate"><span class="pre">Donorspecs.check_constraints()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="banffprocessor.metadata.models#banffprocessor.metadata.models.donorspecs.Donorspecs.get_schema"><code class="docutils literal notranslate"><span class="pre">Donorspecs.get_schema()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="banffprocessor.metadata.models#banffprocessor.metadata.models.donorspecs.Donorspecs.initialize"><code class="docutils literal notranslate"><span class="pre">Donorspecs.initialize()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="banffprocessor.metadata.models#module-banffprocessor.metadata.models.editgroups">banffprocessor.metadata.models.editgroups module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="banffprocessor.metadata.models#banffprocessor.metadata.models.editgroups.Editgroups"><code class="docutils literal notranslate"><span class="pre">Editgroups</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="banffprocessor.metadata.models#banffprocessor.metadata.models.editgroups.Editgroups.check_constraints"><code class="docutils literal notranslate"><span class="pre">Editgroups.check_constraints()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="banffprocessor.metadata.models#banffprocessor.metadata.models.editgroups.Editgroups.get_schema"><code class="docutils literal notranslate"><span class="pre">Editgroups.get_schema()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="banffprocessor.metadata.models#banffprocessor.metadata.models.editgroups.Editgroups.initialize"><code class="docutils literal notranslate"><span class="pre">Editgroups.initialize()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="banffprocessor.metadata.models#module-banffprocessor.metadata.models.edits">banffprocessor.metadata.models.edits module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="banffprocessor.metadata.models#banffprocessor.metadata.models.edits.Edits"><code class="docutils literal notranslate"><span class="pre">Edits</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="banffprocessor.metadata.models#banffprocessor.metadata.models.edits.Edits.get_schema"><code class="docutils literal notranslate"><span class="pre">Edits.get_schema()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="banffprocessor.metadata.models#banffprocessor.metadata.models.edits.Edits.initialize"><code class="docutils literal notranslate"><span class="pre">Edits.initialize()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="banffprocessor.metadata.models#module-banffprocessor.metadata.models.errorlocspecs">banffprocessor.metadata.models.errorlocspecs module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="banffprocessor.metadata.models#banffprocessor.metadata.models.errorlocspecs.Errorlocspecs"><code class="docutils literal notranslate"><span class="pre">Errorlocspecs</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="banffprocessor.metadata.models#banffprocessor.metadata.models.errorlocspecs.Errorlocspecs.check_constraints"><code class="docutils literal notranslate"><span class="pre">Errorlocspecs.check_constraints()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="banffprocessor.metadata.models#banffprocessor.metadata.models.errorlocspecs.Errorlocspecs.get_schema"><code class="docutils literal notranslate"><span class="pre">Errorlocspecs.get_schema()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="banffprocessor.metadata.models#banffprocessor.metadata.models.errorlocspecs.Errorlocspecs.initialize"><code class="docutils literal notranslate"><span class="pre">Errorlocspecs.initialize()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="banffprocessor.metadata.models#module-banffprocessor.metadata.models.estimators">banffprocessor.metadata.models.estimators module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="banffprocessor.metadata.models#banffprocessor.metadata.models.estimators.Estimators"><code class="docutils literal notranslate"><span class="pre">Estimators</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="banffprocessor.metadata.models#banffprocessor.metadata.models.estimators.Estimators.get_schema"><code class="docutils literal notranslate"><span class="pre">Estimators.get_schema()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="banffprocessor.metadata.models#banffprocessor.metadata.models.estimators.Estimators.initialize"><code class="docutils literal notranslate"><span class="pre">Estimators.initialize()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="banffprocessor.metadata.models#banffprocessor.metadata.models.estimators.Estimators.to_dict"><code class="docutils literal notranslate"><span class="pre">Estimators.to_dict()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="banffprocessor.metadata.models#banffprocessor.metadata.models.estimators.builtin_estimators"><code class="docutils literal notranslate"><span class="pre">builtin_estimators()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="banffprocessor.metadata.models#module-banffprocessor.metadata.models.estimatorspecs">banffprocessor.metadata.models.estimatorspecs module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="banffprocessor.metadata.models#banffprocessor.metadata.models.estimatorspecs.Estimatorspecs"><code class="docutils literal notranslate"><span class="pre">Estimatorspecs</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="banffprocessor.metadata.models#banffprocessor.metadata.models.estimatorspecs.Estimatorspecs.check_constraints"><code class="docutils literal notranslate"><span class="pre">Estimatorspecs.check_constraints()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="banffprocessor.metadata.models#banffprocessor.metadata.models.estimatorspecs.Estimatorspecs.get_schema"><code class="docutils literal notranslate"><span class="pre">Estimatorspecs.get_schema()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="banffprocessor.metadata.models#banffprocessor.metadata.models.estimatorspecs.Estimatorspecs.initialize"><code class="docutils literal notranslate"><span class="pre">Estimatorspecs.initialize()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="banffprocessor.metadata.models#module-banffprocessor.metadata.models.expressions">banffprocessor.metadata.models.expressions module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="banffprocessor.metadata.models#banffprocessor.metadata.models.expressions.Expressions"><code class="docutils literal notranslate"><span class="pre">Expressions</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="banffprocessor.metadata.models#banffprocessor.metadata.models.expressions.Expressions.get_expression"><code class="docutils literal notranslate"><span class="pre">Expressions.get_expression()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="banffprocessor.metadata.models#banffprocessor.metadata.models.expressions.Expressions.get_schema"><code class="docutils literal notranslate"><span class="pre">Expressions.get_schema()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="banffprocessor.metadata.models#banffprocessor.metadata.models.expressions.Expressions.initialize"><code class="docutils literal notranslate"><span class="pre">Expressions.initialize()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="banffprocessor.metadata.models#module-banffprocessor.metadata.models.jobs">banffprocessor.metadata.models.jobs module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="banffprocessor.metadata.models#banffprocessor.metadata.models.jobs.Jobs"><code class="docutils literal notranslate"><span class="pre">Jobs</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="banffprocessor.metadata.models#banffprocessor.metadata.models.jobs.Jobs.check_constraints"><code class="docutils literal notranslate"><span class="pre">Jobs.check_constraints()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="banffprocessor.metadata.models#banffprocessor.metadata.models.jobs.Jobs.get_schema"><code class="docutils literal notranslate"><span class="pre">Jobs.get_schema()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="banffprocessor.metadata.models#banffprocessor.metadata.models.jobs.Jobs.initialize"><code class="docutils literal notranslate"><span class="pre">Jobs.initialize()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="banffprocessor.metadata.models#module-banffprocessor.metadata.models.massimputationspecs">banffprocessor.metadata.models.massimputationspecs module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="banffprocessor.metadata.models#banffprocessor.metadata.models.massimputationspecs.Massimputationspecs"><code class="docutils literal notranslate"><span class="pre">Massimputationspecs</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="banffprocessor.metadata.models#banffprocessor.metadata.models.massimputationspecs.Massimputationspecs.check_constraints"><code class="docutils literal notranslate"><span class="pre">Massimputationspecs.check_constraints()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="banffprocessor.metadata.models#banffprocessor.metadata.models.massimputationspecs.Massimputationspecs.get_schema"><code class="docutils literal notranslate"><span class="pre">Massimputationspecs.get_schema()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="banffprocessor.metadata.models#banffprocessor.metadata.models.massimputationspecs.Massimputationspecs.initialize"><code class="docutils literal notranslate"><span class="pre">Massimputationspecs.initialize()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="banffprocessor.metadata.models#module-banffprocessor.metadata.models.metadataclass">banffprocessor.metadata.models.metadataclass module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="banffprocessor.metadata.models#banffprocessor.metadata.models.metadataclass.MetadataClass"><code class="docutils literal notranslate"><span class="pre">MetadataClass</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="banffprocessor.metadata.models#banffprocessor.metadata.models.metadataclass.MetadataClass.DATA_FIELD_SCHEMA_MAX_LENGTH"><code class="docutils literal notranslate"><span class="pre">MetadataClass.DATA_FIELD_SCHEMA_MAX_LENGTH</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="banffprocessor.metadata.models#banffprocessor.metadata.models.metadataclass.MetadataClass.check_constraints"><code class="docutils literal notranslate"><span class="pre">MetadataClass.check_constraints()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="banffprocessor.metadata.models#banffprocessor.metadata.models.metadataclass.MetadataClass.cleanup"><code class="docutils literal notranslate"><span class="pre">MetadataClass.cleanup()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="banffprocessor.metadata.models#banffprocessor.metadata.models.metadataclass.MetadataClass.get_record_count"><code class="docutils literal notranslate"><span class="pre">MetadataClass.get_record_count()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="banffprocessor.metadata.models#banffprocessor.metadata.models.metadataclass.MetadataClass.get_schema"><code class="docutils literal notranslate"><span class="pre">MetadataClass.get_schema()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="banffprocessor.metadata.models#banffprocessor.metadata.models.metadataclass.MetadataClass.handle_foreign_key_violation"><code class="docutils literal notranslate"><span class="pre">MetadataClass.handle_foreign_key_violation()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="banffprocessor.metadata.models#banffprocessor.metadata.models.metadataclass.MetadataClass.initialize"><code class="docutils literal notranslate"><span class="pre">MetadataClass.initialize()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="banffprocessor.metadata.models#banffprocessor.metadata.models.metadataclass.MetadataClass.load_xml"><code class="docutils literal notranslate"><span class="pre">MetadataClass.load_xml()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="banffprocessor.metadata.models#banffprocessor.metadata.models.metadataclass.MetadataClass.setup"><code class="docutils literal notranslate"><span class="pre">MetadataClass.setup()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="banffprocessor.metadata.models#module-banffprocessor.metadata.models.outlierspecs">banffprocessor.metadata.models.outlierspecs module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="banffprocessor.metadata.models#banffprocessor.metadata.models.outlierspecs.Outlierspecs"><code class="docutils literal notranslate"><span class="pre">Outlierspecs</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="banffprocessor.metadata.models#banffprocessor.metadata.models.outlierspecs.Outlierspecs.check_constraints"><code class="docutils literal notranslate"><span class="pre">Outlierspecs.check_constraints()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="banffprocessor.metadata.models#banffprocessor.metadata.models.outlierspecs.Outlierspecs.get_schema"><code class="docutils literal notranslate"><span class="pre">Outlierspecs.get_schema()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="banffprocessor.metadata.models#banffprocessor.metadata.models.outlierspecs.Outlierspecs.initialize"><code class="docutils literal notranslate"><span class="pre">Outlierspecs.initialize()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="banffprocessor.metadata.models#banffprocessor.metadata.models.outlierspecs.Outlierspecs.invalid_min_obs"><code class="docutils literal notranslate"><span class="pre">Outlierspecs.invalid_min_obs</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="banffprocessor.metadata.models#banffprocessor.metadata.models.outlierspecs.Outlierspecs.methods"><code class="docutils literal notranslate"><span class="pre">Outlierspecs.methods</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="banffprocessor.metadata.models#module-banffprocessor.metadata.models.processcontrols">banffprocessor.metadata.models.processcontrols module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="banffprocessor.metadata.models#banffprocessor.metadata.models.processcontrols.ProcessControlType"><code class="docutils literal notranslate"><span class="pre">ProcessControlType</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="banffprocessor.metadata.models#banffprocessor.metadata.models.processcontrols.ProcessControlType.COLUMN_FILTER"><code class="docutils literal notranslate"><span class="pre">ProcessControlType.COLUMN_FILTER</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="banffprocessor.metadata.models#banffprocessor.metadata.models.processcontrols.ProcessControlType.EDIT_GROUP_FILTER"><code class="docutils literal notranslate"><span class="pre">ProcessControlType.EDIT_GROUP_FILTER</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="banffprocessor.metadata.models#banffprocessor.metadata.models.processcontrols.ProcessControlType.EXCLUDE_REJECTED"><code class="docutils literal notranslate"><span class="pre">ProcessControlType.EXCLUDE_REJECTED</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="banffprocessor.metadata.models#banffprocessor.metadata.models.processcontrols.ProcessControlType.ROW_FILTER"><code class="docutils literal notranslate"><span class="pre">ProcessControlType.ROW_FILTER</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="banffprocessor.metadata.models#banffprocessor.metadata.models.processcontrols.ProcessControls"><code class="docutils literal notranslate"><span class="pre">ProcessControls</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="banffprocessor.metadata.models#banffprocessor.metadata.models.processcontrols.ProcessControls.get_schema"><code class="docutils literal notranslate"><span class="pre">ProcessControls.get_schema()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="banffprocessor.metadata.models#banffprocessor.metadata.models.processcontrols.ProcessControls.initialize"><code class="docutils literal notranslate"><span class="pre">ProcessControls.initialize()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="banffprocessor.metadata.models#module-banffprocessor.metadata.models.processoutputs">banffprocessor.metadata.models.processoutputs module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="banffprocessor.metadata.models#banffprocessor.metadata.models.processoutputs.ProcessOutputs"><code class="docutils literal notranslate"><span class="pre">ProcessOutputs</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="banffprocessor.metadata.models#banffprocessor.metadata.models.processoutputs.ProcessOutputs.get_schema"><code class="docutils literal notranslate"><span class="pre">ProcessOutputs.get_schema()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="banffprocessor.metadata.models#banffprocessor.metadata.models.processoutputs.ProcessOutputs.initialize"><code class="docutils literal notranslate"><span class="pre">ProcessOutputs.initialize()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="banffprocessor.metadata.models#module-banffprocessor.metadata.models.proratespecs">banffprocessor.metadata.models.proratespecs module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="banffprocessor.metadata.models#banffprocessor.metadata.models.proratespecs.Proratespecs"><code class="docutils literal notranslate"><span class="pre">Proratespecs</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="banffprocessor.metadata.models#banffprocessor.metadata.models.proratespecs.Proratespecs.get_schema"><code class="docutils literal notranslate"><span class="pre">Proratespecs.get_schema()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="banffprocessor.metadata.models#banffprocessor.metadata.models.proratespecs.Proratespecs.initialize"><code class="docutils literal notranslate"><span class="pre">Proratespecs.initialize()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="banffprocessor.metadata.models#module-banffprocessor.metadata.models.uservars">banffprocessor.metadata.models.uservars module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="banffprocessor.metadata.models#banffprocessor.metadata.models.uservars.Uservars"><code class="docutils literal notranslate"><span class="pre">Uservars</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="banffprocessor.metadata.models#banffprocessor.metadata.models.uservars.Uservars.get_schema"><code class="docutils literal notranslate"><span class="pre">Uservars.get_schema()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="banffprocessor.metadata.models#banffprocessor.metadata.models.uservars.Uservars.initialize"><code class="docutils literal notranslate"><span class="pre">Uservars.initialize()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="banffprocessor.metadata.models#banffprocessor.metadata.models.uservars.Uservars.uservars_to_dict"><code class="docutils literal notranslate"><span class="pre">Uservars.uservars_to_dict()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="banffprocessor.metadata.models#module-banffprocessor.metadata.models.varlists">banffprocessor.metadata.models.varlists module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="banffprocessor.metadata.models#banffprocessor.metadata.models.varlists.Varlists"><code class="docutils literal notranslate"><span class="pre">Varlists</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="banffprocessor.metadata.models#banffprocessor.metadata.models.varlists.Varlists.get_schema"><code class="docutils literal notranslate"><span class="pre">Varlists.get_schema()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="banffprocessor.metadata.models#banffprocessor.metadata.models.varlists.Varlists.initialize"><code class="docutils literal notranslate"><span class="pre">Varlists.initialize()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="banffprocessor.metadata.models#module-banffprocessor.metadata.models.verifyeditsspecs">banffprocessor.metadata.models.verifyeditsspecs module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="banffprocessor.metadata.models#banffprocessor.metadata.models.verifyeditsspecs.Verifyeditsspecs"><code class="docutils literal notranslate"><span class="pre">Verifyeditsspecs</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="banffprocessor.metadata.models#banffprocessor.metadata.models.verifyeditsspecs.Verifyeditsspecs.get_schema"><code class="docutils literal notranslate"><span class="pre">Verifyeditsspecs.get_schema()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="banffprocessor.metadata.models#banffprocessor.metadata.models.verifyeditsspecs.Verifyeditsspecs.initialize"><code class="docutils literal notranslate"><span class="pre">Verifyeditsspecs.initialize()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="banffprocessor.metadata.models#module-banffprocessor.metadata.models.weights">banffprocessor.metadata.models.weights module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="banffprocessor.metadata.models#banffprocessor.metadata.models.weights.Weights"><code class="docutils literal notranslate"><span class="pre">Weights</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="banffprocessor.metadata.models#banffprocessor.metadata.models.weights.Weights.get_schema"><code class="docutils literal notranslate"><span class="pre">Weights.get_schema()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="banffprocessor.metadata.models#banffprocessor.metadata.models.weights.Weights.initialize"><code class="docutils literal notranslate"><span class="pre">Weights.initialize()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="banffprocessor.metadata.models#module-banffprocessor.metadata.models">Module contents</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</section>
+<section id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Link to this heading">#</a></h2>
+</section>
+<section id="module-banffprocessor.metadata.metaobjects">
+<span id="banffprocessor-metadata-metaobjects-module"></span><h2>banffprocessor.metadata.metaobjects module<a class="headerlink" href="#module-banffprocessor.metadata.metaobjects" title="Link to this heading">#</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="banffprocessor.metadata.metaobjects.MetaObjects">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">banffprocessor.metadata.metaobjects.</span></span><span class="sig-name descname"><span class="pre">MetaObjects</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">metadata_folder</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">Path</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">job_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dbconn</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">DuckDBPyConnection</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/banffprocessor/metadata/metaobjects#MetaObjects"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#banffprocessor.metadata.metaobjects.MetaObjects" title="Link to this definition">#</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Container class for collections of metadata objects.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="banffprocessor.metadata.metaobjects.MetaObjects.add_objects_of_single_type">
+<span class="sig-name descname"><span class="pre">add_objects_of_single_type</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">objects</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="banffprocessor.metadata.models#banffprocessor.metadata.models.metadataclass.MetadataClass" title="banffprocessor.metadata.models.metadataclass.MetadataClass"><span class="pre">MetadataClass</span></a><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="reference internal" href="_modules/banffprocessor/metadata/metaobjects#MetaObjects.add_objects_of_single_type"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#banffprocessor.metadata.metaobjects.MetaObjects.add_objects_of_single_type" title="Link to this definition">#</a></dt>
+<dd><p>Add a list of metadata objects all of the same type to the MetaObjects collection which can be retrieved using their type.</p>
+<p>Only one list per object type can be added; if a second is added it will overwrite the original list stored under that type.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>objects</strong> (list[<code class="xref py py-class docutils literal notranslate"><span class="pre">src.banffprocessor.metadata.MetadataClass</span></code>]) – The list of metadata objects to load</p>
+</dd>
+<dt class="field-even">Raises<span class="colon">:</span></dt>
+<dd class="field-even"><ul class="simple">
+<li><p><strong>ValueError</strong> – If <cite>objects</cite> is empty or <cite>None</cite></p></li>
+<li><p><strong>TypeError</strong> – If <cite>objects</cite> contains objects of more than one type</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="banffprocessor.metadata.metaobjects.MetaObjects.check_constraints">
+<span class="sig-name descname"><span class="pre">check_constraints</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="reference internal" href="_modules/banffprocessor/metadata/metaobjects#MetaObjects.check_constraints"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#banffprocessor.metadata.metaobjects.MetaObjects.check_constraints" title="Link to this definition">#</a></dt>
+<dd><p>Perform the check_constraints method on each metadata class type loaded to this object.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="banffprocessor.metadata.metaobjects.MetaObjects.cleanup_metadata">
+<span class="sig-name descname"><span class="pre">cleanup_metadata</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="reference internal" href="_modules/banffprocessor/metadata/metaobjects#MetaObjects.cleanup_metadata"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#banffprocessor.metadata.metaobjects.MetaObjects.cleanup_metadata" title="Link to this definition">#</a></dt>
+<dd><p>Perform the cleanup() method on each metadata class type loaded to this object.</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="banffprocessor.metadata.metaobjects.MetaObjects.dbconn">
+<em class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">dbconn</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">DuckDBPyConnection</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></em><a class="headerlink" href="#banffprocessor.metadata.metaobjects.MetaObjects.dbconn" title="Link to this definition">#</a></dt>
+<dd><p>The currently connected database used to store metadata objects.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>The duckdbpyconnection currently being used to store metadata objects.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>duckdb.DuckDBPyConnection | None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="banffprocessor.metadata.metaobjects.MetaObjects.display_load_summary">
+<span class="sig-name descname"><span class="pre">display_load_summary</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="reference internal" href="_modules/banffprocessor/metadata/metaobjects#MetaObjects.display_load_summary"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#banffprocessor.metadata.metaobjects.MetaObjects.display_load_summary" title="Link to this definition">#</a></dt>
+<dd><p>Display a summary of the Metadata files that were loaded to memory.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="banffprocessor.metadata.metaobjects.MetaObjects.get_algorithm">
+<span class="sig-name descname"><span class="pre">get_algorithm</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">algorithmname</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="banffprocessor.metadata.models#banffprocessor.metadata.models.algorithms.Algorithms" title="banffprocessor.metadata.models.algorithms.Algorithms"><span class="pre">Algorithms</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span></span><a class="reference internal" href="_modules/banffprocessor/metadata/metaobjects#MetaObjects.get_algorithm"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#banffprocessor.metadata.metaobjects.MetaObjects.get_algorithm" title="Link to this definition">#</a></dt>
+<dd><p>Get and return the <code class="xref py py-class docutils literal notranslate"><span class="pre">src.banffprocessor.metadata.Algorithms</span></code> object associated with the specified <cite>algorithmname</cite>.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>algorithmname</strong> – The algorithmname of the <code class="xref py py-class docutils literal notranslate"><span class="pre">src.banffprocessor.metadata.Algorithms</span></code>
+object to retrieve</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The <code class="xref py py-class docutils literal notranslate"><span class="pre">src.banffprocessor.metadata.Algorithms</span></code> object with the specified
+<cite>algorithmname</cite></p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><code class="xref py py-class docutils literal notranslate"><span class="pre">src.banffprocessor.metadata.Algorithms</span></code> | None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="banffprocessor.metadata.metaobjects.MetaObjects.get_edits_string">
+<span class="sig-name descname"><span class="pre">get_edits_string</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">editgroupid</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span></span></span><a class="reference internal" href="_modules/banffprocessor/metadata/metaobjects#MetaObjects.get_edits_string"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#banffprocessor.metadata.metaobjects.MetaObjects.get_edits_string" title="Link to this definition">#</a></dt>
+<dd><p>Get and return a string containing the list of edits in the <code class="xref py py-class docutils literal notranslate"><span class="pre">src.banffprocessor.metadata.Edits</span></code>
+objects associated with the specified <cite>editgroupid</cite>.</p>
+<p>The string is formed by concatenating the formed edit strings from the edits objects
+with a semi-colon and space as well as prepending each edit with its modifier (if present)
+and a colon and space. If no edits are found under the <cite>editgroupid</cite>, an empty string is returned.</p>
+<p>i.e. “PASS: a &gt; b; FAIL: c + d &lt;= e; f - g = h;”</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>editgroupid</strong> (<em>str</em>) – the ID to filter the <code class="xref py py-class docutils literal notranslate"><span class="pre">src.banffprocessor.metadata.Editgroups</span></code> on</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The semi-colon separated list of formed edits as a single string, empty
+if no edits were found</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="banffprocessor.metadata.metaobjects.MetaObjects.get_estimators">
+<span class="sig-name descname"><span class="pre">get_estimators</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">estid</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">list</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="banffprocessor.metadata.models#banffprocessor.metadata.models.estimators.Estimators" title="banffprocessor.metadata.models.estimators.Estimators"><span class="pre">Estimators</span></a><span class="p"><span class="pre">]</span></span></span></span><a class="reference internal" href="_modules/banffprocessor/metadata/metaobjects#MetaObjects.get_estimators"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#banffprocessor.metadata.metaobjects.MetaObjects.get_estimators" title="Link to this definition">#</a></dt>
+<dd><p>Get and return the list of <code class="xref py py-class docutils literal notranslate"><span class="pre">src.banffprocessor.metadata.Estimators</span></code> objects
+associated with the specified <cite>estid</cite> and sorted by their <cite>seqno</cite>.</p>
+<p>If no variables are found under the <cite>estid</cite>, an empty list is returned.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>estid</strong> (<em>str</em>) – the ID to filter the <code class="xref py py-class docutils literal notranslate"><span class="pre">src.banffprocessor.metadata.Estimators</span></code> on</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>A list of <code class="xref py py-class docutils literal notranslate"><span class="pre">src.banffprocessor.metadata.Estimators</span></code> objects or an
+empty list if no <code class="xref py py-class docutils literal notranslate"><span class="pre">src.banffprocessor.metadata.Estimators</span></code> are found under
+the <cite>estid</cite></p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>list[<code class="xref py py-class docutils literal notranslate"><span class="pre">src.banffprocessor.metadata.Estimators</span></code>]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="banffprocessor.metadata.metaobjects.MetaObjects.get_expression">
+<span class="sig-name descname"><span class="pre">get_expression</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">exprid</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span></span></span><a class="reference internal" href="_modules/banffprocessor/metadata/metaobjects#MetaObjects.get_expression"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#banffprocessor.metadata.metaobjects.MetaObjects.get_expression" title="Link to this definition">#</a></dt>
+<dd><p>Get the expression string associated with the specified <cite>exprid</cite>.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>exprid</strong> (<em>str</em>) – The identifier of the Expression to get.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The <cite>expressions</cite> field value of the Expression object fetched.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="banffprocessor.metadata.metaobjects.MetaObjects.get_job_steps">
+<span class="sig-name descname"><span class="pre">get_job_steps</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">jobid</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">list</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="banffprocessor.metadata.models#banffprocessor.metadata.models.jobs.Jobs" title="banffprocessor.metadata.models.jobs.Jobs"><span class="pre">Jobs</span></a><span class="p"><span class="pre">]</span></span></span></span><a class="reference internal" href="_modules/banffprocessor/metadata/metaobjects#MetaObjects.get_job_steps"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#banffprocessor.metadata.metaobjects.MetaObjects.get_job_steps" title="Link to this definition">#</a></dt>
+<dd><p>Get and returns the list of Jobs objects with <cite>jobid</cite> sorted in ascending order of their seqno.</p>
+<p>If no objects are found under the <cite>jobid</cite> an empty list is returned.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>jobid</strong> (<em>str</em><em> | </em><em>None</em>) – The class reference of the object type to fetch</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>A list of the <code class="xref py py-class docutils literal notranslate"><span class="pre">src.banffprocessor.metadata.Jobs</span></code> objects
+with jobid <cite>jobid</cite></p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>list[<code class="xref py py-class docutils literal notranslate"><span class="pre">src.banffprocessor.metadata.Jobs</span></code>]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="banffprocessor.metadata.metaobjects.MetaObjects.get_objects_of_type">
+<span class="sig-name descname"><span class="pre">get_objects_of_type</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">cls</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">type</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="banffprocessor.metadata.models#banffprocessor.metadata.models.metadataclass.MetadataClass" title="banffprocessor.metadata.models.metadataclass.MetadataClass"><span class="pre">MetadataClass</span></a><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">list</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="banffprocessor.metadata.models#banffprocessor.metadata.models.metadataclass.MetadataClass" title="banffprocessor.metadata.models.metadataclass.MetadataClass"><span class="pre">MetadataClass</span></a><span class="p"><span class="pre">]</span></span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">Any</span><span class="p"><span class="pre">]</span></span></span></span><a class="reference internal" href="_modules/banffprocessor/metadata/metaobjects#MetaObjects.get_objects_of_type"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#banffprocessor.metadata.metaobjects.MetaObjects.get_objects_of_type" title="Link to this definition">#</a></dt>
+<dd><p>Get the list of metadata objects of type <cite>cls</cite>.</p>
+<p>If no objects are found, an empty list is returned.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>cls</strong> (type[<code class="xref py py-class docutils literal notranslate"><span class="pre">src.banffprocessor.metadata.MetadataClass</span></code>]) – The class reference of the object type to fetch</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>A list of all type <cite>cls</cite> objects found in this <cite>MetaObjects</cite> object or a special
+dictionary if objects are of type <code class="xref py py-class docutils literal notranslate"><span class="pre">src.banffprocessor.metadata.ProcessControls</span></code></p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>list[<code class="xref py py-class docutils literal notranslate"><span class="pre">src.banffprocessor.metadata.MetadataClass</span></code>] | dict[str, Any]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="banffprocessor.metadata.metaobjects.MetaObjects.get_process_controls">
+<span class="sig-name descname"><span class="pre">get_process_controls</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">controlid</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">dict</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="banffprocessor.metadata.models#banffprocessor.metadata.models.processcontrols.ProcessControlType" title="banffprocessor.metadata.models.processcontrols.ProcessControlType"><span class="pre">ProcessControlType</span></a><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">list</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="banffprocessor.metadata.models#banffprocessor.metadata.models.processcontrols.ProcessControls" title="banffprocessor.metadata.models.processcontrols.ProcessControls"><span class="pre">ProcessControls</span></a><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></span><a class="reference internal" href="_modules/banffprocessor/metadata/metaobjects#MetaObjects.get_process_controls"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#banffprocessor.metadata.metaobjects.MetaObjects.get_process_controls" title="Link to this definition">#</a></dt>
+<dd><p>Get and return a mapping of targetfile names to a dict of <cite>parameter</cite> values to
+their list of <code class="xref py py-class docutils literal notranslate"><span class="pre">src.banffprocessor.metadata.ProcessControls</span></code> objects associated
+with the specified <cite>controlid</cite>.</p>
+<p>The lists are sorted on the enum value of the <cite>parameter</cite>
+field to ensure that a regular list traversal will always pass over controls in
+the order that they should be applied to the <cite>target_file</cite>.
+If no variables are found under the <cite>controlid</cite>, an empty dict is returned.</p>
+<p>i.e.
+{</p>
+<blockquote>
+<div><dl class="simple">
+<dt>“indata”: {</dt><dd><p>ProcessControlType.ROW_FILTER: [ProcessControls1, ProcessControls2],
+ProcessControlType.COLUMN_FILTER: [ProcessControls3, ProcessControls4],</p>
+</dd>
+</dl>
+<p>},</p>
+</div></blockquote>
+<p>}</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>controlid</strong> (<em>str</em>) – the ID to filter the <code class="xref py py-class docutils literal notranslate"><span class="pre">src.banffprocessor.metadata.ProcessControls</span></code> on</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>A dict of target file names mapped to dicts of
+<code class="xref py py-class docutils literal notranslate"><span class="pre">src.banffprocessor.metadata.ProcessControlType</span></code> mapped to lists of
+<code class="xref py py-class docutils literal notranslate"><span class="pre">src.banffprocessor.metadata.ProcessControls</span></code> of that type for
+that targetfile, or an empty list if no records are found under the <cite>controlid</cite></p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>dict[str, <code class="xref py py-class docutils literal notranslate"><span class="pre">src.banffprocessor.metadata.ProcessControls</span></code>]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="banffprocessor.metadata.metaobjects.MetaObjects.get_process_outputs">
+<span class="sig-name descname"><span class="pre">get_process_outputs</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">process</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span></span><a class="reference internal" href="_modules/banffprocessor/metadata/metaobjects#MetaObjects.get_process_outputs"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#banffprocessor.metadata.metaobjects.MetaObjects.get_process_outputs" title="Link to this definition">#</a></dt>
+<dd><p>Get and return the list of output_name strings for <cite>process</cite>.
+If no objects are found under <cite>process</cite> an empty list is returned.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>process</strong> (<em>str</em>) – The name of the process value to retrieve records of</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>A list of the output_name attributes of the
+<code class="xref py py-class docutils literal notranslate"><span class="pre">banffprocessor.metadata.ProcessOutputs</span></code> objects with process <cite>process</cite></p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>list[str]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="banffprocessor.metadata.metaobjects.MetaObjects.get_specs_obj">
+<span class="sig-name descname"><span class="pre">get_specs_obj</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">cls</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">type</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="banffprocessor.metadata.models#banffprocessor.metadata.models.metadataclass.MetadataClass" title="banffprocessor.metadata.models.metadataclass.MetadataClass"><span class="pre">MetadataClass</span></a><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">specid</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="banffprocessor.metadata.models#banffprocessor.metadata.models.metadataclass.MetadataClass" title="banffprocessor.metadata.models.metadataclass.MetadataClass"><span class="pre">MetadataClass</span></a></span></span><a class="reference internal" href="_modules/banffprocessor/metadata/metaobjects#MetaObjects.get_specs_obj"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#banffprocessor.metadata.metaobjects.MetaObjects.get_specs_obj" title="Link to this definition">#</a></dt>
+<dd><p>Get and return the object of type <cite>cls</cite> with the specid <cite>specid</cite>.</p>
+<p>Only one result should be found for the specified <cite>specid</cite> as it is effectively
+a primary key for its metadata table. If no object is found for the specid
+<cite>None</cite> is returned.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>cls</strong> (type[<code class="xref py py-class docutils literal notranslate"><span class="pre">src.banffprocessor.metadata.MetadataClass</span></code>]) – The metadata object type to search for</p></li>
+<li><p><strong>specid</strong> (<em>str</em>) – The specid to match on objects of type <cite>cls</cite></p></li>
+</ul>
+</dd>
+<dt class="field-even">Raises<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference internal" href="banffprocessor.exceptions#banffprocessor.exceptions.MetadataConstraintError" title="banffprocessor.exceptions.MetadataConstraintError"><strong>MetadataConstraintError</strong></a> – If multiple <code class="xref py py-class docutils literal notranslate"><span class="pre">src.banffprocessor.metadata.MetadataClass</span></code>
+objects are found under <cite>specid</cite></p>
+</dd>
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>The object with type <cite>cls</cite> and specid <cite>specid</cite> or <cite>None</cite> if
+not found</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><code class="xref py py-class docutils literal notranslate"><span class="pre">src.banffprocessor.metadata.MetadataClass</span></code></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="banffprocessor.metadata.metaobjects.MetaObjects.get_user_vars_dict">
+<span class="sig-name descname"><span class="pre">get_user_vars_dict</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">specid</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">process</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span></span><a class="reference internal" href="_modules/banffprocessor/metadata/metaobjects#MetaObjects.get_user_vars_dict"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#banffprocessor.metadata.metaobjects.MetaObjects.get_user_vars_dict" title="Link to this definition">#</a></dt>
+<dd><p>Get Uservars objects identified by the <cite>specid</cite> and <cite>process</cite> and return a dict mapping
+the Uservars <cite>var</cite> to its <cite>value</cite>.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>specid</strong> (<em>str</em>) – The specid identifying Uservars to fetch.</p></li>
+<li><p><strong>process</strong> (<em>str</em>) – The process value of the Uservars to fetch.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>A dictionary mapping the fetched Uservars <cite>var</cite> field to their <cite>value</cite></p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>dict[str,str]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="banffprocessor.metadata.metaobjects.MetaObjects.get_varlist_fieldids">
+<span class="sig-name descname"><span class="pre">get_varlist_fieldids</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">varid</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span></span><a class="reference internal" href="_modules/banffprocessor/metadata/metaobjects#MetaObjects.get_varlist_fieldids"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#banffprocessor.metadata.metaobjects.MetaObjects.get_varlist_fieldids" title="Link to this definition">#</a></dt>
+<dd><p>Given a list of varlist objects gets and returns the list of fieldids of the varlist
+objects associated with the specified varid and sorts it on seqno.</p>
+<p>If no variables are found under the varid, an empty list is returned.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>varid</strong> (<em>str</em><em> | </em><em>None</em>) – the ID to filter the varlists on</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>A list of varlist objects with varid <cite>varid</cite> sorted on their <cite>seqno</cite> and
+an empty list if no objects are found</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>list[str]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="banffprocessor.metadata.metaobjects.MetaObjects.get_weights_string">
+<span class="sig-name descname"><span class="pre">get_weights_string</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">weightid</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span></span></span><a class="reference internal" href="_modules/banffprocessor/metadata/metaobjects#MetaObjects.get_weights_string"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#banffprocessor.metadata.metaobjects.MetaObjects.get_weights_string" title="Link to this definition">#</a></dt>
+<dd><p>Get and return a string containing the list of weights in the
+<code class="xref py py-class docutils literal notranslate"><span class="pre">src.banffprocessor.metadata.Weights</span></code> objects
+associated with the specified <cite>weightid</cite> sorted in descending order by weight,
+and formed by concatenating the formed weight strings from the objects with a
+semi-colon and space.</p>
+<p>If no <code class="xref py py-class docutils literal notranslate"><span class="pre">src.banffprocessor.metadata.Weights</span></code> are found under the <cite>weightid</cite>,
+an empty string is returned.</p>
+<p>i.e. “field1=9.0; field2=7.0; field3=5.0;”</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>weightid</strong> (<em>str</em>) – the ID to filter the <code class="xref py py-class docutils literal notranslate"><span class="pre">src.banffprocessor.metadata.Weights</span></code> on</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The semi-colon separated list of formed weights as a single string, empty
+if no <code class="xref py py-class docutils literal notranslate"><span class="pre">src.banffprocessor.metadata.Weights</span></code> were found</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="banffprocessor.metadata.metaobjects.MetaObjects.initialize_metadata">
+<span class="sig-name descname"><span class="pre">initialize_metadata</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="reference internal" href="_modules/banffprocessor/metadata/metaobjects#MetaObjects.initialize_metadata"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#banffprocessor.metadata.metaobjects.MetaObjects.initialize_metadata" title="Link to this definition">#</a></dt>
+<dd><p>Perform the initialize() method on each metadata class type loaded to this object.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="banffprocessor.metadata.metaobjects.MetaObjects.job_proc_names">
+<span class="sig-name descname"><span class="pre">job_proc_names</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">set</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#banffprocessor.metadata.metaobjects.MetaObjects.job_proc_names" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="banffprocessor.metadata.metaobjects.MetaObjects.load_xml_file">
+<span class="sig-name descname"><span class="pre">load_xml_file</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">metadata_file</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Path</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cls</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">type</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="banffprocessor.metadata.models#banffprocessor.metadata.models.metadataclass.MetadataClass" title="banffprocessor.metadata.models.metadataclass.MetadataClass"><span class="pre">MetadataClass</span></a><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="reference internal" href="_modules/banffprocessor/metadata/metaobjects#MetaObjects.load_xml_file"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#banffprocessor.metadata.metaobjects.MetaObjects.load_xml_file" title="Link to this definition">#</a></dt>
+<dd><p>Load the metadata found in <cite>metadata_file</cite> into this class:<cite>src.banffprocessor.metadata.MetaObjects</cite> object.</p>
+<p>The new entry added will have a key of the <cite>cls</cite> name and value of a collection of objects
+of type <cite>cls</cite>.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>metadata_file</strong> (<em>pathlib.Path</em>) – The path of the XML file to load</p></li>
+<li><p><strong>cls</strong> (type[<code class="xref py py-class docutils literal notranslate"><span class="pre">src.banffprocessor.metadata.MetadataClass</span></code>]) – The metadata object type to load the file into</p></li>
+</ul>
+</dd>
+<dt class="field-even">Raises<span class="colon">:</span></dt>
+<dd class="field-even"><ul class="simple">
+<li><p><a class="reference internal" href="banffprocessor.exceptions#banffprocessor.exceptions.EmptyMetadataFileError" title="banffprocessor.exceptions.EmptyMetadataFileError"><strong>EmptyMetadataFileError</strong></a> – If the metadata file does not contain any valid entries</p></li>
+<li><p><a class="reference internal" href="banffprocessor.exceptions#banffprocessor.exceptions.MetadataConstraintError" title="banffprocessor.exceptions.MetadataConstraintError"><strong>MetadataConstraintError</strong></a> – If an entry in the metadata file contains values
+that violate the constraints on the object type being loaded</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="banffprocessor.metadata.metaobjects.MetaObjects.total_job_steps">
+<span class="sig-name descname"><span class="pre">total_job_steps</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">int</span></em><a class="headerlink" href="#banffprocessor.metadata.metaobjects.MetaObjects.total_job_steps" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="banffprocessor.metadata.metaobjects.MetaObjects.validate_job_sequence">
+<em class="property"><span class="k"><span class="pre">static</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">validate_job_sequence</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">job_steps</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="banffprocessor.metadata.models#banffprocessor.metadata.models.jobs.Jobs" title="banffprocessor.metadata.models.jobs.Jobs"><span class="pre">Jobs</span></a><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">job_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">set</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">int</span><span class="p"><span class="pre">]</span></span></span></span><a class="reference internal" href="_modules/banffprocessor/metadata/metaobjects#MetaObjects.validate_job_sequence"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#banffprocessor.metadata.metaobjects.MetaObjects.validate_job_sequence" title="Link to this definition">#</a></dt>
+<dd><p>Iterate through <cite>job_steps</cite> and validates the sequence of all steps and process blocks contained/referenced in the job with <cite>job_id</cite>.</p>
+<p>If <cite>job_id</cite> is not provided, the first job found in <cite>job_steps</cite> will be used as the starting point.
+Returns a list of the unique proc names contained in the job sequence.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>job_steps</strong> (<em>list</em><em>[</em><a class="reference internal" href="banffprocessor.metadata.models#banffprocessor.metadata.models.jobs.Jobs" title="banffprocessor.metadata.models.jobs.Jobs"><em>Jobs</em></a><em>]</em>) – A collection of Jobs metadata objects</p></li>
+<li><p><strong>job_id</strong> (<em>str</em><em> | </em><em>None</em><em>, </em><em>optional</em>) – The job_id to be run and whose job steps to validate, defaults to None</p></li>
+</ul>
+</dd>
+<dt class="field-even">Raises<span class="colon">:</span></dt>
+<dd class="field-even"><ul class="simple">
+<li><p><a class="reference internal" href="banffprocessor.exceptions#banffprocessor.exceptions.MetadataConstraintError" title="banffprocessor.exceptions.MetadataConstraintError"><strong>MetadataConstraintError</strong></a> – If a job step of process “JOB” has a specid pointing
+to a job_id that does not exist in the current Jobs metadata collection</p></li>
+<li><p><a class="reference internal" href="banffprocessor.exceptions#banffprocessor.exceptions.MetadataConstraintError" title="banffprocessor.exceptions.MetadataConstraintError"><strong>MetadataConstraintError</strong></a> – If a cycle exists in the graph of job_steps (i.e. a
+step points to a process block which points back to the calling block, thus creating
+an infinite loop)</p></li>
+</ul>
+</dd>
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>A set of the unique proc names contained in the job sequence and the total number
+of job steps across the entire job.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>tuple[set[str], int]</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-banffprocessor.metadata">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-banffprocessor.metadata" title="Link to this heading">#</a></h2>
+<p>Contains the modules used to interact and store Banff Processor metadata.</p>
+</section>
+</section>
+
+
+                </article>
+              
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+<div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> On this page
+  </div>
+  <nav class="bd-toc-nav page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#subpackages">Subpackages</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#submodules">Submodules</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#module-banffprocessor.metadata.metaobjects">banffprocessor.metadata.metaobjects module</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#banffprocessor.metadata.metaobjects.MetaObjects"><code class="docutils literal notranslate"><span class="pre">MetaObjects</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#banffprocessor.metadata.metaobjects.MetaObjects.add_objects_of_single_type"><code class="docutils literal notranslate"><span class="pre">MetaObjects.add_objects_of_single_type()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#banffprocessor.metadata.metaobjects.MetaObjects.check_constraints"><code class="docutils literal notranslate"><span class="pre">MetaObjects.check_constraints()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#banffprocessor.metadata.metaobjects.MetaObjects.cleanup_metadata"><code class="docutils literal notranslate"><span class="pre">MetaObjects.cleanup_metadata()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#banffprocessor.metadata.metaobjects.MetaObjects.dbconn"><code class="docutils literal notranslate"><span class="pre">MetaObjects.dbconn</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#banffprocessor.metadata.metaobjects.MetaObjects.display_load_summary"><code class="docutils literal notranslate"><span class="pre">MetaObjects.display_load_summary()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#banffprocessor.metadata.metaobjects.MetaObjects.get_algorithm"><code class="docutils literal notranslate"><span class="pre">MetaObjects.get_algorithm()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#banffprocessor.metadata.metaobjects.MetaObjects.get_edits_string"><code class="docutils literal notranslate"><span class="pre">MetaObjects.get_edits_string()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#banffprocessor.metadata.metaobjects.MetaObjects.get_estimators"><code class="docutils literal notranslate"><span class="pre">MetaObjects.get_estimators()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#banffprocessor.metadata.metaobjects.MetaObjects.get_expression"><code class="docutils literal notranslate"><span class="pre">MetaObjects.get_expression()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#banffprocessor.metadata.metaobjects.MetaObjects.get_job_steps"><code class="docutils literal notranslate"><span class="pre">MetaObjects.get_job_steps()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#banffprocessor.metadata.metaobjects.MetaObjects.get_objects_of_type"><code class="docutils literal notranslate"><span class="pre">MetaObjects.get_objects_of_type()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#banffprocessor.metadata.metaobjects.MetaObjects.get_process_controls"><code class="docutils literal notranslate"><span class="pre">MetaObjects.get_process_controls()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#banffprocessor.metadata.metaobjects.MetaObjects.get_process_outputs"><code class="docutils literal notranslate"><span class="pre">MetaObjects.get_process_outputs()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#banffprocessor.metadata.metaobjects.MetaObjects.get_specs_obj"><code class="docutils literal notranslate"><span class="pre">MetaObjects.get_specs_obj()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#banffprocessor.metadata.metaobjects.MetaObjects.get_user_vars_dict"><code class="docutils literal notranslate"><span class="pre">MetaObjects.get_user_vars_dict()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#banffprocessor.metadata.metaobjects.MetaObjects.get_varlist_fieldids"><code class="docutils literal notranslate"><span class="pre">MetaObjects.get_varlist_fieldids()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#banffprocessor.metadata.metaobjects.MetaObjects.get_weights_string"><code class="docutils literal notranslate"><span class="pre">MetaObjects.get_weights_string()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#banffprocessor.metadata.metaobjects.MetaObjects.initialize_metadata"><code class="docutils literal notranslate"><span class="pre">MetaObjects.initialize_metadata()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#banffprocessor.metadata.metaobjects.MetaObjects.job_proc_names"><code class="docutils literal notranslate"><span class="pre">MetaObjects.job_proc_names</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#banffprocessor.metadata.metaobjects.MetaObjects.load_xml_file"><code class="docutils literal notranslate"><span class="pre">MetaObjects.load_xml_file()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#banffprocessor.metadata.metaobjects.MetaObjects.total_job_steps"><code class="docutils literal notranslate"><span class="pre">MetaObjects.total_job_steps</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#banffprocessor.metadata.metaobjects.MetaObjects.validate_job_sequence"><code class="docutils literal notranslate"><span class="pre">MetaObjects.validate_job_sequence()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#module-banffprocessor.metadata">Module contents</a></li>
+</ul>
+  </nav></div>
+
+  <div class="sidebar-secondary-item">
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/banffprocessor.metadata.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
+<script defer src="_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+
+  <p class="copyright">
+    
+      © Copyright 2025, Statistics Canada / Statistique Canada.
+      <br/>
+    
+  </p>
+</div>
+      
+        <div class="footer-item">
+
+  <p class="sphinx-version">
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 8.2.3.
+    <br/>
+  </p>
+</div>
+      
+    </div>
+  
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item">
+<p class="theme-version">
+  <!-- # L10n: Setting the PST URL as an argument as this does not need to be localized -->
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.16.1.
+</p></div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
+</html>

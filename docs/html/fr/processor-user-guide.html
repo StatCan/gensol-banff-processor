@@ -1,0 +1,1247 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Guide d’utilisation du processeur Banff &#8212; Banff Processor 2.0.2 documentation</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=8f2a1f02" />
+    <link rel="stylesheet" type="text/css" href="../_static/custom.css?v=2a807888" />
+  
+  <!-- So that users can add custom icons -->
+  <script src="../_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
+
+    <script src="../_static/documentation_options.js?v=29701289"></script>
+    <script src="../_static/doctools.js?v=9bcbadda"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'fr/processor-user-guide';</script>
+    <link rel="index" title="Index" href="../genindex" />
+    <link rel="search" title="Search" href="../search" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="../search"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class="col-lg-3 navbar-header-items__start">
+    
+      <div class="navbar-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../index">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../_static/banff_white.png" class="logo__image only-light" alt="Banff Processor 2.0.2 documentation - Home"/>
+    <img src="../_static/banff_white.png" class="logo__image only-dark pst-js-only" alt="Banff Processor 2.0.2 documentation - Home"/>
+  
+  
+</a></div>
+    
+  </div>
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../en/index">
+    English
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="index">
+    Français
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+        </div>
+      
+      
+        <div class="navbar-item">
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button></div>
+      
+        <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/StatCan/gensol-banff-processor" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fab fa-github fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+</ul></div>
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+    </div>
+  
+
+  
+    <button class="pst-navbar-icon sidebar-toggle secondary-toggle" aria-label="On this page">
+      <span class="fa-solid fa-outdent"></span>
+    </button>
+  
+</div>
+
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+        
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar hide-on-wide">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          
+          
+            <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../en/index">
+    English
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="index">
+    Français
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+          
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button></div>
+        
+          <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/StatCan/gensol-banff-processor" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fab fa-github fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+</ul></div>
+        
+      </div>
+    
+  </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+<nav aria-label="Breadcrumb" class="d-print-none">
+  <ul class="bd-breadcrumbs">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="../index" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis">Guide d’utilisation du processeur Banff</span></li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section id="guide-d-utilisation-du-processeur-banff">
+<h1>Guide d’utilisation du processeur Banff<a class="headerlink" href="#guide-d-utilisation-du-processeur-banff" title="Link to this heading">#</a></h1>
+<section id="introduction">
+<h2>Introduction<a class="headerlink" href="#introduction" title="Link to this heading">#</a></h2>
+<p>Le processeur Banff est un paquet Python utilisé pour exécuter un processus de vérification statistique des données (VSD), également appelé communément vérification et imputation. Un processus VSD spécifique se compose généralement de nombreuses étapes de processus individuelles, chacune exécutant une fonction VSD telle que la localisation d’erreurs, la détection de valeurs aberrantes ou l’imputation. Le flux de processus décrit les étapes de processus à exécuter et la séquence dans laquelle elles sont exécutées. Étant donné un ensemble de tables de métadonnées d’entrée qui décrivent le flux de processus VSD, y compris chaque étape individuelle, le processeur Banff exécute chaque étape de processus en séquence, en gérant toute la gestion des données intermédiaires. L’avantage du système piloté par métadonnées du processeur Banff est que la conception et la modification du processus VSD sont gérées à partir de tables de métadonnées plutôt que du code source.</p>
+<p>Autres notes sur le processeur Banff:</p>
+<ul class="simple">
+<li><p>Simplicité: Une fois les tables de métadonnées créées, le processeur peut être exécuté à partir d’une seule ligne de code</p></li>
+<li><p>Efficacité: Conçu pour les processus VSD de niveau production</p></li>
+<li><p>Modularité: Au sein d’une étape de processus, les utilisateurs peuvent appeler les procédures Banff intégrées ou les <a class="reference internal" href="#procedures-definies-par-l-utilisateur">procédures définies par l’utilisateur</a></p></li>
+<li><p>Flexibilité: Les <a class="reference internal" href="#controles-de-processus">Contrôles de processus</a> et les <a class="reference internal" href="#blocs-de-processus">Blocs de processus</a> permettent aux utilisateurs de spécifier des flux de processus complexes</p></li>
+<li><p>Informatif: Le processeur produit des diagnostics à partir de chaque étape et pour le processus global</p></li>
+<li><p>Transparence: Le code source est disponible et librement partagé</p></li>
+</ul>
+<p>Le guide de l’utilisateur utilise souvent la terminologie du <a class="reference external" href="https://statswiki.unece.org/spaces/sde/pages/117771706/GSDEM"><strong>Modèle générique de vérification statistique des données</strong> (MGVSD)</a>. Les utilisateurs sont encouragés à se référer au MGVSD pour la terminologie commune concernant les concepts VSD.</p>
+</section>
+<section id="table-des-matieres">
+<h2>Table des matières<a class="headerlink" href="#table-des-matieres" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p><a class="reference internal" href="#fichiers-de-metadonnees-d-entree">Fichiers de métadonnées d’entrée</a></p></li>
+<li><p><a class="reference internal" href="#outil-de-generation-de-metadonnees">Outil de génération de métadonnées</a></p></li>
+<li><p><a class="reference internal" href="#parametres-d-entree-du-processeur-banff">Paramètres d’entrée</a></p></li>
+<li><p><a class="reference internal" href="#execution-du-processeur-en-tant-qu-utilitaire-de-ligne-de-commande">Exécution du processeur en tant qu’utilitaire de ligne de commande</a></p></li>
+<li><p><a class="reference internal" href="#execution-du-processeur-a-partir-d-un-script-python">Exécution du processeur à partir d’un processus Python</a></p></li>
+<li><p><a class="reference internal" href="#procedures-definies-par-l-utilisateur">Procédures définies par l’utilisateur</a></p></li>
+<li><p><a class="reference internal" href="#controles-de-processus">Contrôles de processus</a></p></li>
+<li><p><a class="reference internal" href="#blocs-de-processus">Blocs de processus</a></p></li>
+<li><p><a class="reference internal" href="#les-sorties">Les Sorties</a></p></li>
+</ul>
+</section>
+<section id="fichiers-de-metadonnees-d-entree">
+<h2>Fichiers de métadonnées d’entrée<a class="headerlink" href="#fichiers-de-metadonnees-d-entree" title="Link to this heading">#</a></h2>
+<p>Le processeur Banff est piloté par des tables de métadonnées décrivant à la fois le flux global du processus, ainsi que les paramètres requis pour les étapes individuelles du processus. La table de métadonnées principale est appelée JOBS, et spécifie le flux global du processus, en particulier les procédures Banff intégrées et/ou les programmes définis par l’utilisateur (plugins) à exécuter et leur séquencement relatif. La table JOBS peut contenir plusieurs tâches (c’est-à-dire le flux du processus), spécifiées par le <code class="docutils literal notranslate"><span class="pre">jobid</span></code> (identifiant de stratégie), bien qu’une seule stratégie puisse être attendue à la fois par le processeur Banff. Chaque stratégie comprendra une ligne par étape du processus ; les colonnes clés sont:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">jobid</span></code>: identifiant de stratégie.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">seqno</span></code>: numéro de séquence des étapes individuelles du processus.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">process</span></code>: nom de la procédure intégrée ou du programme défini par l’utilisateur à exécuter à chaque étape du processus.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">specid</span></code>: identifiant de spécification, reliant d’autres tables de métadonnées contenant des paramètres spécifiques au <code class="docutils literal notranslate"><span class="pre">process</span></code> déclaré.</p></li>
+</ul>
+<p>Les colonnes supplémentaires de la table JOBS incluent un identifiant de contrôle de processus facultatif (<code class="docutils literal notranslate"><span class="pre">controlid</span></code>) ainsi que des paramètres communs à plusieurs procédures (<code class="docutils literal notranslate"><span class="pre">editgroupid</span></code>,<code class="docutils literal notranslate"><span class="pre">byid</span></code>,<code class="docutils literal notranslate"><span class="pre">acceptnegative</span></code>).</p>
+<p>Au total, le processeur Banff utilise 18 tables de métadonnées, qui peuvent être classées comme suit:</p>
+<ul class="simple">
+<li><p>Tables décrivant le flux global du processus: <code class="docutils literal notranslate"><span class="pre">JOBS</span></code> <code class="docutils literal notranslate"><span class="pre">PROCESSCONTROLS</span></code></p></li>
+<li><p>Paramètres des étapes du processus pour les procédures Banff intégrées: <code class="docutils literal notranslate"><span class="pre">VERIFYEDITSPECS</span></code> <code class="docutils literal notranslate"><span class="pre">OUTLIERSPECS</span></code> <code class="docutils literal notranslate"><span class="pre">ERRORLOCSPECS</span></code> <code class="docutils literal notranslate"><span class="pre">DONORSPECS</span></code> <code class="docutils literal notranslate"><span class="pre">ESTIMATORSPECS</span></code> <code class="docutils literal notranslate"><span class="pre">ESTIMATORS</span></code> <code class="docutils literal notranslate"><span class="pre">ALGORITHMS</span></code> <code class="docutils literal notranslate"><span class="pre">PRORATESPECS</span></code> <code class="docutils literal notranslate"><span class="pre">MASSIMPUTATIONSPECS</span></code></p></li>
+<li><p>Paramètres des étapes du processus pour les <a class="reference internal" href="#procedures-definies-par-l-utilisateur">procédures définies par l’utilisateur</a>: <code class="docutils literal notranslate"><span class="pre">USERVARS</span></code></p></li>
+<li><p>Tables utilisées pour définir les modifications: <code class="docutils literal notranslate"><span class="pre">EDITS</span></code> <code class="docutils literal notranslate"><span class="pre">EDITGROUPS</span></code></p></li>
+<li><p>Paramètres utilisés par plusieurs procédures: <code class="docutils literal notranslate"><span class="pre">VARLISTS</span></code> <code class="docutils literal notranslate"><span class="pre">WEIGHTS</span></code> <code class="docutils literal notranslate"><span class="pre">EXPRESSIONS</span></code></p></li>
+<li><p>Gestion des données: <code class="docutils literal notranslate"><span class="pre">PROCESSOUTPUTS</span></code></p></li>
+</ul>
+<p>Seule la table JOBS est obligatoire, bien que d’autres tables soient requises en fonction des procédures ou des options utilisées. Une description complète de toutes les tables de métadonnées est incluse dans ce document: <a class="reference internal" href="metadata-tables"><span class="std std-doc">Tables de métadonnées</span></a></p>
+<section id="formatage">
+<h3>Formatage<a class="headerlink" href="#formatage" title="Link to this heading">#</a></h3>
+<p>Les tables de métadonnées doivent être enregistrées au format <code class="docutils literal notranslate"><span class="pre">.xml</span></code>. Les utilisateurs peuvent créer les fichiers <code class="docutils literal notranslate"><span class="pre">.xml</span></code> eux-mêmes ou utiliser le modèle de processeur Banff (../../banffprocessor_template.xlsx) pour créer et enregistrer les métadonnées, et <a class="reference internal" href="#outil-de-generation-de-metadonnees">l’outil de génération de métadonnées</a> pour convertir le fichier modèle en tables <code class="docutils literal notranslate"><span class="pre">.xml</span></code>. Par défaut, le processeur recherchera les fichiers XML au même emplacement que votre fichier d’entrée <code class="docutils literal notranslate"><span class="pre">.json</span></code>, soit directement dans le même dossier, soit dans un sous-dossier <code class="docutils literal notranslate"><span class="pre">\metadata</span></code>. Vous pouvez également fournir un emplacement spécifique en définissant le paramètre <code class="docutils literal notranslate"><span class="pre">metadata_folder</span></code> dans votre fichier JSON d’entrée.</p>
+</section>
+<section id="exemple-tableau-jobs">
+<h3>Exemple (tableau JOBS)<a class="headerlink" href="#exemple-tableau-jobs" title="Link to this heading">#</a></h3>
+<p>Le tableau suivant définit un travail unique, <code class="docutils literal notranslate"><span class="pre">Principal</span></code>, qui comprend quatre étapes de processus.</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>jobid</p></th>
+<th class="head"><p>seqno</p></th>
+<th class="head"><p>controlid</p></th>
+<th class="head"><p>process</p></th>
+<th class="head"><p>specid</p></th>
+<th class="head"><p>edigroupid</p></th>
+<th class="head"><p>byid</p></th>
+<th class="head"><p>acceptnegative</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Main</p></td>
+<td><p>1</p></td>
+<td><p></p></td>
+<td><p>ERRORLOC</p></td>
+<td><p>errloc_specs</p></td>
+<td><p>edits_1</p></td>
+<td><p></p></td>
+<td><p>Y</p></td>
+</tr>
+<tr class="row-odd"><td><p>Main</p></td>
+<td><p>2</p></td>
+<td><p></p></td>
+<td><p>DETERMINISTIC</p></td>
+<td><p></p></td>
+<td><p>edits_1</p></td>
+<td><p></p></td>
+<td><p>Y</p></td>
+</tr>
+<tr class="row-even"><td><p>Main</p></td>
+<td><p>10</p></td>
+<td><p></p></td>
+<td><p>DONORIMP</p></td>
+<td><p>donor_specs</p></td>
+<td><p>edits_1</p></td>
+<td><p>by_list</p></td>
+<td><p>Y</p></td>
+</tr>
+<tr class="row-odd"><td><p>Main</p></td>
+<td><p>99</p></td>
+<td><p></p></td>
+<td><p>PRORATE</p></td>
+<td><p>pro_specs</p></td>
+<td><p>edits_2</p></td>
+<td><p></p></td>
+<td><p>Y</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<ul class="simple">
+<li><p>Seul l’ordre des numéros de séquence (<code class="docutils literal notranslate"><span class="pre">seqno</span></code>) est important ; ils n’ont pas besoin d’être des entiers séquentiels.</p></li>
+<li><p>Ce travail comprend quatre étapes de processus, exécutées séquentiellement, composées de quatre procédures Banff intégrées: <code class="docutils literal notranslate"><span class="pre">ERRORLOC</span></code>, <code class="docutils literal notranslate"><span class="pre">DETERMINSITIC</span></code>, <code class="docutils literal notranslate"><span class="pre">DONORIMP</span></code> et <code class="docutils literal notranslate"><span class="pre">PRORATE</span></code>.</p></li>
+<li><p>Les paramètres <code class="docutils literal notranslate"><span class="pre">editgroupid</span></code>, <code class="docutils literal notranslate"><span class="pre">byid</span></code> et <code class="docutils literal notranslate"><span class="pre">acceptnegative</span></code>, qui sont communs à de nombreuses procédures Banff intégrées, sont inclus dans la table JOBS.</p></li>
+<li><p>La plupart des procédures incluent des paramètres obligatoires et/ou facultatifs qui définissent exactement comment la procédure doit être exécutée. Ceux-ci sont contenus dans des tables de métadonnées supplémentaires et liés à des étapes de processus spécifiques via la colonne <code class="docutils literal notranslate"><span class="pre">specid</span></code>. Les procédures qui n’ont pas de paramètres supplémentaires (au-delà de ceux inclus dans la table JOBS) ne nécessitent pas de <code class="docutils literal notranslate"><span class="pre">specid</span></code>.</p></li>
+<li><p>La colonne <code class="docutils literal notranslate"><span class="pre">controlid</span></code> est facultative et peut être utilisée pour spécifier les <a class="reference internal" href="#controles-de-processus">contrôles de processus</a>.</p></li>
+</ul>
+<p>Des exemples supplémentaires peuvent être trouvés dans le dossier ‘examples’ du projet.</p>
+</section>
+</section>
+<section id="outil-de-generation-de-metadonnees">
+<h2>Outil de génération de métadonnées<a class="headerlink" href="#outil-de-generation-de-metadonnees" title="Link to this heading">#</a></h2>
+<p>Les métadonnées stockées dans le <a class="reference download internal" download="" href="../_downloads/c34605131b43615675625caf82015946/banffprocessor_template.xlsx"><span class="xref download myst">modèle de processeur Banff</span></a> doivent être converties en fichiers XML avant d’exécuter le processeur. Un outil de conversion est fourni à cet effet. Avec le package banffprocessor installé dans votre environnement Python, l’outil de conversion peut être exécuté avec la commande suivante:</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>banffconvert<span class="w"> </span><span class="s2">&quot;\path\to\your\excel_metadata.xlsx&quot;</span><span class="w"> </span>-o<span class="w"> </span><span class="s2">&quot;\my\output\directory&quot;</span><span class="w"> </span>-l<span class="w"> </span>fr
+</pre></div>
+</div>
+<p>or:</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>banffconvert<span class="w"> </span><span class="s2">&quot;\path\to\your\excel_metadata.xlsx&quot;</span><span class="w"> </span>--outdir<span class="o">=</span><span class="s2">&quot;\my\output\directory&quot;</span><span class="w"> </span>--lang<span class="w"> </span>en
+</pre></div>
+</div>
+<p>Alternativement pour exécuter en tant que module:</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>python<span class="w"> </span>-m<span class="w"> </span>banffprocessor.util.metadata_excel_to_xml<span class="w"> </span><span class="s2">&quot;\path\to\your\excel_metadata.xlsx&quot;</span><span class="w"> </span>-o<span class="w"> </span><span class="s2">&quot;\my\output\directory&quot;</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p><strong>NOTE</strong>: Le paramètre ‘-o’/’–outdir’ est facultatif. S’il n’est pas fourni, l’outil de conversion enregistrera les fichiers XML dans le même répertoire que le fichier d’entrée.</p></li>
+<li><p><strong>NOTE</strong>: Le paramètre ‘-l’/’–lang’ est facultatif. Les valeurs valides sont en et fr. Si elles ne sont pas spécifiées, la valeur par défaut est en.</p></li>
+</ul>
+<p>Enfin, l’outil peut être inclus et exécuté directement dans un script python:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">banffprocessor.util.metadata_excel_to_xml</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">e2x</span>
+
+<span class="n">e2x</span><span class="o">.</span><span class="n">convert_excel_to_xml</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\\</span><span class="s2">path</span><span class="se">\\</span><span class="s2">to</span><span class="se">\\</span><span class="s2">your</span><span class="se">\\</span><span class="s2">excel_metadata.xlsx&quot;</span><span class="p">,</span> <span class="s2">&quot;</span><span class="se">\\</span><span class="s2">my</span><span class="se">\\</span><span class="s2">output</span><span class="se">\\</span><span class="s2">directory&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<section id="parametres-d-entree-du-processeur-banff">
+<h2>Paramètres d’entrée du processeur Banff<a class="headerlink" href="#parametres-d-entree-du-processeur-banff" title="Link to this heading">#</a></h2>
+<p>Les paramètres d’entrée sont spécifiés dans un fichier <code class="docutils literal notranslate"><span class="pre">.json</span></code> ou un objet <code class="docutils literal notranslate"><span class="pre">ProcessorInput</span></code>, tous deux transmis au processeur et utilisés pour spécifier les paramètres de votre tâche. Voici les paramètres actuellement disponibles:</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Nom</p></th>
+<th class="head"><p>Objectif</p></th>
+<th class="head"><p>Obligatoire?</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>job_id</p></td>
+<td><p>L’ID de stratégie de votre <code class="docutils literal notranslate"><span class="pre">jobs.xml</span></code> que vous souhaitez exécuter.</p></td>
+<td><p>Y</p></td>
+</tr>
+<tr class="row-odd"><td><p>unit_id</p></td>
+<td><p>La variable d’identification de l’unité est l’identifiant unique sur les fichiers de microdonnées pour la stratégie</p></td>
+<td><p>Y</p></td>
+</tr>
+<tr class="row-even"><td><p>indata_filename</p></td>
+<td><p>Le nom de fichier ou le chemin d’accès complet de votre fichier de données d’entrée/actuel</p></td>
+<td><p>Y (sauf si vous exécutez uniquement <em>VerifyEdits</em>)</p></td>
+</tr>
+<tr class="row-odd"><td><p>indata_aux_filename</p></td>
+<td><p>Le nom de fichier ou le chemin d’accès complet de votre fichier de données auxiliaires</p></td>
+<td><p>N</p></td>
+</tr>
+<tr class="row-even"><td><p>indata_hist_filename</p></td>
+<td><p>Le nom de fichier ou le chemin d’accès complet de votre fichier de données historiques</p></td>
+<td><p>N</p></td>
+</tr>
+<tr class="row-odd"><td><p>instatus_hist_filename</p></td>
+<td><p>Le nom de fichier ou le chemin d’accès complet de votre fichier de données d’état historique</p></td>
+<td><p>N</p></td>
+</tr>
+<tr class="row-even"><td><p>instatus_filename</p></td>
+<td><p>Le nom de fichier ou le chemin d’accès complet d’un fichier d’état à utiliser comme entrée pour le premier processus de votre stratégie nécessitant un fichier d’état.<a class="footnote-reference brackets" href="#id2" id="id1" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p></td>
+<td><p>N</p></td>
+</tr>
+<tr class="row-odd"><td><p>user_plugins_folder</p></td>
+<td><p>L’emplacement facultatif du dossier contenant vos plugins de procédure Python personnalisés. <em>Voir ci-dessous pour une description de la façon de créer vos propres plugins</em></p></td>
+<td><p>N</p></td>
+</tr>
+<tr class="row-even"><td><p>metadata_folder</p></td>
+<td><p>Le chemin facultatif vers un dossier où vos métadonnées XML peuvent être trouvées</p></td>
+<td><p>N</p></td>
+</tr>
+<tr class="row-odd"><td><p>output_folder</p></td>
+<td><p>Le chemin facultatif vers un dossier dans lequel vos fichiers de sortie seront enregistrés</p></td>
+<td><p>N</p></td>
+</tr>
+<tr class="row-even"><td><p>process_output_type</p></td>
+<td><p>Contrôle les ensembles de données de sortie conservés par chaque processus. Les options incluent <code class="docutils literal notranslate"><span class="pre">all</span></code>, <code class="docutils literal notranslate"><span class="pre">minimal</span></code> et <code class="docutils literal notranslate"><span class="pre">custom</span></code>. Lorsque <code class="docutils literal notranslate"><span class="pre">all</span></code> est spécifié, toutes les sorties sont conservées. Si <code class="docutils literal notranslate"><span class="pre">minimal</span></code> est spécifié, seuls les fichiers imputed_file, status_file et status_log sont conservés. Lorsque la valeur est <code class="docutils literal notranslate"><span class="pre">custom</span></code>, le processeur examine les métadonnées <code class="docutils literal notranslate"><span class="pre">ProcessOutputs</span></code> pour déterminer ce qu’il faut conserver.</p></td>
+<td><p>N</p></td>
+</tr>
+<tr class="row-odd"><td><p>seed</p></td>
+<td><p>La valeur de départ à utiliser pour des résultats cohérents lors de l’utilisation des mêmes données d’entrée et paramètres</p></td>
+<td><p>N</p></td>
+</tr>
+<tr class="row-even"><td><p>no_by_stats</p></td>
+<td><p>Si spécifié, détermine si no_by_stats est défini sur True lors de l’appel des procédures standard.</p></td>
+<td><p>N</p></td>
+</tr>
+<tr class="row-odd"><td><p>randnumvar</p></td>
+<td><p>Spécifiez une variable de nombre aléatoire à utiliser lorsque vous devez faire un choix lors de la localisation d’erreur ou de l’imputation par donneur. Ce paramètre est facultatif et n’est utilisé que par ErrorLoc et DonorImputation simultanément (il ne peut pas être utilisé dans l’un et pas dans l’autre). Veuillez consulter le document Guide de l’utilisateur de Banff pour plus de détails sur l’utilisation de l’option <code class="docutils literal notranslate"><span class="pre">randnumvar</span></code> dans les procédures ErrorLoc et DonorImputation.<BR><BR>Cette option peut être utile lorsqu’il est nécessaire d’obtenir les mêmes résultats de localisation d’erreur ou d’imputation d’une exécution à l’autre.</p></td>
+<td><p>N</p></td>
+</tr>
+<tr class="row-even"><td><p>save_format</p></td>
+<td><p>Liste facultative des extensions de fichier utilisées pour déterminer le format d’enregistrement des fichiers de sortie. Une ou plusieurs extensions peuvent être fournies. Prend actuellement en charge les extensions CSV et Parquet.</p></td>
+<td><p>N</p></td>
+</tr>
+<tr class="row-odd"><td><p>log_level</p></td>
+<td><p>Configure la création ou non d’un fichier journal et le niveau de messages qu’il doit contenir. La valeur doit être 0, 1 (par défaut) ou 2. Voir <a class="reference internal" href="#les-sorties">Les Sorties</a>.</p></td>
+<td><p>N</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>Exemple de fichier d’entrée JSON:</p>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;job_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;j1&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;unit_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;ident&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;indata_filename&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;indata.parq&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;indata_aux_filename&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;C:\\full\\filepath\\to\\auxdata.parq&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;indata_hist_filename&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;histdata.parq&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;instatus_hist_filename&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;histstatus.parq&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;instatus_filename&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;instatus.parq&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;user_plugins_folder&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;C:\\path\\to\\my\\plugins&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;metadata_folder&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;C:\\path\\to\\xml\\metadata&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;output_folder&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;my_output_subfolder&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;process_output_type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;All&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;seed&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1234</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;no_by_stats&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;N&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;randnumvar&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;save_format&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;.parq&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;.csv&quot;</span><span class="p">],</span>
+<span class="w">    </span><span class="nt">&quot;log_level&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Exemple de création d’un objet <code class="docutils literal notranslate"><span class="pre">ProcessorInput</span></code> en ligne:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">banffprocessor.processor</span><span class="w"> </span><span class="kn">import</span> <span class="n">Processor</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">banffprocessor.processor_input</span><span class="w"> </span><span class="kn">import</span> <span class="n">ProcessorInput</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">pathlib</span><span class="w"> </span><span class="kn">import</span> <span class="n">Path</span>
+
+<span class="c1"># Fournir les paramètres directement, au lieu d&#39;un fichier d&#39;entrée</span>
+<span class="n">input_params</span> <span class="o">=</span> <span class="n">ProcessorInput</span><span class="p">(</span><span class="n">job_id</span><span class="o">=</span><span class="s2">&quot;j1&quot;</span><span class="p">,</span> 
+                              <span class="n">unit_id</span><span class="o">=</span><span class="s2">&quot;ident&quot;</span><span class="p">,</span>
+                              <span class="c1"># Obtient le chemin d&#39;accès au dossier contenant ce fichier</span>
+                              <span class="n">input_folder</span><span class="o">=</span><span class="n">Path</span><span class="p">(</span><span class="vm">__file__</span><span class="p">)</span><span class="o">.</span><span class="n">parent</span><span class="p">,</span>
+                              <span class="n">indata_filename</span><span class="o">=</span><span class="s2">&quot;indata.parq&quot;</span><span class="p">,</span>
+                              <span class="n">indata_hist_filename</span><span class="o">=</span><span class="s2">&quot;C:</span><span class="se">\\</span><span class="s2">full</span><span class="se">\\</span><span class="s2">filepath</span><span class="se">\\</span><span class="s2">to</span><span class="se">\\</span><span class="s2">histdata.parq&quot;</span><span class="p">,</span>
+                              <span class="n">seed</span><span class="o">=</span><span class="mi">1234</span><span class="p">,</span> 
+                              <span class="n">save_format</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;.parq&quot;</span><span class="p">,</span> <span class="s2">&quot;.csv&quot;</span><span class="p">],</span>
+                              <span class="n">log_level</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+
+<span class="c1"># Méthode normale avec un fichier JSON</span>
+<span class="c1">#my_bp = Processor(&quot;C:\\path\\to\\my\\processor_input.json&quot;)</span>
+<span class="c1"># Méthode lors de la fourniture de paramètres en ligne</span>
+<span class="n">my_bp</span> <span class="o">=</span> <span class="n">Processor</span><span class="p">(</span><span class="n">input_params</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Remarques:</p>
+<ul class="simple">
+<li><p>Tous les emplacements de dossier peuvent être indiqués sous forme de chemins de fichiers absolus ou relatifs au dossier d’entrée (soit l’emplacement du fichier .json d’entrée, soit le paramètre input_folder fourni si vous créez des entrées en ligne comme indiqué ci-dessus).</p></li>
+<li><p>Cet emplacement input_folder est également utilisé comme emplacement par défaut pour d’autres fichiers requis par le processeur si aucune valeur n’est fournie pour eux, tels que les métadonnées, les fichiers de données d’entrée et les procédures définies par l’utilisateur</p></li>
+<li><p>Les chemins de fichiers doivent avoir des barres obliques inverses <code class="docutils literal notranslate"><span class="pre">\</span></code> échappées en les remplaçant par une double barre oblique inverse <code class="docutils literal notranslate"><span class="pre">\\</span></code>. Par exemple, <code class="docutils literal notranslate"><span class="pre">C:\this\is\a\filepath</span></code> deviendrait <code class="docutils literal notranslate"><span class="pre">C:\\this\\is\\a\\filepath</span></code></p></li>
+<li><p>Les champs qui ne sont pas nécessaires à l’exécution des procédures décrites dans votre fichier de tâches peuvent être omis ou laissés vides</p></li>
+<li><p>Le format <code class="docutils literal notranslate"><span class="pre">CSV</span></code> a été inclus à des fins de test et n’est pas destiné à la production. Parquet est actuellement le format recommandé pour la production pour des raisons liées à la précision, aux performances et à l’efficacité</p></li>
+</ul>
+</section>
+<section id="execution-du-processeur-en-tant-qu-utilitaire-de-ligne-de-commande">
+<h2>Exécution du processeur en tant qu’utilitaire de ligne de commande<a class="headerlink" href="#execution-du-processeur-en-tant-qu-utilitaire-de-ligne-de-commande" title="Link to this heading">#</a></h2>
+<p>Avec le package banffprocessor installé dans votre environnement Python, le processeur peut être exécuté avec la commande suivante:</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>banffprocessor<span class="w"> </span><span class="s2">&quot;\path\to\your\processor_input.json&quot;</span><span class="w"> </span>-l<span class="w"> </span>fr
+</pre></div>
+</div>
+<p>Alternativement pour exécuter en tant que module:</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>python<span class="w"> </span>-m<span class="w"> </span>banffprocessor.processor<span class="w"> </span><span class="s2">&quot;\path\to\your\processor_input.json&quot;</span><span class="w"> </span>--lang<span class="w"> </span>fr
+</pre></div>
+</div>
+<ul class="simple">
+<li><p><strong>NOTE</strong>: Le paramètre ‘-l’/’–lang’ est facultatif. Les valeurs valides sont en et fr. Si elles ne sont pas spécifiées, la valeur par défaut est en.</p></li>
+</ul>
+<section id="execution-du-processeur-a-partir-d-un-script-python">
+<h3>Exécution du processeur à partir d’un script Python<a class="headerlink" href="#execution-du-processeur-a-partir-d-un-script-python" title="Link to this heading">#</a></h3>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">banffprocessor</span>
+
+<span class="c1"># Facultatif: définissez la langue sur fr pour que les messages du journal et de la console soient écrits en français.</span>
+<span class="n">banffprocessor</span><span class="o">.</span><span class="n">set_language</span><span class="p">(</span><span class="n">banffprocessor</span><span class="o">.</span><span class="n">SupportedLanguage</span><span class="o">.</span><span class="n">fr</span><span class="p">)</span>
+
+<span class="n">bp</span> <span class="o">=</span> <span class="n">banffprocessor</span><span class="o">.</span><span class="n">Processor</span><span class="o">.</span><span class="n">from_file</span><span class="p">(</span><span class="s2">&quot;path</span><span class="se">\\</span><span class="s2">to</span><span class="se">\\</span><span class="s2">my</span><span class="se">\\</span><span class="s2">input_file.json&quot;</span><span class="p">)</span>
+<span class="n">bp</span><span class="o">.</span><span class="n">execute</span><span class="p">()</span>
+<span class="n">bp</span><span class="o">.</span><span class="n">save_outputs</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>Vous pouvez également charger vos fichiers de données d’entrée par programmation sous forme de Pandas DataFrames:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">banffprocessor.processor</span><span class="w"> </span><span class="kn">import</span> <span class="n">Processor</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>
+
+<span class="n">indata</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">()</span>
+<span class="n">indata_aux</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">()</span>
+<span class="n">instatus</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">()</span>
+<span class="o">...</span>
+<span class="c1"># Chargez vos dataframes avec des données</span>
+<span class="o">...</span>
+<span class="n">bp</span> <span class="o">=</span> <span class="n">Processor</span><span class="o">.</span><span class="n">from_file</span><span class="p">(</span><span class="n">input_filepath</span><span class="o">=</span><span class="s2">&quot;path</span><span class="se">\\</span><span class="s2">to</span><span class="se">\\</span><span class="s2">my</span><span class="se">\\</span><span class="s2">input_file.json&quot;</span><span class="p">,</span> <span class="n">indata</span><span class="o">=</span><span class="n">indata</span><span class="p">,</span> <span class="n">instatus</span><span class="o">=</span><span class="n">instatus</span><span class="p">)</span>
+<span class="n">bp</span><span class="o">.</span><span class="n">execute</span><span class="p">()</span>
+<span class="n">bp</span><span class="o">.</span><span class="n">save_outputs</span><span class="p">()</span>
+</pre></div>
+</div>
+</section>
+</section>
+<section id="procedures-definies-par-l-utilisateur">
+<h2>Procédures définies par l’utilisateur<a class="headerlink" href="#procedures-definies-par-l-utilisateur" title="Link to this heading">#</a></h2>
+<p>En plus des procédures Banff standard automatiquement intégrées au processeur, vous pouvez également inclure vos propres fichiers <code class="docutils literal notranslate"><span class="pre">.py</span></code> implémentant des procédures personnalisées. Par défaut, le processeur recherchera les fichiers Python placés dans un sous-dossier <code class="docutils literal notranslate"><span class="pre">\plugins</span></code> au même emplacement que votre fichier JSON d’entrée. Vous pouvez également fournir un emplacement spécifique pour charger les plugins dans le paramètre <code class="docutils literal notranslate"><span class="pre">user_plugins_folder</span></code> de votre fichier JSON d’entrée. Vous pouvez fournir autant de fichiers de plugin que nécessaire pour votre travail, et chaque fichier de plugin peut contenir autant de classes de procédures que vous le souhaitez tant que chaque classe est enregistrée dans une méthode <code class="docutils literal notranslate"><span class="pre">register()</span></code>.</p>
+<p>Votre plugin doit définir une classe qui implémente le protocole <code class="docutils literal notranslate"><span class="pre">ProcedureInterface</span></code> qui se trouve dans les fichiers sources du package à <code class="docutils literal notranslate"><span class="pre">\src\banffprocessor\procedures\procedure_interface.py</span></code>. Votre classe d’implémentation doit avoir exactement les mêmes noms d’attributs et les mêmes signatures de fonctions que l’interface. Voici un exemple de plugin qui implémente le protocole:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span><span class="w"> </span><span class="nc">MyProcClass</span><span class="p">:</span>
+    
+    <span class="nd">@classmethod</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">execute</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">processor_data</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
+        <span class="c1"># Ceux-ci vous donnent des données sous forme de tableau pyarrow</span>
+        <span class="c1">#indata = processor_data.indata</span>
+        <span class="c1">#indata = processor_data.get_dataset(&quot;indata&quot;, ds_format=&quot;pyarrow&quot;)</span>
+        <span class="c1"># Cela vous donne des données sous forme de Pandas DataFrame</span>
+        <span class="n">indata</span> <span class="o">=</span> <span class="n">processor_data</span><span class="o">.</span><span class="n">get_dataset</span><span class="p">(</span><span class="s2">&quot;indata&quot;</span><span class="p">,</span> <span class="n">ds_format</span><span class="o">=</span><span class="s2">&quot;pandas&quot;</span><span class="p">)</span>
+        
+        <span class="c1"># Récupérez la variable utilisateur var1 à partir de la collection de métadonnées, par défaut un type `string»</span>
+        <span class="n">my_var1</span> <span class="o">=</span> <span class="n">processor_data</span><span class="o">.</span><span class="n">current_uservars</span><span class="p">[</span><span class="s2">&quot;var1&quot;</span><span class="p">]</span>   
+        <span class="c1"># Si la variable utilisateur est censée être numérique, nous devons la convertir</span>
+        <span class="c1">#my_var1 = int(processor_data.current_uservars[&quot;var1&quot;])</span>
+        
+        <span class="c1"># Créer un DataFrame outdata contenant les enregistrements indata avec la valeur d&#39;identification R01</span>
+        <span class="n">outdata</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">indata</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">indata</span><span class="p">[</span><span class="s1">&#39;ident&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;R01&#39;</span><span class="p">])</span>
+
+        <span class="c1"># Nous nous attendons à avoir au moins un enregistrement trouvé</span>
+        <span class="c1"># Si ce n&#39;est pas le cas, renvoyez 1 pour indiquer qu&#39;une erreur s&#39;est produite et que le travail doit se terminer.</span>
+        <span class="k">if</span><span class="p">(</span><span class="n">outdata</span><span class="o">.</span><span class="n">empty</span><span class="p">):</span>
+            <span class="k">return</span> <span class="mi">1</span>
+
+        <span class="c1"># Définissez le champ v1 dans les enregistrements récupérés pour qu&#39;il contienne la valeur de la variable utilisateur</span>
+        <span class="n">outdata</span><span class="p">[</span><span class="s1">&#39;v1&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">my_var1</span>
+
+        <span class="c1"># Pour que le processeur mette à jour notre fichier imputé, nous devons définir le fichier de données de sortie </span>
+        <span class="n">processor_data</span><span class="o">.</span><span class="n">outdata</span> <span class="o">=</span> <span class="n">outdata</span>
+        
+        <span class="c1"># Si nous y sommes parvenus, renvoyez 0 pour indiquer qu&#39;il n&#39;y a eu aucune erreur</span>
+        <span class="k">return</span> <span class="mi">0</span>
+
+<span class="c1"># Enregistre toutes les classes de plug-ins dans l&#39;usine</span>
+<span class="c1"># `myproc` est le même nom que vous fournirez dans les entrées de votre fichier Jobs comme </span>
+<span class="c1"># nom de processus, en utilisant la majuscule que vous souhaitez (c&#39;est-à-dire mYpRoC, MyProc, myProc, etc.)</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">register</span><span class="p">(</span><span class="n">factory</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+    <span class="n">factory</span><span class="o">.</span><span class="n">register</span><span class="p">(</span><span class="s2">&quot;myproc&quot;</span><span class="p">,</span> <span class="n">MyProcClass</span><span class="p">)</span>
+    <span class="c1"># You may provide multiple names for your proc, if you like</span>
+    <span class="c1">#factory.register([&quot;myproc&quot;, &quot;also_myproc&quot;], MyProcClass)</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>Lorsque votre <code class="docutils literal notranslate"><span class="pre">execute()</span></code> est terminé, le processeur met automatiquement à jour le <em>status_file</em> et/ou le <em>imputed_file</em> avec le contenu des ensembles de données <em>outstatus</em>/<em>outdata</em> correspondants, si vous en avez défini un.</p></li>
+<li><p>Cette opération ne peut pas ajouter ou supprimer des données de votre <em>imputed_file</em>, elle ne peut que mettre à jour les enregistrements existants. Si vous avez besoin d’ajouter ou de supprimer des données de <em>imputed_file</em>, vous devez le faire dans votre plugin et définir <code class="docutils literal notranslate"><span class="pre">processor_data.indata</span></code> pour pointer vers vos données mises à jour. Cela enregistrera un avertissement dans votre fichier journal, mais il peut être ignoré si cela était prévu.</p></li>
+<li><p>De plus, le processeur ajoute automatiquement tous les autres ensembles de données que vous générez à partir d’un plug-in personnalisé à une seule version <code class="docutils literal notranslate"><span class="pre">cumulative</span></code> si le type de sortie du processus est défini sur <code class="docutils literal notranslate"><span class="pre">Tous</span></code> ou <code class="docutils literal notranslate"><span class="pre">Personnalisé</span></code> et que le nom de l’ensemble de données est spécifié dans une entrée de métadonnées ProcessOutput pour ce plug-in personnalisé</p></li>
+<li><p>La méthode <code class="docutils literal notranslate"><span class="pre">execute()</span></code> est marquée comme une méthode de classe, ce qui signifie que son premier argument <code class="docutils literal notranslate"><span class="pre">cls</span></code> est une référence à <code class="docutils literal notranslate"><span class="pre">MyProcClass</span></code>. Elle possède également un deuxième argument <code class="docutils literal notranslate"><span class="pre">processor_data</span></code> qui est un objet de type <code class="docutils literal notranslate"><span class="pre">ProcessorData</span></code> (dont la définition se trouve dans <code class="docutils literal notranslate"><span class="pre">src\banffprocessor\processor_data.py</span></code>). Cet objet comprend les fichiers d’entrée, les fichiers de sortie (à partir des procédures précédemment exécutées et de la procédure en cours), les métadonnées et les paramètres de votre fichier JSON d’entrée.</p></li>
+<li><p>Votre méthode <code class="docutils literal notranslate"><span class="pre">execute()</span></code> doit également renvoyer un <code class="docutils literal notranslate"><span class="pre">int</span></code> représentant le code de retour du plug-in. Tout nombre différent de 0 indique que le plugin n’a pas été exécuté avec succès et que le processeur doit arrêter de traiter les étapes suivantes de la stratégie d’imputation. Une exception peut également être levée.</p></li>
+<li><p>Enfin, le module de votre plugin doit implémenter une fonction <code class="docutils literal notranslate"><span class="pre">register()</span></code>, en dehors de toute définition de classe dans votre fichier de plugin. Cette fonction a un paramètre <code class="docutils literal notranslate"><span class="pre">factory</span></code>. La fonction doit appeler la fonction <code class="docutils literal notranslate"><span class="pre">register()</span></code> de l’objet factory, en fournissant le nom de votre procédure tel qu’il apparaîtra dans vos métadonnées et le nom de la classe qui l’implémente. Bien qu’un plugin par fichier soit recommandé, si vous avez plusieurs classes dans le même fichier qui implémentent l’interface de procédure Banff, vous pouvez les enregistrer toutes en utilisant la même fonction register. Incluez simplement un appel <code class="docutils literal notranslate"><span class="pre">factory.register(...)</span></code> pour chaque procédure de plugin que vous souhaitez enregistrer.</p></li>
+<li><p><strong>NOTE</strong>: Le nom enregistré dans la factory est le même que celui que vous fournirez dans vos entrées Jobs comme nom du <code class="docutils literal notranslate"><span class="pre">process</span></code>. Les noms de processus ne sont pas sensibles à la casse.</p></li>
+</ul>
+<p>Pour un exemple de travail qui inclut une procédure définie par l’utilisateur, voir <code class="docutils literal notranslate"><span class="pre">banffprocessor\banff-processor\tests\integration_tests\udp_test</span></code> avec le plugin situé dans <code class="docutils literal notranslate"><span class="pre">\plugins\my_plugin.py</span></code>.</p>
+</section>
+<section id="controles-de-processus">
+<h2>Contrôles de processus<a class="headerlink" href="#controles-de-processus" title="Link to this heading">#</a></h2>
+<p><strong>Note</strong>: Les contrôles de processus sont une nouvelle fonctionnalité introduite avec la version 2.0.0 du processeur Python.</p>
+<p>Les contrôles de processus sont des processus qui s’exécutent avant une étape d’imputation. Un exemple est un filtre appliqué aux données d’entrée ou au fichier d’état. Cela permet aux utilisateurs de définir des contrôles de processus qui permettent au processeur d’être plus générique, de réduire le nombre d’étapes dans une stratégie d’imputation et d’améliorer les informations fournies aux processus ultérieurs (SEVANI).</p>
+<p>Cette fonctionnalité nécessite l’utilisation d’un nouveau champ dans le fichier de métadonnées Jobs, <code class="docutils literal notranslate"><span class="pre">controlid</span></code>. Ce champ fait référence à une entrée (ou à des entrées) dans un nouveau fichier de métadonnées, <em>processcontrols.xml</em> (produit à partir de la feuille de calcul PROCESSCONTROLS dans le modèle Excel):</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>controlid</p></th>
+<th class="head"><p>targetfile</p></th>
+<th class="head"><p>paramètre</p></th>
+<th class="head"><p>valeur</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Identifie le contrôle ou l’ensemble de contrôles à appliquer aux étapes Jobs avec le même controlid</p></td>
+<td><p>Le <a class="reference internal" href="#noms-de-table-disponibles">nom du jeu de données</a> auquel appliquer le contrôle (les noms doivent être écrits dans la même casse que celle dans laquelle ils apparaissent dans le tableau)</p></td>
+<td><p>Le type de contrôle souhaité</p></td>
+<td><p>Déterminé par le <a class="reference internal" href="#types-de-controle">type de contrôle</a></p></td>
+</tr>
+<tr class="row-odd"><td><p><em>control1</em></p></td>
+<td><p><em>indata</em></p></td>
+<td><p><em>row_filter</em></p></td>
+<td><p><em>strat &gt; 15 et (rec_id not in (SELECT * FROM instatus WHERE status != ‘FTI’))</em></p></td>
+</tr>
+<tr class="row-even"><td><p><em>control1</em></p></td>
+<td><p><em>instatus</em></p></td>
+<td><p><em>column_filter</em></p></td>
+<td><p><em>IDENT, AREA, V1</em></p></td>
+</tr>
+<tr class="row-odd"><td><p><em>control1</em></p></td>
+<td><p><em>indata</em></p></td>
+<td><p><em>exclude_rejected</em></p></td>
+<td><p><em>True</em></p></td>
+</tr>
+<tr class="row-even"><td><p><em>control1</em></p></td>
+<td><p><em>N/A</em></p></td>
+<td><p><em>edit_group_filter</em></p></td>
+<td><p><em>N/A</em></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>Tous les contrôles de processus avec le <code class="docutils literal notranslate"><span class="pre">controlid</span></code> spécifié sont appliqués à leurs <code class="docutils literal notranslate"><span class="pre">targetfile</span></code> respectifs pour l’étape de travail unique sur laquelle ils sont déclarés. Une fois l’étape de travail terminée, les <code class="docutils literal notranslate"><span class="pre">targetfile</span></code> affectés reviennent à leur état d’origine et le travail continue. Cependant, si l’étape de travail commence l’exécution d’un nouveau bloc de processus, le <code class="docutils literal notranslate"><span class="pre">targetfile</span></code> restera dans l’état créé par le(s) contrôle(s) de processus appliqué(s) pendant la durée du bloc de processus (et de tous les sous-blocs qu’il contient).</p>
+<p>Un ID de contrôle peut être utilisé autant de fois que nécessaire par <code class="docutils literal notranslate"><span class="pre">targetfile</span></code>. Si un ID de contrôle est répété pour le même <code class="docutils literal notranslate"><span class="pre">targetfile</span></code> ET le même <code class="docutils literal notranslate"><span class="pre">parameter</span></code>, alors la <code class="docutils literal notranslate"><span class="pre">value</span></code> de ces contrôles est combinée en une seule. Cela a pour but de permettre une plus grande modularité dans les ensembles de contrôles, car les parties individuelles des conditions à plusieurs parties peuvent être interchangées à volonté sans affecter les autres parties.</p>
+<section id="types-de-controle">
+<h3>Types de contrôle<a class="headerlink" href="#types-de-controle" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>ROW_FILTER</p>
+<ul>
+<li><p>Filtre <code class="docutils literal notranslate"><span class="pre">targetfile</span></code> à l’aide d’une clause SQL WHERE</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">value</span></code> - La condition SQL qui peut inclure des noms de colonnes et/ou des noms de tables (exactement comme indiqué dans <a class="reference internal" href="#noms-de-table-disponibles">noms de tables disponibles</a>)</p></li>
+<li><p>Si <code class="docutils literal notranslate"><span class="pre">controlid</span></code>, <code class="docutils literal notranslate"><span class="pre">targetfile</span></code> et <code class="docutils literal notranslate"><span class="pre">parameter</span></code> sont répétés pour plusieurs entrées, les conditions dans leurs champs <code class="docutils literal notranslate"><span class="pre">value</span></code> sont jointes par <code class="docutils literal notranslate"><span class="pre">AND</span></code></p></li>
+</ul>
+</li>
+<li><p>COLUMN_FILTER (peut en appliquer plusieurs pour un ID, les listes de noms de colonnes sont combinées en une seule)</p>
+<ul>
+<li><p>Filtre les <code class="docutils literal notranslate"><span class="pre">targetfile</span></code> pour supprimer les colonnes qui n’apparaissent pas dans la liste dans le champ <code class="docutils literal notranslate"><span class="pre">value</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">value</span></code> - Une liste séparée par des virgules de noms de colonnes à CONSERVER dans <code class="docutils literal notranslate"><span class="pre">targetfile</span></code></p></li>
+<li><p>Si <code class="docutils literal notranslate"><span class="pre">controlid</span></code>, <code class="docutils literal notranslate"><span class="pre">targetfile</span></code> et <code class="docutils literal notranslate"><span class="pre">parameter</span></code> sont répétés pour plusieurs entrées, les listes de colonnes dans leurs champs <code class="docutils literal notranslate"><span class="pre">value</span></code> sont combinées</p></li>
+</ul>
+</li>
+<li><p>EXCLUDE_REJECTED</p>
+<ul>
+<li><p>Filtre <code class="docutils literal notranslate"><span class="pre">targetfile</span></code> en supprimant toutes les entrées avec un <code class="docutils literal notranslate"><span class="pre">unit_id</span></code> qui apparaît dans la table <code class="docutils literal notranslate"><span class="pre">outreject</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">value</span></code> - Le texte ‘True’ ou ‘False’, indiquant si le contrôle doit être appliqué ou non</p></li>
+<li><p>Pour un <code class="docutils literal notranslate"><span class="pre">controlid</span></code>, un seul contrôle EXCLUDE_REJECTED peut être utilisé par <code class="docutils literal notranslate"><span class="pre">targetfile</span></code></p></li>
+<li><p><strong>NOTE</strong> Errorloc et Prorate produisent chacun des fichiers <code class="docutils literal notranslate"><span class="pre">outreject</span></code> légèrement différents.</p>
+<ul>
+<li><p>Errorloc: <code class="docutils literal notranslate"><span class="pre">outreject</span></code>, produit par l’appel errorloc actuel, écrase tout fichier <code class="docutils literal notranslate"><span class="pre">outreject</span></code> existant. Le contenu de <code class="docutils literal notranslate"><span class="pre">outreject</span></code> est également ajouté à <code class="docutils literal notranslate"><span class="pre">outreject_all</span></code>.</p></li>
+<li><p>Prorata: le contenu de l’ensemble de données <code class="docutils literal notranslate"><span class="pre">outreject</span></code> produit par l’appel de prorata actuel est ajouté à <code class="docutils literal notranslate"><span class="pre">outreject_all</span></code> et également ajouté à l’ensemble de données <code class="docutils literal notranslate"><span class="pre">outreject</span></code> existant (ou simplement défini comme la table <code class="docutils literal notranslate"><span class="pre">outreject</span></code> s’il n’en existe pas encore).</p></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>EDIT_GROUP_FILTER</p>
+<ul>
+<li><p>Filtre <code class="docutils literal notranslate"><span class="pre">instatus</span></code> en supprimant toutes les entrées avec un <code class="docutils literal notranslate"><span class="pre">editgroupid</span></code> correspondant à l’étape de travail actuelle OU toutes les entrées produites par une étape Outlier avec une valeur d’état de <code class="docutils literal notranslate"><span class="pre">FTI</span></code> ou <code class="docutils literal notranslate"><span class="pre">FTE</span></code></p></li>
+<li><p>Les champs <code class="docutils literal notranslate"><span class="pre">value</span></code> et <code class="docutils literal notranslate"><span class="pre">targetfile</span></code> ne doivent pas être indiqués pour ce type de contrôle</p></li>
+<li><p>Remplace la fonctionnalité SAS existante où ce filtre était automatiquement appliqué avant d’exécuter une procédure <code class="docutils literal notranslate"><span class="pre">DonorImputation</span></code> ou <code class="docutils literal notranslate"><span class="pre">Deterministic</span></code></p></li>
+</ul>
+</li>
+<li><p><strong>NOTE</strong>: les noms de colonnes de vos fichiers d’entrée d’origine doivent être référencés dans leur casse d’origine, ceux qui sont créés ou ajoutés par le processeur doivent être en MAJUSCULES.</p></li>
+</ul>
+</section>
+<section id="noms-de-table-disponibles">
+<h3>Noms de table disponibles<a class="headerlink" href="#noms-de-table-disponibles" title="Link to this heading">#</a></h3>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Nom de la table</p></th>
+<th class="head"><p>Notes</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>status_log</p></td>
+<td><p>Contient tous les fichiers <code class="docutils literal notranslate"><span class="pre">outstatus</span></code> produits ajoutés dans l’ordre</p></td>
+</tr>
+<tr class="row-odd"><td><p>indata</p></td>
+<td><p>Les données d’entrée de l’étape de travail en cours. Alias: imputed_file</p></td>
+</tr>
+<tr class="row-even"><td><p>indata_aux</p></td>
+<td><p>Les données d’entrée auxiliaires.</p></td>
+</tr>
+<tr class="row-odd"><td><p>indata_hist</p></td>
+<td><p>Les données d’entrée historiques.</p></td>
+</tr>
+<tr class="row-even"><td><p>instatus</p></td>
+<td><p>Les données d’état d’entrée de l’étape de travail en cours. Alias: status_file</p></td>
+</tr>
+<tr class="row-odd"><td><p>instatus_hist</p></td>
+<td><p>Les données d’état d’entrée historiques.</p></td>
+</tr>
+<tr class="row-even"><td><p>time_store</p></td>
+<td><p>Informations concernant le temps d’exécution et l’exécution de chaque étape d’un travail</p></td>
+</tr>
+<tr class="row-odd"><td><p>outreject et outreject_all</p></td>
+<td><p>Produits par Errorloc et Prorate</p></td>
+</tr>
+<tr class="row-even"><td><p>outedit_applic</p></td>
+<td><p>Peut être produit par Editstats</p></td>
+</tr>
+<tr class="row-odd"><td><p>outedit_status</p></td>
+<td><p>Peut être produit par Editstats</p></td>
+</tr>
+<tr class="row-even"><td><p>outedits_reduced</p></td>
+<td><p>Peut être produit par Editstats</p></td>
+</tr>
+<tr class="row-odd"><td><p>outglobal_status</p></td>
+<td><p>Peut être produit par Editstats</p></td>
+</tr>
+<tr class="row-even"><td><p>outk_edits_status</p></td>
+<td><p>Peut être produit par Editstats</p></td>
+</tr>
+<tr class="row-odd"><td><p>outvars_role</p></td>
+<td><p>Peut être produit par Editstats</p></td>
+</tr>
+<tr class="row-even"><td><p>outacceptable</p></td>
+<td><p>Peut être produit par Estimator</p></td>
+</tr>
+<tr class="row-odd"><td><p>outest_ef</p></td>
+<td><p>Peut être produit par Estimator</p></td>
+</tr>
+<tr class="row-even"><td><p>outest_lr</p></td>
+<td><p>Peut être produit par Estimator</p></td>
+</tr>
+<tr class="row-odd"><td><p>outest_parm</p></td>
+<td><p>Peut être produit par Estimator</p></td>
+</tr>
+<tr class="row-even"><td><p>outrand_err</p></td>
+<td><p>Peut être produit par Estimator</p></td>
+</tr>
+<tr class="row-odd"><td><p>outmatching_fields</p></td>
+<td><p>Produit par DonorImputation</p></td>
+</tr>
+<tr class="row-even"><td><p>outdonormap</p></td>
+<td><p>Produit par DonorImputation et MassImputation</p></td>
+</tr>
+<tr class="row-odd"><td><p>outlier_status</p></td>
+<td><p>Peut être produit par Outlier</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<ul class="simple">
+<li><p>Les jeux de données facultatifs ne sont disponibles pendant l’exécution et enregistrés sur le disque que si le paramètre d’entrée process_output_type est défini sur <code class="docutils literal notranslate"><span class="pre">All</span></code> (2) ou si le nom du jeu de données est spécifié dans une entrée de table de métadonnées ProcessOutput pour le processus qui le produit et process_output_type est défini sur <code class="docutils literal notranslate"><span class="pre">Custom</span></code> (3)</p></li>
+<li><p>Le nom de la table ou son alias peuvent être utilisés, les deux font référence à la même table et aux mêmes données</p></li>
+<li><p>Les fichiers indata et instatus sont toujours disponibles</p></li>
+<li><p>Si instatus est la première étape d’un travail qui ne fournit pas de fichier instatus pour commencer, il n’est pas disponible pour être utilisé dans un filtre pour la première étape, bien qu’il soit disponible dans les étapes suivantes</p></li>
+<li><p>Tout fichier spécifique à une procédure n’est pas disponible pour référence jusqu’à ce qu’une étape de travail pour cette procédure ait été exécutée dans une étape précédente, et uniquement si le fichier référencé est produit selon le <code class="docutils literal notranslate"><span class="pre">process_output_type</span></code></p></li>
+<li><p>Tous les fichiers auront les colonnes SEQNO et JOBID ajoutées. Celles-ci peuvent être filtrées pour obtenir des données d’une étape de travail spécifique.</p></li>
+<li><p>Le champ <code class="docutils literal notranslate"><span class="pre">value</span></code> prend en charge les références aux tables situées sur le disque ainsi que les noms de tables en mémoire mentionnés ci-dessus</p>
+<ul>
+<li><p>Ceci ne s’applique pas à <code class="docutils literal notranslate"><span class="pre">targetfile</span></code>, qui doit être une table en mémoire référencée par son nom.</p></li>
+<li><p>Le chemin d’accès au fichier doit être absolu ou relatif au Répertoire de Travail Actuel (Python CWD) du processus python qui exécute le processeur.</p></li>
+<li><p>Le chemin d’accès au fichier doit être entre guillemets simples, par exemple:<br />
+<code class="docutils literal notranslate"><span class="pre">ident</span> <span class="pre">in</span> <span class="pre">(SELECT</span> <span class="pre">ident</span> <span class="pre">FROM</span> <span class="pre">'.\subfolder\of\input_folder\idents.csv')</span></code></p></li>
+<li><p>Voir [DuckDB docs] (https://duckdb.org/docs/stable/data/overview) pour des informations sur les types de fichiers pris en charge (par exemple, seul ‘.parquet’ est pris en charge, PAS ‘.parq’).</p></li>
+</ul>
+</li>
+</ul>
+</section>
+</section>
+<section id="blocs-de-processus">
+<h2>Blocs de processus<a class="headerlink" href="#blocs-de-processus" title="Link to this heading">#</a></h2>
+<p><strong>Note</strong>: Les blocs de processus sont une nouvelle fonctionnalité introduite dans la version 2.0.0 du processeur Python.</p>
+<p>Un travail dans le processeur Banff est un ensemble d’entrées de table de métadonnées de travaux, toutes reliées par un identifiant de travail commun (jobid) et traitées séquentiellement selon le numéro de séquence (seqno). Un seul travail est spécifié lors de l’exécution du processeur, ce qui est fait en spécifiant le paramètre d’entrée <code class="docutils literal notranslate"><span class="pre">job_id</span></code>. Un bloc de processus est essentiellement un travail appelé à partir d’un travail. Les blocs de processus organisent les travaux en sous-travaux avec les objectifs suivants:</p>
+<ul class="simple">
+<li><p>permettre à un contrôle de processus d’être associé à plusieurs étapes de travail.</p></li>
+<li><p>permettre la réutilisation d’une séquence d’étapes répétées avec différentes entrées.</p></li>
+<li><p>permettre aux utilisateurs de concevoir et de mettre en œuvre des stratégies d’imputation à l’aide d’une approche modulaire. Cela signifie que des travaux plus petits peuvent être développés et testés de manière isolée plutôt que d’avoir un seul gros travail.</p></li>
+</ul>
+<p>Les blocs de processus sont utilisés en définissant le champ <em>process</em> d’une entrée de table de métadonnées Jobs sur <code class="docutils literal notranslate"><span class="pre">job</span></code> (plutôt qu’une procédure Banff traditionnelle telle que <code class="docutils literal notranslate"><span class="pre">prorate</span></code> ou <code class="docutils literal notranslate"><span class="pre">donorimputation</span></code>) et en définissant le champ <em>specid</em> comme étant le <code class="docutils literal notranslate"><span class="pre">jobid</span></code> du bloc de processus à exécuter.</p>
+<p>Les blocs de processus peuvent appeler d’autres blocs de processus, offrant ainsi une plus grande flexibilité. Lors de la préparation de l’exécution du <code class="docutils literal notranslate"><span class="pre">Processor</span></code> de Banff, les métadonnées Jobs sont validées à l’aide du paramètre d’entrée <code class="docutils literal notranslate"><span class="pre">job_id</span></code> comme racine de la structure globale du travail. Cette validation garantit qu’aucun cycle (boucle infinie) n’existe lorsque le travail comporte des blocs de processus imbriqués. Si un cycle est trouvé, une erreur sera imprimée sur la console et/ou dans le fichier journal et le problème devra être corrigé afin d’exécuter le travail avec succès.</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>jobid</p></th>
+<th class="head"><p>seqno</p></th>
+<th class="head"><p>controlid</p></th>
+<th class="head"><p>process</p></th>
+<th class="head"><p>specid</p></th>
+<th class="head"><p>editgroupid</p></th>
+<th class="head"><p>byid</p></th>
+<th class="head"><p>acceptnegative</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>main_job</p></td>
+<td><p>1</p></td>
+<td><p><em>n/a</em></p></td>
+<td><p>job</p></td>
+<td><p>sub_job</p></td>
+<td><p><em>n/a</em></p></td>
+<td><p><em>n/a</em></p></td>
+<td><p><em>n/a</em></p></td>
+</tr>
+<tr class="row-odd"><td><p>main_job</p></td>
+<td><p>2</p></td>
+<td><p><em>n/a</em></p></td>
+<td><p>outlier</p></td>
+<td><p>outlier_spec1</p></td>
+<td><p><em>n/a</em></p></td>
+<td><p><em>n/a</em></p></td>
+<td><p><em>n/a</em></p></td>
+</tr>
+<tr class="row-even"><td><p>main_job</p></td>
+<td><p>3</p></td>
+<td><p><em>n/a</em></p></td>
+<td><p>job</p></td>
+<td><p>sub_job</p></td>
+<td><p><em>n/a</em></p></td>
+<td><p><em>n/a</em></p></td>
+<td><p><em>n/a</em></p></td>
+</tr>
+<tr class="row-odd"><td><p>sub_job</p></td>
+<td><p>1</p></td>
+<td><p><em>n/a</em></p></td>
+<td><p>prorate</p></td>
+<td><p>prorate_spec1</p></td>
+<td><p><em>n/a</em></p></td>
+<td><p><em>n/a</em></p></td>
+<td><p><em>n/a</em></p></td>
+</tr>
+<tr class="row-even"><td><p>sub_job</p></td>
+<td><p>2</p></td>
+<td><p><em>n/a</em></p></td>
+<td><p>donorimp</p></td>
+<td><p>donorimp_spec1</p></td>
+<td><p><em>n/a</em></p></td>
+<td><p><em>n/a</em></p></td>
+<td><p><em>n/a</em></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>Par exemple, le tableau Jobs ci-dessus entraînerait l’exécution de:</p>
+<ol class="arabic simple">
+<li><p>prorate (sub_job, 1)</p></li>
+<li><p>donorimp (sub_job, 2)</p></li>
+<li><p>outlier (main_job, 2)</p></li>
+<li><p>prorate (sub_job, 1)</p></li>
+<li><p>donorimp (sub_job, 2)</p></li>
+</ol>
+<p>Un exemple fonctionnel d’une tâche avec un bloc de processus peut être trouvé dans le répertoire du projet sous ‘examples/example4’.</p>
+</section>
+<section id="les-sorties">
+<h2>Les Sorties<a class="headerlink" href="#les-sorties" title="Link to this heading">#</a></h2>
+<section id="sauvegarde-des-sorties">
+<h3>Sauvegarde des sorties<a class="headerlink" href="#sauvegarde-des-sorties" title="Link to this heading">#</a></h3>
+<p>Si l’exécution se fait à partir d’un script Python, les ensembles de données de sortie peuvent être enregistrés sur le disque en appelant la fonction <code class="docutils literal notranslate"><span class="pre">save_outputs()</span></code> de l’objet <code class="docutils literal notranslate"><span class="pre">banffprocessor</span></code> contenant les résultats d’un appel à <code class="docutils literal notranslate"><span class="pre">execute()</span></code>. Si l’exécution se fait à partir de la ligne de commande, <code class="docutils literal notranslate"><span class="pre">save_outputs()</span></code> sera appelé automatiquement une fois que le processeur aura terminé une tâche.</p>
+<p>Pendant l’opération, si aucun paramètre <code class="docutils literal notranslate"><span class="pre">output_folder</span></code> n’est fourni, le processeur créera un dossier <code class="docutils literal notranslate"><span class="pre">out</span></code> au même emplacement que votre fichier de paramètres JSON d’entrée pour enregistrer le journal Banff ainsi que les fichiers d’état et de données de sortie créés pendant et après l’exécution de chaque procédure Banff. Les fichiers d’état et de données seront enregistrés au format déterminé par:</p>
+<ol class="arabic simple">
+<li><p>Le paramètre <code class="docutils literal notranslate"><span class="pre">saveFormat</span></code> dans votre fichier JSON d’entrée</p></li>
+<li><p>Si aucune valeur n’est fournie pour 1., utilise le même format que le fichier dans <code class="docutils literal notranslate"><span class="pre">indata_filename</span></code></p></li>
+<li><p>Si ni 1. ni 2. ne sont fournis, la valeur par défaut est le format <code class="docutils literal notranslate"><span class="pre">.parq</span></code></p></li>
+</ol>
+</section>
+<section id="fichiers-ensembles-de-donnees-de-sortie">
+<h3>Fichiers/ensembles de données de sortie<a class="headerlink" href="#fichiers-ensembles-de-donnees-de-sortie" title="Link to this heading">#</a></h3>
+<p>Les fichiers de sortie de chaque procédure peuvent être conservés et enregistrés. Le processeur ajoutera automatiquement les colonnes <code class="docutils literal notranslate"><span class="pre">JOBID</span></code> et <code class="docutils literal notranslate"><span class="pre">SEQNO</span></code> aux sorties. Lorsqu’une sortie portant le même nom est générée et conservée, le processeur ajoutera ces ensembles de données de sortie ensemble et les ensembles de données devront être filtrés par <code class="docutils literal notranslate"><span class="pre">JOBID</span></code> et <code class="docutils literal notranslate"><span class="pre">SEQNO</span></code> pour limiter les données à une étape de traitement spécifiée.</p>
+<section id="tableaux-de-sortie-minimale">
+<h4>Tableaux de sortie minimale<a class="headerlink" href="#tableaux-de-sortie-minimale" title="Link to this heading">#</a></h4>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Fichier de données</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>imputed_file</p></td>
+<td><p>Ce fichier de données contient les données actuelles imputées finales.</p></td>
+</tr>
+<tr class="row-odd"><td><p>status_file</p></td>
+<td><p>Ce fichier de données contient les statuts des données imputées finales.</p></td>
+</tr>
+<tr class="row-even"><td><p>status_log</p></td>
+<td><p>Ce fichier de données contient l’historique de la façon dont les statuts ont changé pendant la stratégie d’imputation.</p></td>
+</tr>
+<tr class="row-odd"><td><p>outreject</p></td>
+<td><p>Ce fichier de données est généré par les procédures ErrorLoc et Prorate. Il contient l’identification des répondants qui n’ont pas pu être traités et la raison pour laquelle.</p></td>
+</tr>
+<tr class="row-even"><td><p>time_store</p></td>
+<td><p>Ce fichier de données stocke l’heure de début, l’heure de fin et la durée de chaque étape de traitement ainsi que le temps d’exécution cumulé.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="sorties-optionnelles">
+<h4>Sorties optionnelles<a class="headerlink" href="#sorties-optionnelles" title="Link to this heading">#</a></h4>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Fichier de données</p></th>
+<th class="head"><p>Procédure associée</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>outlier_status</p></td>
+<td><p>Valeur aberrante</p></td>
+<td><p>Il contient le fichier d’état final incluant les variables supplémentaires de l’option <code class="docutils literal notranslate"><span class="pre">outlier_stats</span></code> (qui est toujours en vigueur dans le processeur Banff).</p></td>
+</tr>
+<tr class="row-odd"><td><p>outmatching_fields</p></td>
+<td><p>Imputation du donneur</p></td>
+<td><p>Il contient l’état des champs correspondants de l’option <code class="docutils literal notranslate"><span class="pre">outmatching_fields</span></code> (qui est toujours en vigueur dans le processeur Banff).</p></td>
+</tr>
+<tr class="row-even"><td><p>outdonormap</p></td>
+<td><p>Imputation du donneur</p></td>
+<td><p>Il contient les identifiants des destinataires qui ont été imputés ainsi que leur identifiant de donneur et le nombre de donneurs essayés avant que le destinataire ne passe les modifications post-imputation.</p></td>
+</tr>
+<tr class="row-odd"><td><p>outedits_reduced</p></td>
+<td><p>EditStats</p></td>
+<td><p>Ce fichier de données contient l’ensemble minimal de modifications.</p></td>
+</tr>
+<tr class="row-even"><td><p>outedit_status</p></td>
+<td><p>EditStats</p></td>
+<td><p>Ce fichier de données contient le nombre d’enregistrements qui ont réussi, manqué et échoué pour chaque modification.</p></td>
+</tr>
+<tr class="row-odd"><td><p>outk_edits_status</p></td>
+<td><p>EditStats</p></td>
+<td><p>Ce fichier de données contient la distribution des enregistrements qui ont réussi, manqué et échoué K modifications.</p></td>
+</tr>
+<tr class="row-even"><td><p>outglobal_status</p></td>
+<td><p>EditStats</p></td>
+<td><p>Ce fichier de données contient le nombre total d’enregistrements réussis, manqués et échoués.</p></td>
+</tr>
+<tr class="row-odd"><td><p>outedit_applic</p></td>
+<td><p>EditStats</p></td>
+<td><p>Ce fichier de données contient le nombre d’applications de modification de statut réussi, manqué ou échoué qui impliquent chaque champ.</p></td>
+</tr>
+<tr class="row-even"><td><p>outvars_role</p></td>
+<td><p>EditStats</p></td>
+<td><p>Ce fichier de données contient le nombre d’enregistrements de statut réussi, manqué ou échoué pour lesquels le champ j a contribué au statut global de l’enregistrement.</p></td>
+</tr>
+<tr class="row-odd"><td><p>outrand_err</p></td>
+<td><p>Estimator</p></td>
+<td><p>Cet ensemble de données contient le rapport d’erreur aléatoire si au moins une des spécifications d’estimateur a la variable <code class="docutils literal notranslate"><span class="pre">RANDOMERROR</span></code> dans la table de métadonnées ESTIMATOR définie sur <code class="docutils literal notranslate"><span class="pre">Y</span></code>.</p></td>
+</tr>
+<tr class="row-even"><td><p>outest_ef</p></td>
+<td><p>Estimator</p></td>
+<td><p>Cet ensemble de données contient le rapport sur le calcul des moyennes pour les fonctions d’estimateur si au moins une des spécifications d’estimateur utilise une fonction d’estimateur (type EF).</p></td>
+</tr>
+<tr class="row-odd"><td><p>outest_parm</p></td>
+<td><p>Estimator</p></td>
+<td><p>Cet ensemble de données contient le rapport sur les statistiques d’imputation par estimateur.</p></td>
+</tr>
+<tr class="row-even"><td><p>outest_lr</p></td>
+<td><p>Estimateur</p></td>
+<td><p>Cet ensemble de données contient le rapport sur le calcul des coefficients <code class="docutils literal notranslate"><span class="pre">beta</span></code> pour les estimateurs de régression linéaire si au moins une des spécifications de l’estimateur utilise une régression linéaire (type LR).</p></td>
+</tr>
+<tr class="row-odd"><td><p>outacceptable</p></td>
+<td><p>Estimateur</p></td>
+<td><p>Ce fichier de données contient le rapport sur les observations acceptables retenues pour calculer les paramètres de chaque estimateur donné dans les spécifications. Ce fichier peut être volumineux et peut ralentir l’exécution.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>Remarques:</p>
+<ul class="simple">
+<li><p>Reportez-vous au Guide de l’utilisateur de la procédure Banff pour une description complète d’un fichier généré par une procédure Banff.</p></li>
+<li><p>Les fichiers de sortie facultatifs seront conservés si process_output_type = <code class="docutils literal notranslate"><span class="pre">all</span></code> ou si process_output_type = <code class="docutils literal notranslate"><span class="pre">custom</span></code> et que le nom du jeu de données est spécifié dans les métadonnées ProcessOutputs pour le processus donné.</p></li>
+<li><p>Les plugins peuvent générer des fichiers de sortie facultatifs supplémentaires.</p></li>
+</ul>
+</section>
+</section>
+<section id="le-journal">
+<h3>Le journal<a class="headerlink" href="#le-journal" title="Link to this heading">#</a></h3>
+<p>Le processeur Python peut générer un journal d’exécution qui fournit des informations précieuses sur le processus d’imputation, utiles à des fins de débogage et d’analyse. Le niveau d’informations enregistrées peut être configuré via le paramètre <code class="docutils literal notranslate"><span class="pre">log_level</span></code> de votre fichier JSON d’entrée.</p>
+<ul class="simple">
+<li><p>Si 0, aucun fichier journal n’est produit, seuls les avertissements, les erreurs et un résumé de chaque procédure sont écrits sur la console après son exécution. Ce résumé est toujours imprimé, même aux niveaux 1 et 2.</p></li>
+<li><p>Si 1 (la valeur par défaut si <code class="docutils literal notranslate"><span class="pre">log_level</span></code> n’est pas définie), le fichier journal contient des messages de niveau INFO, qui sont principalement la sortie de l’exécution de chaque procédure du package Banff, ainsi que des avertissements et des erreurs.</p></li>
+<li><p>Enfin, si 2, le fichier journal contient tous les messages de 1 ainsi que tous les messages de niveau DEBUG, tels que des informations plus détaillées sur les ensembles de données produits et traités.</p></li>
+</ul>
+<p>Le processeur conserve un maximum de 6 fichiers journaux à la fois. Le travail le plus récent est toujours enregistré dans <code class="docutils literal notranslate"><span class="pre">banffprocessor.log</span></code> et lorsqu’un nouveau travail est exécuté, un numéro est ajouté à l’ancien fichier journal et un nouveau journal est créé pour le nouveau travail. La numérotation va du plus récent au plus ancien (c’est-à-dire que <code class="docutils literal notranslate"><span class="pre">banffprocessor.log</span></code> est le journal du travail le plus récent, <code class="docutils literal notranslate"><span class="pre">banffprocessor.log.1</span></code> est celui du travail le plus récent et <code class="docutils literal notranslate"><span class="pre">banffprocessor.log.5</span></code> est celui du travail le plus ancien).</p>
+</section>
+<section id="sortie-du-bloc-de-processus">
+<h3>Sortie du bloc de processus<a class="headerlink" href="#sortie-du-bloc-de-processus" title="Link to this heading">#</a></h3>
+<p>Lorsqu’un nouveau bloc de processus doit être exécuté, un dossier spécial est créé dans le dossier de sortie pour le bloc appelant. Ce nouveau dossier de sortie est nommé d’après les paramètres du nouveau bloc et, une fois le bloc terminé, il contiendra tous les fichiers créés par le bloc enfant. Cependant, aucun nouveau fichier journal n’est créé. Toutes les sorties de journal des blocs enfants se trouvent dans le fichier journal principal qui se trouve dans le dossier d’entrée racine.</p>
+</section>
+</section>
+</section>
+<hr class="footnotes docutils" />
+<aside class="footnote-list brackets">
+<aside class="footnote brackets" id="id2" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id1">1</a><span class="fn-bracket">]</span></span>
+<p>Si aucune colonne <code class="docutils literal notranslate"><span class="pre">JOBID</span></code> ou <code class="docutils literal notranslate"><span class="pre">SEQNO</span></code> n’est trouvée dans le fichier, elles sont ajoutées et leurs valeurs sont initialisées aux paramètres d’entrée <code class="docutils literal notranslate"><span class="pre">job_id</span></code> et 0 respectivement. Si elles sont présentes, tous les enregistrements avec un <code class="docutils literal notranslate"><span class="pre">JOBID</span></code> ou un <code class="docutils literal notranslate"><span class="pre">SEQNO</span></code> manquant ou tous les enregistrements avec un JOBID qui se trouve également dans vos métadonnées Jobs actuelles auront les valeurs de <code class="docutils literal notranslate"><span class="pre">JOBID</span></code> et de <code class="docutils literal notranslate"><span class="pre">SEQNO</span></code> modifiées en NaN.</p>
+</aside>
+</aside>
+
+
+                </article>
+              
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+<div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> On this page
+  </div>
+  <nav class="bd-toc-nav page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction">Introduction</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#table-des-matieres">Table des matières</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#fichiers-de-metadonnees-d-entree">Fichiers de métadonnées d’entrée</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#formatage">Formatage</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exemple-tableau-jobs">Exemple (tableau JOBS)</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#outil-de-generation-de-metadonnees">Outil de génération de métadonnées</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#parametres-d-entree-du-processeur-banff">Paramètres d’entrée du processeur Banff</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#execution-du-processeur-en-tant-qu-utilitaire-de-ligne-de-commande">Exécution du processeur en tant qu’utilitaire de ligne de commande</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#execution-du-processeur-a-partir-d-un-script-python">Exécution du processeur à partir d’un script Python</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#procedures-definies-par-l-utilisateur">Procédures définies par l’utilisateur</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#controles-de-processus">Contrôles de processus</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#types-de-controle">Types de contrôle</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#noms-de-table-disponibles">Noms de table disponibles</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#blocs-de-processus">Blocs de processus</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#les-sorties">Les Sorties</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#sauvegarde-des-sorties">Sauvegarde des sorties</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#fichiers-ensembles-de-donnees-de-sortie">Fichiers/ensembles de données de sortie</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#tableaux-de-sortie-minimale">Tableaux de sortie minimale</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#sorties-optionnelles">Sorties optionnelles</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#le-journal">Le journal</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#sortie-du-bloc-de-processus">Sortie du bloc de processus</a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+  <div class="sidebar-secondary-item">
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../_sources/fr/processor-user-guide.md.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
+<script defer src="../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+
+  <p class="copyright">
+    
+      © Copyright 2025, Statistics Canada / Statistique Canada.
+      <br/>
+    
+  </p>
+</div>
+      
+        <div class="footer-item">
+
+  <p class="sphinx-version">
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 8.2.3.
+    <br/>
+  </p>
+</div>
+      
+    </div>
+  
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item">
+<p class="theme-version">
+  <!-- # L10n: Setting the PST URL as an argument as this does not need to be localized -->
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.16.1.
+</p></div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
+</html>

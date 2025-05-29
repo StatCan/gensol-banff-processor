@@ -8,7 +8,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "banffprocessor"
-version = "2.0.1"
+version = "2.0.2"
 maintainers = [
     {name = "Banff Support, Statistics Canada", email = "statcan.banff-banff.statcan@statcan.gc.ca"}
 ]

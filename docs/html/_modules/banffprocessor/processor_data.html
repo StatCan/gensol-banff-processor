@@ -1,0 +1,1556 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>banffprocessor.processor_data &#8212; Banff Processor 2.0.2 documentation</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=8f2a1f02" />
+    <link rel="stylesheet" type="text/css" href="../../_static/custom.css?v=2a807888" />
+  
+  <!-- So that users can add custom icons -->
+  <script src="../../_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
+
+    <script src="../../_static/documentation_options.js?v=29701289"></script>
+    <script src="../../_static/doctools.js?v=9bcbadda"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = '_modules/banffprocessor/processor_data';</script>
+    <link rel="index" title="Index" href="../../genindex" />
+    <link rel="search" title="Search" href="../../search" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="../../search"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class="col-lg-3 navbar-header-items__start">
+    
+      <div class="navbar-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../../index">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../_static/banff_white.png" class="logo__image only-light" alt="Banff Processor 2.0.2 documentation - Home"/>
+    <img src="../../_static/banff_white.png" class="logo__image only-dark pst-js-only" alt="Banff Processor 2.0.2 documentation - Home"/>
+  
+  
+</a></div>
+    
+  </div>
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../en/index">
+    English
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../fr/index">
+    Français
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+        </div>
+      
+      
+        <div class="navbar-item">
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button></div>
+      
+        <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/StatCan/gensol-banff-processor" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fab fa-github fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+</ul></div>
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+    </div>
+  
+
+  
+</div>
+
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+        
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar hide-on-wide">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          
+          
+            <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../en/index">
+    English
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../fr/index">
+    Français
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+          
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button></div>
+        
+          <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/StatCan/gensol-banff-processor" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fab fa-github fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+</ul></div>
+        
+      </div>
+    
+  </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+<nav aria-label="Breadcrumb" class="d-print-none">
+  <ul class="bd-breadcrumbs">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="../../index" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    
+    <li class="breadcrumb-item"><a href="../index" class="nav-link">Module code</a></li>
+    
+    
+    <li class="breadcrumb-item"><a href="../banffprocessor" class="nav-link">banffprocessor</a></li>
+    
+    <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis">banffprocessor.processor_data</span></li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <h1>Source code for banffprocessor.processor_data</h1><div class="highlight"><pre>
+<span></span><span class="kn">import</span><span class="w"> </span><span class="nn">copy</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">datetime</span><span class="w"> </span><span class="kn">import</span> <span class="n">datetime</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">pathlib</span><span class="w"> </span><span class="kn">import</span> <span class="n">Path</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">typing</span><span class="w"> </span><span class="kn">import</span> <span class="n">ClassVar</span>
+
+<span class="kn">import</span><span class="w"> </span><span class="nn">duckdb</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">pyarrow</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pa</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">pyarrow.parquet</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pq</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">banff</span><span class="w"> </span><span class="kn">import</span> <span class="n">io_util</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">banff.io_util</span><span class="w"> </span><span class="kn">import</span> <span class="n">handle_arrow_string_data</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">banff.io_util</span><span class="w"> </span><span class="kn">import</span> <span class="n">type_converters</span> <span class="k">as</span> <span class="n">tc</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">banff.proc</span><span class="w"> </span><span class="kn">import</span> <span class="n">BanffProcedure</span>
+
+<span class="kn">import</span><span class="w"> </span><span class="nn">banffprocessor.processor_logger</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plg</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">banffprocessor.exceptions</span><span class="w"> </span><span class="kn">import</span> <span class="n">MetadataConstraintError</span><span class="p">,</span> <span class="n">ProcessControlError</span><span class="p">,</span> <span class="n">ProcessorInputParameterError</span><span class="p">,</span> <span class="n">UserDefinedPluginError</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">banffprocessor.metadata.metaobjects</span><span class="w"> </span><span class="kn">import</span> <span class="n">MetaObjects</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">banffprocessor.metadata.models.jobs</span><span class="w"> </span><span class="kn">import</span> <span class="n">Jobs</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">banffprocessor.metadata.models.processcontrols</span><span class="w"> </span><span class="kn">import</span> <span class="n">ProcessControlType</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">banffprocessor.nls</span><span class="w"> </span><span class="kn">import</span> <span class="n">_</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">banffprocessor.processor_input</span><span class="w"> </span><span class="kn">import</span> <span class="n">ProcessorInput</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">banffprocessor.util.dataset</span><span class="w"> </span><span class="kn">import</span> <span class="n">Dataset</span><span class="p">,</span> <span class="n">add_single_value_column</span><span class="p">,</span> <span class="n">copy_table</span><span class="p">,</span> <span class="n">get_dataset_real_name</span><span class="p">,</span> <span class="n">table_empty</span>
+
+<span class="n">log_lcl</span> <span class="o">=</span> <span class="n">plg</span><span class="o">.</span><span class="n">get_processor_child_logger</span><span class="p">(</span><span class="s2">&quot;processor_data&quot;</span><span class="p">)</span>
+
+<div class="viewcode-block" id="ProcessorData">
+<a class="viewcode-back" href="../../banffprocessor#banffprocessor.processor_data.ProcessorData">[docs]</a>
+<span class="k">class</span><span class="w"> </span><span class="nc">ProcessorData</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Helper class for the Processor in order to allow easier passing of data to user procs.</span>
+
+<span class="sd">    :attribute _datasets: A collection of datasets for the current job</span>
+<span class="sd">    :type _datasets: dict[str, :class:`banffprocessor.util.dataset.Dataset`]</span>
+<span class="sd">    :attribute input_params: The object containing the input parameters from the user&#39;s input JSON file</span>
+<span class="sd">    :type input_params: :class:`src.banffprocessor.processor_input.ProcessorInput`</span>
+<span class="sd">    :attribute metaobjects: The collection of metadata objects</span>
+<span class="sd">    :type metaobjects: :class:`src.banffprocessor.metadata.MetaObjects`</span>
+<span class="sd">    :attribute by_varlist: The list of by variable fieldIDs for the current job step</span>
+<span class="sd">    :type by_varlist: list[str]</span>
+<span class="sd">    :attribute current_job_step: The :class:`src.banffprocessor.metadata.models.Jobs` object for the</span>
+<span class="sd">        current job step being run</span>
+<span class="sd">    :type current_job_step: :class:`src.banffprocessor.metadata.models.Jobs`</span>
+<span class="sd">    :attribute current_uservars: A mapping of `var` to `value` attributes for the</span>
+<span class="sd">        :class:`src.banffprocessor.metadata.models.Uservars` objects for the current job step</span>
+<span class="sd">    :type current_uservars: dict[str,str]</span>
+<span class="sd">    :attribute custom_outputs: The table names that are requested to be output from a proc used in the job</span>
+<span class="sd">    :type custom_outputs: list[str]</span>
+<span class="sd">    :attribute total_job_duration: Used for tracking runtime when performing execute()</span>
+<span class="sd">    :type total_job_duration: datetime</span>
+<span class="sd">    :attribute curr_step_count: The current step in the absolute sequence of all job steps.</span>
+<span class="sd">    :type curr_step_count: int</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="n">_datasets</span><span class="p">:</span> <span class="nb">dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Dataset</span><span class="p">]</span>
+
+    <span class="n">input_params</span><span class="p">:</span> <span class="n">ProcessorInput</span>
+    <span class="n">metaobjects</span><span class="p">:</span> <span class="n">MetaObjects</span>
+
+    <span class="n">by_varlist</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span>
+    <span class="n">current_job_step</span><span class="p">:</span> <span class="n">Jobs</span>
+    <span class="n">current_uservars</span><span class="p">:</span> <span class="nb">dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span><span class="nb">str</span><span class="p">]</span>
+    <span class="n">custom_outputs</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span>
+    <span class="n">_minimal_outputs</span><span class="p">:</span> <span class="n">ClassVar</span><span class="p">[</span><span class="nb">list</span><span class="p">[</span><span class="nb">str</span><span class="p">]]</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;imputed_file&quot;</span><span class="p">,</span> <span class="s2">&quot;status_file&quot;</span><span class="p">,</span> <span class="s2">&quot;status_log&quot;</span><span class="p">,</span>
+                                             <span class="s2">&quot;outreject&quot;</span><span class="p">,</span> <span class="s2">&quot;outreject_all&quot;</span><span class="p">,</span> <span class="s2">&quot;time_store&quot;</span><span class="p">]</span>
+
+    <span class="n">total_job_duration</span><span class="p">:</span> <span class="n">datetime</span>
+    <span class="n">curr_step_count</span><span class="p">:</span> <span class="nb">int</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">total_job_steps</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span> <span class="o">|</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Return the total number of job steps for the current job.&quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">metaobjects</span><span class="o">.</span><span class="n">total_job_steps</span> <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">metaobjects</span> <span class="k">else</span> <span class="kc">None</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">dbconn</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">duckdb</span><span class="o">.</span><span class="n">DuckDBPyConnection</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Return a connection to the database being used.&quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_dbconn</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">minimal_outputs</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">list</span><span class="p">[</span><span class="nb">str</span><span class="p">]:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Return the minimal list of names of tables output by default.&quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_minimal_outputs</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">datasets</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Dataset</span><span class="p">]:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Return a dictionary of datasets being tracked by the ProcessorData object.&quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_datasets</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">input_params</span><span class="p">:</span> <span class="n">ProcessorInput</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+                 <span class="n">dbconn</span><span class="p">:</span> <span class="n">duckdb</span><span class="o">.</span><span class="n">DuckDBPyConnection</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Construct an instance of ProcessorData.</span>
+
+<span class="sd">        :param input_params: The object containing the input parameters from the user&#39;s</span>
+<span class="sd">            input JSON file</span>
+<span class="sd">        :type input_params: :class:`src.banffprocessor.processor_input.ProcessorInput`</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">input_params</span> <span class="o">=</span> <span class="n">input_params</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">by_varlist</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_datasets</span> <span class="o">=</span> <span class="p">{}</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_filtered_data</span> <span class="o">=</span> <span class="p">{}</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">current_job_step</span> <span class="o">=</span> <span class="kc">None</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">metaobjects</span> <span class="o">=</span> <span class="kc">None</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">custom_outputs</span> <span class="o">=</span> <span class="kc">None</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">total_job_duration</span> <span class="o">=</span> <span class="kc">None</span>
+        <span class="c1"># We increment the step count at the beginning of every job step in the execute() loop</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">curr_step_count</span> <span class="o">=</span> <span class="mi">0</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">_dbconn</span> <span class="o">=</span> <span class="n">dbconn</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_dbconn</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_dbconn</span> <span class="o">=</span> <span class="n">duckdb</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="n">database</span><span class="o">=</span><span class="s2">&quot;:memory:&quot;</span><span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_is_private_connection</span> <span class="o">=</span> <span class="kc">True</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_is_private_connection</span> <span class="o">=</span> <span class="kc">False</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="fm">__del__</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="k">del</span> <span class="bp">self</span><span class="o">.</span><span class="n">metaobjects</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_is_private_connection</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_dbconn</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">indata</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">pa</span><span class="o">.</span><span class="n">Table</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;The indata dataset for a Banff procedure.</span>
+
+<span class="sd">        :getter: Returns the imputed_file input dataset</span>
+<span class="sd">        :setter: Sets the imputed_file input dataset</span>
+<span class="sd">        :type: pa.Table</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_dataset</span><span class="p">(</span><span class="s2">&quot;indata&quot;</span><span class="p">,</span> <span class="n">create_if_not_exist</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+    <span class="nd">@indata</span><span class="o">.</span><span class="n">setter</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">indata</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">value</span><span class="p">:</span> <span class="n">pa</span><span class="o">.</span><span class="n">Table</span> <span class="o">|</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span> <span class="o">|</span> <span class="n">Dataset</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">set_dataset</span><span class="p">(</span><span class="s2">&quot;indata&quot;</span><span class="p">,</span> <span class="n">value</span><span class="p">)</span>
+
+    <span class="c1"># instatus has no setter method as is is only intended</span>
+    <span class="c1"># to provide easy access for reading and producing a different output.</span>
+    <span class="nd">@property</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">instatus</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">pa</span><span class="o">.</span><span class="n">Table</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;The instatus dataset for a Banff procedure.</span>
+
+<span class="sd">        :getter: Returns the status_file dataset</span>
+<span class="sd">        :type: pa.Table</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">status_file</span>
+
+    <span class="nd">@instatus</span><span class="o">.</span><span class="n">setter</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">instatus</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">value</span><span class="p">:</span> <span class="n">pa</span><span class="o">.</span><span class="n">Table</span> <span class="o">|</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span> <span class="o">|</span> <span class="n">Dataset</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">status_file</span> <span class="o">=</span> <span class="n">value</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">status_file</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">pa</span><span class="o">.</span><span class="n">Table</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;The status_file dataset for a Banff job.</span>
+
+<span class="sd">        :getter: Returns the status_file dataset</span>
+<span class="sd">        :setter: Sets the status_file dataset</span>
+<span class="sd">        :type: pa.Table</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_dataset</span><span class="p">(</span><span class="s2">&quot;status_file&quot;</span><span class="p">,</span> <span class="n">create_if_not_exist</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+    <span class="nd">@status_file</span><span class="o">.</span><span class="n">setter</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">status_file</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">value</span><span class="p">:</span> <span class="n">pa</span><span class="o">.</span><span class="n">Table</span> <span class="o">|</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span> <span class="o">|</span> <span class="n">Dataset</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">set_dataset</span><span class="p">(</span><span class="s2">&quot;status_file&quot;</span><span class="p">,</span> <span class="n">value</span><span class="p">)</span>
+
+    <span class="c1"># Outdata and Outstatus are only for outputs from user procs, otherwise the</span>
+    <span class="c1"># built-in banff procs update imputed_file/status_file directly and</span>
+    <span class="c1"># save their respective outdata/status files as specially named files</span>
+    <span class="nd">@property</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">outdata</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">pa</span><span class="o">.</span><span class="n">Table</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;The outdata dataset of a procedure.</span>
+
+<span class="sd">        Required to be set for a procedure to update the imputed_file on completion.</span>
+
+<span class="sd">        :getter: Returns the outdata dataset</span>
+<span class="sd">        :setter: Sets the outdata dataset</span>
+<span class="sd">        :type: pa.Table</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_dataset</span><span class="p">(</span><span class="s2">&quot;outdata&quot;</span><span class="p">)</span>
+
+    <span class="nd">@outdata</span><span class="o">.</span><span class="n">setter</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">outdata</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">value</span><span class="p">:</span> <span class="n">pa</span><span class="o">.</span><span class="n">Table</span> <span class="o">|</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">set_dataset</span><span class="p">(</span><span class="s2">&quot;outdata&quot;</span><span class="p">,</span> <span class="n">value</span><span class="p">)</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">outstatus</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">pa</span><span class="o">.</span><span class="n">Table</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;The outstatus dataset for a Banff procedure.</span>
+
+<span class="sd">        Required to be set for a procedure to update the status_file dataset on completion.</span>
+
+<span class="sd">        :getter: Returns the outstatus dataset</span>
+<span class="sd">        :setter: Sets the outstatus dataset</span>
+<span class="sd">        :type: pa.Table</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_dataset</span><span class="p">(</span><span class="s2">&quot;outstatus&quot;</span><span class="p">)</span>
+
+    <span class="nd">@outstatus</span><span class="o">.</span><span class="n">setter</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">outstatus</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">value</span><span class="p">:</span> <span class="n">pa</span><span class="o">.</span><span class="n">Table</span> <span class="o">|</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">set_dataset</span><span class="p">(</span><span class="s2">&quot;outstatus&quot;</span><span class="p">,</span> <span class="n">value</span><span class="p">)</span>
+
+<div class="viewcode-block" id="ProcessorData.output_required">
+<a class="viewcode-back" href="../../banffprocessor#banffprocessor.processor_data.ProcessorData.output_required">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">output_required</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">output_name</span> <span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Return true if the output is required for the current job step.&quot;&quot;&quot;</span>
+        <span class="n">std_name</span> <span class="o">=</span> <span class="n">get_dataset_real_name</span><span class="p">(</span><span class="n">output_name</span><span class="p">)</span>
+        <span class="k">return</span> <span class="p">(</span><span class="n">std_name</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">minimal_outputs</span> <span class="ow">or</span> <span class="bp">self</span><span class="o">.</span><span class="n">input_params</span><span class="o">.</span><span class="n">output_all</span> <span class="ow">or</span>
+                <span class="p">(</span><span class="n">std_name</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">custom_outputs</span><span class="p">))</span></div>
+
+
+<div class="viewcode-block" id="ProcessorData.get_dataset">
+<a class="viewcode-back" href="../../banffprocessor#banffprocessor.processor_data.ProcessorData.get_dataset">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">get_dataset</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">create_if_not_exist</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span>
+                    <span class="n">ds_format</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;pyarrow&quot;</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">pa</span><span class="o">.</span><span class="n">Table</span> <span class="o">|</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span> <span class="o">|</span> <span class="n">Dataset</span> <span class="o">|</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Get a dataset by `name` (case-insensitive) in format `ds_format`.</span>
+
+<span class="sd">        If no dataset is found returns `None` unless `create_if_not_exist` is True in which case a</span>
+<span class="sd">        new dataset is created under the name `name` with an empty pyarrow Table. This new Table</span>
+<span class="sd">        is then returned.</span>
+
+<span class="sd">        :param name: The name of the dataset to retrieve</span>
+<span class="sd">        :type name: str</span>
+<span class="sd">        :param create_if_not_exist: Creates a dataset with `name` if no existing one</span>
+<span class="sd">            was found, defaults to False</span>
+<span class="sd">        :type create_if_not_exist: bool, optional</span>
+<span class="sd">        :param ds_format: A string with the name of the format to return the dataset in.</span>
+<span class="sd">            Possible options are &quot;pyarrow&quot; for a pyarrow Table, &quot;pandas&quot; for a pandas</span>
+<span class="sd">            DataFrame, and &quot;object&quot; for a :class:`banffprocessor.util.Dataset` object, defaults to &quot;pyarrow&quot;</span>
+<span class="sd">        :type ds_format: str, optional</span>
+<span class="sd">        :return: The dataset with `name` if it is found or `create_if_not_exist` is set,</span>
+<span class="sd">            `None` if not</span>
+<span class="sd">        :rtype: `pa.Table` | `pd.DataFrame` | banffprocessor.util.dataset.Dataset | None</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">std_name</span> <span class="o">=</span> <span class="n">get_dataset_real_name</span><span class="p">(</span><span class="n">name</span><span class="p">)</span>
+
+        <span class="c1"># Load a Historic/Auxillary file if one was provide but it has not yet been read from disk</span>
+        <span class="k">if</span><span class="p">(</span><span class="n">std_name</span> <span class="ow">not</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_datasets</span><span class="p">):</span>
+            <span class="k">if</span><span class="p">(</span><span class="n">std_name</span> <span class="o">==</span> <span class="s2">&quot;indata_hist&quot;</span> <span class="ow">and</span> <span class="bp">self</span><span class="o">.</span><span class="n">input_params</span><span class="o">.</span><span class="n">indata_hist_filename</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">):</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">set_dataset_from_file</span><span class="p">(</span><span class="n">std_name</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">input_params</span><span class="o">.</span><span class="n">indata_hist_filename</span><span class="p">)</span>
+            <span class="k">elif</span><span class="p">(</span><span class="n">std_name</span> <span class="o">==</span> <span class="s2">&quot;indata_aux&quot;</span> <span class="ow">and</span> <span class="bp">self</span><span class="o">.</span><span class="n">input_params</span><span class="o">.</span><span class="n">indata_aux_filename</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">):</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">set_dataset_from_file</span><span class="p">(</span><span class="n">std_name</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">input_params</span><span class="o">.</span><span class="n">indata_aux_filename</span><span class="p">)</span>
+            <span class="k">elif</span><span class="p">(</span><span class="n">std_name</span> <span class="o">==</span> <span class="s2">&quot;instatus_hist&quot;</span> <span class="ow">and</span> <span class="bp">self</span><span class="o">.</span><span class="n">input_params</span><span class="o">.</span><span class="n">instatus_hist_filename</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">):</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">set_dataset_from_file</span><span class="p">(</span><span class="n">std_name</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">input_params</span><span class="o">.</span><span class="n">instatus_hist_filename</span><span class="p">)</span>
+
+        <span class="k">if</span><span class="p">(</span><span class="n">std_name</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_datasets</span><span class="p">):</span>
+            <span class="n">ds_obj</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_datasets</span><span class="p">[</span><span class="n">std_name</span><span class="p">]</span>
+            <span class="k">if</span><span class="p">(</span><span class="n">ds_format</span> <span class="o">!=</span> <span class="s2">&quot;object&quot;</span><span class="p">):</span>
+                <span class="n">dataset</span> <span class="o">=</span> <span class="n">ds_obj</span><span class="o">.</span><span class="n">ds_filtered</span> <span class="k">if</span> <span class="n">ds_obj</span><span class="o">.</span><span class="n">ds_filtered</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="k">else</span> <span class="n">ds_obj</span><span class="o">.</span><span class="n">ds</span>
+        <span class="k">elif</span><span class="p">(</span><span class="n">create_if_not_exist</span><span class="p">):</span>
+            <span class="c1"># No existing dataset was found but we were told to make one.</span>
+            <span class="c1"># So add a new entry with an empty Table</span>
+            <span class="n">dataset</span> <span class="o">=</span> <span class="n">pa</span><span class="o">.</span><span class="n">table</span><span class="p">([])</span>
+            <span class="n">ds_obj</span> <span class="o">=</span> <span class="n">Dataset</span><span class="p">(</span><span class="n">std_name</span><span class="p">,</span> <span class="n">dataset</span><span class="p">,</span> <span class="n">dbconn</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">dbconn</span><span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">set_dataset</span><span class="p">(</span><span class="n">std_name</span><span class="p">,</span> <span class="n">ds_obj</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">dataset</span> <span class="o">=</span> <span class="kc">None</span>
+            <span class="n">ds_obj</span> <span class="o">=</span> <span class="kc">None</span>
+
+        <span class="k">return</span> <span class="n">ds_obj</span> <span class="k">if</span> <span class="n">ds_format</span><span class="o">==</span><span class="s2">&quot;object&quot;</span> <span class="k">else</span> <span class="n">ds_to_format</span><span class="p">(</span><span class="n">dataset</span><span class="p">,</span> <span class="n">ds_format</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="ProcessorData.set_dataset">
+<a class="viewcode-back" href="../../banffprocessor#banffprocessor.processor_data.ProcessorData.set_dataset">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">set_dataset</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">ds</span><span class="p">:</span> <span class="n">pa</span><span class="o">.</span><span class="n">Table</span> <span class="o">|</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span> <span class="o">|</span> <span class="n">Dataset</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Set `ds` as an entry in the dataset collection under `name` (case-insensitive).</span>
+
+<span class="sd">        If a dataset under `name` already exists, `ds` will be saved as the current output</span>
+<span class="sd">        version of the `name` dataset and will be used to update the cumulative version</span>
+<span class="sd">        when the current job step completed. If `name` identifies a dataset that is produced</span>
+<span class="sd">        by default, `ds` instead directly overwrites the cumulative version, and no current</span>
+<span class="sd">        output version is saved.</span>
+
+<span class="sd">        :param name: The name of the dataset to set</span>
+<span class="sd">        :type name: str</span>
+<span class="sd">        :param ds: The dataset to set</span>
+<span class="sd">        :type ds: `pyarrow.Table` | `pandas.DataFrame` | banffprocessor.util.dataset.Dataset</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">std_name</span> <span class="o">=</span> <span class="n">get_dataset_real_name</span><span class="p">(</span><span class="n">name</span><span class="p">)</span>
+
+        <span class="k">if</span><span class="p">(</span><span class="nb">isinstance</span><span class="p">(</span><span class="n">ds</span><span class="p">,</span> <span class="n">Dataset</span><span class="p">)):</span>
+            <span class="c1"># If given as an object, just overwrite existing</span>
+            <span class="c1"># Assumes that the underlying dataset does not need any preparation</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_datasets</span><span class="p">[</span><span class="n">std_name</span><span class="p">]</span> <span class="o">=</span> <span class="n">ds</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="c1"># Ensuring that the datasets are using type string for character data.</span>
+            <span class="c1"># Sometimes pandas sets the type as large_string</span>
+            <span class="n">dataset</span><span class="p">:</span> <span class="n">pa</span><span class="o">.</span><span class="n">Table</span> <span class="o">=</span> <span class="n">handle_arrow_string_data</span><span class="p">(</span><span class="n">ds_to_format</span><span class="p">(</span><span class="n">ds</span><span class="p">,</span> <span class="s2">&quot;pyarrow&quot;</span><span class="p">),</span> <span class="n">dest_type</span><span class="o">=</span><span class="n">pa</span><span class="o">.</span><span class="n">string</span><span class="p">())</span>
+
+            <span class="k">if</span><span class="p">(</span><span class="n">std_name</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_datasets</span><span class="p">):</span>
+                <span class="n">curr_ds</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_datasets</span><span class="p">[</span><span class="n">std_name</span><span class="p">]</span>
+
+                <span class="k">if</span><span class="p">(</span><span class="n">curr_ds</span><span class="o">.</span><span class="n">ds_filtered</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">):</span>
+                    <span class="n">msg</span> <span class="o">=</span> <span class="n">_</span><span class="p">(</span><span class="s2">&quot;The Banff Processor does not currently support direct updates &quot;</span>
+                            <span class="s2">&quot;made to any datasets with a process control applied to them.&quot;</span><span class="p">)</span>
+                    <span class="n">log_lcl</span><span class="o">.</span><span class="n">exception</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span>
+                    <span class="k">raise</span> <span class="n">UserDefinedPluginError</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span>
+                <span class="k">if</span><span class="p">(</span><span class="n">std_name</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">minimal_outputs</span><span class="p">):</span>
+                    <span class="c1"># Minimal outputs just get overwritten, not updated using ds_curr_output</span>
+                    <span class="n">curr_ds</span><span class="o">.</span><span class="n">ds</span> <span class="o">=</span> <span class="n">dataset</span>
+                <span class="k">else</span><span class="p">:</span>
+                    <span class="c1"># If the dataset already exists as an object, add this as the current output,</span>
+                    <span class="c1"># which will be used to update the cumulative version after the proc completes</span>
+                    <span class="n">curr_ds</span><span class="o">.</span><span class="n">ds_curr_output</span> <span class="o">=</span> <span class="n">dataset</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">_datasets</span><span class="p">[</span><span class="n">std_name</span><span class="p">]</span> <span class="o">=</span> <span class="n">Dataset</span><span class="p">(</span><span class="n">std_name</span><span class="p">,</span> <span class="n">dataset</span><span class="p">,</span> <span class="n">dbconn</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">dbconn</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="ProcessorData.set_dataset_from_file">
+<a class="viewcode-back" href="../../banffprocessor#banffprocessor.processor_data.ProcessorData.set_dataset_from_file">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">set_dataset_from_file</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">data_file</span><span class="p">:</span> <span class="nb">str</span> <span class="o">|</span> <span class="n">Path</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Create a :class:`pa.Table` from the data file at `data_file` and load it to the</span>
+<span class="sd">        dataset collection under the name `name` (case-insensitive).</span>
+
+<span class="sd">        If `data_file` only contains a filename and not a full path, the input parameters are</span>
+<span class="sd">        used to determine the appropriate directory to look in. Any existing dataset of the</span>
+<span class="sd">        same name is replaced.</span>
+
+<span class="sd">        :param name: The name to identify the resultant dataset by</span>
+<span class="sd">        :type name: str</span>
+<span class="sd">        :param data_file: The full filepath or just filename of the data file to create</span>
+<span class="sd">            a dataset from</span>
+<span class="sd">        :type data_file: str | Path</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">set_dataset</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">load_dataset_from_file</span><span class="p">(</span><span class="n">data_file</span><span class="p">))</span></div>
+
+
+<div class="viewcode-block" id="ProcessorData.pop_dataset">
+<a class="viewcode-back" href="../../banffprocessor#banffprocessor.processor_data.ProcessorData.pop_dataset">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">pop_dataset</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Dataset</span> <span class="o">|</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Remove the :class:`banffprocessor.util.dataset.Dataset` object found under</span>
+<span class="sd">        `name` (case-insensitive) from the dataset collection and return the object if it exists.</span>
+
+<span class="sd">        Returns `None` if the dataset is not found.</span>
+
+<span class="sd">        :param name: The name of the dataset to pop</span>
+<span class="sd">        :type name: str</span>
+<span class="sd">        :return: The pop()&#39;d dataset, `None` if not found</span>
+<span class="sd">        :rtype: pd.DataFrame | None</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">name_lower</span> <span class="o">=</span> <span class="n">get_dataset_real_name</span><span class="p">(</span><span class="n">name</span><span class="p">)</span>
+        <span class="n">ds</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_datasets</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="n">name_lower</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span>
+        <span class="k">if</span><span class="p">(</span><span class="n">ds</span><span class="p">):</span>
+            <span class="c1"># We want to make sure we unregister now. If it&#39;s done in the Dataset</span>
+            <span class="c1"># __del__() method, we can&#39;t guarantee de-registration until the object is GC&#39;d</span>
+            <span class="n">ds</span><span class="o">.</span><span class="n">unregister_table</span><span class="p">()</span>
+        <span class="k">return</span> <span class="n">ds</span></div>
+
+
+<div class="viewcode-block" id="ProcessorData.clear_filtered_data">
+<a class="viewcode-back" href="../../banffprocessor#banffprocessor.processor_data.ProcessorData.clear_filtered_data">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">clear_filtered_data</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Clear all filtered datasets off of the dataset objects in the _dataset collection.</span>
+
+<span class="sd">        Use once a proc has finished executing as we no longer need the filtered data.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">for</span> <span class="n">ds</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_datasets</span><span class="o">.</span><span class="n">values</span><span class="p">():</span>
+            <span class="n">ds</span><span class="o">.</span><span class="n">ds_filtered</span> <span class="o">=</span> <span class="kc">None</span></div>
+
+
+<div class="viewcode-block" id="ProcessorData.update_cumulatives">
+<a class="viewcode-back" href="../../banffprocessor#banffprocessor.processor_data.ProcessorData.update_cumulatives">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">update_cumulatives</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">pre_execute_tables</span><span class="p">:</span> <span class="nb">set</span><span class="p">[</span><span class="nb">str</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Update every non-default dataset in the dataset collection with its</span>
+<span class="sd">        respective ds_curr_output version, if the output is required by the configured</span>
+<span class="sd">        input parameters and metadata.</span>
+
+<span class="sd">        :param pre_execute_tables: The set of table names in the dataset collection prior</span>
+<span class="sd">            to the execution of the current job step</span>
+<span class="sd">        :type pre_execute_tables: set[str]</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="c1"># We will be popping off datasets so convert to a list first</span>
+        <span class="k">for</span> <span class="n">name</span><span class="p">,</span> <span class="n">ds_obj</span> <span class="ow">in</span> <span class="nb">list</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">datasets</span><span class="o">.</span><span class="n">items</span><span class="p">()):</span>
+            <span class="c1"># Remove the aux and hist conditions if we want those files wiped from memory after use</span>
+            <span class="k">if</span><span class="p">(</span><span class="n">name</span> <span class="ow">not</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">minimal_outputs</span> <span class="ow">and</span> <span class="p">(</span><span class="s2">&quot;_aux&quot;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">name</span> <span class="ow">and</span> <span class="s2">&quot;_hist&quot;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">name</span><span class="p">)):</span>
+                <span class="k">if</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">output_required</span><span class="p">(</span><span class="n">name</span><span class="p">)):</span>
+                    <span class="c1"># The current proc requests this file, either via ALL or CUSTOM</span>
+                    <span class="bp">self</span><span class="o">.</span><span class="n">update_file_all</span><span class="p">(</span><span class="n">ds_obj</span><span class="p">)</span>
+                <span class="k">elif</span><span class="p">(</span><span class="n">name</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">pre_execute_tables</span><span class="p">):</span>
+                    <span class="c1"># The current proc doesn&#39;t want this file and it wasn&#39;t</span>
+                    <span class="c1"># created by a different proc so we can discard it</span>
+                    <span class="bp">self</span><span class="o">.</span><span class="n">pop_dataset</span><span class="p">(</span><span class="n">name</span><span class="p">)</span>
+                <span class="k">else</span><span class="p">:</span>
+                    <span class="c1"># Don&#39;t want the output from curr proc, but DO want existing Dataset object</span>
+                    <span class="c1"># All built-ins should already have this attribute empty, but UDPs may have</span>
+                    <span class="c1"># loaded a table they didn&#39;t want</span>
+                    <span class="n">ds_obj</span><span class="o">.</span><span class="n">ds_curr_output</span> <span class="o">=</span> <span class="kc">None</span>
+                    <span class="n">msg</span> <span class="o">=</span> <span class="n">_</span><span class="p">(</span><span class="s2">&quot;Output table </span><span class="si">{}</span><span class="s2"> was created but output settings exclude this table &quot;</span>
+                            <span class="s2">&quot;from saving for the current proc and so it was discarded.&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">name</span><span class="p">)</span>
+                    <span class="n">log_lcl</span><span class="o">.</span><span class="n">warning</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="ProcessorData.update_status">
+<a class="viewcode-back" href="../../banffprocessor#banffprocessor.processor_data.ProcessorData.update_status">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">update_status</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Append `outstatus` dataset to `status_file` and updates `status_file`</span>
+<span class="sd">        where `outstatus` shares the same index values.</span>
+
+<span class="sd">        Also calls `update_file_all()` to update `status_log` with `outstatus`.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">proc_status</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_dataset</span><span class="p">(</span><span class="s2">&quot;outstatus&quot;</span><span class="p">)</span>
+
+        <span class="c1"># If proc_status is empty, nothing to update</span>
+        <span class="k">if</span><span class="p">(</span><span class="n">proc_status</span> <span class="ow">is</span> <span class="kc">None</span> <span class="ow">or</span> <span class="n">table_empty</span><span class="p">(</span><span class="n">proc_status</span><span class="p">)):</span>
+            <span class="k">return</span>
+
+        <span class="c1"># Check against upper case column names in the unlikely chance JOBID and SEQNO were</span>
+        <span class="c1"># originally on the user&#39;s instatus file in some other capitalization</span>
+        <span class="n">upper_cols</span> <span class="o">=</span> <span class="p">[</span><span class="n">x</span><span class="o">.</span><span class="n">upper</span><span class="p">()</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">proc_status</span><span class="o">.</span><span class="n">column_names</span><span class="p">]</span>
+        <span class="c1"># These fields are likely added during a preceding call to updateFileAll() so don&#39;t re-add</span>
+        <span class="c1"># them if we don&#39;t have to</span>
+        <span class="k">if</span><span class="p">(</span><span class="s2">&quot;JOBID&quot;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">upper_cols</span><span class="p">):</span>
+            <span class="n">proc_status</span> <span class="o">=</span> <span class="n">add_single_value_column</span><span class="p">(</span><span class="n">proc_status</span><span class="p">,</span> <span class="s2">&quot;JOBID&quot;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">current_job_step</span><span class="o">.</span><span class="n">jobid</span><span class="p">,</span> <span class="n">pa</span><span class="o">.</span><span class="n">string</span><span class="p">())</span>
+        <span class="k">if</span><span class="p">(</span><span class="s2">&quot;SEQNO&quot;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">upper_cols</span><span class="p">):</span>
+            <span class="n">proc_status</span> <span class="o">=</span> <span class="n">add_single_value_column</span><span class="p">(</span><span class="n">proc_status</span><span class="p">,</span> <span class="s2">&quot;SEQNO&quot;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">current_job_step</span><span class="o">.</span><span class="n">seqno</span><span class="p">,</span> <span class="n">pa</span><span class="o">.</span><span class="n">float32</span><span class="p">())</span>
+
+        <span class="n">status_file_obj</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_dataset</span><span class="p">(</span><span class="s2">&quot;status_file&quot;</span><span class="p">,</span> <span class="n">ds_format</span><span class="o">=</span><span class="s2">&quot;object&quot;</span><span class="p">)</span>
+        <span class="n">status_file</span> <span class="o">=</span> <span class="n">status_file_obj</span><span class="o">.</span><span class="n">ds</span>
+
+        <span class="k">if</span><span class="p">(</span><span class="n">status_file_obj</span> <span class="ow">is</span> <span class="kc">None</span> <span class="ow">or</span> <span class="n">table_empty</span><span class="p">(</span><span class="n">status_file</span><span class="p">)):</span>
+            <span class="c1"># Create a copy of proc_status</span>
+            <span class="n">status_file_new</span> <span class="o">=</span> <span class="n">copy_table</span><span class="p">(</span><span class="n">proc_status</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="c1"># Index values to use for concat and update</span>
+            <span class="n">index_cols</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;JOBID&quot;</span><span class="p">,</span> <span class="s2">&quot;FIELDID&quot;</span><span class="p">]</span>
+            <span class="k">if</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">input_params</span><span class="o">.</span><span class="n">unit_id</span><span class="p">):</span>
+                <span class="n">index_cols</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">input_params</span><span class="o">.</span><span class="n">unit_id</span><span class="o">.</span><span class="n">upper</span><span class="p">())</span>
+
+            <span class="c1">#NOTE: Pyarrow 16.1 docs erroneously claim that it accepts a dict to rename columns,</span>
+            <span class="c1"># and treats the dict as {old_name: new_name}. However all of the 16.1.0 branches</span>
+            <span class="c1"># from the project&#39;s github show that the method is not yet updated to accept a dict.</span>
+            <span class="c1"># This is an issue as it allows you to pass a dict with no error, then iterates over</span>
+            <span class="c1"># the keys of the dict as if it is a list and renames your columns as if the key of</span>
+            <span class="c1"># the dict is the NEW name and not the old name.</span>
+            <span class="c1"># So make sure only lists are used for renaming until this feature is properly implemented</span>
+            <span class="n">proc_status_col_dict</span> <span class="o">=</span> <span class="p">{</span><span class="n">x</span><span class="o">.</span><span class="n">upper</span><span class="p">():</span><span class="n">x</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">proc_status</span><span class="o">.</span><span class="n">column_names</span><span class="p">}</span>
+            <span class="n">proc_status</span> <span class="o">=</span> <span class="n">proc_status</span><span class="o">.</span><span class="n">rename_columns</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="n">proc_status_col_dict</span><span class="o">.</span><span class="n">keys</span><span class="p">()))</span>
+            <span class="n">status_file_col_dict</span> <span class="o">=</span> <span class="p">{</span><span class="n">x</span><span class="o">.</span><span class="n">upper</span><span class="p">():</span><span class="n">x</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">status_file</span><span class="o">.</span><span class="n">column_names</span><span class="p">}</span>
+            <span class="n">status_file</span> <span class="o">=</span> <span class="n">status_file</span><span class="o">.</span><span class="n">rename_columns</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="n">status_file_col_dict</span><span class="o">.</span><span class="n">keys</span><span class="p">()))</span>
+
+            <span class="c1"># Get the records from each dataset with unique index values (i.e. no overlap)</span>
+            <span class="n">proc_status_non_matching</span> <span class="o">=</span> <span class="n">proc_status</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">status_file</span><span class="p">,</span> <span class="n">keys</span><span class="o">=</span><span class="n">index_cols</span><span class="p">,</span> <span class="n">join_type</span><span class="o">=</span><span class="s2">&quot;left anti&quot;</span><span class="p">)</span>
+            <span class="n">status_file_non_matching</span> <span class="o">=</span> <span class="n">status_file</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">proc_status</span><span class="p">,</span> <span class="n">keys</span><span class="o">=</span><span class="n">index_cols</span><span class="p">,</span> <span class="n">join_type</span><span class="o">=</span><span class="s2">&quot;left anti&quot;</span><span class="p">)</span>
+
+            <span class="c1"># Get records from both datasets with matching index values</span>
+            <span class="n">combined_status_matching</span> <span class="o">=</span> <span class="n">status_file</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">proc_status</span><span class="p">,</span> <span class="n">keys</span><span class="o">=</span><span class="n">index_cols</span><span class="p">,</span> <span class="n">join_type</span><span class="o">=</span><span class="s2">&quot;inner&quot;</span><span class="p">,</span> <span class="n">left_suffix</span><span class="o">=</span><span class="s2">&quot;to_drop&quot;</span><span class="p">)</span>
+            <span class="c1"># Drop the old value column from status_file to replace it with the new values from status</span>
+            <span class="c1"># Since we want non-NaN values replaced with NaN, we can just drop the whole column</span>
+            <span class="n">combined_status_matching</span> <span class="o">=</span> <span class="n">combined_status_matching</span><span class="o">.</span><span class="n">drop_columns</span><span class="p">([</span><span class="n">x</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">combined_status_matching</span><span class="o">.</span><span class="n">column_names</span> <span class="k">if</span> <span class="s2">&quot;to_drop&quot;</span> <span class="ow">in</span> <span class="n">x</span><span class="p">])</span>
+
+            <span class="c1"># Combine all of our subsets to create the final dataset</span>
+            <span class="c1"># Note: If we can be sure that the schemas of status_file and proc_status are the same we</span>
+            <span class="c1"># don&#39;t need to set the promote_options and this operation may be faster</span>
+            <span class="n">status_file_new</span> <span class="o">=</span> <span class="n">pa</span><span class="o">.</span><span class="n">concat_tables</span><span class="p">([</span><span class="n">status_file_non_matching</span><span class="p">,</span> <span class="n">proc_status_non_matching</span><span class="p">,</span> <span class="n">combined_status_matching</span><span class="p">],</span> <span class="n">promote_options</span><span class="o">=</span><span class="s2">&quot;permissive&quot;</span><span class="p">)</span>
+
+            <span class="c1"># Revert capitalization on status_file</span>
+            <span class="c1"># Dict feature only available in Python 3.9</span>
+            <span class="c1"># Computes the combined dictionary where any key overlaps are won by the</span>
+            <span class="c1"># right side dictionary</span>
+            <span class="n">proc_status</span> <span class="o">=</span> <span class="n">proc_status</span><span class="o">.</span><span class="n">rename_columns</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="n">proc_status_col_dict</span><span class="o">.</span><span class="n">values</span><span class="p">()))</span>
+            <span class="n">merged_dict</span> <span class="o">=</span> <span class="n">proc_status_col_dict</span> <span class="o">|</span> <span class="n">status_file_col_dict</span>
+            <span class="n">normal_columns_merged</span> <span class="o">=</span> <span class="p">[</span><span class="n">merged_dict</span><span class="p">[</span><span class="n">x</span><span class="p">]</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">status_file_new</span><span class="o">.</span><span class="n">column_names</span><span class="p">]</span>
+            <span class="n">status_file_new</span> <span class="o">=</span> <span class="n">status_file_new</span><span class="o">.</span><span class="n">rename_columns</span><span class="p">(</span><span class="n">normal_columns_merged</span><span class="p">)</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">outstatus</span> <span class="o">=</span> <span class="n">proc_status</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">update_file_all</span><span class="p">(</span><span class="n">proc_status</span><span class="p">,</span> <span class="s2">&quot;status_log&quot;</span><span class="p">)</span>
+        <span class="n">status_file_obj</span><span class="o">.</span><span class="n">ds</span> <span class="o">=</span> <span class="n">status_file_new</span></div>
+
+
+<div class="viewcode-block" id="ProcessorData.update_file_all">
+<a class="viewcode-back" href="../../banffprocessor#banffprocessor.processor_data.ProcessorData.update_file_all">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">update_file_all</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">dataset</span><span class="p">:</span> <span class="nb">str</span> <span class="o">|</span> <span class="n">pa</span><span class="o">.</span><span class="n">Table</span> <span class="o">|</span> <span class="n">Dataset</span><span class="p">,</span> <span class="n">dataset_all_name</span><span class="p">:</span> <span class="nb">str</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Update the respective cumulative version of `dataset` using the contents of the</span>
+<span class="sd">        non-cumulative version after adding the current jobid and seqno to it.</span>
+
+<span class="sd">        If `dataset` is given as a Dataset object or the name of the object to fetch, the object may</span>
+<span class="sd">        contain both the cumulative and curr_output versions. If it only contains the cumulative version,</span>
+<span class="sd">        the jobid and seqno columns are still added to it if they are not yet present. As well in this case,</span>
+<span class="sd">        the jobid and seqno column additions will be saved back to the non-cumulative dataset if</span>
+<span class="sd">        `dataset_all_name` is seperately provided. Otherwise the changes to the non-cumulative dataset are</span>
+<span class="sd">        discarded and only the updated cumulative version is saved.</span>
+
+<span class="sd">        :param dataset: Either the name of a dataset to fetch, the Dataset object itself or a specific</span>
+<span class="sd">        pyarrow table. If provided as a pyarrow table no changes are saved back to this dataset and</span>
+<span class="sd">        `dataset_all_name` must be provided as well.</span>
+<span class="sd">        :type dataset: str | pa.Table | banffprocessor.util.dataset.Dataset</span>
+<span class="sd">        :param dataset_all_name: The name of the dataset to update using dataset_name.</span>
+<span class="sd">            If not provided the non-cumulative dataset&#39;s name is used, defaults to None</span>
+<span class="sd">        :type dataset_all_name: str, optional</span>
+<span class="sd">        :raises ValueError: If `dataset` is given as a pa.Table but no `dataset_all_name` is given.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">dataset_obj</span> <span class="o">=</span> <span class="kc">None</span>
+
+        <span class="k">if</span><span class="p">(</span><span class="nb">isinstance</span><span class="p">(</span><span class="n">dataset</span><span class="p">,</span> <span class="nb">str</span><span class="p">)):</span>
+            <span class="k">if</span><span class="p">(</span><span class="n">dataset_all_name</span><span class="p">):</span>
+                <span class="c1"># If both a dataset table name AND a dataset_all table name are given,</span>
+                <span class="c1"># we are in a special case. Most likely outreject, but could change in the future</span>
+                <span class="n">dataset_all_obj</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_dataset</span><span class="p">(</span><span class="n">dataset_all_name</span><span class="p">,</span> <span class="n">create_if_not_exist</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">ds_format</span><span class="o">=</span><span class="s2">&quot;object&quot;</span><span class="p">)</span>
+                <span class="n">dataset_obj</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_dataset</span><span class="p">(</span><span class="n">dataset</span><span class="p">,</span> <span class="n">ds_format</span><span class="o">=</span><span class="s2">&quot;object&quot;</span><span class="p">)</span>
+                <span class="n">dataset</span> <span class="o">=</span> <span class="n">dataset_obj</span><span class="o">.</span><span class="n">ds</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="c1"># If only a single table name is given, the underlying object should</span>
+                <span class="c1"># hold both the curr_output and cumulative versions</span>
+                <span class="n">dataset_all_obj</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_dataset</span><span class="p">(</span><span class="n">dataset</span><span class="p">,</span> <span class="n">create_if_not_exist</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">ds_format</span><span class="o">=</span><span class="s2">&quot;object&quot;</span><span class="p">)</span>
+                <span class="n">dataset</span> <span class="o">=</span> <span class="n">dataset_all_obj</span><span class="o">.</span><span class="n">ds_curr_output</span>
+                <span class="n">dataset_all_obj</span><span class="o">.</span><span class="n">ds_curr_output</span> <span class="o">=</span> <span class="kc">None</span>
+        <span class="k">elif</span><span class="p">(</span><span class="nb">isinstance</span><span class="p">(</span><span class="n">dataset</span><span class="p">,</span> <span class="n">Dataset</span><span class="p">)):</span>
+            <span class="k">if</span><span class="p">(</span><span class="n">dataset_all_name</span><span class="p">):</span>
+                <span class="n">dataset_all_obj</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_dataset</span><span class="p">(</span><span class="n">dataset_all_name</span><span class="p">,</span> <span class="n">create_if_not_exist</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">ds_format</span><span class="o">=</span><span class="s2">&quot;object&quot;</span><span class="p">)</span>
+                <span class="n">dataset_obj</span> <span class="o">=</span> <span class="n">dataset</span>
+                <span class="n">dataset</span> <span class="o">=</span> <span class="n">dataset_obj</span><span class="o">.</span><span class="n">ds</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="c1"># If we were given an object, we always use ds_curr_output to update ds_cumulative</span>
+                <span class="n">dataset_all_obj</span> <span class="o">=</span> <span class="n">dataset</span>
+                <span class="n">dataset</span> <span class="o">=</span> <span class="n">dataset_all_obj</span><span class="o">.</span><span class="n">ds_curr_output</span>
+                <span class="n">dataset_all_obj</span><span class="o">.</span><span class="n">ds_curr_output</span> <span class="o">=</span> <span class="kc">None</span>
+        <span class="k">elif</span><span class="p">(</span><span class="nb">isinstance</span><span class="p">(</span><span class="n">dataset</span><span class="p">,</span> <span class="n">pa</span><span class="o">.</span><span class="n">Table</span><span class="p">)):</span>
+            <span class="k">if</span><span class="p">(</span><span class="ow">not</span> <span class="n">dataset_all_name</span><span class="p">):</span>
+                <span class="n">msg</span> <span class="o">=</span> <span class="n">_</span><span class="p">(</span><span class="s2">&quot;dataset was given as a pyarrow table but no name was given for the table to update.&quot;</span><span class="p">)</span>
+                <span class="n">log_lcl</span><span class="o">.</span><span class="n">exception</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span>
+                <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span>
+            <span class="n">dataset_all_obj</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_dataset</span><span class="p">(</span><span class="n">dataset_all_name</span><span class="p">,</span> <span class="n">create_if_not_exist</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">ds_format</span><span class="o">=</span><span class="s2">&quot;object&quot;</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">msg</span> <span class="o">=</span> <span class="n">_</span><span class="p">(</span><span class="s2">&quot;dataset was given as an invalid type. dataset must be of type str, pa.Table or Dataset.&quot;</span><span class="p">)</span>
+            <span class="n">log_lcl</span><span class="o">.</span><span class="n">exception</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span>
+            <span class="k">raise</span> <span class="ne">TypeError</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span>
+
+        <span class="c1"># We only ever want to update the unfiltered version of the dataset</span>
+        <span class="n">dataset_all</span> <span class="o">=</span> <span class="n">dataset_all_obj</span><span class="o">.</span><span class="n">ds</span>
+
+        <span class="k">if</span><span class="p">(</span><span class="n">dataset</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">):</span>
+            <span class="c1"># A cumulative dataset was passed in alone and it has no ds_curr_output</span>
+            <span class="c1"># So we swap the variables to carry out the update with an empty table</span>
+            <span class="c1"># to ensure the JobID/seqno is added to ds_cumulative</span>
+            <span class="n">dataset</span> <span class="o">=</span> <span class="n">dataset_all</span>
+            <span class="n">dataset_all</span> <span class="o">=</span> <span class="n">pa</span><span class="o">.</span><span class="n">table</span><span class="p">([])</span>
+
+        <span class="c1"># See update_status() NOTE on using dict vs list for rename_columns</span>
+        <span class="n">dataset_col_dict</span> <span class="o">=</span> <span class="p">{</span><span class="n">x</span><span class="o">.</span><span class="n">upper</span><span class="p">():</span><span class="n">x</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">dataset</span><span class="o">.</span><span class="n">column_names</span><span class="p">}</span>
+        <span class="n">dataset</span> <span class="o">=</span> <span class="n">dataset</span><span class="o">.</span><span class="n">rename_columns</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="n">dataset_col_dict</span><span class="o">.</span><span class="n">keys</span><span class="p">()))</span>
+        <span class="n">dataset_all_col_dict</span> <span class="o">=</span> <span class="p">{</span><span class="n">x</span><span class="o">.</span><span class="n">upper</span><span class="p">():</span><span class="n">x</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">dataset_all</span><span class="o">.</span><span class="n">column_names</span><span class="p">}</span>
+        <span class="n">dataset_all</span> <span class="o">=</span> <span class="n">dataset_all</span><span class="o">.</span><span class="n">rename_columns</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="n">dataset_all_col_dict</span><span class="o">.</span><span class="n">keys</span><span class="p">()))</span>
+
+        <span class="c1"># Ensure the jobid and seqno for the current job step are present in the dataset first</span>
+        <span class="k">if</span><span class="p">(</span><span class="s2">&quot;JOBID&quot;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">dataset</span><span class="o">.</span><span class="n">column_names</span> <span class="ow">and</span> <span class="s2">&quot;JOB_ID&quot;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">dataset</span><span class="o">.</span><span class="n">column_names</span><span class="p">):</span>
+            <span class="n">dataset</span> <span class="o">=</span> <span class="n">add_single_value_column</span><span class="p">(</span><span class="n">dataset</span><span class="p">,</span> <span class="s2">&quot;JOBID&quot;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">current_job_step</span><span class="o">.</span><span class="n">jobid</span><span class="p">,</span> <span class="n">pa</span><span class="o">.</span><span class="n">string</span><span class="p">())</span>
+            <span class="c1"># Need this for when we revert things later</span>
+            <span class="n">dataset_col_dict</span><span class="p">[</span><span class="s2">&quot;JOBID&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;JOBID&quot;</span>
+        <span class="k">if</span><span class="p">(</span><span class="s2">&quot;SEQNO&quot;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">dataset</span><span class="o">.</span><span class="n">column_names</span><span class="p">):</span>
+            <span class="n">dataset</span> <span class="o">=</span> <span class="n">add_single_value_column</span><span class="p">(</span><span class="n">dataset</span><span class="p">,</span> <span class="s2">&quot;SEQNO&quot;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">current_job_step</span><span class="o">.</span><span class="n">seqno</span><span class="p">,</span> <span class="n">pa</span><span class="o">.</span><span class="n">float32</span><span class="p">())</span>
+            <span class="c1"># Need this for when we revert things later</span>
+            <span class="n">dataset_col_dict</span><span class="p">[</span><span class="s2">&quot;SEQNO&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;SEQNO&quot;</span>
+
+        <span class="c1"># Append the new dataset to the existing dataset_all</span>
+        <span class="n">dataset_all_new</span> <span class="o">=</span> <span class="n">pa</span><span class="o">.</span><span class="n">concat_tables</span><span class="p">([</span><span class="n">dataset_all</span><span class="p">,</span> <span class="n">dataset</span><span class="p">],</span> <span class="n">promote_options</span><span class="o">=</span><span class="s2">&quot;permissive&quot;</span><span class="p">)</span>
+
+        <span class="c1"># Revert capitalization, only necessary if keeping dataset</span>
+        <span class="k">if</span><span class="p">(</span><span class="n">dataset_obj</span><span class="p">):</span>
+            <span class="n">dataset</span> <span class="o">=</span> <span class="n">dataset</span><span class="o">.</span><span class="n">rename_columns</span><span class="p">([</span><span class="n">dataset_col_dict</span><span class="p">[</span><span class="n">x</span><span class="p">]</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">dataset</span><span class="o">.</span><span class="n">column_names</span><span class="p">])</span>
+            <span class="n">dataset_obj</span><span class="o">.</span><span class="n">ds</span> <span class="o">=</span> <span class="n">dataset</span>
+
+        <span class="n">merged_dict</span> <span class="o">=</span> <span class="n">dataset_col_dict</span> <span class="o">|</span> <span class="n">dataset_all_col_dict</span>
+        <span class="n">normal_columns_merged</span> <span class="o">=</span> <span class="p">[</span><span class="n">merged_dict</span><span class="p">[</span><span class="n">x</span><span class="p">]</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">dataset_all_new</span><span class="o">.</span><span class="n">column_names</span><span class="p">]</span>
+        <span class="n">dataset_all_new</span> <span class="o">=</span> <span class="n">dataset_all_new</span><span class="o">.</span><span class="n">rename_columns</span><span class="p">(</span><span class="n">normal_columns_merged</span><span class="p">)</span>
+
+        <span class="c1"># Save back the changes we made to dataset_all, explicitly to the non-filtered ds</span>
+        <span class="n">dataset_all_obj</span><span class="o">.</span><span class="n">ds</span> <span class="o">=</span> <span class="n">dataset_all_new</span></div>
+
+
+<div class="viewcode-block" id="ProcessorData.update_imputed_file">
+<a class="viewcode-back" href="../../banffprocessor#banffprocessor.processor_data.ProcessorData.update_imputed_file">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">update_imputed_file</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Implement non-&#39;prebanff&#39; section of updateImputedFile.sas.</span>
+
+<span class="sd">        Updates the `imputed_file` with the data found in `outdata`.</span>
+<span class="sd">        Does not add any records from `outdata` without a matching index value in `imputed_file`,</span>
+<span class="sd">        only updates matching records. `imputed_file` is updated inplace.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">unit_id</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">input_params</span><span class="o">.</span><span class="n">unit_id</span>
+        <span class="k">if</span><span class="p">(</span><span class="ow">not</span> <span class="n">unit_id</span><span class="p">):</span>
+            <span class="n">msg</span> <span class="o">=</span> <span class="n">_</span><span class="p">(</span><span class="s2">&quot;update_imputed_file requires a unit_id value to sort and update on.&quot;</span><span class="p">)</span>
+            <span class="n">log_lcl</span><span class="o">.</span><span class="n">exception</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span>
+
+        <span class="n">unit_id_upper</span> <span class="o">=</span> <span class="n">unit_id</span><span class="o">.</span><span class="n">upper</span><span class="p">()</span>
+        <span class="n">imputed_file_obj</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_dataset</span><span class="p">(</span><span class="s2">&quot;imputed_file&quot;</span><span class="p">,</span> <span class="n">create_if_not_exist</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">ds_format</span><span class="o">=</span><span class="s2">&quot;object&quot;</span><span class="p">)</span>
+        <span class="n">imputed_file</span> <span class="o">=</span> <span class="n">imputed_file_obj</span><span class="o">.</span><span class="n">ds</span>
+        <span class="n">outdata</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_dataset</span><span class="p">(</span><span class="s2">&quot;outdata&quot;</span><span class="p">,</span> <span class="n">create_if_not_exist</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+        <span class="c1"># See update_status() NOTE on using dict vs list for rename_columns</span>
+        <span class="n">imputed_file_col_dict</span> <span class="o">=</span> <span class="p">{</span><span class="n">x</span><span class="o">.</span><span class="n">upper</span><span class="p">():</span><span class="n">x</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">imputed_file</span><span class="o">.</span><span class="n">column_names</span><span class="p">}</span>
+        <span class="n">imputed_file</span> <span class="o">=</span> <span class="n">imputed_file</span><span class="o">.</span><span class="n">rename_columns</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="n">imputed_file_col_dict</span><span class="o">.</span><span class="n">keys</span><span class="p">()))</span>
+        <span class="n">outdata_col_dict</span> <span class="o">=</span> <span class="p">{</span><span class="n">x</span><span class="o">.</span><span class="n">upper</span><span class="p">():</span><span class="n">x</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">outdata</span><span class="o">.</span><span class="n">column_names</span><span class="p">}</span>
+        <span class="n">outdata</span> <span class="o">=</span> <span class="n">outdata</span><span class="o">.</span><span class="n">rename_columns</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="n">outdata_col_dict</span><span class="o">.</span><span class="n">keys</span><span class="p">()))</span>
+
+        <span class="n">imputed_file</span> <span class="o">=</span> <span class="n">imputed_file</span><span class="o">.</span><span class="n">sort_by</span><span class="p">(</span><span class="n">unit_id_upper</span><span class="p">)</span>
+        <span class="n">outdata</span> <span class="o">=</span> <span class="n">outdata</span><span class="o">.</span><span class="n">sort_by</span><span class="p">(</span><span class="n">unit_id_upper</span><span class="p">)</span>
+
+        <span class="c1"># In updateImputedFile.sas the update statement in the final data step includes a</span>
+        <span class="c1"># terminating if-statement which prevents any new rows from being copied over.</span>
+
+        <span class="c1"># Get imputed_file records that don&#39;t have a matching key in outdata</span>
+        <span class="n">imputed_non_matching</span> <span class="o">=</span> <span class="n">imputed_file</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">outdata</span><span class="p">,</span> <span class="n">keys</span><span class="o">=</span><span class="n">unit_id_upper</span><span class="p">,</span> <span class="n">join_type</span><span class="o">=</span><span class="s2">&quot;left anti&quot;</span><span class="p">)</span>
+
+        <span class="c1"># Get outdata records with matching keys in imputed_file, mark the imputed_file columns</span>
+        <span class="c1"># as we want to overwrite old data in imputed_file with new data from outdata. Use an</span>
+        <span class="c1"># inner join because we do not want any new records from outdata, only update existing</span>
+        <span class="n">drop_suffix</span> <span class="o">=</span> <span class="s2">&quot;_to_drop&quot;</span>
+        <span class="n">outdata</span> <span class="o">=</span> <span class="n">outdata</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">imputed_file</span><span class="p">,</span> <span class="n">keys</span><span class="o">=</span><span class="n">unit_id_upper</span><span class="p">,</span> <span class="n">join_type</span><span class="o">=</span><span class="s2">&quot;inner&quot;</span><span class="p">,</span> <span class="n">right_suffix</span><span class="o">=</span><span class="n">drop_suffix</span><span class="p">)</span>
+        <span class="c1"># Drop any new columns from outdata that aren&#39;t originally found in imputed_file, also drop</span>
+        <span class="c1"># the old imputed_file data columns we marked above</span>
+        <span class="n">outdata</span> <span class="o">=</span> <span class="n">outdata</span><span class="o">.</span><span class="n">drop_columns</span><span class="p">([</span><span class="n">x</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">outdata</span><span class="o">.</span><span class="n">column_names</span> <span class="k">if</span>
+                                        <span class="p">(</span><span class="n">drop_suffix</span> <span class="ow">in</span> <span class="n">x</span> <span class="ow">or</span> <span class="n">x</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">imputed_file</span><span class="o">.</span><span class="n">column_names</span><span class="p">)])</span>
+
+        <span class="c1"># Concat our non-overlapping imputed data with the new values for matching records in outdata</span>
+        <span class="n">new_imputed</span> <span class="o">=</span> <span class="n">pa</span><span class="o">.</span><span class="n">concat_tables</span><span class="p">([</span><span class="n">imputed_non_matching</span><span class="p">,</span> <span class="n">outdata</span><span class="p">],</span> <span class="n">promote_options</span><span class="o">=</span><span class="s2">&quot;permissive&quot;</span><span class="p">)</span>
+
+        <span class="c1"># Our concat can make the order a little messed up so perform a final sort</span>
+        <span class="n">new_imputed</span> <span class="o">=</span> <span class="n">new_imputed</span><span class="o">.</span><span class="n">sort_by</span><span class="p">(</span><span class="n">unit_id_upper</span><span class="p">)</span>
+
+        <span class="c1"># Save back the changes we made to imputed_file with original column names,</span>
+        <span class="c1"># we can discard outdata changes</span>
+        <span class="n">imputed_file_obj</span><span class="o">.</span><span class="n">ds</span> <span class="o">=</span> <span class="n">new_imputed</span><span class="o">.</span><span class="n">rename_columns</span><span class="p">([</span><span class="n">imputed_file_col_dict</span><span class="p">[</span><span class="n">x</span><span class="p">]</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">new_imputed</span><span class="o">.</span><span class="n">column_names</span><span class="p">])</span></div>
+
+
+<div class="viewcode-block" id="ProcessorData.clean_status_file">
+<a class="viewcode-back" href="../../banffprocessor#banffprocessor.processor_data.ProcessorData.clean_status_file">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">clean_status_file</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Implement cleanStatusAll.sas. Removes all extra columns from the statusAll file.&quot;&quot;&quot;</span>
+        <span class="n">status_file_obj</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_dataset</span><span class="p">(</span><span class="s2">&quot;status_file&quot;</span><span class="p">,</span> <span class="n">ds_format</span><span class="o">=</span><span class="s2">&quot;object&quot;</span><span class="p">)</span>
+
+        <span class="k">if</span><span class="p">(</span><span class="n">status_file_obj</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">):</span>
+            <span class="k">return</span>
+
+        <span class="n">status_file</span> <span class="o">=</span> <span class="n">status_file_obj</span><span class="o">.</span><span class="n">ds</span>
+
+        <span class="n">keep_list_upper</span> <span class="o">=</span> <span class="p">[</span>
+            <span class="s2">&quot;JOBID&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;SEQNO&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;FIELDID&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;STATUS&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;VALUE&quot;</span><span class="p">,</span>
+        <span class="p">]</span>
+        <span class="k">if</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">input_params</span><span class="o">.</span><span class="n">unit_id</span><span class="p">):</span>
+            <span class="n">keep_list_upper</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">input_params</span><span class="o">.</span><span class="n">unit_id</span><span class="o">.</span><span class="n">upper</span><span class="p">())</span>
+
+        <span class="c1"># Get the keep list columns with correct capitalization in status_file</span>
+        <span class="n">keep_list_actual</span> <span class="o">=</span> <span class="p">[</span><span class="n">x</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">status_file</span><span class="o">.</span><span class="n">column_names</span> <span class="k">if</span> <span class="n">x</span><span class="o">.</span><span class="n">upper</span><span class="p">()</span> <span class="ow">in</span> <span class="n">keep_list_upper</span><span class="p">]</span>
+
+        <span class="c1"># filter the dataset</span>
+        <span class="n">status_file_obj</span><span class="o">.</span><span class="n">ds</span> <span class="o">=</span> <span class="n">status_file</span><span class="o">.</span><span class="n">select</span><span class="p">(</span><span class="n">keep_list_actual</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="ProcessorData.apply_process_controls">
+<a class="viewcode-back" href="../../banffprocessor#banffprocessor.processor_data.ProcessorData.apply_process_controls">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">apply_process_controls</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Apply a set of process controls for a single controlid in `controls` according to their</span>
+<span class="sd">        specifications and sets the filtered dataset(s) in processor_data.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="c1"># If the current job step has no controls, just return</span>
+        <span class="k">if</span><span class="p">(</span><span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">current_job_step</span><span class="o">.</span><span class="n">controlid</span><span class="p">):</span>
+            <span class="k">return</span>
+
+        <span class="n">controls</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">metaobjects</span><span class="o">.</span><span class="n">get_process_controls</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">current_job_step</span><span class="o">.</span><span class="n">controlid</span><span class="p">)</span>
+        <span class="k">if</span><span class="p">(</span><span class="ow">not</span> <span class="n">controls</span><span class="p">):</span>
+            <span class="n">msg</span> <span class="o">=</span> <span class="n">_</span><span class="p">(</span><span class="s2">&quot;Undefined control ID found: controlid =&#39;</span><span class="si">{}</span><span class="s2">&#39;, jobid=&#39;</span><span class="si">{}</span><span class="s2">&#39;, seqno=&#39;</span><span class="si">{}</span><span class="s2">&#39;&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">current_job_step</span><span class="o">.</span><span class="n">controlid</span><span class="p">,</span>
+                                                                                                 <span class="bp">self</span><span class="o">.</span><span class="n">current_job_step</span><span class="o">.</span><span class="n">jobid</span><span class="p">,</span>
+                                                                                                 <span class="bp">self</span><span class="o">.</span><span class="n">current_job_step</span><span class="o">.</span><span class="n">seqno</span><span class="p">)</span>
+            <span class="n">log_lcl</span><span class="o">.</span><span class="n">exception</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span>
+            <span class="k">raise</span> <span class="n">MetadataConstraintError</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span>
+
+        <span class="c1"># Each control_set is a dict of all process controls for a single targetfile</span>
+        <span class="k">for</span> <span class="n">control_set</span> <span class="ow">in</span> <span class="n">controls</span><span class="o">.</span><span class="n">values</span><span class="p">():</span>
+            <span class="c1"># arbitrary record we can use to get controlid and targetfile as every</span>
+            <span class="c1"># record in control_set should have the same values for these</span>
+            <span class="n">arbitrary_control</span> <span class="o">=</span> <span class="nb">next</span><span class="p">(</span><span class="nb">iter</span><span class="p">(</span><span class="n">control_set</span><span class="o">.</span><span class="n">values</span><span class="p">()))[</span><span class="mi">0</span><span class="p">]</span>
+
+            <span class="k">try</span><span class="p">:</span>
+                <span class="n">target_file_obj</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_dataset</span><span class="p">(</span><span class="n">arbitrary_control</span><span class="o">.</span><span class="n">targetfile</span><span class="p">,</span> <span class="n">ds_format</span><span class="o">=</span><span class="s2">&quot;object&quot;</span><span class="p">)</span>
+                <span class="k">if</span><span class="p">(</span><span class="n">target_file_obj</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">):</span>
+                    <span class="n">msg</span> <span class="o">=</span> <span class="n">_</span><span class="p">(</span><span class="s2">&quot;Process Control has an unrecognized target file value: targetfile=&#39;</span><span class="si">{}</span><span class="s2">&#39;&quot;</span><span class="p">,</span>
+                            <span class="p">)</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">arbitrary_control</span><span class="o">.</span><span class="n">targetfile</span><span class="p">)</span>
+                    <span class="k">if</span><span class="p">(</span><span class="n">Path</span><span class="p">(</span><span class="n">arbitrary_control</span><span class="o">.</span><span class="n">targetfile</span><span class="p">)</span><span class="o">.</span><span class="n">suffix</span><span class="p">):</span>
+                        <span class="n">msg</span> <span class="o">+=</span> <span class="n">_</span><span class="p">(</span><span class="s2">&quot;. Note: targetfile must be an in-memory table, not one on disk.&quot;</span><span class="p">)</span>
+                    <span class="n">log_lcl</span><span class="o">.</span><span class="n">exception</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span>
+                    <span class="k">raise</span> <span class="n">ProcessControlError</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span>
+
+                <span class="n">target_file</span> <span class="o">=</span> <span class="n">target_file_obj</span><span class="o">.</span><span class="n">ds</span>
+
+                <span class="k">if</span><span class="p">(</span><span class="n">table_empty</span><span class="p">(</span><span class="n">target_file</span><span class="p">)):</span>
+                    <span class="n">msg</span> <span class="o">=</span> <span class="n">_</span><span class="p">(</span><span class="s2">&quot;Target file exists but is empty: targetfile=&#39;</span><span class="si">{}</span><span class="s2">&#39;. &quot;</span>
+                            <span class="s2">&quot;Skipping process controls for file...&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">arbitrary_control</span><span class="o">.</span><span class="n">targetfile</span><span class="p">)</span>
+                    <span class="n">log_lcl</span><span class="o">.</span><span class="n">warning</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span>
+                    <span class="c1"># Continue to process the next targetfile</span>
+                    <span class="k">continue</span>
+
+                <span class="n">row_filter</span> <span class="o">=</span> <span class="kc">None</span>
+                <span class="n">column_filter</span> <span class="o">=</span> <span class="p">[]</span>
+                <span class="n">exclude_rejected</span> <span class="o">=</span> <span class="kc">None</span>
+                <span class="n">edit_group_filter</span> <span class="o">=</span> <span class="kc">None</span>
+                <span class="k">if</span><span class="p">(</span><span class="n">ProcessControlType</span><span class="o">.</span><span class="n">ROW_FILTER</span> <span class="ow">in</span> <span class="n">control_set</span><span class="p">):</span>
+                    <span class="n">row_filter</span> <span class="o">=</span> <span class="s2">&quot;(&quot;</span> <span class="o">+</span> <span class="s2">&quot;) AND (&quot;</span><span class="o">.</span><span class="n">join</span><span class="p">([</span><span class="n">x</span><span class="o">.</span><span class="n">value</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">control_set</span><span class="p">[</span><span class="n">ProcessControlType</span><span class="o">.</span><span class="n">ROW_FILTER</span><span class="p">]])</span> <span class="o">+</span> <span class="s2">&quot;)&quot;</span>
+                <span class="k">if</span><span class="p">(</span><span class="n">ProcessControlType</span><span class="o">.</span><span class="n">COLUMN_FILTER</span> <span class="ow">in</span> <span class="n">control_set</span><span class="p">):</span>
+                    <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">control_set</span><span class="p">[</span><span class="n">ProcessControlType</span><span class="o">.</span><span class="n">COLUMN_FILTER</span><span class="p">]:</span>
+                        <span class="n">column_filter</span><span class="o">.</span><span class="n">extend</span><span class="p">([</span><span class="n">y</span><span class="o">.</span><span class="n">upper</span><span class="p">()</span> <span class="k">for</span> <span class="n">y</span> <span class="ow">in</span> <span class="n">x</span><span class="o">.</span><span class="n">value</span><span class="p">])</span>
+                <span class="k">if</span><span class="p">(</span><span class="n">ProcessControlType</span><span class="o">.</span><span class="n">EXCLUDE_REJECTED</span> <span class="ow">in</span> <span class="n">control_set</span><span class="p">):</span>
+                    <span class="n">exclude_control</span> <span class="o">=</span> <span class="n">control_set</span><span class="p">[</span><span class="n">ProcessControlType</span><span class="o">.</span><span class="n">EXCLUDE_REJECTED</span><span class="p">]</span>
+                    <span class="k">if</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">exclude_control</span><span class="p">)</span> <span class="o">!=</span> <span class="mi">1</span><span class="p">):</span>
+                        <span class="n">msg</span> <span class="o">=</span> <span class="n">_</span><span class="p">(</span><span class="s2">&quot;Too many EXCLUDEREJECTED controls for one targetfile.&quot;</span><span class="p">)</span>
+                        <span class="n">log_lcl</span><span class="o">.</span><span class="n">exception</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span>
+                        <span class="k">raise</span> <span class="n">ProcessControlError</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span>
+
+                    <span class="n">exclude_control</span> <span class="o">=</span> <span class="n">exclude_control</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+                    <span class="c1"># currently allows True/False values for this control, so users don&#39;t have to</span>
+                    <span class="c1"># remove the control from their file if they want to disable it temporarily</span>
+                    <span class="k">if</span><span class="p">(</span><span class="n">exclude_control</span><span class="o">.</span><span class="n">value</span><span class="p">):</span>
+                        <span class="c1"># Get the correct capitalization for unit_id, just in case.</span>
+                        <span class="n">curr_unit_id</span> <span class="o">=</span> <span class="p">[</span><span class="n">x</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">target_file</span><span class="o">.</span><span class="n">column_names</span> <span class="k">if</span> <span class="n">x</span><span class="o">.</span><span class="n">upper</span><span class="p">()</span> <span class="o">==</span> <span class="bp">self</span><span class="o">.</span><span class="n">input_params</span><span class="o">.</span><span class="n">unit_id</span><span class="o">.</span><span class="n">upper</span><span class="p">()][</span><span class="mi">0</span><span class="p">]</span>
+                        <span class="c1"># We want to use rejected here, not outreject_all</span>
+                        <span class="c1"># The banff package produces the rejected files and SHOULD use the original</span>
+                        <span class="c1"># capitalizaion of unit_id</span>
+                        <span class="n">exclude_rejected</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;(</span><span class="si">{</span><span class="n">curr_unit_id</span><span class="si">}</span><span class="s2"> NOT IN (SELECT </span><span class="si">{</span><span class="n">curr_unit_id</span><span class="si">}</span><span class="s2"> FROM outreject))&quot;</span>  <span class="c1"># noqa: S608</span>
+                    <span class="k">else</span><span class="p">:</span>
+                        <span class="n">exclude_rejected</span> <span class="o">=</span> <span class="kc">False</span>
+                <span class="k">if</span><span class="p">(</span><span class="n">ProcessControlType</span><span class="o">.</span><span class="n">EDIT_GROUP_FILTER</span> <span class="ow">in</span> <span class="n">control_set</span><span class="p">):</span>
+                    <span class="n">egf_control</span> <span class="o">=</span> <span class="n">control_set</span><span class="p">[</span><span class="n">ProcessControlType</span><span class="o">.</span><span class="n">EDIT_GROUP_FILTER</span><span class="p">]</span>
+                    <span class="k">if</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">egf_control</span><span class="p">)</span> <span class="o">!=</span> <span class="mi">1</span><span class="p">):</span>
+                        <span class="n">msg</span> <span class="o">=</span> <span class="n">_</span><span class="p">(</span><span class="s2">&quot;Too many EDIT_GROUP_FILTER controls for one targetfile.&quot;</span><span class="p">)</span>
+                        <span class="n">log_lcl</span><span class="o">.</span><span class="n">exception</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span>
+                        <span class="k">raise</span> <span class="n">ProcessControlError</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span>
+                    <span class="n">egf_control</span> <span class="o">=</span> <span class="n">egf_control</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+
+                    <span class="k">if</span><span class="p">(</span><span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">current_job_step</span><span class="o">.</span><span class="n">editgroupid</span><span class="p">):</span>
+                        <span class="n">msg</span> <span class="o">=</span> <span class="n">_</span><span class="p">(</span><span class="s2">&quot;An EDIT_GROUP_FILTER process control was specified but no editgroupid was &quot;</span>
+                                <span class="s2">&quot;given in the metadata for the job step.&quot;</span><span class="p">)</span>
+                        <span class="n">log_lcl</span><span class="o">.</span><span class="n">exception</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span>
+                        <span class="k">raise</span> <span class="n">ProcessControlError</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span>
+
+                    <span class="n">egi_cols</span> <span class="o">=</span> <span class="p">{</span><span class="n">x</span><span class="o">.</span><span class="n">upper</span><span class="p">():</span><span class="n">x</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">target_file</span><span class="o">.</span><span class="n">column_names</span> <span class="k">if</span> <span class="n">x</span><span class="o">.</span><span class="n">upper</span><span class="p">()</span> <span class="ow">in</span> <span class="p">(</span><span class="s2">&quot;JOBID&quot;</span><span class="p">,</span> <span class="s2">&quot;JOB_ID&quot;</span><span class="p">,</span> <span class="s2">&quot;SEQNO&quot;</span><span class="p">,</span> <span class="s2">&quot;STATUS&quot;</span><span class="p">)}</span>
+
+                    <span class="k">if</span><span class="p">((</span><span class="s2">&quot;JOBID&quot;</span> <span class="ow">in</span> <span class="n">egi_cols</span> <span class="ow">or</span> <span class="s2">&quot;JOB_ID&quot;</span> <span class="ow">in</span> <span class="n">egi_cols</span><span class="p">)</span>
+                       <span class="ow">and</span> <span class="s2">&quot;SEQNO&quot;</span> <span class="ow">in</span> <span class="n">egi_cols</span> <span class="ow">and</span> <span class="s2">&quot;STATUS&quot;</span> <span class="ow">in</span> <span class="n">egi_cols</span><span class="p">):</span>
+                        <span class="n">statuses</span> <span class="o">=</span> <span class="s2">&quot;, &quot;</span><span class="o">.</span><span class="n">join</span><span class="p">([</span><span class="sa">f</span><span class="s2">&quot;&#39;</span><span class="si">{</span><span class="n">status</span><span class="si">}</span><span class="s2">&#39;&quot;</span> <span class="k">for</span> <span class="n">status</span> <span class="ow">in</span> <span class="n">egf_control</span><span class="o">.</span><span class="n">value</span><span class="p">])</span>
+                        <span class="n">edit_group_filter</span> <span class="o">=</span> <span class="p">(</span>
+                            <span class="sa">f</span><span class="s2">&quot;&quot;&quot;</span>
+<span class="s2">                            ((</span><span class="si">{</span><span class="n">egi_cols</span><span class="p">[</span><span class="s1">&#39;JOBID&#39;</span><span class="p">]</span><span class="si">}</span><span class="s2">, </span><span class="si">{</span><span class="n">egi_cols</span><span class="p">[</span><span class="s1">&#39;SEQNO&#39;</span><span class="p">]</span><span class="si">}</span><span class="s2">) IN (</span>
+<span class="s2">                            SELECT (jobid, seqno) FROM banff.Jobs WHERE</span>
+<span class="s2">                            editgroupid = &#39;</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">current_job_step</span><span class="o">.</span><span class="n">editgroupid</span><span class="si">}</span><span class="s2">&#39;))</span>
+<span class="s2">                            OR</span>
+<span class="s2">                            ((</span><span class="si">{</span><span class="n">egi_cols</span><span class="p">[</span><span class="s1">&#39;JOBID&#39;</span><span class="p">]</span><span class="si">}</span><span class="s2">, </span><span class="si">{</span><span class="n">egi_cols</span><span class="p">[</span><span class="s1">&#39;SEQNO&#39;</span><span class="p">]</span><span class="si">}</span><span class="s2">) IN (</span>
+<span class="s2">                            SELECT (jobid, seqno) FROM banff.Jobs WHERE</span>
+<span class="s2">                            process = &#39;outlier&#39;) AND status IN (</span><span class="si">{</span><span class="n">statuses</span><span class="si">}</span><span class="s2">))</span>
+<span class="s2">                            &quot;&quot;&quot;</span> <span class="c1"># noqa: S608</span>
+                        <span class="p">)</span>
+                    <span class="k">else</span><span class="p">:</span>
+                        <span class="n">msg</span> <span class="o">=</span> <span class="n">_</span><span class="p">(</span><span class="s2">&quot;An EDIT_GROUP_FILTER process control was used but one or more required fields were &quot;</span>
+                                <span class="s2">&quot;missing (STATUS, JOBID and SEQNO) on the instatus file. The control has been skipped.&quot;</span><span class="p">)</span>
+                        <span class="n">log_lcl</span><span class="o">.</span><span class="n">warning</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span>
+                        <span class="n">edit_group_filter</span> <span class="o">=</span> <span class="kc">None</span>
+
+                <span class="k">if</span><span class="p">(</span><span class="ow">not</span> <span class="n">row_filter</span> <span class="ow">and</span> <span class="ow">not</span> <span class="n">column_filter</span> <span class="ow">and</span> <span class="ow">not</span> <span class="n">edit_group_filter</span><span class="p">):</span>
+                    <span class="k">if</span><span class="p">(</span><span class="n">exclude_rejected</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">):</span>
+                        <span class="c1"># No valid controls were found in this control_set</span>
+                        <span class="n">msg</span> <span class="o">=</span> <span class="n">_</span><span class="p">(</span><span class="s2">&quot;No supported controls found in process controls metadata.&quot;</span><span class="p">)</span>
+                        <span class="n">log_lcl</span><span class="o">.</span><span class="n">exception</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span>
+                        <span class="k">raise</span> <span class="n">MetadataConstraintError</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span>
+                    <span class="k">if</span><span class="p">(</span><span class="ow">not</span> <span class="n">exclude_rejected</span><span class="p">):</span>
+                        <span class="c1"># The only valid control is an exclude_rejected set to False, not an error,</span>
+                        <span class="c1"># go to the next control_set/targetfile</span>
+                        <span class="k">continue</span>
+
+                <span class="c1"># Convert the column labels in the filter to the same capitalization as the target_file</span>
+                <span class="n">column_filter_string</span> <span class="o">=</span> <span class="kc">None</span>
+                <span class="k">if</span><span class="p">(</span><span class="n">column_filter</span><span class="p">):</span>
+                    <span class="n">column_filter_normal</span> <span class="o">=</span> <span class="p">[</span><span class="n">x</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">target_file</span><span class="o">.</span><span class="n">column_names</span> <span class="k">if</span> <span class="n">x</span><span class="o">.</span><span class="n">upper</span><span class="p">()</span> <span class="ow">in</span> <span class="n">column_filter</span><span class="p">]</span>
+                    <span class="n">column_filter_string</span> <span class="o">=</span> <span class="s2">&quot;, &quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">column_filter_normal</span><span class="p">)</span>
+
+                <span class="c1"># Currently column_filter KEEPS columns specified NOT DROPS</span>
+                <span class="c1"># Currently row_filter only supports arguments that are all present in one of</span>
+                <span class="c1"># indata, instatus or target_file</span>
+                <span class="n">query</span> <span class="o">=</span> <span class="s2">&quot;SELECT &quot;</span>
+
+                <span class="k">if</span><span class="p">(</span><span class="n">column_filter_string</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">):</span>
+                    <span class="n">query</span> <span class="o">+=</span> <span class="s2">&quot;* &quot;</span>
+                <span class="k">elif</span><span class="p">(</span><span class="n">column_filter_string</span><span class="p">):</span>
+                    <span class="n">query</span> <span class="o">+=</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">column_filter_string</span><span class="si">}</span><span class="s2"> &quot;</span>
+                <span class="k">else</span><span class="p">:</span>
+                    <span class="c1"># If none of the column_filter names are found in the targetfile columns</span>
+                    <span class="c1"># column_filter_string will be an empty string</span>
+                    <span class="n">msg</span> <span class="o">=</span> <span class="n">_</span><span class="p">(</span><span class="s2">&quot;A column filter was specified but none of the columns were found in targetfile.&quot;</span><span class="p">)</span>
+                    <span class="n">log_lcl</span><span class="o">.</span><span class="n">exception</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span>
+                    <span class="k">raise</span> <span class="n">ProcessControlError</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span>
+
+                <span class="c1"># Make sure we use the name given by the user (i.e. &quot;instatus&quot; not &quot;status_file&quot;)</span>
+                <span class="c1"># as the user-given name should be the names registered in duckdb.</span>
+                <span class="n">query</span> <span class="o">+=</span> <span class="sa">f</span><span class="s2">&quot;FROM &#39;</span><span class="si">{</span><span class="n">arbitrary_control</span><span class="o">.</span><span class="n">targetfile</span><span class="si">}</span><span class="s2">&#39;&quot;</span>
+
+                <span class="k">if</span><span class="p">(</span><span class="n">row_filter</span> <span class="ow">or</span> <span class="n">exclude_rejected</span> <span class="ow">or</span> <span class="n">edit_group_filter</span><span class="p">):</span>
+                    <span class="c1"># Connect non-empty condition strings with &#39;AND&#39;</span>
+                    <span class="n">query</span> <span class="o">+=</span> <span class="sa">f</span><span class="s2">&quot; WHERE </span><span class="si">{</span><span class="s1">&#39; AND &#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="nb">filter</span><span class="p">(</span><span class="kc">None</span><span class="p">,</span><span class="w"> </span><span class="p">[</span><span class="n">row_filter</span><span class="p">,</span><span class="w"> </span><span class="n">exclude_rejected</span><span class="p">,</span><span class="w"> </span><span class="n">edit_group_filter</span><span class="p">]))</span><span class="si">}</span><span class="s2">&quot;</span>
+
+                <span class="n">msg</span> <span class="o">=</span> <span class="n">_</span><span class="p">(</span><span class="s2">&quot;Computed filter: </span><span class="se">\n\t</span><span class="si">{}</span><span class="s2">&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">query</span><span class="p">)</span>
+                <span class="n">log_lcl</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span>
+
+                <span class="n">result</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">dbconn</span><span class="o">.</span><span class="n">sql</span><span class="p">(</span><span class="n">query</span><span class="p">)</span><span class="o">.</span><span class="n">arrow</span><span class="p">()</span>
+
+                <span class="k">if</span><span class="p">(</span><span class="n">result</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">):</span>
+                    <span class="k">raise</span> <span class="n">ProcessControlError</span>
+                <span class="k">if</span><span class="p">(</span><span class="n">result</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">&lt;</span> <span class="mi">1</span><span class="p">):</span>
+                    <span class="c1"># if the resulting table has no rows</span>
+                    <span class="n">msg</span> <span class="o">=</span> <span class="n">_</span><span class="p">(</span><span class="s2">&quot;Process filter resulted in a dataset containing </span><span class="si">{}</span><span class="s2"> columns but 0 rows. Continuing...&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">result</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+                    <span class="n">log_lcl</span><span class="o">.</span><span class="n">warning</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span>
+
+            <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+                <span class="n">msg</span> <span class="o">=</span> <span class="n">_</span><span class="p">(</span><span class="s2">&quot;There was an error while applying process controls with controlid </span><span class="si">{}</span><span class="s2"> &quot;</span>
+                        <span class="s2">&quot;in job </span><span class="si">{}</span><span class="s2"> seqno </span><span class="si">{}</span><span class="s2">.</span><span class="se">\n</span><span class="s2">Exception: </span><span class="si">{}</span><span class="s2">&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">current_job_step</span><span class="o">.</span><span class="n">controlid</span><span class="p">,</span>
+                                                                     <span class="bp">self</span><span class="o">.</span><span class="n">current_job_step</span><span class="o">.</span><span class="n">jobid</span><span class="p">,</span>
+                                                                     <span class="bp">self</span><span class="o">.</span><span class="n">current_job_step</span><span class="o">.</span><span class="n">seqno</span><span class="p">,</span> <span class="n">e</span><span class="p">)</span>
+                <span class="n">log_lcl</span><span class="o">.</span><span class="n">exception</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span>
+                <span class="k">raise</span> <span class="n">e</span>
+
+            <span class="c1"># Update the target_file with the new filtered version</span>
+            <span class="n">target_file_obj</span><span class="o">.</span><span class="n">ds_filtered</span> <span class="o">=</span> <span class="n">result</span>
+
+            <span class="n">msg</span> <span class="o">=</span> <span class="n">_</span><span class="p">(</span><span class="s2">&quot;Filter succesfully applied.&quot;</span><span class="p">)</span>
+            <span class="n">log_lcl</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="ProcessorData.get_new_block_copy">
+<a class="viewcode-back" href="../../banffprocessor#banffprocessor.processor_data.ProcessorData.get_new_block_copy">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">get_new_block_copy</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="s2">&quot;ProcessorData&quot;</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Return a new ProcessorData object with the necessary attributes copied in</span>
+<span class="sd">        from this ProcessorData object to spawn a new processor block.</span>
+
+<span class="sd">        :return: A new ProcessorData object with the required input parameters, metadata</span>
+<span class="sd">            and datasets copied in.</span>
+<span class="sd">        :rtype: ProcessorData</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="c1"># Make a deep copy of input_params (to avoid any potential issues with a shallow copy)</span>
+        <span class="n">new_input_params</span> <span class="o">=</span> <span class="n">copy</span><span class="o">.</span><span class="n">deepcopy</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">input_params</span><span class="p">)</span>
+
+        <span class="c1"># New block&#39;s job_id is stored in the specid field of the calling block</span>
+        <span class="n">new_input_params</span><span class="o">.</span><span class="n">job_id</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">current_job_step</span><span class="o">.</span><span class="n">specid</span>
+
+        <span class="c1"># Create a new subfolder for the block</span>
+        <span class="n">new_block_folder</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">input_params</span><span class="o">.</span><span class="n">output_folder</span><span class="o">.</span><span class="n">joinpath</span><span class="p">(</span>
+            <span class="n">Path</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">current_job_step</span><span class="o">.</span><span class="n">jobid</span><span class="si">}</span><span class="s2">_</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">current_job_step</span><span class="o">.</span><span class="n">seqno</span><span class="si">}</span><span class="s2">_</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">current_job_step</span><span class="o">.</span><span class="n">specid</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">),</span>
+        <span class="p">)</span>
+        <span class="k">if</span><span class="p">(</span><span class="ow">not</span> <span class="n">new_block_folder</span><span class="o">.</span><span class="n">is_dir</span><span class="p">()):</span>
+            <span class="n">new_block_folder</span><span class="o">.</span><span class="n">mkdir</span><span class="p">(</span><span class="n">parents</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+        <span class="n">new_input_params</span><span class="o">.</span><span class="n">input_folder</span> <span class="o">=</span> <span class="n">new_block_folder</span>
+
+        <span class="n">new_input_params</span><span class="o">.</span><span class="n">output_folder</span> <span class="o">=</span> <span class="n">new_block_folder</span> <span class="o">/</span> <span class="s2">&quot;out&quot;</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">new_input_params</span><span class="o">.</span><span class="n">output_folder</span><span class="o">.</span><span class="n">exists</span><span class="p">():</span>
+            <span class="n">new_input_params</span><span class="o">.</span><span class="n">output_folder</span><span class="o">.</span><span class="n">mkdir</span><span class="p">(</span><span class="n">parents</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+        <span class="c1"># input_params are copied with slight modifications made above</span>
+        <span class="n">copied_data</span> <span class="o">=</span> <span class="n">ProcessorData</span><span class="p">(</span><span class="n">input_params</span><span class="o">=</span><span class="n">new_input_params</span><span class="p">,</span> <span class="n">dbconn</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">dbconn</span><span class="p">)</span>
+
+        <span class="c1"># metadata may be copied in directly as the objects and tables should only</span>
+        <span class="c1"># be used in a read-only manner</span>
+        <span class="n">copied_data</span><span class="o">.</span><span class="n">metaobjects</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">metaobjects</span>
+
+        <span class="c1"># Make sure the child block reports duration as continuous from the parent</span>
+        <span class="n">copied_data</span><span class="o">.</span><span class="n">total_job_duration</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">total_job_duration</span>
+        <span class="c1"># The parent block increments the count, then the child runs, then the parent reports.</span>
+        <span class="c1"># Therefore, the curr_step_count must be decremented/incremented before/after the</span>
+        <span class="c1"># child block executes</span>
+        <span class="n">copied_data</span><span class="o">.</span><span class="n">curr_step_count</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">curr_step_count</span> <span class="o">-</span> <span class="mi">1</span>
+
+        <span class="c1"># Copy input files (aux/hist if they have already been read into memory)</span>
+        <span class="c1"># rejected is a special case as it is directly used by name in a Process Control</span>
+        <span class="n">to_copy</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;indata&quot;</span><span class="p">,</span> <span class="s2">&quot;instatus&quot;</span><span class="p">,</span> <span class="s2">&quot;outreject&quot;</span><span class="p">,</span> <span class="s2">&quot;outreject_all&quot;</span><span class="p">,</span> <span class="s2">&quot;indata_aux&quot;</span><span class="p">,</span> <span class="s2">&quot;indata_hist&quot;</span><span class="p">,</span> <span class="s2">&quot;instatus_hist&quot;</span><span class="p">]</span>
+        <span class="k">for</span> <span class="n">name</span> <span class="ow">in</span> <span class="n">to_copy</span><span class="p">:</span>
+            <span class="c1"># If a filtered version of a table exists it should be set as an un-filtered</span>
+            <span class="c1"># version for the new block.</span>
+            <span class="n">data</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_dataset</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">ds_format</span><span class="o">=</span><span class="s2">&quot;object&quot;</span><span class="p">)</span>
+            <span class="k">if</span><span class="p">(</span><span class="n">data</span><span class="p">):</span>
+                <span class="n">copied_data</span><span class="o">.</span><span class="n">set_dataset</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">data</span><span class="o">.</span><span class="n">ds_filtered</span> <span class="k">if</span> <span class="n">data</span><span class="o">.</span><span class="n">ds_filtered</span> <span class="k">else</span> <span class="n">data</span><span class="o">.</span><span class="n">ds</span><span class="p">)</span>
+
+        <span class="k">return</span> <span class="n">copied_data</span></div>
+
+
+<div class="viewcode-block" id="ProcessorData.update_with_block_result">
+<a class="viewcode-back" href="../../banffprocessor#banffprocessor.processor_data.ProcessorData.update_with_block_result">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">update_with_block_result</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">block_data</span><span class="p">:</span> <span class="s2">&quot;ProcessorData&quot;</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Update this ProcessorData object with the datasets found in `block_data`</span>
+<span class="sd">        as it is upon completion of a JOB process which calls a Process Block.</span>
+
+<span class="sd">        :param block_data: The ProcessorData object containing the results from a</span>
+<span class="sd">            Process Block execution.</span>
+<span class="sd">        :type block_data: ProcessorData</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="c1"># Correct our step count now the block is complete. Remember the increment</span>
+        <span class="c1"># to revert the decrement done when entering the child block</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">curr_step_count</span> <span class="o">=</span> <span class="n">block_data</span><span class="o">.</span><span class="n">curr_step_count</span> <span class="o">+</span> <span class="mi">1</span>
+
+        <span class="c1"># If update_status() modifies status_log it will not properly carry over all the records</span>
+        <span class="c1"># we want, so we do it seperately like this.</span>
+        <span class="c1"># First, make sure status_log is popped from the child so it is not revisited in the loop</span>
+        <span class="n">child_status_log</span> <span class="o">=</span> <span class="n">block_data</span><span class="o">.</span><span class="n">pop_dataset</span><span class="p">(</span><span class="s2">&quot;status_log&quot;</span><span class="p">)</span>
+        <span class="k">if</span><span class="p">(</span><span class="n">child_status_log</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">):</span>
+            <span class="c1"># make sure the parent&#39;s status_log exists before updating it,</span>
+            <span class="c1"># we don&#39;t need the object here though, we&#39;re just using the flag</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">get_dataset</span><span class="p">(</span><span class="s2">&quot;status_log&quot;</span><span class="p">,</span> <span class="n">create_if_not_exist</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+            <span class="c1"># Append child status_log to parent</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">update_file_all</span><span class="p">(</span><span class="n">child_status_log</span><span class="p">,</span> <span class="s2">&quot;status_log&quot;</span><span class="p">)</span>
+            <span class="c1"># Now store a local reference to the updated status_log</span>
+            <span class="c1"># we will overwrite the resulting status_log in the parent after</span>
+            <span class="c1"># update_status() runs with this table instead</span>
+            <span class="n">updated_status_log</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_dataset</span><span class="p">(</span><span class="s2">&quot;status_log&quot;</span><span class="p">,</span> <span class="n">ds_format</span><span class="o">=</span><span class="s2">&quot;object&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">ds</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="c1"># What if a user calls `job` as their first step, then the child block calls</span>
+            <span class="c1"># UDPs which update instatus directly with no status_log involvement?</span>
+            <span class="c1"># If the child did not produce a status_log we just let update_status()</span>
+            <span class="c1"># do it&#39;s thing with the parent status_log, if it runs at all</span>
+            <span class="n">updated_status_log</span> <span class="o">=</span> <span class="kc">None</span>
+
+        <span class="c1"># At this point there should be no filtered datasets in block_data</span>
+        <span class="k">for</span> <span class="n">name</span><span class="p">,</span> <span class="n">block_ds</span> <span class="ow">in</span> <span class="n">block_data</span><span class="o">.</span><span class="n">datasets</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+            <span class="k">if</span><span class="p">(</span><span class="s2">&quot;_aux&quot;</span> <span class="ow">in</span> <span class="n">name</span> <span class="ow">or</span> <span class="s2">&quot;_hist&quot;</span> <span class="ow">in</span> <span class="n">name</span> <span class="ow">or</span> <span class="n">name</span> <span class="o">==</span> <span class="s2">&quot;status_log&quot;</span><span class="p">):</span>
+                <span class="k">continue</span>
+            <span class="k">if</span><span class="p">(</span><span class="n">name</span> <span class="o">==</span> <span class="s2">&quot;imputed_file&quot;</span><span class="p">):</span>
+                <span class="c1"># Since we directly copied in table references, if the 2 ProcessorData objects</span>
+                <span class="c1"># reference the same table, we know no updates were made</span>
+                <span class="c1"># We cannot replace self&#39;s imputed_file with the block&#39;s imputed_file as it&#39;s</span>
+                <span class="c1"># possible the block started with a filtered file, so use outdata</span>
+                <span class="k">if</span><span class="p">(</span><span class="n">block_ds</span><span class="o">.</span><span class="n">ds</span> <span class="ow">is</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">indata</span><span class="p">):</span>
+                    <span class="bp">self</span><span class="o">.</span><span class="n">outdata</span> <span class="o">=</span> <span class="n">block_ds</span><span class="o">.</span><span class="n">ds</span>
+            <span class="k">elif</span><span class="p">(</span><span class="n">name</span> <span class="o">==</span> <span class="s2">&quot;status_file&quot;</span><span class="p">):</span>
+                <span class="c1"># If instatus is unchanged, child status_log should also be empty</span>
+                <span class="k">if</span><span class="p">(</span><span class="n">block_ds</span><span class="o">.</span><span class="n">ds</span> <span class="ow">is</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">instatus</span><span class="p">):</span>
+                    <span class="c1"># Only grab newly added records</span>
+                    <span class="n">status_file</span> <span class="o">=</span> <span class="n">block_ds</span><span class="o">.</span><span class="n">ds</span><span class="o">.</span><span class="n">filter</span><span class="p">(</span><span class="n">pa</span><span class="o">.</span><span class="n">compute</span><span class="o">.</span><span class="n">field</span><span class="p">(</span><span class="s2">&quot;JOBID&quot;</span><span class="p">)</span> <span class="o">==</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">block_data</span><span class="o">.</span><span class="n">current_job_step</span><span class="o">.</span><span class="n">jobid</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+                    <span class="c1"># Remove the child block jobid, to be replaced by the current block&#39;s jobid on update</span>
+                    <span class="n">status_file</span> <span class="o">=</span> <span class="n">status_file</span><span class="o">.</span><span class="n">drop</span><span class="p">([</span><span class="s2">&quot;JOBID&quot;</span><span class="p">,</span> <span class="s2">&quot;SEQNO&quot;</span><span class="p">])</span>
+                    <span class="bp">self</span><span class="o">.</span><span class="n">outstatus</span> <span class="o">=</span> <span class="n">status_file</span>
+                    <span class="c1"># Perform the status_file update here, so we can ignore the status_log result</span>
+                    <span class="c1"># in favour of our own updates</span>
+                    <span class="bp">self</span><span class="o">.</span><span class="n">update_status</span><span class="p">()</span>
+                    <span class="c1"># Make sure we only run update_status the one time by popping off outstatus</span>
+                    <span class="bp">self</span><span class="o">.</span><span class="n">pop_dataset</span><span class="p">(</span><span class="s2">&quot;outstatus&quot;</span><span class="p">)</span>
+            <span class="k">elif</span><span class="p">(</span><span class="n">name</span> <span class="o">==</span> <span class="s2">&quot;time_store&quot;</span><span class="p">):</span>
+                <span class="n">time_store_curr_obj</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_dataset</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">ds_format</span><span class="o">=</span><span class="s2">&quot;object&quot;</span><span class="p">)</span>
+                <span class="k">if</span><span class="p">(</span><span class="n">time_store_curr_obj</span><span class="p">):</span>
+                    <span class="n">time_store_curr_obj</span><span class="o">.</span><span class="n">ds</span> <span class="o">=</span> <span class="n">pa</span><span class="o">.</span><span class="n">concat_tables</span><span class="p">([</span><span class="n">time_store_curr_obj</span><span class="o">.</span><span class="n">ds</span><span class="p">,</span> <span class="n">block_ds</span><span class="o">.</span><span class="n">ds</span><span class="p">])</span>
+                <span class="k">else</span><span class="p">:</span>
+                    <span class="bp">self</span><span class="o">.</span><span class="n">set_dataset</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">block_ds</span><span class="o">.</span><span class="n">ds</span><span class="p">)</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="c1"># outreject and outreject_all will correctly fall here</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">set_dataset</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">block_ds</span><span class="o">.</span><span class="n">ds</span><span class="p">)</span>
+
+        <span class="c1"># Overwrite any changes made to status_log by any calls to update_status above</span>
+        <span class="k">if</span><span class="p">(</span><span class="n">updated_status_log</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">):</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">set_dataset</span><span class="p">(</span><span class="s2">&quot;status_log&quot;</span><span class="p">,</span> <span class="n">updated_status_log</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="ProcessorData.save_proc_output">
+<a class="viewcode-back" href="../../banffprocessor#banffprocessor.processor_data.ProcessorData.save_proc_output">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">save_proc_output</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">banff_call</span><span class="p">:</span> <span class="n">BanffProcedure</span><span class="p">,</span> <span class="n">all_tables</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="nb">str</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Save procedure output datasets.</span>
+
+<span class="sd">        Append the non-default tables, the list of which is set on processor_data by the</span>
+<span class="sd">        main processor loop, from `banff_call` to their respective cumulative datasets</span>
+<span class="sd">        in the dataset collection based on the output type parameters set in the input_params.</span>
+
+<span class="sd">        :param banff_call: A BanffProcedure call object that has completed execution and contains</span>
+<span class="sd">            the output tables as attributes named as they are specified in `processor_to_proc`</span>
+<span class="sd">        :type banff_call: :class:`banff.proc.BanffProcedure`</span>
+<span class="sd">        :param all_tables: The list of all possible table names available on `banff_call`,</span>
+<span class="sd">            required if `process_output_type` is ALL</span>
+<span class="sd">        :type all_tables: list[str]</span>
+<span class="sd">        :raises MetadataConstraintError: If a user&#39;s ProcessOutputs metadata contains an</span>
+<span class="sd">            unrecognized output_name</span>
+<span class="sd">        :raises AttributeError: If the `processor_to_proc` mapping contains a table name</span>
+<span class="sd">            that is not found as an attribute on the `banff_call` object.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">table_names</span> <span class="o">=</span> <span class="p">([</span><span class="n">x</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">all_tables</span> <span class="k">if</span> <span class="n">x</span> <span class="ow">not</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">minimal_outputs</span><span class="p">]</span>
+                       <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">input_params</span><span class="o">.</span><span class="n">output_all</span>
+                       <span class="k">else</span> <span class="bp">self</span><span class="o">.</span><span class="n">custom_outputs</span><span class="p">)</span>
+
+        <span class="k">for</span> <span class="n">name</span> <span class="ow">in</span> <span class="n">table_names</span><span class="p">:</span>
+            <span class="k">try</span><span class="p">:</span>
+                <span class="n">table</span> <span class="o">=</span> <span class="nb">getattr</span><span class="p">(</span><span class="n">banff_call</span><span class="p">,</span> <span class="n">name</span><span class="p">)</span>
+            <span class="k">except</span> <span class="ne">AttributeError</span><span class="p">:</span>
+                <span class="n">msg</span> <span class="o">=</span> <span class="n">_</span><span class="p">(</span><span class="s2">&quot;ProcessOutputs metadata entry found under process </span><span class="si">{}</span><span class="s2"> with &quot;</span>
+                        <span class="s2">&quot;unrecognized output_name </span><span class="si">{}</span><span class="s2">&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">current_job_step</span><span class="o">.</span><span class="n">process</span><span class="p">,</span> <span class="n">name</span><span class="p">)</span>
+                <span class="n">log_lcl</span><span class="o">.</span><span class="n">exception</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span>
+                <span class="k">raise</span> <span class="n">MetadataConstraintError</span> <span class="kn">from</span><span class="w"> </span><span class="nn">AttributeError</span>
+
+            <span class="k">if</span><span class="p">(</span><span class="n">table</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="ow">and</span> <span class="ow">not</span> <span class="n">table_empty</span><span class="p">(</span><span class="n">table</span><span class="p">)):</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">set_dataset</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">table</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="ProcessorData.save_outputs">
+<a class="viewcode-back" href="../../banffprocessor#banffprocessor.processor_data.ProcessorData.save_outputs">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">save_outputs</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Save all current tables in `_datasets` to the output folder.</span>
+
+<span class="sd">        Each dataset&#39;s name will be used as the filename, the extension is determined by the input parameters:</span>
+<span class="sd">        The `save_format` input parameter is checked first, then the file type of indata.</span>
+<span class="sd">        If neither parameter is provided or the filetype is unrecognized .parq is used by default.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="c1"># default save format is parquet file</span>
+        <span class="n">file_ext</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;.parq&quot;</span><span class="p">]</span>
+
+        <span class="c1"># save_format input param overrides other options</span>
+        <span class="k">if</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">input_params</span><span class="o">.</span><span class="n">save_format</span><span class="p">):</span>
+            <span class="n">file_ext</span> <span class="o">=</span> <span class="p">[</span><span class="n">x</span><span class="o">.</span><span class="n">casefold</span><span class="p">()</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">input_params</span><span class="o">.</span><span class="n">save_format</span><span class="p">]</span>
+        <span class="c1"># otherwise just use the same format as indata</span>
+        <span class="k">elif</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">input_params</span><span class="o">.</span><span class="n">indata_filename</span><span class="p">):</span>
+            <span class="n">file_ext</span> <span class="o">=</span> <span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">input_params</span><span class="o">.</span><span class="n">indata_filename</span><span class="o">.</span><span class="n">suffix</span><span class="p">]</span>
+
+        <span class="k">for</span> <span class="n">name</span><span class="p">,</span> <span class="n">ds_obj</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_datasets</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+            <span class="n">ds</span> <span class="o">=</span> <span class="n">ds_obj</span><span class="o">.</span><span class="n">ds</span>
+            <span class="k">if</span><span class="p">(</span><span class="s2">&quot;_aux&quot;</span> <span class="ow">in</span> <span class="n">name</span> <span class="ow">or</span> <span class="s2">&quot;_hist&quot;</span> <span class="ow">in</span> <span class="n">name</span><span class="p">):</span>
+                <span class="k">continue</span>
+            <span class="k">if</span><span class="p">(</span><span class="n">table_empty</span><span class="p">(</span><span class="n">ds</span><span class="p">)):</span>
+                <span class="n">log_lcl</span><span class="o">.</span><span class="n">warning</span><span class="p">(</span><span class="n">_</span><span class="p">(</span><span class="s2">&quot;Output dataset </span><span class="si">{}</span><span class="s2"> was created but is empty.&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">name</span><span class="p">))</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="k">if</span><span class="p">(</span><span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">input_params</span><span class="o">.</span><span class="n">output_folder</span><span class="p">):</span>
+                    <span class="n">msg</span> <span class="o">=</span> <span class="n">_</span><span class="p">(</span><span class="s2">&quot;No output folder set. Ouputs will not be saved.&quot;</span><span class="p">)</span>
+                    <span class="n">log_lcl</span><span class="o">.</span><span class="n">warning</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span>
+                    <span class="k">return</span>
+
+                <span class="k">for</span> <span class="n">ext</span> <span class="ow">in</span> <span class="n">file_ext</span><span class="p">:</span>
+                    <span class="k">if</span><span class="p">(</span><span class="n">ext</span> <span class="ow">and</span> <span class="ow">not</span> <span class="n">ext</span><span class="o">.</span><span class="n">isspace</span><span class="p">()):</span>
+                        <span class="k">if</span><span class="p">(</span><span class="n">ext</span> <span class="ow">in</span> <span class="n">tc</span><span class="o">.</span><span class="n">file_ext_csv</span><span class="p">):</span>
+                            <span class="n">ds</span><span class="o">.</span><span class="n">to_pandas</span><span class="p">()</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">input_params</span><span class="o">.</span><span class="n">output_folder</span> <span class="o">/</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s2">.csv&quot;</span><span class="p">,</span> <span class="n">sep</span><span class="o">=</span><span class="s2">&quot;,&quot;</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+                        <span class="k">else</span><span class="p">:</span><span class="c1">#if(ext in tc.file_ext_parquet):</span>
+                            <span class="c1"># If a non-supported file extension is used (or a sas7bdat indata file is used)</span>
+                            <span class="c1"># then we just default to .parq for now</span>
+                            <span class="n">pq</span><span class="o">.</span><span class="n">write_table</span><span class="p">(</span><span class="n">ds</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">input_params</span><span class="o">.</span><span class="n">output_folder</span> <span class="o">/</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s2">.parq&quot;</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="ProcessorData.load_dataset_from_file">
+<a class="viewcode-back" href="../../banffprocessor#banffprocessor.processor_data.ProcessorData.load_dataset_from_file">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">load_dataset_from_file</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">data_file</span><span class="p">:</span> <span class="nb">str</span> <span class="o">|</span> <span class="n">Path</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">pa</span><span class="o">.</span><span class="n">Table</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Load a Pyarrow Table from the data file indicated by the `data_file` parameter.</span>
+
+<span class="sd">        If `data_file` contains a full filepath, the file will be retrieved using</span>
+<span class="sd">        this filepath. If `data_file` only contains a filename, the `processor_input.input_folder`</span>
+<span class="sd">        is used as the containing directory to fetch from.</span>
+
+<span class="sd">        :param data_file: The full filepath or filename of the data file to load</span>
+<span class="sd">        :type data_file: str | Path</span>
+<span class="sd">        :raises ProcessorInputParameterError: If an empty filename is given or just</span>
+<span class="sd">            a filename but no `input_folder` had been previously specified in the</span>
+<span class="sd">            processor_input member object.</span>
+<span class="sd">        :raises Exception: If some other issue causes the file to not be read</span>
+<span class="sd">        :return: The `data_file` as loaded into a PyArrow Table</span>
+<span class="sd">        :rtype: pa.Table</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">dataset</span> <span class="o">=</span> <span class="kc">None</span>
+
+        <span class="c1"># Currently supported data formats from io_util.type_converters include:</span>
+        <span class="c1">#   Parquet --- &quot;.parquet&quot;, &quot;.parq&quot;</span>
+        <span class="c1">#   Pickle --- &quot;.pickle&quot;, &quot;.pkl&quot;, &quot;.pcl&quot;</span>
+        <span class="c1">#   SAS --- &quot;.sas7bdat&quot;</span>
+        <span class="c1">#   CSV --- &quot;.csv&quot;</span>
+        <span class="c1">#   Feather --- &quot;.feather&quot;</span>
+
+        <span class="k">try</span><span class="p">:</span>
+            <span class="c1"># First determine if the filename is a full filepath or just the filename</span>
+            <span class="n">file_path</span> <span class="o">=</span> <span class="n">Path</span><span class="p">(</span><span class="n">data_file</span><span class="p">)</span>
+            <span class="k">if</span><span class="p">(</span><span class="n">file_path</span><span class="o">.</span><span class="n">is_absolute</span><span class="p">()):</span>
+                <span class="c1"># data_file is a full filepath, so pass the whole thing</span>
+                <span class="n">dataset</span> <span class="o">=</span> <span class="n">io_util</span><span class="o">.</span><span class="n">load_input_dataset</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">file_path</span><span class="p">),</span> <span class="n">log_lcl</span><span class="p">)</span>
+                <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">dataset</span><span class="p">,</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">):</span>
+                    <span class="n">dataset</span> <span class="o">=</span> <span class="n">io_util</span><span class="o">.</span><span class="n">pandas_to_arrow</span><span class="p">(</span><span class="n">dataset</span><span class="p">)</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="c1"># data_file is just a filename, so use the input folder as the filepath</span>
+                <span class="k">if</span><span class="p">(</span><span class="ow">not</span> <span class="n">file_path</span><span class="o">.</span><span class="n">name</span> <span class="ow">or</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">input_params</span><span class="o">.</span><span class="n">input_folder</span><span class="p">):</span>
+                    <span class="n">msg</span> <span class="o">=</span> <span class="n">_</span><span class="p">(</span><span class="s2">&quot;Input folder was not provided or data_file string was empty when &quot;</span>
+                            <span class="s2">&quot;attempting to load datafile without full filepath.&quot;</span><span class="p">)</span>
+                    <span class="n">log_lcl</span><span class="o">.</span><span class="n">exception</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span>
+                    <span class="k">raise</span> <span class="n">ProcessorInputParameterError</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span>
+
+                <span class="n">file_path_complete</span> <span class="o">=</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">input_params</span><span class="o">.</span><span class="n">input_folder</span> <span class="o">/</span> <span class="n">file_path</span><span class="p">)</span><span class="o">.</span><span class="n">resolve</span><span class="p">()</span>
+                <span class="n">dataset</span> <span class="o">=</span> <span class="n">io_util</span><span class="o">.</span><span class="n">load_input_dataset</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">file_path_complete</span><span class="p">),</span> <span class="n">log_lcl</span><span class="p">)</span>
+                <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">dataset</span><span class="p">,</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">):</span>
+                    <span class="n">dataset</span> <span class="o">=</span> <span class="n">io_util</span><span class="o">.</span><span class="n">pandas_to_arrow</span><span class="p">(</span><span class="n">dataset</span><span class="p">)</span>
+        <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+            <span class="n">msg</span> <span class="o">=</span> <span class="n">_</span><span class="p">(</span><span class="s2">&quot;Error while reading input data file </span><span class="si">{}</span><span class="s2">&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">data_file</span><span class="p">)</span>
+            <span class="n">log_lcl</span><span class="o">.</span><span class="n">exception</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span>
+            <span class="k">raise</span> <span class="n">e</span> <span class="kn">from</span><span class="w"> </span><span class="kc">None</span>
+
+        <span class="c1"># This shouldn&#39;t happen really unless filetype not supported and not previously caught or filename is empty.</span>
+        <span class="k">if</span> <span class="n">dataset</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">msg</span> <span class="o">=</span> <span class="n">_</span><span class="p">(</span><span class="s2">&quot;Filetype not supported or filename empty.&quot;</span><span class="p">)</span>
+            <span class="n">log_lcl</span><span class="o">.</span><span class="n">exception</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span>
+
+        <span class="k">return</span> <span class="n">dataset</span></div>
+</div>
+
+
+<div class="viewcode-block" id="ds_to_format">
+<a class="viewcode-back" href="../../banffprocessor#banffprocessor.processor_data.ds_to_format">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">ds_to_format</span><span class="p">(</span><span class="n">ds</span><span class="p">:</span> <span class="n">pa</span><span class="o">.</span><span class="n">Table</span> <span class="o">|</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">,</span> <span class="n">ret_format</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">pa</span><span class="o">.</span><span class="n">Table</span> <span class="o">|</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span> <span class="o">|</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Convert `ds` to `format`.</span>
+
+<span class="sd">    `ret_format` currently supports these values:</span>
+<span class="sd">        For Pandas DataFrame: [&quot;pandas&quot;, &quot;dataframe&quot;, &quot;pandas dataframe&quot;]</span>
+<span class="sd">        For PyArrow Table: [&quot;pyarrow&quot;, &quot;table&quot;, &quot;pyarrow table&quot;]</span>
+
+<span class="sd">    :param ds: The dataset to convert</span>
+<span class="sd">    :type ds: pa.Table | pd.DataFrame | Dataset</span>
+<span class="sd">    :param ret_format: The name of the format to convert to.</span>
+<span class="sd">    :type ret_format: str</span>
+<span class="sd">    :raises Exception: If an error occurs during the conversion of the file.</span>
+<span class="sd">    :raises ValueError: If `ret_format` is not a recognized format string.</span>
+<span class="sd">    :return: A new dataset containing the data of `ds` converted into `ret_format`, None if `ds` is None</span>
+<span class="sd">    :rtype: pa.Table | pd.DataFrame | None</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">if</span><span class="p">(</span><span class="n">ds</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">):</span>
+        <span class="k">return</span> <span class="n">ds</span>
+
+    <span class="k">if</span><span class="p">(</span><span class="ow">not</span><span class="p">(</span><span class="nb">isinstance</span><span class="p">(</span><span class="n">ds</span><span class="p">,</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span> <span class="o">|</span> <span class="n">pa</span><span class="o">.</span><span class="n">Table</span><span class="p">))):</span>
+        <span class="n">msg</span> <span class="o">=</span> <span class="n">_</span><span class="p">(</span><span class="s2">&quot;Dataset provided in parameter &#39;ds&#39; is of an unsupported type. &quot;</span>
+                <span class="s2">&quot;&#39;ds&#39; must be a pandas Dataframe or pyarrow Table.&quot;</span><span class="p">)</span>
+        <span class="n">log_lcl</span><span class="o">.</span><span class="n">exception</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span>
+        <span class="k">raise</span> <span class="ne">TypeError</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span>
+
+    <span class="n">ret_format</span> <span class="o">=</span> <span class="n">ret_format</span><span class="o">.</span><span class="n">casefold</span><span class="p">()</span>
+    <span class="k">if</span><span class="p">(</span><span class="n">ret_format</span> <span class="ow">in</span> <span class="n">tc</span><span class="o">.</span><span class="n">obj_id_pandas</span><span class="p">):</span>
+        <span class="k">if</span><span class="p">(</span><span class="nb">isinstance</span><span class="p">(</span><span class="n">ds</span><span class="p">,</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">)):</span>
+            <span class="n">ret_ds</span> <span class="o">=</span> <span class="n">ds</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">try</span><span class="p">:</span>
+                <span class="c1"># pyarrow option `split_blocks=True` is recommended for minimizing memory usage,</span>
+                <span class="c1"># see https://arrow.apache.org/docs/python/pandas.html#reducing-memory-use-in-table-to-pandas</span>
+                <span class="n">ret_ds</span> <span class="o">=</span> <span class="n">ds</span><span class="o">.</span><span class="n">to_pandas</span><span class="p">(</span><span class="n">split_blocks</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+                <span class="c1"># Can&#39;t use type converter PAT_to_DF here due to self_destruct=True option</span>
+            <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+                <span class="n">msg</span> <span class="o">=</span> <span class="n">_</span><span class="p">(</span><span class="s2">&quot;Unhandled exception occurred while converting PyArrow Table to Pandas DataFrame&quot;</span><span class="p">)</span>
+                <span class="n">log_lcl</span><span class="o">.</span><span class="n">exception</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span>
+                <span class="k">raise</span> <span class="ne">Exception</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span> <span class="kn">from</span><span class="w"> </span><span class="nn">e</span>
+    <span class="k">elif</span><span class="p">(</span><span class="n">ret_format</span> <span class="ow">in</span> <span class="n">tc</span><span class="o">.</span><span class="n">obj_id_pyarrow</span><span class="p">):</span>
+        <span class="n">ret_ds</span> <span class="o">=</span> <span class="n">ds</span> <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">ds</span><span class="p">,</span> <span class="n">pa</span><span class="o">.</span><span class="n">Table</span><span class="p">)</span> <span class="k">else</span> <span class="n">tc</span><span class="o">.</span><span class="n">DF_to_arrow_table</span><span class="p">(</span><span class="n">ds</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">msg</span> <span class="o">=</span> <span class="n">_</span><span class="p">(</span><span class="s2">&quot;Unrecognized format parameter &#39;</span><span class="si">{}</span><span class="s2">&#39;. Must be either of &#39;pyarrow&#39; or &#39;pandas&#39;&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">ret_format</span><span class="p">)</span>
+        <span class="n">log_lcl</span><span class="o">.</span><span class="n">exception</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span>
+        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span>
+
+    <span class="k">return</span> <span class="n">ret_ds</span></div>
+
+</pre></div>
+
+                </article>
+              
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
+<script defer src="../../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+
+  <p class="copyright">
+    
+      © Copyright 2025, Statistics Canada / Statistique Canada.
+      <br/>
+    
+  </p>
+</div>
+      
+        <div class="footer-item">
+
+  <p class="sphinx-version">
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 8.2.3.
+    <br/>
+  </p>
+</div>
+      
+    </div>
+  
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item">
+<p class="theme-version">
+  <!-- # L10n: Setting the PST URL as an argument as this does not need to be localized -->
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.16.1.
+</p></div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
+</html>

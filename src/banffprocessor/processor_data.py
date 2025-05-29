@@ -224,11 +224,12 @@ class ProcessorData:
 
         # Load a Historic/Auxillary file if one was provide but it has not yet been read from disk
         if(std_name not in self._datasets):
-            if(std_name == "indata_hist" and self.input_params.histdata_filename is not None):
-                self.set_dataset_from_file(std_name, self.input_params.histdata_filename)
-            elif(std_name == "indata_aux" and self.input_params.auxdata_filename is not None or
-                 std_name == "instatus_hist" and self.input_params.histstatus_filename is not None):
-                self.set_dataset_from_file(std_name, self.input_params.auxdata_filename)
+            if(std_name == "indata_hist" and self.input_params.indata_hist_filename is not None):
+                self.set_dataset_from_file(std_name, self.input_params.indata_hist_filename)
+            elif(std_name == "indata_aux" and self.input_params.indata_aux_filename is not None):
+                self.set_dataset_from_file(std_name, self.input_params.indata_aux_filename)
+            elif(std_name == "instatus_hist" and self.input_params.instatus_hist_filename is not None):
+                self.set_dataset_from_file(std_name, self.input_params.instatus_hist_filename)
 
         if(std_name in self._datasets):
             ds_obj = self._datasets[std_name]
@@ -637,6 +638,8 @@ class ProcessorData:
                 if(target_file_obj is None):
                     msg = _("Process Control has an unrecognized target file value: targetfile='{}'",
                             ).format(arbitrary_control.targetfile)
+                    if(Path(arbitrary_control.targetfile).suffix):
+                        msg += _(". Note: targetfile must be an in-memory table, not one on disk.")
                     log_lcl.exception(msg)
                     raise ProcessControlError(msg)
 
@@ -674,7 +677,7 @@ class ProcessorData:
                         # We want to use rejected here, not outreject_all
                         # The banff package produces the rejected files and SHOULD use the original
                         # capitalizaion of unit_id
-                        exclude_rejected = f"({curr_unit_id} NOT IN (SELECT {curr_unit_id} FROM outreject))"  # noqa: S608\
+                        exclude_rejected = f"({curr_unit_id} NOT IN (SELECT {curr_unit_id} FROM outreject))"  # noqa: S608
                     else:
                         exclude_rejected = False
                 if(ProcessControlType.EDIT_GROUP_FILTER in control_set):
@@ -747,8 +750,8 @@ class ProcessorData:
                     raise ProcessControlError(msg)
 
                 # Make sure we use the name given by the user (i.e. "instatus" not "status_file")
-                # as the user-given name should be the names registered in duckdb
-                query += f"FROM {arbitrary_control.targetfile}"
+                # as the user-given name should be the names registered in duckdb.
+                query += f"FROM '{arbitrary_control.targetfile}'"
 
                 if(row_filter or exclude_rejected or edit_group_filter):
                     # Connect non-empty condition strings with 'AND'
@@ -938,9 +941,9 @@ class ProcessorData:
                 self.set_dataset(name, table)
 
     def save_outputs(self) -> None:
-        """Save all current tables in `_datasets` to the output folder using each dataset's
-        name with the extension determined by the input parameters.
+        """Save all current tables in `_datasets` to the output folder.
 
+        Each dataset's name will be used as the filename, the extension is determined by the input parameters:
         The `save_format` input parameter is checked first, then the file type of indata.
         If neither parameter is provided or the filetype is unrecognized .parq is used by default.
         """

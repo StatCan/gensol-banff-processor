@@ -6,4 +6,10 @@
 <process>incrementfield</process>
 <specid>myproc1</specid>
 </jobs>
+<jobs>
+<jobid>should_not_run</jobid>
+<seqno>1</seqno>
+<process>should_not_exist</process>
+<specid>myproc1</specid>
+</jobs>
 </banffProcessor>

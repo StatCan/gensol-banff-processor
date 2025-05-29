@@ -20,4 +20,10 @@
 <controlid>TEST_3</controlid>
 <editgroupid>eg1</editgroupid>
 </jobs>
+<jobs>
+<jobid>test_table_from_disk</jobid>
+<seqno>1</seqno>
+<process>save_parquet</process>
+<controlid>TEST_4</controlid>
+</jobs>
 </banffProcessor>

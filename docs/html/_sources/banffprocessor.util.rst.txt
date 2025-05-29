@@ -1,0 +1,37 @@
+banffprocessor.util package
+===========================
+
+Submodules
+----------
+
+banffprocessor.util.case\_insensitive\_enum\_meta module
+--------------------------------------------------------
+
+.. automodule:: banffprocessor.util.case_insensitive_enum_meta
+   :members:
+   :show-inheritance:
+   :undoc-members:
+
+banffprocessor.util.dataset module
+----------------------------------
+
+.. automodule:: banffprocessor.util.dataset
+   :members:
+   :show-inheritance:
+   :undoc-members:
+
+banffprocessor.util.metadata\_excel\_to\_xml module
+---------------------------------------------------
+
+.. automodule:: banffprocessor.util.metadata_excel_to_xml
+   :members:
+   :show-inheritance:
+   :undoc-members:
+
+Module contents
+---------------
+
+.. automodule:: banffprocessor.util
+   :members:
+   :show-inheritance:
+   :undoc-members:

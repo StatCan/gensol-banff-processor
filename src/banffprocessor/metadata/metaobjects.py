@@ -30,7 +30,10 @@ log_lcl = plg.get_processor_child_logger("metadata")
 class MetaObjects:
     """Container class for collections of metadata objects."""
 
+    # The total number of job steps in the validated job sequence
     total_job_steps: int
+    # The set of unique proc names in the validated job sequence
+    job_proc_names: set[str]
 
     @property
     def dbconn(self) -> duckdb.DuckDBPyConnection | None:
@@ -122,7 +125,7 @@ class MetaObjects:
                 log_lcl.exception(msg)
                 raise MetadataConstraintError(msg)
 
-            self.proc_list, self.total_job_steps = self.validate_job_sequence(job_steps=self.meta_dict[Jobs.__name__], job_id=job_id)
+            self.job_proc_names, self.total_job_steps = self.validate_job_sequence(job_steps=self.meta_dict[Jobs.__name__], job_id=job_id)
             self.check_constraints()
             self.display_load_summary()
 
@@ -187,11 +190,10 @@ class MetaObjects:
         self.meta_dict[objects_type.__name__] = objects
 
     @staticmethod
-    def validate_job_sequence(job_steps: list["Jobs"], job_id: str | None = None) -> tuple[list[str], int]:
-        """Iterate through `job_steps` and validates the sequence of all steps and process blocks
-        contained/referenced in the job with `job_id`.
+    def validate_job_sequence(job_steps: list["Jobs"], job_id: str | None = None) -> tuple[set[str], int]:
+        """Iterate through `job_steps` and validates the sequence of all steps and process blocks contained/referenced in the job with `job_id`.
 
-        If `job_id` is not provided the first job found in `job_steps` will be used as the starting point.
+        If `job_id` is not provided, the first job found in `job_steps` will be used as the starting point.
         Returns a list of the unique proc names contained in the job sequence.
 
         :param job_steps: A collection of Jobs metadata objects
@@ -203,23 +205,17 @@ class MetaObjects:
         :raises MetadataConstraintError: If a cycle exists in the graph of job_steps (i.e. a
             step points to a process block which points back to the calling block, thus creating
             an infinite loop)
-        :return: A list of the unique proc names contained in the job sequence and the total number
+        :return: A set of the unique proc names contained in the job sequence and the total number
             of job steps across the entire job.
-        :rtype: tuple[list[str], int]
+        :rtype: tuple[set[str], int]
         """
-        proc_names = []
-
         jobs_by_block = {}
         root_id = job_id
-        # Group our jobs by jobid to seperate each job block
+        # Group our jobs by jobid to separate each job block
         for job in job_steps:
             if(not root_id):
                 # If no job_id was provided we assume the first set of steps is the root job
                 root_id = job.jobid
-
-            # Save a list of all unique process names in the list of job steps
-            if(job.process not in proc_names):
-                proc_names.append(job.process)
 
             if(job.jobid in jobs_by_block):
                 jobs_by_block[job.jobid].append(job)
@@ -230,6 +226,7 @@ class MetaObjects:
         for block in jobs_by_block.values():
             block.sort(key=operator.attrgetter("seqno"))
 
+        unique_proc_names = set()
         current_blocks = []
         total_step_count = 0
 
@@ -267,6 +264,10 @@ class MetaObjects:
 
                 prev_node = new_node
 
+                # Save a list of all unique process names in the list of visited job steps
+                nonlocal unique_proc_names
+                unique_proc_names.add(step.process)
+
                 if(step.process == "job"):
                     # If we revisit a block that we've already added in the current sequence,
                     # we have found a cycle
@@ -287,7 +288,7 @@ class MetaObjects:
 
         #NOTE: Preferably just return a graph containing all nodes which reference a jobs object
         # then the graph f'ns can be used to get this info indirectly
-        return proc_names, total_step_count
+        return unique_proc_names, total_step_count
 
     @staticmethod
     def _load_process_control_dict(controls: list[ProcessControls]) -> dict[str, Any]:
@@ -349,6 +350,7 @@ class MetaObjects:
 
     def get_job_steps(self, jobid: str | None) -> list[Jobs]:
         """Get and returns the list of Jobs objects with `jobid` sorted in ascending order of their seqno.
+
         If no objects are found under the `jobid` an empty list is returned.
 
         :param jobid: The class reference of the object type to fetch
@@ -592,7 +594,7 @@ class MetaObjects:
             cls[1].cleanup(dbconn=self._dbconn)
 
     def check_constraints(self) -> None:
-        """Perform the check_constraints() method on each metadata class type loaded to this object."""
+        """Perform the check_constraints method on each metadata class type loaded to this object."""
         for cls in self.module_to_class.items():
             cls[1].check_constraints(dbconn=self._dbconn)
 

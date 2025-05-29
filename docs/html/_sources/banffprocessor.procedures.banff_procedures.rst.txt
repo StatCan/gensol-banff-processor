@@ -1,0 +1,93 @@
+banffprocessor.procedures.banff\_procedures package
+===================================================
+
+Submodules
+----------
+
+banffprocessor.procedures.banff\_procedures.deterministic module
+----------------------------------------------------------------
+
+.. automodule:: banffprocessor.procedures.banff_procedures.deterministic
+   :members:
+   :show-inheritance:
+   :undoc-members:
+
+banffprocessor.procedures.banff\_procedures.donorimputation module
+------------------------------------------------------------------
+
+.. automodule:: banffprocessor.procedures.banff_procedures.donorimputation
+   :members:
+   :show-inheritance:
+   :undoc-members:
+
+banffprocessor.procedures.banff\_procedures.editstats module
+------------------------------------------------------------
+
+.. automodule:: banffprocessor.procedures.banff_procedures.editstats
+   :members:
+   :show-inheritance:
+   :undoc-members:
+
+banffprocessor.procedures.banff\_procedures.errorloc module
+-----------------------------------------------------------
+
+.. automodule:: banffprocessor.procedures.banff_procedures.errorloc
+   :members:
+   :show-inheritance:
+   :undoc-members:
+
+banffprocessor.procedures.banff\_procedures.estimator module
+------------------------------------------------------------
+
+.. automodule:: banffprocessor.procedures.banff_procedures.estimator
+   :members:
+   :show-inheritance:
+   :undoc-members:
+
+banffprocessor.procedures.banff\_procedures.job\_proc module
+------------------------------------------------------------
+
+.. automodule:: banffprocessor.procedures.banff_procedures.job_proc
+   :members:
+   :show-inheritance:
+   :undoc-members:
+
+banffprocessor.procedures.banff\_procedures.massimputation module
+-----------------------------------------------------------------
+
+.. automodule:: banffprocessor.procedures.banff_procedures.massimputation
+   :members:
+   :show-inheritance:
+   :undoc-members:
+
+banffprocessor.procedures.banff\_procedures.outlier module
+----------------------------------------------------------
+
+.. automodule:: banffprocessor.procedures.banff_procedures.outlier
+   :members:
+   :show-inheritance:
+   :undoc-members:
+
+banffprocessor.procedures.banff\_procedures.prorate module
+----------------------------------------------------------
+
+.. automodule:: banffprocessor.procedures.banff_procedures.prorate
+   :members:
+   :show-inheritance:
+   :undoc-members:
+
+banffprocessor.procedures.banff\_procedures.verifyedits module
+--------------------------------------------------------------
+
+.. automodule:: banffprocessor.procedures.banff_procedures.verifyedits
+   :members:
+   :show-inheritance:
+   :undoc-members:
+
+Module contents
+---------------
+
+.. automodule:: banffprocessor.procedures.banff_procedures
+   :members:
+   :show-inheritance:
+   :undoc-members:

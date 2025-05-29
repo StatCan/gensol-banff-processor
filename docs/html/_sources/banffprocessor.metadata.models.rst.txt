@@ -1,0 +1,165 @@
+banffprocessor.metadata.models package
+======================================
+
+Submodules
+----------
+
+banffprocessor.metadata.models.algorithms module
+------------------------------------------------
+
+.. automodule:: banffprocessor.metadata.models.algorithms
+   :members:
+   :show-inheritance:
+   :undoc-members:
+
+banffprocessor.metadata.models.donorspecs module
+------------------------------------------------
+
+.. automodule:: banffprocessor.metadata.models.donorspecs
+   :members:
+   :show-inheritance:
+   :undoc-members:
+
+banffprocessor.metadata.models.editgroups module
+------------------------------------------------
+
+.. automodule:: banffprocessor.metadata.models.editgroups
+   :members:
+   :show-inheritance:
+   :undoc-members:
+
+banffprocessor.metadata.models.edits module
+-------------------------------------------
+
+.. automodule:: banffprocessor.metadata.models.edits
+   :members:
+   :show-inheritance:
+   :undoc-members:
+
+banffprocessor.metadata.models.errorlocspecs module
+---------------------------------------------------
+
+.. automodule:: banffprocessor.metadata.models.errorlocspecs
+   :members:
+   :show-inheritance:
+   :undoc-members:
+
+banffprocessor.metadata.models.estimators module
+------------------------------------------------
+
+.. automodule:: banffprocessor.metadata.models.estimators
+   :members:
+   :show-inheritance:
+   :undoc-members:
+
+banffprocessor.metadata.models.estimatorspecs module
+----------------------------------------------------
+
+.. automodule:: banffprocessor.metadata.models.estimatorspecs
+   :members:
+   :show-inheritance:
+   :undoc-members:
+
+banffprocessor.metadata.models.expressions module
+-------------------------------------------------
+
+.. automodule:: banffprocessor.metadata.models.expressions
+   :members:
+   :show-inheritance:
+   :undoc-members:
+
+banffprocessor.metadata.models.jobs module
+------------------------------------------
+
+.. automodule:: banffprocessor.metadata.models.jobs
+   :members:
+   :show-inheritance:
+   :undoc-members:
+
+banffprocessor.metadata.models.massimputationspecs module
+---------------------------------------------------------
+
+.. automodule:: banffprocessor.metadata.models.massimputationspecs
+   :members:
+   :show-inheritance:
+   :undoc-members:
+
+banffprocessor.metadata.models.metadataclass module
+---------------------------------------------------
+
+.. automodule:: banffprocessor.metadata.models.metadataclass
+   :members:
+   :show-inheritance:
+   :undoc-members:
+
+banffprocessor.metadata.models.outlierspecs module
+--------------------------------------------------
+
+.. automodule:: banffprocessor.metadata.models.outlierspecs
+   :members:
+   :show-inheritance:
+   :undoc-members:
+
+banffprocessor.metadata.models.processcontrols module
+-----------------------------------------------------
+
+.. automodule:: banffprocessor.metadata.models.processcontrols
+   :members:
+   :show-inheritance:
+   :undoc-members:
+
+banffprocessor.metadata.models.processoutputs module
+----------------------------------------------------
+
+.. automodule:: banffprocessor.metadata.models.processoutputs
+   :members:
+   :show-inheritance:
+   :undoc-members:
+
+banffprocessor.metadata.models.proratespecs module
+--------------------------------------------------
+
+.. automodule:: banffprocessor.metadata.models.proratespecs
+   :members:
+   :show-inheritance:
+   :undoc-members:
+
+banffprocessor.metadata.models.uservars module
+----------------------------------------------
+
+.. automodule:: banffprocessor.metadata.models.uservars
+   :members:
+   :show-inheritance:
+   :undoc-members:
+
+banffprocessor.metadata.models.varlists module
+----------------------------------------------
+
+.. automodule:: banffprocessor.metadata.models.varlists
+   :members:
+   :show-inheritance:
+   :undoc-members:
+
+banffprocessor.metadata.models.verifyeditsspecs module
+------------------------------------------------------
+
+.. automodule:: banffprocessor.metadata.models.verifyeditsspecs
+   :members:
+   :show-inheritance:
+   :undoc-members:
+
+banffprocessor.metadata.models.weights module
+---------------------------------------------
+
+.. automodule:: banffprocessor.metadata.models.weights
+   :members:
+   :show-inheritance:
+   :undoc-members:
+
+Module contents
+---------------
+
+.. automodule:: banffprocessor.metadata.models
+   :members:
+   :show-inheritance:
+   :undoc-members:
