@@ -104,9 +104,9 @@ Veuillez respecter les politiques de votre organisation concernant le traitement
 
 ## Documentation
 
-Pour plus de détails sur le processeur Banff, veuillez consulter notre [guide d'utilisation](./docs/en/processor-user-guide.md).
+Pour plus de détails sur le processeur Banff, veuillez consulter notre [guide d'utilisation](./docs/fr/processor-user-guide.md).
 
-Pour les utilisateurs familiarisés avec la version SAS de Banff, notre [guide de migration sera utile](./docs/en/(./docs/en/usage.md).md).
+Pour les utilisateurs familiarisés avec la version SAS de Banff, notre [guide de migration sera utile](./docs/fr/migrating-from-sas-python.md).
 
 ## Tests
 

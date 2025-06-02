@@ -8,7 +8,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "banffprocessor"
-version = "2.0.2"
+version = "2.0.3"
 maintainers = [
     {name = "Banff Support, Statistics Canada", email = "statcan.banff-banff.statcan@statcan.gc.ca"}
 ]
@@ -23,7 +23,7 @@ classifiers = [
 ]
 
 dependencies = [
-  "banff >= 3.1.1",
+  "banff >= 3.1.3",
   "defusedxml >= 0.7.1",
   "duckdb >= 0.7.0, < 2",
   "openpyxl >= 3.1.2",
@@ -45,6 +45,10 @@ doc = [
     "pydata-sphinx-theme",
     "myst_parser",
 ]
+
+[project.urls]
+"Homepage" = "https://github.com/StatCan/gensol-banff-processor"
+"Bug Tracker" = "https://github.com/StatCan/gensol-banff-processor/issues"
 
 [tool.pytest.ini_options]
 addopts = "-v --cache-clear -rf --cov=banffprocessor --cov-report=term --cov-report=html --maxfail=10"
