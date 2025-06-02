@@ -1,5 +1,9 @@
 # Banff Processor release notes
 
+## 2025-June-2 (Version `2.0.3`)
+
+* Various documentation updates for public github release
+
 ## 2025-March-07 (Version `2.0.2`)
 
 * Fixed bug where every proc in a jobs file was expected to exist, rather than just the procs which are called in the active job sequence
