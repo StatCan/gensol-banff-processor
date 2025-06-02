@@ -1,5 +1,9 @@
 # Notes de version du processeur Banff
 
+## 2025-Juin-2 (Version `2.0.3`)
+
+* Diverses mises à jour de la documentation pour la version publique sur github
+
 ## 2025-Mars-07 (Version `2.0.2`)
 
 * Correction d'un bogue où l'on s'attendait à ce que toutes les procs d'un fichier de travail existent, plutôt que les procs appelées dans la séquence de travail active.
